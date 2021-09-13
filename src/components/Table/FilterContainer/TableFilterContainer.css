@@ -1,0 +1,26 @@
+.TableFilterContainer {
+  width: 400px;
+  max-width: 400px;
+  max-height: 440px;
+  padding: var(--space-m);
+  background-color: var(--color-bg-secondary);
+  border-radius: calc(var(--control-radius) * 2);
+  box-shadow: var(--shadow-layer);
+
+  &-Buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--space-m);
+
+    & > .Button {
+      flex-basis: 50%;
+      flex-shrink: 1;
+      margin-right: var(--space-s);
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

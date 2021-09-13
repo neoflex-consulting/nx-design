@@ -1,0 +1,27 @@
+.ProgressSpin {
+  --animation-duration: 0.3s;
+  color: var(--color-control-typo-ghost);
+  stroke: currentColor;
+  transform: rotate(-90deg);
+  fill: none;
+
+  &_spin {
+    animation: ProgressSpin-Animate 1.2s linear infinite;
+  }
+
+  &-Circle {
+    &_animation {
+      transition: var(--animation-duration) linear;
+    }
+  }
+}
+
+@keyframes ProgressSpin-Animate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

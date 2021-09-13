@@ -1,0 +1,7 @@
+.FileField {
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+  max-width: 100%;
+  cursor: pointer;
+}

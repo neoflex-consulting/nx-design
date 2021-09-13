@@ -1,0 +1,346 @@
+import { TextExampleAlign } from './examples/TextExampleAlign/TextExampleAlign';
+import { TextExampleCombinedWeightAndStyle } from './examples/TextExampleCombinedWeightAndStyle/TextExampleCombinedWeightAndStyle';
+import { TextExampleDecoration } from './examples/TextExampleDecoration/TextExampleDecoration';
+import { TextExampleHeadingAndParagraph } from './examples/TextExampleHeadingAndParagraph/TextExampleHeadingAndParagraph';
+import { TextExampleLabelAndData } from './examples/TextExampleLabelAndData/TextExampleLabelAndData';
+import { TextExampleLineheight } from './examples/TextExampleLineheight/TextExampleLineheight';
+import { TextExampleSize } from './examples/TextExampleSize/TextExampleSize';
+import { TextExampleSpacing } from './examples/TextExampleSpacing/TextExampleSpacing';
+import { TextExampleStyle } from './examples/TextExampleStyle/TextExampleStyle';
+import { TextExampleTransform } from './examples/TextExampleTransform/TextExampleTransform';
+import { TextExampleView } from './examples/TextExampleView/TextExampleView';
+import { TextExampleWeight } from './examples/TextExampleWeight/TextExampleWeight';
+
+# Text
+
+Весь текст на странице нужно обернуть в компонент `Text`, стили задаются свойствами.
+
+- [Текст](#свойства-текста)
+  - [Цвет](#цвет) `view`
+  - [Размер](#размер) `size`
+  - [Гарнитура](#гарнитура) `font`
+  - [Насыщенность](#насыщенность) `weight`
+  - [Наклон](#наклон) `fontStyle`
+  - [Межбуквенный интервал](#межбуквенный-интервал) `spacing`
+  - [Высота строки](#высота-строки) `lineHeight`
+  - [Отображение курсора](#отображение-курсора) `cursor`
+  - [Подчеркивание](#подчеркивание) `decoration`
+  - [Регистр](#регистр) `transform`
+  - [Выравнивание](#выравнивание) `align`
+- [Контейнер с текстом](#контейнер-с-текстом)
+  - [Тег для контейнера](#тег-для-контейнера) `as`
+  - [Расположение](#расположение) `display`
+- [Блоки с текстом](#блоки-с-текстом)
+  - [Абзац и заголовок](#абзац-и-заголовок)
+  - [Данные с подсказками](#данные-с-подсказками)
+  - [Форматирование текста](#форматирование-текста-в-абзаце)
+- [Все свойства](#свойства)
+- [Пример использования](#пример-использования)
+
+## Текст
+
+### Цвет
+
+`view` отвечает за тип и цвет текста.
+
+```ts
+<Text view="alert">Газпром нефть</Text> /* ошибка */
+<Text view="brand">Газпром нефть</Text> /* цвет бренда */
+<Text view="ghost">Газпром нефть</Text> /* примечания */
+<Text view="link">Газпром нефть</Text> /* ссылка */
+<Text view="link-minor">Газпром нефть</Text> /* дополнительная ссылка */
+<Text view="primary">Газпром нефть</Text> /* основной текст */
+<Text view="secondary">Газпром нефть</Text> /* дополнительный */
+<Text view="success">Газпром нефть</Text> /* успешное действие */
+<Text view="warning">Газпром нефть</Text> /* предупреждение */
+```
+
+<TextExampleView />
+
+### Размер
+
+`size` отвечает за размер текста.
+
+- По умолчанию в параграфах используется размер `m`.
+- Даже для самых неважных подсказок используйте размер `xs` или больше.
+- `2xs` — только для текста в [верхнем регистре](#регистр).
+
+```ts
+<Text size="2xs">Нефть</Text>
+<Text size="xs">Нефть</Text>
+<Text size="s">Нефть</Text>
+<Text size="m">Нефть</Text>
+<Text size="l">Нефть</Text>
+<Text size="xl">Нефть</Text>
+<Text size="2xl">Нефть</Text>
+<Text size="3xl">Нефть</Text>
+<Text size="4xl">Нефть</Text>
+<Text size="5xl">Нефть</Text>
+<Text size="6xl">Нефть</Text>
+```
+
+<TextExampleSize />
+
+### Гарнитура
+
+`font` отвечает за гарнитуру шрифта.
+
+Вы можете выбрать гарнитуру, заданную в системе:
+
+- `primary` меняет шрифт на основной шрифт дизайн-системы,
+- `mono` — на шрифт, заданный как моноширный.
+
+Это нужно, чтобы расставить дополнительные акценты: например, выделить что-то важное
+прямо в тексте.
+
+### Насыщенность
+
+`weight` отвечает за насыщенность (жирный, полужирный, обычный, светлый и другие варианты).
+
+> Убедитесь, что в шрифте есть насыщенность, которую вы используете. Браузер имитирует
+> насыщенность, которой нет в наборе, но неизвестно, как это будет выглядеть.
+
+```ts
+<Text weight="black">Газпром нефть</Text>
+<Text weight="bold">Газпром нефть</Text>
+<Text weight="semibold">Газпром нефть</Text>
+<Text weight="regular">Газпром нефть</Text>
+<Text weight="light">Газпром нефть</Text>
+<Text weight="thin">Газпром нефть</Text>
+```
+
+<TextExampExampleWeighteView />
+
+### Наклон
+
+`fontStyle` меняет наклон шрифта (можно выделить текст курсивом).
+
+```ts
+<Text fontStyle="italic">Газпром нефть</Text>
+```
+
+<TextExampleStyle />
+
+### Межбуквенный интервал
+
+`spacing` меняет межбуквенный интервал.
+
+```ts
+<Text spacing="xs">
+  «Газпром нефть» ведет работу в крупнейших российских нефтегазовых регионах.
+</Text>
+<Text spacing="s">
+  «Газпром нефть» ведет работу в крупнейших российских нефтегазовых регионах.
+</Text>
+<Text spacing="m">
+  «Газпром нефть» ведет работу в крупнейших российских нефтегазовых регионах.
+</Text>
+<Text spacing="l">
+  «Газпром нефть» ведет работу в крупнейших российских нефтегазовых регионах.
+</Text>
+```
+
+<TextExampleSpacing />
+
+### Высота строки
+
+`lineHeight` отвечает за высоту строки.
+
+```ts
+<Text lineHeight="2xs">
+  «Газпром нефть» ведет работу в крупнейших российских нефтегазовых регионах.
+</Text>
+<Text lineHeight="xs">
+  «Газпром нефть» ведет работу в крупнейших российских нефтегазовых регионах.
+</Text>
+<Text lineHeight="s">
+  «Газпром нефть» ведет работу в крупнейших российских нефтегазовых регионах.
+</Text>
+<Text lineHeight="m">
+  «Газпром нефть» ведет работу в крупнейших российских нефтегазовых регионах.
+</Text>
+<Text lineHeight="l">
+  «Газпром нефть» ведет работу в крупнейших российских нефтегазовых регионах.
+</Text>
+```
+
+<TextExampleLineheight />
+
+### Подчеркивание
+
+`decoration` в значении `underline` подчеркивает текст.
+
+```ts
+<Text decoration="underline">Газпром нефть</Text>
+```
+
+<TextExampleDecoration />
+
+### Регистр
+
+`transform` в значении `uppercase` переводит текст в верхний регистр.
+
+```ts
+<Text transform="uppercase">Газпром нефть</Text>
+```
+
+<TextExampleTransform />
+
+### Выравнивание
+
+`align` отвечает за выравнивание текста в контейнере.
+
+```ts
+<Text align="left">Газпром нефть</Text>
+<Text align="center">Газпром нефть</Text>
+<Text align="right">Газпром нефть</Text>
+```
+
+<TextExampleAlign />
+
+## Контейнер с текстом
+
+### Тег для контейнера
+
+По умолчанию `Text` представлен в HTML-документе в виде тега `div`. Вы можете его
+переопределить с помощью свойства `as`.
+
+### Расположение
+
+`display` определяет, как будет вести себя контейнер с текстом по отношению к другим элементам
+на странице (как строчный или блочный элемент). Варианты: `block`, `inline-block`, `inline`.
+
+## Блоки с текстом
+
+### Абзац и заголовок
+
+Пример классической конструкции: абзац с заголовком.
+
+```ts
+<Text
+  as="div"
+  align="left"
+  font="sans"
+  lineHeight="l"
+  size="2xl"
+  spacing="m"
+  transform="uppercase"
+  view="primary"
+  weight="bold"
+>
+  Заголовок несет суть
+</Text>
+<Text as="p" align="left" font="serif" lineHeight="s" size="s" view="primary">
+  Абзац — это часть текста между отступами с новой строки. Абзац можно назвать микротекстом.
+  В общей теме могут выделяться и микротемы. При этом каждый абзац раскрывает свою
+  микротему. Что же ещё можно сказать про абзацы? Мы видим, что обычно в абзацах несколько
+  предложений. В таком случае каждый абзац служит для выделения своей микротемы.
+</Text>
+```
+
+<TextExampleHeadingAndParagraph />
+
+### Данные с подсказками
+
+Можно использовать в формах с данными.
+
+```ts
+<Text as="div" align="left" font="sans" lineHeight="l" size="s" view="secondary">
+  ФИО
+</Text>
+<Text as="div" align="left" font="serif" lineHeight="l" size="l" view="primary">
+  Иванов Дмитрий Петрович
+</Text>
+<Text as="div" align="left" font="sans" lineHeight="l" size="s" view="secondary">
+  Должность
+</Text>
+<Text as="div" align="left" font="serif" lineHeight="l" size="l" view="primary">
+  Инженер по бурению
+</Text>
+<Text as="div" align="left" font="sans" lineHeight="l" size="s" view="secondary">
+  Подразделение
+</Text>
+<Text as="div" align="left" font="serif" lineHeight="l" size="l" view="primary">
+  Группа разведки и бурения
+</Text>
+```
+
+<TextExampleLabelAndData />
+
+### Форматирование текста в абзаце
+
+Вы можете выделять отдельные слова, фразы или части фраз с помощью форматирования.
+Например, чтобы обратить внимание на важную информацию, выделить термин, элемент
+интерфейса, прямую речь.
+
+```ts
+<Text as="div" align="left" font="sans" lineHeight="l" size="m" view="primary">
+  <Text as="span" fontStyle="italic">
+    Примечание.&nbsp;
+  </Text>
+  База скважин сформирована на основе отчетов сотрудников. Любые&nbsp;
+  <Text weight="black" as="span">
+    срочные изменения
+  </Text>{' '}
+  должны вноситься по регламенту в сроки, указанные Центром Разработок.
+</Text>
+```
+
+<TextExampleCombinedWeightAndStyle />
+
+## Свойства
+
+<!-- props:start -->
+
+| Свойство                            | Тип                                                                                                       | По умолчанию | Описание                                                                  |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------------- |
+| [`view`](#цвет)                     | `'alert', 'brand', 'ghost', 'link', 'linkMinor', 'primary', 'secondary', 'success', 'warning'`, `primary` | `'primary'`  | Тип и цвет текста                                                         |
+| [`font`](#гарнитура)                | `'primary', 'mono';`                                                                                      | —            | Гарнитура                                                                 |
+| [`lineHeight`](#высота-строки)      | `'2xs', 'xs', 's', 'm', 'l'`                                                                              | `'m'`        | Высота строки                                                             |
+| [`spacing`](#межбуквенный-интервал) | `'xs', 's', 'm', 'l'`                                                                                     | —            | Межбуквенное расстояние                                                   |
+| [`fontStyle`](#начертание)          | `italic`                                                                                                  | —            | Начертание                                                                |
+| [`weight`](#насыщенность)           | `'black', 'bold', 'light', 'regular', 'semibold', 'thin'`                                                 | —            | Насыщенность                                                              |
+| [`transform`](#регистр)             | `uppercase`                                                                                               | —            | Регистр                                                                   |
+| [`cursor`](#отображение-курсора)    | `pointer`                                                                                                 | —            | Отображение курсора                                                       |
+| [`decoration`](#подчеркивание)      | `underline`                                                                                               | —            | Подчеркивание                                                             |
+| [`align`](#выравнивание)            | `'left', 'center', 'right'`                                                                               | —            | Выравнивание                                                              |
+| [`size`](#размер)                   | `'2xs', 'xs', 's', 'm', 'l', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl'`                                     | `'m'`        | Размер текста                                                             |
+| [`display`](#расположение)          | `'block', 'inlineBlock', 'inline'`                                                                        | —            | Поведение контейнера с текстом в документе (блочный или строчный элемент) |
+| [`as`](#тег-для-контейнера)         | `keyof JSX.IntrinsicElements`                                                                             | `'div'`      | HTML-тег, в виде которого этот компонент будет представлен в DOM          |
+| `className`                         | `string`                                                                                                  | —            | Дополнительный CSS-класс                                                  |
+| `children`                          | `React.ReactNode`                                                                                         | —            | Дочерние компоненты                                                       |
+| `ref`                               | `React.Ref<HTMLElement>`                                                                                  | —            | Ссылка на корневой DOM-элемент этого компонента                           |
+
+<!-- props:end -->
+
+## Пример использования
+
+Использование компонента:
+
+```ts
+// src/App.ts
+import React from 'react';
+import { Text } from '@consta/uikit/Text';
+
+export function App() {
+  return (
+    <Text
+      as = 'p'
+      align = 'center'
+      cursor = 'default'
+      decoration = 'none'
+      display = 'block'
+      font = 'mono'
+      lineHeight = '2xs'
+      size = 'm'
+      spacing = 'xs'
+      view = 'primary'
+      weight = 'regular'
+      width = 'default'
+      className = 'custom-class-name'
+    >
+      Текст
+    </>
+  );
+}
+```

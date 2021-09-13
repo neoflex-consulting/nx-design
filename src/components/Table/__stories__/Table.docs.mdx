@@ -1,0 +1,517 @@
+import { Preview } from '@storybook/addon-docs/dist/blocks';
+
+# Таблица
+
+Таблица — компонент для отображения данных, с возможностью сортировки и фильтрации.
+
+- [Структура](#структура)
+  - [Колонки](#колонки)
+  - [Сортировка](#сортировка)
+  - [Строки](#строки)
+  - [Фильтры](#фильтры)
+  - [Заглушка](#заглушка)
+- [Внешний вид](#внешний-вид)
+  - [Размер](#размер)
+  - [Границы](#границы)
+  - [Выделить строки](#выделить-строки)
+  - [Закрепить заголовки или колонку](#закрепить-заголовок-или-колонку)
+  - [Менять ширину колонок](#менять-ширину-колонок)
+  - [Выравнивание по вертикали](#выравнивание-по-вертикали)
+- [Список свойств](#свойства)
+- [Пример использования](#примеры)
+
+## Структура
+
+Структура и данные для таблицы формируются из JSON.
+
+### Колонки
+
+Сначала добавьте заголовки и опишите параметры для всех колонок — с помощью свойства `columns`.
+
+`title` — Название колонки, которое увидит пользователь. Можно использовать переносы строк ('\n').
+
+`accessor` — идентификатор, по которому можно будет подставить данные в таблицу.
+Должны быть уникальными для разных колонок в одной таблице. Например, для имени
+пользователя можно использовать идентификатор `name`, для возраста — `age`.
+
+`align` — выравнивание данных в строке. Можно выровнять по левому краю (`left`),
+по центру (`center`) или по правому краю (`right`).
+
+`width` — ширина колонки в пикселях. Если не укажете, подстроится под ширину данных.
+
+`withoutPadding` — убирает отступы.
+
+`sortable` — позволяет сортировать таблицу по этой колонке.
+
+В этой таблице будет две колонки — номер и имя.
+
+```ts
+[
+  {
+    title: '№',
+    accessor: 'id',
+    align: 'center',
+    width: 100,
+    sortable: true,
+  },
+  {
+    title: 'Имя',
+    accessor: 'name',
+    sortable: true,
+  },
+];
+```
+
+### Сортировка
+
+Стандартное поведение сортирует только строки. Через параметр `onSortBy` можно получить имя столбца и порядок сортировки,
+самостоятельно отсортировать данные и передать в `rows` [см примеры](#сортировка-по-времени-через-onsortby)
+
+### Строки
+
+Когда колонки описаны, можно добавлять строки. Сначала указываете `id` — идентификатор строки,
+затем — содержимое ячеек в строке, во всех колонках.
+
+Формат такой: `{ идентификатор колонки (accessor): 'содержимое ячейки'}`
+
+Если не укажете содержимое ячейки, она останется пустой.
+
+Добавим в нашу таблицу две строки:
+
+```ts
+[
+  {
+    id: '1',
+    name: 'Антон',
+  },
+  {
+    id: '2',
+    name: 'Василий',
+  },
+];
+```
+
+### Фильтры
+
+Вы можете добавить фильтры в колонки с помощью свойства `filters`.
+
+`id` — идентификатор фильтра
+
+`name` - название строки
+
+`field` - поле к которому применять фильтрацию
+
+`filterer` - функция фильтрации
+
+```tsx
+[
+  {
+    id: 'executor',
+    name: 'Антон',
+    filterer: (value) => value === 'Антон',
+    field: 'name',
+  },
+];
+```
+
+Если вы хотите использовать другие, отличные от стандартного, компоненты для фильтрации, можно добавить фильтрам следующие поля:
+
+`component` - объект, описывающий компонент. На данный момент есть 3 предустановленных компонента:
+
+```tsx
+import { TableTextFilter, TableNumberFilter, TableChoiceGroupFilter } from '@consta/uikit/Table';
+
+const filters = [
+  {
+    id: 'field',
+    name: 'Месторождение: ',
+    field: 'field',
+    filterer: (cellValue, filterValues: Array<{ value: string; name: string }>) => {
+      return filterValues.some((filterValue) => filterValue && filterValue.value === cellValue);
+    },
+    component: {
+      name: TableTextFilter,
+      props: {
+        withSearch: true,
+        items: [
+          { name: 'Северное', value: 'Северное' },
+          { name: 'Южное', value: 'Южное' },
+          { name: 'Западное', value: 'Западное' },
+          { name: 'Восточное', value: 'Восточное' },
+          { name: 'Центральное', value: 'Центральное' },
+        ],
+      },
+    },
+  },
+  {
+    id: 'years',
+    name: 'Диапазон лет: ',
+    filterer: rangeFilterer,
+    field: 'year',
+    component: {
+      name: TableNumberFilter,
+    },
+  },
+  {
+    id: 'reserves',
+    name: 'Запасы: ',
+    field: 'reserves',
+    filterer: (cellValue, filterValue: { name: string; value: number }) => {
+      if (!isNotNil(filterValue.value)) {
+        return true;
+      }
+
+      return cellValue > filterValue.value;
+    },
+    component: {
+      name: TableChoiceGroupFilter,
+      props: {
+        items: [{ name: '> 5k', value: 5000 }],
+      },
+    },
+  },
+];
+```
+
+#### Реализация компонента кастомного фильтра
+
+Кастомный компонент фильтра получает следующие пропсы:
+
+| Свойство    | Тип                  | Описание                                             |
+| ----------- | -------------------- | ---------------------------------------------------- |
+| onConfirm   | (value: any) => void | Функция для сохранения обновленного значения фильтра |
+| onCancel    | () => void           | Функция для закрытия окна фильтра без его применения |
+| filterValue | any                  | Значение сохраненного значения фильтра               |
+
+Ряд предустановленных кастомных компонентов фильтров из примера выше:
+
+| Компонент              | Дополнительные пропсы                                               | Описание                           |
+| ---------------------- | ------------------------------------------------------------------- | ---------------------------------- |
+| TableNumberFilter      | -                                                                   | Фильтрация по значениям "от-до"    |
+| TableChoiceGroupFilter | { items: {name: string, value: any} }                               | Фильтрация по одному из значенений |
+| TableTextFilter        | { items: Array<{ name: string, value: any }>; withSearch: boolean } | Фильтрация по нескольким значениям |
+
+В качестве основы для кастомного компонента рекомендуется использовать компонент `TableFilterContainer`, представляющий из себя блок с кнопками подтверждения и сброса фильтра.
+
+```tsx
+import { TableFilterContainer } from '@consta/uikit/Table';
+```
+
+Он принимает в себя следующие пропсы:
+
+| Свойство           | Тип        | Описание                                   |
+| ------------------ | ---------- | ------------------------------------------ |
+| onCancel           | () => void | Обработчик нажатия на кнопку подтверждения |
+| onConfirm          | () => void | Обработчик нажатия на кнопку отмены        |
+| title              | string     | Заголовок окна                             |
+| confirmButtonLabel | string     | Текст на кнопке подтверждения              |
+| cancelButtonLabel  | string     | Текст на кнопку сброса                     |
+| children           | ReactNode  | Вложенные элементы                         |
+
+### Колбэк на применение фильтра
+
+Если вам нужно повесить обработчик на событие изменения фильтров в таблице (например для загрузки данных, к которым применен фильтр), вы можете сделать это с помощью свойства `onFiltersUpdated`.
+
+### Заглушка
+
+Вы можете добавить заглушку, которую увидят пользователи, если в таблице нет данных.
+Это может быть текст, изображение или что угодно, указанное в свойстве `emptyRowsPlaceholder`.
+
+```tsx
+<Table columns={columns} rows={rows} emptyRowsPlaceholder={<Text>Здесь пока нет данных</Text>} />
+```
+
+## Внешний вид
+
+### Размер
+
+За размеры таблицы — размер шрифта, высоту строк, отступы и другие связанные с ними
+параметры отвечает свойство `size`.
+
+Таблицы бывают трех размеров — `'s', 'm', 'l'`.
+
+### Границы
+
+По умолчанию в таблице нет рамок.
+
+`borderBetweenRows` добавит границы между строками.
+
+`borderBetweenColumns` добавит границы между колонками.
+
+### Выделить строки
+
+Вы можете выделить строки через одну с помощью свойства `zebraStriped`,
+так удобнее следить за данными. В таблице появятся полоски, как у зебры.
+
+`activeRow` выделяет строку, на которую наведен курсор.
+`onRowHover` сработает при наведении настроку, полезно когда нужно скрыть/отобразить элементы в строке
+
+### Закрепить заголовок или колонку
+
+`stickyHeader` закрепляет заголовок: если таблица длинная, при вертикальном скролле
+строки прокручиваются, а заголовок остается на месте.
+
+`stickyColumns` закрепляет строку, в этом случае при горизонтальной прокрутке
+одна или несколько колонок остаются на месте.
+
+### Менять ширину колонок
+
+Если хотите, чтобы пользователи могли менять ширину колонок в таблице, добавьте `isResizable`.
+
+### Выравнивание по вертикали
+
+Вы можете поменять выравнивание по высоте сразу для всех строк в таблице с помощью `verticalAlign`.
+
+У этого свойства три значения: `'center', 'top', 'bottom'`. По умолчанию содержимое ячеек
+выравнивается по верхнему краю.
+
+Отдельно настраивается выравниваются для заголовков — `verticalHeaderAlign`.
+
+## Свойства
+
+```ts
+type Column = {
+  title: React.ReactNode;
+  accessor: string;
+  align?: 'left';
+  center;
+  right;
+  withoutPadding?: boolean;
+  width?: number;
+  sortable?: boolean;
+  sortByField?: string;
+  sortFn?: (a: FieldValue, b: FieldValue) => number;
+  renderCell?: (row: Row) => React.ReactNode;
+};
+
+type Row = {
+  [key: string]: FieldValue;
+  id: string;
+};
+
+type FilterComponentProps = {
+  onConfirm: (value: any) => void;
+  onCancel: () => void;
+  filterValue?: any
+} & Record<string, unknown>;
+
+type Filter = {
+  id: string;
+  name: string;
+  field: string;
+  filterer: (value: any, filterValue?: any) => boolean;
+} & ({ component?: never } | {
+  component: {
+    name: React.FC<FilterComponentProps>;
+    props?: Omit<FilterComponentProps, 'onConfirm' | 'filterValue'>;
+  }
+});
+
+type OnRowHover = ({ id, e }: { id: string | undefined; e: React.MouseEvent }) => void;
+
+type onRowClick = ({ id, e }: { id: string; e: React.MouseEvent }) => void;
+
+type LazyLoad = { maxVisibleRows?: number; scrollableEl?: HTMLDivElement / Window; }
+// maxVisibleRows - количество строк
+// scrollableEl - элемент с onScroll listener
+```
+
+| Свойство                                            | Тип или варианты значения                           | По умолчанию                                      | Описание                                             |
+| --------------------------------------------------- | --------------------------------------------------- | ------------------------------------------------- | ---------------------------------------------------- |
+| [`columns`](#колонки)                               | `Column[]`                                          | -                                                 | Колонки в таблице                                    |
+| [`rows`](#строки)                                   | `Row[]`                                             | -                                                 | Строки в таблице                                     |
+| [`filters`](#фильтры)                               | `Filter[]`                                          | -                                                 | Список фильтров                                      |
+| [`size`](#размер)                                   | `'s', 'm', 'l'`                                     | 'l'                                               | Размер таблицы                                       |
+| [`stickyHeader`](#закрепить-заголовок)              | `boolean`                                           | false                                             | Зафиксированный заголовок                            |
+| [`stickyColumns`](#закрепить-колонки)               | `number`                                            | 0                                                 | Количество зафиксированных колонок                   |
+| [`isResizable`](#менять-ширину-колонок)             | `boolean`                                           | false                                             | Возможность изменения размера колонок                |
+| [`activeRow`](#выделить-строки)                     | `{ id?: string; onChange: (id?: string) => void; }` | -                                                 | Активная строка                                      |
+| [`verticalAlign`](#выравнивание-по-вертикали)       | `'center', 'top', 'bottom'`                         | `'top'`                                           | Выравнивание по вертикали                            |
+| [`verticalHeaderAlign`](#выравнивание-по-вертикали) | `'center'`, `'bottom'`                              | `center`                                          | Выравнивание заголовков по вертикали                 |
+| [`zebraStriped`](#выделить-строки)                  | `'odd', 'even'`                                     | false                                             | Окрашивание строк через одну                         |
+| [`borderBetweenRows`](#границы)                     | `boolean`                                           | false                                             | Отображение границ между строками                    |
+| [`borderBetweenColumns`](#границы)                  | `boolean`                                           | false                                             | Отображение границ между колонками                   |
+| [`emptyRowsPlaceholder`](#заглушка)                 | `React.ReactNode`                                   | -                                                 | Заглушка, показывается, когда в таблице нет данных   |
+| [`onRowHover`](#выделить-строки)                    | `OnRowHover`                                        | -                                                 | Функция которая сработает при наведении на строку    |
+| [`onRowClick`](#выделить-строки)                    | `OnRowHover`                                        | -                                                 | Функция которая сработает при клике на строку        |
+| [`onSortBy`](#сортировка)                           | `onSortBy`                                          | sortByDefault                                     | Функция срабатывает при нажатии на иконку сортировки |
+| `className`                                         | `string`                                            | -                                                 | Дополнительный CSS-класс                             |
+| `lazyLoad?`                                         | `LazyLoad`                                          | `{ maxVisibleRows: 210; scrollableEl: tableRef }` | Включает виртуальную прокрутку в таблице             |
+| [`onFiltersUpdated`](#колбэк-на-применение-фильтра) | `(filters: { field: string[] }) => void`            | -                                                 | Колбэк на изменение фильтров                         |
+
+## Примеры
+
+### Обычная таблица
+
+```tsx
+import React from 'react';
+import { Table } from '@consta/uikit/Table';
+
+const columns = [
+  {
+    title: '№',
+    accessor: 'id',
+    align: 'center',
+    width: 100,
+    sortable: true,
+  },
+  {
+    title: 'Имя',
+    accessor: 'name',
+    sortable: true,
+  },
+];
+
+const rows = [
+  {
+    id: '1',
+    name: 'Антон',
+  },
+  {
+    id: '2',
+    name: 'Василий',
+  },
+];
+
+const App = () => {
+  return <Table columns={columns} rows={rows} />;
+};
+```
+
+### Рендер ячеек
+
+```ts
+import React from 'react';
+import { Table } from '@consta/uikit/Table';
+
+const columns = [
+  {
+    title: '№',
+    accessor: 'id',
+  },
+  {
+    title: 'Имя',
+    accessor: 'name',
+    renderCell: (row) => <h1>{row.name}</h1>,
+  },
+];
+
+const rows = [
+  {
+    id: '1',
+    name: 'Антон',
+  },
+  {
+    id: '2',
+    name: 'Василий',
+  },
+];
+
+const App = () => {
+  return <Table columns={columns} rows={rows} />;
+};
+```
+
+### Со своим текстом, если нет данных
+
+```tsx
+import React from 'react';
+import { Table } from '@consta/uikit/Table';
+import { Text } from '@consta/uikit/Text';
+
+const columns = [
+  {
+    title: '№',
+    accessor: 'id',
+    align: 'center',
+    width: 100,
+    sortable: true,
+  },
+  {
+    title: 'Имя',
+    accessor: 'name',
+    sortable: true,
+  },
+];
+
+const rows = [];
+
+const App = () => {
+  return <Table columns={columns} rows={rows} emptyRowsPlaceholder={<Text>Пусто</Text>} />;
+};
+```
+
+### Таблица для большого количества строк
+
+По умолчанию scrollableEl - сама таблица. Для корректной работы не забыть указать её высоту, чтобы scroll listener отрабатывал правильно.
+
+```tsx
+import React from 'react';
+import { Table } from '@consta/uikit/Table';
+
+const columns = [ ... ];
+const rows = [ ... ];
+
+const App = () => {
+  return <Table columns={columns} rows={rows} />;
+};
+```
+
+### Сортировка по времени через onSortBy
+
+```tsx
+import React, { useState } from 'react';
+import { Table, SortByProps } from '@consta/uikit/Table';
+
+const data = [
+  {
+    id: 1,
+    date: new Date('Thu Dec 03 2020 14:23:13 GMT+0300 (Moscow Standard Time)'),
+  },
+  {
+    id: 2,
+    date: new Date('Thu Dec 03 2020 14:04:13 GMT+0300 (Moscow Standard Time)'),
+  },
+  {
+    id: 3,
+    date: new Date('Thu Dec 03 2020 14:55:13 GMT+0300 (Moscow Standard Time)'),
+  },
+  {
+    id: 4,
+    date: new Date('Thu Dec 03 2020 14:12:13 GMT+0300 (Moscow Standard Time)'),
+  },
+];
+
+const columns = [
+  {
+    title: `Id`,
+    accessor: `id`,
+    sortable: true,
+  },
+  {
+    title: `Дата`,
+    accessor: `date`,
+    sortable: true,
+  },
+];
+
+const App = () => {
+  const [sortSetting, setSortSetting] = useState<SortByProps<any> | null>(null);
+
+  const rows = data
+    .sort((a, b) => {
+      if (sortSetting?.sortingBy === 'date') {
+        const [firstDate, secondDate] =
+          sortSetting.sortOrder === 'asc' ? [a.date, b.date] : [b.date, a.date];
+        return firstDate.valueOf() - secondDate.valueOf();
+      }
+      return 0;
+    })
+    .map((item) => ({
+      id: item.id.valueOf(),
+      date: item.date.toString(),
+    }));
+
+  return <Table rows={rows} columns={columns} onSortBy={setSortSetting} />;
+};
+```

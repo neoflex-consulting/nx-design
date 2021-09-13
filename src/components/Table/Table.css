@@ -1,0 +1,89 @@
+.Table {
+  --table-z: 0;
+  --sticky-left-z: calc(var(--table-z) + 1);
+  --sticky-top-z: calc(var(--sticky-left-z) + 1);
+  --sticky-top-and-left-z: calc(var(--sticky-top-z) + 1);
+  --resizer-z: calc(var(--sticky-top-and-left-z) + 1);
+  --fast-transition: 0.15s ease-out;
+  --shadow-color: rgba(var(--color-nums-shadow), 0.2);
+  --table-border: 1px solid var(--color-bg-border);
+  --resizer-width: calc(0 * 1px);
+  position: relative;
+  z-index: var(--table-z);
+  display: grid;
+  overflow: auto;
+  max-width: 100%;
+  max-height: 100%;
+
+  &_size_s {
+    --cell-padding-vertical: var(--space-2xs);
+    --cell-padding-horizontal: var(--space-xs);
+  }
+
+  &_size_m {
+    --cell-padding-vertical: var(--space-xs);
+    --cell-padding-horizontal: var(--space-s);
+  }
+
+  &_size_l {
+    --cell-padding-vertical: var(--space-s);
+    --cell-padding-horizontal: var(--space-m);
+  }
+
+  &_isResizable {
+    --resizer-width: 5px;
+  }
+
+  &_withBorderBottom {
+    border-bottom: var(--table-border);
+  }
+
+  &-CellsRow {
+    display: contents;
+  }
+
+  &-RowWithoutCells {
+    position: sticky;
+    left: 0;
+    display: block;
+    max-width: var(--table-width);
+    background-color: var(--color-bg-default);
+
+    grid-column: 1 / -1;
+  }
+
+  &-ContentCell {
+    .Table_zebraStriped_even .Table-CellsRow_nth_even:not(:hover) &:not(&_isActive) {
+      background-color: var(--color-bg-stripe);
+    }
+
+    .Table_zebraStriped_odd .Table-CellsRow_nth_odd:not(:hover) &:not(&_isActive) {
+      background-color: var(--color-bg-stripe);
+    }
+
+    &_isActive,
+    .Table-CellsRow:hover & {
+      background-color: var(--color-bg-ghost);
+    }
+
+    .Table-CellsRow_withMergedCells:hover & {
+      background-color: unset;
+    }
+
+    &_isDarkned {
+      opacity: 0.3;
+    }
+
+    &_isMerged {
+      align-items: center;
+    }
+  }
+
+  &-EmptyCell {
+    display: flex;
+    justify-content: center;
+    padding-top: var(--cell-padding-vertical);
+    padding-bottom: var(--cell-padding-vertical);
+    text-align: center;
+  }
+}

@@ -1,0 +1,161 @@
+.Checkbox {
+  position: relative;
+  display: inline-flex;
+  font-family: var(--font-sans);
+  cursor: pointer;
+
+  &-Input {
+    position: relative;
+    box-sizing: border-box;
+    width: var(--box-size);
+    height: var(--box-size);
+    margin: 0;
+    background-color: transparent;
+    border: var(--control-border-width) solid var(--color-control-bg-border-default);
+    border-radius: var(--control-radius);
+    cursor: pointer;
+    transition: border-color 0.15s, background-color 0.15s;
+    flex-shrink: 0;
+    -webkit-appearance: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      box-sizing: border-box;
+      width: calc(var(--box-size) * 0.6);
+      height: calc(var(--box-size) * 0.35);
+      background-color: var(--color-control-bg-affect);
+      border-left: 2px solid var(--checkbox-checked-check);
+      border-bottom: 2px solid var(--checkbox-checked-check);
+      opacity: 0;
+      transition: opacity 0.15s, transform 0.15s, background-color 0.08s;
+      transform: rotate(-50deg) scale(0, 1);
+      transform-origin: 0 0;
+    }
+  }
+
+  &-Label {
+    margin-left: var(--offset);
+    color: var(--color-control-typo-default);
+    font-size: var(--checkbox-font-size);
+  }
+
+  &_size {
+    &_m {
+      --checkbox-font-size: var(--control-text-size-m);
+      --box-size: var(--control-box-size-m);
+      --offset: var(--space-xs);
+
+      .Checkbox-Input {
+        &::before {
+          top: 0.55em;
+          left: 0.15em;
+        }
+      }
+    }
+
+    &_l {
+      --checkbox-font-size: var(--control-text-size-l);
+      --box-size: var(--control-box-size-l);
+      --offset: var(--space-s);
+
+      .Checkbox-Input {
+        &::before {
+          top: 0.7em;
+          left: 0.2em;
+        }
+      }
+    }
+  }
+
+  &_view {
+    &_primary {
+      --checkbox-checked-border: var(--color-control-bg-primary);
+      --checkbox-checked-background: var(--color-control-bg-primary);
+      --checkbox-checked-check: var(--color-control-typo-primary);
+      --checkbox-checked-border-hover: var(--color-control-bg-primary-hover);
+      --checkbox-checked-background-hover: var(--color-control-bg-primary-hover);
+    }
+
+    &_ghost {
+      --checkbox-checked-border: var(--color-control-bg-border-default);
+      --checkbox-checked-background: var(--color-control-bg-ghost);
+      --checkbox-checked-check: var(--color-control-typo-ghost);
+      --checkbox-checked-border-hover: var(--color-control-bg-border-default);
+      --checkbox-checked-background-hover: var(--color-control-bg-ghost-hover);
+    }
+  }
+
+  &-Input:checked {
+    background-color: var(--checkbox-checked-background);
+    border-color: var(--checkbox-checked-border);
+
+    &::before {
+      opacity: 1;
+      transform: rotate(-50deg) scale(1, 1);
+    }
+  }
+
+  &:hover &-Input {
+    border-color: var(--color-control-bg-border-default-hover);
+
+    &:checked {
+      background-color: var(--checkbox-checked-background-hover);
+      border-color: var(--checkbox-checked-border-hover);
+    }
+  }
+
+  &_intermediate,
+  &_intermediate:hover {
+    .Checkbox-Input,
+    .Checkbox-Input:checked {
+      background-color: var(--checkbox-checked-background);
+      border-color: var(--checkbox-checked-border);
+
+      &::before {
+        background-color: var(--checkbox-checked-check);
+        opacity: 1;
+        transition: opacity 0.15s, transform 0.15s, background-color 0.08s 0.04s;
+        transform: rotate(0) scale(1, 0.35) translate(0, -50%);
+      }
+    }
+  }
+
+  &_disabled {
+    pointer-events: none;
+
+    .Checkbox-Input:disabled {
+      background-color: var(--color-control-bg-disable);
+      border-color: transparent;
+
+      &::before {
+        border-color: var(--color-control-typo-disable);
+      }
+    }
+
+    &.Checkbox_intermediate .Checkbox-Input:disabled {
+      &::before {
+        background-color: var(--color-control-typo-disable);
+      }
+    }
+
+    .Checkbox-Input:disabled ~ .Checkbox-Label {
+      color: var(--color-control-typo-disable);
+    }
+  }
+
+  &_align {
+    &_center {
+      align-items: center;
+    }
+
+    &_top {
+      align-items: top;
+
+      .Checkbox-Input {
+        margin-top: var(--space-3xs);
+      }
+    }
+  }
+}

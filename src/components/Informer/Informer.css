@@ -1,0 +1,46 @@
+.Informer {
+  padding: var(--space-s) var(--space-m);
+  color: var(--color-typo-primary);
+  border-radius: var(--control-radius);
+
+  &_withIcon {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  &_status {
+    &_system {
+      --informer-status-color: var(--color-bg-system);
+    }
+
+    &_alert {
+      --informer-status-color: var(--color-bg-alert);
+    }
+
+    &_warning {
+      --informer-status-color: var(--color-bg-warning);
+    }
+
+    &_success {
+      --informer-status-color: var(--color-bg-success);
+    }
+  }
+
+  &_view {
+    &_bordered {
+      background-color: var(--color-bg-default);
+      border-left: var(--space-xs) solid var(--informer-status-color);
+      box-shadow: var(--shadow-layer);
+    }
+
+    &_filled {
+      background-color: var(--informer-status-color);
+    }
+  }
+
+  &-Icon {
+    margin-right: var(--space-s);
+    transform: translateY(var(--space-3xs));
+    flex-shrink: 0;
+  }
+}

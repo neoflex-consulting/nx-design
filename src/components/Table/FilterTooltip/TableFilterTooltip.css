@@ -1,0 +1,42 @@
+.TableFilterTooltip {
+  &-Button {
+    z-index: 1;
+    opacity: 0;
+    transition: opacity var(--show-transition);
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &_isOpened {
+      opacity: 1;
+    }
+  }
+
+  &-Title {
+    margin-top: var(--space-2xs);
+    margin-bottom: var(--space-xs);
+  }
+
+  &-Content {
+    width: 312px;
+    padding: var(--space-s);
+    background-color: var(--color-bg-secondary);
+    border-radius: 8px;
+    box-shadow: var(--shadow-layer);
+  }
+
+  &-Select {
+    width: 100%;
+    height: 100px;
+    color: var(--color-typo-primary);
+    background: var(--color-control-bg-default);
+    border-color: var(--color-bg-border);
+    border-radius: var(--control-radius);
+  }
+
+  &-Option {
+    padding: var(--space-xs);
+    font-size: var(--size-text-s);
+  }
+}
