@@ -167,5 +167,19 @@
     "typescript": "3.9.9",
     "typescript-eslint-parser": "^22.0.0"
   },
-  "homepage": "https://consta-uikit.vercel.app"
+  "homepage": "https://consta-uikit.vercel.app",
+  "description": "Consta — дизайн-система для разработки интерфейсов, написана на [React](https://reactjs.org/), сделана и поддерживается в «Газпром нефти».",
+  "main": ".eslintrc.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/truschelev-ilya/nx-design.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/truschelev-ilya/nx-design/issues"
+  }
 }
