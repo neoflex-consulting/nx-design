@@ -57,6 +57,11 @@
   }
 
   &_size {
+    &_xs {
+      --button-height: var(--control-height-xs);
+      --button-font-size: var(--control-text-size-xs);
+      --button-space: var(--control-space-xs);
+    }
     &_s {
       --button-height: var(--control-height-s);
       --button-font-size: var(--control-text-size-s);

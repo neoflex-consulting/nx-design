@@ -8,6 +8,10 @@
   line-height: 0;
 
   &_size {
+    &_xs {
+      --icon-size: var(--graphics-size-s);
+    }
+
     &_s {
       --icon-size: var(--graphics-size-s);
     }

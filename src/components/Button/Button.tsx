@@ -10,9 +10,9 @@ import { forwardRefWithAs } from '../../utils/types/PropsWithAsAttributes';
 import { usePropsHandler } from '../EventInterceptor/usePropsHandler';
 import { Loader } from '../Loader/Loader';
 
-export const buttonPropSize = ['m', 's', 'l'] as const;
+export const buttonPropSize = ['xs', 's', 'm', 'l'] as const;
 export type ButtonPropSize = typeof buttonPropSize[number];
-export const buttonPropSizeDefault: ButtonPropSize = buttonPropSize[0];
+export const buttonPropSizeDefault: ButtonPropSize = buttonPropSize[2];
 
 export const buttonPropView = ['primary', 'clear', 'ghost', 'secondary'] as const;
 export type ButtonPropView = typeof buttonPropView[number];
@@ -55,15 +55,17 @@ export type Props = {
 export const cnButton = cn('Button');
 
 const sizeMap: Record<ButtonPropSize, IconPropSize> = {
-  s: 's',
-  m: 'm',
-  l: 'l',
+  xs: 'xs',
+  s: 'xs',
+  m: 's',
+  l: 'm',
 };
 
 const sizeMapOnlyIcon: Record<ButtonPropSize, IconPropSize> = {
+  xs: 'xs',
   s: 's',
   m: 'm',
-  l: 'l',
+  l: 'm',
 };
 
 export const Button = forwardRefWithAs<Props, 'button'>((props, ref) => {
