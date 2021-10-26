@@ -600,8 +600,9 @@ const generateReExports = (
 
     await writeJSON(packPath, pack, { spaces: 2 });
 
-    const gitignorePath = join(distPath, '.gitignore');
-    await updateGitignore(newKeys, gitignorePath);
+    // const gitignorePath = join(distPath, '.gitignore');
+    // await updateGitignore(newKeys, gitignorePath);
+
     // eslint-disable-next-line no-console
     // console.log(logSymbols.success, 'Update', gitignorePath);
   });
