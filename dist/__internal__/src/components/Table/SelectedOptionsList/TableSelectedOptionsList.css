@@ -1,0 +1,39 @@
+.TableSelectedOptionsList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-right: var(--space-s);
+  border-bottom: var(--table-border);
+}
+
+  .TableSelectedOptionsList-Options {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 0 var(--cell-padding-horizontal);
+  }
+
+  .TableSelectedOptionsList-Option {
+    margin: var(--space-2xs) 0;
+    margin-right: var(--space-2xs);
+  }
+
+  .TableSelectedOptionsList-Button {
+    opacity: 0;
+    -webkit-transition: opacity 0.15s ease-out;
+    transition: opacity 0.15s ease-out;
+  }
+
+  .TableSelectedOptionsList:hover .TableSelectedOptionsList-Button {
+      opacity: 1;
+    }

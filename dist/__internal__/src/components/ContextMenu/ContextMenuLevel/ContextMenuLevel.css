@@ -1,0 +1,26 @@
+.ContextMenuLevel {
+  --transform-direction: translateY(0);
+  --transform-animate: translateX(0);
+  z-index: 9999;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 240px;
+  padding: var(--space-xs) 0;
+  background: var(--color-bg-default);
+  border: var(--control-border-width) solid var(--color-control-bg-border-default);
+  border-radius: var(--control-radius);
+  -webkit-box-shadow: var(--shadow-layer);
+          box-shadow: var(--shadow-layer);
+  -webkit-transform: var(--transform-direction) var(--transform-animate);
+          transform: var(--transform-direction) var(--transform-animate);
+}
+
+  .ContextMenuLevel:not(.ContextMenuLevel_firstLevel).ContextMenuLevel_direction_rightStartUp,
+    .ContextMenuLevel:not(.ContextMenuLevel_firstLevel).ContextMenuLevel_direction_leftStartUp {
+      --transform-direction: translateY(calc(-1 * (var(--space-xs) + 1px)));
+    }
+
+  .ContextMenuLevel:not(.ContextMenuLevel_firstLevel).ContextMenuLevel_direction_rightStartDown,
+    .ContextMenuLevel:not(.ContextMenuLevel_firstLevel).ContextMenuLevel_direction_leftStartDown {
+      --transform-direction: translateY(calc(var(--space-xs) + 1px));
+    }

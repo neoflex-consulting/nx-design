@@ -1,0 +1,159 @@
+.TableCell {
+  --buttons-wrapper-size: calc(0 * 1px);
+  z-index: var(--table-z);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: var(--color-typo-primary);
+  background-color: var(--color-bg-default);
+  grid-row-end: var(--row-span);
+}
+
+  .TableCell_withoutBorder {
+    border: none;
+  }
+
+  .TableCell_isHeader {
+    position: relative;
+    border-bottom: 1px solid var(--color-bg-border);
+    font-size: var(--size-text-xs);
+    font-weight: var(--font-weight-text-bold);
+    line-height: var(--line-height-text-s);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .TableCell:not(.TableCell_isHeader) {
+    font-size: var(--size-text-s);
+    line-height: var(--line-height-text-s);
+  }
+
+  .TableCell_isResized {
+    word-break: break-word;
+  }
+
+  .TableCell_isClickable {
+    cursor: pointer;
+  }
+
+  .TableCell_isSortable,
+  .TableCell_isFilterable {
+    --buttons-wrapper-size: var(--space-xl);
+  }
+
+  .TableCell_isSortable.TableCell_isFilterable {
+    --buttons-wrapper-size: var(--space-4xl);
+  }
+
+  .TableCell_stickyOnTop,
+  .TableCell_stickyOnLeft {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+
+  .TableCell_stickyOnTop.TableCell_isResizer,
+  .TableCell_stickyOnLeft.TableCell_isResizer {
+    z-index: calc(var(--sticky-top-and-left-z) + 1);
+  }
+
+  .TableCell_stickyOnTop {
+    z-index: var(--sticky-top-z);
+    top: 0;
+  }
+
+  .TableCell_stickyOnLeft {
+    z-index: var(--sticky-left-z);
+    left: 0;
+  }
+
+  .TableCell_stickyOnLeft.TableCell_isHeader {
+      z-index: var(--sticky-top-and-left-z);
+    }
+
+  .TableCell_isBorderTop {
+    border-top: var(--table-border);
+  }
+
+  .TableCell_isBorderLeft {
+    border-left: var(--table-border);
+  }
+
+  .TableCell-Wrapper {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 100%;
+    padding: var(--cell-padding-vertical) var(--cell-padding-horizontal);
+    padding-right: calc(
+      var(--cell-padding-horizontal) + var(--resizer-width) + var(--buttons-wrapper-size)
+    );
+  }
+
+  .TableCell-Wrapper_withoutPadding {
+      padding: 0;
+    }
+
+  .TableCell-Wrapper_verticalAlign_top {
+      -webkit-box-align: start;
+          -ms-flex-align: start;
+              align-items: flex-start;
+    }
+
+  .TableCell-Wrapper_verticalAlign_center {
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+    }
+
+  .TableCell-Wrapper_verticalAlign_bottom {
+      -webkit-box-align: end;
+          -ms-flex-align: end;
+              align-items: flex-end;
+    }
+
+  .TableCell-Wrapper_horizontalAlign_left {
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+    }
+
+  .TableCell-Wrapper_horizontalAlign_center {
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      text-align: center;
+    }
+
+  .TableCell-Wrapper_horizontalAlign_right {
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end;
+      text-align: right;
+    }
+
+  .TableCell_stickyOnLeft .TableCell-Wrapper::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: var(--space-s);
+      background: -webkit-gradient(linear, left top, right top, from(var(--shadow-color)), to(transparent));
+      background: linear-gradient(90deg, var(--shadow-color), transparent);
+      opacity: 0;
+      pointer-events: none;
+      -webkit-transition: opacity var(--fast-transition);
+      transition: opacity var(--fast-transition);
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+
+  .TableCell_stickyOnLeft.TableCell_showVerticalShadow .TableCell-Wrapper::after {
+      opacity: 1;
+    }
+
+  .TableCell_isHeader:hover .TableCell-Wrapper {
+      background: var(--color-bg-stripe);
+    }

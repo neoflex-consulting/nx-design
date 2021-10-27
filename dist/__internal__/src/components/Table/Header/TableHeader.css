@@ -1,0 +1,107 @@
+.TableHeader-Row {
+    display: contents;
+  }
+  .TableHeader-Cell_level_high .TableCell-Wrapper {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+        }
+  .TableHeader-Cell_level_high.TableCell_isHeader {
+          border-bottom: none;
+        }
+  .TableHeader-Cell_level_high:hover .TableCell-Wrapper {
+            background: unset;
+          }
+  .TableHeader-Cell_level_low {
+        font-size: var(--size-text-2xs);
+      }
+  .TableHeader-Cell:not(.TableHeader-Cell_isFirstColumn)::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--color-bg-border);
+      opacity: 0;
+      -webkit-transition: opacity var(--fast-transition);
+      transition: opacity var(--fast-transition);
+    }
+  .TableHeader-Row:hover .TableHeader-Cell:not(.TableHeader-Cell_isFirstColumn)::after,
+      .TableHeader-Row_withVerticalBorder .TableHeader-Cell:not(.TableHeader-Cell_isFirstColumn)::after {
+        opacity: 1;
+      }
+  .TableHeader-Buttons {
+    --half-cell-padding-horizontal: calc(var(--cell-padding-horizontal) * 0.5);
+    position: absolute;
+    right: calc(var(--half-cell-padding-horizontal) + var(--resizer-width));
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .TableHeader-Buttons_verticalAlign_bottom {
+      bottom: var(--cell-padding-vertical);
+      -webkit-transform: translateY(calc((var(--control-height-xs) - var(--graphics-size-s)) / 2));
+              transform: translateY(calc((var(--control-height-xs) - var(--graphics-size-s)) / 2));
+    }
+  .TableHeader-Buttons_verticalAlign_center {
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+    }
+  .TableHeader-Icon {
+    opacity: 0;
+    -webkit-transition: opacity var(--fast-transition);
+    transition: opacity var(--fast-transition);
+  }
+  .TableHeader-Row:hover .TableHeader-Icon {
+      opacity: 0.4;
+    }
+  .TableHeader-Cell:hover .TableHeader-Icon {
+      opacity: 1;
+    }
+  .TableHeader-Buttons_isSortingActive .TableHeader-Icon_type_sort {
+        color: var(--color-control-typo-secondary);
+        opacity: 1;
+      }
+  .TableHeader-Buttons:hover:not(.TableHeader-Buttons_isFilterOpened) .TableHeader-Icon_type_filter,
+      .TableHeader-Buttons_isFilterActive .TableHeader-Icon_type_filter {
+        opacity: 1;
+      }
+  .TableHeader-Buttons_isFilterActive .TableHeader-Icon_type_filter {
+        color: var(--color-control-typo-secondary);
+      }
+  .TableHeader-ShadowWrapper {
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: var(--sticky-top-and-left-z);
+    top: var(--table-header-height);
+    left: 0;
+
+    grid-column: 1 / -1;
+  }
+  .TableHeader-Shadow {
+    position: relative;
+  }
+  .TableHeader-Shadow::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      height: var(--space-s);
+      background: -webkit-gradient(linear, left top, left bottom, from(var(--shadow-color)), to(transparent));
+      background: linear-gradient(180deg, var(--shadow-color), transparent);
+      opacity: 0;
+      pointer-events: none;
+      -webkit-transition: opacity var(--fast-transition);
+      transition: opacity var(--fast-transition);
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+  .TableHeader-Shadow_show::before {
+        opacity: 1;
+      }

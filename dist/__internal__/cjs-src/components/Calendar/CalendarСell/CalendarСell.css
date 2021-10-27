@@ -1,0 +1,40 @@
+.CalendarСell {
+  --bg-color: var(--color-control-bg-ghost);
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: var(--calendar-cell-width, calc(var(--control-height-s) + var(--space-2xs)));
+  height: var(--control-height-s);
+}
+
+  .CalendarСell_range {
+    background: var(--bg-color);
+  }
+
+  .CalendarСell_range_first::before,
+    .CalendarСell_range_last::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      background: var(--bg-color);
+    }
+
+  .CalendarСell_range_first::before {
+      right: 0;
+      left: calc(var(--space-2xs) / 2);
+      border-radius: 50% 0 0 50%;
+    }
+
+  .CalendarСell_range_last::before {
+      right: calc(var(--space-2xs) / 2);
+      left: 0;
+      border-radius: 0 50% 50% 0;
+    }

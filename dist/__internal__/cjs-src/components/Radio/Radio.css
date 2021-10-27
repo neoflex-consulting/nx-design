@@ -1,0 +1,159 @@
+.Radio {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: var(--font-sans);
+  cursor: pointer;
+}
+
+  .Radio-Input {
+    position: relative;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: var(--box-size);
+    height: var(--box-size);
+    margin: 0;
+    border: var(--control-border-width) solid;
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-transition: border-color 0.15s, background-color 0.15s;
+    transition: border-color 0.15s, background-color 0.15s;
+    -webkit-appearance: none;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+
+  .Radio-Input::before {
+      content: '';
+      position: absolute;
+      top: calc(50% - var(--box-size) / 2);
+      left: calc(50% - var(--box-size) / 2);
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      width: var(--box-size);
+      height: var(--box-size);
+      border-radius: 50%;
+      opacity: 0;
+      -webkit-transition: background-color 0.15s, opacity 0.15s, -webkit-transform 0.15s;
+      transition: background-color 0.15s, opacity 0.15s, -webkit-transform 0.15s;
+      transition: background-color 0.15s, opacity 0.15s, transform 0.15s;
+      transition: background-color 0.15s, opacity 0.15s, transform 0.15s, -webkit-transform 0.15s;
+      -webkit-transform: scale(0, 0);
+              transform: scale(0, 0);
+    }
+
+  .Radio-Label {
+    margin-left: var(--offset);
+    color: var(--color-control-typo-default);
+    font-size: var(--radio-font-size);
+  }
+
+  .Radio_size_m {
+      --radio-font-size: var(--control-text-size-m);
+      --box-size: var(--control-box-size-m);
+      --offset: var(--space-xs);
+    }
+
+  .Radio_size_l {
+      --radio-font-size: var(--control-text-size-l);
+      --box-size: var(--control-box-size-l);
+      --offset: var(--space-s);
+    }
+
+  .Radio_view_primary:hover .Radio-Input {
+        border-color: var(--color-control-bg-border-default-hover);
+      }
+
+  .Radio_view_primary .Radio-Input {
+        border-color: var(--color-control-bg-border-default);
+      }
+
+  .Radio_view_primary .Radio-Input::before {
+          background-color: var(--color-control-bg-primary);
+        }
+
+  .Radio_view_primary .Radio-Input:checked {
+        border-color: var(--color-control-bg-primary);
+      }
+
+  .Radio_view_primary .Radio-Input:checked::before {
+          background-color: var(--color-control-bg-primary);
+        }
+
+  .Radio_view_primary:hover .Radio-Input:checked {
+        border-color: var(--color-control-bg-primary-hover);
+      }
+
+  .Radio_view_primary:hover .Radio-Input:checked::before {
+          background-color: var(--color-control-bg-primary-hover);
+        }
+
+  .Radio_view_ghost:hover .Radio-Input {
+        border-color: var(--color-control-bg-border-default-hover);
+      }
+
+  .Radio_view_ghost .Radio-Input {
+        border-color: var(--color-control-bg-border-default);
+      }
+
+  .Radio_view_ghost .Radio-Input::before {
+          background-color: var(--color-control-bg-primary);
+        }
+
+  .Radio_view_ghost .Radio-Input:checked {
+        background-color: var(--color-control-bg-ghost);
+        border-color: var(--color-control-bg-border-default);
+      }
+
+  .Radio_view_ghost .Radio-Input:checked::before {
+          background-color: var(--color-control-typo-ghost);
+        }
+
+  .Radio_view_ghost:hover .Radio-Input:checked {
+        background-color: var(--color-control-bg-ghost-hover);
+        border-color: var(--color-control-bg-border-default);
+      }
+
+  .Radio_view_ghost:hover .Radio-Input:checked::before {
+          background-color: var(--color-control-typo-ghost-hover);
+        }
+
+  .Radio-Input:checked::before {
+      opacity: 1;
+      -webkit-transform: scale(0.4, 0.4);
+              transform: scale(0.4, 0.4);
+    }
+
+  .Radio_disabled {
+    pointer-events: none;
+  }
+
+  .Radio_disabled .Radio-Input:disabled {
+      background-color: var(--color-control-bg-disable);
+      border-color: transparent;
+    }
+
+  .Radio_disabled .Radio-Input:disabled::before {
+        background-color: var(--color-control-typo-disable);
+      }
+
+  .Radio_disabled .Radio-Input:disabled ~ .Radio-Label {
+      color: var(--color-control-typo-disable);
+    }
+
+  .Radio_align_center {
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+    }
+
+  .Radio_align_top {
+      -webkit-box-align: top;
+          -ms-flex-align: top;
+              align-items: top;
+    }
+
+  .Radio_align_top .Radio-Input {
+        margin-top: var(--space-3xs);
+      }

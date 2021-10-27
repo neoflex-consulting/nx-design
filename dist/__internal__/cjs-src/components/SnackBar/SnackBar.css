@@ -1,0 +1,47 @@
+.SnackBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+  .SnackBar-Item_animate_appear,
+      .SnackBar-Item_animate_enter,
+      .SnackBar-Item_animate_exit,
+      .SnackBar-Item_animate_appearActive,
+      .SnackBar-Item_animate_enterActive,
+      .SnackBar-Item_animate_exitActive {
+        -webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
+        transition: opacity 0.2s, -webkit-transform 0.2s;
+        transition: transform 0.2s, opacity 0.2s;
+        transition: transform 0.2s, opacity 0.2s, -webkit-transform 0.2s;
+      }
+
+  .SnackBar-Item_animate_appear,
+      .SnackBar-Item_animate_enter {
+        opacity: 0;
+        -webkit-transform: scale(0.5);
+                transform: scale(0.5);
+      }
+
+  .SnackBar-Item_animate_appearActive,
+      .SnackBar-Item_animate_enterActive {
+        opacity: 1;
+        -webkit-transform: scale(1);
+                transform: scale(1);
+      }
+
+  .SnackBar-Item_animate_exit {
+        opacity: 1;
+        -webkit-transform: scale(1);
+                transform: scale(1);
+      }
+
+  .SnackBar-Item_animate_exitActive {
+        opacity: 0;
+        -webkit-transform: scale(0.5);
+                transform: scale(0.5);
+      }

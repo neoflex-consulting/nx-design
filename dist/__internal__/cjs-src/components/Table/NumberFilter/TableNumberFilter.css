@@ -1,0 +1,10 @@
+.TableNumberFilter-Inputs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+    .TableNumberFilter-Inputs > .TextField {
+      -ms-flex-preferred-size: 50%;
+          flex-basis: 50%;
+    }

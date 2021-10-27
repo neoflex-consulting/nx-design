@@ -1,0 +1,6 @@
+.SnackBar-Timer {
+    -webkit-box-flex: 0;
+        -ms-flex: none;
+            flex: none;
+    margin-right: var(--space-m);
+  }

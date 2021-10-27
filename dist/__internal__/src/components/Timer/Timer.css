@@ -1,0 +1,33 @@
+.Timer {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: var(--timer-size);
+  height: var(--timer-size);
+  background-color: var(--color-control-bg-ghost);
+  border-radius: 50%;
+}
+
+  .Timer_size_s {
+      --timer-size: 16px;
+    }
+
+  .Timer_size_m {
+      --timer-size: 24px;
+    }
+
+  .Timer-Counter {
+    width: 100%;
+    color: var(--color-control-typo-ghost);
+    font-size: var(--size-text-xs);
+    font-weight: var(--font-weight-text-bold);
+    line-height: var(--timer-size);
+    text-align: center;
+  }
+
+  .Timer-Progress.ProgressSpin {
+    --animation-duration: 1s;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+  }

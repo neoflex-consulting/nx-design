@@ -1,0 +1,1015 @@
+.GridItem {
+  min-width: 0;
+  grid-column: var(--col-start, span) var(--col-end, 1);
+  grid-row: var(--row-start, span) var(--row-end, 1);
+}
+
+  .GridItem_col_1 {
+      --col-end: 1;
+    }
+
+  .GridItem_col_2 {
+      --col-end: 2;
+    }
+
+  .GridItem_col_3 {
+      --col-end: 3;
+    }
+
+  .GridItem_col_4 {
+      --col-end: 4;
+    }
+
+  .GridItem_col_5 {
+      --col-end: 5;
+    }
+
+  .GridItem_col_6 {
+      --col-end: 6;
+    }
+
+  .GridItem_col_7 {
+      --col-end: 7;
+    }
+
+  .GridItem_col_8 {
+      --col-end: 8;
+    }
+
+  .GridItem_col_9 {
+      --col-end: 9;
+    }
+
+  .GridItem_col_10 {
+      --col-end: 10;
+    }
+
+  .GridItem_col_11 {
+      --col-end: 11;
+    }
+
+  .GridItem_col_12 {
+      --col-end: 12;
+    }
+
+  .GridItem_colStart_1 {
+      --col-start: 1 / span;
+    }
+
+  .GridItem_colStart_2 {
+      --col-start: 2 / span;
+    }
+
+  .GridItem_colStart_3 {
+      --col-start: 3 / span;
+    }
+
+  .GridItem_colStart_4 {
+      --col-start: 4 / span;
+    }
+
+  .GridItem_colStart_5 {
+      --col-start: 5 / span;
+    }
+
+  .GridItem_colStart_6 {
+      --col-start: 6 / span;
+    }
+
+  .GridItem_colStart_7 {
+      --col-start: 7 / span;
+    }
+
+  .GridItem_colStart_8 {
+      --col-start: 8 / span;
+    }
+
+  .GridItem_colStart_9 {
+      --col-start: 9 / span;
+    }
+
+  .GridItem_colStart_10 {
+      --col-start: 10 / span;
+    }
+
+  .GridItem_colStart_11 {
+      --col-start: 11 / span;
+    }
+
+  .GridItem_colStart_12 {
+      --col-start: 12 / span;
+    }
+
+  .GridItem_row_1 {
+      --row-end: 1;
+    }
+
+  .GridItem_row_2 {
+      --row-end: 2;
+    }
+
+  .GridItem_row_3 {
+      --row-end: 3;
+    }
+
+  .GridItem_row_4 {
+      --row-end: 4;
+    }
+
+  .GridItem_rowStart_1 {
+      --row-start: 1 / span;
+    }
+
+  .GridItem_rowStart_2 {
+      --row-start: 2 / span;
+    }
+
+  .GridItem_rowStart_3 {
+      --row-start: 3 / span;
+    }
+
+  .GridItem_rowStart_4 {
+      --row-start: 4 / span;
+    }
+
+  .GridItem_order_-1 {
+      -webkit-box-ordinal-group: 0;
+          -ms-flex-order: -1;
+              order: -1;
+    }
+
+  .GridItem_order_0 {
+      -webkit-box-ordinal-group: 1;
+          -ms-flex-order: 0;
+              order: 0;
+    }
+
+  .GridItem_order_1 {
+      -webkit-box-ordinal-group: 2;
+          -ms-flex-order: 1;
+              order: 1;
+    }
+
+  @media screen and (min-width: 360px) {
+    .GridItem_xs\:col_1 {
+      --col-end: 1;
+    }
+
+    .GridItem_xs\:col_2 {
+      --col-end: 2;
+    }
+
+    .GridItem_xs\:col_3 {
+      --col-end: 3;
+    }
+
+    .GridItem_xs\:col_4 {
+      --col-end: 4;
+    }
+
+    .GridItem_xs\:col_5 {
+      --col-end: 5;
+    }
+
+    .GridItem_xs\:col_6 {
+      --col-end: 6;
+    }
+
+    .GridItem_xs\:col_7 {
+      --col-end: 7;
+    }
+
+    .GridItem_xs\:col_8 {
+      --col-end: 8;
+    }
+
+    .GridItem_xs\:col_9 {
+      --col-end: 9;
+    }
+
+    .GridItem_xs\:col_10 {
+      --col-end: 10;
+    }
+
+    .GridItem_xs\:col_11 {
+      --col-end: 11;
+    }
+
+    .GridItem_xs\:col_12 {
+      --col-end: 12;
+    }
+    .GridItem_xs\:colStart_1 {
+      --col-start: 1 / span;
+    }
+
+    .GridItem_xs\:colStart_2 {
+      --col-start: 2 / span;
+    }
+
+    .GridItem_xs\:colStart_3 {
+      --col-start: 3 / span;
+    }
+
+    .GridItem_xs\:colStart_4 {
+      --col-start: 4 / span;
+    }
+
+    .GridItem_xs\:colStart_5 {
+      --col-start: 5 / span;
+    }
+
+    .GridItem_xs\:colStart_6 {
+      --col-start: 6 / span;
+    }
+
+    .GridItem_xs\:colStart_7 {
+      --col-start: 7 / span;
+    }
+
+    .GridItem_xs\:colStart_8 {
+      --col-start: 8 / span;
+    }
+
+    .GridItem_xs\:colStart_9 {
+      --col-start: 9 / span;
+    }
+
+    .GridItem_xs\:colStart_10 {
+      --col-start: 10 / span;
+    }
+
+    .GridItem_xs\:colStart_11 {
+      --col-start: 11 / span;
+    }
+
+    .GridItem_xs\:colStart_12 {
+      --col-start: 12 / span;
+    }
+    .GridItem_xs\:row_1 {
+      --row-end: 1;
+    }
+
+    .GridItem_xs\:row_2 {
+      --row-end: 2;
+    }
+
+    .GridItem_xs\:row_3 {
+      --row-end: 3;
+    }
+
+    .GridItem_xs\:row_4 {
+      --row-end: 4;
+    }
+    .GridItem_xs\:rowStart_1 {
+      --row-start: 1 / span;
+    }
+
+    .GridItem_xs\:rowStart_2 {
+      --row-start: 2 / span;
+    }
+
+    .GridItem_xs\:rowStart_3 {
+      --row-start: 3 / span;
+    }
+
+    .GridItem_xs\:rowStart_4 {
+      --row-start: 4 / span;
+    }
+    .GridItem_xs\:order_-1 {
+      -webkit-box-ordinal-group: 0;
+          -ms-flex-order: -1;
+              order: -1;
+    }
+
+    .GridItem_xs\:order_0 {
+      -webkit-box-ordinal-group: 1;
+          -ms-flex-order: 0;
+              order: 0;
+    }
+
+    .GridItem_xs\:order_1 {
+      -webkit-box-ordinal-group: 2;
+          -ms-flex-order: 1;
+              order: 1;
+    }
+  }
+
+  @media screen and (min-width: 640px) {
+    .GridItem_s\:col_1 {
+      --col-end: 1;
+    }
+
+    .GridItem_s\:col_2 {
+      --col-end: 2;
+    }
+
+    .GridItem_s\:col_3 {
+      --col-end: 3;
+    }
+
+    .GridItem_s\:col_4 {
+      --col-end: 4;
+    }
+
+    .GridItem_s\:col_5 {
+      --col-end: 5;
+    }
+
+    .GridItem_s\:col_6 {
+      --col-end: 6;
+    }
+
+    .GridItem_s\:col_7 {
+      --col-end: 7;
+    }
+
+    .GridItem_s\:col_8 {
+      --col-end: 8;
+    }
+
+    .GridItem_s\:col_9 {
+      --col-end: 9;
+    }
+
+    .GridItem_s\:col_10 {
+      --col-end: 10;
+    }
+
+    .GridItem_s\:col_11 {
+      --col-end: 11;
+    }
+
+    .GridItem_s\:col_12 {
+      --col-end: 12;
+    }
+    .GridItem_s\:colStart_1 {
+      --col-start: 1 / span;
+    }
+
+    .GridItem_s\:colStart_2 {
+      --col-start: 2 / span;
+    }
+
+    .GridItem_s\:colStart_3 {
+      --col-start: 3 / span;
+    }
+
+    .GridItem_s\:colStart_4 {
+      --col-start: 4 / span;
+    }
+
+    .GridItem_s\:colStart_5 {
+      --col-start: 5 / span;
+    }
+
+    .GridItem_s\:colStart_6 {
+      --col-start: 6 / span;
+    }
+
+    .GridItem_s\:colStart_7 {
+      --col-start: 7 / span;
+    }
+
+    .GridItem_s\:colStart_8 {
+      --col-start: 8 / span;
+    }
+
+    .GridItem_s\:colStart_9 {
+      --col-start: 9 / span;
+    }
+
+    .GridItem_s\:colStart_10 {
+      --col-start: 10 / span;
+    }
+
+    .GridItem_s\:colStart_11 {
+      --col-start: 11 / span;
+    }
+
+    .GridItem_s\:colStart_12 {
+      --col-start: 12 / span;
+    }
+    .GridItem_s\:row_1 {
+      --row-end: 1;
+    }
+
+    .GridItem_s\:row_2 {
+      --row-end: 2;
+    }
+
+    .GridItem_s\:row_3 {
+      --row-end: 3;
+    }
+
+    .GridItem_s\:row_4 {
+      --row-end: 4;
+    }
+    .GridItem_s\:rowStart_1 {
+      --row-start: 1 / span;
+    }
+
+    .GridItem_s\:rowStart_2 {
+      --row-start: 2 / span;
+    }
+
+    .GridItem_s\:rowStart_3 {
+      --row-start: 3 / span;
+    }
+
+    .GridItem_s\:rowStart_4 {
+      --row-start: 4 / span;
+    }
+    .GridItem_s\:order_-1 {
+      -webkit-box-ordinal-group: 0;
+          -ms-flex-order: -1;
+              order: -1;
+    }
+
+    .GridItem_s\:order_0 {
+      -webkit-box-ordinal-group: 1;
+          -ms-flex-order: 0;
+              order: 0;
+    }
+
+    .GridItem_s\:order_1 {
+      -webkit-box-ordinal-group: 2;
+          -ms-flex-order: 1;
+              order: 1;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .GridItem_m\:col_1 {
+      --col-end: 1;
+    }
+
+    .GridItem_m\:col_2 {
+      --col-end: 2;
+    }
+
+    .GridItem_m\:col_3 {
+      --col-end: 3;
+    }
+
+    .GridItem_m\:col_4 {
+      --col-end: 4;
+    }
+
+    .GridItem_m\:col_5 {
+      --col-end: 5;
+    }
+
+    .GridItem_m\:col_6 {
+      --col-end: 6;
+    }
+
+    .GridItem_m\:col_7 {
+      --col-end: 7;
+    }
+
+    .GridItem_m\:col_8 {
+      --col-end: 8;
+    }
+
+    .GridItem_m\:col_9 {
+      --col-end: 9;
+    }
+
+    .GridItem_m\:col_10 {
+      --col-end: 10;
+    }
+
+    .GridItem_m\:col_11 {
+      --col-end: 11;
+    }
+
+    .GridItem_m\:col_12 {
+      --col-end: 12;
+    }
+    .GridItem_m\:colStart_1 {
+      --col-start: 1 / span;
+    }
+
+    .GridItem_m\:colStart_2 {
+      --col-start: 2 / span;
+    }
+
+    .GridItem_m\:colStart_3 {
+      --col-start: 3 / span;
+    }
+
+    .GridItem_m\:colStart_4 {
+      --col-start: 4 / span;
+    }
+
+    .GridItem_m\:colStart_5 {
+      --col-start: 5 / span;
+    }
+
+    .GridItem_m\:colStart_6 {
+      --col-start: 6 / span;
+    }
+
+    .GridItem_m\:colStart_7 {
+      --col-start: 7 / span;
+    }
+
+    .GridItem_m\:colStart_8 {
+      --col-start: 8 / span;
+    }
+
+    .GridItem_m\:colStart_9 {
+      --col-start: 9 / span;
+    }
+
+    .GridItem_m\:colStart_10 {
+      --col-start: 10 / span;
+    }
+
+    .GridItem_m\:colStart_11 {
+      --col-start: 11 / span;
+    }
+
+    .GridItem_m\:colStart_12 {
+      --col-start: 12 / span;
+    }
+    .GridItem_m\:row_1 {
+      --row-end: 1;
+    }
+
+    .GridItem_m\:row_2 {
+      --row-end: 2;
+    }
+
+    .GridItem_m\:row_3 {
+      --row-end: 3;
+    }
+
+    .GridItem_m\:row_4 {
+      --row-end: 4;
+    }
+    .GridItem_m\:rowStart_1 {
+      --row-start: 1 / span;
+    }
+
+    .GridItem_m\:rowStart_2 {
+      --row-start: 2 / span;
+    }
+
+    .GridItem_m\:rowStart_3 {
+      --row-start: 3 / span;
+    }
+
+    .GridItem_m\:rowStart_4 {
+      --row-start: 4 / span;
+    }
+    .GridItem_m\:order_-1 {
+      -webkit-box-ordinal-group: 0;
+          -ms-flex-order: -1;
+              order: -1;
+    }
+
+    .GridItem_m\:order_0 {
+      -webkit-box-ordinal-group: 1;
+          -ms-flex-order: 0;
+              order: 0;
+    }
+
+    .GridItem_m\:order_1 {
+      -webkit-box-ordinal-group: 2;
+          -ms-flex-order: 1;
+              order: 1;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    .GridItem_l\:col_1 {
+      --col-end: 1;
+    }
+
+    .GridItem_l\:col_2 {
+      --col-end: 2;
+    }
+
+    .GridItem_l\:col_3 {
+      --col-end: 3;
+    }
+
+    .GridItem_l\:col_4 {
+      --col-end: 4;
+    }
+
+    .GridItem_l\:col_5 {
+      --col-end: 5;
+    }
+
+    .GridItem_l\:col_6 {
+      --col-end: 6;
+    }
+
+    .GridItem_l\:col_7 {
+      --col-end: 7;
+    }
+
+    .GridItem_l\:col_8 {
+      --col-end: 8;
+    }
+
+    .GridItem_l\:col_9 {
+      --col-end: 9;
+    }
+
+    .GridItem_l\:col_10 {
+      --col-end: 10;
+    }
+
+    .GridItem_l\:col_11 {
+      --col-end: 11;
+    }
+
+    .GridItem_l\:col_12 {
+      --col-end: 12;
+    }
+    .GridItem_l\:colStart_1 {
+      --col-start: 1 / span;
+    }
+
+    .GridItem_l\:colStart_2 {
+      --col-start: 2 / span;
+    }
+
+    .GridItem_l\:colStart_3 {
+      --col-start: 3 / span;
+    }
+
+    .GridItem_l\:colStart_4 {
+      --col-start: 4 / span;
+    }
+
+    .GridItem_l\:colStart_5 {
+      --col-start: 5 / span;
+    }
+
+    .GridItem_l\:colStart_6 {
+      --col-start: 6 / span;
+    }
+
+    .GridItem_l\:colStart_7 {
+      --col-start: 7 / span;
+    }
+
+    .GridItem_l\:colStart_8 {
+      --col-start: 8 / span;
+    }
+
+    .GridItem_l\:colStart_9 {
+      --col-start: 9 / span;
+    }
+
+    .GridItem_l\:colStart_10 {
+      --col-start: 10 / span;
+    }
+
+    .GridItem_l\:colStart_11 {
+      --col-start: 11 / span;
+    }
+
+    .GridItem_l\:colStart_12 {
+      --col-start: 12 / span;
+    }
+    .GridItem_l\:row_1 {
+      --row-end: 1;
+    }
+
+    .GridItem_l\:row_2 {
+      --row-end: 2;
+    }
+
+    .GridItem_l\:row_3 {
+      --row-end: 3;
+    }
+
+    .GridItem_l\:row_4 {
+      --row-end: 4;
+    }
+    .GridItem_l\:rowStart_1 {
+      --row-start: 1 / span;
+    }
+
+    .GridItem_l\:rowStart_2 {
+      --row-start: 2 / span;
+    }
+
+    .GridItem_l\:rowStart_3 {
+      --row-start: 3 / span;
+    }
+
+    .GridItem_l\:rowStart_4 {
+      --row-start: 4 / span;
+    }
+    .GridItem_l\:order_-1 {
+      -webkit-box-ordinal-group: 0;
+          -ms-flex-order: -1;
+              order: -1;
+    }
+
+    .GridItem_l\:order_0 {
+      -webkit-box-ordinal-group: 1;
+          -ms-flex-order: 0;
+              order: 0;
+    }
+
+    .GridItem_l\:order_1 {
+      -webkit-box-ordinal-group: 2;
+          -ms-flex-order: 1;
+              order: 1;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    .GridItem_xl\:col_1 {
+      --col-end: 1;
+    }
+
+    .GridItem_xl\:col_2 {
+      --col-end: 2;
+    }
+
+    .GridItem_xl\:col_3 {
+      --col-end: 3;
+    }
+
+    .GridItem_xl\:col_4 {
+      --col-end: 4;
+    }
+
+    .GridItem_xl\:col_5 {
+      --col-end: 5;
+    }
+
+    .GridItem_xl\:col_6 {
+      --col-end: 6;
+    }
+
+    .GridItem_xl\:col_7 {
+      --col-end: 7;
+    }
+
+    .GridItem_xl\:col_8 {
+      --col-end: 8;
+    }
+
+    .GridItem_xl\:col_9 {
+      --col-end: 9;
+    }
+
+    .GridItem_xl\:col_10 {
+      --col-end: 10;
+    }
+
+    .GridItem_xl\:col_11 {
+      --col-end: 11;
+    }
+
+    .GridItem_xl\:col_12 {
+      --col-end: 12;
+    }
+    .GridItem_xl\:colStart_1 {
+      --col-start: 1 / span;
+    }
+
+    .GridItem_xl\:colStart_2 {
+      --col-start: 2 / span;
+    }
+
+    .GridItem_xl\:colStart_3 {
+      --col-start: 3 / span;
+    }
+
+    .GridItem_xl\:colStart_4 {
+      --col-start: 4 / span;
+    }
+
+    .GridItem_xl\:colStart_5 {
+      --col-start: 5 / span;
+    }
+
+    .GridItem_xl\:colStart_6 {
+      --col-start: 6 / span;
+    }
+
+    .GridItem_xl\:colStart_7 {
+      --col-start: 7 / span;
+    }
+
+    .GridItem_xl\:colStart_8 {
+      --col-start: 8 / span;
+    }
+
+    .GridItem_xl\:colStart_9 {
+      --col-start: 9 / span;
+    }
+
+    .GridItem_xl\:colStart_10 {
+      --col-start: 10 / span;
+    }
+
+    .GridItem_xl\:colStart_11 {
+      --col-start: 11 / span;
+    }
+
+    .GridItem_xl\:colStart_12 {
+      --col-start: 12 / span;
+    }
+    .GridItem_xl\:row_1 {
+      --row-end: 1;
+    }
+
+    .GridItem_xl\:row_2 {
+      --row-end: 2;
+    }
+
+    .GridItem_xl\:row_3 {
+      --row-end: 3;
+    }
+
+    .GridItem_xl\:row_4 {
+      --row-end: 4;
+    }
+    .GridItem_xl\:rowStart_1 {
+      --row-start: 1 / span;
+    }
+
+    .GridItem_xl\:rowStart_2 {
+      --row-start: 2 / span;
+    }
+
+    .GridItem_xl\:rowStart_3 {
+      --row-start: 3 / span;
+    }
+
+    .GridItem_xl\:rowStart_4 {
+      --row-start: 4 / span;
+    }
+    .GridItem_xl\:order_-1 {
+      -webkit-box-ordinal-group: 0;
+          -ms-flex-order: -1;
+              order: -1;
+    }
+
+    .GridItem_xl\:order_0 {
+      -webkit-box-ordinal-group: 1;
+          -ms-flex-order: 0;
+              order: 0;
+    }
+
+    .GridItem_xl\:order_1 {
+      -webkit-box-ordinal-group: 2;
+          -ms-flex-order: 1;
+              order: 1;
+    }
+  }
+
+  @media screen and (min-width: 1920px) {
+    .GridItem_2xl\:col_1 {
+      --col-end: 1;
+    }
+
+    .GridItem_2xl\:col_2 {
+      --col-end: 2;
+    }
+
+    .GridItem_2xl\:col_3 {
+      --col-end: 3;
+    }
+
+    .GridItem_2xl\:col_4 {
+      --col-end: 4;
+    }
+
+    .GridItem_2xl\:col_5 {
+      --col-end: 5;
+    }
+
+    .GridItem_2xl\:col_6 {
+      --col-end: 6;
+    }
+
+    .GridItem_2xl\:col_7 {
+      --col-end: 7;
+    }
+
+    .GridItem_2xl\:col_8 {
+      --col-end: 8;
+    }
+
+    .GridItem_2xl\:col_9 {
+      --col-end: 9;
+    }
+
+    .GridItem_2xl\:col_10 {
+      --col-end: 10;
+    }
+
+    .GridItem_2xl\:col_11 {
+      --col-end: 11;
+    }
+
+    .GridItem_2xl\:col_12 {
+      --col-end: 12;
+    }
+    .GridItem_2xl\:colStart_1 {
+      --col-start: 1 / span;
+    }
+
+    .GridItem_2xl\:colStart_2 {
+      --col-start: 2 / span;
+    }
+
+    .GridItem_2xl\:colStart_3 {
+      --col-start: 3 / span;
+    }
+
+    .GridItem_2xl\:colStart_4 {
+      --col-start: 4 / span;
+    }
+
+    .GridItem_2xl\:colStart_5 {
+      --col-start: 5 / span;
+    }
+
+    .GridItem_2xl\:colStart_6 {
+      --col-start: 6 / span;
+    }
+
+    .GridItem_2xl\:colStart_7 {
+      --col-start: 7 / span;
+    }
+
+    .GridItem_2xl\:colStart_8 {
+      --col-start: 8 / span;
+    }
+
+    .GridItem_2xl\:colStart_9 {
+      --col-start: 9 / span;
+    }
+
+    .GridItem_2xl\:colStart_10 {
+      --col-start: 10 / span;
+    }
+
+    .GridItem_2xl\:colStart_11 {
+      --col-start: 11 / span;
+    }
+
+    .GridItem_2xl\:colStart_12 {
+      --col-start: 12 / span;
+    }
+    .GridItem_2xl\:row_1 {
+      --row-end: 1;
+    }
+
+    .GridItem_2xl\:row_2 {
+      --row-end: 2;
+    }
+
+    .GridItem_2xl\:row_3 {
+      --row-end: 3;
+    }
+
+    .GridItem_2xl\:row_4 {
+      --row-end: 4;
+    }
+    .GridItem_2xl\:rowStart_1 {
+      --row-start: 1 / span;
+    }
+
+    .GridItem_2xl\:rowStart_2 {
+      --row-start: 2 / span;
+    }
+
+    .GridItem_2xl\:rowStart_3 {
+      --row-start: 3 / span;
+    }
+
+    .GridItem_2xl\:rowStart_4 {
+      --row-start: 4 / span;
+    }
+    .GridItem_2xl\:order_-1 {
+      -webkit-box-ordinal-group: 0;
+          -ms-flex-order: -1;
+              order: -1;
+    }
+
+    .GridItem_2xl\:order_0 {
+      -webkit-box-ordinal-group: 1;
+          -ms-flex-order: 0;
+              order: 0;
+    }
+
+    .GridItem_2xl\:order_1 {
+      -webkit-box-ordinal-group: 2;
+          -ms-flex-order: 1;
+              order: 1;
+    }
+  }

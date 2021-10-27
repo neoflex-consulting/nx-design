@@ -1,0 +1,129 @@
+.Pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+  .Pagination_position_left {
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+    }
+
+  .Pagination_position_center {
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+    }
+
+  .Pagination_position_right {
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end;
+    }
+
+  .Pagination_size_xs {
+      --tip-space: var(--control-space-xs);
+    }
+
+  .Pagination_size_s {
+      --tip-space: var(--control-space-s);
+    }
+
+  .Pagination_size_m {
+      --tip-space: var(--control-space-m);
+    }
+
+  .Pagination_size_l {
+      --tip-space: var(--control-space-l);
+    }
+
+  .Pagination-Pages {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .Pagination-NextPage,
+  .Pagination-PrevPage {
+    position: relative;
+  }
+
+  .Pagination-TipRight {
+    position: absolute;
+    left: calc(var(--tip-space) + var(--space-xs));
+  }
+
+  .Pagination-TipLeft {
+    position: absolute;
+    right: calc(var(--tip-space) + var(--space-xs));
+  }
+
+  .Pagination-Item:not(.Pagination-Item_isActive), .Pagination-ItemLeft:not(.Pagination-ItemLeft_isActive), .Pagination-ItemRight:not(.Pagination-ItemRight_isActive) {
+      background-color: unset;
+    }
+
+  .Pagination-Item:hover, .Pagination-ItemLeft:hover, .Pagination-ItemRight:hover {
+      background-color: var(--color-control-bg-ghost-hover);
+    }
+
+  .Pagination-ItemLeft {
+    margin-right: var(--space-xs);
+  }
+
+  .Pagination-ItemRight {
+    margin-left: var(--space-xs);
+  }
+
+  .Pagination-Item {
+    padding: unset;
+  }
+
+  .Pagination-Item:not(:last-child) {
+      margin-right: var(--space-3xs);
+    }
+
+  .Pagination-More {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-right: var(--space-3xs);
+  }
+
+  .Pagination-Input {
+    max-width: var(--space-6xl);
+    margin-right: var(--space-xs);
+  }
+
+  .Pagination-Total {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: var(--color-control-typo-ghost);
+  }
+
+  .Pagination-ItemLeft_minified, .Pagination-ItemRight_minified {
+      z-index: -1;
+      opacity: 0;
+      -webkit-transition: opacity 0.2s;
+      transition: opacity 0.2s;
+    }
+
+  .Pagination:hover .Pagination-ItemLeft_show, .Pagination:hover .Pagination-ItemRight_show {
+        z-index: unset;
+        opacity: 1;
+      }
+
+  .Pagination:hover-ItemLeft_show, .Pagination:hover-ItemRight_show {
+        opacity: 1;
+      }

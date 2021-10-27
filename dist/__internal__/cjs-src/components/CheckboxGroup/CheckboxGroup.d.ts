@@ -1,0 +1,33 @@
+import './CheckboxGroup.css';
+import React from 'react';
+import { PropsWithHTMLAttributesAndRef } from '../../utils/types/PropsWithHTMLAttributes';
+export declare const cnCheckboxGroup: import("@bem-react/classname").ClassNameFormatter;
+export declare const checkboxGroupDirections: readonly ["column", "row"];
+export declare type CheckboxGroupDirection = typeof checkboxGroupDirections[number];
+export declare const checkboxGroupDefaultDirection: CheckboxGroupDirection;
+export declare const checkboxGroupSizes: readonly ["m", "l"];
+export declare type CheckboxGroupPropSize = typeof checkboxGroupSizes[number];
+export declare const checkboxGroupDefaultSize: CheckboxGroupPropSize;
+export declare const checkboxGroupViews: readonly ["primary", "ghost"];
+export declare type CheckboxGroupPropView = typeof checkboxGroupViews[number];
+export declare const checkboxGroupDefaultView: CheckboxGroupPropView;
+declare type CommonProps<ITEM> = {
+    value?: ITEM[] | null;
+    items: ITEM[];
+    getLabel: (item: ITEM) => string;
+    getDisabled?: (item: ITEM) => boolean | undefined;
+    onChange: (props: {
+        e: React.ChangeEvent<HTMLInputElement>;
+        value: ITEM[] | null;
+    }) => void;
+    name?: string;
+    direction?: CheckboxGroupDirection;
+    size?: CheckboxGroupPropSize;
+    view?: CheckboxGroupPropView;
+    disabled?: boolean;
+    className?: string;
+};
+declare type Props<ITEM> = PropsWithHTMLAttributesAndRef<CommonProps<ITEM>, HTMLDivElement>;
+declare type CheckboxGroup = <ITEM>(props: Props<ITEM>) => React.ReactElement | null;
+export declare const CheckboxGroup: CheckboxGroup;
+export {};

@@ -1,0 +1,188 @@
+.Sidebar {
+  --width-min-horizontal: 300px;
+  --width-max-horizontal: 480px;
+  --height-min-vertical: 200px;
+  --height-max-vertical: 380px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+  .Sidebar_position_top {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+    }
+
+  .Sidebar_position_bottom {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end;
+    }
+
+  .Sidebar_position_right {
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end;
+    }
+
+  .Sidebar-Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background: var(--color-bg-tone);
+    border: none;
+  }
+
+  .Sidebar-Window {
+    z-index: 100;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: var(--color-bg-default);
+    -webkit-box-shadow: var(--shadow-modal);
+            box-shadow: var(--shadow-modal);
+  }
+
+  .Sidebar-Window_position_right {
+        min-width: var(--width-min-horizontal);
+        max-width: var(--width-max-horizontal);
+        height: 100vh;
+      }
+
+  .Sidebar-Window_position_bottom {
+        width: 100vw;
+        min-height: var(--height-min-vertical);
+        max-height: var(--height-max-vertical);
+      }
+
+  .Sidebar-Window_position_left {
+        min-width: var(--width-min-horizontal);
+        max-width: var(--width-max-horizontal);
+        height: 100vh;
+      }
+
+  .Sidebar-Window_position_top {
+        width: 100vw;
+        min-height: var(--height-min-vertical);
+        max-height: var(--height-max-vertical);
+      }
+
+  .Sidebar-Content {
+    overflow: auto;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+
+  .Sidebar-Actions {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    border-top: 1px solid var(--color-bg-border);
+  }
+
+  .Sidebar_animate_appear .Sidebar-Overlay, .Sidebar_animate_enter .Sidebar-Overlay, .Sidebar_animate_exit .Sidebar-Overlay, .Sidebar_animate_appearActive .Sidebar-Overlay, .Sidebar_animate_enterActive .Sidebar-Overlay, .Sidebar_animate_exitActive .Sidebar-Overlay {
+          -webkit-transition: opacity 0.2s ease;
+          transition: opacity 0.2s ease;
+        }
+
+  .Sidebar_animate_appear .Sidebar-Window, .Sidebar_animate_enter .Sidebar-Window, .Sidebar_animate_exit .Sidebar-Window, .Sidebar_animate_appearActive .Sidebar-Window, .Sidebar_animate_enterActive .Sidebar-Window, .Sidebar_animate_exitActive .Sidebar-Window {
+          -webkit-transition: -webkit-transform 0.2s ease;
+          transition: -webkit-transform 0.2s ease;
+          transition: transform 0.2s ease;
+          transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+        }
+
+  .Sidebar_animate_appear .Sidebar-Overlay, .Sidebar_animate_enter .Sidebar-Overlay {
+          opacity: 0;
+        }
+
+  .Sidebar_animate_appear .Sidebar-Window_position_right, .Sidebar_animate_enter .Sidebar-Window_position_right {
+              -webkit-transform: translate3d(100%, 0, 0);
+                      transform: translate3d(100%, 0, 0);
+            }
+
+  .Sidebar_animate_appear .Sidebar-Window_position_bottom, .Sidebar_animate_enter .Sidebar-Window_position_bottom {
+              -webkit-transform: translate3d(0, 100%, 0);
+                      transform: translate3d(0, 100%, 0);
+            }
+
+  .Sidebar_animate_appear .Sidebar-Window_position_left, .Sidebar_animate_enter .Sidebar-Window_position_left {
+              -webkit-transform: translate3d(-100%, 0, 0);
+                      transform: translate3d(-100%, 0, 0);
+            }
+
+  .Sidebar_animate_appear .Sidebar-Window_position_top, .Sidebar_animate_enter .Sidebar-Window_position_top {
+              -webkit-transform: translate3d(0, -100%, 0);
+                      transform: translate3d(0, -100%, 0);
+            }
+
+  .Sidebar_animate_appearActive .Sidebar-Overlay, .Sidebar_animate_enterActive .Sidebar-Overlay {
+          opacity: 1;
+        }
+
+  .Sidebar_animate_appearActive .Sidebar-Window_position_right,
+            .Sidebar_animate_appearActive .Sidebar-Window_position_bottom,
+            .Sidebar_animate_appearActive .Sidebar-Window_position_left,
+            .Sidebar_animate_appearActive .Sidebar-Window_position_top,
+            .Sidebar_animate_enterActive .Sidebar-Window_position_right,
+            .Sidebar_animate_enterActive .Sidebar-Window_position_bottom,
+            .Sidebar_animate_enterActive .Sidebar-Window_position_left,
+            .Sidebar_animate_enterActive .Sidebar-Window_position_top {
+              -webkit-transform: translate3d(0, 0, 0);
+                      transform: translate3d(0, 0, 0);
+            }
+
+  .Sidebar_animate_exit .Sidebar-Overlay {
+          opacity: 1;
+        }
+
+  .Sidebar_animate_exit .Sidebar-Window_position_right,
+            .Sidebar_animate_exit .Sidebar-Window_position_bottom,
+            .Sidebar_animate_exit .Sidebar-Window_position_left,
+            .Sidebar_animate_exit .Sidebar-Window_position_top {
+              -webkit-transform: translate3d(0, 0, 0);
+                      transform: translate3d(0, 0, 0);
+            }
+
+  .Sidebar_animate_exitActive .Sidebar-Overlay {
+          opacity: 0;
+        }
+
+  .Sidebar_animate_exitActive .Sidebar-Window_position_right {
+              -webkit-transform: translate3d(100%, 0, 0);
+                      transform: translate3d(100%, 0, 0);
+            }
+
+  .Sidebar_animate_exitActive .Sidebar-Window_position_bottom {
+              -webkit-transform: translate3d(0, 100%, 0);
+                      transform: translate3d(0, 100%, 0);
+            }
+
+  .Sidebar_animate_exitActive .Sidebar-Window_position_left {
+              -webkit-transform: translate3d(-100%, 0, 0);
+                      transform: translate3d(-100%, 0, 0);
+            }
+
+  .Sidebar_animate_exitActive .Sidebar-Window_position_top {
+              -webkit-transform: translate3d(0, -100%, 0);
+                      transform: translate3d(0, -100%, 0);
+            }

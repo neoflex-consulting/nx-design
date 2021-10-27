@@ -1,0 +1,82 @@
+/// <reference types="react" />
+import { ClickOutsideHandler } from '../../hooks/useClickOutside/useClickOutside';
+import { PropsWithHTMLAttributes, PropsWithHTMLAttributesAndRef } from '../../utils/types/PropsWithHTMLAttributes';
+import { Direction, Position } from '../Popover/Popover';
+export declare const contextMenuSizes: readonly ["m", "s", "l"];
+export declare type ContextMenuPropSize = typeof contextMenuSizes[number];
+export declare const contextMenuDefaultSize: ContextMenuPropSize;
+export declare const contextMenuAccent: readonly ["alert", "warning", "success"];
+export declare type ContextMenuAccent = typeof contextMenuAccent[number];
+export declare type ContextMenuPropGetLabel<ITEM> = (item: ITEM) => string | number;
+export declare type ContextMenuPropGetSide<ITEM> = (item: ITEM) => React.ReactNode | null;
+export declare type ContextMenuPropGetSubItems<ITEM> = (item: ITEM) => ITEM[] | undefined;
+export declare type ContextMenuPropGetAccent<ITEM> = (item: ITEM) => ContextMenuAccent | undefined;
+export declare type ContextMenuPropGetGroupId<ITEM> = (item: ITEM) => string | number | undefined;
+export declare type ContextMenuPropGetKey<ITEM> = (item: ITEM) => string | number;
+export declare type ContextMenuPropGetDisable<ITEM> = (item: ITEM) => boolean | undefined;
+export declare type ContextMenuPropGetGroupLabel = (id: string | number | undefined) => string | number | undefined;
+export declare type ContextMenuPropSortGroup = (a: string | number, b: string | number) => number;
+export declare type ContextMenuPropGetOnClick<ITEM> = (item: ITEM) => React.EventHandler<React.MouseEvent<HTMLDivElement>>;
+export declare const contextMenuPropSubMenuDirections: readonly ["rightStartUp", "rightStartDown", "leftStartUp", "leftStartDown"];
+export declare type ContextMenuPropSubMenuDirection = typeof contextMenuPropSubMenuDirections[number];
+export declare const contextMenuPropDefaultSubMenuDirection: ContextMenuPropSubMenuDirection;
+declare type PositioningProps = {
+    anchorRef: React.RefObject<HTMLElement>;
+    position?: never;
+} | {
+    anchorRef?: never;
+    position: Position;
+};
+export declare type ContextMenuProps<ITEM> = PropsWithHTMLAttributesAndRef<{
+    items: ITEM[];
+    getLabel: ContextMenuPropGetLabel<ITEM>;
+    getLeftSideBar?: ContextMenuPropGetSide<ITEM>;
+    getRightSideBar?: ContextMenuPropGetSide<ITEM>;
+    getSubItems?: ContextMenuPropGetSubItems<ITEM>;
+    getGroupId?: ContextMenuPropGetGroupId<ITEM>;
+    getGroupLabel?: ContextMenuPropGetGroupLabel;
+    getAccent?: ContextMenuPropGetAccent<ITEM>;
+    size?: ContextMenuPropSize;
+    sortGroup?: ContextMenuPropSortGroup;
+    getOnClick?: ContextMenuPropGetOnClick<ITEM>;
+    direction?: Direction;
+    possibleDirections?: readonly Direction[];
+    subMenuDirection?: ContextMenuPropSubMenuDirection;
+    getKey?: ContextMenuPropGetKey<ITEM>;
+    getDisabled?: ContextMenuPropGetDisable<ITEM>;
+    offset?: number;
+    onClickOutside?: ClickOutsideHandler;
+    spareDirection?: Direction;
+} & PositioningProps, HTMLDivElement>;
+export declare type AddLevel<ITEM> = (level: number, items: ITEM[], anchorRef: React.RefObject<HTMLElement>, activeItem: string) => void;
+export declare type DeleteLevel = (level: number) => void;
+declare type ContextMenuLevelProps<ITEM> = Omit<ContextMenuProps<ITEM> & {
+    level: number;
+    addLevel: AddLevel<ITEM>;
+    deleteLevel: DeleteLevel;
+    activeItem?: string;
+    onSetDirection?: (direction: Direction) => void;
+    hoveredParenLevel: number;
+    setHoveredParenLevel: (level: number) => void;
+}, 'subMenuDirection' | 'getKey' | 'onClickOutside' | 'isOpen'>;
+export declare type ContextMenuItemProps<ITEM> = PropsWithHTMLAttributes<{
+    label: string | number;
+    rightSide?: React.ReactNode;
+    leftSide?: React.ReactNode;
+    size?: ContextMenuPropSize;
+    active?: boolean;
+    withSubMenu: boolean;
+    accent?: ContextMenuAccent;
+    disabled?: boolean;
+} & React.RefAttributes<HTMLDivElement>, HTMLDivElement>;
+export declare type Level<ITEM> = {
+    items: ITEM[];
+    activeItem?: string;
+    direction?: Direction;
+    possibleDirections?: readonly Direction[];
+    offset?: number;
+} & PositioningProps;
+export declare type ContextMenuItem = <ITEM>(props: ContextMenuItemProps<ITEM>, ref: React.Ref<HTMLElement>) => React.ReactElement | null;
+export declare type ContextMenuType = <ITEM>(props: ContextMenuProps<ITEM>) => React.ReactElement | null;
+export declare type ContextMenuLevelType = <ITEM>(props: ContextMenuLevelProps<ITEM>, ref: React.Ref<HTMLElement>) => React.ReactElement | null;
+export {};

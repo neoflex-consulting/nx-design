@@ -1,0 +1,23 @@
+import './Modal.css';
+import React from 'react';
+declare const modalPropWidth: readonly ["auto"];
+declare type ModalPropWidth = typeof modalPropWidth[number];
+declare const modalPropPosition: readonly ["center", "top"];
+declare type ModalPropPosition = typeof modalPropPosition[number];
+declare type ModalProps = {
+    isOpen?: boolean;
+    onClose?: () => void;
+    onOpen?: () => void;
+    hasOverlay?: boolean;
+    onOverlayClick?: (event: MouseEvent) => void;
+    onClickOutside?: (event: MouseEvent) => void;
+    className?: string;
+    rootClassName?: string;
+    width?: ModalPropWidth;
+    position?: ModalPropPosition;
+    children?: React.ReactNode;
+    container?: HTMLDivElement | undefined;
+    refsForExcludeClickOutside?: React.RefObject<HTMLElement>[];
+};
+export declare const Modal: React.FC<ModalProps>;
+export {};

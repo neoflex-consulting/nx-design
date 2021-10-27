@@ -1,0 +1,37 @@
+import './RadioGroup.css';
+import React from 'react';
+import { PropsWithHTMLAttributesAndRef } from '../../utils/types/PropsWithHTMLAttributes';
+export declare const cnRadioGroup: import("@bem-react/classname").ClassNameFormatter;
+export declare const radioGroupDirections: readonly ["column", "row"];
+export declare type RadioGroupDirection = typeof radioGroupDirections[number];
+export declare const radioGroupDefaultDirection: RadioGroupDirection;
+export declare const radioGroupSizes: readonly ["m", "l"];
+export declare type RadioGroupPropSize = typeof radioGroupSizes[number];
+export declare const radioGroupDefaultSize: RadioGroupPropSize;
+export declare const radioGroupViews: readonly ["primary", "ghost"];
+export declare type RadioGroupPropView = typeof radioGroupViews[number];
+export declare const radioGroupDefaultView: RadioGroupPropView;
+export declare const radioGroupPropAlign: readonly ["center", "top"];
+export declare type RadioGroupPropAlign = typeof radioGroupPropAlign[number];
+export declare const radioGroupPropAlignDefault: RadioGroupPropAlign;
+declare type CommonProps<ITEM> = {
+    align?: RadioGroupPropAlign;
+    value?: ITEM | null;
+    items: ITEM[];
+    getLabel: (item: ITEM) => string;
+    getDisabled?: (item: ITEM) => boolean | undefined;
+    onChange: (props: {
+        e: React.ChangeEvent<HTMLInputElement>;
+        value: ITEM;
+    }) => void;
+    name?: string;
+    direction?: RadioGroupDirection;
+    size?: RadioGroupPropSize;
+    view?: RadioGroupPropView;
+    disabled?: boolean;
+    className?: string;
+};
+declare type Props<ITEM> = PropsWithHTMLAttributesAndRef<CommonProps<ITEM>, HTMLDivElement>;
+declare type RadioGroup = <ITEM>(props: Props<ITEM>) => React.ReactElement | null;
+export declare const RadioGroup: RadioGroup;
+export {};

@@ -1,0 +1,181 @@
+.Switch {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: var(--font-primary);
+  cursor: pointer;
+}
+
+  .Switch_size_s {
+      --box-width: 28px;
+      --box-height: 16px;
+      --switch-font-size: var(--control-text-size-s);
+      --offset: var(--space-xs);
+    }
+
+  .Switch_size_s .Switch-Input::before {
+        -webkit-transform: translateX(-12px);
+                transform: translateX(-12px);
+      }
+
+  .Switch_size_m {
+      --box-width: 36px;
+      --box-height: 20px;
+      --switch-font-size: var(--control-text-size-m);
+      --offset: var(--space-xs);
+    }
+
+  .Switch_size_m .Switch-Input::before {
+        -webkit-transform: translateX(-16px);
+                transform: translateX(-16px);
+      }
+
+  .Switch_size_l {
+      --box-width: 44px;
+      --box-height: 24px;
+      --switch-font-size: var(--control-text-size-l);
+      --offset: var(--space-s);
+    }
+
+  .Switch_size_l .Switch-Input::before {
+        -webkit-transform: translateX(-20px);
+                transform: translateX(-20px);
+      }
+
+  .Switch_view_primary:hover .Switch-Input:not(:checked) {
+        --border-color: var(--color-control-bg-border-default-hover);
+        --background-color: transparent;
+        --content-color: var(--color-control-bg-border-default-hover);
+      }
+
+  .Switch_view_primary .Switch-Input:not(:checked) {
+        --border-color: var(--color-control-bg-border-default);
+        --background-color: transparent;
+        --content-color: var(--color-control-bg-border-default);
+      }
+
+  .Switch_view_primary:hover .Switch-Input:checked {
+        --border-color: var(--color-control-bg-primary-hover);
+        --background-color: var(--color-control-bg-primary-hover);
+        --content-color: var(--color-control-typo-primary-hover);
+      }
+
+  .Switch_view_primary .Switch-Input:checked {
+        --border-color: var(--color-control-bg-primary);
+        --background-color: var(--color-control-bg-primary);
+        --content-color: var(--color-control-typo-primary);
+      }
+
+  .Switch_view_ghost:hover .Switch-Input:not(:checked) {
+        --border-color: var(--color-control-bg-border-default-hover);
+        --background-color: transparent;
+        --content-color: var(--color-control-bg-border-default-hover);
+      }
+
+  .Switch_view_ghost .Switch-Input:not(:checked) {
+        --border-color: var(--color-control-bg-border-default);
+        --background-color: transparent;
+        --content-color: var(--color-control-bg-border-default);
+      }
+
+  .Switch_view_ghost:hover .Switch-Input:checked {
+        --border-color: var(--color-control-bg-border-default-hover);
+        --background-color: var(--color-control-bg-ghost-hover);
+        --content-color: var(--color-control-typo-ghost-hover);
+      }
+
+  .Switch_view_ghost .Switch-Input:checked {
+        --border-color: var(--color-control-bg-border-default);
+        --background-color: var(--color-control-bg-ghost);
+        --content-color: var(--color-control-typo-ghost);
+      }
+
+  .Switch-Input {
+    position: relative;
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: var(--box-width);
+    height: var(--box-height);
+    margin: 0;
+    background-color: var(--background-color);
+    border: var(--control-border-width) solid var(--border-color);
+    border-radius: 99rem;
+    cursor: pointer;
+    -webkit-transition: background-color 0.15s, border-color 0.15s;
+    transition: background-color 0.15s, border-color 0.15s;
+    -webkit-appearance: none;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+
+  .Switch-Input::before {
+      content: '';
+      position: absolute;
+      top: 1px;
+      right: 1px;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      width: calc(var(--box-height) - var(--control-border-width) * 4);
+      height: calc(var(--box-height) - var(--control-border-width) * 4);
+      background-color: var(--content-color);
+      border-radius: 999rem;
+      -webkit-transition: background-color 0.15s, -webkit-transform 0.15s;
+      transition: background-color 0.15s, -webkit-transform 0.15s;
+      transition: transform 0.15s, background-color 0.15s;
+      transition: transform 0.15s, background-color 0.15s, -webkit-transform 0.15s;
+    }
+
+  .Switch-Input:checked {
+      background-color: var(--background-color);
+    }
+
+  .Switch-Input:checked::before {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+      }
+
+  .Switch-Label {
+    margin-left: var(--offset);
+    color: var(--color-control-typo-default);
+    font-size: var(--switch-font-size);
+  }
+
+  .Switch_disabled {
+    pointer-events: none;
+  }
+
+  .Switch_disabled .Switch-Input:not(:checked):disabled {
+      --border-color: var(--color-control-typo-disable);
+      --background-color: transparent;
+      --content-color: var(--color-control-typo-disable);
+    }
+
+  .Switch_disabled .Switch-Input:checked:disabled {
+      --border-color: transparent;
+      --background-color: var(--color-control-bg-disable);
+      --content-color: var(--color-control-typo-disable);
+      background-color: var(--background-color);
+      border-color: transparent;
+    }
+
+  .Switch_disabled .Switch-Input:disabled ~ .Switch-Label {
+      color: var(--color-control-typo-disable);
+    }
+
+  .Switch_align_center {
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+    }
+
+  .Switch_align_top {
+      -webkit-box-align: top;
+          -ms-flex-align: top;
+              align-items: top;
+    }
+
+  .Switch_align_top .Switch-Input {
+        margin-top: 1px;
+      }

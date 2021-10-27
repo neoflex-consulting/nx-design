@@ -1,0 +1,27 @@
+.ContextMenuGroupHeader {
+  --top-space: 0;
+  --bottom-space: 0;
+  margin: 0 var(--space-s);
+  padding: var(--top-space) 0 var(--bottom-space) 0;
+  border-bottom: solid var(--control-border-width) var(--color-control-bg-border-default);
+  letter-spacing: 0.05em;
+}
+
+  .ContextMenuGroupHeader_size_s {
+      --top-space: var(--space-xs);
+      --bottom-space: var(--space-2xs);
+    }
+
+  .ContextMenuGroupHeader_size_m {
+      --top-space: var(--space-s);
+      --bottom-space: var(--space-xs);
+    }
+
+  .ContextMenuGroupHeader_size_l {
+      --top-space: var(--space-s);
+      --bottom-space: var(--space-s);
+    }
+
+  .ContextMenuGroupHeader_first {
+    padding: calc(var(--top-space) - var(--space-xs)) 0 var(--bottom-space) 0;
+  }

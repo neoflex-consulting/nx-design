@@ -1,0 +1,68 @@
+.Responses {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+  .Responses_size_m {
+      --title-size: var(--size-text-xl);
+      --description-size: var(--size-text-s);
+      --image-width: 300px;
+    }
+
+  .Responses_size_l {
+      --title-size: var(--size-text-2xl);
+      --description-size: var(--size-text-m);
+      --image-width: 420px;
+    }
+
+  .Responses-Title {
+    max-width: 350px;
+    margin-top: var(--space-xl);
+    margin-bottom: 0;
+    color: var(--color-typo-primary);
+    font-size: var(--title-size);
+    font-weight: var(--font-weight-text-semibold);
+    line-height: var(--line-height-text-xs);
+    text-align: center;
+  }
+
+  .Responses-Description {
+    max-width: 350px;
+    margin-top: var(--space-xs);
+    margin-bottom: 0;
+    color: var(--color-typo-ghost);
+    font-size: var(--description-size);
+    line-height: var(--line-height-text-xs);
+    text-align: center;
+  }
+
+  .Responses .Responses-Image {
+    width: 100%;
+    max-width: var(--image-width);
+  }
+
+  .Responses-ButtonsWrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: var(--space-2xl);
+  }
+
+  .Responses-Button:not(:last-child) {
+    margin-right: var(--space-xs);
+  }

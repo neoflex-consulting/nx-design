@@ -1,0 +1,130 @@
+.UserSelectItem {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: var(--vertical-space) var(--horizontal-space);
+  color: var(--color-control-typo-default);
+  background-color: var(--color-control-bg-clear);
+  font-size: var(--font-size);
+  cursor: pointer;
+}
+
+  .UserSelectItem_size_s {
+      --horizontal-space: calc(var(--control-space-s) * 0.5);
+      --vertical-space: calc(var(--control-space-s) * 0.25);
+      --font-size: var(--control-text-size-s);
+      --sub-info-space: var(--space-xs);
+      --sub-label-font-size: var(--size-text-2xs);
+    }
+
+  .UserSelectItem_size_m {
+      --horizontal-space: calc(var(--control-space-m) * 0.5);
+      --vertical-space: calc(var(--control-space-s) * 0.5);
+      --font-size: var(--control-text-size-m);
+      --sub-info-space: var(--space-s);
+      --sub-label-font-size: var(--size-text-xs);
+    }
+
+  .UserSelectItem_size_l {
+      --horizontal-space: calc(var(--control-space-l) * 0.5);
+      --vertical-space: calc(var(--control-space-s) * 0.5);
+      --font-size: var(--control-text-size-l);
+      --sub-info-space: var(--space-s);
+      --sub-label-font-size: var(--size-text-s);
+    }
+
+  .UserSelectItem_disable {
+    color: var(--color-control-typo-disable);
+  }
+
+  .UserSelectItem_hovered {
+    background-color: var(--color-control-bg-clear-hover);
+  }
+
+  .UserSelectItem_active {
+    color: var(--color-control-typo-secondary);
+  }
+
+  .UserSelectItem_indent_increased {
+      padding-left: calc(var(--horizontal-space) * 2.6);
+    }
+
+  .UserSelectItem-AvatarContainer {
+    position: relative;
+  }
+
+  .UserSelectItem-CheckIcon {
+    position: absolute;
+    right: calc(var(--space-2xs) * -1);
+    bottom: calc(var(--space-2xs) * -1);
+    width: var(--graphics-size-xs);
+    height: var(--graphics-size-xs);
+    padding: 0;
+    color: var(--color-control-bg-default);
+    background-color: var(--color-control-bg-primary);
+    border: 1px solid var(--color-control-bg-default);
+    border-radius: 50%;
+  }
+
+  .UserSelectItem-CheckIcon_animate_appear,
+      .UserSelectItem-CheckIcon_animate_appearActive,
+      .UserSelectItem-CheckIcon_animate_appearDone,
+      .UserSelectItem-CheckIcon_animate_enter,
+      .UserSelectItem-CheckIcon_animate_enterActive,
+      .UserSelectItem-CheckIcon_animate_enterDone,
+      .UserSelectItem-CheckIcon_animate_exit,
+      .UserSelectItem-CheckIcon_animate_exitActive,
+      .UserSelectItem-CheckIcon_animate_exitDone {
+        -webkit-transition: 0.2s ease;
+        transition: 0.2s ease;
+        -webkit-transition-property: opacity, -webkit-transform;
+        transition-property: opacity, -webkit-transform;
+        transition-property: opacity, transform;
+        transition-property: opacity, transform, -webkit-transform;
+      }
+
+  .UserSelectItem-CheckIcon_animate_appear,
+      .UserSelectItem-CheckIcon_animate_enter {
+        opacity: 0;
+        -webkit-transform: scale(0.25);
+                transform: scale(0.25);
+      }
+
+  .UserSelectItem-CheckIcon_animate_enterActive,
+      .UserSelectItem-CheckIcon_animate_appearActive,
+      .UserSelectItem-CheckIcon_animate_appearDone,
+      .UserSelectItem-CheckIcon_animate_enterDone {
+        opacity: 1;
+        -webkit-transform: scale(1);
+                transform: scale(1);
+      }
+
+  .UserSelectItem-CheckIcon_animate_exit {
+        opacity: 1;
+        -webkit-transform: scale(1);
+                transform: scale(1);
+      }
+
+  .UserSelectItem-CheckIcon_animate_exitActive,
+      .UserSelectItem-CheckIcon_animate_exitDone {
+        opacity: 0;
+        -webkit-transform: scale(0.25);
+                transform: scale(0.25);
+      }
+
+  .UserSelectItem-Info {
+    padding-left: var(--sub-info-space);
+  }
+
+  .UserSelectItem-SubLabel {
+    opacity: 0.7;
+    font-size: var(--sub-label-font-size);
+  }
+
+  .UserSelectItem-SubLabel_disable {
+      opacity: 1;
+    }

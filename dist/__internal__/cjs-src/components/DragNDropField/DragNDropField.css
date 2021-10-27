@@ -1,0 +1,34 @@
+.DragNDropField {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-height: 160px;
+  padding: var(--space-l);
+  background: var(--color-control-bg-clear);
+  border: 2px dashed var(--color-control-bg-border-default);
+  border-radius: var(--control-radius);
+  cursor: pointer;
+}
+
+  .DragNDropField:hover {
+    background: var(--color-control-bg-clear-hover);
+    border-color: var(--color-control-bg-border-default-hover);
+  }
+
+  .DragNDropField_active {
+    background: var(--color-control-bg-clear-hover);
+    border-color: var(--color-control-bg-border-focus);
+  }

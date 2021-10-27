@@ -1,0 +1,24 @@
+import { RefObject } from 'react';
+export declare const sizes: readonly ["xs", "s", "m", "l"];
+export declare type PropSize = typeof sizes[number];
+export declare const DefaultPropSize: PropSize;
+export declare const form: readonly ["default", "brick", "round", "clearRound", "roundClear", "clearDefault", "defaultClear", "defaultBrick", "brickDefault", "brickClear", "clearBrick", "clearClear"];
+export declare type PropForm = typeof form[number];
+export declare const DefaultPropForm: PropForm;
+export declare const view: readonly ["default", "clear"];
+export declare type PropView = typeof view[number];
+export declare const DefaultPropView: PropView;
+export declare type CommonSelectProps<ITEM> = {
+    options: ITEM[];
+    id: string;
+    placeholder?: string;
+    ariaLabel?: string;
+    getOptionLabel(arg: ITEM): string;
+    getOptionKey?(arg: ITEM): string | number;
+    onBlur?: (event?: React.FocusEvent<HTMLInputElement>) => void;
+    onFocus?: (event?: React.FocusEvent<HTMLInputElement>) => void;
+    children?: never;
+    dropdownClassName?: string;
+    dropdownRef?: RefObject<HTMLDivElement>;
+    name?: string;
+};

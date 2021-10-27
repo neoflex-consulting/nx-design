@@ -1,0 +1,57 @@
+.TabsFitModeScrollWrapper {
+  --list-padding: var(--space-xs);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+  .TabsFitModeScrollWrapper-Content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow-x: scroll;
+
+    /* Чтобы overflow не обрезал обводку фокуса */
+    margin: calc(-1 * var(--list-padding));
+    padding: var(--list-padding);
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    scrollbar-width: none;
+  }
+
+  .TabsFitModeScrollWrapper-Content::-webkit-scrollbar:horizontal {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+
+  .TabsFitModeScrollWrapper-Content::-webkit-scrollbar-thumb:horizontal {
+      display: none;
+    }
+
+  .TabsFitModeScrollWrapper-Button {
+    --button-margin: var(--space-2xs);
+    --button-inner-margin: calc(var(--button-margin) + var(--list-padding));
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    margin: 0 var(--button-margin);
+  }
+
+  .TabsFitModeScrollWrapper-Button_to_prev {
+      margin-right: var(--button-inner-margin);
+    }
+
+  .TabsFitModeScrollWrapper-Button_to_next {
+      -webkit-box-ordinal-group: 2;
+          -ms-flex-order: 1;
+              order: 1;
+      margin-left: var(--button-inner-margin);
+    }
+
+  .TabsFitModeScrollWrapper-Tab_noMargin {
+      margin-right: 0;
+    }

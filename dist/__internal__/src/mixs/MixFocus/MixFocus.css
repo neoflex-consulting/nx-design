@@ -1,0 +1,49 @@
+.MixFocus:not(.MixFocus_before):focus,
+  .MixFocus:not(.MixFocus_before):focus:hover,
+  .MixFocus:not(.MixFocus_before)[class*='_focus'],
+  .MixFocus:not(.MixFocus_before)[class*='_focus']:hover,
+  .MixFocus_before:focus::before,
+  .MixFocus_before:focus:hover::before,
+  .MixFocus_before[class*='_focus']::before,
+  .MixFocus_before[class*='_focus']:hover::before {
+    outline: none;
+
+    /* box-shadow: -2px -2px 4px var(--color-control-bg-focus); */
+
+    /* animation: Animation--MixFocus 0.5s ease-in; */
+  }
+  .MixFocus:not(.MixFocus_before):focus:active,
+  .MixFocus:not(.MixFocus_before):focus:active:hover,
+  .MixFocus:not(.MixFocus_before)[class*='_focus']:active,
+  .MixFocus:not(.MixFocus_before)[class*='_focus']:active:hover,
+  .MixFocus_before:focus:active::before,
+  .MixFocus_before:focus:active:hover::before,
+  .MixFocus_before[class*='_focus']:active::before,
+  .MixFocus_before[class*='_focus']:active:hover::before {
+    -webkit-animation-name: none !important;
+            animation-name: none !important;
+  }
+
+@-webkit-keyframes Animation--MixFocus {
+  from {
+    -webkit-box-shadow: 0 0 0 0 var(--color-control-bg-focus), 0 0 0 0 var(--color-control-bg-active);
+            box-shadow: 0 0 0 0 var(--color-control-bg-focus), 0 0 0 0 var(--color-control-bg-active);
+  }
+
+  to {
+    -webkit-box-shadow: 0 0 0 3px var(--color-control-bg-focus), 0 0 0 6px transparent;
+            box-shadow: 0 0 0 3px var(--color-control-bg-focus), 0 0 0 6px transparent;
+  }
+}
+
+@keyframes Animation--MixFocus {
+  from {
+    -webkit-box-shadow: 0 0 0 0 var(--color-control-bg-focus), 0 0 0 0 var(--color-control-bg-active);
+            box-shadow: 0 0 0 0 var(--color-control-bg-focus), 0 0 0 0 var(--color-control-bg-active);
+  }
+
+  to {
+    -webkit-box-shadow: 0 0 0 3px var(--color-control-bg-focus), 0 0 0 6px transparent;
+            box-shadow: 0 0 0 3px var(--color-control-bg-focus), 0 0 0 6px transparent;
+  }
+}

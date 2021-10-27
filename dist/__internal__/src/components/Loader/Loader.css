@@ -1,0 +1,70 @@
+.Loader {
+  --backgroundColor: var(--loaderBackgroundColor, var(--color-control-bg-primary));
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: calc(100% - var(--loader-size));
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+  .Loader::before {
+    content: '';
+    position: absolute;
+    top: calc(50% - (var(--loader-size) * 0.5));
+    left: calc(50% - (var(--loader-size) * 2.5));
+    width: var(--loader-size);
+    height: var(--loader-size);
+    background: var(--backgroundColor);
+    border-radius: 50%;
+    -webkit-animation: loader 1s ease infinite;
+            animation: loader 1s ease infinite;
+  }
+
+  .Loader::after {
+    content: '';
+    position: absolute;
+    top: calc(50% - (var(--loader-size) * 0.5));
+    left: calc(50% + (var(--loader-size) * 1.5));
+    width: var(--loader-size);
+    height: var(--loader-size);
+    background: var(--backgroundColor);
+    border-radius: 50%;
+    -webkit-animation: loader 1s -0.36s ease infinite;
+            animation: loader 1s -0.36s ease infinite;
+  }
+
+  .Loader-Dot {
+    position: absolute;
+    top: calc(50% - (var(--loader-size) * 0.5));
+    left: calc(50% - (var(--loader-size) * 0.5));
+    width: var(--loader-size);
+    height: var(--loader-size);
+    background: var(--backgroundColor);
+    border-radius: 50%;
+    -webkit-animation: loader 1s -0.18s ease infinite;
+            animation: loader 1s -0.18s ease infinite;
+  }
+
+  .Loader_size_s {
+      --loader-size: 4px;
+    }
+
+  .Loader_size_m {
+      --loader-size: 8px;
+    }
+
+@-webkit-keyframes loader {
+  50% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+
+@keyframes loader {
+  50% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}

@@ -1,0 +1,9 @@
+.Steps {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+  .Steps-Item:not(:last-child) {
+      margin-right: var(--space-xs);
+    }

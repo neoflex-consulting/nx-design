@@ -1,0 +1,156 @@
+.Tooltip {
+  --tooltip-bg-color: var(--color-bg-default);
+  --tooltip-bg-opacity: 0.9;
+
+  /* Задаются через js */
+  --tooltip-arrow-size: 0;
+  --tooltip-arrow-offset: 0;
+  position: relative;
+}
+
+  .Tooltip_status_alert {
+      --tooltip-bg-color: var(--color-bg-alert);
+    }
+
+  .Tooltip_status_warning {
+      --tooltip-bg-color: var(--color-bg-warning);
+    }
+
+  .Tooltip_status_success {
+      --tooltip-bg-color: var(--color-bg-success);
+    }
+
+  .Tooltip_status_normal {
+      --tooltip-bg-color: var(--color-bg-normal);
+    }
+
+  .Tooltip[class*='status'] {
+    --tooltip-bg-opacity: 1;
+  }
+
+  .Tooltip[class*='status'] .Tooltip-Content {
+      text-shadow: 0 0 2px rgba(var(--color-nums-shadow), 0.16);
+    }
+
+  /* Фон отдельным элементом, чтобы можно было добавить ему opacity */
+
+  .Tooltip-Background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: var(--tooltip-bg-color);
+    border-radius: var(--control-radius);
+    opacity: var(--tooltip-bg-opacity);
+    -webkit-box-shadow: var(--shadow-layer);
+            box-shadow: var(--shadow-layer);
+  }
+
+  .Tooltip-Content {
+    position: relative; /* чтобы отображаться над фоном */
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    padding: var(--space-xs);
+  }
+
+  .Tooltip-Content_size_s {
+      max-width: 150px;
+    }
+
+  .Tooltip-Content_size_m {
+      max-width: 260px;
+    }
+
+  .Tooltip-Content_size_l {
+      max-width: 400px;
+    }
+
+  .Tooltip-Arrow {
+    position: absolute;
+    border: var(--tooltip-arrow-size) solid transparent;
+    opacity: var(--tooltip-bg-opacity);
+  }
+
+  .Tooltip-Arrow_direction_upLeft,
+    .Tooltip-Arrow_direction_upCenter,
+    .Tooltip-Arrow_direction_upRight,
+    .Tooltip-Arrow_direction_upStartLeft,
+    .Tooltip-Arrow_direction_upStartRight {
+      bottom: 0;
+      border-top-color: var(--tooltip-bg-color);
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+
+  .Tooltip-Arrow_direction_upLeft,
+    .Tooltip-Arrow_direction_downLeft,
+    .Tooltip-Arrow_direction_downStartRight,
+    .Tooltip-Arrow_direction_upStartRight {
+      right: var(--tooltip-arrow-offset);
+    }
+
+  .Tooltip-Arrow_direction_upCenter,
+    .Tooltip-Arrow_direction_downCenter {
+      left: calc(50% - var(--tooltip-arrow-size));
+    }
+
+  .Tooltip-Arrow_direction_upRight,
+    .Tooltip-Arrow_direction_downRight,
+    .Tooltip-Arrow_direction_downStartLeft,
+    .Tooltip-Arrow_direction_upStartLeft {
+      left: var(--tooltip-arrow-offset);
+    }
+
+  .Tooltip-Arrow_direction_downLeft,
+    .Tooltip-Arrow_direction_downCenter,
+    .Tooltip-Arrow_direction_downRight,
+    .Tooltip-Arrow_direction_downStartLeft,
+    .Tooltip-Arrow_direction_downStartRight {
+      top: 0;
+      border-bottom-color: var(--tooltip-bg-color);
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+
+  .Tooltip-Arrow_direction_rightUp,
+    .Tooltip-Arrow_direction_rightCenter,
+    .Tooltip-Arrow_direction_rightDown,
+    .Tooltip-Arrow_direction_rightStartUp,
+    .Tooltip-Arrow_direction_rightStartDown {
+      left: 0;
+      border-right-color: var(--tooltip-bg-color);
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+
+  .Tooltip-Arrow_direction_rightUp,
+    .Tooltip-Arrow_direction_leftUp,
+    .Tooltip-Arrow_direction_leftStartDown,
+    .Tooltip-Arrow_direction_rightStartDown {
+      bottom: var(--tooltip-arrow-offset);
+    }
+
+  .Tooltip-Arrow_direction_rightCenter,
+    .Tooltip-Arrow_direction_leftCenter {
+      top: calc(50% - var(--tooltip-arrow-size));
+    }
+
+  .Tooltip-Arrow_direction_rightDown,
+    .Tooltip-Arrow_direction_leftDown,
+    .Tooltip-Arrow_direction_leftStartUp,
+    .Tooltip-Arrow_direction_rightStartUp {
+      top: var(--tooltip-arrow-offset);
+    }
+
+  .Tooltip-Arrow_direction_leftUp,
+    .Tooltip-Arrow_direction_leftCenter,
+    .Tooltip-Arrow_direction_leftDown,
+    .Tooltip-Arrow_direction_leftStartUp,
+    .Tooltip-Arrow_direction_leftStartDown {
+      right: 0;
+      border-left-color: var(--tooltip-bg-color);
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }

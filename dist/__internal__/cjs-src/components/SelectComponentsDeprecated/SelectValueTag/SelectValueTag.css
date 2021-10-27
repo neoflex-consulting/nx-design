@@ -1,0 +1,64 @@
+.SelectValueTagDeprecated {
+  margin-right: calc(var(--space-xs) / 2);
+  margin-bottom: calc(var(--space-xs) / 2);
+}
+
+  .SelectValueTagDeprecated .TagBase-Label {
+    word-break: break-word;
+  }
+
+  .SelectValueTagDeprecated_size_xs,
+    .SelectValueTagDeprecated_size_s {
+      margin-top: calc(var(--space-xs) / 2 - calc(var(--control-border-width) * 4));
+      margin-bottom: calc(var(--space-xs) / 2 - calc(var(--control-border-width) * 3));
+    }
+
+  .SelectValueTagDeprecated_disabled {
+    opacity: 0.8;
+  }
+
+  .SelectValueTagDeprecated_animate_appear,
+    .SelectValueTagDeprecated_animate_appearActive,
+    .SelectValueTagDeprecated_animate_appearDone,
+    .SelectValueTagDeprecated_animate_enter,
+    .SelectValueTagDeprecated_animate_enterActive,
+    .SelectValueTagDeprecated_animate_enterDone,
+    .SelectValueTagDeprecated_animate_exit,
+    .SelectValueTagDeprecated_animate_exitActive,
+    .SelectValueTagDeprecated_animate_exitDone {
+      -webkit-transition: 0.2s ease;
+      transition: 0.2s ease;
+      -webkit-transition-property: opacity, -webkit-transform;
+      transition-property: opacity, -webkit-transform;
+      transition-property: opacity, transform;
+      transition-property: opacity, transform, -webkit-transform;
+    }
+
+  .SelectValueTagDeprecated_animate_appear,
+    .SelectValueTagDeprecated_animate_enter,
+    .SelectValueTagDeprecated_animate_enterActive,
+    .SelectValueTagDeprecated_animate_appearActive {
+      opacity: 0;
+      -webkit-transform: translateY(var(--transition-spase));
+              transform: translateY(var(--transition-spase));
+    }
+
+  .SelectValueTagDeprecated_animate_appearDone,
+    .SelectValueTagDeprecated_animate_enterDone {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+
+  .SelectValueTagDeprecated_animate_exit {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+
+  .SelectValueTagDeprecated_animate_exitActive,
+    .SelectValueTagDeprecated_animate_exitDone {
+      opacity: 0;
+      -webkit-transform: translateY(var(--transition-spase));
+              transform: translateY(var(--transition-spase));
+    }

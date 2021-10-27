@@ -1,0 +1,78 @@
+.SelectItem {
+  --text-color: var(--color-control-typo-default);
+  position: relative;
+  padding: var(--vertical-space) var(--horizontal-space);
+  color: var(--text-color);
+  background-color: var(--color-control-bg-clear);
+  font-size: var(--font-size);
+  cursor: pointer;
+}
+
+  .SelectItem_size_xs {
+      --horizontal-space: calc(var(--control-space-xs) * 0.5);
+      --vertical-space: calc(var(--control-space-s) * 0.25);
+      --font-size: var(--control-text-size-xs);
+    }
+
+  .SelectItem_size_s {
+      --horizontal-space: calc(var(--control-space-s) * 0.5);
+      --vertical-space: calc(var(--control-space-s) * 0.25);
+      --font-size: var(--control-text-size-s);
+    }
+
+  .SelectItem_size_m {
+      --horizontal-space: calc(var(--control-space-m) * 0.5);
+      --vertical-space: calc(var(--control-space-s) * 0.5);
+      --font-size: var(--control-text-size-m);
+    }
+
+  .SelectItem_size_l {
+      --horizontal-space: calc(var(--control-space-l) * 0.5);
+      --vertical-space: calc(var(--control-space-s) * 0.5);
+      --font-size: var(--control-text-size-l);
+    }
+
+  .SelectItem_hovered {
+    background-color: var(--color-control-bg-clear-hover);
+  }
+
+  .SelectItem_active {
+    --text-color: var(--color-control-typo-secondary);
+  }
+
+  .SelectItem_disabled {
+    --text-color: var(--color-control-typo-disable);
+  }
+
+  .SelectItem_multiple {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .SelectItem_indent_increased {
+      padding-left: calc(var(--horizontal-space) * 2.6);
+    }
+
+  .SelectItem:not(.SelectItem_multiple)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: transparent;
+    -webkit-transition: background-color 0.2s ease-in;
+    transition: background-color 0.2s ease-in;
+  }
+
+  .SelectItem:not(.SelectItem_multiple).SelectItem_active::before {
+    background-color: var(--text-color);
+  }
+
+  .SelectItem-Checkbox {
+    margin-right: var(--space-xs);
+  }
