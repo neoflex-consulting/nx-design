@@ -35,7 +35,7 @@ const copyPackageJson = async (distPaths) => {
   const pack = await readJSON('package.json');
   delete pack.devDependencies;
   delete pack.jest;
-  delete pack.husky;
+  // delete pack.husky;
   delete pack.scripts;
   delete pack.browserslist;
   delete pack['lint-staged'];
