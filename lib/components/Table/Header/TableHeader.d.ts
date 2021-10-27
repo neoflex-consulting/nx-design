@@ -1,0 +1,28 @@
+import './TableHeader.css';
+import React from 'react';
+import { FieldSelectedValues, Filters, SelectedFilters } from '../filtering';
+import { Header } from '../helpers';
+import { ColumnMetaData, HeaderVerticalAlign, TableColumn, TableRow } from '../Table';
+export declare const levelTypes: readonly ["high", "low", "default"];
+export declare type LevelType = typeof levelTypes[number];
+declare type Props<T extends TableRow> = {
+    isStickyHeader: boolean;
+    headersWithMetaData: Array<Header<T> & ColumnMetaData>;
+    headerRowsHeights: Array<number>;
+    headerRowsRefs: React.MutableRefObject<Record<number, HTMLDivElement | null>>;
+    getStickyLeftOffset: (columnIndex: number, topHeaderGridIndex: number) => number | undefined;
+    stickyColumnsGrid: number;
+    showVerticalCellShadow: boolean;
+    headerVerticalAlign: HeaderVerticalAlign;
+    getSortIcon: (column: Header<T>) => React.FC;
+    handleSortClick: (column: TableColumn<T>) => void;
+    handleFilterTogglerClick: (id: string) => () => void;
+    handleTooltipSave: (field: string, tooltipSelectedFilters: FieldSelectedValues, value?: any) => void;
+    filters: Filters<T> | undefined;
+    visibleFilter: string | null;
+    selectedFilters: SelectedFilters;
+    showHorizontalCellShadow: boolean;
+    borderBetweenColumns: boolean;
+};
+export declare const TableHeader: <T extends TableRow>({ isStickyHeader, headersWithMetaData, headerRowsHeights, headerRowsRefs, getStickyLeftOffset, stickyColumnsGrid, showVerticalCellShadow, headerVerticalAlign, getSortIcon, handleSortClick, handleFilterTogglerClick, handleTooltipSave, filters, visibleFilter, selectedFilters, showHorizontalCellShadow, borderBetweenColumns, }: Props<T>) => React.ReactElement;
+export {};

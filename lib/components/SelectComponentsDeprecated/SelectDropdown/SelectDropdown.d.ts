@@ -1,0 +1,37 @@
+import './SelectDropdown.css';
+import React from 'react';
+import { GetOptionPropsResult, Option, OptionProps } from '../../../hooks/useSelectDeprecated/useSelect';
+import { PropsWithHTMLAttributes } from '../../../utils/types/PropsWithHTMLAttributes';
+import { PropsWithJsxAttributes } from '../../../utils/types/PropsWithJsxAttributes';
+import { PropSize } from '../types';
+export declare const selectDropdownform: readonly ["default", "brick", "round"];
+export declare type SelectDropdownPropForm = typeof selectDropdownform[number];
+export declare const defaultSelectDropdownPropForm: "default";
+export declare type RenderItemProps<ITEM> = PropsWithHTMLAttributes<{
+    item: ITEM;
+    id: string;
+    active: boolean;
+    hovered: boolean;
+}, HTMLDivElement>;
+declare type Props<ITEM> = PropsWithJsxAttributes<{
+    size: PropSize;
+    id: string;
+    controlRef: React.MutableRefObject<HTMLDivElement | null>;
+    dropdownRef: React.MutableRefObject<HTMLDivElement | null>;
+    visibleOptions: Option<ITEM>[];
+    highlightedIndex: number;
+    getOptionProps(props: OptionProps): GetOptionPropsResult;
+    onCreate?(newLabel: string): void;
+    inputValue?: string;
+    hasGroup?: boolean;
+    selectedValues: ITEM[] | null;
+    labelForCreate?: string;
+    labelForNotFound?: string;
+    getOptionKey(option: ITEM): string | number;
+    form?: SelectDropdownPropForm;
+    isOpen: boolean;
+    renderItem: (props: RenderItemProps<ITEM>) => JSX.Element | null;
+}>;
+declare type SelectDropdown = <ITEM>(props: Props<ITEM>) => React.ReactElement | null;
+export declare const SelectDropdown: SelectDropdown;
+export {};
