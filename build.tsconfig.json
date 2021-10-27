@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "outDir": "lib",
     "declaration": true,
     "noImplicitAny": true,
     "lib": ["dom", "esnext", "ES2015"],
