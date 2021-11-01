@@ -10,6 +10,7 @@
   "dependencies": {
     "@bem-react/classname": "^1.5.8",
     "@bem-react/classnames": "^1.3.9",
+    "@consta/uikit": "^3.9.0",
     "compute-scroll-into-view": "^1.0.14",
     "date-fns": "^2.17.0",
     "focus-trap-react": "8.7.0",
@@ -22,7 +23,10 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
-  "files": [],
+  "files": [
+    "lib",
+    "dist"
+  ],
   "publishConfig": {
     "access": "public"
   },
@@ -164,7 +168,8 @@
   "description": "Consta — дизайн-система для разработки интерфейсов, написана на [React](https://reactjs.org/), сделана и поддерживается в «Газпром нефти».",
   "main": ".eslintrc.js",
   "directories": {
-    "doc": "docs"
+    "doc": "docs",
+    "lib": "lib"
   },
   "repository": {
     "type": "git",
