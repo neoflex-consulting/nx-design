@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ResponsesImageConnectionError } from '../../responsesImages/ResponsesImageConnectionError/ResponsesImageConnectionError';
-import { Button } from '../Button/Button';
+import { Button } from '../index';
 import { createResponses } from '../Responses/createResponses';
 
 export const ResponsesConnectionError = createResponses({

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { cn } from '../../../utils/bem';
 import { PropsWithJsxAttributes } from '../../../utils/types/PropsWithJsxAttributes';
-import { Button } from '../../Button/Button';
+import { Button } from '../../index';
 import { User, UserPropStatus } from '../../User/User';
 
 export const cnHeaderLogin = cn('HeaderLogin');

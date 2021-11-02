@@ -31,4 +31,5 @@ export declare type Props = {
     children?: never;
 };
 export declare const cnButton: import("@bem-react/classname").ClassNameFormatter;
-export declare const Button: import("../../utils/types/PropsWithAsAttributes").ComponentWithAs<Props, "button">;
+declare const Button: import("../../utils/types/PropsWithAsAttributes").ComponentWithAs<Props, "button">;
+export default Button;

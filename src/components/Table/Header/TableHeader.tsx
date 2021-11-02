@@ -3,7 +3,7 @@ import './TableHeader.css';
 import React from 'react';
 
 import { cn } from '../../../utils/bem';
-import { Button } from '../../Button/Button';
+import { Button } from '../../index';
 import { TableCell } from '../Cell/TableCell';
 import { FieldSelectedValues, Filters, getOptionsForFilters, SelectedFilters } from '../filtering';
 import { TableFilterTooltip } from '../FilterTooltip/TableFilterTooltip';

@@ -68,7 +68,7 @@ const sizeMapOnlyIcon: Record<ButtonPropSize, IconPropSize> = {
   l: 'm',
 };
 
-export const Button = forwardRefWithAs<Props, 'button'>((props, ref) => {
+const Button = forwardRefWithAs<Props, 'button'>((props, ref) => {
   const {
     size = buttonPropSizeDefault,
     view = buttonPropViewDefault,
@@ -145,3 +145,5 @@ export const Button = forwardRefWithAs<Props, 'button'>((props, ref) => {
     </Tag>
   );
 });
+
+export default Button

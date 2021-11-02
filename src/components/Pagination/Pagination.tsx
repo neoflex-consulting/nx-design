@@ -6,7 +6,7 @@ import { IconBackward } from '../../icons/IconBackward/IconBackward';
 import { IconForward } from '../../icons/IconForward/IconForward';
 import { cn } from '../../utils/bem';
 import { PropsWithHTMLAttributesAndRef } from '../../utils/types/PropsWithHTMLAttributes';
-import { Button } from '../Button/Button';
+import { Button } from '../index';
 import { Text } from '../Text/Text';
 import { TextField, TextFieldOnChangeArguments } from '../TextField/TextField';
 

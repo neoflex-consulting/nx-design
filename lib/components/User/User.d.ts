@@ -12,6 +12,9 @@ export declare type UserPropWidth = typeof userPropWidth[number];
 export declare const userPropWidthDefault: UserPropWidth;
 export declare const userPropStatus: readonly ["available", "remote", "out"];
 export declare type UserPropStatus = typeof userPropStatus[number];
+export declare const buttonPropSize: readonly ["xs", "s", "m", "l"];
+export declare type ButtonPropSize = typeof buttonPropSize[number];
+export declare const buttonPropSizeDefault: ButtonPropSize;
 declare type Props = {
     avatarUrl?: string;
     name?: string;

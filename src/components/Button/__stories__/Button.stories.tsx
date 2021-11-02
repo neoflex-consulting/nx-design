@@ -11,7 +11,6 @@ import {
   EventInterceptorProvider,
 } from '../../EventInterceptor/EventInterceptor';
 import {
-  Button,
   buttonPropForm,
   buttonPropFormDefault,
   buttonPropSize,
@@ -21,6 +20,8 @@ import {
   buttonPropWidth,
   buttonPropWidthDefault,
 } from '../Button';
+
+import { Button } from '../../index';
 
 import mdx from './Button.docs.mdx';
 

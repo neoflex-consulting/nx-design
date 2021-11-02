@@ -5,7 +5,7 @@ import React from 'react';
 import { IconForward } from '../../../icons/IconForward/IconForward';
 import { cn } from '../../../utils/bem';
 import { PropsWithJsxAttributes } from '../../../utils/types/PropsWithJsxAttributes';
-import { Button } from '../../Button/Button';
+import {Button} from '../../index';
 import { CalendarMonthLabel } from '../CalendarMonthLabel/CalendarMonthLabel';
 
 export type CalendarMonthTogglerProps = PropsWithJsxAttributes<
