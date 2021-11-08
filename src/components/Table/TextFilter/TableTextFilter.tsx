@@ -4,7 +4,7 @@ import React, { useMemo, useState } from 'react';
 
 import { IconSearch } from '../../../icons/IconSearch/IconSearch';
 import { cn } from '../../../utils/bem';
-import { Button } from '../../index';
+import { Button } from '../../Button/Button';
 import { CheckboxGroup } from '../../CheckboxGroup/CheckboxGroup';
 import { Text } from '../../Text/Text';
 import { TextField } from '../../TextField/TextField';

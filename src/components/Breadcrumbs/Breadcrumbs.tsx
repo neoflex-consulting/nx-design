@@ -7,7 +7,7 @@ import { IconArrowRight } from '../../icons/IconArrowRight/IconArrowRight';
 import { cn } from '../../utils/bem';
 import { getSizeByMap } from '../../utils/getSizeByMap';
 import { PropsWithHTMLAttributesAndRef } from '../../utils/types/PropsWithHTMLAttributes';
-import {Button} from '../index';
+import { Button } from '../Button/Button';
 
 export const breadcrumbPropSize = ['m', 'xs', 's', 'l'] as const;
 export type BreadcrumbPropSize = typeof breadcrumbPropSize[number];

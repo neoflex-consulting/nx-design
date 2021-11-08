@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { cn } from '../../../utils/bem';
-import { Button } from '../../index';
+import { Button } from '../../Button/Button';
 
 export const cnHeaderButton = cn('HeaderButton');
 

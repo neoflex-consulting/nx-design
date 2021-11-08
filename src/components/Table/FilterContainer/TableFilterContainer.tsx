@@ -3,7 +3,7 @@ import './TableFilterContainer.css';
 import React from 'react';
 
 import { cn } from '../../../utils/bem';
-import { Button } from '../../index';
+import { Button } from '../../Button/Button';
 import { Text } from '../../Text/Text';
 
 const cnTableFilterContainer = cn('TableFilterContainer');

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ResponsesImageEmptyBox } from '../../responsesImages/ResponsesImageEmptyBox/ResponsesImageEmptyBox';
-import { Button } from '../index';
+import { Button } from '../Button/Button';
 import { createResponses } from '../Responses/createResponses';
 
 export const ResponsesEmptyBox = createResponses({

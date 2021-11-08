@@ -6,7 +6,7 @@ import { IconCheck } from '../../icons/IconCheck/IconCheck';
 import { getSizeByMap } from '../../utils/getSizeByMap';
 import { setRef } from '../../utils/setRef';
 import { PropsWithHTMLAttributesAndRef } from '../../utils/types/PropsWithHTMLAttributes';
-import { Button } from '../index';
+import { Button } from '../Button/Button';
 import { ContextMenu } from '../ContextMenu/ContextMenu';
 import { ContextMenuPropSize } from '../ContextMenu/helpers';
 import { Direction } from '../Popover/Popover';

@@ -5,7 +5,7 @@ import React from 'react';
 import { IconProps } from '../../icons/Icon/Icon';
 import { cn } from '../../utils/bem';
 import { forwardRefWithAs } from '../../utils/types/PropsWithAsAttributes';
-import {Button} from '../index';
+import { Button } from '../Button/Button';
 import { File } from '../File/File';
 import { Text } from '../Text/Text';
 

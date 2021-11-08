@@ -5,7 +5,7 @@ import React from 'react';
 import { IconArrowDown } from '../../../icons/IconArrowDown/IconArrowDown';
 import { IconArrowUp } from '../../../icons/IconArrowUp/IconArrowUp';
 import { cn } from '../../../utils/bem';
-import { Button } from '../../index';
+import { Button } from '../../Button/Button';
 
 export type Props = {
   level: number;

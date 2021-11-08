@@ -2,7 +2,7 @@ import './SnackBar-ActionButton.css';
 
 import React from 'react';
 
-import { Button } from '../../index';
+import { Button } from '../../Button/Button';
 import { cnSnackBar, SnackBarPropItemAction } from '../SnackBar';
 
 export type SnackBarActionButtonProps = {

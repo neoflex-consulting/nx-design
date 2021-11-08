@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ResponsesImage403 } from '../../responsesImages/ResponsesImage403/ResponsesImage403';
-import { Button } from '../index';
+import { Button } from '../Button/Button';
 import { createResponses } from '../Responses/createResponses';
 
 export const Responses403 = createResponses({

@@ -5,7 +5,7 @@ import React from 'react';
 import { IconClose } from '../../../icons/IconClose/IconClose';
 import { cn } from '../../../utils/bem';
 import { isNotNil } from '../../../utils/type-guards';
-import { Button } from '../../index';
+import { Button } from '../../Button/Button';
 import { Tag } from '../../Tag/Tag';
 
 const cnTableSelectedOptionsList = cn('TableSelectedOptionsList');

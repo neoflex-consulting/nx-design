@@ -4,7 +4,7 @@ import React from 'react';
 
 import { IconFunnel } from '../../../icons/IconFunnel/IconFunnel';
 import { cn } from '../../../utils/bem';
-import { Button } from '../../index';
+import { Button } from '../../Button/Button';
 import { Popover } from '../../Popover/Popover';
 import { Text } from '../../Text/Text';
 

@@ -4,7 +4,7 @@ import React from 'react';
 
 import { IconAttach } from '../../../icons/IconAttach/IconAttach';
 import { cn } from '../../../utils/bem';
-import { Button } from '../../index';
+import { Button } from '../../Button/Button';
 import { Text } from '../../Text/Text';
 import { DragNDropFieldChildrenRenderProp } from '../DragNDropField';
 

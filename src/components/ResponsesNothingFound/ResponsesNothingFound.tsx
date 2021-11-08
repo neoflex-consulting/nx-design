@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ResponsesImageNothingFound } from '../../responsesImages/ResponsesImageNothingFound/ResponsesImageNothingFound';
-import { Button } from '../index';
+import { Button } from '../Button/Button';
 import { createResponses } from '../Responses/createResponses';
 
 export const ResponsesNothingFound = createResponses({

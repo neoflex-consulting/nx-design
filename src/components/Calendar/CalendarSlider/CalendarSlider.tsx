@@ -18,7 +18,7 @@ import { range } from '../../../utils/array';
 import { cn } from '../../../utils/bem';
 import { DateRange } from '../../../utils/types/Date';
 import { PropsWithHTMLAttributes } from '../../../utils/types/PropsWithHTMLAttributes';
-import {Button} from '../../index';
+import { Button } from '../../Button/Button';
 import { Text } from '../../Text/Text';
 
 export type CalendarSliderProps = PropsWithHTMLAttributes<
