@@ -6,7 +6,7 @@ import FocusTrap from 'focus-trap-react';
 import { useForkRef } from '../../../hooks/useForkRef/useForkRef';
 import { IconMeatball } from '../../../icons/IconMeatball/IconMeatball';
 import { cn } from '../../../utils/bem';
-import { Button } from '../../Button/Button';
+import { Button } from '../../index';
 import { Popover } from '../../Popover/Popover';
 import { TabsPropGetLabel } from '../Tabs';
 

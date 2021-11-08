@@ -7,7 +7,7 @@ import { useScrollPosition } from '../../../hooks/useScrollPosition/useScrollPos
 import { IconArrowLeft } from '../../../icons/IconArrowLeft/IconArrowLeft';
 import { IconArrowRight } from '../../../icons/IconArrowRight/IconArrowRight';
 import { cn } from '../../../utils/bem';
-import { Button } from '../../Button/Button';
+import { Button } from '../../index';
 import { getTabsWidth, TabsFitModeWrapperProps } from '../helpers';
 
 import { getVisibleTabsRange } from './helpers';

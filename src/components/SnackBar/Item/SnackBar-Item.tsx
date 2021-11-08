@@ -4,7 +4,7 @@ import './SnackBar-Item.css';
 import React, { useEffect, useState } from 'react';
 
 import { IconClose } from '../../../icons/IconClose/IconClose';
-import { Button } from '../../Button/Button';
+import { Button } from '../../index';
 import { Text } from '../../Text/Text';
 import { cnTheme } from '../../Theme/Theme';
 import { SnackBarActionButton } from '../ActionButton/SnackBar-ActionButton';

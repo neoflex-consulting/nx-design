@@ -8,7 +8,7 @@ import { cn } from '../../utils/bem';
 import { getSizeByMap } from '../../utils/getSizeByMap';
 import { forwardRefWithAs } from '../../utils/types/PropsWithAsAttributes';
 import { Avatar } from '../Avatar/Avatar';
-import { Button, ButtonPropSize } from '../Button/Button';
+import {Button} from '../index';
 import { Text, TextPropSize } from '../Text/Text';
 
 export const userPropSize = ['m', 's', 'l'] as const;
@@ -25,6 +25,10 @@ export const userPropWidthDefault: UserPropWidth = userPropWidth[0];
 
 export const userPropStatus = ['available', 'remote', 'out'] as const;
 export type UserPropStatus = typeof userPropStatus[number];
+
+export const buttonPropSize = ['xs', 's', 'm', 'l'] as const;
+export type ButtonPropSize = typeof buttonPropSize[number];
+export const buttonPropSizeDefault: ButtonPropSize = buttonPropSize[2];
 
 type Props = {
   avatarUrl?: string;
