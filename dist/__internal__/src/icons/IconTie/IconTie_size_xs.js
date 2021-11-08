@@ -1,7 +1,0 @@
-import { __assign } from "tslib";
-import * as React from 'react';
-function IconTieSizeXs(props) {
-    return (React.createElement("svg", __assign({ viewBox: "0 0 12 12" }, props),
-        React.createElement("path", { d: "M7.5 0h-4l1.1 2.2-2.1 6.3 3 2.5 3-2.5-2.1-6.3L7.5 0z", fillRule: "evenodd", clipRule: "evenodd" })));
-}
-export default IconTieSizeXs;

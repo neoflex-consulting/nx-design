@@ -1,9 +1,0 @@
-.CalendarViewTwoMonths {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-  .CalendarViewTwoMonths-Calendar:not(:last-child) {
-      margin-right: var(--space-m);
-    }

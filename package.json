@@ -1,6 +1,6 @@
 {
   "name": "nx-design",
-  "version": "1.2.12",
+  "version": "1.2.13",
   "keywords": [
     "ui-kit",
     "design-system",
@@ -168,8 +168,7 @@
   "description": "Consta — дизайн-система для разработки интерфейсов, написана на [React](https://reactjs.org/), сделана и поддерживается в «Газпром нефти».",
   "main": ".eslintrc.js",
   "directories": {
-    "doc": "docs",
-    "lib": "lib"
+    "doc": "docs"
   },
   "repository": {
     "type": "git",

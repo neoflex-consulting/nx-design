@@ -453,7 +453,7 @@ const generateReExports = (
   distPath,
   componentFolder = 'components',
 ) =>
-  fg([join(src, componentFolder, '**')], { ignore }).then(async (files) => {
+  fg((src + '/' + componentFolder.toString() + '/**' ), { ignore }).then(async (files) => {
     const packPath = join(distPath, 'package.json');
     const pack = await readJSON(packPath);
     const components = new Map();
@@ -463,7 +463,7 @@ const generateReExports = (
       .sort()
       .filter((fileName) => fileName.match(/\.tsx?$/))
       .forEach((fileName) => {
-        const filePath = fileName.replace(normalize(src), '');
+        const filePath = fileName.replace(src, '');
         const entityName = filePath.replace(`/${componentFolder}/`, '');
 
         const { cell } = nestedModernMatch(entityName);
