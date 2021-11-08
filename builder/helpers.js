@@ -69,7 +69,7 @@ const transformCSS = async (ignore, src, distPaths, options) => {
     for (const distPath of distPaths) {
       const newPath = resolve(distPath, relative(src, fileName));
       await ensureDir(dirname(newPath));
-      writeFile(newPath, processedCss);
+      writeFile(newPath, processedCss.toString());
     }
   });
 };

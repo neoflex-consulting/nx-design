@@ -42,7 +42,7 @@
     "format:svg": "prettier --write '**/*.svg' --parser html",
     "pre-push": "yarn run tsc-dry-run",
     "pre-commit": "yarn run lint-staged",
-    "build": "rm -rf dist && node builder/build.js --config=./build.config.js",
+    "build": "node builder/build.js --config=./build.config.js",
     "pre-build": "node builder/preBuild.js --config=./build.config.js",
     "test": "yarn lint && yarn tsc-dry-run && yarn unit",
     "unit": "jest",
