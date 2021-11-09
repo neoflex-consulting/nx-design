@@ -522,13 +522,13 @@ const generateReExports = (
             filePath: relative(
               join(platformDir, 'index'),
               join(blockDir, distEsSrc, filePath.replace(/\.tsx?$/, '')),
-            ),
+            ).replaceAll('\\','/'),
           });
           const exportCJSTemplate = getCJSExportTemplate({
             filePath: relative(
               join(platformDir, 'index'),
               join(blockDir, distSrc, filePath.replace(/\.tsx?$/, '')),
-            ),
+            ).replaceAll('\\','/'),
           });
 
           reExportsES.push(exportESMTemplate);
@@ -552,11 +552,11 @@ const generateReExports = (
           const cjsFilePath = relative(
             join(bundleDir, 'index'),
             join(blockDir, distSrc, platformPath),
-          );
+          ).replaceAll('\\','/');
           const esmFilePath = relative(
             join(bundleDir, 'index'),
             join(blockDir, distEsSrc, platformPath),
-          );
+          ).replaceAll('\\','/');
 
           const bundleCJS = [];
           const bundleESM = [];
