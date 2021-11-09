@@ -6,15 +6,15 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 #### Установите пакет
 
-`yarn add @consta/uikit` или `npm install @consta/uikit`
+`yarn add nx-design` или `npm install nx-design`
 
 #### Подключите тему
 
-Тему обязательно нужно подключать в корне приложения, так, чтобы все компоненты `@consta/uikit` были вложены в компонент `Theme`.
+Тему обязательно нужно подключать в корне приложения, так, чтобы все компоненты `nx-design` были вложены в компонент `Theme`.
 
 ```tsx
-import { Theme, presetGpnDefault } from '@consta/uikit/Theme';
-import { Button } from '@consta/uikit/Button';
+import { Theme, presetGpnDefault } from 'nx-design/Theme';
+import { Button } from 'nx-design/Button';
 
 const App = () => (
   <Theme preset={presetGpnDefault}>
