@@ -14,6 +14,7 @@ import {
   ButtonExampleViewGhost,
   ButtonExampleViewClear,
   ButtonExampleViewDisabled,
+  ButtonExampleViewLink
 } from './examples/ButtonExampleView/ButtonExampleView';
 import {
   ButtonExampleFormBasic,
@@ -88,7 +89,7 @@ import { ButtonExampleLoading } from './examples/ButtonExampleLoading/ButtonExam
 
 ### Типы кнопок
 
-Всего в дизайн-системе четыре типа кнопок: `primary`, `secondary`, `ghost` и `clear`. Этого обычно хватает, чтобы расставить
+Всего в дизайн-системе четыре типа кнопок: `primary`, `secondary`, `ghost`, `clear` и `link`. Этого обычно хватает, чтобы расставить
 акценты пользовательских действий на странице.
 
 За тип кнопки отвечает свойство [view](#список-свойств).
@@ -140,6 +141,18 @@ import { ButtonExampleLoading } from './examples/ButtonExampleLoading/ButtonExam
 ```
 
 <ButtonExampleViewClear />
+
+#### `link`
+
+Это полноценная кнопка с прозрачным фоном и подчеркиванием при наведении. Используйте её, когда необходимо добавить ссылку на другой компонент или страницу. Также эти кнопки удобно использовать в Paginator, при переключении между страницами.
+
+```ts
+<Button label="Ссылка" view="link" />
+<Button label="Назад" view="link" iconLeft={IconCopy} />
+<Button label="Сохранить" view="link" iconLeft={IconBookmarkStroked} onlyIcon />
+```
+
+<ButtonExampleViewLink />
 
 #### `disabled`
 
@@ -257,7 +270,7 @@ import { ButtonExampleLoading } from './examples/ButtonExampleLoading/ButtonExam
 | Свойство                         | Тип или варианты значения                                                                 | По умолчанию              | Описание                                                                         |
 | -------------------------------- | ----------------------------------------------------------------------------------------- | ------------------------- | -------------------------------------------------------------------------------- |
 | [`label`](#текст-на-кнопке)      | `string`                                                                                  | -                         | Текст на кнопке                                                                  |
-| [`view`](#внешний-вид)           | `'clear', 'primary', 'secondary', 'ghost'`                                                | `primary`                 | Внешний вид                                                                      |
+| [`view`](#внешний-вид)           | `'clear', 'primary', 'secondary', 'ghost', 'link`                                         | `primary`                 | Внешний вид                                                                      |
 | [`disabled`](#disabled)          | `boolean`                                                                                 | `false`                   | Блокировка кнопки                                                                |
 | [`size`](#размер)                | `'xs', 's', 'm', 'l'`                                                                     | `m`                       | Размер                                                                           |
 | [`width`](#размер)               | `'full', 'default'`                                                                       | `default`                 | Ширина                                                                           |

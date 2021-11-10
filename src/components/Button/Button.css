@@ -150,6 +150,17 @@
         color: var(--color-control-bg-border-disable);
       }
     }
+
+    &_link {
+       --color-hover: var(--color-control-typo-link-hover);
+       color: var(--color-control-typo-link);
+       background-color: var(--color-control-bg-link);
+
+      &:hover {
+         text-decoration: underline;
+       }
+    }
+
   }
 
   &_disabled,

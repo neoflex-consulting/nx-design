@@ -77,6 +77,22 @@ export function ButtonExampleViewClear() {
   );
 }
 
+export function ButtonExampleViewLink() {
+  return (
+    <div className={cnDocsDecorator('Section', [wp.decorator({ distribute: 'left' })])}>
+      <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
+        <Button view="link" label="Ссылка" />
+      </div>
+      <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
+        <Button view="link" label="Назад" iconLeft={IconCopy} />
+      </div>
+      <div className={cnDocsExample()}>
+        <Button view="link" label="Сохранить" iconLeft={IconBookmarkStroked} onlyIcon />
+      </div>
+    </div>
+  );
+}
+
 export function ButtonExampleViewDisabled() {
   return (
     <div className={cnDocsDecorator('Section', [wp.decorator({ distribute: 'left' })])}>
