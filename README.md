@@ -25,13 +25,13 @@ Consta — дизайн-система для разработки интерф�
 ## Установите пакет
 
 ```
-yarn add @consta/uikit
+yarn add nx-design
 ```
 
 ## Сборка пакета
 
 ```
-npx tsc --project build.tsconfig.json
+yarn build
 ```
 
 ## Начните работу с библиотекой
@@ -39,8 +39,8 @@ npx tsc --project build.tsconfig.json
 Чтобы начать работу с библиотекой интерфейсных компонентов, подключите тему:
 
 ```tsx
-import { Theme, presetGpnDefault } from '@consta/uikit/Theme';
-import { Button } from '@consta/uikit/Button';
+import { Theme, presetGpnDefault } from 'nx-design/Theme';
+import { Button } from 'nx-design/Button';
 
 const App = () => (
   <Theme preset={presetGpnDefault}>

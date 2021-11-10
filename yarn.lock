@@ -1410,22 +1410,6 @@
     resolve-from "^5.0.0"
     resolve-global "^1.0.0"
 
-"@consta/uikit@^3.9.0":
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/@consta/uikit/-/uikit-3.9.0.tgz#3ec583412441af012eceecd96f32b39fc88a43bc"
-  integrity sha512-3rkuWKeNVJ6gz/oz24eXgsvCNp+f3RcJWWGcIJ7OGKEndF+Wh2OvxbkwZ0N/pcZh//xrlfCcJ2DZU0xNTrggFg==
-  dependencies:
-    "@bem-react/classname" "^1.5.8"
-    "@bem-react/classnames" "^1.3.9"
-    compute-scroll-into-view "^1.0.14"
-    date-fns "^2.17.0"
-    focus-trap-react "8.7.0"
-    imask "^6.2.2"
-    react-dropzone "11.3.4"
-    react-textarea-autosize "^7.1.2"
-    react-transition-group "^4.4.1"
-    tslib "^2.1.0"
-
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
@@ -9085,11 +9069,6 @@ ignore@^5.0.6:
   version "5.1.8"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.1.8.tgz#f150a8b50a34289b33e22f5889abd4d8016f0e57"
   integrity sha512-BMpfD7PpiETpBl/A6S498BaIJ6Y/ABT93ETbby2fP00v4EbvPBXWEoaR1UBPKs3iR53pJY7EtZk5KACI57i1Uw==
-
-imask@^6.2.2:
-  version "6.2.2"
-  resolved "https://registry.yarnpkg.com/imask/-/imask-6.2.2.tgz#c72c0ce9a52f57539ecdc264eccc2407d20e13b5"
-  integrity sha512-oREITqngsjD0YxO62UpVQSxLNjIcb/mNO9hX2F8xQ282Kj3X9KXEAobipbUXz5R5NgtiL6nOPrWwo+AnLuz5AQ==
 
 immer@1.10.0:
   version "1.10.0"
