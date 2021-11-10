@@ -1,6 +1,6 @@
 {
   "name": "nx-design",
-  "version": "1.2.14",
+  "version": "1.2.16",
   "keywords": [
     "ui-kit",
     "design-system",
@@ -20,13 +20,10 @@
     "tslib": "^2.1.0"
   },
   "peerDependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
-  "files": [
-    "lib",
-    "dist"
-  ],
+  "files": [],
   "publishConfig": {
     "access": "public"
   },
