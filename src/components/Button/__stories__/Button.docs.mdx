@@ -29,6 +29,7 @@ import {
   ButtonExampleIconOnly,
 } from './examples/ButtonExampleIcon/ButtonExampleIcon';
 import { ButtonExampleLoading } from './examples/ButtonExampleLoading/ButtonExampleLoading';
+import { ButtonExampleReactNode } from './examples/ButtonExampleReactNode/ButtonExampleReactNode';
 
 # Button
 
@@ -265,11 +266,30 @@ import { ButtonExampleLoading } from './examples/ButtonExampleLoading/ButtonExam
 
 <ButtonExampleLoading />
 
+### ReactNode на кнопке
+
+Для отображения расчетного значения на кнопке, используйте ReactNode в label.
+Например: Отображение перевода через i18n. Добавление Link.
+
+```ts
+<Button label={t('create')} {{ width: '260px' }} />
+<Button
+    view={'link'}
+    style={{marginRight:'10px'}}
+    label= {
+    <Link to={'/mypage'}>
+      <NeoIcon className={'changeToDevelopButton'} icon={"play-c"} color={'white'} />
+    </Link>}
+/>
+```
+
+<ButtonExampleReactNode />
+
 ## Список свойств
 
 | Свойство                         | Тип или варианты значения                                                                 | По умолчанию              | Описание                                                                         |
 | -------------------------------- | ----------------------------------------------------------------------------------------- | ------------------------- | -------------------------------------------------------------------------------- |
-| [`label`](#текст-на-кнопке)      | `string`                                                                                  | -                         | Текст на кнопке                                                                  |
+| [`label`](#текст-на-кнопке)      | `string`, `number`, `React.ReactNode`                                                     | -                         | Текст на кнопке                                                                  |
 | [`view`](#внешний-вид)           | `'clear', 'primary', 'secondary', 'ghost', 'link'                                         | `primary`                 | Внешний вид                                                                      |
 | [`disabled`](#disabled)          | `boolean`                                                                                 | `false`                   | Блокировка кнопки                                                                |
 | [`size`](#размер)                | `'xs', 's', 'm', 'l'`                                                                     | `m`                       | Размер                                                                           |

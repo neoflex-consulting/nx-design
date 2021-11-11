@@ -42,7 +42,7 @@ export type Props = {
   tabIndex?: number;
   disabled?: boolean;
   loading?: boolean;
-  label?: string | number;
+  label?: string | number | React.ReactNode;
   onClick?: React.EventHandler<React.MouseEvent>;
   iconLeft?: React.FC<IconProps>;
   iconRight?: React.FC<IconProps>;
