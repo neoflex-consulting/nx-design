@@ -6,16 +6,16 @@ import {
   Text,
   textPropAlign,
   textPropCursor,
-  textPropDecoration,
+  // textPropDecoration,
   textPropDisplay,
-  textPropFont,
-  textPropFontStyle,
-  textPropLineHeight,
+  // textPropFont,
+  // textPropFontStyle,
+  // textPropLineHeight,
   textPropSize,
   textPropSizeDefault,
   textPropSpacing,
   textPropTransform,
-  textPropType,
+  // textPropType,
   textPropView,
   textPropViewDefault,
   textPropWeight,
@@ -24,40 +24,40 @@ import {
 import mdx from './Text.docs.mdx';
 
 const defaultKnobs = () => ({
-  as: select('as', ['p', 'div', 'a', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'], undefined),
+  // as: select('as', ['p', 'div', 'a', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'], undefined),
   align: select('align', ['', ...textPropAlign], ''),
   cursor: select('cursor', ['', ...textPropCursor], ''),
-  decoration: select('decoration', ['', ...textPropDecoration], ''),
+  // decoration: select('decoration', ['', ...textPropDecoration], ''),
   display: select('display', ['', ...textPropDisplay], ''),
-  font: select('font', textPropFont, 'primary'),
-  lineHeight: select('lineHeight', ['', ...textPropLineHeight], ''),
+  // font: select('font', textPropFont, 'primary'),
+  // lineHeight: select('lineHeight', ['', ...textPropLineHeight], ''),
   size: select('size', textPropSize, textPropSizeDefault),
   spacing: select('spacing', ['', ...textPropSpacing], ''),
-  fontStyle: select('fontStyle', ['', ...textPropFontStyle], ''),
+  // fontStyle: select('fontStyle', ['', ...textPropFontStyle], ''),
   transform: select('transform', ['', ...textPropTransform], ''),
-  type: select('type', ['', ...textPropType], ''),
+  // type: select('type', ['', ...textPropType], ''),
   view: select('View', textPropView, textPropViewDefault),
   weight: select('weight', ['', ...textPropWeight], ''),
   text: text(
     'Content',
-    'Чтобы человек захотел это прочитать, у него должна быть очень веская причина. Может быть, его заставили. Может быть, это модный автор, и все друзья уже прочитали. Может быть, где-то здесь в тексте решение его насущной проблемы. Или он просто устроился в кресле, чтобы познакомиться с классной книгой. В любом случае нужна веская причина. Сам по себе этот текст ничем не привлекает.',
+    'Удобство работы с системой на разных устройствах напрямую связано с выбором шрифта. Мы применяем шрифт Roboto из общедоступной библиотеки Google Fonts. Это позволяет адаптировать шрифт и отслеживать его поведение на устройствах. Применение начертаний шрифта зависит от его стилевой направленности. Мы взяли такие начертания как: Light, Regular, Medium, Bold. Послдений применяется очень редко и в тех случаях когда надо подчеркнуть основную мысль или ключевую фразу.',
   ),
 });
 
 export function Playground() {
   const {
-    as,
+    // as,
     align,
     cursor,
-    decoration,
+    // decoration,
     display,
-    font,
-    lineHeight,
+    // font,
+    // lineHeight,
     size,
     spacing,
-    fontStyle,
+    // fontStyle,
     transform,
-    type,
+    // type,
     view,
     weight,
     text,
@@ -65,18 +65,18 @@ export function Playground() {
 
   return (
     <Text
-      as={as}
+      // as={as}
       align={align || undefined}
       cursor={cursor || undefined}
-      decoration={decoration || undefined}
+      // decoration={decoration || undefined}
       display={display || undefined}
-      font={font}
-      lineHeight={lineHeight || undefined}
+      // font={font}
+      // lineHeight={lineHeight || undefined}
       size={size}
       spacing={spacing || undefined}
-      fontStyle={fontStyle || undefined}
+      // fontStyle={fontStyle || undefined}
       transform={transform || undefined}
-      type={type || undefined}
+      // type={type || undefined}
       view={view || undefined}
       weight={weight || undefined}
     >

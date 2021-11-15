@@ -1,5 +1,5 @@
 .Text {
-  &_font {
+  /* &_font {
     &_primary {
       font-family: var(--font-primary);
     }
@@ -7,8 +7,8 @@
     &_mono {
       font-family: var(--font-mono);
     }
-  }
-
+  } */
+  font-family: var(--font-primary);
   &_align {
     &_center {
       text-align: center;
@@ -50,52 +50,38 @@
   }
 
   &_size {
-    &_2xs {
-      font-size: var(--size-text-2xs);
+    &_h1 {
+      font-size: var(--size-text-h1);
+      line-height: 68px
     }
 
-    &_xs {
-      font-size: var(--size-text-xs);
+    &_h2 {
+      font-size: var(--size-text-h2);
+      line-height: 40px
     }
 
-    &_s {
-      font-size: var(--size-text-s);
+    &_h3 {
+      font-size: var(--size-text-h3);
+      line-height: 24px
     }
 
-    &_m {
-      font-size: var(--size-text-m);
+    &_h4 {
+      font-size: var(--size-text-h4);
+      line-height: 24px
     }
 
-    &_l {
-      font-size: var(--size-text-l);
+    &_body {
+      font-size: var(--size-text-body);
+      line-height: 20px
     }
 
-    &_xl {
-      font-size: var(--size-text-xl);
-    }
-
-    &_2xl {
-      font-size: var(--size-text-2xl);
-    }
-
-    &_3xl {
-      font-size: var(--size-text-3xl);
-    }
-
-    &_4xl {
-      font-size: var(--size-text-4xl);
-    }
-
-    &_5xl {
-      font-size: var(--size-text-5xl);
-    }
-
-    &_6xl {
-      font-size: var(--size-text-6xl);
+    &_caption {
+      font-size: var(--size-text-caption);
+      line-height: 16px
     }
   }
 
-  &_lineHeight {
+  /* &_lineHeight {
     &_xs {
       line-height: var(--line-height-text-xs);
     }
@@ -115,7 +101,7 @@
     &_l {
       line-height: var(--line-height-text-l);
     }
-  }
+  } */
 
   &_spacing {
     &_xs {
@@ -147,7 +133,7 @@
     }
   }
 
-  &_type {
+  /* &_type {
     &_blockquote {
       margin-bottom: var(--space-l);
       margin-left: var(--space-4xl);
@@ -168,7 +154,7 @@
         margin-bottom: 0;
       }
     }
-  }
+  } */
 
   &_view {
     &_alert {

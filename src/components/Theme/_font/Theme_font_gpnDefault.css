@@ -1,6 +1,6 @@
 .Theme_font_gpnDefault {
   --font-primary: 'Roboto', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Oxygen', 'Ubuntu',
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  --font-mono: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-  font-family: var(--font-primary);
+  --font-mono: 'Roboto', sans-serif;
+  font-family: unset;
 }

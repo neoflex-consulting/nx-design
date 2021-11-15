@@ -11,40 +11,35 @@ export type TextPropAlign = typeof textPropAlign[number];
 export const textPropDisplay = ['block', 'inlineBlock', 'inline'] as const;
 export type TextPropDisplay = typeof textPropDisplay[number];
 
-export const textPropFont = ['primary', 'mono'] as const;
-export type TextPropFont = typeof textPropFont[number];
+// export const textPropFont = ['primary', 'mono'] as const;
+// export type TextPropFont = typeof textPropFont[number];
 
 export const textPropCursor = ['pointer'] as const;
 export type TextPropCursor = typeof textPropCursor[number];
 
-export const textPropDecoration = ['underline'] as const;
-export type TextPropDecoration = typeof textPropDecoration[number];
+// export const textPropDecoration = ['underline'] as const;
+// export type TextPropDecoration = typeof textPropDecoration[number];
 
-export const textPropLineHeight = ['2xs', 'xs', 's', 'm', 'l'] as const;
-export type TextPropLineHeight = typeof textPropLineHeight[number];
-export const textPropLineHeightDefault: TextPropLineHeight = 'm';
+// export const textPropLineHeight = ['2xs', 'xs', 's', 'm', 'l'] as const;
+// export type TextPropLineHeight = typeof textPropLineHeight[number];
+// export const textPropLineHeightDefault: TextPropLineHeight = 'm';
 
 export const textPropSize = [
-  'm',
-  '2xs',
-  'xs',
-  's',
-  'l',
-  'xl',
-  '2xl',
-  '3xl',
-  '4xl',
-  '5xl',
-  '6xl',
+  'h1',
+  'h2',
+  'h3',
+  'h4',
+  'body',
+  'caption'
 ] as const;
 export type TextPropSize = typeof textPropSize[number];
-export const textPropSizeDefault: TextPropSize = textPropSize[0];
+export const textPropSizeDefault: TextPropSize = textPropSize[4];
 
 export const textPropSpacing = ['xs', 's', 'm', 'l'] as const;
 export type TextPropSpacing = typeof textPropSpacing[number];
 
-export const textPropType = ['blockquote', 'p', 'h3', 'h2', 'h1'] as const;
-export type TextPropType = typeof textPropType[number];
+// export const textPropType = ['blockquote', 'p', 'h3', 'h2', 'h1'] as const;
+// export type TextPropType = typeof textPropType[number];
 
 export const textPropView = [
   'primary',
@@ -61,11 +56,11 @@ export const textPropView = [
 export type TextPropView = typeof textPropView[number];
 export const textPropViewDefault: TextPropView = textPropView[0];
 
-export const textPropWeight = ['black', 'bold', 'light', 'regular', 'semibold', 'thin'] as const;
+export const textPropWeight = ['light', 'regular', 'medium', 'bold',] as const;
 export type TextPropWeight = typeof textPropWeight[number];
 
-export const textPropFontStyle = ['italic'] as const;
-export type TextPropFontStyle = typeof textPropFontStyle[number];
+// export const textPropFontStyle = ['italic'] as const;
+// export type TextPropFontStyle = typeof textPropFontStyle[number];
 
 export const textPropTransform = ['uppercase'] as const;
 export type TextPropTransform = typeof textPropTransform[number];
@@ -76,15 +71,15 @@ export type TextPropWidth = typeof textPropWidth[number];
 type Props = {
   align?: TextPropAlign;
   cursor?: TextPropCursor;
-  decoration?: TextPropDecoration;
+  // decoration?: TextPropDecoration;
   display?: TextPropDisplay;
-  font?: TextPropFont;
-  lineHeight?: TextPropLineHeight;
+  // font?: TextPropFont;
+  // lineHeight?: TextPropLineHeight;
   size?: TextPropSize;
   spacing?: TextPropSpacing;
-  fontStyle?: TextPropFontStyle;
+  // fontStyle?: TextPropFontStyle;
   transform?: TextPropTransform;
-  type?: TextPropType;
+  // type?: TextPropType;
   view?: TextPropView;
   weight?: TextPropWeight;
   width?: TextPropWidth;
@@ -97,15 +92,15 @@ export const Text = forwardRefWithAs<Props>((props, ref) => {
     as = 'div',
     align,
     cursor,
-    decoration,
+    // decoration,
     display,
-    font,
-    lineHeight = textPropLineHeightDefault,
+    // font,
+    // lineHeight = textPropLineHeightDefault,
     size = textPropSizeDefault,
     spacing,
-    fontStyle,
+    // fontStyle,
     transform,
-    type,
+    // type,
     view = textPropViewDefault,
     weight,
     width,
@@ -123,15 +118,14 @@ export const Text = forwardRefWithAs<Props>((props, ref) => {
         {
           align,
           cursor,
-          decoration,
+          // decoration,
           display,
-          font,
-          lineHeight,
+          // font,
           size,
           spacing,
-          fontStyle,
+          // fontStyle,
           transform,
-          type,
+          // type,
           view,
           weight,
           width,
