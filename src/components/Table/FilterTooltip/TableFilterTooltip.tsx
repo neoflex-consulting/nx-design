@@ -60,7 +60,7 @@ export const TableFilterTooltip: React.FC<Props> = ({
         >
           {children || (
             <div className={cnTableFilterTooltip('Content')}>
-              <Typography as="div" size="xs" view="primary" className={cnTableFilterTooltip('Title')}>
+              <Typography as="div" size="caption" view="primary" className={cnTableFilterTooltip('Title')}>
                 Фильтровать по условию
               </Typography>
               <select

@@ -179,7 +179,7 @@ export const Pagination: Pagination = React.forwardRef((props, ref) => {
               onClick={handleClick(prevPage)}
             />
             {!minified && (
-              <Typography className={cnPagination('TipLeft')} size="xs" view="ghost">
+              <Typography className={cnPagination('TipLeft')} size="body" view="ghost">
                 {hotkeys.prevPage.label}
               </Typography>
             )}
@@ -201,7 +201,7 @@ export const Pagination: Pagination = React.forwardRef((props, ref) => {
             )}
             {isStartDots && (
               <Typography
-                size={size}
+                size={'body'}
                 view="linkMinor"
                 className={cnPagination('More')}
                 style={{ width: itemWidth }}
@@ -224,7 +224,7 @@ export const Pagination: Pagination = React.forwardRef((props, ref) => {
             ))}
             {isEndDots && (
               <Typography
-                size={size}
+                size={'body'}
                 view="linkMinor"
                 className={cnPagination('More')}
                 style={{ width: itemWidth }}
@@ -254,7 +254,7 @@ export const Pagination: Pagination = React.forwardRef((props, ref) => {
               value={currPage.toString()}
               onChange={handleChange}
             />
-            <Typography size={size} view="linkMinor" className={cnPagination('Total')}>
+            <Typography size={'body'} view="linkMinor" className={cnPagination('Total')}>
               {getLabel}
             </Typography>
           </div>
@@ -274,7 +274,7 @@ export const Pagination: Pagination = React.forwardRef((props, ref) => {
               onClick={handleClick(nextPage)}
             />
             {!minified && (
-              <Typography className={cnPagination('TipRight')} size="xs" view="ghost">
+              <Typography className={cnPagination('TipRight')} size="body" view="ghost">
                 {hotkeys.nextPage.label}
               </Typography>
             )}

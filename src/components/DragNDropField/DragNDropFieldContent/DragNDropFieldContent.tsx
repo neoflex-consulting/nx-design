@@ -23,7 +23,7 @@ export const DragNDropFieldContent: DragNDropFieldChildrenRenderProp = ({
 
   return (
     <>
-      <Typography view="secondary" size="s" lineHeight="s" align="center">
+      <Typography view="secondary" size="body" align="center">
         Перетащите {fileText} сюда или&nbsp;загрузите по&nbsp;кнопке
         {requirements && (
           <>

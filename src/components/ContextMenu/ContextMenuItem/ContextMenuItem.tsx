@@ -52,9 +52,8 @@ export const ContextMenuItem: ContextMenuItemType = React.forwardRef(
         {...otherProps}
         className={cnContextMenuItem({ size, active, disabled })}
         ref={ref}
-        size={size}
+        size={'body'}
         view={view}
-        lineHeight="xs"
       >
         {renderSide(leftSide, 'left', false)}
         {!rightSide && !leftSide && !withSubMenu ? (

@@ -190,7 +190,7 @@ const sortingData = <T extends TableRow>(
 };
 
 const defaultEmptyRowsPlaceholder = (
-  <Typography as="span" view="primary" size="s" lineHeight="s">
+  <Typography as="span" view="primary" size="body">
     Нет данных
   </Typography>
 );
@@ -520,7 +520,7 @@ export const Table = <T extends TableRow>({
   };
 
   const renderEmptyRowsPlaceholder = (placeholder: React.ReactNode): React.ReactNode => {
-    return typeof placeholder === 'string' ? <Typography size="s">{placeholder}</Typography> : placeholder;
+    return typeof placeholder === 'string' ? <Typography size="body">{placeholder}</Typography> : placeholder;
   };
 
   const getTableCellProps = (

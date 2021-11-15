@@ -28,7 +28,7 @@ export const CalendarMonth: React.FC<CalendarMonthProps> = (props) => {
     <div {...otherProps} className={cnCalendarMonth(null, [className])}>
       {daysOfWeek.map((item, index) => (
         <CalendarCell key={cnCalendarMonth('DayOfWeek', { index, item })}>
-          <Typography as="span" view="ghost" size="xs" transform="uppercase">
+          <Typography as="span" view="ghost" size="caption" transform="uppercase">
             {item}
           </Typography>
         </CalendarCell>

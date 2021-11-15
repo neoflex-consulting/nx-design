@@ -31,7 +31,7 @@ export const DragNDropFieldTooltip: React.FC<DragNDropFieldTooltipProps> = ({
       isInteractive={false}
       onClickOutside={() => setIsHidden(true)}
     >
-      <Typography size="s">
+      <Typography size="body">
         {errors.length === 1 ? (
           errors[0]
         ) : (

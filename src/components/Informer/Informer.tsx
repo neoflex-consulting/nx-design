@@ -69,12 +69,12 @@ export const Informer = React.forwardRef<HTMLDivElement, InformerProps>((props, 
       {Icon && <Icon className={cnInformer('Icon')} size="s" />}
       <div className={cnInformer('Content')}>
         {title && (
-          <Typography className={cnInformer('Title')} weight="bold" size={size}>
+          <Typography className={cnInformer('Title')} weight="bold" size={'body'}>
             {title}
           </Typography>
         )}
         {label ? (
-          <Typography className={cnInformer('Label')} size={size}>
+          <Typography className={cnInformer('Label')} size={'body'}>
             {label}
           </Typography>
         ) : (

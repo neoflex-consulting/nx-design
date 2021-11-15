@@ -4,8 +4,6 @@ import React from 'react';
 
 import { cn } from '../../../utils/bem';
 import {
-  TextPropLineHeight,
-  textPropLineHeightDefault,
   TextPropSize,
   textPropSizeDefault,
 } from '../../Typography/Typography';
@@ -15,17 +13,14 @@ type SkeletonTextProps = {
   className?: string;
   rows: number;
   fontSize?: TextPropSize;
-  lineHeight?: TextPropLineHeight;
 };
 
 export const SkeletonText: React.FC<SkeletonTextProps> = ({
   className,
   rows,
   fontSize = textPropSizeDefault,
-  lineHeight = textPropLineHeightDefault,
 }) => {
   const varFontSize = `var(--size-text-${fontSize})`;
-  const varLineHeight = `var(--line-height-text-${lineHeight})`;
   return (
     <div
       className={cnSkeletonText(null, [className])}
@@ -39,7 +34,7 @@ export const SkeletonText: React.FC<SkeletonTextProps> = ({
         <div
           key={idx}
           className={cnSkeletonText('Row')}
-          style={{ fontSize: varFontSize, height: varLineHeight }}
+          style={{ fontSize: varFontSize}}
         >
           <SkeletonBrick width={getRowWidth(idx, rows)} height={varFontSize} />
         </div>

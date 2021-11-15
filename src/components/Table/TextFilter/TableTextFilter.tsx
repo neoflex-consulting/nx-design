@@ -108,7 +108,7 @@ export const TableTextFilter: React.FC<TableTextFilterProps> = ({
             name="checkboxGroup"
           />
         ) : (
-          <Typography lineHeight="2xs">{emptySearchText}</Typography>
+          <Typography>{emptySearchText}</Typography>
         )}
       </div>
     </TableFilterContainer>

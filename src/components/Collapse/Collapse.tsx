@@ -148,7 +148,7 @@ export const Collapse: Collapse = React.forwardRef<HTMLDivElement, CollapseProps
           direction={directionIcon}
           closeDirection={closeDirectionIcon}
         />
-        <Typography className={cnCollapse('LabelText')} view={view} size={size}>
+        <Typography className={cnCollapse('LabelText')} view={view} size={'body'}>
           {label}
         </Typography>
         {iconPosition === 'left' && renderSide(rightSide)}

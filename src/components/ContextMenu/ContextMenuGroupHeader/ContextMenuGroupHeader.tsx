@@ -3,17 +3,17 @@ import './ContextMenuGroupHeader.css';
 import React from 'react';
 
 import { cn } from '../../../utils/bem';
-import { getSizeByMap } from '../../../utils/getSizeByMap';
-import { Typography, TextPropSize } from '../../Typography/Typography';
+// import { getSizeByMap } from '../../../utils/getSizeByMap';
+import { Typography } from '../../Typography/Typography';
 import { contextMenuDefaultSize, ContextMenuPropSize } from '../helpers';
 
 export const cnContextMenuGroupHeader = cn('ContextMenuGroupHeader');
 
-const sizeMap: Record<ContextMenuPropSize, TextPropSize> = {
-  s: '2xs',
-  m: 'xs',
-  l: 's',
-};
+// const sizeMap: Record<ContextMenuPropSize, TextPropSize> = {
+//   s: '2xs',
+//   m: 'xs',
+//   l: 's',
+// };
 
 export const ContextMenuGroupHeader: React.FC<{
   label: string | number;
@@ -25,7 +25,7 @@ export const ContextMenuGroupHeader: React.FC<{
     view="secondary"
     transform="uppercase"
     className={cnContextMenuGroupHeader({ size, first })}
-    size={getSizeByMap(sizeMap, size)}
+    size={'body'}
   >
     {label}
   </Typography>

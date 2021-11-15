@@ -14,7 +14,6 @@ export const SkeletonExampleAvatar = () => (
         className={cnSkeletonExampleAvatar('Text')}
         rows={2}
         fontSize="xs"
-        lineHeight="s"
       />
     </div>
   </StoryBookExample>

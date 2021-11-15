@@ -38,7 +38,7 @@ export type TooltipProps = PropsWithJsxAttributes<
 
 function renderChildren(children: React.ReactNode): React.ReactNode {
   return typeof children === 'string' || typeof children === 'number' ? (
-    <Typography size="xs">{children}</Typography>
+    <Typography size="body">{children}</Typography>
   ) : (
     children
   );

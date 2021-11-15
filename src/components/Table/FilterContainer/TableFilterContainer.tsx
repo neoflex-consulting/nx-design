@@ -29,7 +29,7 @@ export const TableFilterContainer: React.FC<TableFilterContainerProps> = ({
   return (
     <div className={cnTableFilterContainer(null, [className])}>
       {title && (
-        <Typography view="primary" size="m" className={cnTableFilterContainer('Title')} lineHeight="l">
+        <Typography view="primary" size="body" className={cnTableFilterContainer('Title')}>
           {title}
         </Typography>
       )}

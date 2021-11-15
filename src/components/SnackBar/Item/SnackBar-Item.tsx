@@ -90,7 +90,7 @@ export const SnackBarItem: React.FC<SnackBarItemProps> = (props) => {
       {!autoCloseTime && Icon && <Icon className={cnSnackBar('Icon')} size="m" />}
       <div className={cnSnackBar('Content')}>
         {message && (
-          <Typography className={cnSnackBar('Message')} lineHeight="s">
+          <Typography className={cnSnackBar('Message')}>
             {message}
           </Typography>
         )}

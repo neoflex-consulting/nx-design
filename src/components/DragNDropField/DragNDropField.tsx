@@ -69,7 +69,7 @@ export const DragNDropField = React.forwardRef<HTMLDivElement, DragNDropFieldPro
         <div {...rootProps} ref={useForkRef([ref, rootRef])}>
           <input {...getInputProps()} />
           {isDragActive ? (
-            <Typography view="secondary" size="s" align="center">
+            <Typography view="secondary" size="body" align="center">
               Перетащите файлы сюда
             </Typography>
           ) : (

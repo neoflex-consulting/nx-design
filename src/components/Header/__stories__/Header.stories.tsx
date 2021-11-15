@@ -13,23 +13,23 @@ import mdx from './Header.docs.mdx';
 export function Playground() {
   return (
     <div>
-      <Typography size="3xl" lineHeight="l">
+      <Typography size="3xl">
         Полный
       </Typography>
       <HeaderFullExample />
-      <Typography size="3xl" lineHeight="l">
+      <Typography size="3xl">
         Без поиска
       </Typography>
       <HeaderWithoutSearchExample />
-      <Typography size="3xl" lineHeight="l">
+      <Typography size="3xl">
         С минилогином
       </Typography>
       <HeaderMinifyLoginExample />
-      <Typography size="3xl" lineHeight="l">
+      <Typography size="3xl">
         Без меню
       </Typography>
       <HeaderWithoutMenuExample />
-      <Typography size="3xl" lineHeight="l">
+      <Typography size="3xl">
         С уникальным лого
       </Typography>
       <HeaderWithLogoExample />

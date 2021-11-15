@@ -24,7 +24,7 @@ export const CalendarMonthLabel: React.FC<CalendarMonthLabelProps> = (props) => 
       {...otherProps}
       className={cnCalendarMonthLabel(null, [className])}
       as="span"
-      size="s"
+      size="body"
       align="center"
       weight="bold"
     >

@@ -156,7 +156,7 @@ export const CalendarSlider: React.FC<CalendarSliderProps> = (props) => {
             <Typography
               className={cnCalendarSlider('YearLabel', { position: year.positon })}
               weight="bold"
-              size="s"
+              size="body"
               key={year.label}
               view={isCurrentVisibleYear(currentVisibleDate, year.date) ? undefined : 'ghost'}
             >
@@ -190,7 +190,7 @@ export const CalendarSlider: React.FC<CalendarSliderProps> = (props) => {
                 >
                   <Typography
                     className={cnCalendarSlider('MonthLabel')}
-                    size="2xs"
+                    size="caption"
                     view="ghost"
                     align="center"
                   >
