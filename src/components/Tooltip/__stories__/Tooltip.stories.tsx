@@ -9,7 +9,7 @@ import { createMetadata, createStory } from '../../../utils/storybook';
 import { Badge } from '../../Badge/Badge';
 import { Button } from '../../Button/Button';
 import { directions, Position } from '../../Popover/Popover';
-import { Text } from '../../Text/Text';
+import { Typography } from '../../Typography/Typography';
 import { Tooltip, tooltipPropSizes, tooltipPropSizesDefault, tooltipPropStatus } from '../Tooltip';
 
 import mdx from './Tooltip.docs.mdx';
@@ -22,7 +22,7 @@ const getCommonKnobs = () => ({
   spareDirection: select('spareDirection', directions, 'downStartLeft'),
   possibleDirections: object('possibleDirections', directions),
   onClickOutside: action('onClickOutside'),
-  children: <Text size="xs">{text('children', 'Текст тултипа')}</Text>,
+  children: <Typography size="xs">{text('children', 'Текст тултипа')}</Typography>,
 });
 
 const TooltipPositionedByCoordsStoryContent = () => {
@@ -39,7 +39,7 @@ const TooltipPositionedByCoordsStoryContent = () => {
         onMouseMove={handleMouseMove}
         onMouseLeave={() => setPosition(undefined)}
       >
-        <Text>Область, в которой работает отслеживание мышки</Text>
+        <Typography>Область, в которой работает отслеживание мышки</Typography>
       </div>
       <Tooltip
         {...getCommonKnobs()}

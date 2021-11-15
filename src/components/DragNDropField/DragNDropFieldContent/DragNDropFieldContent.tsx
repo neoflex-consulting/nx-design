@@ -5,7 +5,7 @@ import React from 'react';
 import { IconAttach } from '../../../icons/IconAttach/IconAttach';
 import { cn } from '../../../utils/bem';
 import { Button } from '../../Button/Button';
-import { Text } from '../../Text/Text';
+import { Typography } from '../../Typography/Typography';
 import { DragNDropFieldChildrenRenderProp } from '../DragNDropField';
 
 import { formatFileRequirements } from './formatFileRequirements';
@@ -23,7 +23,7 @@ export const DragNDropFieldContent: DragNDropFieldChildrenRenderProp = ({
 
   return (
     <>
-      <Text view="secondary" size="s" lineHeight="s" align="center">
+      <Typography view="secondary" size="s" lineHeight="s" align="center">
         Перетащите {fileText} сюда или&nbsp;загрузите по&nbsp;кнопке
         {requirements && (
           <>
@@ -31,7 +31,7 @@ export const DragNDropFieldContent: DragNDropFieldChildrenRenderProp = ({
             {requirements}
           </>
         )}
-      </Text>
+      </Typography>
       <Button
         className={cnDragNDropFieldContent('Button')}
         label={`Выбрать ${fileText}`}

@@ -6,7 +6,7 @@ import { boolean, select } from '@storybook/addon-knobs';
 import { cn } from '../../../utils/bem';
 import { createMetadata } from '../../../utils/storybook';
 import { Button } from '../../Button/Button';
-import { Text } from '../../Text/Text';
+import { Typography } from '../../Typography/Typography';
 import { Sidebar } from '../Sidebar';
 
 import mdx from './Sidebar.docs.mdx';
@@ -46,16 +46,16 @@ export function Playground() {
         position={position}
       >
         <Sidebar.Content className={cnSidebarStories('Content')}>
-          <Text
+          <Typography
             as="p"
             size="l"
             view="primary"
-            weight="semibold"
+            weight="bold"
             className={cnSidebarStories('Title')}
           >
             Заголовок сайдбара
-          </Text>
-          <Text as="p" size="m" view="secondary" className={cnSidebarStories('Body')}>
+          </Typography>
+          <Typography as="p" size="m" view="secondary" className={cnSidebarStories('Body')}>
             Sed porta sollicitudin purus sagittis elementum. Pellentesque habitant morbi tristique
             senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt, augue et
             placerat cursus, neque sem imperdiet mi, ut fringilla nunc nibh non enim. Vivamus id
@@ -80,7 +80,7 @@ export function Playground() {
             Suspendisse placerat dapibus metus mollis rutrum. Donec et nulla sapien. Donec
             sollicitudin ultrices mi vel blandit. Sed imperdiet libero eu tellus laoreet cursus.
             Maecenas non sem non est venenatis porta.
-          </Text>
+          </Typography>
         </Sidebar.Content>
         <Sidebar.Actions className={cnSidebarStories('Actions')}>
           <Button

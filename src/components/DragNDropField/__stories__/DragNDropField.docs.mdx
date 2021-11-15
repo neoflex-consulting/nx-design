@@ -48,7 +48,7 @@ import { DragNDropFieldExampleOnDropFiles } from './examples/DragNDropFieldExamp
 
 ```tsx
 <DragNDropField>
-  <Text>Здесь просто текст</Text>
+  <Typography>Здесь просто текст</Typography>
 </DragNDropField>
 ```
 
@@ -58,7 +58,7 @@ import { DragNDropFieldExampleOnDropFiles } from './examples/DragNDropFieldExamp
 <DragNDropField>
   {({ openFileDialog }) => (
     <>
-      <Text>Пример с Render Props, открывает окно для выбора файла из дочернего блока</Text>
+      <Typography>Пример с Render Props, открывает окно для выбора файла из дочернего блока</Typography>
       <br />
       <Button onClick={openFileDialog} label="Выбрать файл" />
     </>
@@ -78,7 +78,7 @@ import { DragNDropFieldExampleOnDropFiles } from './examples/DragNDropFieldExamp
 
 ```tsx
 <DragNDropField multiple>
-  <Text>Сюда можно перетащить много файлов за раз</Text>
+  <Typography>Сюда можно перетащить много файлов за раз</Typography>
 </DragNDropField>
 ```
 
@@ -86,7 +86,7 @@ import { DragNDropFieldExampleOnDropFiles } from './examples/DragNDropFieldExamp
 
 ```tsx
 <DragNDropField multiple={false}>
-  <Text>Сюда можно перетащить только один файл</Text>
+  <Typography>Сюда можно перетащить только один файл</Typography>
 </DragNDropField>
 ```
 
@@ -112,10 +112,10 @@ import { DragNDropFieldExampleOnDropFiles } from './examples/DragNDropFieldExamp
 
 ```tsx
 <DragNDropField accept="image/*" onDropFiles={(files) => console.log(files)}>
-  <Text>Сюда можно перетаскивать только картинки, зато любые (ну почти)</Text>
-  <Text view="ghost" font="mono">
+  <Typography>Сюда можно перетаскивать только картинки, зато любые (ну почти)</Typography>
+  <Typography view="ghost" font="mono">
     image/*
-  </Text>
+  </Typography>
 </DragNDropField>
 ```
 
@@ -123,10 +123,10 @@ import { DragNDropFieldExampleOnDropFiles } from './examples/DragNDropFieldExamp
 
 ```tsx
 <DragNDropField accept={['.doc', '.docx']}>
-  <Text>Сюда можно перетаскивать только DOC и DOCX</Text>
-  <Text view="ghost" font="mono">
+  <Typography>Сюда можно перетаскивать только DOC и DOCX</Typography>
+  <Typography view="ghost" font="mono">
     .doc, .docx
-  </Text>
+  </Typography>
 </DragNDropField>
 ```
 
@@ -142,7 +142,7 @@ import { DragNDropFieldExampleOnDropFiles } from './examples/DragNDropFieldExamp
 
 ```tsx
 <DragNDropField maxSize={1 * 1024 * 1024}>
-  <Text>Сюда можно перетаскивать файлы размером 1 Мб или меньше</Text>
+  <Typography>Сюда можно перетаскивать файлы размером 1 Мб или меньше</Typography>
 </DragNDropField>
 ```
 
@@ -164,7 +164,7 @@ export function MyComponent() {
   return (
     <>
       <DragNDropField multiple onDropFiles={setFiles}>
-        <Text>Перетяните файлы сюда</Text>
+        <Typography>Перетяните файлы сюда</Typography>
       </DragNDropField>
       {files.map((file) => (
         <Attachment

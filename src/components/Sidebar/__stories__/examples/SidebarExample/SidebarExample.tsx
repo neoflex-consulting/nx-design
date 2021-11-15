@@ -5,7 +5,7 @@ import React from 'react';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { cn } from '../../../../../utils/bem';
 import { Button } from '../../../../Button/Button';
-import { Text } from '../../../../Text/Text';
+import { Typography } from '../../../../Typography/Typography';
 import { Sidebar } from '../../../Sidebar';
 
 const cnSidebarExample = cn('SidebarExample');
@@ -27,7 +27,7 @@ export const SidebarExample = () => {
         onOverlayClick={() => setIsSidebarOpen(false)}
       >
         <Sidebar.Content className={cnSidebarExample('Content')}>
-          <Text
+          <Typography
             as="p"
             size="l"
             view="primary"
@@ -35,8 +35,8 @@ export const SidebarExample = () => {
             className={cnSidebarExample('Title')}
           >
             Заголовок сайдбара
-          </Text>
-          <Text as="p" size="m" view="secondary" className={cnSidebarExample('Body')}>
+          </Typography>
+          <Typography as="p" size="m" view="secondary" className={cnSidebarExample('Body')}>
             Sed porta sollicitudin purus sagittis elementum. Pellentesque habitant morbi tristique
             senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt, augue et
             placerat cursus, neque sem imperdiet mi, ut fringilla nunc nibh non enim. Vivamus id
@@ -61,7 +61,7 @@ export const SidebarExample = () => {
             Suspendisse placerat dapibus metus mollis rutrum. Donec et nulla sapien. Donec
             sollicitudin ultrices mi vel blandit. Sed imperdiet libero eu tellus laoreet cursus.
             Maecenas non sem non est venenatis porta.
-          </Text>
+          </Typography>
         </Sidebar.Content>
         <Sidebar.Actions className={cnSidebarExample('Actions')}>
           <Button
@@ -102,7 +102,7 @@ export const SidebarExampleLeft = () => {
         position="left"
       >
         <Sidebar.Content className={cnSidebarExample('Content')}>
-          <Text
+          <Typography
             as="p"
             size="l"
             view="primary"
@@ -110,10 +110,10 @@ export const SidebarExampleLeft = () => {
             className={cnSidebarExample('Title')}
           >
             Заголовок
-          </Text>
-          <Text as="p" size="m" view="secondary" className={cnSidebarExample('Body')}>
+          </Typography>
+          <Typography as="p" size="m" view="secondary" className={cnSidebarExample('Body')}>
             Ой! Меня прижало к левому краю страницы. Помогите!
-          </Text>
+          </Typography>
         </Sidebar.Content>
         <Sidebar.Actions className={cnSidebarExample('Actions')}>
           <Button
@@ -154,7 +154,7 @@ export const SidebarExampleRight = () => {
         position="right"
       >
         <Sidebar.Content className={cnSidebarExample('Content')}>
-          <Text
+          <Typography
             as="p"
             size="l"
             view="primary"
@@ -162,10 +162,10 @@ export const SidebarExampleRight = () => {
             className={cnSidebarExample('Title')}
           >
             Заголовок
-          </Text>
-          <Text as="p" size="m" view="secondary" className={cnSidebarExample('Body')}>
+          </Typography>
+          <Typography as="p" size="m" view="secondary" className={cnSidebarExample('Body')}>
             Ой! Меня прижало к правому краю страницы. Помогите!
-          </Text>
+          </Typography>
         </Sidebar.Content>
         <Sidebar.Actions className={cnSidebarExample('Actions')}>
           <Button
@@ -206,7 +206,7 @@ export const SidebarExampleTop = () => {
         position="top"
       >
         <Sidebar.Content className={cnSidebarExample('Content')}>
-          <Text
+          <Typography
             as="p"
             size="l"
             view="primary"
@@ -214,10 +214,10 @@ export const SidebarExampleTop = () => {
             className={cnSidebarExample('Title')}
           >
             Заголовок
-          </Text>
-          <Text as="p" size="m" view="secondary" className={cnSidebarExample('Body')}>
+          </Typography>
+          <Typography as="p" size="m" view="secondary" className={cnSidebarExample('Body')}>
             Ой! Меня прижало к верху страницы. Помогите!
-          </Text>
+          </Typography>
         </Sidebar.Content>
         <Sidebar.Actions className={cnSidebarExample('Actions')}>
           <Button
@@ -258,7 +258,7 @@ export const SidebarExampleBottom = () => {
         position="bottom"
       >
         <Sidebar.Content className={cnSidebarExample('Content')}>
-          <Text
+          <Typography
             as="p"
             size="l"
             view="primary"
@@ -266,10 +266,10 @@ export const SidebarExampleBottom = () => {
             className={cnSidebarExample('Title')}
           >
             Заголовок
-          </Text>
-          <Text as="p" size="m" view="secondary" className={cnSidebarExample('Body')}>
+          </Typography>
+          <Typography as="p" size="m" view="secondary" className={cnSidebarExample('Body')}>
             Ой! Меня прижало к низу страницы. Помогите!
-          </Text>
+          </Typography>
         </Sidebar.Content>
         <Sidebar.Actions className={cnSidebarExample('Actions')}>
           <Button
@@ -311,7 +311,7 @@ export const SidebarExampleNoOverlay = () => {
         hasOverlay={false}
       >
         <Sidebar.Content className={cnSidebarExample('Content')}>
-          <Text
+          <Typography
             as="p"
             size="l"
             view="primary"
@@ -319,10 +319,10 @@ export const SidebarExampleNoOverlay = () => {
             className={cnSidebarExample('Title')}
           >
             Заголовок
-          </Text>
-          <Text as="p" size="m" view="secondary" className={cnSidebarExample('Body')}>
+          </Typography>
+          <Typography as="p" size="m" view="secondary" className={cnSidebarExample('Body')}>
             Ой! У меня чего-то не хватает. Нажмите на кнопочку, пожалуйста :)
-          </Text>
+          </Typography>
         </Sidebar.Content>
         <Sidebar.Actions className={cnSidebarExample('Actions')}>
           <Button

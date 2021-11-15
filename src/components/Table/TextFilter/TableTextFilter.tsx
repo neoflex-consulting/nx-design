@@ -6,7 +6,7 @@ import { IconSearch } from '../../../icons/IconSearch/IconSearch';
 import { cn } from '../../../utils/bem';
 import { Button } from '../../Button/Button';
 import { CheckboxGroup } from '../../CheckboxGroup/CheckboxGroup';
-import { Text } from '../../Text/Text';
+import { Typography } from '../../Typography/Typography';
 import { TextField } from '../../TextField/TextField';
 import { TableFilterContainer } from '../FilterContainer/TableFilterContainer';
 import { FilterComponentProps } from '../filtering';
@@ -108,7 +108,7 @@ export const TableTextFilter: React.FC<TableTextFilterProps> = ({
             name="checkboxGroup"
           />
         ) : (
-          <Text lineHeight="2xs">{emptySearchText}</Text>
+          <Typography lineHeight="2xs">{emptySearchText}</Typography>
         )}
       </div>
     </TableFilterContainer>

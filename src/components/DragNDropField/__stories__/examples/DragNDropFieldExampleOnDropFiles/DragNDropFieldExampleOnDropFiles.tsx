@@ -3,7 +3,7 @@ import React from 'react';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { StoryBookExample } from '../../../../../uiKit/components/StoryBookExample/StoryBookExample';
 import { Attachment } from '../../../../Attachment/Attachment';
-import { Text } from '../../../../Text/Text';
+import { Typography } from '../../../../Typography/Typography';
 import { DragNDropField } from '../../../DragNDropField';
 
 export const DragNDropFieldExampleOnDropFiles = () => {
@@ -12,7 +12,7 @@ export const DragNDropFieldExampleOnDropFiles = () => {
     <StoryBookExample className={cnDocsDecorator('Section')}>
       <div>
         <DragNDropField multiple onDropFiles={setFiles}>
-          <Text>Перетяните файлы сюда</Text>
+          <Typography>Перетяните файлы сюда</Typography>
         </DragNDropField>
       </div>
       <div>

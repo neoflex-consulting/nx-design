@@ -2,7 +2,7 @@ import './UseDebounceExample.css';
 
 import React, { useEffect, useState } from 'react';
 
-import { Text } from '../../../../../components/Text/Text';
+import { Typography } from '../../../../../components/Typography/Typography';
 import { TextField } from '../../../../../components/TextField/TextField';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { cn } from '../../../../../utils/bem';
@@ -25,9 +25,9 @@ export const UseDebounceExample = () => {
         onChange={({ value }) => setValue(value)}
         placeholder="Поиск"
       />
-      <Text className={cnUseDebounceExample('SearchField')}>
+      <Typography className={cnUseDebounceExample('SearchField')}>
         Покажем результаты поиска по этому фрагменту: <b>{searchValue}</b>
-      </Text>
+      </Typography>
     </div>
   );
 };

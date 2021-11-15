@@ -4,7 +4,7 @@ import React from 'react';
 
 import { cn } from '../../../utils/bem';
 import { PropsWithJsxAttributes } from '../../../utils/types/PropsWithJsxAttributes';
-import { Text } from '../../Text/Text';
+import { Typography } from '../../Typography/Typography';
 import { CalendarDay, CalendarDayProps } from '../CalendarDay/CalendarDay';
 import { CalendarCell, CalendarCellProps } from '../CalendarСell/CalendarСell';
 
@@ -28,9 +28,9 @@ export const CalendarMonth: React.FC<CalendarMonthProps> = (props) => {
     <div {...otherProps} className={cnCalendarMonth(null, [className])}>
       {daysOfWeek.map((item, index) => (
         <CalendarCell key={cnCalendarMonth('DayOfWeek', { index, item })}>
-          <Text as="span" view="ghost" size="2xs" transform="uppercase">
+          <Typography as="span" view="ghost" size="xs" transform="uppercase">
             {item}
-          </Text>
+          </Typography>
         </CalendarCell>
       ))}
       {daysOfMonth.map(({ range, ...dayProps }, index) => (

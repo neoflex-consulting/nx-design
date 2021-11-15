@@ -6,7 +6,7 @@ import { boolean, select } from '@storybook/addon-knobs';
 import { cn } from '../../../utils/bem';
 import { createMetadata } from '../../../utils/storybook';
 import { Button } from '../../Button/Button';
-import { Text } from '../../Text/Text';
+import { Typography } from '../../Typography/Typography';
 import { Modal } from '../Modal';
 
 import mdx from './Modal.docs.mdx';
@@ -56,13 +56,13 @@ export function Playground(): JSX.Element {
       >
         {
           <>
-            <Text as="p" size="s" view="secondary" className={cnModalStories('Title')}>
+            <Typography as="p" size="s" view="secondary" className={cnModalStories('Title')}>
               Заголовок модалки
-            </Text>
-            <Text as="p" size="m" view="primary" className={cnModalStories('Body')}>
+            </Typography>
+            <Typography as="p" size="m" view="primary" className={cnModalStories('Body')}>
               Описание в теле модалки. Здесь может находиться какая-то информация. Lorem ipsum dolor
               sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            </Text>
+            </Typography>
           </>
         }
         <div className={cnModalStories('Action')}>

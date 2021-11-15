@@ -3,7 +3,7 @@ import './DragNDropFieldTooltip.css';
 import React from 'react';
 
 import { cn } from '../../../utils/bem';
-import { Text } from '../../Text/Text';
+import { Typography } from '../../Typography/Typography';
 import { Tooltip } from '../../Tooltip/Tooltip';
 
 type DragNDropFieldTooltipProps = {
@@ -31,7 +31,7 @@ export const DragNDropFieldTooltip: React.FC<DragNDropFieldTooltipProps> = ({
       isInteractive={false}
       onClickOutside={() => setIsHidden(true)}
     >
-      <Text size="s">
+      <Typography size="s">
         {errors.length === 1 ? (
           errors[0]
         ) : (
@@ -41,7 +41,7 @@ export const DragNDropFieldTooltip: React.FC<DragNDropFieldTooltipProps> = ({
             ))}
           </ul>
         )}
-      </Text>
+      </Typography>
     </Tooltip>
   );
 };

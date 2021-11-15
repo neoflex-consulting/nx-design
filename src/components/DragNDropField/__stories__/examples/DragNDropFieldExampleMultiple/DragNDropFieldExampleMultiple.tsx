@@ -2,7 +2,7 @@ import React from 'react';
 
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { StoryBookExample } from '../../../../../uiKit/components/StoryBookExample/StoryBookExample';
-import { Text } from '../../../../Text/Text';
+import { Typography } from '../../../../Typography/Typography';
 import { DragNDropField } from '../../../DragNDropField';
 
 import imageFile from './images/too_many_files.png';
@@ -20,7 +20,7 @@ export const DragNDropFieldExampleSingle = () => (
   <StoryBookExample className={cnDocsDecorator('Section')}>
     <div>
       <DragNDropField multiple={false} onDropFiles={(files) => console.log(files)}>
-        <Text>Сюда можно перетащить только один файл</Text>
+        <Typography>Сюда можно перетащить только один файл</Typography>
       </DragNDropField>
     </div>
   </StoryBookExample>
@@ -30,7 +30,7 @@ export const DragNDropFieldExampleMultiple = () => (
   <StoryBookExample className={cnDocsDecorator('Section')}>
     <div>
       <DragNDropField multiple onDropFiles={(files) => console.log(files)}>
-        <Text>Сюда можно перетащить много файлов за раз</Text>
+        <Typography>Сюда можно перетащить много файлов за раз</Typography>
       </DragNDropField>
     </div>
   </StoryBookExample>

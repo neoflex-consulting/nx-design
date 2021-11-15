@@ -3,7 +3,7 @@ import './ThemePreview.css';
 import React, { useReducer } from 'react';
 
 import { Item, SnackBar } from '../../../components/SnackBar/SnackBar';
-import { Text } from '../../../components/Text/Text';
+import { Typography } from '../../../components/Typography/Typography';
 import { defaultVars } from '../../../hooks/useThemeVars/helpers';
 import { useThemeVars } from '../../../hooks/useThemeVars/useThemeVars';
 import { cn } from '../../cn';
@@ -78,7 +78,7 @@ export const ThemePreview: React.FC = () => {
       <div className={wp.layout('content')}>
         <div className={wp.layout('container', { size: 'm' })}>
           <section>
-            <Text
+            <Typography
               as="h2"
               size="xl"
               view="primary"
@@ -86,7 +86,7 @@ export const ThemePreview: React.FC = () => {
               className={wp.decorator({ 'indent-b': '3xl' })}
             >
               Цвета фонов
-            </Text>
+            </Typography>
             <div
               className={wp.tplGrid({ 's-ratio': '1-1-1', 'col-gap': 'full', 'row-gap': 'full' })}
             >
@@ -105,7 +105,7 @@ export const ThemePreview: React.FC = () => {
           </section>
 
           <section>
-            <Text
+            <Typography
               as="h2"
               size="xl"
               view="primary"
@@ -113,7 +113,7 @@ export const ThemePreview: React.FC = () => {
               className={wp.decorator({ 'indent-b': '3xl' })}
             >
               Цвета типографики
-            </Text>
+            </Typography>
 
             <div
               className={wp.tplGrid({ 's-ratio': '1-1-1', 'col-gap': 'full', 'row-gap': 'full' })}
@@ -133,7 +133,7 @@ export const ThemePreview: React.FC = () => {
           </section>
 
           <section>
-            <Text
+            <Typography
               as="h2"
               size="xl"
               view="primary"
@@ -141,7 +141,7 @@ export const ThemePreview: React.FC = () => {
               className={wp.decorator({ 'indent-b': '3xl', 'decorator_indent-t': '6xl' })}
             >
               Цвета скроллбара
-            </Text>
+            </Typography>
             <div
               className={wp.tplGrid({ 's-ratio': '1-1-1', 'col-gap': 'full', 'row-gap': 'full' })}
             >
@@ -160,7 +160,7 @@ export const ThemePreview: React.FC = () => {
           </section>
 
           <section>
-            <Text
+            <Typography
               as="h2"
               size="xl"
               view="primary"
@@ -168,7 +168,7 @@ export const ThemePreview: React.FC = () => {
               className={wp.decorator({ 'indent-b': '3xl', 'decorator_indent-t': '6xl' })}
             >
               Цвета контролов
-            </Text>
+            </Typography>
             <div
               className={wp.tplGrid({ 's-ratio': '1-1-1', 'col-gap': 'full', 'row-gap': 'full' })}
             >

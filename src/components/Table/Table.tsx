@@ -9,7 +9,7 @@ import { IconUnsort } from '../../icons/IconUnsort/IconUnsort';
 import { sortBy as sortByDefault, updateAt } from '../../utils/array';
 import { cn } from '../../utils/bem';
 import { isNotNil } from '../../utils/type-guards';
-import { Text } from '../Text/Text';
+import { Typography } from '../Typography/Typography';
 
 import { HorizontalAlign, TableCell, VerticalAlign } from './Cell/TableCell';
 import { TableHeader } from './Header/TableHeader';
@@ -190,9 +190,9 @@ const sortingData = <T extends TableRow>(
 };
 
 const defaultEmptyRowsPlaceholder = (
-  <Text as="span" view="primary" size="s" lineHeight="s">
+  <Typography as="span" view="primary" size="s" lineHeight="s">
     Нет данных
-  </Text>
+  </Typography>
 );
 
 export const Table = <T extends TableRow>({
@@ -520,7 +520,7 @@ export const Table = <T extends TableRow>({
   };
 
   const renderEmptyRowsPlaceholder = (placeholder: React.ReactNode): React.ReactNode => {
-    return typeof placeholder === 'string' ? <Text size="s">{placeholder}</Text> : placeholder;
+    return typeof placeholder === 'string' ? <Typography size="s">{placeholder}</Typography> : placeholder;
   };
 
   const getTableCellProps = (

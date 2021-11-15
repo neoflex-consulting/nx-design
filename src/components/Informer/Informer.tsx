@@ -6,7 +6,7 @@ import { classnames } from '@bem-react/classnames';
 import { IconProps } from '../../icons/Icon/Icon';
 import { cn } from '../../utils/bem';
 import { PropsWithHTMLAttributes } from '../../utils/types/PropsWithHTMLAttributes';
-import { Text } from '../Text/Text';
+import { Typography } from '../Typography/Typography';
 import { useTheme } from '../Theme/Theme';
 
 export const informerPropView = ['filled', 'bordered'] as const;
@@ -69,14 +69,14 @@ export const Informer = React.forwardRef<HTMLDivElement, InformerProps>((props, 
       {Icon && <Icon className={cnInformer('Icon')} size="s" />}
       <div className={cnInformer('Content')}>
         {title && (
-          <Text className={cnInformer('Title')} weight="bold" size={size}>
+          <Typography className={cnInformer('Title')} weight="bold" size={size}>
             {title}
-          </Text>
+          </Typography>
         )}
         {label ? (
-          <Text className={cnInformer('Label')} size={size}>
+          <Typography className={cnInformer('Label')} size={size}>
             {label}
-          </Text>
+          </Typography>
         ) : (
           children
         )}

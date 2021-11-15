@@ -9,7 +9,7 @@ import { IconForward } from '../../../icons/IconForward/IconForward';
 import { cn } from '../../../utils/bem';
 import { createMetadata } from '../../../utils/storybook';
 import { Button } from '../../Button/Button';
-import { Text } from '../../Text/Text';
+import { Typography } from '../../Typography/Typography';
 import { Steps, stepsDefaultSize, stepsSizes } from '../Steps';
 
 import mdx from './Steps.docs.mdx';
@@ -23,11 +23,11 @@ const defaultKnobs = () => ({
 const getStepContent = (stepNumber: number) => {
   switch (stepNumber) {
     case 0:
-      return <Text view="primary">Содержимое первого шага</Text>;
+      return <Typography view="primary">Содержимое первого шага</Typography>;
     case 1:
-      return <Text view="primary">Содержимое второго шага</Text>;
+      return <Typography view="primary">Содержимое второго шага</Typography>;
     case 2:
-      return <Text view="brand">Содержимое шага № 3</Text>;
+      return <Typography view="brand">Содержимое шага № 3</Typography>;
     default:
       return `unknown ${stepNumber} step`;
   }

@@ -13,7 +13,7 @@ import {
   propForm,
   propView,
 } from '../../SelectComponents/types';
-import { Text } from '../../Text/Text';
+import { Typography } from '../../Typography/Typography';
 import { UserSelect } from '../UserSelect';
 
 import mdx from './UserSelect.docs.mdx';
@@ -114,12 +114,12 @@ export const WithRender = createStory(
             onClick={onClick}
           >
             {item.name}
-            <Text view="secondary" size="xs">
+            <Typography view="secondary" size="xs">
               {item.email}
-            </Text>
-            <Text view="secondary" size="xs">
+            </Typography>
+            <Typography view="secondary" size="xs">
               {item.position}
-            </Text>
+            </Typography>
           </div>
         )}
         renderValue={({ item }) => (

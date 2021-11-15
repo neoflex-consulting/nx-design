@@ -14,7 +14,7 @@ import { cnForCssTransition } from '../../../utils/cnForCssTransition';
 import { fabricIndex } from '../../../utils/fabricIndex';
 import { PropsWithJsxAttributes } from '../../../utils/types/PropsWithJsxAttributes';
 import { Popover } from '../../Popover/Popover';
-import { Text } from '../../Text/Text';
+import { Typography } from '../../Typography/Typography';
 import { SelectCreateButton } from '../SelectCreateButton/SelectCreateButton';
 import { SelectGroupLabel } from '../SelectGroupLabel/SelectGroupLabel';
 import { PropSize, RenderItemProps } from '../types';
@@ -123,7 +123,7 @@ export const SelectDropdown: SelectDropdown = (props) => {
             );
           })}
           {visibleItems.length === 0 && (
-            <Text className={cnSelectDropdown('LabelForNotFound')}>{labelForNotFound}</Text>
+            <Typography className={cnSelectDropdown('LabelForNotFound')}>{labelForNotFound}</Typography>
           )}
         </div>
       </Popover>

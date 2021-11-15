@@ -7,7 +7,7 @@ import { boolean, number, object, select, text } from '@storybook/addon-knobs';
 import { cn } from '../../../utils/bem';
 import { createMetadata, createStory, getStoryIds } from '../../../utils/storybook';
 import { Button } from '../../Button/Button';
-import { Text } from '../../Text/Text';
+import { Typography } from '../../Typography/Typography';
 import { directions, Popover, Position } from '../Popover';
 
 import mdx from './Popover.docs.mdx';
@@ -23,7 +23,7 @@ const getCommonKnobs = () => ({
   onClickOutside: action('onClickOutside'),
 });
 
-const getText = () => <Text size="xs">{text('children', 'Контент поповера')}</Text>;
+const getText = () => <Typography size="xs">{text('children', 'Контент поповера')}</Typography>;
 
 const ExamplePopoverContent: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   children,
@@ -49,7 +49,7 @@ export const PopoverPositionedByCoordsStory = createStory(
           onMouseMove={handleMouseMove}
           onMouseLeave={() => setPosition(undefined)}
         >
-          <Text>Область, в которой работает отслеживание мышки</Text>
+          <Typography>Область, в которой работает отслеживание мышки</Typography>
         </div>
         <Popover
           {...getCommonKnobs()}
@@ -59,7 +59,7 @@ export const PopoverPositionedByCoordsStory = createStory(
           {(direction) => (
             <ExamplePopoverContent>
               {getText()}
-              <Text size="xs">Напраление: {direction}</Text>
+              <Typography size="xs">Напраление: {direction}</Typography>
             </ExamplePopoverContent>
           )}
         </Popover>

@@ -4,7 +4,7 @@ import React from 'react';
 
 import { IconArrowRight } from '../../../icons/IconArrowRight/IconArrowRight';
 import { cn } from '../../../utils/bem';
-import { Text } from '../../Text/Text';
+import { Typography } from '../../Typography/Typography';
 import { contextMenuDefaultSize, ContextMenuItem as ContextMenuItemType } from '../helpers';
 
 export const cnContextMenuItem = cn('ContextMenuItem');
@@ -48,7 +48,7 @@ export const ContextMenuItem: ContextMenuItemType = React.forwardRef(
     const view = disabled ? undefined : accent;
 
     return (
-      <Text
+      <Typography
         {...otherProps}
         className={cnContextMenuItem({ size, active, disabled })}
         ref={ref}
@@ -63,7 +63,7 @@ export const ContextMenuItem: ContextMenuItemType = React.forwardRef(
           <div className={cnContextMenuItem('Side', { position: 'center' })}>{label}</div>
         )}
         {renderSide(rightSide, 'right', withSubMenu)}
-      </Text>
+      </Typography>
     );
   },
 );

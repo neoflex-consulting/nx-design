@@ -4,12 +4,12 @@ import { boolean, number, select, text } from '@storybook/addon-knobs';
 import { createMetadata, createStory } from '../../../utils/storybook';
 import { Grid } from '../../Grid/Grid';
 import {
-  Text,
+  Typography,
   textPropLineHeight,
   textPropLineHeightDefault,
   textPropSize,
   textPropSizeDefault,
-} from '../../Text/Text';
+} from '../../Typography/Typography';
 import { SkeletonBrick } from '../Skeleton';
 import { SkeletonCircle } from '../SkeletonCircle/SkeletonCircle';
 import { SkeletonText } from '../SkeletonText/SkeletonText';
@@ -41,9 +41,9 @@ export const SkeletonTextStory = createStory(
         {skeletonText}
         <div>
           {new Array(rows).fill(null).map(() => (
-            <Text size={fontSize} lineHeight={lineHeight}>
+            <Typography size={fontSize} lineHeight={lineHeight}>
               Lorem ipsum
-            </Text>
+            </Typography>
           ))}
         </div>
       </Grid>

@@ -2,7 +2,7 @@ import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { exampleItems as items, groups, Item } from '../__mocks__/mock.data';
-import { cnText } from '../../Text/Text';
+import { cnText } from '../../Typography/Typography';
 import { ContextMenu } from '../ContextMenu';
 import { cnContextMenuGroupHeader } from '../ContextMenuGroupHeader/ContextMenuGroupHeader';
 import { cnContextMenuItem } from '../ContextMenuItem/ContextMenuItem';

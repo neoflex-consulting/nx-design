@@ -6,7 +6,7 @@ import { ClickOutsideHandler } from '../../hooks/useClickOutside/useClickOutside
 import { cn } from '../../utils/bem';
 import { PropsWithJsxAttributes } from '../../utils/types/PropsWithJsxAttributes';
 import { Direction, Popover, PositioningProps } from '../Popover/Popover';
-import { Text } from '../Text/Text';
+import { Typography } from '../Typography/Typography';
 import { generateThemeClassNames, ThemeContext, useTheme } from '../Theme/Theme';
 
 const ARROW_SIZE = 6;
@@ -38,7 +38,7 @@ export type TooltipProps = PropsWithJsxAttributes<
 
 function renderChildren(children: React.ReactNode): React.ReactNode {
   return typeof children === 'string' || typeof children === 'number' ? (
-    <Text size="xs">{children}</Text>
+    <Typography size="xs">{children}</Typography>
   ) : (
     children
   );

@@ -4,7 +4,7 @@ import React from 'react';
 
 import { cn } from '../../../utils/bem';
 import { PropsWithHTMLAttributes } from '../../../utils/types/PropsWithHTMLAttributes';
-import { Text } from '../../Text/Text';
+import { Typography } from '../../Typography/Typography';
 
 export type CalendarMonthLabelProps = PropsWithHTMLAttributes<
   {
@@ -20,7 +20,7 @@ export const CalendarMonthLabel: React.FC<CalendarMonthLabelProps> = (props) => 
   const { label, className, ...otherProps } = props;
 
   return (
-    <Text
+    <Typography
       {...otherProps}
       className={cnCalendarMonthLabel(null, [className])}
       as="span"
@@ -29,6 +29,6 @@ export const CalendarMonthLabel: React.FC<CalendarMonthLabelProps> = (props) => 
       weight="bold"
     >
       {label}
-    </Text>
+    </Typography>
   );
 };

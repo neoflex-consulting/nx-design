@@ -218,7 +218,7 @@ import { TableFilterContainer } from '@consta/uikit/Table';
 Это может быть текст, изображение или что угодно, указанное в свойстве `emptyRowsPlaceholder`.
 
 ```tsx
-<Table columns={columns} rows={rows} emptyRowsPlaceholder={<Text>Здесь пока нет данных</Text>} />
+<Table columns={columns} rows={rows} emptyRowsPlaceholder={<Typography>Здесь пока нет данных</Typography>} />
 ```
 
 ## Внешний вид
@@ -417,7 +417,7 @@ const App = () => {
 ```tsx
 import React from 'react';
 import { Table } from '@consta/uikit/Table';
-import { Text } from '@consta/uikit/Text';
+import { Typography } from '@consta/uikit/Typography';
 
 const columns = [
   {
@@ -437,7 +437,7 @@ const columns = [
 const rows = [];
 
 const App = () => {
-  return <Table columns={columns} rows={rows} emptyRowsPlaceholder={<Text>Пусто</Text>} />;
+  return <Table columns={columns} rows={rows} emptyRowsPlaceholder={<Typography>Пусто</Typography>} />;
 };
 ```
 

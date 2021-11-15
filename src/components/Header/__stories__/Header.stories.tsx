@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { createMetadata } from '../../../utils/storybook';
-import { Text } from '../../Text/Text';
+import { Typography } from '../../Typography/Typography';
 
 import { HeaderFullExample } from './examples/HeaderFullExample/HeaderFullExample';
 import { HeaderMinifyLoginExample } from './examples/HeaderMinifyLoginExample/HeaderMinifyLoginExample';
@@ -13,25 +13,25 @@ import mdx from './Header.docs.mdx';
 export function Playground() {
   return (
     <div>
-      <Text size="3xl" lineHeight="l">
+      <Typography size="3xl" lineHeight="l">
         Полный
-      </Text>
+      </Typography>
       <HeaderFullExample />
-      <Text size="3xl" lineHeight="l">
+      <Typography size="3xl" lineHeight="l">
         Без поиска
-      </Text>
+      </Typography>
       <HeaderWithoutSearchExample />
-      <Text size="3xl" lineHeight="l">
+      <Typography size="3xl" lineHeight="l">
         С минилогином
-      </Text>
+      </Typography>
       <HeaderMinifyLoginExample />
-      <Text size="3xl" lineHeight="l">
+      <Typography size="3xl" lineHeight="l">
         Без меню
-      </Text>
+      </Typography>
       <HeaderWithoutMenuExample />
-      <Text size="3xl" lineHeight="l">
+      <Typography size="3xl" lineHeight="l">
         С уникальным лого
-      </Text>
+      </Typography>
       <HeaderWithLogoExample />
     </div>
   );

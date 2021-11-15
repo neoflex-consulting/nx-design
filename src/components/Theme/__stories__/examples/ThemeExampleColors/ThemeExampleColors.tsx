@@ -5,7 +5,7 @@ import React from 'react';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import * as wp from '../../../../../uiKit/whitepaper/whitepaper';
 import { cn } from '../../../../../utils/bem';
-import { Text } from '../../../../Text/Text';
+import { Typography } from '../../../../Typography/Typography';
 import { presetGpnDark, presetGpnDefault, presetGpnDisplay, Theme } from '../../../Theme';
 
 const cnExampleColors = cn('ThemeExampleColors');
@@ -18,15 +18,15 @@ export function ThemeExampleColors() {
         wp.decorator({ 'indent-b': 's' }),
       ])}
     >
-      <Text align="center" weight="bold">
+      <Typography align="center" weight="bold">
         Default
-      </Text>
-      <Text align="center" weight="bold">
+      </Typography>
+      <Typography align="center" weight="bold">
         Dark
-      </Text>
-      <Text align="center" weight="bold">
+      </Typography>
+      <Typography align="center" weight="bold">
         Display
-      </Text>
+      </Typography>
       <Theme preset={presetGpnDefault} className={cnExampleColors()}>
         <div className={cnExampleColors('Card')}>
           <div className={cnExampleColors('Content')}>

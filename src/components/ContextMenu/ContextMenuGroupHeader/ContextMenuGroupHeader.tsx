@@ -4,7 +4,7 @@ import React from 'react';
 
 import { cn } from '../../../utils/bem';
 import { getSizeByMap } from '../../../utils/getSizeByMap';
-import { Text, TextPropSize } from '../../Text/Text';
+import { Typography, TextPropSize } from '../../Typography/Typography';
 import { contextMenuDefaultSize, ContextMenuPropSize } from '../helpers';
 
 export const cnContextMenuGroupHeader = cn('ContextMenuGroupHeader');
@@ -21,12 +21,12 @@ export const ContextMenuGroupHeader: React.FC<{
   children?: never;
   first: boolean;
 }> = ({ label, size = contextMenuDefaultSize, first }) => (
-  <Text
+  <Typography
     view="secondary"
     transform="uppercase"
     className={cnContextMenuGroupHeader({ size, first })}
     size={getSizeByMap(sizeMap, size)}
   >
     {label}
-  </Text>
+  </Typography>
 );

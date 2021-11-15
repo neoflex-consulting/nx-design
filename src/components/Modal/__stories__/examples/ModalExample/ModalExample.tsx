@@ -5,7 +5,7 @@ import React from 'react';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { cn } from '../../../../../utils/bem';
 import { Button } from '../../../../Button/Button';
-import { Text } from '../../../../Text/Text';
+import { Typography } from '../../../../Typography/Typography';
 import { Modal } from '../../../Modal';
 
 const cnModalExample = cn('ModalExample');
@@ -28,13 +28,13 @@ export function ModalExample() {
         hasOverlay
         onOverlayClick={(): void => setIsModalOpen(false)}
       >
-        <Text as="p" size="s" view="secondary" className={cnModalExample('Title')}>
+        <Typography as="p" size="s" view="secondary" className={cnModalExample('Title')}>
           Заголовок модалки
-        </Text>
-        <Text as="p" size="m" view="primary" className={cnModalExample('Body')}>
+        </Typography>
+        <Typography as="p" size="m" view="primary" className={cnModalExample('Body')}>
           Описание в теле модалки. Здесь может находиться какая-то информация. Lorem ipsum dolor sit
           amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-        </Text>
+        </Typography>
         <div className={cnModalExample('Action')}>
           <Button
             size="m"
@@ -68,12 +68,12 @@ export function ModalExampleTop() {
         position="top"
         onOverlayClick={(): void => setIsModalOpen(false)}
       >
-        <Text as="p" size="s" view="secondary" className={cnModalExample('Title')}>
+        <Typography as="p" size="s" view="secondary" className={cnModalExample('Title')}>
           Я окно
-        </Text>
-        <Text as="p" size="m" view="primary" className={cnModalExample('Body')}>
+        </Typography>
+        <Typography as="p" size="m" view="primary" className={cnModalExample('Body')}>
           Я выше всех!
-        </Text>
+        </Typography>
         <div className={cnModalExample('Action')}>
           <Button
             size="m"
@@ -106,12 +106,12 @@ export function ModalExampleCenter() {
         hasOverlay
         onOverlayClick={(): void => setIsModalOpen(false)}
       >
-        <Text as="p" size="s" view="secondary" className={cnModalExample('Title')}>
+        <Typography as="p" size="s" view="secondary" className={cnModalExample('Title')}>
           Я окно
-        </Text>
-        <Text as="p" size="m" view="primary" className={cnModalExample('Body')}>
+        </Typography>
+        <Typography as="p" size="m" view="primary" className={cnModalExample('Body')}>
           Я в самой серединке!
-        </Text>
+        </Typography>
         <div className={cnModalExample('Action')}>
           <Button
             size="m"
@@ -144,12 +144,12 @@ export function ModalExampleNoOverlay() {
         hasOverlay={false}
         onOverlayClick={(): void => setIsModalOpen(false)}
       >
-        <Text as="p" size="s" view="secondary" className={cnModalExample('Title')}>
+        <Typography as="p" size="s" view="secondary" className={cnModalExample('Title')}>
           Я окно
-        </Text>
-        <Text as="p" size="m" view="primary" className={cnModalExample('Body')}>
+        </Typography>
+        <Typography as="p" size="m" view="primary" className={cnModalExample('Body')}>
           Я без подложки. Честно-честно.
-        </Text>
+        </Typography>
         <div className={cnModalExample('Action')}>
           <Button
             size="m"

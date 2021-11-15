@@ -2,7 +2,7 @@ import './MixCardExampleStates.css';
 
 import React from 'react';
 
-import { Text } from '../../../../../components/Text/Text';
+import { Typography } from '../../../../../components/Typography/Typography';
 import { cn } from '../../../../../utils/bem';
 import { cnMixCard } from '../../../MixCard';
 
@@ -20,7 +20,7 @@ export const MixCardExampleStates = () => {
           shadow: true,
         })}
       >
-        <Text>alert</Text>
+        <Typography>alert</Typography>
       </div>
       <div
         className={cnMixCard({
@@ -31,7 +31,7 @@ export const MixCardExampleStates = () => {
           shadow: true,
         })}
       >
-        <Text>warning</Text>
+        <Typography>warning</Typography>
       </div>
       <div
         className={cnMixCard({
@@ -42,7 +42,7 @@ export const MixCardExampleStates = () => {
           shadow: true,
         })}
       >
-        <Text>success</Text>
+        <Typography>success</Typography>
       </div>
     </div>
   );

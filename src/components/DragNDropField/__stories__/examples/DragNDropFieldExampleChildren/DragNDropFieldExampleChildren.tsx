@@ -3,7 +3,7 @@ import React from 'react';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { StoryBookExample } from '../../../../../uiKit/components/StoryBookExample/StoryBookExample';
 import { Button } from '../../../../Button/Button';
-import { Text } from '../../../../Text/Text';
+import { Typography } from '../../../../Typography/Typography';
 import { DragNDropField } from '../../../DragNDropField';
 
 export const DragNDropFieldExampleRenderProps = () => (
@@ -12,8 +12,8 @@ export const DragNDropFieldExampleRenderProps = () => (
       <DragNDropField onDropFiles={(files) => console.log(files)}>
         {({ openFileDialog }) => (
           <>
-            <Text>Пример с Render Props,</Text>
-            <Text>открывает окно для выбора файла из дочернего контента</Text>
+            <Typography>Пример с Render Props,</Typography>
+            <Typography>открывает окно для выбора файла из дочернего контента</Typography>
             <br />
             <Button onClick={openFileDialog} label="Выбрать файл" />
           </>
@@ -27,7 +27,7 @@ export const DragNDropFieldExampleChildren = () => (
   <StoryBookExample className={cnDocsDecorator('Section')}>
     <div>
       <DragNDropField onDropFiles={(files) => console.log(files)}>
-        <Text>Здесь просто текст</Text>
+        <Typography>Здесь просто текст</Typography>
       </DragNDropField>
     </div>
   </StoryBookExample>

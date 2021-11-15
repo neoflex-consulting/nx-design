@@ -4,7 +4,7 @@ import React from 'react';
 
 import { cn } from '../../../utils/bem';
 import { Button } from '../../Button/Button';
-import { Text } from '../../Text/Text';
+import { Typography } from '../../Typography/Typography';
 
 const cnTableFilterContainer = cn('TableFilterContainer');
 
@@ -29,9 +29,9 @@ export const TableFilterContainer: React.FC<TableFilterContainerProps> = ({
   return (
     <div className={cnTableFilterContainer(null, [className])}>
       {title && (
-        <Text view="primary" size="m" className={cnTableFilterContainer('Title')} lineHeight="l">
+        <Typography view="primary" size="m" className={cnTableFilterContainer('Title')} lineHeight="l">
           {title}
-        </Text>
+        </Typography>
       )}
       {children}
       <div className={cnTableFilterContainer('Buttons')}>

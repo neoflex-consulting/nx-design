@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 
 import { IconClose } from '../../../icons/IconClose/IconClose';
 import { Button } from '../../Button/Button';
-import { Text } from '../../Text/Text';
+import { Typography } from '../../Typography/Typography';
 import { cnTheme } from '../../Theme/Theme';
 import { SnackBarActionButton } from '../ActionButton/SnackBar-ActionButton';
 import { cnSnackBar, cnSnackBarItem, Item, snackBarItemStatusDefault } from '../SnackBar';
@@ -90,9 +90,9 @@ export const SnackBarItem: React.FC<SnackBarItemProps> = (props) => {
       {!autoCloseTime && Icon && <Icon className={cnSnackBar('Icon')} size="m" />}
       <div className={cnSnackBar('Content')}>
         {message && (
-          <Text className={cnSnackBar('Message')} lineHeight="s">
+          <Typography className={cnSnackBar('Message')} lineHeight="s">
             {message}
-          </Text>
+          </Typography>
         )}
         {actions && <SnackBarActionButton actions={actions} />}
       </div>

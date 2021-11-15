@@ -4,7 +4,7 @@ import './ColorPreview.css';
 
 import React from 'react';
 
-import { Text } from '../../../components/Text/Text';
+import { Typography } from '../../../components/Typography/Typography';
 import { IconCopy } from '../../../icons/IconCopy/IconCopy';
 import { cn } from '../../cn';
 import * as wp from '../../whitepaper/whitepaper';
@@ -42,7 +42,7 @@ export const ColorPreview: React.FC<Props> = ({
         style={!rgba ? { color: `var(${color})` } : { color: `rgba(var(${color}), 0.5)` }}
       />
       <div className={wp.ptIconPlus('block')}>
-        <Text
+        <Typography
           as="h3"
           size="m"
           font="mono"
@@ -52,7 +52,7 @@ export const ColorPreview: React.FC<Props> = ({
           ])}
         >
           {color}
-        </Text>
+        </Typography>
         <div
           className={cnColorPreview('ColorCode', [
             wp.decorator({ 'indent-t': 'none', 'space-h': '2xs' }),
@@ -63,11 +63,11 @@ export const ColorPreview: React.FC<Props> = ({
           }}
         >
           <IconCopy size="xs" />
-          <Text size="s" font="mono">
+          <Typography size="s" font="mono">
             {value}
-          </Text>
+          </Typography>
         </div>
-        <Text
+        <Typography
           as="p"
           size="s"
           view="primary"
@@ -76,7 +76,7 @@ export const ColorPreview: React.FC<Props> = ({
           ])}
         >
           {description}
-        </Text>
+        </Typography>
       </div>
     </div>
   );

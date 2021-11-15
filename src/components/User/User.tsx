@@ -9,7 +9,7 @@ import { getSizeByMap } from '../../utils/getSizeByMap';
 import { forwardRefWithAs } from '../../utils/types/PropsWithAsAttributes';
 import { Avatar } from '../Avatar/Avatar';
 import { Button, ButtonPropSize } from '../Button/Button';
-import { Text, TextPropSize } from '../Text/Text';
+import { Typography, TextPropSize } from '../Typography/Typography';
 
 export const userPropSize = ['m', 's', 'l'] as const;
 export type UserPropSize = typeof userPropSize[number];
@@ -108,19 +108,19 @@ export const User = forwardRefWithAs<Props>((props, ref) => {
       {!onlyAvatar && (name || info) && (
         <div className={cnUser('Block')}>
           {name && (
-            <Text className={cnUser('Name')} size={size} view="primary" lineHeight="2xs">
+            <Typography className={cnUser('Name')} size={size} view="primary" lineHeight="2xs">
               {name}
-            </Text>
+            </Typography>
           )}
           {info && size !== 's' && (
-            <Text
+            <Typography
               className={cnUser('Info')}
               size={getSizeByMap(infoSizeMap, size)}
               view="secondary"
               lineHeight="2xs"
             >
               {info}
-            </Text>
+            </Typography>
           )}
         </div>
       )}

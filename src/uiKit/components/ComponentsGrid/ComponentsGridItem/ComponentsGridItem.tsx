@@ -2,7 +2,7 @@ import './ComponentsGridItem.css';
 
 import React from 'react';
 
-import { Text } from '../../../../components/Text/Text';
+import { Typography } from '../../../../components/Typography/Typography';
 import { cn } from '../../../cn';
 
 const cnComponentsGridItem = cn('ComponentsGridItem');
@@ -21,10 +21,10 @@ export const ComponentsGridItem: React.FC<ComponentsGridItemProps> = ({
 }) => {
   return (
     <div className={cnComponentsGridItem()}>
-      <Text size="l" as="a" view="link" href={href} target="blank">
+      <Typography size="l" as="a" view="link" href={href} target="blank">
         {name}
-      </Text>
-      {description && <Text size="s">{description}</Text>}
+      </Typography>
+      {description && <Typography size="s">{description}</Typography>}
     </div>
   );
 };

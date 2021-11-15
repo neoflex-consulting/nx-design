@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Text } from '../../../../../components/Text/Text';
+import { Typography } from '../../../../../components/Typography/Typography';
 import { cnMixCard } from '../../../MixCard';
 
 export const MixCardExample = () => {
@@ -14,7 +14,7 @@ export const MixCardExample = () => {
         shadow: true,
       })}
     >
-      <Text>Здесь мог быть ваш текст</Text>
+      <Typography>Здесь мог быть ваш текст</Typography>
     </div>
   );
 };

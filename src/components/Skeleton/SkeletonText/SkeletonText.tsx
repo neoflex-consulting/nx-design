@@ -8,7 +8,7 @@ import {
   textPropLineHeightDefault,
   TextPropSize,
   textPropSizeDefault,
-} from '../../Text/Text';
+} from '../../Typography/Typography';
 import { SkeletonBrick } from '../Skeleton';
 
 type SkeletonTextProps = {

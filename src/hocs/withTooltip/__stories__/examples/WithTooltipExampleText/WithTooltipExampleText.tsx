@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Text } from '../../../../../components/Text/Text';
+import { Text } from '../../../../../components/Typography/Typography';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { withTooltip } from '../../../withTooltip';
 

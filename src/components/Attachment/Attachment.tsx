@@ -7,7 +7,7 @@ import { cn } from '../../utils/bem';
 import { forwardRefWithAs } from '../../utils/types/PropsWithAsAttributes';
 import { Button } from '../Button/Button';
 import { File } from '../File/File';
-import { Text } from '../Text/Text';
+import { Typography } from '../Typography/Typography';
 
 type Props = {
   fileExtension?: string;
@@ -66,24 +66,24 @@ const Attachment = forwardRefWithAs<Props>((props, ref) => {
       />
       <div className={cnAttachment('Content')}>
         {fileName && (
-          <Text className={cnAttachment('FileName')} size="s" view="primary" lineHeight="xs">
+          <Typography className={cnAttachment('FileName')} size="s" view="primary" lineHeight="xs">
             {fileName}
-          </Text>
+          </Typography>
         )}
         {fileDescription && !loading && (
-          <Text className={cnAttachment('FileDescription')} size="xs" lineHeight="xs" view="ghost">
+          <Typography className={cnAttachment('FileDescription')} size="xs" lineHeight="xs" view="ghost">
             {fileDescription}
-          </Text>
+          </Typography>
         )}
         {loadingText && loading && (
-          <Text className={cnAttachment('LoadingText')} size="xs" lineHeight="xs" view="ghost">
+          <Typography className={cnAttachment('LoadingText')} size="xs" lineHeight="xs" view="ghost">
             {loadingProgress ? `${loadingText} ${loadingProgress}%` : `${loadingText}...`}
-          </Text>
+          </Typography>
         )}
         {errorText && (
-          <Text className={cnAttachment('ErrorText')} size="xs" lineHeight="xs" view="alert">
+          <Typography className={cnAttachment('ErrorText')} size="xs" lineHeight="xs" view="alert">
             {errorText}
-          </Text>
+          </Typography>
         )}
       </div>
       {withOnButtonAction && (

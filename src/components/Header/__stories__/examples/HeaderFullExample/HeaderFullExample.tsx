@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { IconChat } from '../../../../../icons/IconChat/IconChat';
 import { IconRing } from '../../../../../icons/IconRing/IconRing';
 import { cn } from '../../../../../utils/bem';
-import { Text } from '../../../../Text/Text';
+import { Typography } from '../../../../Typography/Typography';
 import {
   Header,
   HeaderButton,
@@ -51,9 +51,9 @@ export function HeaderFullExample() {
         <>
           <HeaderModule>
             <HeaderLogo>
-              <Text as="p" size="l" weight="bold">
+              <Typography as="p" size="l" weight="bold">
                 Logotype
-              </Text>
+              </Typography>
             </HeaderLogo>
           </HeaderModule>
           <HeaderModule indent="l">

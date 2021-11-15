@@ -2,7 +2,7 @@ import './MixCardExampleForm.css';
 
 import React from 'react';
 
-import { Text } from '../../../../../components/Text/Text';
+import { Typography } from '../../../../../components/Typography/Typography';
 import { cn } from '../../../../../utils/bem';
 import { cnMixCard } from '../../../MixCard';
 
@@ -19,7 +19,7 @@ export const MixCardExampleForm = () => {
           shadow: true,
         })}
       >
-        <Text>square</Text>
+        <Typography>square</Typography>
       </div>
       <div
         className={cnMixCard({
@@ -29,7 +29,7 @@ export const MixCardExampleForm = () => {
           shadow: true,
         })}
       >
-        <Text>round</Text>
+        <Typography>round</Typography>
       </div>
     </div>
   );

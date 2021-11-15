@@ -507,10 +507,10 @@ export const RootTheme: React.FC = () => {
 
 ```tsx
 import { useTheme } from '@consta/uikit/Theme';
-import { Text } from '@consta/uikit/Text';
+import { Typography } from '@consta/uikit/Typography';
 
 const App = () => {
   const { themeClassNames } = useTheme();
-  <Text className={themeClassNames.color.invert}>Текст в инвертном цвете</Text>;
+  <Typography className={themeClassNames.color.invert}>Текст в инвертном цвете</Typography>;
 };
 ```

@@ -74,13 +74,13 @@ export function ModalExample() {
         hasOverlay
         onOverlayClick={(): void => setIsModalOpen(false)}
       >
-        <Text as="p" size="s" view="secondary" className={cnModalExample('Title')}>
+        <Typography as="p" size="s" view="secondary" className={cnModalExample('Title')}>
           Заголовок модалки
-        </Text>
-        <Text as="p" size="m" view="primary" className={cnModalExample('Body')}>
+        </Typography>
+        <Typography as="p" size="m" view="primary" className={cnModalExample('Body')}>
           Описание в теле модалки. Здесь может находиться какая-то информация. Lorem ipsum dolor sit
           amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-        </Text>
+        </Typography>
         <div className={cnModalExample('Action')}>
           <Button
             size="m"

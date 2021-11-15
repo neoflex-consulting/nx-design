@@ -19,7 +19,7 @@ import { cn } from '../../../utils/bem';
 import { DateRange } from '../../../utils/types/Date';
 import { PropsWithHTMLAttributes } from '../../../utils/types/PropsWithHTMLAttributes';
 import { Button } from '../../Button/Button';
-import { Text } from '../../Text/Text';
+import { Typography } from '../../Typography/Typography';
 
 export type CalendarSliderProps = PropsWithHTMLAttributes<
   {
@@ -153,7 +153,7 @@ export const CalendarSlider: React.FC<CalendarSliderProps> = (props) => {
         <div className={cnCalendarSlider('SliderBody')}>
           <div className={cnCalendarSlider('Selector')} />
           {data.map((year) => (
-            <Text
+            <Typography
               className={cnCalendarSlider('YearLabel', { position: year.positon })}
               weight="bold"
               size="s"
@@ -161,7 +161,7 @@ export const CalendarSlider: React.FC<CalendarSliderProps> = (props) => {
               view={isCurrentVisibleYear(currentVisibleDate, year.date) ? undefined : 'ghost'}
             >
               {year.label}
-            </Text>
+            </Typography>
           ))}
           {data.map((year) => (
             <div
@@ -188,14 +188,14 @@ export const CalendarSlider: React.FC<CalendarSliderProps> = (props) => {
                   }
                   type="button"
                 >
-                  <Text
+                  <Typography
                     className={cnCalendarSlider('MonthLabel')}
                     size="2xs"
                     view="ghost"
                     align="center"
                   >
                     {month.label}
-                  </Text>
+                  </Typography>
                 </button>
               ))}
             </div>

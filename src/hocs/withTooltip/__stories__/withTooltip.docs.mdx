@@ -28,13 +28,13 @@ onMouseLeave?: (() => void) | React.MouseEventHandler;
 
 ## Пример использования
 
-Напирмер, `withTooltip` можно добавить к обычному тексту (заданному в компоненте `Text`).
+Напирмер, `withTooltip` можно добавить к обычному тексту (заданному в компоненте `Typography`).
 
 ```tsx
 import { withTooltip } from '@consta/uikit/withTooltip';
-import { Text } from '@consta/uikit/Text';
+import { Typography } from '@consta/uikit/Typography';
 
-const TextWithTooltip = withTooltip({ content: 'Тултип' })(Text);
+const TextWithTooltip = withTooltip({ content: 'Тултип' })(Typography);
 
 export const WithTooltipExampleText = () => {
   return (

@@ -1,0 +1,346 @@
+import { TextExampleAlign } from './examples/TextExampleAlign/TextExampleAlign';
+import { TextExampleCombinedWeightAndStyle } from './examples/TextExampleCombinedWeightAndStyle/TextExampleCombinedWeightAndStyle';
+import { TextExampleDecoration } from './examples/TextExampleDecoration/TextExampleDecoration';
+import { TextExampleHeadingAndParagraph } from './examples/TextExampleHeadingAndParagraph/TextExampleHeadingAndParagraph';
+import { TextExampleLabelAndData } from './examples/TextExampleLabelAndData/TextExampleLabelAndData';
+import { TextExampleLineheight } from './examples/TextExampleLineheight/TextExampleLineheight';
+import { TextExampleSize } from './examples/TextExampleSize/TextExampleSize';
+import { TextExampleSpacing } from './examples/TextExampleSpacing/TextExampleSpacing';
+import { TextExampleStyle } from './examples/TextExampleStyle/TextExampleStyle';
+import { TextExampleTransform } from './examples/TextExampleTransform/TextExampleTransform';
+import { TextExampleView } from './examples/TextExampleView/TextExampleView';
+import { TextExampleWeight } from './examples/TextExampleWeight/TextExampleWeight';
+
+# Typography
+
+Весь текст на странице нужно обернуть в компонент `Typography`, стили задаются свойствами.
+
+- [Текст](#свойства-текста)
+  - [Цвет](#цвет) `view`
+  - [Размер](#размер) `size`
+  - [Гарнитура](#гарнитура) `font`
+  - [Насыщенность](#насыщенность) `weight`
+  - [Наклон](#наклон) `fontStyle`
+  - [Межбуквенный интервал](#межбуквенный-интервал) `spacing`
+  - [Высота строки](#высота-строки) `lineHeight`
+  - [Отображение курсора](#отображение-курсора) `cursor`
+  - [Подчеркивание](#подчеркивание) `decoration`
+  - [Регистр](#регистр) `transform`
+  - [Выравнивание](#выравнивание) `align`
+- [Контейнер с текстом](#контейнер-с-текстом)
+  - [Тег для контейнера](#тег-для-контейнера) `as`
+  - [Расположение](#расположение) `display`
+- [Блоки с текстом](#блоки-с-текстом)
+  - [Абзац и заголовок](#абзац-и-заголовок)
+  - [Данные с подсказками](#данные-с-подсказками)
+  - [Форматирование текста](#форматирование-текста-в-абзаце)
+- [Все свойства](#свойства)
+- [Пример использования](#пример-использования)
+
+## Текст
+
+### Цвет
+
+`view` отвечает за тип и цвет текста.
+
+```ts
+<Typography view="alert">Газпром нефть</Typography> /* ошибка */
+<Typography view="brand">Газпром нефть</Typography> /* цвет бренда */
+<Typography view="ghost">Газпром нефть</Typography> /* примечания */
+<Typography view="link">Газпром нефть</Typography> /* ссылка */
+<Typography view="link-minor">Газпром нефть</Typography> /* дополнительная ссылка */
+<Typography view="primary">Газпром нефть</Typography> /* основной текст */
+<Typography view="secondary">Газпром нефть</Typography> /* дополнительный */
+<Typography view="success">Газпром нефть</Typography> /* успешное действие */
+<Typography view="warning">Газпром нефть</Typography> /* предупреждение */
+```
+
+<TextExampleView />
+
+### Размер
+
+`size` отвечает за размер текста.
+
+- По умолчанию в параграфах используется размер `m`.
+- Даже для самых неважных подсказок используйте размер `xs` или больше.
+- `2xs` — только для текста в [верхнем регистре](#регистр).
+
+```ts
+<Typography size="2xs">Нефть</Typography>
+<Typography size="xs">Нефть</Typography>
+<Typography size="s">Нефть</Typography>
+<Typography size="m">Нефть</Typography>
+<Typography size="l">Нефть</Typography>
+<Typography size="xl">Нефть</Typography>
+<Typography size="2xl">Нефть</Typography>
+<Typography size="3xl">Нефть</Typography>
+<Typography size="4xl">Нефть</Typography>
+<Typography size="5xl">Нефть</Typography>
+<Typography size="6xl">Нефть</Typography>
+```
+
+<TextExampleSize />
+
+### Гарнитура
+
+`font` отвечает за гарнитуру шрифта.
+
+Вы можете выбрать гарнитуру, заданную в системе:
+
+- `primary` меняет шрифт на основной шрифт дизайн-системы,
+- `mono` — на шрифт, заданный как моноширный.
+
+Это нужно, чтобы расставить дополнительные акценты: например, выделить что-то важное
+прямо в тексте.
+
+### Насыщенность
+
+`weight` отвечает за насыщенность (жирный, полужирный, обычный, светлый и другие варианты).
+
+> Убедитесь, что в шрифте есть насыщенность, которую вы используете. Браузер имитирует
+> насыщенность, которой нет в наборе, но неизвестно, как это будет выглядеть.
+
+```ts
+<Typography weight="black">Газпром нефть</Typography>
+<Typography weight="bold">Газпром нефть</Typography>
+<Typography weight="semibold">Газпром нефть</Typography>
+<Typography weight="regular">Газпром нефть</Typography>
+<Typography weight="light">Газпром нефть</Typography>
+<Typography weight="thin">Газпром нефть</Typography>
+```
+
+<TextExampExampleWeighteView />
+
+### Наклон
+
+`fontStyle` меняет наклон шрифта (можно выделить текст курсивом).
+
+```ts
+<Typography fontStyle="italic">Газпром нефть</Typography>
+```
+
+<TextExampleStyle />
+
+### Межбуквенный интервал
+
+`spacing` меняет межбуквенный интервал.
+
+```ts
+<Typography spacing="xs">
+  «Газпром нефть» ведет работу в крупнейших российских нефтегазовых регионах.
+</Typography>
+<Typography spacing="s">
+  «Газпром нефть» ведет работу в крупнейших российских нефтегазовых регионах.
+</Typography>
+<Typography spacing="m">
+  «Газпром нефть» ведет работу в крупнейших российских нефтегазовых регионах.
+</Typography>
+<Typography spacing="l">
+  «Газпром нефть» ведет работу в крупнейших российских нефтегазовых регионах.
+</Typography>
+```
+
+<TextExampleSpacing />
+
+### Высота строки
+
+`lineHeight` отвечает за высоту строки.
+
+```ts
+<Typography lineHeight="2xs">
+  «Газпром нефть» ведет работу в крупнейших российских нефтегазовых регионах.
+</Typography>
+<Typography lineHeight="xs">
+  «Газпром нефть» ведет работу в крупнейших российских нефтегазовых регионах.
+</Typography>
+<Typography lineHeight="s">
+  «Газпром нефть» ведет работу в крупнейших российских нефтегазовых регионах.
+</Typography>
+<Typography lineHeight="m">
+  «Газпром нефть» ведет работу в крупнейших российских нефтегазовых регионах.
+</Typography>
+<Typography lineHeight="l">
+  «Газпром нефть» ведет работу в крупнейших российских нефтегазовых регионах.
+</Typography>
+```
+
+<TextExampleLineheight />
+
+### Подчеркивание
+
+`decoration` в значении `underline` подчеркивает текст.
+
+```ts
+<Typography decoration="underline">Газпром нефть</Typography>
+```
+
+<TextExampleDecoration />
+
+### Регистр
+
+`transform` в значении `uppercase` переводит текст в верхний регистр.
+
+```ts
+<Typography transform="uppercase">Газпром нефть</Typography>
+```
+
+<TextExampleTransform />
+
+### Выравнивание
+
+`align` отвечает за выравнивание текста в контейнере.
+
+```ts
+<Typography align="left">Газпром нефть</Typography>
+<Typography align="center">Газпром нефть</Typography>
+<Typography align="right">Газпром нефть</Typography>
+```
+
+<TextExampleAlign />
+
+## Контейнер с текстом
+
+### Тег для контейнера
+
+По умолчанию `Typography` представлен в HTML-документе в виде тега `div`. Вы можете его
+переопределить с помощью свойства `as`.
+
+### Расположение
+
+`display` определяет, как будет вести себя контейнер с текстом по отношению к другим элементам
+на странице (как строчный или блочный элемент). Варианты: `block`, `inline-block`, `inline`.
+
+## Блоки с текстом
+
+### Абзац и заголовок
+
+Пример классической конструкции: абзац с заголовком.
+
+```ts
+<Typography
+  as="div"
+  align="left"
+  font="sans"
+  lineHeight="l"
+  size="2xl"
+  spacing="m"
+  transform="uppercase"
+  view="primary"
+  weight="bold"
+>
+  Заголовок несет суть
+</Typography>
+<Typography as="p" align="left" font="serif" lineHeight="s" size="s" view="primary">
+  Абзац — это часть текста между отступами с новой строки. Абзац можно назвать микротекстом.
+  В общей теме могут выделяться и микротемы. При этом каждый абзац раскрывает свою
+  микротему. Что же ещё можно сказать про абзацы? Мы видим, что обычно в абзацах несколько
+  предложений. В таком случае каждый абзац служит для выделения своей микротемы.
+</Typography>
+```
+
+<TextExampleHeadingAndParagraph />
+
+### Данные с подсказками
+
+Можно использовать в формах с данными.
+
+```ts
+<Typography as="div" align="left" font="sans" lineHeight="l" size="s" view="secondary">
+  ФИО
+</Typography>
+<Typography as="div" align="left" font="serif" lineHeight="l" size="l" view="primary">
+  Иванов Дмитрий Петрович
+</Typography>
+<Typography as="div" align="left" font="sans" lineHeight="l" size="s" view="secondary">
+  Должность
+</Typography>
+<Typography as="div" align="left" font="serif" lineHeight="l" size="l" view="primary">
+  Инженер по бурению
+</Typography>
+<Typography as="div" align="left" font="sans" lineHeight="l" size="s" view="secondary">
+  Подразделение
+</Typography>
+<Typography as="div" align="left" font="serif" lineHeight="l" size="l" view="primary">
+  Группа разведки и бурения
+</Typography>
+```
+
+<TextExampleLabelAndData />
+
+### Форматирование текста в абзаце
+
+Вы можете выделять отдельные слова, фразы или части фраз с помощью форматирования.
+Например, чтобы обратить внимание на важную информацию, выделить термин, элемент
+интерфейса, прямую речь.
+
+```ts
+<Typography as="div" align="left" font="sans" lineHeight="l" size="m" view="primary">
+  <Typography as="span" fontStyle="italic">
+    Примечание.&nbsp;
+  </Typography>
+  База скважин сформирована на основе отчетов сотрудников. Любые&nbsp;
+  <Typography weight="black" as="span">
+    срочные изменения
+  </Typography>{' '}
+  должны вноситься по регламенту в сроки, указанные Центром Разработок.
+</Typography>
+```
+
+<TextExampleCombinedWeightAndStyle />
+
+## Свойства
+
+<!-- props:start -->
+
+| Свойство                            | Тип                                                                                                       | По умолчанию | Описание                                                                  |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------------- |
+| [`view`](#цвет)                     | `'alert', 'brand', 'ghost', 'link', 'linkMinor', 'primary', 'secondary', 'success', 'warning'`, `primary` | `'primary'`  | Тип и цвет текста                                                         |
+| [`font`](#гарнитура)                | `'primary', 'mono';`                                                                                      | —            | Гарнитура                                                                 |
+| [`lineHeight`](#высота-строки)      | `'2xs', 'xs', 's', 'm', 'l'`                                                                              | `'m'`        | Высота строки                                                             |
+| [`spacing`](#межбуквенный-интервал) | `'xs', 's', 'm', 'l'`                                                                                     | —            | Межбуквенное расстояние                                                   |
+| [`fontStyle`](#начертание)          | `italic`                                                                                                  | —            | Начертание                                                                |
+| [`weight`](#насыщенность)           | `'black', 'bold', 'light', 'regular', 'semibold', 'thin'`                                                 | —            | Насыщенность                                                              |
+| [`transform`](#регистр)             | `uppercase`                                                                                               | —            | Регистр                                                                   |
+| [`cursor`](#отображение-курсора)    | `pointer`                                                                                                 | —            | Отображение курсора                                                       |
+| [`decoration`](#подчеркивание)      | `underline`                                                                                               | —            | Подчеркивание                                                             |
+| [`align`](#выравнивание)            | `'left', 'center', 'right'`                                                                               | —            | Выравнивание                                                              |
+| [`size`](#размер)                   | `'2xs', 'xs', 's', 'm', 'l', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl'`                                     | `'m'`        | Размер текста                                                             |
+| [`display`](#расположение)          | `'block', 'inlineBlock', 'inline'`                                                                        | —            | Поведение контейнера с текстом в документе (блочный или строчный элемент) |
+| [`as`](#тег-для-контейнера)         | `keyof JSX.IntrinsicElements`                                                                             | `'div'`      | HTML-тег, в виде которого этот компонент будет представлен в DOM          |
+| `className`                         | `string`                                                                                                  | —            | Дополнительный CSS-класс                                                  |
+| `children`                          | `React.ReactNode`                                                                                         | —            | Дочерние компоненты                                                       |
+| `ref`                               | `React.Ref<HTMLElement>`                                                                                  | —            | Ссылка на корневой DOM-элемент этого компонента                           |
+
+<!-- props:end -->
+
+## Пример использования
+
+Использование компонента:
+
+```ts
+// src/App.ts
+import React from 'react';
+import { Typography } from '@consta/uikit/Typography';
+
+export function App() {
+  return (
+    <Typography
+      as = 'p'
+      align = 'center'
+      cursor = 'default'
+      decoration = 'none'
+      display = 'block'
+      font = 'mono'
+      lineHeight = '2xs'
+      size = 'm'
+      spacing = 'xs'
+      view = 'primary'
+      weight = 'regular'
+      width = 'default'
+      className = 'custom-class-name'
+    >
+      Текст
+    </>
+  );
+}
+```

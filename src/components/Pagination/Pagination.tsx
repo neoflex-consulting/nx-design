@@ -7,7 +7,7 @@ import { IconForward } from '../../icons/IconForward/IconForward';
 import { cn } from '../../utils/bem';
 import { PropsWithHTMLAttributesAndRef } from '../../utils/types/PropsWithHTMLAttributes';
 import { Button } from '../Button/Button';
-import { Text } from '../Text/Text';
+import { Typography } from '../Typography/Typography';
 import { TextField, TextFieldOnChangeArguments } from '../TextField/TextField';
 
 import { getPaginationInfo } from './helpers';
@@ -179,9 +179,9 @@ export const Pagination: Pagination = React.forwardRef((props, ref) => {
               onClick={handleClick(prevPage)}
             />
             {!minified && (
-              <Text className={cnPagination('TipLeft')} size="xs" view="ghost">
+              <Typography className={cnPagination('TipLeft')} size="xs" view="ghost">
                 {hotkeys.prevPage.label}
-              </Text>
+              </Typography>
             )}
           </div>
         )}
@@ -200,14 +200,14 @@ export const Pagination: Pagination = React.forwardRef((props, ref) => {
               />
             )}
             {isStartDots && (
-              <Text
+              <Typography
                 size={size}
                 view="linkMinor"
                 className={cnPagination('More')}
                 style={{ width: itemWidth }}
               >
                 ...
-              </Text>
+              </Typography>
             )}
             {pages.map((page) => (
               <Button
@@ -223,14 +223,14 @@ export const Pagination: Pagination = React.forwardRef((props, ref) => {
               />
             ))}
             {isEndDots && (
-              <Text
+              <Typography
                 size={size}
                 view="linkMinor"
                 className={cnPagination('More')}
                 style={{ width: itemWidth }}
               >
                 ...
-              </Text>
+              </Typography>
             )}
             {isEndDots && (
               <Button
@@ -254,9 +254,9 @@ export const Pagination: Pagination = React.forwardRef((props, ref) => {
               value={currPage.toString()}
               onChange={handleChange}
             />
-            <Text size={size} view="linkMinor" className={cnPagination('Total')}>
+            <Typography size={size} view="linkMinor" className={cnPagination('Total')}>
               {getLabel}
-            </Text>
+            </Typography>
           </div>
         )}
         {(currPage < totalPages || minified) && (
@@ -274,9 +274,9 @@ export const Pagination: Pagination = React.forwardRef((props, ref) => {
               onClick={handleClick(nextPage)}
             />
             {!minified && (
-              <Text className={cnPagination('TipRight')} size="xs" view="ghost">
+              <Typography className={cnPagination('TipRight')} size="xs" view="ghost">
                 {hotkeys.nextPage.label}
-              </Text>
+              </Typography>
             )}
           </div>
         )}

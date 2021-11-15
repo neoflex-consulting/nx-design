@@ -7,7 +7,7 @@ import { IconArrowDown } from '../../icons/IconArrowDown/IconArrowDown';
 import { cn } from '../../utils/bem';
 import { getSizeByMap } from '../../utils/getSizeByMap';
 import { PropsWithHTMLAttributesAndRef } from '../../utils/types/PropsWithHTMLAttributes';
-import { Text } from '../Text/Text';
+import { Typography } from '../Typography/Typography';
 
 import {
   CollapseIcon,
@@ -148,9 +148,9 @@ export const Collapse: Collapse = React.forwardRef<HTMLDivElement, CollapseProps
           direction={directionIcon}
           closeDirection={closeDirectionIcon}
         />
-        <Text className={cnCollapse('LabelText')} view={view} size={size}>
+        <Typography className={cnCollapse('LabelText')} view={view} size={size}>
           {label}
-        </Text>
+        </Typography>
         {iconPosition === 'left' && renderSide(rightSide)}
       </div>
       <div className={cnCollapse('Body', { isOpen })}>

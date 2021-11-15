@@ -20,7 +20,7 @@ import { cn } from '../../../utils/bem';
 import { createMetadata, createStory } from '../../../utils/storybook';
 import { Button } from '../../Button/Button';
 import { Checkbox } from '../../Checkbox/Checkbox';
-import { Text } from '../../Text/Text';
+import { Typography } from '../../Typography/Typography';
 import { verticalAligns } from '../Cell/TableCell';
 import { Filters, SortByProps } from '../filtering';
 import {
@@ -243,7 +243,7 @@ export const WithCustomRowsPlaceholder = createStory(
     <Table
       columns={tableData.columns}
       rows={[]}
-      emptyRowsPlaceholder={<Text>Данные не найдены</Text>}
+      emptyRowsPlaceholder={<Typography>Данные не найдены</Typography>}
     />
   ),
   {
