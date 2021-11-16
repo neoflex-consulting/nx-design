@@ -2,13 +2,12 @@ import './Button.css';
 
 import React from 'react';
 
-import { IconProps, IconPropSize } from '../../icons/Icon/Icon';
 import { cnMixFocus } from '../../mixs/MixFocus/MixFocus';
 import { cn } from '../../utils/bem';
-import { getSizeByMap } from '../../utils/getSizeByMap';
 import { forwardRefWithAs } from '../../utils/types/PropsWithAsAttributes';
 import { usePropsHandler } from '../EventInterceptor/usePropsHandler';
 import { Loader } from '../Loader/Loader';
+
 
 export const buttonPropSize = ['xs', 's', 'm', 'l'] as const;
 export type ButtonPropSize = typeof buttonPropSize[number];
@@ -44,29 +43,14 @@ export type Props = {
   loading?: boolean;
   label?: string | number | React.ReactNode;
   onClick?: React.EventHandler<React.MouseEvent>;
-  iconLeft?: React.FC<IconProps>;
-  iconRight?: React.FC<IconProps>;
+  iconLeft?: React.ReactNode;
+  iconRight?: React.ReactNode;
   onlyIcon?: boolean;
-  iconSize?: IconPropSize;
   title?: string;
   children?: never;
 };
 
 export const cnButton = cn('Button');
-
-const sizeMap: Record<ButtonPropSize, IconPropSize> = {
-  xs: 'xs',
-  s: 'xs',
-  m: 's',
-  l: 'm',
-};
-
-const sizeMapOnlyIcon: Record<ButtonPropSize, IconPropSize> = {
-  xs: 'xs',
-  s: 's',
-  m: 'm',
-  l: 'm',
-};
 
 export const Button = forwardRefWithAs<Props, 'button'>((props, ref) => {
   const {
@@ -84,7 +68,6 @@ export const Button = forwardRefWithAs<Props, 'button'>((props, ref) => {
     tabIndex,
     as = 'button',
     onlyIcon,
-    iconSize: iconSizeProp,
     ...otherProps
   } = usePropsHandler(cnButton(), props);
 
@@ -94,9 +77,6 @@ export const Button = forwardRefWithAs<Props, 'button'>((props, ref) => {
   const IconRight = iconRight;
   const withIcon = !!iconLeft || !!iconRight;
   const title = props.title || (!!IconOnly && label) || undefined;
-  const iconSize = IconOnly
-    ? getSizeByMap(sizeMapOnlyIcon, size, iconSizeProp)
-    : getSizeByMap(sizeMap, size, iconSizeProp);
 
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     if (!disabled && !loading && onClick) {
@@ -126,16 +106,18 @@ export const Button = forwardRefWithAs<Props, 'button'>((props, ref) => {
       ref={ref}
       {...(Tag === 'button' ? { disabled: disabled || loading } : {})}
     >
-      {IconOnly && <IconOnly className={cnButton('Icon')} size={iconSize} />}
+      {IconOnly &&
+        <span className={cnButton('Icon')}> {iconLeft || iconRight} </span>
+      }
       {!IconOnly &&
         ((IconLeft || IconRight) && label ? (
           <>
             {IconLeft && (
-              <IconLeft className={cnButton('Icon', { position: 'left' })} size={iconSize} />
+              <span className={cnButton('Icon', { position: 'left' })}> {iconLeft} </span>
             )}
             <span className={cnButton('Label')}>{label}</span>
             {IconRight && (
-              <IconRight className={cnButton('Icon', { position: 'right' })} size={iconSize} />
+              <span className={cnButton('Icon', { position: 'right' })}> {iconRight} </span>
             )}
           </>
         ) : (

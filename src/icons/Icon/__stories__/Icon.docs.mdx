@@ -34,15 +34,16 @@ import { IconExampleSize } from './examples/IconExampleSize/IconExampleSize';
 
 ## Внешний вид
 
-За вид иконки отвечает свойство `view`.
+За вид иконки отвечает свойство `color`.
 
-| `'alert'`                | `'brand'`                | `'ghost'`                | `'link'`                | `'primary'`                | `'secondary'`                | `'success'`                | `'warning'`                |
+| `default`                | `brand`                  | `ghost`                  | `link`                  | `primary`                  | `secondary`                  | `success`                  | `warning`                  |
 | ------------------------ | ------------------------ | ------------------------ | ----------------------- | -------------------------- | ---------------------------- | -------------------------- | -------------------------- |
+| `#293468`                | `#0071b2`                | `#b2bcc1`                | `#424d78`               | `#002033`                  | `#667985`                    | `#09b37b`                  | `#fdbd5d`                  |
 | <IconExampleViewAlert /> | <IconExampleViewBrand /> | <IconExampleViewGhost /> | <IconExampleViewLink /> | <IconExampleViewPrimary /> | <IconExampleViewSecondary /> | <IconExampleViewSuccess /> | <IconExampleViewWarning /> |
 
 ## Размер
 
-За размер иконки отвечает свойство `size`. Варианты: `'xs'`, `'s'`, `'m'`.
+За размер иконки отвечает свойство `size`. Варианты: `'xxs'`, `'xs'`, `'s'`, `'m'`, `'l'`.
 
 <IconExampleSize />
 
@@ -50,8 +51,8 @@ import { IconExampleSize } from './examples/IconExampleSize/IconExampleSize';
 
 | Свойство                | Тип                                                                                             | По умолчанию | Описание                                  |
 | ----------------------- | ----------------------------------------------------------------------------------------------- | ------------ | ----------------------------------------- |
-| [`size?` ](#размер)     | `'xs'`, `'s'`, `'m'`                                                                            | `'m'`        | Размер                                    |
-| [`view?`](#внешний-вид) | `'alert'`, `'brand'`, `'ghost'`, `'link'`, `'primary'`, `'secondary'`, `'success'`, `'warning'` | -            | Вид иконки                                |
+| [`size?` ](#размер)     | `'xxs'`, `'xs'`, `'s'`, `'m'`, `'l'`                                                            | `'m'`        | Размер                                    |
+| [`color?`](#внешний-вид)| `string`                                                                                        | `#293468`    | Вид иконки                                |
 | `className?`            | `string`                                                                                        | -            | Дополнительный CSS-класс                  |
 | `ref?`                  | `React.Ref<HTMLSpanElement>`                                                                    | -            | Ссылка на корневой DOM-элемент компонента |
 
@@ -63,7 +64,7 @@ import { IconExampleSize } from './examples/IconExampleSize/IconExampleSize';
 import { IconCancel } from '@consta/uikit/IconCancel';
 
 const buttonWithIcon = () => {
-  return <Button label="Закрыть" iconLeft={IconCancel} onlyIcon />;
+  return <Button label={ <NeoIcon icon={"check-on"}/> } />;
 };
 
 export default buttonWithIcon;

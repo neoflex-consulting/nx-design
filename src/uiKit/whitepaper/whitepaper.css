@@ -4762,4 +4762,18 @@
   align-items: flex-start;
 }
 
+.ex-title {
+  font-size: 24px;
+  color: #666;
+  font-weight: 100;
+}
+
+.example {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  padding: 40px;
+  border: 1px solid #ddd;
+}
+
 /* stylelint-enable */
