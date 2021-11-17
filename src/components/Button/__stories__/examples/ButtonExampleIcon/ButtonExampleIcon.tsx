@@ -7,8 +7,8 @@ import { Button } from '../../../Button';
 import {NeoIcon} from "neo-icon";
 
 export function ButtonExampleIconBasic() {
-  const iconLeft = <NeoIcon icon={"arrow-left"} color={'white'}/>
-  const iconRight = <NeoIcon icon={"arrow-right"} color={'white'}/>
+  const iconLeft = <NeoIcon icon={"arrow-left"}/>
+  const iconRight = <NeoIcon icon={"arrow-right"}/>
   return (
     <div className={cnDocsDecorator('Section', [wp.decorator({ distribute: 'left' })])}>
       <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>

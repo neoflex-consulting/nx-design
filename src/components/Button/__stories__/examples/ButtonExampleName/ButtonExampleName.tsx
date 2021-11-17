@@ -89,7 +89,7 @@ export function ButtonExampleNameOverflow() {
       <div className={cnDocsExample()}>
         <div className={wp.decorator({ distribute: 'left' })}>
           <Button label="Редактировать" className={wp.decorator({ 'indent-r': 's' })} />
-          <Button label="Редактировать" iconRight={<NeoIcon icon={"edit"} color={'white'}/>} onlyIcon />
+          <Button label="Редактировать" iconRight={<NeoIcon icon={"edit"}/>} onlyIcon />
         </div>
         <p className={cnDocsExample('Status', { view: 'right' })}>Правильно</p>
       </div>
@@ -101,10 +101,10 @@ export function ButtonExampleNameNavigation() {
   return (
     <div className={cnDocsDecorator('Section', [wp.decorator({ distribute: 'left' })])}>
       <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
-        <Button label="Назад" iconLeft={<NeoIcon icon={"chevron-left"} color={'white'}/>} />
+        <Button label="Назад" iconLeft={<NeoIcon icon={"chevron-left"}/>} />
       </div>
       <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
-        <Button label="Вперёд" iconRight={<NeoIcon icon={"chevron-right"} color={'white'}/>} />
+        <Button label="Вперёд" iconRight={<NeoIcon icon={"chevron-right"}/>} />
       </div>
     </div>
   );
