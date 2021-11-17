@@ -8,7 +8,6 @@ import { forwardRefWithAs } from '../../utils/types/PropsWithAsAttributes';
 import { usePropsHandler } from '../EventInterceptor/usePropsHandler';
 import { Loader } from '../Loader/Loader';
 
-
 export const buttonPropSize = ['xs', 's', 'm', 'l'] as const;
 export type ButtonPropSize = typeof buttonPropSize[number];
 export const buttonPropSizeDefault: ButtonPropSize = buttonPropSize[2];
