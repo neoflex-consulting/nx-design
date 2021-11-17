@@ -2,8 +2,6 @@ import * as React from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean, select, text } from '@storybook/addon-knobs';
 
-import { IconSelect } from '../../../icons/IconSelect/IconSelect';
-import { IconUser } from '../../../icons/IconUser/IconUser';
 import { cn } from '../../../utils/bem';
 import { createMetadata } from '../../../utils/storybook';
 import {
@@ -23,7 +21,7 @@ import {
 } from '../Button';
 
 import mdx from './Button.docs.mdx';
-import {IconsItemButton} from "../../../icons/Icon/__stories__/Item/Icons-Item-Button";
+import {NeoIcon} from "neo-icon";
 
 const defaultKnobs = () => ({
   width: select('Width', buttonPropWidth, buttonPropWidthDefault),
@@ -67,8 +65,8 @@ export function Playground() {
           label={label}
           onlyIcon={onlyIcon}
           onClick={action('click')}
-          iconLeft={iconLeft ? <IconsItemButton icon={"user"} view={view} disabled={disabled} loading={loading}/> : undefined}
-          iconRight={iconRight ? <IconsItemButton icon={"caret-down"} view={view} disabled={disabled} loading={loading}/> : undefined}
+          iconLeft={iconLeft ? <NeoIcon icon={"user"} className={'test1'}/> : undefined}
+          iconRight={iconRight ? <NeoIcon icon={"caret-down"} className={'test1'}/> : undefined}
         />
       </div>
     </EventInterceptorProvider>

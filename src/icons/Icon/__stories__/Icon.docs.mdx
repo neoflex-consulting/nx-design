@@ -30,11 +30,10 @@ import { IconExampleSize } from './examples/IconExampleSize/IconExampleSize';
 - [Размер](#размер)
 - [Список свойств](#свойства)
 - [Пример использования](#примеры)
-- [Создание своих иконок](#создание-своих-иконок)
 
 ## Внешний вид
 
-За вид иконки отвечает свойство `color`.
+За вид иконки отвечает свойство `fill`. Вид наследуется от родителя, если он не был переопределен в className самой иконки
 
 | `default`                | `brand`                  | `ghost`                  | `link`                  | `primary`                  | `secondary`                  | `success`                  | `warning`                  |
 | ------------------------ | ------------------------ | ------------------------ | ----------------------- | -------------------------- | ---------------------------- | -------------------------- | -------------------------- |
@@ -52,103 +51,19 @@ import { IconExampleSize } from './examples/IconExampleSize/IconExampleSize';
 | Свойство                | Тип                                                                                             | По умолчанию | Описание                                  |
 | ----------------------- | ----------------------------------------------------------------------------------------------- | ------------ | ----------------------------------------- |
 | [`size?` ](#размер)     | `'xxs'`, `'xs'`, `'s'`, `'m'`, `'l'`                                                            | `'m'`        | Размер                                    |
-| [`color?`](#внешний-вид)| `string`                                                                                        | `#293468`    | Вид иконки                                |
 | `className?`            | `string`                                                                                        | -            | Дополнительный CSS-класс                  |
-| `ref?`                  | `React.Ref<HTMLSpanElement>`                                                                    | -            | Ссылка на корневой DOM-элемент компонента |
+| `customSize?`           | `string`                                                                                        | -            | Пользовательский размер иконки в px       |
 
 ## Примеры
 
 ### Иконка в кнопке
 
 ```tsx
-import { IconCancel } from '@consta/uikit/IconCancel';
+import {NeoIcon} from "neo-icon";
 
 const buttonWithIcon = () => {
   return <Button label={ <NeoIcon icon={"check-on"}/> } />;
 };
 
 export default buttonWithIcon;
-```
-
-## Создание своих иконок
-
-Компоненты **CONSTA** принимают иконки определенного типа. Чтобы ваши иконки соответствовали этому типу,
-используйте функцию `createIcon`:
-
-```tsx
-import { createIcon } from '@consta/uikit/createIcon';
-
-import IconAddSizeM from './IconAdd_size_m';
-import IconAddSizeS from './IconAdd_size_s';
-import IconAddSizeXs from './IconAdd_size_xs';
-
-export const IconAdd = createIcon({
-  m: IconAddSizeM,
-  s: IconAddSizeS,
-  xs: IconAddSizeXs,
-  name: 'IconAdd',
-});
-```
-
-Требования к SVG: должны отсутствовать атрибуты: `fill`, `width`, `height`
-
-#### Если есть только один размер иконки
-
-Если у вас нет разных иконок под каждый размер, ничего страшного.
-Просто укажите одну иконку во всех размерах:
-
-```tsx
-import { createIcon } from '@consta/uikit/createIcon';
-
-import IconAddSizeM from './IconAdd_size_m';
-
-export const IconAdd = createIcon({
-  m: IconAddSizeM,
-  s: IconAddSizeM,
-  xs: IconAddSizeM,
-  name: 'IconAdd',
-});
-```
-
-#### Если иконки автоматически собираются из SVG в компоненты
-
-Если ваша сборка уже настроена так, что иконки из SVG собираются в компоненты,
-вы можете добавить в конфигурацию `createIcon`.
-
-Пример webpack со сборкой иконок через SVGR:
-
-```jsx
-{
-    test: /\.svg$/,
-    use: [
-        {
-            loader: '@svgr/webpack',
-            options: {
-                template: (
-                    { template },
-                    opts,
-                    { imports, componentName, props, jsx, exports },
-                ) => {
-                    return template.ast`
-                        ${imports}
-                        import { createIcon } from '@consta/uikit/createIcon';
-
-                        const SvgComponent = (${props}) => {
-                          return ${jsx};
-                        };
-
-                        const ${componentName} = createIcon({
-                          m: SvgComponent,
-                          s: SvgComponent,
-                          xs: SvgComponent,
-                          name: '${componentName}',
-                        });
-
-                        export default ${componentName};
-                  `;
-                },
-            },
-        },
-    ],
-},
 ```

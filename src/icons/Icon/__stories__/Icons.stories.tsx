@@ -9,7 +9,7 @@ import mdx from './Icon.docs.mdx';
 const defaultKnobs = () => ({
   size: select('size', ['xxs', 'xs', 's', 'm', 'l'], 'l'),
   color: text('color', '#293468'),
-  customSize: number('customSize', null)
+  customSize: number('customSize', 0)
 });
 
 const header = [

@@ -187,7 +187,6 @@ export const TableHeader = <T extends TableRow>({
                 {column.sortable && (
                   <Button
                     size="xs"
-                    iconSize="s"
                     view="clear"
                     onlyIcon
                     onClick={(): void => handleSortClick(column)}

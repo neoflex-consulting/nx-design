@@ -5,7 +5,7 @@ import { StoryBookExample } from '../../../../../uiKit/components/StoryBookExamp
 import {NeoIcon} from "neo-icon";
 
 export const IconExampleSize = () => (
-  <StoryBookExample className={cnDocsDecorator('Section')}>
+  <StoryBookExample className={cnDocsDecorator('Section')} style={{fill: '#293468'}}>
     <NeoIcon icon={"check-on"} size={"xxs"}/>
     <NeoIcon icon={"check-on"} size={"xs"}/>
     <NeoIcon icon={"check-on"} size={"s"}/>

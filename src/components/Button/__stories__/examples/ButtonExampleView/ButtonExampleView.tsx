@@ -1,11 +1,5 @@
 import React from 'react';
 
-import { IconAdd } from '../../../../../icons/IconAdd/IconAdd';
-import { IconBookmarkStroked } from '../../../../../icons/IconBookmarkStroked/IconBookmarkStroked';
-import { IconCopy } from '../../../../../icons/IconCopy/IconCopy';
-import { IconForward } from '../../../../../icons/IconForward/IconForward';
-import { IconFunnel } from '../../../../../icons/IconFunnel/IconFunnel';
-import { IconSettings } from '../../../../../icons/IconSettings/IconSettings';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { cnDocsExample } from '../../../../../uiKit/components/DocsExample/DocsExample';
 import * as wp from '../../../../../uiKit/whitepaper/whitepaper';
@@ -103,8 +97,8 @@ export function ButtonExampleViewLink() {
 }
 
 export function ButtonExampleViewDisabled() {
-  const iconRight = <NeoIcon icon={"arrow-right"} color={'white'}/>
-  const iconRight_ = <NeoIcon icon={"plus"} color={'white'}/>
+  const iconRight = <NeoIcon icon={"arrow-right"}/>
+  const iconRight_ = <NeoIcon icon={"plus"}/>
   return (
     <div className={cnDocsDecorator('Section', [wp.decorator({ distribute: 'left' })])}>
       <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>

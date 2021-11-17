@@ -2,11 +2,11 @@ import './TableFilterTooltip.css';
 
 import React from 'react';
 
-import { IconFunnel } from '../../../icons/IconFunnel/IconFunnel';
 import { cn } from '../../../utils/bem';
 import { Button } from '../../Button/Button';
 import { Popover } from '../../Popover/Popover';
 import { Typography } from '../../Typography/Typography';
+import {NeoIcon} from "neo-icon";
 
 const cnTableFilterTooltip = cn('TableFilterTooltip');
 
@@ -42,12 +42,11 @@ export const TableFilterTooltip: React.FC<Props> = ({
       <Button
         ref={buttonRef}
         size="xs"
-        iconSize="s"
         view="clear"
         onlyIcon
         onClick={onToggle}
         className={cnTableFilterTooltip('Button', { isOpened }, [className])}
-        iconLeft={IconFunnel}
+        iconLeft={<NeoIcon icon={"filter"} size={"s"}/>}
       />
       {isOpened && buttonRef.current && (
         <Popover
