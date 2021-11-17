@@ -100,9 +100,14 @@ import { ButtonExampleReactNode } from './examples/ButtonExampleReactNode/Button
 Это основной тип кнопки (используется по умолчанию). Если на странице одна кнопка, используйте такую. Если несколько, оставьте кнопку `primary` для самого важного, «целевого» действия, на котором нужно сделать акцент. Постарайтесь использовать одну кнопку `primary` на странице или в блоке.
 
 ```ts
+import {NeoIcon} from "neo-icon";
+
+const iconRight = <NeoIcon icon={"arrow-right"} color={'white'}/>
+const iconLeft = <NeoIcon icon={"plus"} color={'white'}/>
+
 <Button label="Войти" />
-<Button label="Продолжить" iconRight={IconForward} />
-<Button label="Добавить" iconRight={IconAdd} onlyIcon />
+<Button label="Продолжить" iconRight={iconRight} />
+<Button label="Добавить" iconLeft={iconLeft} onlyIcon />
 ```
 
 <ButtonExampleViewPrimary />
@@ -112,9 +117,14 @@ import { ButtonExampleReactNode } from './examples/ButtonExampleReactNode/Button
 Эта кнопка похожа на `primary`, но не так сильно выделяется. Используйте её, когда хотите сохранить важность действия, но не слишком привлекать к нему внимание.
 
 ```ts
+import {NeoIcon} from "neo-icon";
+
+const iconRight = <NeoIcon icon={"arrow-right"} color={'white'}/>
+const iconLeft = <NeoIcon icon={"plus"} color={'white'}/>
+
 <Button label="Читать далее" view="secondary" />
-<Button label="Комментировать" view="secondary" iconLeft={IconChat} />
-<Button label="Редактировать" view="secondary" iconRight={IconEdit} onlyIcon />
+<Button label="Комментировать" view="secondary" iconLeft={iconLeft} />
+<Button label="Редактировать" view="secondary" iconRight={iconRight} onlyIcon />
 ```
 
 <ButtonExampleViewSecondary />
@@ -124,9 +134,14 @@ import { ButtonExampleReactNode } from './examples/ButtonExampleReactNode/Button
 Это второстепенная или дополнительная кнопка. Часто используется в паре с основной кнопкой и обозначает альтернативное, не главное действие. Например, если есть основная кнопка **Подвтердить**, в паре с ней можно поставить кнопку `ghost` с текстом **Отменить**. Также может использоваться для не очень важных действий, к которым не хочется привлекать внимание.
 
 ```ts
+import {NeoIcon} from "neo-icon";
+
+const iconLeft = <NeoIcon icon={"settings"}/>
+const iconLeft_ = <NeoIcon icon={"filter"}/>
+
 <Button label="Отмена" view="ghost" />
-<Button label="Настройки" view="ghost" iconLeft={IconSettings} />
-<Button label="Фильтр" view="ghost" iconLeft={IconFunnel} onlyIcon />
+<Button label="Настройки" view="ghost" iconLeft={iconLeft} />
+<Button label="Фильтр" view="ghost" iconLeft={iconLeft_} onlyIcon />
 ```
 
 <ButtonExampleViewGhost />
@@ -136,9 +151,14 @@ import { ButtonExampleReactNode } from './examples/ButtonExampleReactNode/Button
 Это полноценная кнопка с прозрачным фоном. Используйте её, когда внимание пользователя должно быть сосредоточено на более важных компонентах. Также эти кнопки удобно использовать в списке кнопок-иконок без текста или для обозначения самых незначительных действий.
 
 ```ts
+import {NeoIcon} from "neo-icon";
+
+const iconLeft = <NeoIcon icon={"copy"}/>
+const iconLeft_ = <NeoIcon icon={"mark"}/>
+
 <Button label="Развернуть" view="clear" />
-<Button label="Скопировать" view="clear" iconLeft={IconCopy} />
-<Button label="Добавить в Избранное" view="clear" iconLeft={IconBookmarkStroked} onlyIcon />
+<Button label="Скопировать" view="clear" iconLeft={iconLeft} />
+<Button label="Добавить в Избранное" view="clear" iconLeft={iconLeft_} onlyIcon />
 ```
 
 <ButtonExampleViewClear />
@@ -148,9 +168,14 @@ import { ButtonExampleReactNode } from './examples/ButtonExampleReactNode/Button
 Это полноценная кнопка с прозрачным фоном и подчеркиванием при наведении. Используйте её, когда необходимо добавить ссылку на другой компонент или страницу. Также эти кнопки удобно использовать в Paginator, при переключении между страницами.
 
 ```ts
+import {NeoIcon} from "neo-icon";
+
+const iconLeft = <NeoIcon icon={"arrow-backward"}/>
+const iconLeft_ = <NeoIcon icon={"save"}/>
+
 <Button label="Ссылка" view="link" />
-<Button label="Назад" view="link" iconLeft={IconCopy} />
-<Button label="Сохранить" view="link" iconLeft={IconBookmarkStroked} onlyIcon />
+<Button label="Назад" view="link" iconLeft={iconLeft} />
+<Button label="Сохранить" view="link" iconLeft={iconLeft_} onlyIcon />
 ```
 
 <ButtonExampleViewLink />
@@ -160,9 +185,14 @@ import { ButtonExampleReactNode } from './examples/ButtonExampleReactNode/Button
 Это свойство блокирует кнопку — её невозможно нажать. Его можно применить к кнопке любого типа. Используйте `disabled` в тех случаях, когда пользователь не может нажать на кнопку из-за каких-то условий. Например, пока не напишет логин и пароль для входа в аккаунт или не заполнит все обязательные поля в форме.
 
 ```ts
+import {NeoIcon} from "neo-icon";
+
+const iconRight = <NeoIcon icon={"arrow-right"} color={'white'}/>
+const iconRight_ = <NeoIcon icon={"plus"} color={'white'}/>
+
 <Button label="Войти" disabled />
-<Button label="Продолжить" disabled iconRight={IconForward} />
-<Button label="Добавить" disabled iconRight={IconAdd} onlyIcon />
+<Button label="Продолжить" disabled iconRight={iconRight} />
+<Button label="Добавить" disabled iconRight={iconRight_} onlyIcon />
 ```
 
 <ButtonExampleViewDisabled />
@@ -196,8 +226,13 @@ import { ButtonExampleReactNode } from './examples/ButtonExampleReactNode/Button
 Название кнопки можно дополнять иконкой. Она поможет быстрее найти нужную кнопку в ряду других и быстрее понять, что эта кнопка делает. За иконку отвечают свойства `iconLeft` (ставит иконку слева от текста на кнопке) или `iconRight` (ставит иконку справа). Оба эти свойства ожидают компонент иконки из нашей [библиотеки иконок](?path=/story/components-icons--playground).
 
 ```ts
-<Button label="Назад" iconLeft={<NeoIcon icon={"arrow-left"} color={'white'}/>} />
-<Button label="Вперёд" iconRight={<NeoIcon icon={"arrow-right"} color={'white'}/>} />
+import {NeoIcon} from "neo-icon";
+
+const iconLeft = <NeoIcon icon={"arrow-left"} color={'white'}/>
+const iconRight = <NeoIcon icon={"arrow-right"} color={'white'}/>
+
+<Button label="Назад" iconLeft={iconLeft} />
+<Button label="Вперёд" iconRight={iconRight} />
 ```
 
 <ButtonExampleIconBasic />
@@ -209,9 +244,15 @@ import { ButtonExampleReactNode } from './examples/ButtonExampleReactNode/Button
 Кнопка может состоять только из иконки. Такие кнопки экономят место и позволяют разместить рядом много похожих кнопок. Например, кнопки для выбора даты или фильтров. Для создания такой кнопки используйте свойство `onlyIcon` в паре с `iconLeft` или `iconRight`.
 
 ```ts
-<Button label="Назад" view="ghost" iconLeft={IconHamburger} onlyIcon />
-<Button label="Назад" view="ghost" iconLeft={IconCalendar} onlyIcon />
-<Button label="Вперёд" view="ghost" iconRight={IconFilter} onlyIcon />
+import {NeoIcon} from "neo-icon";
+
+const iconLeft = <NeoIcon icon={"menu"}/>
+const iconLeft_ = <NeoIcon icon={"calendar"}/>
+const iconRight = <NeoIcon icon={"filter"}/>
+
+<Button label="Назад" view="ghost" iconLeft={iconLeft} onlyIcon />
+<Button label="Назад" view="ghost" iconLeft={iconLeft_} onlyIcon />
+<Button label="Вперёд" view="ghost" iconRight={iconRight} onlyIcon />
 ```
 
 <ButtonExampleIconOnly />
@@ -277,9 +318,8 @@ import { ButtonExampleReactNode } from './examples/ButtonExampleReactNode/Button
     view={'link'}
     style={{marginRight:'10px'}}
     label= {
-    <Link to={'/mypage'}>
       <NeoIcon className={'changeToDevelopButton'} icon={"play-c"} color={'white'} />
-    </Link>}
+    }
 />
 ```
 
@@ -295,10 +335,9 @@ import { ButtonExampleReactNode } from './examples/ButtonExampleReactNode/Button
 | [`size`](#размер)                | `'xs', 's', 'm', 'l'`                                                                     | `m`                       | Размер                                                                           |
 | [`width`](#размер)               | `'full', 'default'`                                                                       | `default`                 | Ширина                                                                           |
 | [`form`](#форма)                 | `'default', 'round', 'brick', 'brickRound', 'roundBrick', 'brickDefault', 'defaultBrick'` | `default`                 | Форма                                                                            |
-| [`iconLeft`](#кнопка-с-иконкой)  | `React.FC<IIcon>`                                                                         | -                         | Иконка слева                                                                     |
-| [`iconRight`](#кнопка-с-иконкой) | `React.FC<IIcon>`                                                                         | -                         | Иконка справа                                                                    |
+| [`iconLeft`](#кнопка-с-иконкой)  | `React.ReactNode`                                                                         | -                         | Иконка слева                                                                     |
+| [`iconRight`](#кнопка-с-иконкой) | `React.ReactNode`                                                                         | -                         | Иконка справа                                                                    |
 | [`onlyIcon`](#только-иконка)     | `boolean`                                                                                 | `false`                   | Только иконка без текста                                                         |
-| [`iconSize`](#размер-иконки)     | `'xs', 's', 'm'`                                                                          | Зависит от размера кнопки | Размер иконки                                                                    |
 | `title`                          | `string`                                                                                  | -                         | HTML-атрибут `title` — всплывающая подсказка, появляется при наведении на кнопку |
 | `tabIndex`                       | `number`                                                                                  | -                         | Порядковый номер при переходе между элементами интерфейса по клавише **tab**     |
 | `as`                             | `React.ElementType`                                                                       | `button`                  | HTML-тег для кнопки                                                              |

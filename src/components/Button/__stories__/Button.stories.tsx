@@ -23,6 +23,7 @@ import {
 } from '../Button';
 
 import mdx from './Button.docs.mdx';
+import {IconsItemButton} from "../../../icons/Icon/__stories__/Item/Icons-Item-Button";
 
 const defaultKnobs = () => ({
   width: select('Width', buttonPropWidth, buttonPropWidthDefault),
@@ -66,8 +67,8 @@ export function Playground() {
           label={label}
           onlyIcon={onlyIcon}
           onClick={action('click')}
-          iconLeft={iconLeft ? IconUser : undefined}
-          iconRight={iconRight ? IconSelect : undefined}
+          iconLeft={iconLeft ? <IconsItemButton icon={"user"} view={view} disabled={disabled} loading={loading}/> : undefined}
+          iconRight={iconRight ? <IconsItemButton icon={"caret-down"} view={view} disabled={disabled} loading={loading}/> : undefined}
         />
       </div>
     </EventInterceptorProvider>

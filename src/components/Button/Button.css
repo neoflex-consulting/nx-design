@@ -159,6 +159,12 @@
       &:hover {
          text-decoration: underline;
        }
+
+      &.Button_disabled {
+         background-color: var(--color-control-bg-secondary);
+         border-color: var(--color-control-bg-border-disable);
+         color: var(--color-control-bg-border-disable);
+       }
     }
 
   }

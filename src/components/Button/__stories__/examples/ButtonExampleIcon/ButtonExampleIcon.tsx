@@ -7,29 +7,34 @@ import { Button } from '../../../Button';
 import {NeoIcon} from "neo-icon";
 
 export function ButtonExampleIconBasic() {
+  const iconLeft = <NeoIcon icon={"arrow-left"} color={'white'}/>
+  const iconRight = <NeoIcon icon={"arrow-right"} color={'white'}/>
   return (
     <div className={cnDocsDecorator('Section', [wp.decorator({ distribute: 'left' })])}>
       <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
-        <Button label="Назад" iconLeft={<NeoIcon icon={"arrow-left"} color={'white'}/>} />
+        <Button label="Назад" iconLeft={iconLeft} />
       </div>
       <div className={cnDocsExample()}>
-        <Button label="Вперёд" iconRight={<NeoIcon icon={"arrow-right"} color={'white'}/>} />
+        <Button label="Вперёд" iconRight={iconRight} />
       </div>
     </div>
   );
 }
 
 export function ButtonExampleIconOnly() {
+  const iconLeft = <NeoIcon icon={"menu"}/>
+  const iconLeft_ = <NeoIcon icon={"calendar"}/>
+  const iconRight = <NeoIcon icon={"filter"}/>
   return (
     <div className={cnDocsDecorator('Section', [wp.decorator({ distribute: 'left' })])}>
       <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
-        <Button label="Назад" view="ghost" iconLeft={<NeoIcon icon={"menu"} />} onlyIcon />
+        <Button label="Назад" view="ghost" iconLeft={iconLeft} onlyIcon />
       </div>
       <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
-        <Button label="Назад" view="ghost" iconLeft={<NeoIcon icon={"calendar"} />} onlyIcon />
+        <Button label="Назад" view="ghost" iconLeft={iconLeft_} onlyIcon />
       </div>
       <div className={cnDocsExample()}>
-        <Button label="Вперёд" view="ghost" iconRight={<NeoIcon icon={"filter"} />} onlyIcon />
+        <Button label="Вперёд" view="ghost" iconRight={iconRight} onlyIcon />
       </div>
     </div>
   );
