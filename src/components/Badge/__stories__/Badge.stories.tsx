@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { boolean, select, text } from '@storybook/addon-knobs';
 
-import { IconUser } from '../../../icons/IconUser/IconUser';
 import { createMetadata } from '../../../utils/storybook';
 import {
   Badge,
@@ -16,6 +15,7 @@ import {
 } from '../Badge';
 
 import mdx from './Badge.docs.mdx';
+import {NeoIcon} from "neo-icon";
 
 const defaultKnobs = () => ({
   label: text('label', 'Statusing along'),
@@ -39,7 +39,7 @@ export function Playground() {
         status={status}
         form={form}
         minified={minified}
-        icon={icon ? IconUser : undefined}
+        icon={icon ? <NeoIcon icon={"user"}/> : undefined}
       />
     </div>
   );

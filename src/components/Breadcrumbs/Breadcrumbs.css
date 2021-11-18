@@ -52,11 +52,13 @@
 
   &-Icon {
     margin-right: var(--space-xs);
+    fill: currentColor;
   }
 
   &-Delimiter {
     margin: 0 var(--delimiter-space);
     color: var(--color-typo-ghost);
+    fill: var(--color-typo-ghost);
   }
 
   &-More {

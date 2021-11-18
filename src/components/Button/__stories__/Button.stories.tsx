@@ -65,8 +65,8 @@ export function Playground() {
           label={label}
           onlyIcon={onlyIcon}
           onClick={action('click')}
-          iconLeft={iconLeft ? <NeoIcon icon={"user"} className={'test1'}/> : undefined}
-          iconRight={iconRight ? <NeoIcon icon={"caret-down"} className={'test1'}/> : undefined}
+          iconLeft={iconLeft ? <NeoIcon icon={"user"}/> : undefined}
+          iconRight={iconRight ? <NeoIcon icon={"caret-down"}/> : undefined}
         />
       </div>
     </EventInterceptorProvider>

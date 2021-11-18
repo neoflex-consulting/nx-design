@@ -3,7 +3,6 @@ import './Badge.css';
 import React from 'react';
 import { classnames } from '@bem-react/classnames';
 
-import { IconProps } from '../../icons/Icon/Icon';
 import { cn } from '../../utils/bem';
 import { forwardRefWithAs } from '../../utils/types/PropsWithAsAttributes';
 import { useTheme } from '../Theme/Theme';
@@ -30,7 +29,7 @@ type Props = {
   status?: BadgePropStatus;
   form?: BadgePropForm;
   minified?: boolean;
-  icon?: React.FC<IconProps>;
+  icon?: React.ReactNode;
   label?: string;
   children?: never;
 };
@@ -57,7 +56,6 @@ export const Badge = forwardRefWithAs<Props>((props, ref) => {
     status !== 'system' && view === 'filled'
       ? classnames(props.className, themeClassNames.color.accent)
       : props.className;
-  const Icon = icon;
   const withIcon = !!icon;
 
   if (minified) {
@@ -77,9 +75,9 @@ export const Badge = forwardRefWithAs<Props>((props, ref) => {
       className={cnBadge({ size, view, status, form, withIcon }, [className])}
       ref={ref}
     >
-      {Icon ? (
+      {icon ? (
         <>
-          <Icon size="xs" className={cnBadge('Icon')} />
+          <span className={cnBadge('Icon')}> {icon} </span>
           {label}
         </>
       ) : (

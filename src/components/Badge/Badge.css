@@ -145,5 +145,6 @@
     font-size: 0;
     line-height: 1em;
     flex-shrink: 0;
+    fill: currentcolor;
   }
 }

@@ -3,12 +3,12 @@ import './Attachment.stories.css';
 import * as React from 'react';
 import { boolean, number, text } from '@storybook/addon-knobs';
 
-import { IconTrash } from '../../../icons/IconTrash/IconTrash';
 import { cn } from '../../../utils/bem';
 import { createMetadata } from '../../../utils/storybook';
 import { Attachment } from '../Attachment';
 
 import mdx from './Attachment.docs.mdx';
+import {NeoIcon} from "neo-icon";
 
 const defaultKnobs = () => ({
   fileName: text('fileName', 'Приложенный документ'),
@@ -44,7 +44,7 @@ export function Playground() {
         loadingProgress={loadingProgress}
         errorText={errorText}
         fileDescription={fileDescription}
-        buttonIcon={IconTrash}
+        buttonIcon={<NeoIcon icon={'delete'}/>}
         buttonTitle="Удалить"
         fileExtension={fileExtension}
         {...(withButtonAction && {

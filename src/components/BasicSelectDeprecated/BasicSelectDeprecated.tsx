@@ -3,7 +3,6 @@ import '../SelectComponentsDeprecated/Select.css';
 import React, { useRef, useState } from 'react';
 
 import { useSelect } from '../../hooks/useSelectDeprecated/useSelect';
-import { IconSelect } from '../../icons/IconSelect/IconSelect';
 import { scrollIntoView } from '../../utils/scrollIntoView';
 import { usePropsHandler } from '../EventInterceptor/usePropsHandler';
 import { cnSelect } from '../SelectComponentsDeprecated/cnSelect';
@@ -20,6 +19,7 @@ import {
   DefaultPropSize,
   DefaultPropView,
 } from '../SelectComponentsDeprecated/types';
+import {NeoIcon} from "neo-icon";
 
 type SelectContainerProps = React.ComponentProps<typeof SelectContainer>;
 
@@ -214,7 +214,7 @@ export const BasicSelect: Select = (props) => {
             tabIndex={-1}
             onClick={handleToggleDropdown}
           >
-            <IconSelect size="xs" className={cnSelect('DropdownIndicatorIcon')} />
+            <NeoIcon size={"xs"} icon={"caret-down"} className={cnSelect('DropdownIndicatorIcon')}/>
           </button>
         </span>
       </div>

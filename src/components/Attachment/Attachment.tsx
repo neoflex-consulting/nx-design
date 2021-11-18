@@ -2,7 +2,6 @@ import './Attachment.css';
 
 import React from 'react';
 
-import { IconProps } from '../../icons/Icon/Icon';
 import { cn } from '../../utils/bem';
 import { forwardRefWithAs } from '../../utils/types/PropsWithAsAttributes';
 import { Button } from '../Button/Button';
@@ -18,7 +17,7 @@ type Props = {
   errorText?: string;
   loadingText?: string;
   onButtonClick?: React.EventHandler<React.MouseEvent>;
-  buttonIcon?: React.FC<IconProps>;
+  buttonIcon?: React.ReactNode;
   buttonTitle?: string;
   withAction?: boolean;
   className?: string;

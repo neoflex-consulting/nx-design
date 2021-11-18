@@ -2,12 +2,13 @@ import './Breadcrumbs.css';
 
 import React, { useMemo } from 'react';
 
-import { IconProps, IconPropSize } from '../../icons/Icon/Icon';
-import { IconArrowRight } from '../../icons/IconArrowRight/IconArrowRight';
 import { cn } from '../../utils/bem';
 import { getSizeByMap } from '../../utils/getSizeByMap';
 import { PropsWithHTMLAttributesAndRef } from '../../utils/types/PropsWithHTMLAttributes';
-import { Button } from '../Button/Button';
+import {Button} from '../Button/Button';
+import {NeoIcon} from "neo-icon";
+
+export type IconPropSize = 'xs' | 's' | 'm';
 
 export const breadcrumbPropSize = ['m', 'xs', 's', 'l'] as const;
 export type BreadcrumbPropSize = typeof breadcrumbPropSize[number];
@@ -25,7 +26,7 @@ const sizeMap: Record<BreadcrumbPropSize, IconPropSize> = {
 export type BreadcrumbsPropGetLabel<ITEM> = (item: ITEM) => string | React.ReactNode;
 export type BreadcrumbsPropGetIsActive<ITEM> = (item: ITEM) => boolean;
 export type BreadcrumbsPropGetLink<ITEM> = (item: ITEM) => string;
-export type BreadcrumbsPropGetIcon<ITEM> = (item: ITEM) => React.FC<IconProps> | undefined;
+export type BreadcrumbsPropGetIcon<ITEM> = (item: ITEM) => React.ReactNode | undefined;
 
 export type BreadcrumbsProps<ITEM> = {
   pages: ITEM[];
@@ -75,10 +76,11 @@ export const Breadcrumbs: Breadcrumbs = React.forwardRef((props, ref) => {
 
   const delimiter = useMemo(
     () => (
-      <IconArrowRight
+      <NeoIcon
+        icon={'chevron-right'}
         size={iconSize}
         className={cnBreadcrumbs('Delimiter', {
-          size: iconSize,
+              size: iconSize
         })}
       />
     ),
@@ -104,7 +106,8 @@ export const Breadcrumbs: Breadcrumbs = React.forwardRef((props, ref) => {
               (onlyIconRoot && isFirst ? (
                 <Button view="clear" onlyIcon iconLeft={Icon} size={iconSize} />
               ) : (
-                <Icon className={cnBreadcrumbs('Icon')} size={iconSize} />
+                <span className={cnBreadcrumbs('Icon')}> {Icon} </span>
+                // <Icon className={cnBreadcrumbs('Icon')} size={iconSize} />
               ))}
             {(!isFirst || !onlyIconRoot) && <span className={cnBreadcrumbs('Label')}>{label}</span>}
           </a>
