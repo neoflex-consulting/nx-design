@@ -12289,10 +12289,10 @@ neo-async@^2.5.0, neo-async@^2.6.1:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
-neo-icon@^1.0.107:
-  version "1.0.107"
-  resolved "https://registry.yarnpkg.com/neo-icon/-/neo-icon-1.0.107.tgz#bb6ae2a9e75b1c4fe9feefeef07589cd1859fac1"
-  integrity sha512-4L0KJtV2kaH66ro/D5BZ+P58h12RxgvBJUGVkUjyr7z8NckfGteOy+HjVpZ+d++D6cA1Y1XG9W38GAdgz2U+sQ==
+neo-icon@^1.0.108:
+  version "1.0.108"
+  resolved "https://registry.yarnpkg.com/neo-icon/-/neo-icon-1.0.108.tgz#8bfa81599d126ac504accbb51c65c88215c3cff4"
+  integrity sha512-nZsPj6HT0PRulWVhepn2fWZCZbYwYmCZswv1EJ7UPpe80scatyQz/dpZYe05xszkD0/yvL8DVDjGtAgz/Fx04w==
 
 nice-try@^1.0.4:
   version "1.0.5"

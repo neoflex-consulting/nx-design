@@ -209,7 +209,6 @@
     display: block;
     flex-shrink: 0;
     margin-top: 7px;
-    fill: currentcolor;
 
     &_position {
       &_left {
