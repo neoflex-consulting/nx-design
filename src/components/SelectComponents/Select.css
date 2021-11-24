@@ -214,6 +214,7 @@
     border: none;
     text-align: center;
     cursor: pointer;
+    fill: var(--color-control-typo-placeholder);
 
     &:focus {
       outline: none;

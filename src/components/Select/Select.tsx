@@ -4,7 +4,6 @@ import React, { forwardRef, useRef } from 'react';
 
 import { useForkRef } from '../../hooks/useForkRef/useForkRef';
 import { useSelect } from '../../hooks/useSelect/useSelect';
-import { IconSelect } from '../../icons/IconSelect/IconSelect';
 import { usePropsHandler } from '../EventInterceptor/usePropsHandler';
 import { cnSelect } from '../SelectComponents/cnSelect';
 import { getSelectDropdownForm } from '../SelectComponents/helpers';
@@ -22,6 +21,7 @@ import {
   SelectProps,
   withDefaultGetters,
 } from './helpers';
+import {NeoIcon} from "neo-icon";
 
 function SelectRender<ITEM = DefaultItem, GROUP = DefaultGroup>(
   props: SelectProps<ITEM, GROUP>,
@@ -166,7 +166,7 @@ function SelectRender<ITEM = DefaultItem, GROUP = DefaultGroup>(
             tabIndex={-1}
             onClick={handleToggleDropdown}
           >
-            <IconSelect size="xs" className={cnSelect('DropdownIndicatorIcon')} />
+            <NeoIcon icon={"chevron-down"} size="xs" className={cnSelect('DropdownIndicatorIcon')}/>
           </button>
         </span>
       </div>
