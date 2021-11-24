@@ -4,7 +4,7 @@ import React from 'react';
 
 import { cn } from '../../../utils/bem';
 import { Button } from '../../Button/Button';
-import {NeoIcon} from "neo-icon";
+import {NeoIcon} from "neo-icon/lib";
 
 export type Props = {
   level: number;

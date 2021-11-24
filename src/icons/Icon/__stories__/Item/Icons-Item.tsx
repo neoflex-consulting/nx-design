@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {NeoIcon} from "neo-icon";
+import {NeoIcon} from "neo-icon/lib";
 
 export type IconPropSize = 'xxs' | 'xs' | 's' | 'm' | 'l';
 

@@ -4,7 +4,7 @@ import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/D
 import { cnDocsExample } from '../../../../../uiKit/components/DocsExample/DocsExample';
 import * as wp from '../../../../../uiKit/whitepaper/whitepaper';
 import { Button } from '../../../Button';
-import {NeoIcon} from "neo-icon";
+import {NeoIcon} from "neo-icon/lib";
 
 export function ButtonExampleIconBasic() {
   const iconLeft = <NeoIcon icon={"arrow-left"}/>

@@ -15,7 +15,7 @@ import {
 } from '../Badge';
 
 import mdx from './Badge.docs.mdx';
-import {NeoIcon} from "neo-icon";
+import {NeoIcon} from "neo-icon/lib";
 
 const defaultKnobs = () => ({
   label: text('label', 'Statusing along'),

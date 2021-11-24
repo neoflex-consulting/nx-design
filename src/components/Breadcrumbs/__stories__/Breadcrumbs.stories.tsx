@@ -6,7 +6,7 @@ import { createMetadata } from '../../../utils/storybook';
 import { breadcrumbPropSize, breadcrumbPropSizeDefault, Breadcrumbs } from '../Breadcrumbs';
 
 import mdx from './Breadcrumbs.docs.mdx';
-import {NeoIcon} from "neo-icon";
+import {NeoIcon} from "neo-icon/lib";
 
 const defaultKnobs = () => ({
   size: select('Size', breadcrumbPropSize, breadcrumbPropSizeDefault),

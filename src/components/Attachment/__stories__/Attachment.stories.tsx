@@ -8,7 +8,7 @@ import { createMetadata } from '../../../utils/storybook';
 import { Attachment } from '../Attachment';
 
 import mdx from './Attachment.docs.mdx';
-import {NeoIcon} from "neo-icon";
+import {NeoIcon} from "neo-icon/lib";
 
 const defaultKnobs = () => ({
   fileName: text('fileName', 'Приложенный документ'),

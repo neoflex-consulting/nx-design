@@ -19,7 +19,7 @@ import {
   DefaultPropSize,
   DefaultPropView,
 } from '../SelectComponentsDeprecated/types';
-import {NeoIcon} from "neo-icon";
+import {NeoIcon} from "neo-icon/lib";
 
 type SelectContainerProps = React.ComponentProps<typeof SelectContainer>;
 

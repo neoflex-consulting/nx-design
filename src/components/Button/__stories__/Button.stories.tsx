@@ -21,7 +21,7 @@ import {
 } from '../Button';
 
 import mdx from './Button.docs.mdx';
-import {NeoIcon} from "neo-icon";
+import {NeoIcon} from "neo-icon/lib";
 
 const defaultKnobs = () => ({
   width: select('Width', buttonPropWidth, buttonPropWidthDefault),

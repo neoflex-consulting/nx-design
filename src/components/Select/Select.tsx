@@ -21,7 +21,7 @@ import {
   SelectProps,
   withDefaultGetters,
 } from './helpers';
-import {NeoIcon} from "neo-icon";
+import {NeoIcon} from "neo-icon/lib";
 
 function SelectRender<ITEM = DefaultItem, GROUP = DefaultGroup>(
   props: SelectProps<ITEM, GROUP>,

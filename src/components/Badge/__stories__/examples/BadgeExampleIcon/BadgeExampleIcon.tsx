@@ -4,7 +4,7 @@ import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/D
 import { cnDocsExample } from '../../../../../uiKit/components/DocsExample/DocsExample';
 import * as wp from '../../../../../uiKit/whitepaper/whitepaper';
 import { Badge } from '../../../Badge';
-import { NeoIcon } from "neo-icon";
+import { NeoIcon } from "neo-icon/lib";
 
 export const BadgeExampleIcon = () => (
   <div className={cnDocsDecorator('Section', [cnDocsExample()])}>

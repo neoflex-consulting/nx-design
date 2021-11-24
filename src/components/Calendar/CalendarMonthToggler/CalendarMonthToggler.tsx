@@ -6,7 +6,7 @@ import { cn } from '../../../utils/bem';
 import { PropsWithJsxAttributes } from '../../../utils/types/PropsWithJsxAttributes';
 import { Button } from '../../Button/Button';
 import { CalendarMonthLabel } from '../CalendarMonthLabel/CalendarMonthLabel';
-import {NeoIcon} from "neo-icon";
+import {NeoIcon} from "neo-icon/lib";
 
 export type CalendarMonthTogglerProps = PropsWithJsxAttributes<
   {
