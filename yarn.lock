@@ -12313,18 +12313,6 @@ neo-async@^2.5.0, neo-async@^2.6.1:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
-<<<<<<< HEAD
-neo-icon@^1.0.109:
-  version "1.0.110"
-  resolved "https://registry.yarnpkg.com/neo-icon/-/neo-icon-1.0.110.tgz#53dad74732d274245255b90e56fb94ccccdaedf2"
-  integrity sha512-W5LZJSSS1PuYvvr/CVQc//FLHkz2z4Sl/Xk2uxTIIZBw+KcUs1vgl1v4WqScZq2BiQwXCSAOOTxN36W1mQyPOg==
-  dependencies:
-    "@types/node" "^14.0.25"
-    "@types/react" "^17.0.0"
-    react "^17.0.1"
-
-=======
->>>>>>> a13f23bcb2eb1997b3b4d4404f7857d62628cb8f
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
