@@ -21,7 +21,7 @@ import {
   SelectProps,
   withDefaultGetters,
 } from './helpers';
-import {NeoIcon} from "neo-icon/lib";
+import {Icon} from "nx-icon";
 
 function SelectRender<ITEM = DefaultItem, GROUP = DefaultGroup>(
   props: SelectProps<ITEM, GROUP>,
@@ -166,7 +166,7 @@ function SelectRender<ITEM = DefaultItem, GROUP = DefaultGroup>(
             tabIndex={-1}
             onClick={handleToggleDropdown}
           >
-            <NeoIcon icon={"chevron-down"} size="xs" className={cnSelect('DropdownIndicatorIcon')}/>
+            <Icon icon={"chevron-down"} size="xs" className={cnSelect('DropdownIndicatorIcon')}/>
           </button>
         </span>
       </div>

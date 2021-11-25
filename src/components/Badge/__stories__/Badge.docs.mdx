@@ -117,10 +117,10 @@ import { BadgeExampleForm } from './examples/BadgeExampleForm/BadgeExampleForm';
 <BadgeExampleIcon />
 
 ```ts
-import { NeoIcon } from "neo-icon/lib";
+import {Icon} from "nx-icon";
 
-const iconSuccess = <NeoIcon icon={'check'}/>
-const iconClose = <NeoIcon icon={'close'}/>
+const iconSuccess = <Icon icon={'check'}/>
+const iconClose = <Icon icon={'close'}/>
 
 <Badge icon={iconSuccess} status="success" label="Съедобно" />
 <Badge icon={iconClose} status="error" label="Отрава" />

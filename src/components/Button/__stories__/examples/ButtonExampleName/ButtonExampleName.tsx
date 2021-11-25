@@ -4,7 +4,7 @@ import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/D
 import { cnDocsExample } from '../../../../../uiKit/components/DocsExample/DocsExample';
 import * as wp from '../../../../../uiKit/whitepaper/whitepaper';
 import { Button } from '../../../Button';
-import {NeoIcon} from "neo-icon/lib";
+import {Icon} from "nx-icon";
 
 export function ButtonExampleNameSemantics() {
   return (
@@ -89,7 +89,7 @@ export function ButtonExampleNameOverflow() {
       <div className={cnDocsExample()}>
         <div className={wp.decorator({ distribute: 'left' })}>
           <Button label="Редактировать" className={wp.decorator({ 'indent-r': 's' })} />
-          <Button label="Редактировать" iconRight={<NeoIcon icon={"edit"}/>} onlyIcon />
+          <Button label="Редактировать" iconRight={<Icon icon={"edit"}/>} onlyIcon />
         </div>
         <p className={cnDocsExample('Status', { view: 'right' })}>Правильно</p>
       </div>
@@ -101,10 +101,10 @@ export function ButtonExampleNameNavigation() {
   return (
     <div className={cnDocsDecorator('Section', [wp.decorator({ distribute: 'left' })])}>
       <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
-        <Button label="Назад" iconLeft={<NeoIcon icon={"chevron-left"}/>} />
+        <Button label="Назад" iconLeft={<Icon icon={"chevron-left"}/>} />
       </div>
       <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
-        <Button label="Вперёд" iconRight={<NeoIcon icon={"chevron-right"}/>} />
+        <Button label="Вперёд" iconRight={<Icon icon={"chevron-right"}/>} />
       </div>
     </div>
   );

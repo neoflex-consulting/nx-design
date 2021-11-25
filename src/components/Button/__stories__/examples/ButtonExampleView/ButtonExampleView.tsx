@@ -4,11 +4,11 @@ import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/D
 import { cnDocsExample } from '../../../../../uiKit/components/DocsExample/DocsExample';
 import * as wp from '../../../../../uiKit/whitepaper/whitepaper';
 import { Button } from '../../../Button';
-import {NeoIcon} from "neo-icon/lib";
+import {Icon} from "nx-icon";
 
 export function ButtonExampleViewPrimary() {
-  const iconRight = <NeoIcon icon={"arrow-right"}/>
-  const iconLeft = <NeoIcon icon={"plus"}/>
+  const iconRight = <Icon icon={"arrow-right"}/>
+  const iconLeft = <Icon icon={"plus"}/>
   return (
     <div className={cnDocsDecorator('Section', [wp.decorator({ distribute: 'left' })])}>
       <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
@@ -25,8 +25,8 @@ export function ButtonExampleViewPrimary() {
 }
 
 export function ButtonExampleViewSecondary() {
-  const iconRight = <NeoIcon icon={"edit"}/>
-  const iconLeft = <NeoIcon icon={"chat"}/>
+  const iconRight = <Icon icon={"edit"}/>
+  const iconLeft = <Icon icon={"chat"}/>
   return (
     <div className={cnDocsDecorator('Section', [wp.decorator({ distribute: 'left' })])}>
       <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
@@ -43,8 +43,8 @@ export function ButtonExampleViewSecondary() {
 }
 
 export function ButtonExampleViewGhost() {
-  const iconLeft = <NeoIcon icon={"settings"}/>
-  const iconLeft_ = <NeoIcon icon={"filter"}/>
+  const iconLeft = <Icon icon={"settings"}/>
+  const iconLeft_ = <Icon icon={"filter"}/>
   return (
     <div className={cnDocsDecorator('Section', [wp.decorator({ distribute: 'left' })])}>
       <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
@@ -61,8 +61,8 @@ export function ButtonExampleViewGhost() {
 }
 
 export function ButtonExampleViewClear() {
-  const iconLeft = <NeoIcon icon={"copy"}/>
-  const iconLeft_ = <NeoIcon icon={"mark"}/>
+  const iconLeft = <Icon icon={"copy"}/>
+  const iconLeft_ = <Icon icon={"mark"}/>
   return (
     <div className={cnDocsDecorator('Section', [wp.decorator({ distribute: 'left' })])}>
       <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
@@ -79,8 +79,8 @@ export function ButtonExampleViewClear() {
 }
 
 export function ButtonExampleViewLink() {
-  const iconLeft = <NeoIcon icon={"arrow-backward"}/>
-  const iconLeft_ = <NeoIcon icon={"save"}/>
+  const iconLeft = <Icon icon={"arrow-backward"}/>
+  const iconLeft_ = <Icon icon={"save"}/>
   return (
     <div className={cnDocsDecorator('Section', [wp.decorator({ distribute: 'left' })])}>
       <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
@@ -97,8 +97,8 @@ export function ButtonExampleViewLink() {
 }
 
 export function ButtonExampleViewDisabled() {
-  const iconRight = <NeoIcon icon={"arrow-right"}/>
-  const iconRight_ = <NeoIcon icon={"plus"}/>
+  const iconRight = <Icon icon={"arrow-right"}/>
+  const iconRight_ = <Icon icon={"plus"}/>
   return (
     <div className={cnDocsDecorator('Section', [wp.decorator({ distribute: 'left' })])}>
       <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>

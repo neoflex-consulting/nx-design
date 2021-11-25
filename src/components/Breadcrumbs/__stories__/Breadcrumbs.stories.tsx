@@ -6,7 +6,7 @@ import { createMetadata } from '../../../utils/storybook';
 import { breadcrumbPropSize, breadcrumbPropSizeDefault, Breadcrumbs } from '../Breadcrumbs';
 
 import mdx from './Breadcrumbs.docs.mdx';
-import {NeoIcon} from "neo-icon/lib";
+import {Icon} from "nx-icon";
 
 const defaultKnobs = () => ({
   size: select('Size', breadcrumbPropSize, breadcrumbPropSizeDefault),
@@ -22,7 +22,7 @@ type Page = {
 
 const pages: Page[] = [
   {
-    icon: <NeoIcon icon={'home'}/>,
+    icon: <Icon icon={'home'}/>,
     label: 'Page1',
     link: 'https://url.com/page-1',
   },

@@ -19,7 +19,7 @@ import {
   DefaultPropSize,
   DefaultPropView,
 } from '../SelectComponentsDeprecated/types';
-import {NeoIcon} from "neo-icon/lib";
+import {Icon} from "nx-icon";
 
 type SelectContainerProps = React.ComponentProps<typeof SelectContainer>;
 
@@ -214,7 +214,7 @@ export const BasicSelect: Select = (props) => {
             tabIndex={-1}
             onClick={handleToggleDropdown}
           >
-            <NeoIcon size={"xs"} icon={"caret-down"} className={cnSelect('DropdownIndicatorIcon')}/>
+            <Icon size={"xs"} icon={"caret-down"} className={cnSelect('DropdownIndicatorIcon')}/>
           </button>
         </span>
       </div>
