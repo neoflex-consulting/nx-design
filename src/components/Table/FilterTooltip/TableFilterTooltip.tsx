@@ -6,7 +6,7 @@ import { cn } from '../../../utils/bem';
 import { Button } from '../../Button/Button';
 import { Popover } from '../../Popover/Popover';
 import { Typography } from '../../Typography/Typography';
-import {Icon} from "nx-icon";
+import {Icon} from "nx-icon/lib";
 
 const cnTableFilterTooltip = cn('TableFilterTooltip');
 

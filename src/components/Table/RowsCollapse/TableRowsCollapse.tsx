@@ -4,7 +4,7 @@ import React from 'react';
 
 import { cn } from '../../../utils/bem';
 import { Button } from '../../Button/Button';
-import {Icon} from "nx-icon";
+import {Icon} from "nx-icon/lib";
 
 export type Props = {
   level: number;

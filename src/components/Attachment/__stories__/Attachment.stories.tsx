@@ -8,7 +8,7 @@ import { createMetadata } from '../../../utils/storybook';
 import { Attachment } from '../Attachment';
 
 import mdx from './Attachment.docs.mdx';
-import {Icon} from "nx-icon";
+import {Icon} from "nx-icon/lib";
 
 const defaultKnobs = () => ({
   fileName: text('fileName', 'Приложенный документ'),

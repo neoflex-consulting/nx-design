@@ -6,7 +6,7 @@ import { cn } from '../../utils/bem';
 import { getSizeByMap } from '../../utils/getSizeByMap';
 import { PropsWithHTMLAttributesAndRef } from '../../utils/types/PropsWithHTMLAttributes';
 import {Button} from '../Button/Button';
-import {Icon} from "nx-icon";
+import {Icon} from "nx-icon/lib";
 
 export type IconPropSize = 'xs' | 's' | 'm';
 

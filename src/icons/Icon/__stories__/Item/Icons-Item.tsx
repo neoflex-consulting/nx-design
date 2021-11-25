@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Icon} from "nx-icon";
+import {Icon} from "nx-icon/lib";
 
 export type IconPropSize = 'xxs' | 'xs' | 's' | 'm' | 'l';
 

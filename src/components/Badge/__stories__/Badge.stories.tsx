@@ -15,7 +15,7 @@ import {
 } from '../Badge';
 
 import mdx from './Badge.docs.mdx';
-import {Icon} from "nx-icon";
+import {Icon} from "nx-icon/lib";
 
 const defaultKnobs = () => ({
   label: text('label', 'Statusing along'),

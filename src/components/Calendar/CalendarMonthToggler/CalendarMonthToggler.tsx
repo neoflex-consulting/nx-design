@@ -6,7 +6,7 @@ import { cn } from '../../../utils/bem';
 import { PropsWithJsxAttributes } from '../../../utils/types/PropsWithJsxAttributes';
 import { Button } from '../../Button/Button';
 import { CalendarMonthLabel } from '../CalendarMonthLabel/CalendarMonthLabel';
-import {Icon} from "nx-icon";
+import {Icon} from "nx-icon/lib";
 
 export type CalendarMonthTogglerProps = PropsWithJsxAttributes<
   {

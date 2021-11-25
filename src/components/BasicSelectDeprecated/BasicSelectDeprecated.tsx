@@ -19,7 +19,7 @@ import {
   DefaultPropSize,
   DefaultPropView,
 } from '../SelectComponentsDeprecated/types';
-import {Icon} from "nx-icon";
+import {Icon} from "nx-icon/lib";
 
 type SelectContainerProps = React.ComponentProps<typeof SelectContainer>;
 

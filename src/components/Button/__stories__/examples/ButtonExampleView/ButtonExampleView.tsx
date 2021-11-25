@@ -4,7 +4,7 @@ import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/D
 import { cnDocsExample } from '../../../../../uiKit/components/DocsExample/DocsExample';
 import * as wp from '../../../../../uiKit/whitepaper/whitepaper';
 import { Button } from '../../../Button';
-import {Icon} from "nx-icon";
+import {Icon} from "nx-icon/lib";
 
 export function ButtonExampleViewPrimary() {
   const iconRight = <Icon icon={"arrow-right"}/>

@@ -21,7 +21,7 @@ import {
   SelectProps,
   withDefaultGetters,
 } from './helpers';
-import {Icon} from "nx-icon";
+import {Icon} from "nx-icon/lib";
 
 function SelectRender<ITEM = DefaultItem, GROUP = DefaultGroup>(
   props: SelectProps<ITEM, GROUP>,

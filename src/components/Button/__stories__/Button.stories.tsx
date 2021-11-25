@@ -21,7 +21,7 @@ import {
 } from '../Button';
 
 import mdx from './Button.docs.mdx';
-import {Icon} from "nx-icon";
+import {Icon} from "nx-icon/lib";
 
 const defaultKnobs = () => ({
   width: select('Width', buttonPropWidth, buttonPropWidthDefault),

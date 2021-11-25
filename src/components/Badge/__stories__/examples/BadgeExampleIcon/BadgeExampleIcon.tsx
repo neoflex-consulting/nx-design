@@ -4,7 +4,7 @@ import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/D
 import { cnDocsExample } from '../../../../../uiKit/components/DocsExample/DocsExample';
 import * as wp from '../../../../../uiKit/whitepaper/whitepaper';
 import { Badge } from '../../../Badge';
-import {Icon} from "nx-icon";
+import {Icon} from "nx-icon/lib";
 
 export const BadgeExampleIcon = () => (
   <div className={cnDocsDecorator('Section', [cnDocsExample()])}>
