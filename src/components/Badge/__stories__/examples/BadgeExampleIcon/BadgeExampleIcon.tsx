@@ -4,18 +4,18 @@ import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/D
 import { cnDocsExample } from '../../../../../uiKit/components/DocsExample/DocsExample';
 import * as wp from '../../../../../uiKit/whitepaper/whitepaper';
 import { Badge } from '../../../Badge';
-import { NeoIcon } from "neo-icon/lib";
+import {Icon} from "nx-icon/lib";
 
 export const BadgeExampleIcon = () => (
   <div className={cnDocsDecorator('Section', [cnDocsExample()])}>
     <Badge
-      icon={<NeoIcon icon={'check'}/>}
+      icon={<Icon icon={'check'}/>}
       status="success"
       label="Съедобно"
       className={wp.decorator({ 'indent-r': 'm' })}
     />
     <Badge
-      icon={<NeoIcon icon={'close'}/>}
+      icon={<Icon icon={'close'}/>}
       status="error"
       label="Отрава"
       className={wp.decorator({ 'indent-r': 'm' })}

@@ -6,7 +6,7 @@ import { cn } from '../../utils/bem';
 import { getSizeByMap } from '../../utils/getSizeByMap';
 import { PropsWithHTMLAttributesAndRef } from '../../utils/types/PropsWithHTMLAttributes';
 import {Button} from '../Button/Button';
-import {NeoIcon} from "neo-icon/lib";
+import {Icon} from "nx-icon/lib";
 
 export type IconPropSize = 'xs' | 's' | 'm';
 
@@ -76,7 +76,7 @@ export const Breadcrumbs: Breadcrumbs = React.forwardRef((props, ref) => {
 
   const delimiter = useMemo(
     () => (
-      <NeoIcon
+      <Icon
         icon={'chevron-right'}
         size={iconSize}
         className={cnBreadcrumbs('Delimiter', {

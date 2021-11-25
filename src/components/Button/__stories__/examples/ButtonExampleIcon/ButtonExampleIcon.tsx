@@ -4,11 +4,11 @@ import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/D
 import { cnDocsExample } from '../../../../../uiKit/components/DocsExample/DocsExample';
 import * as wp from '../../../../../uiKit/whitepaper/whitepaper';
 import { Button } from '../../../Button';
-import {NeoIcon} from "neo-icon/lib";
+import {Icon} from "nx-icon/lib";
 
 export function ButtonExampleIconBasic() {
-  const iconLeft = <NeoIcon icon={"arrow-left"}/>
-  const iconRight = <NeoIcon icon={"arrow-right"}/>
+  const iconLeft = <Icon icon={"arrow-left"}/>
+  const iconRight = <Icon icon={"arrow-right"}/>
   return (
     <div className={cnDocsDecorator('Section', [wp.decorator({ distribute: 'left' })])}>
       <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
@@ -22,9 +22,9 @@ export function ButtonExampleIconBasic() {
 }
 
 export function ButtonExampleIconOnly() {
-  const iconLeft = <NeoIcon icon={"menu"}/>
-  const iconLeft_ = <NeoIcon icon={"calendar"}/>
-  const iconRight = <NeoIcon icon={"filter"}/>
+  const iconLeft = <Icon icon={"menu"}/>
+  const iconLeft_ = <Icon icon={"calendar"}/>
+  const iconRight = <Icon icon={"filter"}/>
   return (
     <div className={cnDocsDecorator('Section', [wp.decorator({ distribute: 'left' })])}>
       <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>

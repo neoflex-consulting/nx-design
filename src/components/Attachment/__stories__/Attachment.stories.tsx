@@ -8,7 +8,7 @@ import { createMetadata } from '../../../utils/storybook';
 import { Attachment } from '../Attachment';
 
 import mdx from './Attachment.docs.mdx';
-import {NeoIcon} from "neo-icon/lib";
+import {Icon} from "nx-icon/lib";
 
 const defaultKnobs = () => ({
   fileName: text('fileName', 'Приложенный документ'),
@@ -44,7 +44,7 @@ export function Playground() {
         loadingProgress={loadingProgress}
         errorText={errorText}
         fileDescription={fileDescription}
-        buttonIcon={<NeoIcon icon={'delete'}/>}
+        buttonIcon={<Icon icon={'delete'}/>}
         buttonTitle="Удалить"
         fileExtension={fileExtension}
         {...(withButtonAction && {
