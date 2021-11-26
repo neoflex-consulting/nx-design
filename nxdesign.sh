@@ -1,5 +1,5 @@
 #!/bin/sh
-SERVICE_NAME=nxdesign
+SERVICE_NAME=mc
 PID_PATH_NAME=/opt/nx-design/nxdesign-pid
 
 SYS_PARAMS="-Xmx8g -Dlogging.file=/opt/nx-design/logs/nxdesign.log -Dlogging.level.root=info"
@@ -16,7 +16,7 @@ install)
 build)
        echo "Starting $SERVICE_NAME ..."
   if [ ! -f $PID_PATH_NAME ]; then
-       npm build-linux
+       npm run build-linux
        echo "$SERVICE_NAME started ..."
   else
        echo "$SERVICE_NAME is already running ..."
