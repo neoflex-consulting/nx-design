@@ -1,0 +1,15 @@
+# systemctl enable /opt/nx-design/nxdesign.service
+[Unit]
+ Description = Neoflex Design Service
+
+[Service]
+ Type = forking
+ Restart=always
+ RestartSec=1
+ SuccessExitStatus=143
+ ExecStart = /opt/nx-design/nxdesign.sh start
+ ExecStop = /opt/nx-design/nxdesign.sh stop
+ ExecReload = /opt/nx-design/nxdesign.sh restart
+
+[Install]
+ WantedBy=multi-user.target
