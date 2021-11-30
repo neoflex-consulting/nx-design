@@ -6,7 +6,7 @@ import { cn } from '../../../utils/bem';
 import { PropsWithJsxAttributes } from '../../../utils/types/PropsWithJsxAttributes';
 import { Button } from '../../Button/Button';
 import { CalendarMonthLabel } from '../CalendarMonthLabel/CalendarMonthLabel';
-import {NeoIcon} from "neo-icon";
+import {Icon} from "nx-icon/lib";
 
 export type CalendarMonthTogglerProps = PropsWithJsxAttributes<
   {
@@ -35,7 +35,7 @@ export const CalendarMonthToggler: React.FC<CalendarMonthTogglerProps> = (props)
         <Button
           className={cnCalendarMonthToggler('Button', { direction: 'prev' })}
           onClick={prevOnClick}
-          iconLeft={<NeoIcon icon={"arrow-right"} size={"s"}/>}
+          iconLeft={<Icon icon={"arrow-right"} size={"s"}/>}
           size="s"
           view="clear"
         />
@@ -45,7 +45,7 @@ export const CalendarMonthToggler: React.FC<CalendarMonthTogglerProps> = (props)
         <Button
           className={cnCalendarMonthToggler('Button', { direction: 'next' })}
           onClick={nextOnClick}
-          iconLeft={<NeoIcon icon={"arrow-right"} size={"s"}/>}
+          iconLeft={<Icon icon={"arrow-right"} size={"s"}/>}
           size="s"
           view="clear"
         />

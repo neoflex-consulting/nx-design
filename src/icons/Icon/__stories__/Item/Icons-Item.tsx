@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {NeoIcon} from "neo-icon";
+import {Icon} from "nx-icon/lib";
 
 export type IconPropSize = 'xxs' | 'xs' | 's' | 'm' | 'l';
 
@@ -15,9 +15,9 @@ export const IconsItem: React.FC<IconsItemProps> = ({ icon, size, color ,customS
   return (
     <div className="tpl-grid__fraction text text_align_center" style={{fill: color}}>
       {customSize !== 0 && customSize !== null ?
-        <NeoIcon icon={icon} customSize={customSize.toString()}/>
+        <Icon icon={icon} customSize={customSize.toString()}/>
         :
-        <NeoIcon icon={icon} size={size}/>
+        <Icon icon={icon} size={size}/>
       }
       <div className="text_size_s text_view_secondary">{icon}</div>
     </div>

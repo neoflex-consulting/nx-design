@@ -100,10 +100,10 @@ import { ButtonExampleReactNode } from './examples/ButtonExampleReactNode/Button
 Это основной тип кнопки (используется по умолчанию). Если на странице одна кнопка, используйте такую. Если несколько, оставьте кнопку `primary` для самого важного, «целевого» действия, на котором нужно сделать акцент. Постарайтесь использовать одну кнопку `primary` на странице или в блоке.
 
 ```ts
-import {NeoIcon} from "neo-icon";
+import {Icon} from "nx-icon/lib";
 
-const iconRight = <NeoIcon icon={"arrow-right"}/>
-const iconLeft = <NeoIcon icon={"plus"}/>
+const iconRight = <Icon icon={"arrow-right"}/>
+const iconLeft = <Icon icon={"plus"}/>
 
 <Button label="Войти" />
 <Button label="Продолжить" iconRight={iconRight} />
@@ -117,10 +117,10 @@ const iconLeft = <NeoIcon icon={"plus"}/>
 Эта кнопка похожа на `primary`, но не так сильно выделяется. Используйте её, когда хотите сохранить важность действия, но не слишком привлекать к нему внимание.
 
 ```ts
-import {NeoIcon} from "neo-icon";
+import {Icon} from "nx-icon/lib";
 
-const iconRight = <NeoIcon icon={"arrow-right"}/>
-const iconLeft = <NeoIcon icon={"plus"}/>
+const iconRight = <Icon icon={"arrow-right"}/>
+const iconLeft = <Icon icon={"plus"}/>
 
 <Button label="Читать далее" view="secondary" />
 <Button label="Комментировать" view="secondary" iconLeft={iconLeft} />
@@ -134,10 +134,10 @@ const iconLeft = <NeoIcon icon={"plus"}/>
 Это второстепенная или дополнительная кнопка. Часто используется в паре с основной кнопкой и обозначает альтернативное, не главное действие. Например, если есть основная кнопка **Подвтердить**, в паре с ней можно поставить кнопку `ghost` с текстом **Отменить**. Также может использоваться для не очень важных действий, к которым не хочется привлекать внимание.
 
 ```ts
-import {NeoIcon} from "neo-icon";
+import {Icon} from "nx-icon/lib";
 
-const iconLeft = <NeoIcon icon={"settings"}/>
-const iconLeft_ = <NeoIcon icon={"filter"}/>
+const iconLeft = <Icon icon={"settings"}/>
+const iconLeft_ = <Icon icon={"filter"}/>
 
 <Button label="Отмена" view="ghost" />
 <Button label="Настройки" view="ghost" iconLeft={iconLeft} />
@@ -151,10 +151,10 @@ const iconLeft_ = <NeoIcon icon={"filter"}/>
 Это полноценная кнопка с прозрачным фоном. Используйте её, когда внимание пользователя должно быть сосредоточено на более важных компонентах. Также эти кнопки удобно использовать в списке кнопок-иконок без текста или для обозначения самых незначительных действий.
 
 ```ts
-import {NeoIcon} from "neo-icon";
+import {Icon} from "nx-icon/lib";
 
-const iconLeft = <NeoIcon icon={"copy"}/>
-const iconLeft_ = <NeoIcon icon={"mark"}/>
+const iconLeft = <Icon icon={"copy"}/>
+const iconLeft_ = <Icon icon={"mark"}/>
 
 <Button label="Развернуть" view="clear" />
 <Button label="Скопировать" view="clear" iconLeft={iconLeft} />
@@ -168,10 +168,10 @@ const iconLeft_ = <NeoIcon icon={"mark"}/>
 Это полноценная кнопка с прозрачным фоном и подчеркиванием при наведении. Используйте её, когда необходимо добавить ссылку на другой компонент или страницу. Также эти кнопки удобно использовать в Paginator, при переключении между страницами.
 
 ```ts
-import {NeoIcon} from "neo-icon";
+import {Icon} from "nx-icon/lib";
 
-const iconLeft = <NeoIcon icon={"arrow-backward"}/>
-const iconLeft_ = <NeoIcon icon={"save"}/>
+const iconLeft = <Icon icon={"arrow-backward"}/>
+const iconLeft_ = <Icon icon={"save"}/>
 
 <Button label="Ссылка" view="link" />
 <Button label="Назад" view="link" iconLeft={iconLeft} />
@@ -185,10 +185,10 @@ const iconLeft_ = <NeoIcon icon={"save"}/>
 Это свойство блокирует кнопку — её невозможно нажать. Его можно применить к кнопке любого типа. Используйте `disabled` в тех случаях, когда пользователь не может нажать на кнопку из-за каких-то условий. Например, пока не напишет логин и пароль для входа в аккаунт или не заполнит все обязательные поля в форме.
 
 ```ts
-import {NeoIcon} from "neo-icon";
+import {Icon} from "nx-icon/lib";
 
-const iconRight = <NeoIcon icon={"arrow-right"}/>
-const iconRight_ = <NeoIcon icon={"plus"}/>
+const iconRight = <Icon icon={"arrow-right"}/>
+const iconRight_ = <Icon icon={"plus"}/>
 
 <Button label="Войти" disabled />
 <Button label="Продолжить" disabled iconRight={iconRight} />
@@ -226,10 +226,10 @@ const iconRight_ = <NeoIcon icon={"plus"}/>
 Название кнопки можно дополнять иконкой. Она поможет быстрее найти нужную кнопку в ряду других и быстрее понять, что эта кнопка делает. За иконку отвечают свойства `iconLeft` (ставит иконку слева от текста на кнопке) или `iconRight` (ставит иконку справа). Оба эти свойства ожидают компонент иконки из нашей [библиотеки иконок](?path=/story/components-icons--playground).
 
 ```ts
-import {NeoIcon} from "neo-icon";
+import {Icon} from "nx-icon/lib";
 
-const iconLeft = <NeoIcon icon={"arrow-left"}/>
-const iconRight = <NeoIcon icon={"arrow-right"}/>
+const iconLeft = <Icon icon={"arrow-left"}/>
+const iconRight = <Icon icon={"arrow-right"}/>
 
 <Button label="Назад" iconLeft={iconLeft} />
 <Button label="Вперёд" iconRight={iconRight} />
@@ -244,11 +244,11 @@ const iconRight = <NeoIcon icon={"arrow-right"}/>
 Кнопка может состоять только из иконки. Такие кнопки экономят место и позволяют разместить рядом много похожих кнопок. Например, кнопки для выбора даты или фильтров. Для создания такой кнопки используйте свойство `onlyIcon` в паре с `iconLeft` или `iconRight`.
 
 ```ts
-import {NeoIcon} from "neo-icon";
+import {Icon} from "nx-icon/lib";
 
-const iconLeft = <NeoIcon icon={"menu"}/>
-const iconLeft_ = <NeoIcon icon={"calendar"}/>
-const iconRight = <NeoIcon icon={"filter"}/>
+const iconLeft = <Icon icon={"menu"}/>
+const iconLeft_ = <Icon icon={"calendar"}/>
+const iconRight = <Icon icon={"filter"}/>
 
 <Button label="Назад" view="ghost" iconLeft={iconLeft} onlyIcon />
 <Button label="Назад" view="ghost" iconLeft={iconLeft_} onlyIcon />
@@ -318,7 +318,7 @@ const iconRight = <NeoIcon icon={"filter"}/>
     view={'link'}
     style={{marginRight:'10px'}}
     label= {
-      <NeoIcon className={'changeToDevelopButton'} icon={"play-c"}/>
+      <Icon className={'changeToDevelopButton'} icon={"play-c"}/>
     }
 />
 ```

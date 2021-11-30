@@ -15,7 +15,7 @@ import {
 } from '../Badge';
 
 import mdx from './Badge.docs.mdx';
-import {NeoIcon} from "neo-icon";
+import {Icon} from "nx-icon/lib";
 
 const defaultKnobs = () => ({
   label: text('label', 'Statusing along'),
@@ -39,7 +39,7 @@ export function Playground() {
         status={status}
         form={form}
         minified={minified}
-        icon={icon ? <NeoIcon icon={"user"}/> : undefined}
+        icon={icon ? <Icon icon={"user"}/> : undefined}
       />
     </div>
   );
