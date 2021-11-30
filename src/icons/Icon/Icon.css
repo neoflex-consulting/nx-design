@@ -8,8 +8,11 @@
   line-height: 0;
 
   &_size {
+    &_2xs {
+       --icon-size: var(--graphics-size-2xs);
+     }
     &_xs {
-      --icon-size: var(--graphics-size-s);
+      --icon-size: var(--graphics-size-xs);
     }
 
     &_s {
@@ -17,12 +20,16 @@
     }
 
     &_m {
-      --icon-size: var(--graphics-size-s);
+      --icon-size: var(--graphics-size-m);
     }
 
     &_l {
-      --icon-size: var(--graphics-size-s);
+      --icon-size: var(--graphics-size-l);
     }
+
+    &_xl {
+       --icon-size: var(--graphics-size-xl);
+     }
   }
 
   &_view {
