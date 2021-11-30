@@ -1,0 +1,11 @@
+import * as React from 'react';
+
+function DesktopSizeAll(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M2.25 6C2.25 4.34315 3.59315 3 5.25 3H18.75C20.4069 3 21.75 4.34315 21.75 6V15C21.75 16.6569 20.4069 18 18.75 18H15.75V20.25H17.25C17.6642 20.25 18 20.5858 18 21C18 21.4142 17.6642 21.75 17.25 21.75H6.75C6.33579 21.75 6 21.4142 6 21C6 20.5858 6.33579 20.25 6.75 20.25H8.25V18H5.25C3.59315 18 2.25 16.6569 2.25 15V6ZM5.25 4.5H18.75C19.5784 4.5 20.25 5.17157 20.25 6V15C20.25 15.8284 19.5784 16.5 18.75 16.5H5.25C4.42157 16.5 3.75 15.8284 3.75 15V6C3.75 5.17157 4.42157 4.5 5.25 4.5ZM14.25 20.25V18H9.75V20.25H14.25Z" />
+    </svg>
+  );
+}
+
+export default DesktopSizeAll;
