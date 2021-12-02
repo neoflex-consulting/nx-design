@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { IconProps } from '../../../../../icons/Icon/Icon';
+import { IconProps } from '../../../../../icons/_Icon/Icon';
 import { IconCamera } from '../../../../../icons/IconCamera/IconCamera';
 import { IconPhoto } from '../../../../../icons/IconPhoto/IconPhoto';
 import { IconRing } from '../../../../../icons/IconRing/IconRing';

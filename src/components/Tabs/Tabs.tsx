@@ -4,7 +4,7 @@ import React, { createRef, useMemo } from 'react';
 
 import { useChoiceGroup } from '../../hooks/useChoiceGroup/useChoiceGroup';
 import { useResizeObserved } from '../../hooks/useResizeObserved/useResizeObserved';
-import { IconProps, IconPropSize } from '../../icons/Icon/Icon';
+import { IconProps, IconPropSize } from '../../icons/_Icon/Icon';
 import { cn } from '../../utils/bem';
 import { PropsWithHTMLAttributesAndRef } from '../../utils/types/PropsWithHTMLAttributes';
 

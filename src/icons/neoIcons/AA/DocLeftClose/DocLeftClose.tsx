@@ -1,4 +1,4 @@
-import { createIcon } from '../../../createIcon/createIcon';
+import { createIcon } from '../../../_createIcon/createIcon';
 
 import DocLeftCloseSizeAll from './DocLeftClose_size_all';
 

@@ -1,4 +1,4 @@
-import { createIcon } from '../../../createIcon/createIcon';
+import { createIcon } from '../../../_createIcon/createIcon';
 
 import DoubleDownSizeAll from './DoubleDown_size_all';
 

@@ -1,4 +1,4 @@
-import { createIcon } from '../../../createIcon/createIcon';
+import { createIcon } from '../../../_createIcon/createIcon';
 
 import CaretRightSSizeAll from './CaretRightS_size_all';
 

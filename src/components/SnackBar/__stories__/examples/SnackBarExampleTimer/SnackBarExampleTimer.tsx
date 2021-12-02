@@ -2,7 +2,7 @@ import './SnackBarExampleTimer.css';
 
 import React, { useReducer } from 'react';
 
-import { IconProps } from '../../../../../icons/Icon/Icon';
+import { IconProps } from '../../../../../icons/_Icon/Icon';
 import { IconAdd } from '../../../../../icons/IconAdd/IconAdd';
 import { IconAlert } from '../../../../../icons/IconAlert/IconAlert';
 import { IconRing } from '../../../../../icons/IconRing/IconRing';

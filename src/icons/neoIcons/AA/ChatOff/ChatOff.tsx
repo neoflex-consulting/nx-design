@@ -1,4 +1,4 @@
-import { createIcon } from '../../../createIcon/createIcon';
+import { createIcon } from '../../../_createIcon/createIcon';
 
 import ChatOffSizeAll from './ChatOff_size_all';
 

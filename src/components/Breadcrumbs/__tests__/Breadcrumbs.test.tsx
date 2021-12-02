@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
 
-import { IconProps } from '../../../icons/Icon/Icon';
+import { IconProps } from '../../../icons/_Icon/Icon';
 import { IconCamera } from '../../../icons/IconCamera/IconCamera';
 import { IconUser } from '../../../icons/IconUser/IconUser';
 import { breadcrumbPropSize, Breadcrumbs, cnBreadcrumbs } from '../Breadcrumbs';

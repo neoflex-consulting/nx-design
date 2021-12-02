@@ -1,4 +1,4 @@
-import { createIcon } from '../createIcon/createIcon';
+import { createIcon } from '../_createIcon/createIcon';
 
 import IconLightningBoltSizeM from './IconLightningBolt_size_m';
 import IconLightningBoltSizeS from './IconLightningBolt_size_s';

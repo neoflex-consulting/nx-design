@@ -4,7 +4,7 @@ import React, { FC, useState } from 'react';
 import { object, select } from '@storybook/addon-knobs';
 
 import { exampleThemesThree, exampleThemesTwo, Theme as ThemeType } from '../__mocks__/data.mock';
-import { IconProps } from '../../../icons/Icon/Icon';
+import { IconProps } from '../../../icons/_Icon/Icon';
 import { cn } from '../../../utils/bem';
 import { createMetadata } from '../../../utils/storybook';
 import { directions } from '../../Popover/Popover';

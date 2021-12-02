@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { IconProps } from '../../../icons/Icon/Icon';
+import { IconProps } from '../../../icons/_Icon/Icon';
 import { IconCamera } from '../../../icons/IconCamera/IconCamera';
 import { cnMixFocus } from '../../../mixs/MixFocus/MixFocus';
 import {

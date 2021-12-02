@@ -1,4 +1,4 @@
-import { createIcon } from '../createIcon/createIcon';
+import { createIcon } from '../_createIcon/createIcon';
 
 import IconPhotoSizeM from './IconPhoto_size_m';
 import IconPhotoSizeS from './IconPhoto_size_s';

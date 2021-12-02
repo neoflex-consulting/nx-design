@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { boolean, select } from '@storybook/addon-knobs';
 
-import { IconProps } from '../../../icons/Icon/Icon';
+import { IconProps } from '../../../icons/_Icon/Icon';
 import { IconCamera } from '../../../icons/IconCamera/IconCamera';
 import { IconCopy } from '../../../icons/IconCopy/IconCopy';
 import { IconFavorite } from '../../../icons/IconFavorite/IconFavorite';

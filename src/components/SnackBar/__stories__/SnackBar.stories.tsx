@@ -3,7 +3,7 @@ import './SnackBar.stories.css';
 import * as React from 'react';
 import { boolean } from '@storybook/addon-knobs';
 
-import { IconProps } from '../../../icons/Icon/Icon';
+import { IconProps } from '../../../icons/_Icon/Icon';
 import { IconAdd } from '../../../icons/IconAdd/IconAdd';
 import { IconAlert } from '../../../icons/IconAlert/IconAlert';
 import { IconProcessing } from '../../../icons/IconProcessing/IconProcessing';

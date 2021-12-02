@@ -1,4 +1,4 @@
-import { IconProps } from '../../../icons/Icon/Icon';
+import { IconProps } from '../../../icons/_Icon/Icon';
 import { IconAllDone } from '../../../icons/IconAllDone/IconAllDone';
 import { IconAttach } from '../../../icons/IconAttach/IconAttach';
 import { IconBag } from '../../../icons/IconBag/IconBag';

@@ -3,7 +3,7 @@ import './TextField.css';
 import React, { useState } from 'react';
 import TextAreaAutoSize from 'react-textarea-autosize';
 
-import { IconProps, IconPropSize } from '../../icons/Icon/Icon';
+import { IconProps, IconPropSize } from '../../icons/_Icon/Icon';
 import { cn } from '../../utils/bem';
 import { getSizeByMap } from '../../utils/getSizeByMap';
 import { PropsWithHTMLAttributes } from '../../utils/types/PropsWithHTMLAttributes';

@@ -3,7 +3,7 @@ import './SnackBar.css';
 import React from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-import { IconProps } from '../../icons/Icon/Icon';
+import { IconProps } from '../../icons/_Icon/Icon';
 import { cn } from '../../utils/bem';
 import { cnForCssTransition } from '../../utils/cnForCssTransition';
 import { PropsWithHTMLAttributes } from '../../utils/types/PropsWithHTMLAttributes';

@@ -3,7 +3,7 @@ import './CollapseIcon.css';
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
 
-import { cnIcon, IconProps, IconPropSize } from '../../../icons/Icon/Icon';
+import { cnIcon, IconProps, IconPropSize } from '../../../icons/_Icon/Icon';
 import { cn } from '../../../utils/bem';
 import { cnForCssTransition } from '../../../utils/cnForCssTransition';
 import { PropsWithHTMLAttributes } from '../../../utils/types/PropsWithHTMLAttributes';

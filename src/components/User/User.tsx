@@ -2,7 +2,7 @@ import './User.css';
 
 import React from 'react';
 
-import { IconProps, IconPropSize } from '../../icons/Icon/Icon';
+import { IconProps, IconPropSize } from '../../icons/_Icon/Icon';
 import { IconSelect } from '../../icons/IconSelect/IconSelect';
 import { cn } from '../../utils/bem';
 import { getSizeByMap } from '../../utils/getSizeByMap';

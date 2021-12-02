@@ -1,4 +1,4 @@
-import { createIcon } from '../createIcon/createIcon';
+import { createIcon } from '../_createIcon/createIcon';
 
 import IconCursorMouseSizeM from './IconCursorMouse_size_m';
 import IconCursorMouseSizeS from './IconCursorMouse_size_s';

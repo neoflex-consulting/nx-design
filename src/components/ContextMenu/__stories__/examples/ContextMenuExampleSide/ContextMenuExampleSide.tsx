@@ -2,7 +2,7 @@ import './ContextMenuExampleSide.css';
 
 import React, { useRef, useState } from 'react';
 
-import { IconProps } from '../../../../../icons/Icon/Icon';
+import { IconProps } from '../../../../../icons/_Icon/Icon';
 import { IconAdd } from '../../../../../icons/IconAdd/IconAdd';
 import { IconInfo } from '../../../../../icons/IconInfo/IconInfo';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';

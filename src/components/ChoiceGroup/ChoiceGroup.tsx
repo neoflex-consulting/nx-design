@@ -3,7 +3,7 @@ import './ChoiceGroup.css';
 import React from 'react';
 
 import { useChoiceGroup } from '../../hooks/useChoiceGroup/useChoiceGroup';
-import { IconProps, IconPropSize } from '../../icons/Icon/Icon';
+import { IconProps, IconPropSize } from '../../icons/_Icon/Icon';
 import { cn } from '../../utils/bem';
 import { getSizeByMap } from '../../utils/getSizeByMap';
 import { PropsWithHTMLAttributesAndRef } from '../../utils/types/PropsWithHTMLAttributes';

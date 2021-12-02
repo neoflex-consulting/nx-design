@@ -1,4 +1,4 @@
-import { createIcon } from '../createIcon/createIcon';
+import { createIcon } from '../_createIcon/createIcon';
 
 import IconBentoSizeM from './IconBento_size_m';
 import IconBentoSizeS from './IconBento_size_s';

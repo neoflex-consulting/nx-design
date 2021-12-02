@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { act, fireEvent, render, screen } from '@testing-library/react';
 
-import { cnIcon } from '../../../icons/Icon/Icon';
+import { cnIcon } from '../../../icons/_Icon/Icon';
 import { IconAdd } from '../../../icons/IconAdd/IconAdd';
 import { cnSnackBar, SnackBar, snackBarItemStatus } from '../SnackBar';
 

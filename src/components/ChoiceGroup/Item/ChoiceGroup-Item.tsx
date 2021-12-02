@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { IconProps, IconPropSize } from '../../../icons/Icon/Icon';
+import { IconProps, IconPropSize } from '../../../icons/_Icon/Icon';
 import { cnMixFocus } from '../../../mixs/MixFocus/MixFocus';
 import { cnChoiceGroup } from '../ChoiceGroup';
 

@@ -1,4 +1,4 @@
-import { IconProps } from '../../../icons/Icon/Icon';
+import { IconProps } from '../../../icons/_Icon/Icon';
 import { IconLightningBolt } from '../../../icons/IconLightningBolt/IconLightningBolt';
 import { IconMoon } from '../../../icons/IconMoon/IconMoon';
 import { IconSun } from '../../../icons/IconSun/IconSun';

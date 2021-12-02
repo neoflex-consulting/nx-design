@@ -1,4 +1,4 @@
-import { createIcon } from '../createIcon/createIcon';
+import { createIcon } from '../_createIcon/createIcon';
 
 import IconLineAndBarChartSizeM from './IconLineAndBarChart_size_m';
 import IconLineAndBarChartSizeS from './IconLineAndBarChart_size_s';

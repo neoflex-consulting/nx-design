@@ -1,4 +1,4 @@
-import { createIcon } from '../createIcon/createIcon';
+import { createIcon } from '../_createIcon/createIcon';
 
 import IconFunnelSizeM from './IconFunnel_size_m';
 import IconFunnelSizeS from './IconFunnel_size_s';

@@ -2,7 +2,7 @@ import './TagBase.css';
 
 import React from 'react';
 
-import { IconProps, IconPropSize } from '../../icons/Icon/Icon';
+import { IconProps, IconPropSize } from '../../icons/_Icon/Icon';
 import { IconClose } from '../../icons/IconClose/IconClose';
 import { cn } from '../../utils/bem';
 import { getSizeByMap } from '../../utils/getSizeByMap';

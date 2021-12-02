@@ -1,4 +1,4 @@
-import { createIcon } from '../createIcon/createIcon';
+import { createIcon } from '../_createIcon/createIcon';
 
 import IconAlignJustifySizeM from './IconAlignJustify_size_m';
 import IconAlignJustifySizeS from './IconAlignJustify_size_s';

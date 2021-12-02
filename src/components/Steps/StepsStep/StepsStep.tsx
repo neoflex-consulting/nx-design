@@ -2,7 +2,7 @@ import './StepsStep.css';
 
 import React from 'react';
 
-import { IconPropSize } from '../../../icons/Icon/Icon';
+import { IconPropSize } from '../../../icons/_Icon/Icon';
 import { IconCheck } from '../../../icons/IconCheck/IconCheck';
 import { cn } from '../../../utils/bem';
 import { getSizeByMap } from '../../../utils/getSizeByMap';

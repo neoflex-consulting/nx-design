@@ -1,4 +1,4 @@
-import { createIcon } from '../createIcon/createIcon';
+import { createIcon } from '../_createIcon/createIcon';
 
 import IconHamburgerSizeM from './IconHamburger_size_m';
 import IconHamburgerSizeS from './IconHamburger_size_s';

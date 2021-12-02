@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { cnIcon } from '../../../icons/Icon/Icon';
+import { cnIcon } from '../../../icons/_Icon/Icon';
 import { IconAttach } from '../../../icons/IconAttach/IconAttach';
 import { cnTagBase, TagBase, tagBasePropGroup, tagBasePropSize, tagBasePropView } from '../TagBase';
 

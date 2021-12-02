@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import { useChoiceGroup } from '../../hooks/useChoiceGroup/useChoiceGroup';
-import { IconProps, IconPropSize } from '../../icons/Icon/Icon';
+import { IconProps, IconPropSize } from '../../icons/_Icon/Icon';
 import { IconCheck } from '../../icons/IconCheck/IconCheck';
 import { getSizeByMap } from '../../utils/getSizeByMap';
 import { setRef } from '../../utils/setRef';

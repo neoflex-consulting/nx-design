@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { IconProps } from '../../icons/Icon/Icon';
+import { IconProps } from '../../icons/_Icon/Icon';
 import { TagBase } from '../TagBase/TagBase';
 
 type TagBaseProps = React.ComponentProps<typeof TagBase>;
