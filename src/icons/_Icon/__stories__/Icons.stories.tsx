@@ -519,7 +519,7 @@ import {TextArea} from '../../TextArea/TextArea';
 import {TextColor} from '../../TextColor/TextColor';
 import {TextField} from '../../TextField/TextField';
 import {TextFieldMask} from '../../TextFieldMask/TextFieldMask';
-import {TimerOn} from '../../TimerOn/TimerOn';
+import {TimerOn} from '../../TimerOn/TimerOn'
 import {Toolbox} from '../../Toolbox/Toolbox';
 import {Tools} from '../../Tools/Tools';
 import {Try} from '../../Try/Try';
