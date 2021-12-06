@@ -208,7 +208,7 @@
   &-Icon {
     display: block;
     flex-shrink: 0;
-    margin-top: 7px;
+    fill: currentColor;
 
     &_position {
       &_left {

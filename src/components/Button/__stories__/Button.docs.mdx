@@ -30,6 +30,7 @@ import {
 } from './examples/ButtonExampleIcon/ButtonExampleIcon';
 import { ButtonExampleLoading } from './examples/ButtonExampleLoading/ButtonExampleLoading';
 import { ButtonExampleReactNode } from './examples/ButtonExampleReactNode/ButtonExampleReactNode';
+import { ButtonExampleOtherIcons } from './examples/ButtonExampleOtherIcons/ButtonExampleOtherIcons'
 
 # Button
 
@@ -100,14 +101,9 @@ import { ButtonExampleReactNode } from './examples/ButtonExampleReactNode/Button
 Это основной тип кнопки (используется по умолчанию). Если на странице одна кнопка, используйте такую. Если несколько, оставьте кнопку `primary` для самого важного, «целевого» действия, на котором нужно сделать акцент. Постарайтесь использовать одну кнопку `primary` на странице или в блоке.
 
 ```ts
-import {Icon} from "nx-icon/lib";
-
-const iconRight = <Icon icon={"arrow-right"}/>
-const iconLeft = <Icon icon={"plus"}/>
-
 <Button label="Войти" />
-<Button label="Продолжить" iconRight={iconRight} />
-<Button label="Добавить" iconLeft={iconLeft} onlyIcon />
+<Button label="Продолжить" iconRight={ArrowRight} />
+<Button label="Добавить" iconLeft={Plus} onlyIcon />
 ```
 
 <ButtonExampleViewPrimary />
@@ -117,14 +113,9 @@ const iconLeft = <Icon icon={"plus"}/>
 Эта кнопка похожа на `primary`, но не так сильно выделяется. Используйте её, когда хотите сохранить важность действия, но не слишком привлекать к нему внимание.
 
 ```ts
-import {Icon} from "nx-icon/lib";
-
-const iconRight = <Icon icon={"arrow-right"}/>
-const iconLeft = <Icon icon={"plus"}/>
-
 <Button label="Читать далее" view="secondary" />
-<Button label="Комментировать" view="secondary" iconLeft={iconLeft} />
-<Button label="Редактировать" view="secondary" iconRight={iconRight} onlyIcon />
+<Button label="Комментировать" view="secondary" iconLeft={Edit} />
+<Button label="Редактировать" view="secondary" iconRight={Chat} onlyIcon />
 ```
 
 <ButtonExampleViewSecondary />
@@ -134,14 +125,9 @@ const iconLeft = <Icon icon={"plus"}/>
 Это второстепенная или дополнительная кнопка. Часто используется в паре с основной кнопкой и обозначает альтернативное, не главное действие. Например, если есть основная кнопка **Подвтердить**, в паре с ней можно поставить кнопку `ghost` с текстом **Отменить**. Также может использоваться для не очень важных действий, к которым не хочется привлекать внимание.
 
 ```ts
-import {Icon} from "nx-icon/lib";
-
-const iconLeft = <Icon icon={"settings"}/>
-const iconLeft_ = <Icon icon={"filter"}/>
-
 <Button label="Отмена" view="ghost" />
-<Button label="Настройки" view="ghost" iconLeft={iconLeft} />
-<Button label="Фильтр" view="ghost" iconLeft={iconLeft_} onlyIcon />
+<Button label="Настройки" view="ghost" iconLeft={Settings} />
+<Button label="Фильтр" view="ghost" iconLeft={Filter} onlyIcon />
 ```
 
 <ButtonExampleViewGhost />
@@ -151,14 +137,9 @@ const iconLeft_ = <Icon icon={"filter"}/>
 Это полноценная кнопка с прозрачным фоном. Используйте её, когда внимание пользователя должно быть сосредоточено на более важных компонентах. Также эти кнопки удобно использовать в списке кнопок-иконок без текста или для обозначения самых незначительных действий.
 
 ```ts
-import {Icon} from "nx-icon/lib";
-
-const iconLeft = <Icon icon={"copy"}/>
-const iconLeft_ = <Icon icon={"mark"}/>
-
 <Button label="Развернуть" view="clear" />
-<Button label="Скопировать" view="clear" iconLeft={iconLeft} />
-<Button label="Добавить в Избранное" view="clear" iconLeft={iconLeft_} onlyIcon />
+<Button label="Скопировать" view="clear" iconLeft={Copy} />
+<Button label="Добавить в Избранное" view="clear" iconLeft={Mark} onlyIcon />
 ```
 
 <ButtonExampleViewClear />
@@ -168,14 +149,9 @@ const iconLeft_ = <Icon icon={"mark"}/>
 Это полноценная кнопка с прозрачным фоном и подчеркиванием при наведении. Используйте её, когда необходимо добавить ссылку на другой компонент или страницу. Также эти кнопки удобно использовать в Paginator, при переключении между страницами.
 
 ```ts
-import {Icon} from "nx-icon/lib";
-
-const iconLeft = <Icon icon={"arrow-backward"}/>
-const iconLeft_ = <Icon icon={"save"}/>
-
 <Button label="Ссылка" view="link" />
-<Button label="Назад" view="link" iconLeft={iconLeft} />
-<Button label="Сохранить" view="link" iconLeft={iconLeft_} onlyIcon />
+<Button label="Назад" view="link" iconLeft={ArrowBackward} />
+<Button label="Сохранить" view="link" iconLeft={Save} onlyIcon />
 ```
 
 <ButtonExampleViewLink />
@@ -185,14 +161,9 @@ const iconLeft_ = <Icon icon={"save"}/>
 Это свойство блокирует кнопку — её невозможно нажать. Его можно применить к кнопке любого типа. Используйте `disabled` в тех случаях, когда пользователь не может нажать на кнопку из-за каких-то условий. Например, пока не напишет логин и пароль для входа в аккаунт или не заполнит все обязательные поля в форме.
 
 ```ts
-import {Icon} from "nx-icon/lib";
-
-const iconRight = <Icon icon={"arrow-right"}/>
-const iconRight_ = <Icon icon={"plus"}/>
-
 <Button label="Войти" disabled />
-<Button label="Продолжить" disabled iconRight={iconRight} />
-<Button label="Добавить" disabled iconRight={iconRight_} onlyIcon />
+<Button label="Продолжить" disabled iconRight={ArrowRight} />
+<Button label="Добавить" disabled iconRight={Plus} onlyIcon />
 ```
 
 <ButtonExampleViewDisabled />
@@ -226,13 +197,8 @@ const iconRight_ = <Icon icon={"plus"}/>
 Название кнопки можно дополнять иконкой. Она поможет быстрее найти нужную кнопку в ряду других и быстрее понять, что эта кнопка делает. За иконку отвечают свойства `iconLeft` (ставит иконку слева от текста на кнопке) или `iconRight` (ставит иконку справа). Оба эти свойства ожидают компонент иконки из нашей [библиотеки иконок](?path=/story/components-icons--playground).
 
 ```ts
-import {Icon} from "nx-icon/lib";
-
-const iconLeft = <Icon icon={"arrow-left"}/>
-const iconRight = <Icon icon={"arrow-right"}/>
-
-<Button label="Назад" iconLeft={iconLeft} />
-<Button label="Вперёд" iconRight={iconRight} />
+<Button label="Назад" iconLeft={ArrowLeft} />
+<Button label="Вперёд" iconRight={ArrowRight} />
 ```
 
 <ButtonExampleIconBasic />
@@ -244,15 +210,9 @@ const iconRight = <Icon icon={"arrow-right"}/>
 Кнопка может состоять только из иконки. Такие кнопки экономят место и позволяют разместить рядом много похожих кнопок. Например, кнопки для выбора даты или фильтров. Для создания такой кнопки используйте свойство `onlyIcon` в паре с `iconLeft` или `iconRight`.
 
 ```ts
-import {Icon} from "nx-icon/lib";
-
-const iconLeft = <Icon icon={"menu"}/>
-const iconLeft_ = <Icon icon={"calendar"}/>
-const iconRight = <Icon icon={"filter"}/>
-
-<Button label="Назад" view="ghost" iconLeft={iconLeft} onlyIcon />
-<Button label="Назад" view="ghost" iconLeft={iconLeft_} onlyIcon />
-<Button label="Вперёд" view="ghost" iconRight={iconRight} onlyIcon />
+<Button label="Назад" view="ghost" iconLeft={Menu} onlyIcon />
+<Button label="Назад" view="ghost" iconLeft={Calendar} onlyIcon />
+<Button label="Вперёд" view="ghost" iconRight={Filter} onlyIcon />
 ```
 
 <ButtonExampleIconOnly />
@@ -310,20 +270,42 @@ const iconRight = <Icon icon={"filter"}/>
 ### ReactNode на кнопке
 
 Для отображения расчетного значения на кнопке, используйте ReactNode в label.
-Например: Отображение перевода через i18n. Добавление Link.
+Например: Отображение перевода через i18n. Добавление Link и прочее...
 
 ```ts
 <Button label={t('create')} {{ width: '260px' }} />
 <Button
     view={'link'}
     style={{marginRight:'10px'}}
-    label= {
-      <Icon className={'changeToDevelopButton'} icon={"play-c"}/>
-    }
+    label= {1 === 2 ? 3 : 4}
 />
+
 ```
 
 <ButtonExampleReactNode />
+
+### Использование сторонних библиотек с иконками
+
+Например: https://ant.design/components/icon/ или https://iconpark.oceanengine.com/
+
+```ts
+import {EveryUser, RightUser} from "@icon-park/react";
+import {DownCircleOutlined, StepBackwardOutlined} from "@ant-design/icons";
+
+<Button
+  iconLeft={<EveryUser theme="outline"/>}
+  iconRight={<RightUser theme="outline"/>}
+  label={'IconPark'}
+/>
+<Button
+  iconLeft={<StepBackwardOutlined/>}
+  iconRight={<DownCircleOutlined/>}
+  label={'AntDesign'}
+/>
+
+```
+
+<ButtonExampleOtherIcons />
 
 ## Список свойств
 
@@ -335,8 +317,8 @@ const iconRight = <Icon icon={"filter"}/>
 | [`size`](#размер)                | `'xs', 's', 'm', 'l'`                                                                     | `m`                       | Размер                                                                           |
 | [`width`](#размер)               | `'full', 'default'`                                                                       | `default`                 | Ширина                                                                           |
 | [`form`](#форма)                 | `'default', 'round', 'brick', 'brickRound', 'roundBrick', 'brickDefault', 'defaultBrick'` | `default`                 | Форма                                                                            |
-| [`iconLeft`](#кнопка-с-иконкой)  | `React.ReactNode`                                                                         | -                         | Иконка слева                                                                     |
-| [`iconRight`](#кнопка-с-иконкой) | `React.ReactNode`                                                                         | -                         | Иконка справа                                                                    |
+| [`iconLeft`](#кнопка-с-иконкой)  | `React.ReactNode` , `React.FC<IconProps>`                                                 | -                         | Иконка слева                                                                     |
+| [`iconRight`](#кнопка-с-иконкой) | `React.ReactNode` , `React.FC<IconProps>`                                                 | -                         | Иконка справа                                                                    |
 | [`onlyIcon`](#только-иконка)     | `boolean`                                                                                 | `false`                   | Только иконка без текста                                                         |
 | `title`                          | `string`                                                                                  | -                         | HTML-атрибут `title` — всплывающая подсказка, появляется при наведении на кнопку |
 | `tabIndex`                       | `number`                                                                                  | -                         | Порядковый номер при переходе между элементами интерфейса по клавише **tab**     |

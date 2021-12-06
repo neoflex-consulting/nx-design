@@ -2,52 +2,63 @@ import React from 'react';
 
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { StoryBookExample } from '../../../../../uiKit/components/StoryBookExample/StoryBookExample';
-import { IconBag } from '../../../../IconBag/IconBag';
+import { DataHistogram } from "../../../../DataHistogram/DataHistogram";
+import {Button} from "../../../../../components/Button/Button";
+import {Edit} from "../../../../Edit/Edit";
 
 export const IconExampleViewAlert = () => (
   <StoryBookExample className={cnDocsDecorator('Section')}>
-    <IconBag view="alert" />
+    <DataHistogram view="alert" />
   </StoryBookExample>
 );
 
 export const IconExampleViewBrand = () => (
   <StoryBookExample className={cnDocsDecorator('Section')}>
-    <IconBag view="brand" />
+    <DataHistogram view="brand" />
   </StoryBookExample>
 );
 
 export const IconExampleViewGhost = () => (
   <StoryBookExample className={cnDocsDecorator('Section')}>
-    <IconBag view="ghost" />
+    <DataHistogram view="ghost" />
   </StoryBookExample>
 );
 
 export const IconExampleViewLink = () => (
   <StoryBookExample className={cnDocsDecorator('Section')}>
-    <IconBag view="link" />
+    <DataHistogram view="link" />
   </StoryBookExample>
 );
 
 export const IconExampleViewPrimary = () => (
   <StoryBookExample className={cnDocsDecorator('Section')}>
-    <IconBag view="primary" />
+    <DataHistogram view="primary" />
   </StoryBookExample>
 );
 
 export const IconExampleViewSecondary = () => (
   <StoryBookExample className={cnDocsDecorator('Section')}>
-    <IconBag view="secondary" />
+    <DataHistogram view="secondary" />
   </StoryBookExample>
 );
 
 export const IconExampleViewWarning = () => (
   <StoryBookExample className={cnDocsDecorator('Section')}>
-    <IconBag view="warning" />
+    <DataHistogram view="warning" />
   </StoryBookExample>
 );
 
 export const IconExampleViewSuccess = () => (
   <StoryBookExample className={cnDocsDecorator('Section')}>
-    <IconBag view="success" />
+    <DataHistogram view="success" />
+  </StoryBookExample>
+);
+
+export const IconExampleViewCustom = () => (
+  <StoryBookExample className={cnDocsDecorator('Section')}>
+    <DataHistogram style={{color: 'green'}}/>
+    <div style={{display: "initial", color: 'green'}} >
+      <DataHistogram/>
+    </div>
   </StoryBookExample>
 );

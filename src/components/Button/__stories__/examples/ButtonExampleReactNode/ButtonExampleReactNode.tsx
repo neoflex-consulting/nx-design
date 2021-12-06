@@ -10,7 +10,7 @@ export function ButtonExampleReactNode() {
   return (
     <div className={cnDocsDecorator('Section', [wp.decorator({ distribute: 'left' })])}>
       <div className={cnDocsExample()}>
-        <Button label="Создать" />
+        <Button label={1 == 2 ? 3 : 4}/>
       </div>
     </div>
   );

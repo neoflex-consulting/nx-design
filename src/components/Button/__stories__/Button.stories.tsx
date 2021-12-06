@@ -21,7 +21,8 @@ import {
 } from '../Button';
 
 import mdx from './Button.docs.mdx';
-import {Icon} from "nx-icon/lib";
+import {User} from "../../../icons/User/User";
+import {CaretDown} from "../../../icons/CaretDown/CaretDown";
 
 const defaultKnobs = () => ({
   width: select('Width', buttonPropWidth, buttonPropWidthDefault),
@@ -65,8 +66,8 @@ export function Playground() {
           label={label}
           onlyIcon={onlyIcon}
           onClick={action('click')}
-          iconLeft={iconLeft ? <Icon icon={"user"}/> : undefined}
-          iconRight={iconRight ? <Icon icon={"caret-down"}/> : undefined}
+          iconRight={iconRight ? User : undefined}
+          iconLeft={iconLeft ? CaretDown : undefined}
         />
       </div>
     </EventInterceptorProvider>

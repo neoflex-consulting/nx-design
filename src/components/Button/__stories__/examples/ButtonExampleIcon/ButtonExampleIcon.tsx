@@ -5,36 +5,36 @@ import { cnDocsExample } from '../../../../../uiKit/components/DocsExample/DocsE
 import * as wp from '../../../../../uiKit/whitepaper/whitepaper';
 import { Button } from '../../../Button';
 import {Icon} from "nx-icon/lib";
+import {ArrowLeft} from "../../../../../icons/ArrowLeft/ArrowLeft";
+import {ArrowRight} from "../../../../../icons/ArrowRight/ArrowRight";
+import {Menu} from "../../../../../icons/Menu/Menu";
+import {Calendar} from "../../../../../icons/Calendar/Calendar";
+import {Filter} from "../../../../../icons/Filter/Filter";
 
 export function ButtonExampleIconBasic() {
-  const iconLeft = <Icon icon={"arrow-left"}/>
-  const iconRight = <Icon icon={"arrow-right"}/>
   return (
     <div className={cnDocsDecorator('Section', [wp.decorator({ distribute: 'left' })])}>
       <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
-        <Button label="Назад" iconLeft={iconLeft} />
+        <Button label="Назад" iconLeft={ArrowLeft} />
       </div>
       <div className={cnDocsExample()}>
-        <Button label="Вперёд" iconRight={iconRight} />
+        <Button label="Вперёд" iconRight={ArrowRight} />
       </div>
     </div>
   );
 }
 
 export function ButtonExampleIconOnly() {
-  const iconLeft = <Icon icon={"menu"}/>
-  const iconLeft_ = <Icon icon={"calendar"}/>
-  const iconRight = <Icon icon={"filter"}/>
   return (
     <div className={cnDocsDecorator('Section', [wp.decorator({ distribute: 'left' })])}>
       <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
-        <Button label="Назад" view="ghost" iconLeft={iconLeft} onlyIcon />
+        <Button label="Назад" view="ghost" iconLeft={Menu} onlyIcon />
       </div>
       <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
-        <Button label="Назад" view="ghost" iconLeft={iconLeft_} onlyIcon />
+        <Button label="Назад" view="ghost" iconLeft={Calendar} onlyIcon />
       </div>
       <div className={cnDocsExample()}>
-        <Button label="Вперёд" view="ghost" iconRight={iconRight} onlyIcon />
+        <Button label="Вперёд" view="ghost" iconRight={Filter} onlyIcon />
       </div>
     </div>
   );

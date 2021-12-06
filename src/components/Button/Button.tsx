@@ -3,7 +3,9 @@ import './Button.css';
 import React from 'react';
 
 import { cnMixFocus } from '../../mixs/MixFocus/MixFocus';
+import {IconProps, IconPropSize} from '../../icons/_Icon/Icon';
 import { cn } from '../../utils/bem';
+import {getSizeByMap} from '../../utils/getSizeByMap';
 import { forwardRefWithAs } from '../../utils/types/PropsWithAsAttributes';
 import { usePropsHandler } from '../EventInterceptor/usePropsHandler';
 import { Loader } from '../Loader/Loader';
@@ -42,11 +44,12 @@ export type Props = {
   loading?: boolean;
   label?: string | number | React.ReactNode;
   onClick?: React.EventHandler<React.MouseEvent>;
-  iconLeft?: React.ReactNode;
-  iconRight?: React.ReactNode;
+  iconLeft?: React.ReactNode | React.FC<IconProps>;
+  iconRight?: React.ReactNode | React.FC<IconProps>;
   onlyIcon?: boolean;
   title?: string;
   children?: never;
+  iconSize?: IconPropSize;
 };
 
 export const cnButton = cn('Button');
@@ -67,8 +70,23 @@ export const Button = forwardRefWithAs<Props, 'button'>((props, ref) => {
     tabIndex,
     as = 'button',
     onlyIcon,
+    iconSize: iconSizeProp,
     ...otherProps
   } = usePropsHandler(cnButton(), props);
+
+  const sizeMap: Record<ButtonPropSize, IconPropSize> = {
+    xs: 'xs',
+    s: 'xs',
+    m: 's',
+    l: 'm',
+  };
+
+  const sizeMapOnlyIcon: Record<ButtonPropSize, IconPropSize> = {
+    xs: 'xs',
+    s: 'xs',
+    m: 's',
+    l: 'm',
+  };
 
   const Tag = as as string;
   const IconOnly = (!label || onlyIcon) && (iconLeft || iconRight);
@@ -76,6 +94,9 @@ export const Button = forwardRefWithAs<Props, 'button'>((props, ref) => {
   const IconRight = iconRight;
   const withIcon = !!iconLeft || !!iconRight;
   const title = props.title || (!!IconOnly && label) || undefined;
+  const iconSize = IconOnly
+    ? getSizeByMap(sizeMapOnlyIcon, size, iconSizeProp)
+    : getSizeByMap(sizeMap, size, iconSizeProp);
 
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     if (!disabled && !loading && onClick) {
@@ -83,6 +104,7 @@ export const Button = forwardRefWithAs<Props, 'button'>((props, ref) => {
     }
   };
 
+  // @ts-ignore
   return (
     <Tag
       {...otherProps}
@@ -106,22 +128,24 @@ export const Button = forwardRefWithAs<Props, 'button'>((props, ref) => {
       {...(Tag === 'button' ? { disabled: disabled || loading } : {})}
     >
       {IconOnly &&
-        <span className={cnButton('Icon')}> {iconLeft || iconRight} </span>
+      (
+        (React.isValidElement(iconLeft) && <span className={cnButton('Icon')}> {iconLeft} </span> ) ||
+        (React.isValidElement(iconRight) && <span className={cnButton('Icon')}> {iconRight} </span> )
+      )
       }
+      {IconOnly && !React.isValidElement(iconLeft) && !React.isValidElement(iconRight) && <IconOnly className={cnButton('Icon')} size={iconSize}/> }
       {!IconOnly &&
-        ((IconLeft || IconRight) && label ? (
-          <>
-            {IconLeft && (
-              <span className={cnButton('Icon', { position: 'left' })}> {iconLeft} </span>
-            )}
-            <span className={cnButton('Label')}>{label}</span>
-            {IconRight && (
-              <span className={cnButton('Icon', { position: 'right' })}> {iconRight} </span>
-            )}
-          </>
-        ) : (
-          label
-        ))}
+      ((IconLeft || IconRight) && label ? (
+        <>
+          {IconLeft && React.isValidElement(iconLeft) && <span className={cnButton('Icon', { position: 'left'})}> {iconLeft} </span>}
+          {IconLeft && !React.isValidElement(iconLeft) && <IconLeft className={cnButton('Icon', { position: 'left' })} size={iconSize} />}
+          <span className={cnButton('Label')}>{label}</span>
+          {IconRight && React.isValidElement(iconRight) && <span className={cnButton('Icon', { position: 'right' })}> {iconRight} </span>}
+          {IconRight && !React.isValidElement(iconRight) && <IconRight className={cnButton('Icon', { position: 'right' })} size={iconSize} />}
+        </>
+      ) : (
+        label
+      ))}
       {loading && <Loader className={cnButton('Loader')} size="s" />}
     </Tag>
   );
