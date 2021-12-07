@@ -89,9 +89,9 @@ export const Button = forwardRefWithAs<Props, 'button'>((props, ref) => {
   };
 
   const Tag = as as string;
-  const IconOnly = (!label || onlyIcon) && (iconLeft || iconRight);
-  const IconLeft = iconLeft;
-  const IconRight = iconRight;
+  const IconOnly: any = (!label || onlyIcon) && (iconLeft || iconRight);
+  const IconLeft: any = iconLeft;
+  const IconRight: any = iconRight;
   const withIcon = !!iconLeft || !!iconRight;
   const title = props.title || (!!IconOnly && label) || undefined;
   const iconSize = IconOnly

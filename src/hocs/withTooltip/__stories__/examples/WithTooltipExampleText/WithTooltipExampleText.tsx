@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Text } from '../../../../../components/Typography/Typography';
+import { Typography } from '../../../../../components/Typography/Typography';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { withTooltip } from '../../../withTooltip';
 
-const TextWithTooltip = withTooltip({ content: 'Тултип' })(Text);
+const TextWithTooltip = withTooltip({ content: 'Тултип' })(Typography);
 
 export const WithTooltipExampleText = () => {
   return (

@@ -4,7 +4,6 @@ import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/D
 import { cnDocsExample } from '../../../../../uiKit/components/DocsExample/DocsExample';
 import * as wp from '../../../../../uiKit/whitepaper/whitepaper';
 import { Button } from '../../../Button';
-import {Icon} from "nx-icon/lib";
 import {ArrowLeft} from "../../../../../icons/ArrowLeft/ArrowLeft";
 import {ArrowRight} from "../../../../../icons/ArrowRight/ArrowRight";
 import {Menu} from "../../../../../icons/Menu/Menu";

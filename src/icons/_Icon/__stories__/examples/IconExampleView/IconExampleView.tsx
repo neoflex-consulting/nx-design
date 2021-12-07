@@ -3,8 +3,6 @@ import React from 'react';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { StoryBookExample } from '../../../../../uiKit/components/StoryBookExample/StoryBookExample';
 import { DataHistogram } from "../../../../DataHistogram/DataHistogram";
-import {Button} from "../../../../../components/Button/Button";
-import {Edit} from "../../../../Edit/Edit";
 
 export const IconExampleViewAlert = () => (
   <StoryBookExample className={cnDocsDecorator('Section')}>
