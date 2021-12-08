@@ -41,7 +41,7 @@ export function ButtonExampleNameVerb() {
       <div className={cnDocsExample()}>
         <div className={wp.decorator({ distribute: 'left' })}>
           <Button label="Поиск" className={wp.decorator({ 'indent-r': 's' })} />
-          <Button label="Искать" />
+          <Button label="Искать"/>
         </div>
         <p className={cnDocsExample('Status', { view: 'wrong' })}>Неправильно</p>
         <p className={cnDocsExample('Caption')}>
