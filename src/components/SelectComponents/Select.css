@@ -209,12 +209,11 @@
     width: var(--input-height);
     margin: 0;
     padding: 0;
-    color: var(--color-control-typo-disable);
+    color: var(--color-control-typo-placeholder);
     background-color: transparent;
     border: none;
     text-align: center;
     cursor: pointer;
-    fill: var(--color-control-typo-placeholder);
 
     &:focus {
       outline: none;

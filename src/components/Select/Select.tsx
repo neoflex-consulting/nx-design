@@ -11,6 +11,7 @@ import { SelectContainer } from '../SelectComponents/SelectContainer/SelectConta
 import { SelectDropdown } from '../SelectComponents/SelectDropdown/SelectDropdown';
 import { SelectItem } from '../SelectComponents/SelectItem/SelectItem';
 import { defaultPropForm, defaultPropSize, defaultPropView } from '../SelectComponents/types';
+import {ChevronDown} from "../../icons/ChevronDown/ChevronDown";
 
 import {
   DefaultGroup,
@@ -21,7 +22,6 @@ import {
   SelectProps,
   withDefaultGetters,
 } from './helpers';
-import {Icon} from "nx-icon/lib";
 
 function SelectRender<ITEM = DefaultItem, GROUP = DefaultGroup>(
   props: SelectProps<ITEM, GROUP>,
@@ -166,7 +166,7 @@ function SelectRender<ITEM = DefaultItem, GROUP = DefaultGroup>(
             tabIndex={-1}
             onClick={handleToggleDropdown}
           >
-            <Icon icon={"chevron-down"} size="xs" className={cnSelect('DropdownIndicatorIcon')}/>
+            <ChevronDown size="xs" className={cnSelect('DropdownIndicatorIcon')} />
           </button>
         </span>
       </div>
