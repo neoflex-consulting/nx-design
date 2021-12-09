@@ -1,7 +1,7 @@
 import { addons } from '@storybook/addons';
 import { create } from '@storybook/theming/create';
 
-import logo from './logo.svg';
+import logo from './logo.png';
 
 const colors = {
   '--color-bg-normal': 'rgb(86, 185, 242)',
@@ -45,6 +45,6 @@ addons.setConfig({
     inputBorderRadius: 4,
     brandTitle: 'Consta UI-kit storybook',
     brandUrl: 'https://consta-uikit.vercel.app',
-    brandImage: logo,
+    brandImage: 'ANN',
   }),
 });
