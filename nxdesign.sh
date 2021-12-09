@@ -1,7 +1,7 @@
 #!/bin/sh
 SERVICE_NAME=nxdesign
 PID_PATH_NAME=/opt/nx-design/nxdesign-pid
-NPM_PATH=/root/.nvm./versions/node/v16.13.0/bin/npm
+NPM_PATH=/root/.nvm/versions/node/v16.13.0/bin/npm
 
 SYS_PARAMS="-Xmx8g -Dlogging.file=/opt/nx-design/logs/nxdesign.log -Dlogging.level.root=info"
 case $1 in
