@@ -43,8 +43,8 @@ addons.setConfig({
     inputBorder: colors['--color-control-bg-border-default'],
     inputTextColor: colors['--color-control-typo-default'],
     inputBorderRadius: 4,
-    brandTitle: 'Consta UI-kit storybook',
+    brandTitle: 'Neoflex storybook',
     brandUrl: 'https://consta-uikit.vercel.app',
-    brandImage: 'ANN',
+    brandImage: logo,
   }),
 });
