@@ -1,6 +1,7 @@
 #!/bin/sh
-SERVICE_NAME=mc
+SERVICE_NAME=nxdesign
 PID_PATH_NAME=/opt/nx-design/nxdesign-pid
+NPM_PATH=/root/.nvm./versions/node/v16.13.0/bin/npm
 
 SYS_PARAMS="-Xmx8g -Dlogging.file=/opt/nx-design/logs/nxdesign.log -Dlogging.level.root=info"
 case $1 in
@@ -25,7 +26,7 @@ build)
 start)
        echo "Starting $SERVICE_NAME ..."
   if [ ! -f $PID_PATH_NAME ]; then
-       nohup npm run start 1>>/opt/nx-design/logs/nxdesign.log 2>>/opt/nx-design/logs/nxdesign.log & echo $! > $PID_PATH_NAME
+       nohup $NPM_PATH run start 1>>/opt/nx-design/logs/nxdesign.log 2>>/opt/nx-design/logs/nxdesign.log & echo $! > $PID_PATH_NAME
        echo "$SERVICE_NAME started ..."
   else
        echo "$SERVICE_NAME is already running ..."
