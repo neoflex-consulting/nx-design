@@ -101,7 +101,7 @@
         background-color: var(--color-control-bg-ghost-hover);
       }
 
-      &:focus {
+      &:active {
         background-color: var(--color-control-bg-ghost-focus);
         color: var(--color-control-typo-ghost-hover);
       }
@@ -122,7 +122,7 @@
         box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.05), 2px 2px 4px rgba(0, 0, 0, 0.1);
       }
 
-      &:focus {
+      &:active {
         background-color: var(--color-control-bg-primary-focus);
       }
     }
@@ -138,7 +138,7 @@
         border-color: var(--color-control-bg-border-secondary-hover);
       }
 
-      &:focus {
+      &:active {
         background-color: var(--color-control-bg-secondary-focus);
         border-color: var(--color-control-bg-border-secondary-focus);
         color: var(--color-control-typo-secondary-focus);
