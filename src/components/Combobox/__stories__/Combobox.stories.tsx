@@ -144,7 +144,7 @@ export const WithCreate = createStory(
 );
 
 export default createMetadata({
-  title: 'Компоненты|/Базовые/Combobox',
+  title: 'Компоненты|/Базовые/Select/Combobox',
   id: 'components/Combobox',
   parameters: {
     docs: {
