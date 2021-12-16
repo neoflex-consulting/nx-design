@@ -5,8 +5,6 @@ import { createMetadata, createStory } from '../../../utils/storybook';
 import { Grid } from '../../Grid/Grid';
 import {
   Typography,
-  textPropLineHeight,
-  textPropLineHeightDefault,
   textPropSize,
   textPropSizeDefault,
 } from '../../Typography/Typography';
@@ -31,17 +29,16 @@ export const SkeletonTextStory = createStory(
   () => {
     const rows = number('rows', 4);
     const fontSize = select('fontSize', textPropSize, textPropSizeDefault);
-    const lineHeight = select('lineHeight', textPropLineHeight, textPropLineHeightDefault);
     const showText = boolean('Показать текст для сравнения размеров', false);
 
-    const skeletonText = <SkeletonText rows={rows} fontSize={fontSize} lineHeight={lineHeight} />;
+    const skeletonText = <SkeletonText rows={rows} fontSize={fontSize} />;
 
     return showText ? (
       <Grid cols={2} gap="6xl">
         {skeletonText}
         <div>
           {new Array(rows).fill(null).map(() => (
-            <Typography size={fontSize} lineHeight={lineHeight}>
+            <Typography size={fontSize} >
               Lorem ipsum
             </Typography>
           ))}

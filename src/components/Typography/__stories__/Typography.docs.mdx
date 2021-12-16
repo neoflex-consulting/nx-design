@@ -1,6 +1,5 @@
 import { TextExampleAlign } from './examples/TextExampleAlign/TextExampleAlign';
 import { TextExampleCombinedWeightAndStyle } from './examples/TextExampleCombinedWeightAndStyle/TextExampleCombinedWeightAndStyle';
-import { TextExampleDecoration } from './examples/TextExampleDecoration/TextExampleDecoration';
 import { TextExampleHeadingAndParagraph } from './examples/TextExampleHeadingAndParagraph/TextExampleHeadingAndParagraph';
 import { TextExampleLabelAndData } from './examples/TextExampleLabelAndData/TextExampleLabelAndData';
 import { TextExampleLineheight } from './examples/TextExampleLineheight/TextExampleLineheight';
@@ -24,7 +23,6 @@ import { TextExampleWeight } from './examples/TextExampleWeight/TextExampleWeigh
   - [Межбуквенный интервал](#межбуквенный-интервал) `spacing`
   - [Высота строки](#высота-строки) `lineHeight`
   - [Отображение курсора](#отображение-курсора) `cursor`
-  - [Подчеркивание](#подчеркивание) `decoration`
   - [Регистр](#регистр) `transform`
   - [Выравнивание](#выравнивание) `align`
 - [Контейнер с текстом](#контейнер-с-текстом)
@@ -166,16 +164,6 @@ import { TextExampleWeight } from './examples/TextExampleWeight/TextExampleWeigh
 
 <TextExampleLineheight />
 
-### Подчеркивание
-
-`decoration` в значении `underline` подчеркивает текст.
-
-```ts
-<Typography decoration="underline">Газпром нефть</Typography>
-```
-
-<TextExampleDecoration />
-
 ### Регистр
 
 `transform` в значении `uppercase` переводит текст в верхний регистр.
@@ -302,7 +290,6 @@ import { TextExampleWeight } from './examples/TextExampleWeight/TextExampleWeigh
 | [`weight`](#насыщенность)           | `'black', 'bold', 'light', 'regular', 'semibold', 'thin'`                                                 | —            | Насыщенность                                                              |
 | [`transform`](#регистр)             | `uppercase`                                                                                               | —            | Регистр                                                                   |
 | [`cursor`](#отображение-курсора)    | `pointer`                                                                                                 | —            | Отображение курсора                                                       |
-| [`decoration`](#подчеркивание)      | `underline`                                                                                               | —            | Подчеркивание                                                             |
 | [`align`](#выравнивание)            | `'left', 'center', 'right'`                                                                               | —            | Выравнивание                                                              |
 | [`size`](#размер)                   | `'2xs', 'xs', 's', 'm', 'l', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl'`                                     | `'m'`        | Размер текста                                                             |
 | [`display`](#расположение)          | `'block', 'inlineBlock', 'inline'`                                                                        | —            | Поведение контейнера с текстом в документе (блочный или строчный элемент) |
@@ -328,7 +315,6 @@ export function App() {
       as = 'p'
       align = 'center'
       cursor = 'default'
-      decoration = 'none'
       display = 'block'
       font = 'mono'
       lineHeight = '2xs'

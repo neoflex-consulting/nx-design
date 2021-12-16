@@ -6,16 +6,11 @@ import {
   Typography,
   textPropAlign,
   textPropCursor,
-  // textPropDecoration,
   textPropDisplay,
-  // textPropFont,
-  // textPropFontStyle,
-  // textPropLineHeight,
   textPropSize,
   textPropSizeDefault,
   textPropSpacing,
   textPropTransform,
-  // textPropType,
   textPropView,
   textPropViewDefault,
   textPropWeight,
@@ -27,15 +22,10 @@ const defaultKnobs = () => ({
   as: select('as', ['p', 'div', 'a', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'], undefined),
   align: select('align', ['', ...textPropAlign], ''),
   cursor: select('cursor', ['', ...textPropCursor], ''),
-  // decoration: select('decoration', ['', ...textPropDecoration], ''),
   display: select('display', ['', ...textPropDisplay], ''),
-  // font: select('font', textPropFont, 'primary'),
-  // lineHeight: select('lineHeight', ['', ...textPropLineHeight], ''),
   size: select('size', textPropSize, textPropSizeDefault),
   spacing: select('spacing', ['', ...textPropSpacing], ''),
-  // fontStyle: select('fontStyle', ['', ...textPropFontStyle], ''),
   transform: select('transform', ['', ...textPropTransform], ''),
-  // type: select('type', ['', ...textPropType], ''),
   view: select('View', textPropView, textPropViewDefault),
   weight: select('weight', ['', ...textPropWeight], ''),
   text: text(
@@ -49,7 +39,6 @@ export function Playground() {
     as,
     align,
     cursor,
-    // decoration,
     display,
     // font,
     // lineHeight,
@@ -68,7 +57,6 @@ export function Playground() {
       as={as}
       align={align || undefined}
       cursor={cursor || undefined}
-      // decoration={decoration || undefined}
       display={display || undefined}
       // font={font}
       // lineHeight={lineHeight || undefined}
