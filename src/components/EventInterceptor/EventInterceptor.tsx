@@ -6,6 +6,7 @@ const eventInterceptorPropComponent = [
   'Checkbox',
   'SnackBar',
   'Select',
+  'SelectMultiple'
 ] as const;
 export type EventInterceptorPropComponent = typeof eventInterceptorPropComponent[number];
 
