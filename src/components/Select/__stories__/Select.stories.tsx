@@ -31,11 +31,10 @@ const getKnobs = () => ({
   form: select('form', propForm, defaultPropForm),
   placeholder: text('placeholder', 'Выберите цвет'),
   withGroups: boolean('withGroups', false),
-  multiple: boolean('multiple', false),
 });
 
 export function Playground(): JSX.Element {
-  const { size, disabled, view, form, placeholder, withGroups, multiple } = getKnobs();
+  const { size, disabled, view, form, placeholder, withGroups } = getKnobs();
   const [value, setValue] = useState<Item | null | undefined>();
 
   return (
@@ -51,7 +50,6 @@ export function Playground(): JSX.Element {
           value={value}
           onChange={({ value }) => setValue(value)}
           groups={withGroups ? groups : []}
-          multiple={multiple}
         />
       </div>
     </EventInterceptorProvider>
