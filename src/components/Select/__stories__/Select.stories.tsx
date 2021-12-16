@@ -106,7 +106,7 @@ export const WithRender = createStory(
 );
 
 export default createMetadata({
-  title: 'Компоненты|/Базовые/Select',
+  title: 'Компоненты|/Базовые/Select/Select',
   id: 'components/Select',
   parameters: {
     docs: {

@@ -173,7 +173,7 @@ export const WithCreate = createStory(
 );
 
 export default createMetadata({
-  title: 'Компоненты|/Базовые/UserSelect',
+  title: 'Компоненты|/Базовые/Select/UserSelect',
   id: 'components/UserSelect',
   parameters: {
     docs: {
