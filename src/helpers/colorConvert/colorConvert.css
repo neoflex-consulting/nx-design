@@ -1,0 +1,25 @@
+.convert{
+  display: flex;
+  align-items: center;
+
+  .card, .compare{
+    display: flex;
+    padding: 16px 40px;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    width: 200px;
+    height: 100px;
+    fill-opacity: 0.2;
+  }
+
+  .card{
+    border: 3px groove;
+    border-radius: 10px;
+
+    >label{
+      display: inline-grid;
+    }
+
+  }
+}
