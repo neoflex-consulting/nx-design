@@ -1,4 +1,3 @@
-/* Базовые цвета, от которых выстраивается вся палитра */
 /* Эти цвета есть у нас в Figma*/
 $color-base-base: #171D45; /* Базовый цвет содержимого, от которого выстраиваются цвета текста, иконок, ... */
 $color-base-essential: #FFFFFF; /* Базовый цвет поверхностей */
@@ -12,11 +11,10 @@ $color-base-normal: #13A1C9; /* Цвет нейтральный */
 $color-base-success: #4FB125; /* Цвет успеха */
 $color-base-alert: #E33131; /* Цвет ошибки */
 
-/* Этих цветов нет у нас в Figma*/
-$color-base-warning: #fc6; /* Цвет предупреждения */
-$color-base-caution: #f2c94c; /* Цвет осторожности */
+$color-base-warning: #ECB709; /* Цвет предупреждения */
+$color-base-caution: #D9A54C; /* Цвет осторожности */
 
-$color-base-critical: #33000f;
+$color-base-critical: #45321A;
 
 $color-text-black: #090b1f;
 
