@@ -24,14 +24,14 @@
 
   h1 {
     margin-bottom: 0.4em;
-    font-size: var(--size-text-6xl);
+    font-size: var(--size-text-4xl);
     line-height: var(--line-height-text-xs);
   }
 
   h2 {
     padding-bottom: 0;
     border-bottom: none;
-    font-size: var(--size-text-5xl);
+    font-size: var(--size-text-3xl);
     line-height: var(--line-height-text-xs);
 
     /* TODO: Ниже код для обсуждению о добавлении парамтеров сразу в заголовок */
@@ -44,18 +44,18 @@
       border-radius: 4px;
       color: var(--color-typo-secondary);
       background-color: var(--color-bg-ghost);
-      font-size: var(--size-text-4xl);
+      font-size: var(--size-text-2xl);
       line-height: var(--line-height-text-s);
     } */
   }
 
   h3 {
-    font-size: var(--size-text-4xl);
+    font-size: var(--size-text-2xl);
     line-height: var(--line-height-text-s);
   }
 
   h4 {
-    font-size: var(--size-text-2xl);
+    font-size: var(--size-text-l);
   }
 
   /* вынужденная мера для перебития дефолтных стилей :first-of-type */
@@ -94,7 +94,7 @@
   p {
     margin-top: 0;
     margin-bottom: 1em;
-    font-size: var(--size-text-xl);
+    font-size: var(--size-text-m);
     line-height: var(--line-height-text-l);
 
     a {
@@ -103,7 +103,7 @@
   }
 
   a {
-    font-size: var(--size-text-xl);
+    font-size: var(--size-text-m);
     line-height: var(--line-height-text-l);
   }
 
@@ -115,18 +115,18 @@
     background-color: var(--color-bg-secondary);
     border-left-color: var(--color-bg-ghost);
     border-radius: 8px;
-    font-size: var(--size-text-xl);
+    font-size: var(--size-text-m);
   }
 
   p code {
     background-color: var(--color-bg-ghost);
     border: 1px solid var(--color-bg-stripe);
-    font-size: var(--size-text-l);
+    font-size: var(--size-text-s);
   }
 
   table {
     width: 100%;
-    font-size: var(--size-text-l);
+    font-size: var(--size-text-s);
     line-height: var(--line-height-text-s);
 
     tr {
@@ -149,7 +149,7 @@
     }
 
     code {
-      font-size: var(--size-text-m);
+      font-size: var(--size-text-xs);
     }
   }
 
@@ -163,7 +163,7 @@
   pre.sbdocs > div {
     margin-top: 0;
     margin-bottom: 2.2em;
-    font-size: var(--size-text-xl);
+    font-size: var(--size-text-m);
   }
 
   & &-Anchor {

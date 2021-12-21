@@ -8,10 +8,10 @@ import { createMetadata } from '../../../utils/storybook';
 import {ColorConvert} from "../colorConvert";
 
 
-const cnWithTooltipStories = cn('ColorConvertStories');
+const cnColorConvertStoriesStories = cn('ColorConvertStories');
 export function Playground() {
   return (
-    <div className={cnWithTooltipStories()}>
+    <div className={cnColorConvertStoriesStories()}>
       <ColorConvert />
     </div>
   );
