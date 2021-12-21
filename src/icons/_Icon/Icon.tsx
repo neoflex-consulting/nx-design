@@ -5,7 +5,7 @@ import React from 'react';
 import { cn } from '../../utils/bem';
 import { PropsWithHTMLAttributes } from '../../utils/types/PropsWithHTMLAttributes';
 
-export type IconPropSize = 'xs' | 's' | 'm';
+export type IconPropSize = 'xs' | 's' | 'm' | 'l';
 export type IconPropView =
   | 'alert'
   | 'brand'

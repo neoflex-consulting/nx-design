@@ -4,13 +4,14 @@ import { cnIcon, Icon, IconProps } from '../_Icon/Icon';
 
 type SizeComponent = React.FC<React.SVGProps<SVGSVGElement>>;
 type CreateIconArguments = {
+  l: SizeComponent;
   m: SizeComponent;
   s: SizeComponent;
   xs: SizeComponent;
   name: string;
 };
 
-export function createIcon({ m, s, xs, name }: CreateIconArguments) {
+export function createIcon({ l, m, s, xs, name }: CreateIconArguments) {
   const IconComponent: React.FC<IconProps> = (props) => {
     function getSvgBySize(size: IconProps['size'] | undefined) {
       switch (size) {
@@ -20,6 +21,8 @@ export function createIcon({ m, s, xs, name }: CreateIconArguments) {
           return s;
         case 'm':
           return m;
+        case 'l':
+          return l;
         default:
           return m;
       }

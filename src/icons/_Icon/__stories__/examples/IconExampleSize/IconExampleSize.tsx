@@ -9,5 +9,6 @@ export const IconExampleSize = () => (
     <DataHistogram size="xs" />
     <DataHistogram size="s" />
     <DataHistogram size="m" />
+    <DataHistogram size="l" />
   </StoryBookExample>
 );
