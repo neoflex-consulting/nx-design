@@ -5,6 +5,7 @@ import IconInfoSizeS from './IconInfo_size_s';
 import IconInfoSizeXs from './IconInfo_size_xs';
 
 export const IconInfo = createIcon({
+  l: IconInfoSizeM,
   m: IconInfoSizeM,
   s: IconInfoSizeS,
   xs: IconInfoSizeXs,

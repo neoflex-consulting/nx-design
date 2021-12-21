@@ -539,7 +539,7 @@ import {WarningC} from '../../WarningC/WarningC';
 import {Wifi} from '../../Wifi/Wifi';
 
 const defaultKnobs = () => ({
-  size: select('size', ['xs', 's', 'm'], 'm'),
+  size: select('size', ['xs', 's', 'm', 'l'], 'm'),
   view: select(
     'view',
     ['alert', 'brand', 'ghost', 'link', 'primary', 'secondary', 'success', 'warning'],

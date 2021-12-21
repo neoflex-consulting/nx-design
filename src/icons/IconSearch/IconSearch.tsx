@@ -5,6 +5,7 @@ import IconSearchSizeS from './IconSearch_size_s';
 import IconSearchSizeXs from './IconSearch_size_xs';
 
 export const IconSearch = createIcon({
+  l: IconSearchSizeM,
   m: IconSearchSizeM,
   s: IconSearchSizeS,
   xs: IconSearchSizeXs,

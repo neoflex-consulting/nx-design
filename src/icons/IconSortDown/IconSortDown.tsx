@@ -5,6 +5,7 @@ import IconSortDownSizeS from './IconSortDown_size_s';
 import IconSortDownSizeXs from './IconSortDown_size_xs';
 
 export const IconSortDown = createIcon({
+  l: IconSortDownSizeM,
   m: IconSortDownSizeM,
   s: IconSortDownSizeS,
   xs: IconSortDownSizeXs,

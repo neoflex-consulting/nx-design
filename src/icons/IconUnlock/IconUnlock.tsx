@@ -5,6 +5,7 @@ import IconUnlockSizeS from './IconUnlock_size_s';
 import IconUnlockSizeXs from './IconUnlock_size_xs';
 
 export const IconUnlock = createIcon({
+  l: IconUnlockSizeM,
   m: IconUnlockSizeM,
   s: IconUnlockSizeS,
   xs: IconUnlockSizeXs,

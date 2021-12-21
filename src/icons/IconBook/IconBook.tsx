@@ -5,6 +5,7 @@ import IconBookSizeS from './IconBook_size_s';
 import IconBookSizeXs from './IconBook_size_xs';
 
 export const IconBook = createIcon({
+  l: IconBookSizeXs,
   m: IconBookSizeM,
   s: IconBookSizeS,
   xs: IconBookSizeXs,

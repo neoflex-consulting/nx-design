@@ -5,6 +5,7 @@ import IconSmileSizeS from './IconSmile_size_s';
 import IconSmileSizeXs from './IconSmile_size_xs';
 
 export const IconSmile = createIcon({
+  l: IconSmileSizeM,
   m: IconSmileSizeM,
   s: IconSmileSizeS,
   xs: IconSmileSizeXs,

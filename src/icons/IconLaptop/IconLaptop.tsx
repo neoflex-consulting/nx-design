@@ -5,6 +5,7 @@ import IconLaptopSizeS from './IconLaptop_size_s';
 import IconLaptopSizeXs from './IconLaptop_size_xs';
 
 export const IconLaptop = createIcon({
+  l: IconLaptopSizeM,
   m: IconLaptopSizeM,
   s: IconLaptopSizeS,
   xs: IconLaptopSizeXs,

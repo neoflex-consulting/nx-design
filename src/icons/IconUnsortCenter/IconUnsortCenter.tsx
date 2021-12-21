@@ -5,6 +5,7 @@ import IconUnsortCenterSizeS from './IconUnsortCenter_size_s';
 import IconUnsortCenterSizeXs from './IconUnsortCenter_size_xs';
 
 export const IconUnsortCenter = createIcon({
+  l: IconUnsortCenterSizeM,
   m: IconUnsortCenterSizeM,
   s: IconUnsortCenterSizeS,
   xs: IconUnsortCenterSizeXs,

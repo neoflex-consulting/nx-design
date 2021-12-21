@@ -5,6 +5,7 @@ import IconHealthSizeS from './IconHealth_size_s';
 import IconHealthSizeXs from './IconHealth_size_xs';
 
 export const IconHealth = createIcon({
+  l: IconHealthSizeM,
   m: IconHealthSizeM,
   s: IconHealthSizeS,
   xs: IconHealthSizeXs,

@@ -5,6 +5,7 @@ import IconAlignBlocksLeftSizeS from './IconAlignBlocksLeft_size_s';
 import IconAlignBlocksLeftSizeXs from './IconAlignBlocksLeft_size_xs';
 
 export const IconAlignBlocksLeft = createIcon({
+  l: IconAlignBlocksLeftSizeM,
   m: IconAlignBlocksLeftSizeM,
   s: IconAlignBlocksLeftSizeS,
   xs: IconAlignBlocksLeftSizeXs,

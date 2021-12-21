@@ -3,6 +3,7 @@ import { createIcon } from '../_createIcon/createIcon';
 import DocumentsSizeAll from './Documents_size_all';
 
 export const Documents = createIcon({
+  l: DocumentsSizeAll,
   m: DocumentsSizeAll,
   s: DocumentsSizeAll,
   xs: DocumentsSizeAll,

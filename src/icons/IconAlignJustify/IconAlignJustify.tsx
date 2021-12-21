@@ -4,6 +4,7 @@ import IconAlignJustifySizeM from './IconAlignJustify_size_m';
 import IconAlignJustifySizeS from './IconAlignJustify_size_s';
 
 export const IconAlignJustify = createIcon({
+  l: IconAlignJustifySizeM,
   m: IconAlignJustifySizeM,
   s: IconAlignJustifySizeS,
   xs: IconAlignJustifySizeS,

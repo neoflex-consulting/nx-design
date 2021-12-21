@@ -5,6 +5,7 @@ import IconCommentSizeS from './IconComment_size_s';
 import IconCommentSizeXs from './IconComment_size_xs';
 
 export const IconComment = createIcon({
+  l: IconCommentSizeM,
   m: IconCommentSizeM,
   s: IconCommentSizeS,
   xs: IconCommentSizeXs,

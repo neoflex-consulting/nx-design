@@ -5,6 +5,7 @@ import IconEyeSizeS from './IconEye_size_s';
 import IconEyeSizeXs from './IconEye_size_xs';
 
 export const IconEye = createIcon({
+  l: IconEyeSizeM,
   m: IconEyeSizeM,
   s: IconEyeSizeS,
   xs: IconEyeSizeXs,

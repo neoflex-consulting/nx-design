@@ -5,6 +5,7 @@ import IconRevertSizeS from './IconRevert_size_s';
 import IconRevertSizeXs from './IconRevert_size_xs';
 
 export const IconRevert = createIcon({
+  l: IconRevertSizeM,
   m: IconRevertSizeM,
   s: IconRevertSizeS,
   xs: IconRevertSizeXs,

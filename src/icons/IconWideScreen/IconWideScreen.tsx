@@ -5,6 +5,7 @@ import IconWideScreenSizeS from './IconWideScreen_size_s';
 import IconWideScreenSizeXs from './IconWideScreen_size_xs';
 
 export const IconWideScreen = createIcon({
+  l: IconWideScreenSizeM,
   m: IconWideScreenSizeM,
   s: IconWideScreenSizeS,
   xs: IconWideScreenSizeXs,

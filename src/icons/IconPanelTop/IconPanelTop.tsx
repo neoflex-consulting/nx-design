@@ -5,6 +5,7 @@ import IconPanelTopSizeS from './IconPanelTop_size_s';
 import IconPanelTopSizeXs from './IconPanelTop_size_xs';
 
 export const IconPanelTop = createIcon({
+  l: IconPanelTopSizeM,
   m: IconPanelTopSizeM,
   s: IconPanelTopSizeS,
   xs: IconPanelTopSizeXs,

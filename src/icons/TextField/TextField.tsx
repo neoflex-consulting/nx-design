@@ -3,6 +3,7 @@ import { createIcon } from '../_createIcon/createIcon';
 import TextFieldSizeAll from './TextField_size_all';
 
 export const TextField = createIcon({
+  l: TextFieldSizeAll,
   m: TextFieldSizeAll,
   s: TextFieldSizeAll,
   xs: TextFieldSizeAll,

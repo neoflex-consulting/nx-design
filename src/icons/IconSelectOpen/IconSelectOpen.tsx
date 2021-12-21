@@ -5,6 +5,7 @@ import IconSelectOpenSizeS from './IconSelectOpen_size_s';
 import IconSelectOpenSizeXs from './IconSelectOpen_size_xs';
 
 export const IconSelectOpen = createIcon({
+  l: IconSelectOpenSizeM,
   m: IconSelectOpenSizeM,
   s: IconSelectOpenSizeS,
   xs: IconSelectOpenSizeXs,

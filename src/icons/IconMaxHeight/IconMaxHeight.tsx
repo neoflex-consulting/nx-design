@@ -5,6 +5,7 @@ import IconMaxHeightSizeS from './IconMaxHeight_size_s';
 import IconMaxHeightSizeXs from './IconMaxHeight_size_xs';
 
 export const IconMaxHeight = createIcon({
+  l: IconMaxHeightSizeM,
   m: IconMaxHeightSizeM,
   s: IconMaxHeightSizeS,
   xs: IconMaxHeightSizeXs,

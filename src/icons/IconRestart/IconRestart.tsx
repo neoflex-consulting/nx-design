@@ -5,6 +5,7 @@ import IconRestartSizeS from './IconRestart_size_s';
 import IconRestartSizeXs from './IconRestart_size_xs';
 
 export const IconRestart = createIcon({
+  l: IconRestartSizeM,
   m: IconRestartSizeM,
   s: IconRestartSizeS,
   xs: IconRestartSizeXs,

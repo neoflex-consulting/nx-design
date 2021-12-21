@@ -2,6 +2,7 @@ import { createIcon } from '../createIcon/createIcon';
 
 #sizesImports#
 export const #componentName# = createIcon({
+  l: #componentName#Size#sizeL#,
   m: #componentName#Size#sizeM#,
   s: #componentName#Size#sizeS#,
   xs: #componentName#Size#sizeXs#,

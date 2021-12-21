@@ -5,6 +5,7 @@ import IconHamburgerSizeS from './IconHamburger_size_s';
 import IconHamburgerSizeXs from './IconHamburger_size_xs';
 
 export const IconHamburger = createIcon({
+  l: IconHamburgerSizeM,
   m: IconHamburgerSizeM,
   s: IconHamburgerSizeS,
   xs: IconHamburgerSizeXs,

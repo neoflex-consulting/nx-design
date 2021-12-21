@@ -5,6 +5,7 @@ import IconDocExportSizeS from './IconDocExport_size_s';
 import IconDocExportSizeXs from './IconDocExport_size_xs';
 
 export const IconDocExport = createIcon({
+  l: IconDocExportSizeM,
   m: IconDocExportSizeM,
   s: IconDocExportSizeS,
   xs: IconDocExportSizeXs,

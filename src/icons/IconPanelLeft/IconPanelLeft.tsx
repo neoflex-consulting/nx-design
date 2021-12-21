@@ -5,6 +5,7 @@ import IconPanelLeftSizeS from './IconPanelLeft_size_s';
 import IconPanelLeftSizeXs from './IconPanelLeft_size_xs';
 
 export const IconPanelLeft = createIcon({
+  l: IconPanelLeftSizeM,
   m: IconPanelLeftSizeM,
   s: IconPanelLeftSizeS,
   xs: IconPanelLeftSizeXs,

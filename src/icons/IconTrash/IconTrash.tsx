@@ -5,6 +5,7 @@ import IconTrashSizeS from './IconTrash_size_s';
 import IconTrashSizeXs from './IconTrash_size_xs';
 
 export const IconTrash = createIcon({
+  l: IconTrashSizeM,
   m: IconTrashSizeM,
   s: IconTrashSizeS,
   xs: IconTrashSizeXs,

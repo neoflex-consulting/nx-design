@@ -3,6 +3,7 @@ import { createIcon } from '../_createIcon/createIcon';
 import CopySizeAll from './Copy_size_all';
 
 export const Copy = createIcon({
+  l: CopySizeAll,
   m: CopySizeAll,
   s: CopySizeAll,
   xs: CopySizeAll,

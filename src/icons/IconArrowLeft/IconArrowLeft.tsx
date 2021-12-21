@@ -5,6 +5,7 @@ import IconArrowLeftSizeS from './IconArrowLeft_size_s';
 import IconArrowLeftSizeXs from './IconArrowLeft_size_xs';
 
 export const IconArrowLeft = createIcon({
+  l: IconArrowLeftSizeM,
   m: IconArrowLeftSizeM,
   s: IconArrowLeftSizeS,
   xs: IconArrowLeftSizeXs,

@@ -5,6 +5,7 @@ import IconMapSizeS from './IconMap_size_s';
 import IconMapSizeXs from './IconMap_size_xs';
 
 export const IconMap = createIcon({
+  l: IconMapSizeM,
   m: IconMapSizeM,
   s: IconMapSizeS,
   xs: IconMapSizeXs,

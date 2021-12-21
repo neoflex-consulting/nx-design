@@ -5,6 +5,7 @@ import IconCancelSizeS from './IconCancel_size_s';
 import IconCancelSizeXs from './IconCancel_size_xs';
 
 export const IconCancel = createIcon({
+  l: IconCancelSizeM,
   m: IconCancelSizeM,
   s: IconCancelSizeS,
   xs: IconCancelSizeXs,

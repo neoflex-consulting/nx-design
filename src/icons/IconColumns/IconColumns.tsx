@@ -4,6 +4,7 @@ import IconColumnsSizeM from './IconColumns_size_m';
 import IconColumnsSizeS from './IconColumns_size_s';
 
 export const IconColumns = createIcon({
+  l: IconColumnsSizeM,
   m: IconColumnsSizeM,
   s: IconColumnsSizeS,
   xs: IconColumnsSizeS,

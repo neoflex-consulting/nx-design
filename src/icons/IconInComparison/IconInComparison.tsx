@@ -5,6 +5,7 @@ import IconInComparisonSizeS from './IconInComparison_size_s';
 import IconInComparisonSizeXs from './IconInComparison_size_xs';
 
 export const IconInComparison = createIcon({
+  l: IconInComparisonSizeM,
   m: IconInComparisonSizeM,
   s: IconInComparisonSizeS,
   xs: IconInComparisonSizeXs,
