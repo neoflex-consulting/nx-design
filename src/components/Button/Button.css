@@ -136,6 +136,7 @@
 
       &:hover {
         border-color: var(--color-control-bg-border-secondary-hover);
+        box-shadow: 0px 2px 1px var(--color-control-typo-secondary-hover-shadow);
       }
 
       &:active {
