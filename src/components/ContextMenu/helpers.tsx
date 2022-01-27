@@ -9,7 +9,7 @@ export const contextMenuSizes = ['m', 's', 'l'] as const;
 export type ContextMenuPropSize = typeof contextMenuSizes[number];
 export const contextMenuDefaultSize: ContextMenuPropSize = contextMenuSizes[0];
 
-export const contextMenuAccent = ['alert', 'warning', 'success'] as const;
+export const contextMenuAccent = ['error', 'warning', 'success'] as const;
 export type ContextMenuAccent = typeof contextMenuAccent[number];
 
 export type ContextMenuPropGetLabel<ITEM> = (item: ITEM) => string | number;
