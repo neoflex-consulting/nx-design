@@ -16,13 +16,14 @@ export type NotificationPropItemAction = {
   onClick: React.EventHandler<React.MouseEvent>;
 };
 
-export const notificationItemStatus = ['normal', 'system', 'success', 'warning', 'alert'] as const;
+export const notificationItemStatus = ['info', 'system', 'success', 'warning', 'error'] as const;
 export type NotificationItemStatus = typeof notificationItemStatus[number];
 export const notificationItemStatusDefault: NotificationItemStatus = notificationItemStatus[0];
 
 export type Item = {
   key: string | number;
   message?: string | number;
+  title?: string | number;
   status?: NotificationItemStatus;
   autoClose?: boolean | number;
   icon?: React.FC<IconProps>;

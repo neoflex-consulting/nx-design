@@ -9,11 +9,11 @@ import { NotificationExampleButtons } from './examples/NotificationExampleButton
 
 Используется для мгновенных уведомлений.
 
-Снекбар (в отличие от [информера](?path=/docs/components-alert--playground))
+Notification (в отличие от [alert](?path=/docs/components-alert--playground))
 всегда перекрывает основное содержимое, выносится в отдельный слой интерфейса
 и сопровождается анимацией. На него будет направлено всё внимание пользователя.
 
-Используйте информер в контексте, снекбар — вне контекста.
+Используйте alert в контексте, notification — вне контекста.
 
 - [Текст сообщения](#текст-сообщения)
 - [Статус](#статус)
@@ -31,7 +31,7 @@ import { NotificationExampleButtons } from './examples/NotificationExampleButton
 
 ## Статус
 
-От статуса зависит цвет фона под текстом (задается в свойстве `status`).
+От статуса зависит цвет обводки и иконка на уведомлении (задается в свойстве `status`).
 
 <NotificationExampleStatus />
 
@@ -68,7 +68,7 @@ import { NotificationExampleButtons } from './examples/NotificationExampleButton
 type Item = {
   key: string | number;
   message?: string | number;
-  status?: 'success' | 'warning' | 'alert' | 'normal';
+  status?: 'success' | 'warning' | 'error' | 'info';
   autoClose?: boolean | number;
   icon?: React.FC<IconProps>;
   actions?: {
@@ -136,9 +136,9 @@ const getItemIconByStatus = (status: NotificationItemStatus): React.FC<IconProps
   const mapIconByStatus: Record<NotificationItemStatus, React.FC<IconProps>> = {
     success: IconThumbUp,
     warning: IconAlert,
-    alert: IconAlert,
+    error: IconAlert,
     system: IconProcessing,
-    normal: IconRing,
+    info: IconRing,
   };
   return mapIconByStatus[status];
 };
@@ -161,9 +161,9 @@ function NotificationExample() {
 
   const handleSuccessAdd = generateHandleAdd('success');
   const handleWarningAdd = generateHandleAdd('warning');
-  const handleAlertAdd = generateHandleAdd('alert');
+  const handleAlertAdd = generateHandleAdd('error');
   const handleSystemAdd = generateHandleAdd('system');
-  const handleNormalAdd = generateHandleAdd('normal');
+  const handleNormalAdd = generateHandleAdd('info');
 
   React.useEffect(() => handleNormalAdd(), []);
 

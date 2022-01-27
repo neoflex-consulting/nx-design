@@ -14,8 +14,8 @@ import { Item, Notification, NotificationItemStatus } from '../../../Notificatio
 const cnNotificationExampleTimer = cn('NotificationExampleTimer');
 
 const mapIconByStatus: Record<NotificationItemStatus, React.FC<IconProps> | undefined> = {
-  alert: IconAlert,
-  normal: IconRing,
+  error: IconAlert,
+  info: IconRing,
   system: undefined,
   success: undefined,
   warning: undefined,
@@ -53,8 +53,8 @@ export const NotificationExampleTimer: React.FC = () => {
     dispatchItems({ type: 'add', item });
   };
 
-  const handleAlertAdd = generateHandleAdd('alert');
-  const handleNormalAdd = generateHandleAdd('normal');
+  const handleAlertAdd = generateHandleAdd('error');
+  const handleNormalAdd = generateHandleAdd('info');
 
   React.useEffect(() => handleNormalAdd(), []);
 

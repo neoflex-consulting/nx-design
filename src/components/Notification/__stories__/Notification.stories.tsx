@@ -1,7 +1,7 @@
 import './Notification.stories.css';
 
 import * as React from 'react';
-import { boolean } from '@storybook/addon-knobs';
+import {boolean, text} from '@storybook/addon-knobs';
 
 import { IconProps } from '../../../icons/_Icon/Icon';
 import { IconAdd } from '../../../icons/IconAdd/IconAdd';
@@ -24,6 +24,8 @@ type State = Item[];
 type Action = { type: 'add'; item: Item } | { type: 'remove'; key: number | string };
 
 const defaultKnobs = () => ({
+  title: text('title', 'Some title'),
+  message: text('message', 'Hey there! I am Alert. Be ready to be informed :)'),
   withIcon: boolean('withIcon', false),
   withActionButtons: boolean('withActionButtons', false),
   withAutoClose: boolean('withAutoClose', false),
@@ -34,9 +36,9 @@ const getItemIconByStatus = (status: NotificationItemStatus): React.FC<IconProps
   const mapIconByStatus: Record<NotificationItemStatus, React.FC<IconProps>> = {
     success: IconThumbUp,
     warning: IconAlert,
-    alert: IconAlert,
+    error: IconAlert,
     system: IconProcessing,
-    normal: IconRing,
+    info: IconRing,
   };
   return mapIconByStatus[status];
 };
@@ -53,13 +55,14 @@ function reducer(state: State, action: Action) {
 }
 
 export function Playground() {
-  const { withIcon, withActionButtons, withAutoClose, withCloseButton } = defaultKnobs();
+  const { withIcon, withActionButtons, withAutoClose, withCloseButton, message, title } = defaultKnobs();
   const [items, dispatchItems] = React.useReducer(reducer, []);
   const generateHandleAdd = (status: NotificationItemStatus) => () => {
     const key = items.length + 1;
     const item: Item = {
       key,
-      message: `Сообщение о каком-то событии - ${key}`,
+      message: message,
+      title: title,
       status,
       ...(withAutoClose && { autoClose: 5 }),
       ...(withIcon && { icon: getItemIconByStatus(status) }),
@@ -86,9 +89,9 @@ export function Playground() {
 
   const handleSuccessAdd = generateHandleAdd('success');
   const handleWarningAdd = generateHandleAdd('warning');
-  const handleAlertAdd = generateHandleAdd('alert');
+  const handleAlertAdd = generateHandleAdd('error');
   const handleSystemAdd = generateHandleAdd('system');
-  const handleNormalAdd = generateHandleAdd('normal');
+  const handleNormalAdd = generateHandleAdd('info');
 
   React.useEffect(() => handleNormalAdd(), []);
 

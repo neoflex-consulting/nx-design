@@ -5,28 +5,29 @@
     margin-bottom: var(--space-s);
     padding: var(--space-m) var(--space-2xl) var(--space-m) var(--space-m);
     color: var(--color-typo-primary);
-    border-radius: var(--space-xs);
+    border: 1px solid;
+    border-radius: var(--space-2xs);
     box-shadow: var(--shadow-group);
 
     &_status {
       &_system {
-        background-color: var(--color-bg-system);
+        border-color: var(--color-typo-system);
       }
 
-      &_normal {
-        background-color: var(--color-bg-normal);
+      &_info {
+         border-color: var(--color-typo-normal);
       }
 
       &_success {
-        background-color: var(--color-bg-success);
+         border-color: var(--color-typo-success);
       }
 
       &_warning {
-        background-color: var(--color-bg-warning);
+         border-color: var(--color-typo-warning);
       }
 
-      &_alert {
-        background-color: var(--color-bg-error);
+      &_error {
+         border-color: var(--color-typo-error);
       }
     }
   }

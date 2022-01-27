@@ -14,7 +14,7 @@ const items: Item[] = [
   {
     key: 1,
     message: 'Тихо, тигры спят!',
-    status: 'alert',
+    status: 'error',
     icon: IconMoon,
   },
   {

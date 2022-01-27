@@ -34,6 +34,7 @@ export const NotificationItem: React.FC<NotificationItemProps> = (props) => {
     autoClose,
     icon: Icon,
     message,
+    title,
     actions,
     status = notificationItemStatusDefault,
     onAutoClose: onAutoCloseProp,
@@ -89,6 +90,11 @@ export const NotificationItem: React.FC<NotificationItemProps> = (props) => {
       )}
       {!autoCloseTime && Icon && <Icon className={cnNotification('Icon')} size="m" />}
       <div className={cnNotification('Content')}>
+        {title && (
+          <Typography className={cnNotification('Title')} weight="bold">
+            {title}
+          </Typography>
+        )}
         {message && (
           <Typography className={cnNotification('Message')}>
             {message}

@@ -12,7 +12,7 @@ const items: Item[] = [
   {
     key: 1,
     message: 'С этим сообщением нельзя не согласиться',
-    status: 'normal',
+    status: 'info',
     actions: [
       {
         label: 'Согласен',

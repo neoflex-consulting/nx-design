@@ -22,9 +22,9 @@ const getItemIconByStatus = (status: NotificationItemStatus): React.FC<IconProps
   const mapIconByStatus: Record<NotificationItemStatus, React.FC<IconProps>> = {
     success: IconThumbUp,
     warning: IconAlert,
-    alert: IconAlert,
+    error: IconAlert,
     system: IconProcessing,
-    normal: IconRing,
+    info: IconRing,
   };
   return mapIconByStatus[status];
 };
@@ -54,9 +54,9 @@ export function NotificationExampleWithButtons() {
 
   const handleSuccessAdd = generateHandleAdd('success');
   const handleWarningAdd = generateHandleAdd('warning');
-  const handleAlertAdd = generateHandleAdd('alert');
+  const handleAlertAdd = generateHandleAdd('error');
   const handleSystemAdd = generateHandleAdd('system');
-  const handleNormalAdd = generateHandleAdd('normal');
+  const handleNormalAdd = generateHandleAdd('info');
 
   React.useEffect(() => handleNormalAdd(), []);
 

@@ -11,28 +11,33 @@ const cnNotificationExampleStatus = cn('NotificationExampleStatus');
 const items: Item[] = [
   {
     key: 1,
-    message: 'Сообщение — normal',
-    status: 'normal',
+    message: 'Сообщение — info',
+    status: 'info',
+    title: 'Info'
   },
   {
     key: 2,
-    message: 'Ошибка — alert',
-    status: 'alert',
+    message: 'Ошибка — error',
+    status: 'error',
+    title: 'Error'
   },
   {
     key: 3,
     message: 'Предупреждение — warning',
     status: 'warning',
+    title: 'Warning',
   },
   {
     key: 4,
     message: 'Успех — success',
     status: 'success',
+    title: 'Success',
   },
   {
     key: 5,
     message: 'Системное — system',
     status: 'system',
+    title: 'System',
   },
 ];
 
