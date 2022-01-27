@@ -147,8 +147,8 @@
   }
 
   &_view {
-    &_alert {
-      color: var(--color-typo-alert);
+    &_error {
+      color: var(--color-typo-error);
     }
 
     &_brand {
@@ -181,6 +181,10 @@
       color: var(--color-typo-primary);
     }
 
+    &_info {
+       color: var(--color-typo-normal);
+     }
+
     &_secondary {
       color: var(--color-typo-secondary);
     }
@@ -188,6 +192,10 @@
     &_success {
       color: var(--color-typo-success);
     }
+
+    &_system {
+       color: var(--color-typo-system);
+     }
 
     &_warning {
       color: var(--color-typo-warning);

@@ -2,7 +2,7 @@ import './ThemePreview.css';
 
 import React, { useReducer } from 'react';
 
-import { Item, SnackBar } from '../../../components/SnackBar/SnackBar';
+import { Item, Notification } from '../../../components/Notification/Notification';
 import { Typography } from '../../../components/Typography/Typography';
 import { defaultVars } from '../../../hooks/useThemeVars/helpers';
 import { useThemeVars } from '../../../hooks/useThemeVars/useThemeVars';
@@ -74,7 +74,7 @@ export const ThemePreview: React.FC = () => {
 
   return (
     <div className={wp.layout()}>
-      <SnackBar className={cnThemePreview('Snackbar')} items={copiedItems} />
+      <Notification className={cnThemePreview('Notification')} items={copiedItems} />
       <div className={wp.layout('content')}>
         <div className={wp.layout('container', { size: 'm' })}>
           <section>

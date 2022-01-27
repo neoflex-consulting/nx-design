@@ -89,8 +89,8 @@ const data: ComponentsGridProps['data'] = [
     description: 'Иконки на любые случаи.',
   },
   {
-    href: '/?path=/story/components-informer--playground',
-    name: 'Informer',
+    href: '/?path=/story/components-alert--playground',
+    name: 'Alert',
     description: 'Сообщение для пользователя. Встраивается в содержимое страницы.',
   },
   {

@@ -14,7 +14,7 @@
 
     &_view {
       &_wrong {
-        --example-status-color: var(--color-typo-alert);
+        --example-status-color: var(--color-typo-error);
       }
 
       &_right {

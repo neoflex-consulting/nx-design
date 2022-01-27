@@ -7,7 +7,7 @@ $color-base-path: #0078d2; /* Цвет ссылок и контролов, от 
 $color-base-system: #4b6272; /* Цвет системнный */
 
 $color-base-success: #22c38e; /* Цвет успеха */
-$color-base-alert: #eb5757; /* Цвет ошибки */
+$color-base-error: #eb5757; /* Цвет ошибки */
 $color-base-warning: #f38b00; /* Цвет предупреждения */
 $color-base-caution: #f2c94c; /* Цвет осторожности */
 $color-base-normal: #0aa5ff; /* Цвет нейтральный */
@@ -18,45 +18,39 @@ $color-base-critical: #33000f;
   /* //////////////////////////////
   // Цвета фонов /////////////// */
   --color-bg-default: color($color-base-essential a(100%)); /* Цвет дефолта */
-  --color-bg-secondary: color($color-base-essential s(+25) l(+4)); /* Цвет дефолта */
+  --color-bg-secondary: color($color-base-project s(-75) l(+59)); /* Цвет дефолта */
   --color-bg-brand: color($color-base-project a(100%)); /* Цвет фона брендированый */
   --color-bg-link: color($color-base-path a(100%)); /* Цвет фона ссылки */
   --color-bg-border: color($color-base-phantom a(20%) l(+10)); /* Цвет границ */
-  --color-bg-stripe: color(
-    $color-base-phantom a(5%)
-  ); /* Цвет зебры (например, при окрашивании фона строк таблицы через одну) */
-
-  --color-bg-ghost: color($color-base-phantom a(8%)); /* Цвет затенения */
-  --color-bg-tone: color($color-base-phantom s(+100%) l(-92%) a(85%)); /* Цвет паранджи */
-  --color-bg-soft: color($color-base-essential l(+100%) a(90%)); /* Цвет молока */
+  --color-bg-stripe: color($color-base-phantom l(-11) a(5%)); /* Цвет зебры (например, при окрашивании фона строк таблицы через одну) */
+  --color-bg-ghost: color($color-base-phantom l(-11) a(8%)); /* Цвет затенения */
+  --color-bg-tone: color($color-base-phantom l(-11) a(85%)); /* Цвет паранджи */
+  --color-bg-soft: color($color-base-essential a(90%)); /* Цвет молока */
   --color-bg-system: color($color-base-system a(100%)); /* Цвет фона системнный */
-  --color-bg-normal: color($color-base-normal a(100%)); /* Цвет фона нейтральный */
-  --color-bg-success: color($color-base-success a(100%)); /* Цвет фона успеха */
+  --color-bg-normal: color($color-base-normal h(-18) l(+45%)); /* Цвет фона нейтральный */
+  --color-bg-success: color($color-base-success h(-40) s(-32%) l(+50%)); /* Цвет фона успеха */
   --color-bg-caution: color($color-base-caution a(100%)); /* Цвет фона осторожности */
-  --color-bg-warning: color($color-base-warning a(100%)); /* Цвет фона предупреждения */
-  --color-bg-alert: color($color-base-alert s(+10)); /* Цвет фона ошибки */
+  --color-bg-warning: color($color-base-warning h(+11) l(+50)); /* Цвет фона предупреждения */
+  --color-bg-error: color($color-base-error h(+343) s(-56%) l(+33%)); /* Цвет фона ошибки */
   --color-bg-critical: color($color-base-critical a(100%)); /* Цвет фона системнный */
 
   /* //////////////////////////////
   // Цвета текста ////////////// */
-  --color-typo-primary: color($color-base-base l(-2)); /* Цвет основного текста */
+  --color-typo-primary: color($color-base-base a(100%)); /* Цвет основного текста */
   --color-typo-secondary: color($color-base-base a(60%)); /* Цвет второстепенного текста */
   --color-typo-ghost: color($color-base-base a(30%)); /* Цвет дополнительного текста */
   --color-typo-brand: color($color-base-project a(100%)); /* Цвет брендового текста */
-  --color-typo-system: color($color-base-system s(+2) l(+12)); /* Цвет фона системнный */
-  --color-typo-normal: color($color-base-normal s(+14) l(-4)); /* Цвет фона нейтральный */
-  --color-typo-success: color($color-base-success s(+14) l(-8)); /* Цвет текста успеха */
-  --color-typo-caution: color($color-base-caution s(+7) l(-3)); /* Цвет текста осторожности */
-  --color-typo-warning: color($color-base-warning s(+7) l(-3)); /* Цвет текста предупреждения */
-  --color-typo-alert: color($color-base-alert s(+3) l(-3)); /* Цвет текста ошибки */
-  --color-typo-critical: color($color-base-critical l(+9%)); /* Цвет фона системнный */
-  --color-typo-link: color($color-base-path h(-2) l(+12%) a(100%)); /* Цвет основной ссылки */
-  --color-typo-link-minor: color(
-    $color-base-path h(-2) s(-55%) l(+20%)
-  ); /* Цвет второстепенной ссылки */
-
-  --color-typo-link-hover: color($color-base-path h(-2) l(+26%) a(100%)); /* Цвет ховера ссылки */
-  --color-nums-shadow: 0, 3, 6; /* Значения RGB для указания теней в конструкции rgba(R,G,B, alpha) */
+  --color-typo-system: color($color-base-system h(-225) s(-22%) l(-34%)); /* Цвет текста системнный */
+  --color-typo-normal: color($color-base-normal h(-3) s(-20%) l(-25%)); /* Цвет текста нейтральный */
+  --color-typo-success: color($color-base-success h(+21) s(-25) l(-22)); /* Цвет текста успеха */
+  --color-typo-caution: color($color-base-caution s(+15) h(-8) l(-10)); /* Цвет текста осторожности */
+  --color-typo-warning: color($color-base-warning h(+2) s(-46) l(-2)); /* Цвет текста предупреждения */
+  --color-typo-error: color($color-base-error s(+3) l(-7)); /* Цвет текста ошибки */
+  --color-typo-critical: color($color-base-critical a(100%)); /* Цвет фона системнный */
+  --color-typo-link: color($color-base-path a(100%)); /* Цвет основной ссылки */
+  --color-typo-link-minor: color($color-base-path s(-35%) l(-10%)); /* Цвет второстепенной ссылки */
+  --color-typo-link-hover: color($color-base-path l(+8%)); /* Цвет ховера ссылки */
+  --color-nums-shadow: 0, 32, 51; /* Значения RGB для указания теней в конструкции rgba(R,G,B, alpha) */
 
   /* //////////////////////////////
   // Цвета скроллбара ////////////// */

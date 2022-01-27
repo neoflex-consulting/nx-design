@@ -130,7 +130,7 @@
     }
 
     &_alert {
-      --border-color: var(--color-bg-alert);
+      --border-color: var(--color-bg-error);
     }
 
     &_success {
