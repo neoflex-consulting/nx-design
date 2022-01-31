@@ -78,7 +78,7 @@ import { AlertExampleSize } from './examples/AlertExampleSize/AlertExampleSize';
 ### Типизация
 
 За тип alert отвечает свойство `view`. В дизайн-системе есть alert трех типов:
-с заливкой `filled`, без неё `bordered` и с обводкой `bordered`.
+с заливкой `filled`, без неё `bordered` и с обводкой `outlined`.
 
 <AlertExampleView />
 
@@ -108,7 +108,7 @@ import { AlertExampleSize } from './examples/AlertExampleSize/AlertExampleSize';
 
 ### Размер
 
-За размер сообщения отвечает свойство `size`. Варианты: `m`, `s`, по умолчанию — `m`.
+За размер сообщения отвечает свойство `size`. Варианты: `l`, `m`, `s`, по умолчанию — `s`.
 
 <AlertExampleSize />
 
@@ -120,7 +120,7 @@ import { AlertExampleSize } from './examples/AlertExampleSize/AlertExampleSize';
 | [`title?`](#текст-сообщения) | `string`                                                     | —            | Заголовок сообщения                |
 | [`lable?`](#текст-сообщения) | `string`                                                     | —            | Текст сообщения                    |
 | `children?`                  | `React.ReactNode`                                            | —            | Текст сообщения                    |
-| [`view?`](#внешний-вид)      | `'filled'`, `'bordered'`                                     | `'filled'`   | Тип alert (с заливкой или без) |
+| [`view?`](#внешний-вид)      | `'filled'`, `'bordered'`, `'outlined'`                       | `'filled'`   | Тип alert (с заливкой или без) |
 | [`icon?`](#внешний-вид)      | `React.FC<IconProps>`                                        | —            | Иконка                             |
 | `size?`                      | `'s'`, `'m'`, `'l'`                                          | `'s'`        | Размер                             |
 | `ref?`                       | `React.Ref<HTMLDivElement>`                                  | —            | Ссылка на DOM-элемент компонента   |
