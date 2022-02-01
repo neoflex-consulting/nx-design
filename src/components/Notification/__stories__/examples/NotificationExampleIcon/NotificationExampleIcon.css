@@ -7,5 +7,6 @@
     width: 400px;
     padding-right: var(--space-xs);
     padding-left: var(--space-xs);
+    position: unset;
   }
 }

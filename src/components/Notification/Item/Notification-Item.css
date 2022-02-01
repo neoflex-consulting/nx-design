@@ -4,9 +4,11 @@
     display: flex;
     margin-bottom: var(--space-s);
     padding: var(--space-m) var(--space-2xl) var(--space-m) var(--space-m);
+    background-color: var(--color-typo-white);
     border: 1px solid;
     border-radius: var(--space-2xs);
     box-shadow: var(--shadow-group);
+
 
     &_status {
       &_system {
