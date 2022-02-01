@@ -13,6 +13,9 @@ $color-base-caution: #f2c94c; /* Цвет осторожности */
 $color-base-normal: #0aa5ff; /* Цвет нейтральный */
 $color-base-critical: #33000f;
 
+$color-text-black: #090b1f;
+$color-text-white: #ffffff;
+
 /* stylelint-disable */
 .Theme_color_gpnDisplay {
   /* //////////////////////////////
@@ -51,6 +54,7 @@ $color-base-critical: #33000f;
   --color-typo-link-minor: color($color-base-path s(-35%) l(-10%)); /* Цвет второстепенной ссылки */
   --color-typo-link-hover: color($color-base-path l(+8%)); /* Цвет ховера ссылки */
   --color-nums-shadow: 0, 32, 51; /* Значения RGB для указания теней в конструкции rgba(R,G,B, alpha) */
+  --color-typo-white: color($color-text-white a(100%)); /* Цвет основного текста */
 
   /* //////////////////////////////
   // Цвета скроллбара ////////////// */
