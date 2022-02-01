@@ -70,7 +70,7 @@ type Item = {
   message?: string | number;
   status?: 'basic' | 'success' | 'warning' | 'error' | 'info';
   autoClose?: boolean | number;
-  icon?: React.FC<IconProps>;
+  icon?: React.FC<IconProps> | React.ReactNode;
   actions?: {
     label: string | number;
     onClick: React.EventHandler<React.MouseEvent>;
@@ -80,12 +80,18 @@ type Item = {
 };
 ```
 
-| Свойство/   | Тип                                                                   | По умолчанию | Описание             |
-| ---------- | ---------------------------------------------------------------------- | ------------ | -------------------- |
-| status?    | `'basic'`, `'info'`, `'system'`, '`success'`, '`warning'`, '`error'`   | `'basic'`    | Статус уведомления   |
-| icon?      | `React.FC<IconProps>`                                                  | -            | Дополнительный класс |
-| className? | `string`                                                               | -            | Дополнительный класс |
-| items      | `Item[]`                                                               | -            | Массив элементов     |
+| Свойство    | Тип                                                                    | По умолчанию | Описание                               |
+| ----------- | ---------------------------------------------------------------------- | ------------ | -------------------------------------- |
+| items       | `Item[]`                                                               | -            | Массив элементов                       |
+| title       | `string`                                                               | -            | Заголовок сообщения                    |
+| message     | `string`                                                               | -            | Текст сообщения                        |
+| autoClose   | `boolean`, `number`                                                    | `false`      | Автоматическое закрытие через 5 секунд |
+| actions     | `NotificationPropItemAction[]`                                         | -            | Массив кнопок с действиями             |
+| onClose     | (item: Item) => void                                                   | -            |                                        |
+| onAutoClose | (item: Item) => void                                                   | -            |                                        |
+| status?     | `'basic'`, `'info'`, `'system'`, `'success'`, `'warning'`, `'error'`   | `'basic'`    | Статус уведомления                     |
+| icon?       | `React.FC<IconProps>`, `React.ReactNode`                               | -            | Иконка с левой стороны уведомления     |
+| className?  | `string`                                                               | -            | Дополнительный класс                   |
 
 ## Пример
 
@@ -207,7 +213,7 @@ function NotificationExample() {
         <Button
           className={cnNotificationStories('ButtonAdd')}
           iconLeft={IconAdd}
-          label="<Базовое>"
+          label="Базовое"
           onClick={handleBasicAdd}
         />
       </div>

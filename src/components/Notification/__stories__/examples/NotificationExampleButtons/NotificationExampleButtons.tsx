@@ -25,7 +25,7 @@ const items: Item[] = [
         onClick: () => {
           console.log('Не согласен');
         },
-      },
+      }
     ],
   },
 ];

@@ -152,7 +152,7 @@ export function Playground() {
             view="ghost"
             size="s"
             width="full"
-            label="<Базовое>"
+            label="Базовое"
             onClick={handleBasicAdd}
           />
         </div>

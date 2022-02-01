@@ -4,14 +4,15 @@ import React, { useReducer } from 'react';
 
 import { IconProps } from '../../../../../icons/_Icon/Icon';
 import { IconAdd } from '../../../../../icons/IconAdd/IconAdd';
-import { IconAlert } from '../../../../../icons/IconAlert/IconAlert';
-import { IconProcessing } from '../../../../../icons/IconProcessing/IconProcessing';
-import { IconRing } from '../../../../../icons/IconRing/IconRing';
-import { IconThumbUp } from '../../../../../icons/IconThumbUp/IconThumbUp';
-import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { cn } from '../../../../../utils/bem';
 import { Button } from '../../../../Button/Button';
 import { Item, Notification, NotificationItemStatus } from '../../../Notification';
+import {Pin} from "../../../../../icons/Pin/Pin";
+import {Settings} from "../../../../../icons/Settings/Settings";
+import {CheckC} from "../../../../../icons/CheckC/CheckC";
+import {Info} from "../../../../../icons/Info/Info";
+import {Warning} from "../../../../../icons/Warning/Warning";
+import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 
 type State = Item[];
 type Action = { type: 'add'; item: Item } | { type: 'remove'; key: number | string };
@@ -20,12 +21,12 @@ const cnNotificationExampleWithButtons = cn('NotificationExampleWithButtons');
 
 const getItemIconByStatus = (status: NotificationItemStatus): React.FC<IconProps> | undefined => {
   const mapIconByStatus: Record<NotificationItemStatus, React.FC<IconProps>> = {
-    success: IconThumbUp,
-    warning: IconAlert,
-    error: IconAlert,
-    system: IconProcessing,
-    info: IconRing,
-    basic: IconAlert
+    success: CheckC,
+    warning: Info,
+    error: Warning,
+    system: Settings,
+    info: Info,
+    basic: Pin
   };
   return mapIconByStatus[status];
 };
@@ -63,7 +64,7 @@ export function NotificationExampleWithButtons() {
   React.useEffect(() => handleNormalAdd(), []);
 
   return (
-    <div /*className={cnNotificationExampleWithButtons('', [cnDocsDecorator('Section')])}*/>
+    <div className={cnNotificationExampleWithButtons('', [cnDocsDecorator('Section')])}>
       <div className={cnNotificationExampleWithButtons('Buttons')}>
         <Button
           className={cnNotificationExampleWithButtons('ButtonAdd')}
@@ -102,8 +103,7 @@ export function NotificationExampleWithButtons() {
           onClick={handleBasicAdd}
         />
       </div>
-      <Notification items={items} />
-      {/*<Notification className={cnNotificationExampleWithButtons('Notification')} items={items} />*/}
+      <Notification className={cnNotificationExampleWithButtons('Notification')} items={items} />
     </div>
   );
 }

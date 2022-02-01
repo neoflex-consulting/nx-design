@@ -3,7 +3,7 @@ import './Notification-Item.css';
 
 import React, { useEffect, useState } from 'react';
 
-import { IconClose } from '../../../icons/IconClose/IconClose';
+import { Close } from '../../../icons/Close/Close';
 import {Button} from '../../Button/Button';
 import { Typography } from '../../Typography/Typography';
 import { cnTheme } from '../../Theme/Theme';
@@ -90,7 +90,7 @@ export const NotificationItem: React.FC<NotificationItemProps> = (props) => {
           startTime={autoCloseTime}
         />
       )}
-      {!autoCloseTime && Icon && !React.isValidElement(icon) && <Icon className={cnNotification('Icon')} size="m" />}
+      {!autoCloseTime && Icon && !React.isValidElement(icon) && <Icon className={cnNotification('Icon')} size="l" />}
       {!autoCloseTime && Icon && React.isValidElement(icon) && <span className={cnNotification('Icon')}> {icon} </span>}
       <div className={cnNotification('Content')}>
         {title && (
@@ -108,10 +108,10 @@ export const NotificationItem: React.FC<NotificationItemProps> = (props) => {
       {onClose && (
         <Button
           className={cnNotification('CloseButton')}
-          view="clear"
-          iconLeft={IconClose}
+          view="ghost"
+          iconLeft={Close}
           form="round"
-          size="xs"
+          size="l"
           onClick={handleClose}
         />
       )}
