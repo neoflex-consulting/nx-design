@@ -16,7 +16,7 @@ export type NotificationPropItemAction = {
   onClick: React.EventHandler<React.MouseEvent>;
 };
 
-export const notificationItemStatus = ['info', 'system', 'success', 'warning', 'error'] as const;
+export const notificationItemStatus = ['basic', 'info', 'system', 'success', 'warning', 'error'] as const;
 export type NotificationItemStatus = typeof notificationItemStatus[number];
 export const notificationItemStatusDefault: NotificationItemStatus = notificationItemStatus[0];
 
@@ -26,7 +26,7 @@ export type Item = {
   title?: string | number;
   status?: NotificationItemStatus;
   autoClose?: boolean | number;
-  icon?: React.FC<IconProps>;
+  icon?: React.ReactNode | React.FC<IconProps>;
   actions?: NotificationPropItemAction[];
   onClose?: (item: Item) => void;
   onAutoClose?: (item: Item) => void;

@@ -68,7 +68,7 @@ Notification (в отличие от [alert](?path=/docs/components-alert--playg
 type Item = {
   key: string | number;
   message?: string | number;
-  status?: 'success' | 'warning' | 'error' | 'info';
+  status?: 'basic' | 'success' | 'warning' | 'error' | 'info';
   autoClose?: boolean | number;
   icon?: React.FC<IconProps>;
   actions?: {
@@ -80,10 +80,12 @@ type Item = {
 };
 ```
 
-| Свойство   | Тип      | По умолчанию | Описание             |
-| ---------- | -------- | ------------ | -------------------- |
-| className? | `string` | -            | Дополнительный класс |
-| items      | `Item[]` | -            | Массив элементов     |
+| Свойство/   | Тип                                                                   | По умолчанию | Описание             |
+| ---------- | ---------------------------------------------------------------------- | ------------ | -------------------- |
+| status?    | `'basic'`, `'info'`, `'system'`, '`success'`, '`warning'`, '`error'`   | `'basic'`    | Статус уведомления   |
+| icon?      | `React.FC<IconProps>`                                                  | -            | Дополнительный класс |
+| className? | `string`                                                               | -            | Дополнительный класс |
+| items      | `Item[]`                                                               | -            | Массив элементов     |
 
 ## Пример
 
@@ -139,6 +141,7 @@ const getItemIconByStatus = (status: NotificationItemStatus): React.FC<IconProps
     error: IconAlert,
     system: IconProcessing,
     info: IconRing,
+    basic: IconAlert
   };
   return mapIconByStatus[status];
 };
@@ -164,6 +167,7 @@ function NotificationExample() {
   const handleAlertAdd = generateHandleAdd('error');
   const handleSystemAdd = generateHandleAdd('system');
   const handleNormalAdd = generateHandleAdd('info');
+  const handleBasicAdd = generateHandleAdd('basic');
 
   React.useEffect(() => handleNormalAdd(), []);
 
@@ -199,6 +203,12 @@ function NotificationExample() {
           iconLeft={IconAdd}
           label="Нормальное"
           onClick={handleNormalAdd}
+        />
+        <Button
+          className={cnNotificationStories('ButtonAdd')}
+          iconLeft={IconAdd}
+          label="<Базовое>"
+          onClick={handleBasicAdd}
         />
       </div>
       <Notification className={cnNotificationStories('Notification')} items={items} />

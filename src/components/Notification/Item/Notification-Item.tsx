@@ -4,11 +4,11 @@ import './Notification-Item.css';
 import React, { useEffect, useState } from 'react';
 
 import { IconClose } from '../../../icons/IconClose/IconClose';
-import { Button } from '../../Button/Button';
+import {Button} from '../../Button/Button';
 import { Typography } from '../../Typography/Typography';
 import { cnTheme } from '../../Theme/Theme';
 import { NotificationActionButton } from '../ActionButton/Notification-ActionButton';
-import { cnNotification, cnNotificationItem, Item, notificationItemStatusDefault } from '../Notification';
+import {cnNotification, cnNotificationItem, Item, notificationItemStatusDefault} from '../Notification';
 import { NotificationTimer, NotificationTimerPropOnMount } from '../Timer/Notification-Timer';
 
 export type NotificationItemProps = {
@@ -32,7 +32,7 @@ export const NotificationItem: React.FC<NotificationItemProps> = (props) => {
   const {
     onClose,
     autoClose,
-    icon: Icon,
+    icon,
     message,
     title,
     actions,
@@ -75,6 +75,8 @@ export const NotificationItem: React.FC<NotificationItemProps> = (props) => {
 
   const handleClose = onClose ? () => onClose(item) : undefined;
 
+  const Icon: any = item.icon;
+
   return (
     <div
       className={cnNotificationItem({ status }, [cnTheme({ color: 'gpnDefault' })])}
@@ -88,7 +90,8 @@ export const NotificationItem: React.FC<NotificationItemProps> = (props) => {
           startTime={autoCloseTime}
         />
       )}
-      {!autoCloseTime && Icon && <Icon className={cnNotification('Icon')} size="m" />}
+      {!autoCloseTime && Icon && !React.isValidElement(icon) && <Icon className={cnNotification('Icon')} size="m" />}
+      {!autoCloseTime && Icon && React.isValidElement(icon) && <span className={cnNotification('Icon')}> {icon} </span>}
       <div className={cnNotification('Content')}>
         {title && (
           <Typography className={cnNotification('Title')} weight="bold">

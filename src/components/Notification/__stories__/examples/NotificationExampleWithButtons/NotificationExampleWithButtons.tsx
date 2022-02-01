@@ -25,6 +25,7 @@ const getItemIconByStatus = (status: NotificationItemStatus): React.FC<IconProps
     error: IconAlert,
     system: IconProcessing,
     info: IconRing,
+    basic: IconAlert
   };
   return mapIconByStatus[status];
 };
@@ -57,11 +58,12 @@ export function NotificationExampleWithButtons() {
   const handleAlertAdd = generateHandleAdd('error');
   const handleSystemAdd = generateHandleAdd('system');
   const handleNormalAdd = generateHandleAdd('info');
+  const handleBasicAdd = generateHandleAdd('basic');
 
   React.useEffect(() => handleNormalAdd(), []);
 
   return (
-    <div className={cnNotificationExampleWithButtons('', [cnDocsDecorator('Section')])}>
+    <div /*className={cnNotificationExampleWithButtons('', [cnDocsDecorator('Section')])}*/>
       <div className={cnNotificationExampleWithButtons('Buttons')}>
         <Button
           className={cnNotificationExampleWithButtons('ButtonAdd')}
@@ -93,8 +95,15 @@ export function NotificationExampleWithButtons() {
           label="Нормальное"
           onClick={handleNormalAdd}
         />
+        <Button
+          className={cnNotificationExampleWithButtons('ButtonAdd')}
+          iconLeft={IconAdd}
+          label="Базовое"
+          onClick={handleBasicAdd}
+        />
       </div>
-      <Notification className={cnNotificationExampleWithButtons('Notification')} items={items} />
+      <Notification items={items} />
+      {/*<Notification className={cnNotificationExampleWithButtons('Notification')} items={items} />*/}
     </div>
   );
 }

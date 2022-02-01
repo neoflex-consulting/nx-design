@@ -39,6 +39,7 @@ const getItemIconByStatus = (status: NotificationItemStatus): React.FC<IconProps
     error: IconAlert,
     system: IconProcessing,
     info: IconRing,
+    basic: IconAlert
   };
   return mapIconByStatus[status];
 };
@@ -92,6 +93,7 @@ export function Playground() {
   const handleAlertAdd = generateHandleAdd('error');
   const handleSystemAdd = generateHandleAdd('system');
   const handleNormalAdd = generateHandleAdd('info');
+  const handleBasicAdd = generateHandleAdd('basic');
 
   React.useEffect(() => handleNormalAdd(), []);
 
@@ -143,6 +145,15 @@ export function Playground() {
             width="full"
             label="Нормальное"
             onClick={handleNormalAdd}
+          />
+          <Button
+            className={cnNotificationStories('ButtonAdd')}
+            iconLeft={IconAdd}
+            view="ghost"
+            size="s"
+            width="full"
+            label="<Базовое>"
+            onClick={handleBasicAdd}
           />
         </div>
         <Notification className={cnNotificationStories('Notification')} items={items} />

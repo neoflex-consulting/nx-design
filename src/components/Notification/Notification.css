@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column-reverse;
 
+
+
   &-Item {
     &_animate {
       &_appear,
@@ -36,12 +38,4 @@
       }
     }
   }
-
-  /*&-Message {*/
-  /*  color: red;*/
-  /* }*/
-
-  /*&-Title {*/
-  /*   color: red;*/
-  /* }*/
 }
