@@ -10,7 +10,7 @@ export const TextExampleStyle = () => {
       <Typography size="s" view="ghost" className={wp.decorator({ 'indent-b': 'm' })}>
         text_style_italic
       </Typography>
-      <Typography fontStyle="italic">Газпром нефть</Typography>
+      <Typography fontStyle="italic">Неофлекс</Typography>
     </div>
   );
 };

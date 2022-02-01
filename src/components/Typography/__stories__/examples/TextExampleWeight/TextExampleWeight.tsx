@@ -18,7 +18,7 @@ export const TextExampleWeight = () => {
             {`text*weight*${item}`}
           </Typography>
           <Typography size="l" weight={item}>
-            Газпром нефть
+            Неофлекс
           </Typography>
         </div>
       ))}

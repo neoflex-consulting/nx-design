@@ -17,7 +17,7 @@ export const TextExampleSpacing = () => {
             {`text*spacing*${item}`}
           </Typography>
           <Typography spacing={item}>
-            «Газпром нефть» ведет работу в крупнейших российских нефтегазовых регионах.
+            «Неофлекс» ведет работу в крупнейших российских банках.
           </Typography>
         </div>
       ))}

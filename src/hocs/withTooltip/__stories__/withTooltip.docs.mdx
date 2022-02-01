@@ -31,8 +31,8 @@ onMouseLeave?: (() => void) | React.MouseEventHandler;
 Напирмер, `withTooltip` можно добавить к обычному тексту (заданному в компоненте `Typography`).
 
 ```tsx
-import { withTooltip } from '@consta/uikit/withTooltip';
-import { Typography } from '@consta/uikit/Typography';
+import { withTooltip } from 'nx-design/withTooltip';
+import { Typography } from 'nx-design/Typography';
 
 const TextWithTooltip = withTooltip({ content: 'Тултип' })(Typography);
 
@@ -59,8 +59,8 @@ export const WithTooltipExampleText = () => {
 Свойства, заданные в компоненте, будут главнее.
 
 ```tsx
-import { withTooltip } from '@consta/uikit/withTooltip';
-import { Button } from '@consta/uikit/Button';
+import { withTooltip } from 'nx-design/withTooltip';
+import { Button } from 'nx-design/Button';
 
 const ButtonWithTooltip = withTooltip({ content: 'Тултип сверху' })(Button);
 
@@ -88,8 +88,8 @@ export const WithTooltipExampleProps = () => {
 - `click` — тултип появляется по клику.
 
 ```tsx
-import { withTooltip } from '@consta/uikit/withTooltip';
-import { Button } from '@consta/uikit/Button';
+import { withTooltip } from 'nx-design/withTooltip';
+import { Button } from 'nx-design/Button';
 
 const ButtonWithTooltipModeMouseover = withTooltip({
   content: 'Тултип по наведению',

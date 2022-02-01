@@ -17,7 +17,7 @@ export const TextExampleView = () => {
             {`text*view*${item}`}
           </Typography>
           <Typography size="l" view={item}>
-            Газпром нефть
+            Неофлекс
           </Typography>
         </div>
       ))}

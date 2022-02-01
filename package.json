@@ -166,7 +166,7 @@
     "typescript-eslint-parser": "^22.0.0"
   },
   "homepage": "https://consta-uikit.vercel.app",
-  "description": "Consta — дизайн-система для разработки интерфейсов, написана на [React](https://reactjs.org/), сделана и поддерживается в «Газпром нефти».",
+  "description": "NX Design — дизайн-система для разработки интерфейсов, написана на [React](https://reactjs.org/), сделана и поддерживается в «Неофлекс».",
   "main": ".eslintrc.js",
   "directories": {
     "doc": "docs"

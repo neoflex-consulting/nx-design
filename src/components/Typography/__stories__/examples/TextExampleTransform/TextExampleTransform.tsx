@@ -10,7 +10,7 @@ export const TextExampleTransform = () => {
       <Typography size="s" view="ghost" className={wp.decorator({ 'indent-b': 'm' })}>
         text_transform_uppercase
       </Typography>
-      <Typography transform="uppercase">Газпром нефть</Typography>
+      <Typography transform="uppercase">Неофлекс</Typography>
     </div>
   );
 };

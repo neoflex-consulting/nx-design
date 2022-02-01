@@ -22,7 +22,7 @@ import { Meta } from '@storybook/addon-docs/blocks';
 ```tsx
 import React from 'react';
 
-import { Theme, presetGpnDefault } from '@consta/uikit/Theme';
+import { Theme, presetGpnDefault } from 'nx-design/Theme';
 
 const App = () => {
   return <Theme preset={presetGpnDefault}>your code</Theme>;
@@ -37,7 +37,7 @@ const App = () => {
 
 ```tsx
 import React from 'react';
-import { Theme, presetGpnDefault, presetGpnDark } from '@consta/uikit/Theme';
+import { Theme, presetGpnDefault, presetGpnDark } from 'nx-design/Theme';
 
 const App = () => {
   return (
@@ -58,8 +58,8 @@ import './RootTheme.css';
 
 import React, { useState } from 'react';
 import { cn } from '@bem-react/classname';
-import { Theme, presetGpnDark, presetGpnDefault, ThemePreset } from '@consta/uikit/Theme';
-import { Switch } from '@consta/uikit/Switch';
+import { Theme, presetGpnDark, presetGpnDefault, ThemePreset } from 'nx-design/Theme';
+import { Switch } from 'nx-design/Switch';
 
 type ThemeName = 'gpnDefault' | 'gpnDark';
 
@@ -97,8 +97,8 @@ export const RootTheme: React.FC = () => {
 С помощью `useTheme` удобно переключать цветовую схему на акцентную или инвертную.
 
 ```tsx
-import { useTheme } from '@consta/uikit/Theme';
-import { Typography } from '@consta/uikit/Text';
+import { useTheme } from 'nx-design/Theme';
+import { Typography } from 'nx-design/Text';
 
 const App = () => {
   const { themeClassNames } = useTheme();
