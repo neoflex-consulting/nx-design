@@ -1,8 +1,7 @@
-
 .datetime-picker {
   position: relative;
   border: 1px solid #dbdbdb;
-  background-color: #fff;
+  background-color: var(--color-typo-white);
   border-radius: 4px;
   font-family: Tahoma, sans-serif;
   font-size: 14px;
@@ -14,7 +13,7 @@
 
 .datetime-range-picker {
   border: 1px solid #dbdbdb;
-  background-color: #fff;
+  background-color: var(--color-typo-white);
   border-radius: 4px;
   box-sizing: content-box;
   z-index: 100;
@@ -46,7 +45,7 @@
 &:before {
    content: "";
    position: absolute;
-   background: #fff;
+   background: var(--color-typo-white);
    border-top: 1px solid #dbdbdb;
    border-right: 1px solid #dbdbdb;
    width: 10px;
