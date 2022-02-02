@@ -138,7 +138,7 @@ class Calendar extends Component<Props, State> {
 
     return (
       <div style={style}>
-        <div className="calendar">
+        <div className="Calendar">
           <Day
             {...props}
             style={{display: isDayPanel ? 'block' : 'none'}} />

@@ -31,7 +31,7 @@ interface Props {
   minPanel?: any,
 }
 
-export const cnDatePicker = cn('datetime-picker');
+export const cnDatePicker = cn('DatePicker');
 
 interface State {
   moment?: any,
