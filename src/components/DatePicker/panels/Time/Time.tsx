@@ -1,3 +1,5 @@
+import './Time.css';
+
 import React, {Component} from 'react';
 // import ReactSlider from 'react-slider';
 import moment from 'moment';

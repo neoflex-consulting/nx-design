@@ -1,7 +1,9 @@
+import './Shortcuts.css';
+
 import React, {Component} from 'react';
 import moment from 'moment';
 import classNames from 'classnames/bind';
-import {CUSTOM_BUTTON_TEXT} from '../constants';
+import {CUSTOM_BUTTON_TEXT} from '../../constants';
 
 interface Props {
   isOpen?: any,

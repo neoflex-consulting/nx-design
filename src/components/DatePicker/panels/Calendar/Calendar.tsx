@@ -1,9 +1,11 @@
+import './Calendar.css';
+
 import React, {Component} from 'react';
 // import moment from 'moment';
 
-import Day from './Day';
-import Month from './Month';
-import Year from './Year';
+import Day from '../Day';
+import Month from '../Month';
+import Year from '../Year';
 const moment = require('moment');
 
 interface Props {

@@ -1,113 +1,11 @@
 import './DatePicker.css';
 
-// import React, { ChangeEventHandler } from 'react';
-
-// import { cnMixFocus } from '../../mixs/MixFocus/MixFocus';
-// import { cn } from '../../utils/bem';
-// import { PropsWithHTMLAttributes } from '../../utils/types/PropsWithHTMLAttributes';
-
-// export const datePickerPropSize = ['m', 'l'] as const;
-// export type DatePickerPropSize = typeof datePickerPropSize[number];
-// export const datePickerPropSizeDefault: DatePickerPropSize = datePickerPropSize[0];
-//
-// export const datePickerPropView = ['primary', 'ghost'] as const;
-// export type DatePickerPropView = typeof datePickerPropView[number];
-// export const datePickerPropViewDefault: DatePickerPropView = datePickerPropView[0];
-//
-// export const datePickerPropAlign = ['center', 'top'] as const;
-// export type DatePickerPropAlign = typeof datePickerPropAlign[number];
-// export const datePickerPropAlignDefault: DatePickerPropAlign = datePickerPropAlign[0];
-//
-// export type RadioPropOnChange = (object: {
-//   e: React.ChangeEvent<HTMLInputElement>;
-//   checked: boolean;
-// }) => void;
-//
-// export type Props = {
-//   checked: boolean | undefined;
-//   size?: DatePickerPropSize;
-//   view?: DatePickerPropView;
-//   align?: DatePickerPropAlign;
-//   disabled?: boolean;
-//   className?: string;
-//   label?: string;
-//   onChange?: RadioPropOnChange;
-//   name?: string;
-//   onFocus?: React.FocusEventHandler<HTMLInputElement>;
-//   onBlur?: React.FocusEventHandler<HTMLInputElement>;
-//   autoFocus?: boolean;
-//   readOnly?: boolean;
-//   required?: boolean;
-//   step?: number | string;
-//   tabIndex?: number;
-//   inputRef?: React.Ref<HTMLInputElement>;
-//   children?: never;
-// };
-//
-// export type DatePickerProps = PropsWithHTMLAttributes<Props, HTMLLabelElement>;
-//
-// export const cnDatePicker = cn('DatePicker');
-//
-// export const DatePicker = React.forwardRef<HTMLLabelElement, DatePickerProps>((props, ref) => {
-//   const {
-//     checked = false,
-//     name,
-//     size = datePickerPropSizeDefault,
-//     view = datePickerPropViewDefault,
-//     align = datePickerPropAlignDefault,
-//     disabled,
-//     className,
-//     label,
-//     onChange,
-//     onFocus,
-//     onBlur,
-//     readOnly,
-//     required,
-//     step,
-//     tabIndex,
-//     inputRef,
-//     ...otherProps
-//   } = props;
-//
-//   const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
-//     if (onChange) {
-//       onChange({ e, checked: !checked });
-//     }
-//   };
-//
-//   return (
-//     <label
-//       {...otherProps}
-//       className={cnDatePicker({ size, view, disabled, align }, [className])}
-//       ref={ref}
-//     >
-//       <input
-//         type="radio"
-//         name={name}
-//         className={cnDatePicker('Input', [cnMixFocus()])}
-//         checked={checked}
-//         disabled={disabled}
-//         onChange={handleChange}
-//         onFocus={onFocus}
-//         onBlur={onBlur}
-//         readOnly={readOnly}
-//         required={required}
-//         step={step}
-//         tabIndex={tabIndex}
-//         ref={inputRef}
-//       />
-//       {label && <span className={cnDatePicker('Label')}>{label}</span>}
-//     </label>
-//   );
-// });
-
 import React, {Component} from 'react';
-import classNames from 'classnames/bind';
-// import blacklist from 'blacklist';
 
-import Calendar from './panels/Calendar';
-import Time from './panels/Time';
-import Shortcuts from './panels/Shortcuts';
+import Calendar from './panels/Calendar/Calendar';
+import Time from './panels/Time/Time';
+import Shortcuts from './panels/Shortcuts/Shortcuts';
+import {cn} from "../../utils/bem";
 
 interface Props {
   isOpen?: any,
@@ -115,7 +13,7 @@ interface Props {
   splitPanel?: any,
   showTimePicker?: any,
   showCalendarPicker?: any,
-  className?: any,
+  className?: string,
   onSelect?: any,
   moment?: any,
   maxDate?: any,
@@ -132,6 +30,8 @@ interface Props {
   weeks?: any,
   minPanel?: any,
 }
+
+export const cnDatePicker = cn('datetime-picker');
 
 interface State {
   moment?: any,
@@ -159,18 +59,21 @@ class DatePicker extends Component<Props, State> {
       shortcuts,
       splitPanel,
       showTimePicker = true,
-      showCalendarPicker = true
+      showCalendarPicker = true,
+      className
     } = this.props;
     const {panel} = this.state;
     const isTimePanel = panel === 'time';
     const isCalendarPanel = panel === 'calendar';
-    const className = classNames('datetime-picker', this.props.className, {
-      split: splitPanel
-    });
-    // const props = blacklist(this.props, 'className', 'splitPanel', 'isOpen');
 
     return (
-      <div className={className} style={{display: isOpen ? 'block' : 'none'}} onClick={(evt) => evt.stopPropagation()}>
+      <div className={cnDatePicker(
+        {
+          split: splitPanel
+        },
+        [className],
+      )}
+           style={{display: isOpen ? 'block' : 'none'}} onClick={(evt) => evt.stopPropagation()}>
         {shortcuts
           ? <Shortcuts {...this.props} />
           : undefined
