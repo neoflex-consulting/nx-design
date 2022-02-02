@@ -69,6 +69,11 @@ const data: ComponentsGridProps['data'] = [
     description: 'Контекстное меню. Дополнительные действия на странице.',
   },
   {
+    href: '/?path=/story/components-datepicker--playground',
+    name: 'DatePicker',
+    description: 'Выбор даты. Можно выбрать один вариант.',
+  },
+  {
     href: '/?path=/story/components-file--playground',
     name: 'File',
     description: 'Иконка для файла с раширением.',
