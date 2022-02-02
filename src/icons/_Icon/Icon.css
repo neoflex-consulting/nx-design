@@ -26,7 +26,7 @@
 
 &_view {
 &_alert {
-   color: var(--color-typo-alert);
+   color: var(--color-typo-error);
  }
 
 &_brand {

@@ -16,7 +16,7 @@ export const TextExampleLineheight = () => {
             {/* {`text*line-height*${item}`} */}
           </Typography>
           <Typography>
-            «Газпром нефть» ведет работу в крупнейших российских нефтегазовых регионах.
+            «Неофлекс» ведет работу в крупнейших российских банках.
           </Typography>
         </div>
     </div>

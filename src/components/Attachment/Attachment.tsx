@@ -80,7 +80,7 @@ const Attachment = forwardRefWithAs<Props>((props, ref) => {
           </Typography>
         )}
         {errorText && (
-          <Typography className={cnAttachment('ErrorText')} size="caption" view="alert">
+          <Typography className={cnAttachment('ErrorText')} size="caption" view="error">
             {errorText}
           </Typography>
         )}

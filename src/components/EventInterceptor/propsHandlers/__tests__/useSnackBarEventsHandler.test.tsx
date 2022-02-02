@@ -2,12 +2,12 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { Item, SnackBar } from '../../../SnackBar/SnackBar';
-import { useSnackBarEventsHandler } from '../useSnackBarEventsHandler';
+import { Item, Notification } from '../../../Notification/Notification';
+import { useNotificationEventsHandler } from '../useNotificationEventsHandler';
 
-type Props = React.ComponentProps<typeof SnackBar>;
+type Props = React.ComponentProps<typeof Notification>;
 
-const testId = 'SnackBar';
+const testId = 'Notification';
 const items: Item[] = [
   {
     key: 1,
@@ -21,11 +21,11 @@ const defaultProps = {
 
 const eventHandler = jest.fn();
 const renderComponent = (props: Props = defaultProps) => {
-  return render(<SnackBar data-testid={testId} {...props} />);
+  return render(<Notification data-testid={testId} {...props} />);
 };
 
-describe('useSnackBarEventsHandler', () => {
-  const { result } = renderHook(() => useSnackBarEventsHandler(defaultProps, eventHandler));
+describe('useNotificationEventsHandler', () => {
+  const { result } = renderHook(() => useNotificationEventsHandler(defaultProps, eventHandler));
 
   it('возвращает пропсы в том же виде, что и получил', () => {
     let props = {};

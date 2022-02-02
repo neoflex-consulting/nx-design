@@ -16,7 +16,7 @@ export const TextExampleAlign = () => {
           <Typography size="s" view="ghost" align={item} className={wp.decorator({ 'indent-b': 'xs' })}>
             {`text_align_${item}`}
           </Typography>
-          <Typography align={item}>Газпром нефть</Typography>
+          <Typography align={item}>Неофлекс</Typography>
         </div>
       ))}
     </div>

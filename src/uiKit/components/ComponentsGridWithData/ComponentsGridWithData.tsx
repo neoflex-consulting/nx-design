@@ -4,6 +4,11 @@ import { ComponentsGrid, ComponentsGridProps } from '../ComponentsGrid/Component
 
 const data: ComponentsGridProps['data'] = [
   {
+    href: '/?path=/story/components-alert--playground',
+    name: 'Alert',
+    description: 'Сообщение для пользователя. Встраивается в содержимое страницы.',
+  },
+  {
     name: 'Attachment',
     description: 'Показывает загрузку файла или уже загруженные файлы.',
     href: '/?path=/story/components-attachment--playground',
@@ -89,11 +94,6 @@ const data: ComponentsGridProps['data'] = [
     description: 'Иконки на любые случаи.',
   },
   {
-    href: '/?path=/story/components-informer--playground',
-    name: 'Informer',
-    description: 'Сообщение для пользователя. Встраивается в содержимое страницы.',
-  },
-  {
     href: '/?path=/story/components-loader--playground',
     name: 'Loader',
     description: 'Прелоадер. Показывает, что информация загружается.',
@@ -102,6 +102,11 @@ const data: ComponentsGridProps['data'] = [
     href: '/?path=/story/components-modal--playground',
     name: 'Modal',
     description: 'Всплывающее окно. Показывает контент поверх основного экрана.',
+  },
+  {
+    href: '/?path=/story/components-notification--playground',
+    name: 'Notification',
+    description: 'Сообщение для пользователя. Используется для мгновенных уведомлений.',
   },
   {
     href: '/?path=/story/components-pagination--playground',

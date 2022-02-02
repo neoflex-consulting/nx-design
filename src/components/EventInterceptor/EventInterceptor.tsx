@@ -4,7 +4,7 @@ const eventInterceptorPropComponent = [
   'Button',
   'TextField',
   'Checkbox',
-  'SnackBar',
+  'Notification',
   'Select'
 ] as const;
 export type EventInterceptorPropComponent = typeof eventInterceptorPropComponent[number];

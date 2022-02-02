@@ -63,9 +63,9 @@
     }
 
     &_error {
-      --badge-bg-color: var(--color-bg-alert);
-      --badge-text-color: var(--color-typo-alert);
-      --badge-border-color: var(--color-bg-alert);
+      --badge-bg-color: var(--color-bg-error);
+      --badge-text-color: var(--color-typo-error);
+      --badge-border-color: var(--color-bg-error);
     }
 
     &_warning {

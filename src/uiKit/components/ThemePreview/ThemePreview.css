@@ -1,5 +1,5 @@
 .UiKit--ThemePreview {
-  &-Snackbar {
+  &-Notification {
     position: fixed;
     z-index: 9999;
     right: var(--space-m);

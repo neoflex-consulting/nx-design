@@ -1,0 +1,62 @@
+.Notification {
+  &-Item {
+    position: relative;
+    display: flex;
+    margin-bottom: var(--space-s);
+    padding: var(--space-m) var(--space-2xl) var(--space-m) var(--space-m);
+    background-color: var(--color-typo-white);
+    border: 1px solid;
+    border-radius: var(--space-2xs);
+    box-shadow: var(--shadow-group);
+
+
+    &_status {
+      &_system {
+        border-color: var(--color-typo-system);
+        --icon-color: var(--color-typo-system);
+      }
+
+      &_info {
+         border-color: var(--color-typo-normal);
+         --icon-color: var(--color-typo-normal);
+      }
+
+      &_success {
+         border-color: var(--color-typo-success);
+         --icon-color: var(--color-typo-success);
+      }
+
+      &_warning {
+         border-color: var(--color-typo-warning);
+         --icon-color: var(--color-typo-warning);
+      }
+
+      &_error {
+         border-color: var(--color-typo-error);
+         --icon-color: var(--color-typo-error);
+      }
+
+      &_basic {
+         border-color: var(--color-typo-white);
+         --icon-color: unset;
+       }
+    }
+  }
+
+  &-Icon {
+    flex: none;
+    color: var(--icon-color);
+    margin-top: var(--space-3xs);
+    margin-right: var(--space-s);
+  }
+
+  &-Content {
+    flex: 1;
+  }
+
+  &-CloseButton {
+    position: absolute;
+    top: var(--space-2xs);
+    right: var(--space-2xs);
+  }
+}

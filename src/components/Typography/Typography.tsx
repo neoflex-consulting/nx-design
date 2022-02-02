@@ -43,7 +43,7 @@ export type TextPropSpacing = typeof textPropSpacing[number];
 
 export const textPropView = [
   'primary',
-  'alert',
+  'error',
   'brand',
   'ghost',
   'link',
@@ -51,7 +51,9 @@ export const textPropView = [
   'primary',
   'secondary',
   'success',
+  'system',
   'warning',
+  'info'
 ] as const;
 export type TextPropView = typeof textPropView[number];
 export const textPropViewDefault: TextPropView = textPropView[0];

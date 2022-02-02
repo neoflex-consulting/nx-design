@@ -9,7 +9,7 @@
 
   &_status {
     &_alert {
-      --tooltip-bg-color: var(--color-bg-alert);
+      --tooltip-bg-color: var(--color-bg-error);
     }
 
     &_warning {

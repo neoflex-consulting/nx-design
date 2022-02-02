@@ -1,0 +1,257 @@
+import { NotificationExampleSimple } from './examples/NotificationExampleSimple/NotificationExampleSimple';
+import { NotificationExampleStatus } from './examples/NotificationExampleStatus/NotificationExampleStatus';
+import { NotificationExampleIcon } from './examples/NotificationExampleIcon/NotificationExampleIcon';
+import { NotificationExampleWithButtons } from './examples/NotificationExampleWithButtons/NotificationExampleWithButtons';
+import { NotificationExampleTimer } from './examples/NotificationExampleTimer/NotificationExampleTimer';
+import { NotificationExampleButtons } from './examples/NotificationExampleButtons/NotificationExampleButtons';
+
+# Notification
+
+Используется для мгновенных уведомлений.
+
+Notification (в отличие от [alert](?path=/docs/components-alert--playground))
+всегда перекрывает основное содержимое, выносится в отдельный слой интерфейса
+и сопровождается анимацией. На него будет направлено всё внимание пользователя.
+
+Используйте alert в контексте, notification — вне контекста.
+
+- [Текст сообщения](#текст-сообщения)
+- [Статус](#статус)
+- [Иконка](#иконка)
+- [Кнопки](#кнопки)
+- [Таймер](#таймер)
+- [Список свойств](#свойства)
+- [Пример использования](#пример)
+
+## Текст сообщения
+
+За текст сообщения отвечает `message`.
+
+Пишите коротко и лаконично. С заглавной, точка не нужна.
+
+## Статус
+
+От статуса зависит цвет обводки и иконка на уведомлении (задается в свойстве `status`).
+
+<NotificationExampleStatus />
+
+## Иконка
+
+Добавьте любую из [библиотеки иконок](?path=/story/components-icons--playground) с помощью свойства `icon`.
+
+<NotificationExampleIcon />
+
+## Кнопки
+
+Добавьте кнопки, если хотите, чтобы пользователь мог отреагировать на событие.
+Например, отменить его или куда-то перейти.
+
+<NotificationExampleButtons />
+
+## Таймер
+
+Используйте таймер, если сообщений о событиях слишком много и они не очень важные.
+Тогда сообщение будет держаться на экране некоторое время, а потом исчезнет.
+
+Таймер нужен, чтобы дать пользователю возможность поменять решение. Например,
+если пользователь что-то удалил, можно вывести внизу снекбар с таймером и кнопкой
+**Не удалять**. Если пользователь, нажмет на кнопку. Если нет, сообщение само закроется
+по таймеру.
+
+Таймер можно добавить с помощью `autoClose`.
+
+<NotificationExampleTimer />
+
+## Свойства
+
+```tsx
+type Item = {
+  key: string | number;
+  message?: string | number;
+  status?: 'basic' | 'success' | 'warning' | 'error' | 'info';
+  autoClose?: boolean | number;
+  icon?: React.FC<IconProps> | React.ReactNode;
+  actions?: {
+    label: string | number;
+    onClick: React.EventHandler<React.MouseEvent>;
+  }[];
+  onClose?: (item: Item) => void;
+  onAutoClose?: (item: Item) => void; // Если не передавать `onAutoClose` то по истечению таймера будет срабатывать `onClose`
+};
+```
+
+| Свойство    | Тип                                                                    | По умолчанию | Описание                               |
+| ----------- | ---------------------------------------------------------------------- | ------------ | -------------------------------------- |
+| items       | `Item[]`                                                               | -            | Массив элементов                       |
+| title       | `string`                                                               | -            | Заголовок сообщения                    |
+| message     | `string`                                                               | -            | Текст сообщения                        |
+| autoClose   | `boolean`, `number`                                                    | `false`      | Автоматическое закрытие через 5 секунд |
+| actions     | `NotificationPropItemAction[]`                                         | -            | Массив кнопок с действиями             |
+| onClose     | (item: Item) => void                                                   | -            |                                        |
+| onAutoClose | (item: Item) => void                                                   | -            |                                        |
+| status?     | `'basic'`, `'info'`, `'system'`, `'success'`, `'warning'`, `'error'`   | `'basic'`    | Статус уведомления                     |
+| icon?       | `React.FC<IconProps>`, `React.ReactNode`                               | -            | Иконка с левой стороны уведомления     |
+| className?  | `string`                                                               | -            | Дополнительный класс                   |
+
+## Пример
+
+```ts
+import * as React from 'react';
+import { Notification } from 'nx-design/Notification';
+
+function NotificationExample() {
+  const items = [
+    {
+      key: 1,
+      message: 'Сообщение',
+    },
+  ];
+  return <Notification items={items} />;
+}
+```
+
+<NotificationExampleSimple />
+
+## Пример с кнопками
+
+```tsx
+import './NotificationStories.css';
+
+import * as React from 'react';
+import { cn } from '@bem-react/classname';
+import { Button } from 'nx-design/Button';
+import { IconProps } from 'nx-design/Icon';
+import { IconAdd } from 'nx-design/IconAdd';
+import { IconThumbUp } from 'nx-design/IconThumbUp';
+import { IconAlert } from 'nx-design/IconAlert';
+import { IconRing } from 'nx-design/IconRing';
+import { IconProcessing } from 'nx-design/IconProcessing';
+import { Notification, NotificationItemStatus, Item } from 'nx-design/Notification';
+
+function reducer(
+  state: Item[],
+  action: { type: 'add' | 'remove'; item?: Item; key?: number | string },
+) {
+  switch (action.type) {
+    case 'add':
+      return [...state, action.item];
+    case 'remove':
+      return state.filter((item) => item.key !== action.key);
+  }
+}
+
+const getItemIconByStatus = (status: NotificationItemStatus): React.FC<IconProps> | undefined => {
+  const mapIconByStatus: Record<NotificationItemStatus, React.FC<IconProps>> = {
+    success: IconThumbUp,
+    warning: IconAlert,
+    error: IconAlert,
+    system: IconProcessing,
+    info: IconRing,
+    basic: IconAlert
+  };
+  return mapIconByStatus[status];
+};
+
+const cnNotificationStories = cn('NotificationStories');
+
+function NotificationExample() {
+  const [items, dispatchItems] = React.useReducer(reducer, []);
+  const generateHandleAdd = (status: NotificationItemStatus) => () => {
+    const key = items.length + 1;
+    const item: Item = {
+      key,
+      message: `Сообщение о каком-то событии - ${key}`,
+      status,
+      icon: getItemIconByStatus(status),
+      onClose: () => dispatchItems({ type: 'remove', key }),
+    };
+    dispatchItems({ type: 'add', item });
+  };
+
+  const handleSuccessAdd = generateHandleAdd('success');
+  const handleWarningAdd = generateHandleAdd('warning');
+  const handleAlertAdd = generateHandleAdd('error');
+  const handleSystemAdd = generateHandleAdd('system');
+  const handleNormalAdd = generateHandleAdd('info');
+  const handleBasicAdd = generateHandleAdd('basic');
+
+  React.useEffect(() => handleNormalAdd(), []);
+
+  return (
+    <div className={cnNotificationStories()}>
+      <div className={cnNotificationStories('Buttons')}>
+        <Button
+          className={cnNotificationStories('ButtonAdd')}
+          iconLeft={IconAdd}
+          label="Выполненно"
+          onClick={handleSuccessAdd}
+        />
+        <Button
+          className={cnNotificationStories('ButtonAdd')}
+          iconLeft={IconAdd}
+          label="Ошибка"
+          onClick={handleAlertAdd}
+        />
+        <Button
+          className={cnNotificationStories('ButtonAdd')}
+          iconLeft={IconAdd}
+          label="Предупреждение"
+          onClick={handleWarningAdd}
+        />
+        <Button
+          className={cnNotificationStories('ButtonAdd')}
+          iconLeft={IconAdd}
+          label="Системное"
+          onClick={handleSystemAdd}
+        />
+        <Button
+          className={cnNotificationStories('ButtonAdd')}
+          iconLeft={IconAdd}
+          label="Нормальное"
+          onClick={handleNormalAdd}
+        />
+        <Button
+          className={cnNotificationStories('ButtonAdd')}
+          iconLeft={IconAdd}
+          label="Базовое"
+          onClick={handleBasicAdd}
+        />
+      </div>
+      <Notification className={cnNotificationStories('Notification')} items={items} />
+    </div>
+  );
+}
+```
+
+```css
+.NotificationStories {
+  display: flex;
+  flex-direction: row;
+  height: 400px;
+
+  &-Notification {
+    overflow: auto;
+    flex: none;
+    width: 400px;
+    padding-right: var(--space-xs);
+    padding-left: var(--space-xs);
+  }
+
+  &-Buttons {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: end;
+    max-width: 200px;
+    padding-right: var(--space-xs);
+    padding-left: var(--space-xs);
+  }
+
+  &-ButtonAdd {
+    margin-bottom: var(--space-xs);
+  }
+}
+```
+
+<NotificationExampleWithButtons />
