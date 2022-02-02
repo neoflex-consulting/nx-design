@@ -6,7 +6,7 @@ import { createMetadata } from '../../../utils/storybook';
 import mdx from './DatePicker.docs.mdx';
 
 import {getDate} from '../utils';
-import Trigger from "../Trigger";
+import DatePicker from "../DatePicker";
 // const defaultKnobs = () => ({
 //   disabled: boolean('disabled', false),
 //   size: select('size', datePickerPropSize, datePickerPropSizeDefault),
@@ -27,13 +27,10 @@ export function Playground() {
 
   return (
     <form>
-      <Trigger
+      <DatePicker
         moment={moment}
         onChange={handleChange}>
-        <input type="text"
-               value={moment.format('YYYY-MM-DD HH:mm')}
-               readOnly />
-      </Trigger>
+      </DatePicker>
     </form>
   );
 }

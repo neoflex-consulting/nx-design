@@ -1,11 +1,9 @@
-import './DatePicker.css';
-
 import React, {Component} from 'react';
+import {findDOMNode} from 'react-dom';
 
-import Calendar from './panels/Calendar/Calendar';
-import Time from './panels/Time/Time';
-import Shortcuts from './panels/Shortcuts/Shortcuts';
-import {cn} from "../../utils/bem";
+import {Picker} from './Picker';
+import Portal from './Portal';
+import {TextField} from "../TextField/TextField";
 
 interface Props {
   isOpen?: any,
@@ -13,7 +11,7 @@ interface Props {
   splitPanel?: any,
   showTimePicker?: any,
   showCalendarPicker?: any,
-  className?: string,
+  className?: any,
   onSelect?: any,
   moment?: any,
   maxDate?: any,
@@ -24,82 +22,139 @@ interface Props {
   dateLimit?: any,
   style?: any,
   onChange?: any,
-  months?: any,
-  changePanel?: any,
-  dayFormat?: any,
-  weeks?: any,
-  minPanel?: any,
+  customButtonText?: any,
+  showCustomButton?: any,
+  customRange?: any,
+  appendToBody?: any,
+  closeOnSelectDay?: any,
+  disabled?: any
 }
-
-export const cnDatePicker = cn('DatePicker');
 
 interface State {
   moment?: any,
   selected?: any,
-  panel?: any
+  isOpen?: boolean,
+  pos?: any
 }
 
 class DatePicker extends Component<Props, State> {
   constructor(props:any) {
     super(props);
     this.state = {
-      panel: 'calendar'
+      isOpen: false,
+      pos: {}
     };
   }
 
-  changePanel = (panel:any) => {
+  componentDidMount() {
+    window.addEventListener('click', this.handleDocumentClick, false);
+
+    if (this.props.appendToBody) {
+      window.addEventListener('scroll', this.handlePortalPosition, false);
+      window.addEventListener('resize', this.handlePortalPosition, false);
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('click', this.handleDocumentClick, false);
+
+    if (this.props.appendToBody) {
+      window.removeEventListener('scroll', this.handlePortalPosition, false);
+      window.removeEventListener('resize', this.handlePortalPosition, false);
+    }
+  }
+
+  handleDocumentClick = (evt:any) => {
+    if (!findDOMNode(this)?.contains(evt.target)) {
+      this.togglePicker(false);
+    }
+  }
+
+  handlePortalPosition = () => {
+    if (this.state.isOpen) {
+      this.setState({
+        pos: this.getPosition()
+      });
+    }
+  }
+
+  handleChange = (moment:any, currentPanel:any) => {
+    const {closeOnSelectDay, onChange} = this.props;
+
+    if (currentPanel === 'day' && closeOnSelectDay) {
+      this.setState({
+        isOpen: false
+      });
+    }
+
+    onChange && onChange(moment);
+  }
+
+  togglePicker = (isOpen:boolean) => {
+    const {disabled} = this.props;
+
+    if (disabled) return;
+
     this.setState({
-      panel
+      isOpen,
+      pos: this.getPosition()
     });
   }
 
-  render() {
-    const {
-      isOpen = true,
-      shortcuts,
-      splitPanel,
-      showTimePicker = true,
-      showCalendarPicker = true,
-      className
-    } = this.props;
-    const {panel} = this.state;
-    const isTimePanel = panel === 'time';
-    const isCalendarPanel = panel === 'calendar';
+  getPosition = () => {
+    const elem = this.refs.trigger;
+    let elemBCR: any
+    if ("getBoundingClientRect" in elem) {
+      elemBCR = elem.getBoundingClientRect();
+    }
+    return {
+      top: Math.round(elemBCR.top + elemBCR.height),
+      left: Math.round(elemBCR.left)
+    };
+
+  }
+
+  _renderPortal = () => {
+    const {pos, isOpen} = this.state;
+    const style = {
+      display: isOpen ? 'block' : 'none',
+      position: 'fixed',
+      top: `${pos.top}px`,
+      left: `${pos.left}px`
+    };
 
     return (
-      <div className={cnDatePicker(
-        {
-          split: splitPanel
-        },
-        [className],
-      )}
-           style={{display: isOpen ? 'block' : 'none'}} onClick={(evt) => evt.stopPropagation()}>
-        {shortcuts
-          ? <Shortcuts {...this.props} />
-          : undefined
-        }
+      <Portal style={style}>
+        {this._renderPicker(true)}
+      </Portal>
+    );
+  }
 
-        {splitPanel
-          ? <div className="panel-nav">
-            <button type="button" onClick={this.changePanel.bind(this, 'calendar')} className={isCalendarPanel ? 'active' : ''}>
-              <i className="fa fa-calendar-o"></i>Date
-            </button>
-            <button type="button" onClick={this.changePanel.bind(this, 'time')} className={isTimePanel ? 'active' : ''}>
-              <i className="fa fa-clock-o"></i>Time
-            </button>
-          </div>
-          : undefined
-        }
+  _renderPicker = (isOpen: boolean | undefined) => {
 
-        {showCalendarPicker
-          ? <Calendar {...this.props} isOpen={isOpen} style={{display: isCalendarPanel || !splitPanel ? 'block' : 'none'}} />
-          : undefined
-        }
+    return (
+      <Picker
+        {...this.props}
+        className="datetime-picker-popup"
+        isOpen={isOpen}
+        onChange={this.handleChange} />
+    );
+  }
 
-        {showTimePicker
-          ? <Time {...this.props} style={{display: isTimePanel || !splitPanel ? 'block' : 'none'}} />
-          : undefined
-        }
+  render() {
+    const {children, appendToBody, className, moment} = this.props;
+    const {isOpen} = this.state;
+
+    return (
+      <div className={`datetime-trigger ${className}`}>
+        <div onClick={this.togglePicker.bind(this, !isOpen)} ref="trigger">
+          {children}
+          <TextField
+            value={moment.format('YYYY-MM-DD HH:mm')}
+           />
+
+        </div>
+        {appendToBody ? this._renderPortal() : this._renderPicker(isOpen)}
       </div>
     );
   }

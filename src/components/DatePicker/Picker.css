@@ -1,4 +1,4 @@
-.DatePicker {
+.Picker {
   position: relative;
   border: 1px solid #dbdbdb;
   background-color: var(--color-typo-white);
@@ -21,7 +21,7 @@
 .datetime-trigger {
   position: relative;
 
-  .DatePicker {
+  .Picker {
     position: absolute;
     top: 100%;
   }
