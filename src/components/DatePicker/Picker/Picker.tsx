@@ -2,12 +2,12 @@ import './Picker.css';
 
 import React, {useState} from 'react';
 
-import Calendar from './panels/Calendar/Calendar';
-import Time from './panels/Time/Time';
-import Shortcuts from './panels/Shortcuts/Shortcuts';
-import {cn} from "../../utils/bem";
-import { PropsWithHTMLAttributes } from '../../utils/types/PropsWithHTMLAttributes';
-import {usePropsHandler} from "../EventInterceptor/usePropsHandler";
+import Calendar from '../panels/Calendar/Calendar';
+import Time from '../panels/Time/Time';
+import Shortcuts from '../panels/Shortcuts/Shortcuts';
+import {cn} from "../../../utils/bem";
+import { PropsWithHTMLAttributes } from '../../../utils/types/PropsWithHTMLAttributes';
+import {usePropsHandler} from "../../EventInterceptor/usePropsHandler";
 
 export const pickerPropPanel = ['calendar', 'time', 'shortcuts'] as const;
 export type PickerPropPanel = typeof pickerPropPanel[number];
