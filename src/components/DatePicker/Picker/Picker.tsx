@@ -1,6 +1,6 @@
 import './Picker.css';
 
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import Calendar from '../panels/Calendar/Calendar';
 import Time from '../panels/Time/Time';
@@ -77,6 +77,10 @@ export const Picker = React.forwardRef<HTMLDivElement, PickerProps>((props, ref)
 
     const isTimePanel = panel === 'time';
     const isCalendarPanel = panel === 'calendar';
+
+  useEffect(() => {
+    console.log(props)
+  });
 
     return (
       <div

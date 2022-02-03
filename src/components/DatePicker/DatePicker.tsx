@@ -128,6 +128,7 @@ export const DatePicker = React.forwardRef<HTMLDivElement, DatePickerProps>((pro
   const handleDocumentClick = (evt:any) => {
     if (!findDOMNode(datePickerRef.current)?.contains(evt.target)) {
       togglePicker(false);
+
     }
   }
 
@@ -151,8 +152,6 @@ export const DatePicker = React.forwardRef<HTMLDivElement, DatePickerProps>((pro
   }
 
   const getPosition = () => {
-    console.log('getPosition')
-    console.log(dateRef)
     if (dateRef !== null) {
       const elem = dateRef.current;
       let elemBCR: any
@@ -186,7 +185,7 @@ export const DatePicker = React.forwardRef<HTMLDivElement, DatePickerProps>((pro
 
     return (
       <Picker
-        {...otherProps}
+        {...props}
         className="datetime-picker-popup"
         isOpen={isOpen}
         onChange={handleChange} />
