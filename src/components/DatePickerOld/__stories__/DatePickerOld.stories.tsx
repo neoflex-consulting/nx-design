@@ -6,7 +6,7 @@ import { createMetadata } from '../../../utils/storybook';
 import mdx from './DatePickerOld.docs.mdx';
 
 import {getDate} from '../utils';
-import {Trigger} from "../Trigger";
+import {DPicker} from "../DPicker";
 // const defaultKnobs = () => ({
 //   disabled: boolean('disabled', false),
 //   size: select('size', datePickerPropSize, datePickerPropSizeDefault),
@@ -27,7 +27,7 @@ export function Playground() {
 
   return (
     <form>
-      <Trigger
+      <DPicker
         value={value}
         onChange={handleChange}>
         <input type="text"

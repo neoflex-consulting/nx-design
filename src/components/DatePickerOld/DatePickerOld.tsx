@@ -111,7 +111,7 @@ import Shortcuts from './panels/Shortcuts/Shortcuts';
 import {PropsWithHTMLAttributes} from "../../utils/types/PropsWithHTMLAttributes";
 import {usePropsHandler} from "../EventInterceptor/usePropsHandler";
 import {cn} from "../../utils/bem";
-import {cnDatetimeTrigger} from "./Trigger";
+import {cnDatetimeTrigger} from "./DPicker";
 
 export const pickerPropPanel = ['calendar', 'time', 'shortcuts'] as const;
 export type PickerPropPanel = typeof pickerPropPanel[number];

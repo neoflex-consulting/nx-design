@@ -33,11 +33,11 @@ type Props = {
   children?: any
 }
 
-export type TriggerProps = PropsWithHTMLAttributes<Props, HTMLDivElement>;
+export type DatePickerProps = PropsWithHTMLAttributes<Props, HTMLDivElement>;
 
-export const cnDatetimeTrigger = cn('Trigger');
+export const cnDatePicker = cn('Trigger');
 
-export const Trigger = React.forwardRef<HTMLDivElement, TriggerProps>((props, ref) => {
+export const DPicker = React.forwardRef<HTMLDivElement, DatePickerProps>((props, ref) => {
   const datePickerRef = ref || React.useRef<HTMLDivElement>(null);
   const dateRef = React.useRef<HTMLDivElement>(null);
   const {
@@ -65,7 +65,7 @@ export const Trigger = React.forwardRef<HTMLDivElement, TriggerProps>((props, re
     disabled,
     children,
     ...otherProps
-  } = usePropsHandler(cnDatetimeTrigger(), props, datePickerRef as React.RefObject<HTMLDivElement>);
+  } = usePropsHandler(cnDatePicker(), props, datePickerRef as React.RefObject<HTMLDivElement>);
   const [open, setOpen] = useState<boolean>(false);
   const [pos, setPos] = useState<any>();
 
@@ -153,7 +153,7 @@ export const Trigger = React.forwardRef<HTMLDivElement, TriggerProps>((props, re
 
   return (
     <div
-      className={cnDatetimeTrigger({},[className])}
+      className={cnDatePicker({},[className])}
       ref={datePickerRef}
       {...otherProps}
     >
