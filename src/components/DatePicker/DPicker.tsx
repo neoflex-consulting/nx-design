@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import {findDOMNode} from 'react-dom';
 
-import {DatePickerOld} from './DatePickerOld';
+import {Panel} from './Panel';
 import Portal from './Portal';
 import {PropsWithHTMLAttributes} from "../../utils/types/PropsWithHTMLAttributes";
 import {cn} from "../../utils/bem";
 import {usePropsHandler} from "../EventInterceptor/usePropsHandler";
+import {TextField} from "../TextField/TextField";
 
 type Props = {
   isOpen?: any,
@@ -30,12 +31,25 @@ type Props = {
   appendToBody?: any,
   closeOnSelectDay?: any,
   disabled?: any,
-  children?: any
+  children?: any,
+
+  width?: any,
+  form?: any,
+  state?: any,
+  size?: any,
+  view?: any,
+  type?: any,
+  maxLength?: any,
+  minRows?: any,
+  maxRows?: any,
+  placeholder?: any,
+  leftSide?: any,
+  rightSide?: any
 }
 
 export type DatePickerProps = PropsWithHTMLAttributes<Props, HTMLDivElement>;
 
-export const cnDatePicker = cn('Trigger');
+export const cnDatePicker = cn('DPicker');
 
 export const DPicker = React.forwardRef<HTMLDivElement, DatePickerProps>((props, ref) => {
   const datePickerRef = ref || React.useRef<HTMLDivElement>(null);
@@ -64,6 +78,19 @@ export const DPicker = React.forwardRef<HTMLDivElement, DatePickerProps>((props,
     closeOnSelectDay,
     disabled,
     children,
+
+    width,
+    form,
+    state,
+    size,
+    view,
+    type,
+    maxLength,
+    minRows,
+    maxRows,
+    placeholder,
+    leftSide,
+    rightSide,
     ...otherProps
   } = usePropsHandler(cnDatePicker(), props, datePickerRef as React.RefObject<HTMLDivElement>);
   const [open, setOpen] = useState<boolean>(false);
@@ -87,7 +114,6 @@ export const DPicker = React.forwardRef<HTMLDivElement, DatePickerProps>((props,
   const handleDocumentClick = (evt:any) => {
     if (!findDOMNode(datePickerRef.current)?.contains(evt.target)) {
       togglePicker(false);
-
     }
   }
 
@@ -143,7 +169,7 @@ export const DPicker = React.forwardRef<HTMLDivElement, DatePickerProps>((props,
   const renderPicker = (isOpen: boolean | undefined) => {
 
     return (
-      <DatePickerOld
+      <Panel
         {...props}
         className="datetime-picker-popup"
         isOpen={isOpen}
@@ -158,7 +184,24 @@ export const DPicker = React.forwardRef<HTMLDivElement, DatePickerProps>((props,
       {...otherProps}
     >
       <div onClick={() => togglePicker(!open)} ref={dateRef}>
-        {children}
+        <TextField
+          value={value.format('YYYY-MM-DD HH:mm')}
+          onChange={onChange}
+
+          width={width}
+          form={form}
+          state={state || undefined}
+          size={size}
+          view={view}
+          type={type}
+          maxLength={maxLength}
+          minRows={minRows}
+          maxRows={maxRows}
+          placeholder={placeholder}
+          leftSide={leftSide}
+          rightSide={rightSide}
+          disabled={disabled}
+        />
       </div>
       {appendToBody ? renderPortal : renderPicker(open)}
     </div>

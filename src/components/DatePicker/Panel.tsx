@@ -1,4 +1,4 @@
-import './DatePickerOld.css';
+import './Panel.css';
 
 // import React, { ChangeEventHandler } from 'react';
 
@@ -102,7 +102,6 @@ import './DatePickerOld.css';
 // });
 
 import React, {useState} from 'react';
-import classNames from 'classnames/bind';
 // import blacklist from 'blacklist';
 
 import {Calendar} from './panels/Calendar/Calendar';
@@ -111,7 +110,6 @@ import Shortcuts from './panels/Shortcuts/Shortcuts';
 import {PropsWithHTMLAttributes} from "../../utils/types/PropsWithHTMLAttributes";
 import {usePropsHandler} from "../EventInterceptor/usePropsHandler";
 import {cn} from "../../utils/bem";
-import {cnDatetimeTrigger} from "./DPicker";
 
 export const pickerPropPanel = ['calendar', 'time', 'shortcuts'] as const;
 export type PickerPropPanel = typeof pickerPropPanel[number];
@@ -151,7 +149,7 @@ export const cnPicker = cn('Picker');
 
 export type PickerProps = PropsWithHTMLAttributes<Props, HTMLDivElement>;
 
-export const DatePickerOld = React.forwardRef<HTMLDivElement, PickerProps>((props, ref) => {
+export const Panel = React.forwardRef<HTMLDivElement, PickerProps>((props, ref) => {
   const pickerRef = ref || React.useRef<HTMLDivElement>(null);
   const {
     isOpen = true,
