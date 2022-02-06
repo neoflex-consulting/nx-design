@@ -37,31 +37,36 @@ export type DatePickerPropValue = moment.Moment;
 type Props = {
   className?: string,
   value: DatePickerPropValue,
-    disabled?: boolean,
+  disabled?: boolean,
   isOpen?: boolean,
-    onChange?: DatePickerPropOnChange,
-    appendToBody?: boolean,
-    closeOnSelectDay?: boolean,
-//   shortcuts?: any,
-//   splitPanel?: any,
-//   showTimePicker?: any,
-//   showCalendarPicker?: any,
-//   onSelect?: any,
-
-//   maxDate?: any,
-//   minDate?: any,
-//   selected?: any,
-//   range?: any,
-//   rangeAt?: any,
-//   dateLimit?: any,
-//   style?: any,
-
-//   customButtonText?: any,
-//   showCustomButton?: any,
-//   customRange?: any,
+  onChange?: DatePickerPropOnChange,
+  appendToBody?: boolean,
+  closeOnSelectDay?: boolean,
 
 
 
+
+  shortcuts?: any,
+  splitPanel?: any,
+  showTimePicker?: any,
+  showCalendarPicker?: any,
+  onSelect?: any,
+  maxDate?: any,
+  minDate?: any,
+  selected?: any,
+  range?: any,
+  rangeAt?: any,
+  dateLimit?: any,
+  style?: any,
+  customButtonText?: any,
+  showCustomButton?: any,
+  customRange?: any,
+
+  months?: any,
+  changePanel?: any,
+  dayFormat?: any,
+  weeks?: any,
+  minPanel?: any,
 }
 //
 // interface State {
@@ -85,28 +90,32 @@ export const DatePicker = React.forwardRef<HTMLDivElement, DatePickerProps>((pro
     onChange,
     appendToBody,
     closeOnSelectDay,
-    // shortcuts,
-    // splitPanel,
-    // showTimePicker = true,
-    // showCalendarPicker = true,
-    // onSelect,
-    // maxDate,
-    // minDate,
-    // selected,
-    // range,
-    // rangeAt,
-    // dateLimit,
-    // style,
 
-    // months,
-    // changePanel,
-    // dayFormat,
-    // weeks,
-    // minPanel,
-    // panel = datePickerPropPanelDefault,
+    shortcuts,
+    splitPanel,
+    showTimePicker,
+    showCalendarPicker,
+    onSelect,
+    maxDate,
+    minDate,
+    selected,
+    range,
+    rangeAt,
+    dateLimit,
+    style,
+    customButtonText,
+    showCustomButton,
+    customRange,
+
+    months,
+    changePanel,
+    dayFormat,
+    weeks,
+    minPanel,
+     // = datePickerPropPanelDefault,
     ...otherProps
   } = usePropsHandler(cnDatetimeTrigger(), props, datePickerRef as React.RefObject<HTMLDivElement>);
-  const [open, setOpen] = useState<boolean>(isOpen);
+  const [open, setOpen] = useState<boolean>(false);
   const [pos, setPos] = useState<any>();
 
   useEffect(() => {
@@ -139,6 +148,8 @@ export const DatePicker = React.forwardRef<HTMLDivElement, DatePickerProps>((pro
   }
 
   const handleChange = (value: any, currentPanel: any) => {
+    console.log('new DataPicker HandleChange')
+    console.log(value)
     if (currentPanel === 'day' && closeOnSelectDay) {
       setOpen(false)
     }

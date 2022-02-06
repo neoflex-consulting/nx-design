@@ -13,7 +13,7 @@ export const pickerPropPanel = ['calendar', 'time', 'shortcuts'] as const;
 export type PickerPropPanel = typeof pickerPropPanel[number];
 export const pickerPropPanelDefault: PickerPropPanel = pickerPropPanel[0];
 
-interface Props {
+type Props = {
   isOpen?: boolean,
   shortcuts?: any,
   splitPanel?: any,
@@ -77,10 +77,6 @@ export const Picker = React.forwardRef<HTMLDivElement, PickerProps>((props, ref)
 
     const isTimePanel = panel === 'time';
     const isCalendarPanel = panel === 'calendar';
-
-  useEffect(() => {
-    console.log(props)
-  });
 
     return (
       <div
