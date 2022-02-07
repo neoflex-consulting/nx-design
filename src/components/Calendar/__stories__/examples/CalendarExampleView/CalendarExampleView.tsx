@@ -6,20 +6,18 @@ import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/D
 import { StoryBookExample } from '../../../../../uiKit/components/StoryBookExample/StoryBookExample';
 import { Calendar } from '../../../Calendar';
 
-export type CalendarPropType = 'date' | 'date-range';
-
-export const CalendarExampleView = () => {
+export const CalendarExampleViewClassic = () => {
   return (
     <StoryBookExample className={cnDocsDecorator('Section')}>
-      <Calendar view="oneMonth" />
+      <Calendar view="classic" />
     </StoryBookExample>
   );
 };
 
-export const CalendarExampleViewTwo = () => {
+export const CalendarExampleViewBook = () => {
   return (
     <StoryBookExample className={cnDocsDecorator('Section')}>
-      <Calendar view="twoMonths" />
+      <Calendar view="book" />
     </StoryBookExample>
   );
 };

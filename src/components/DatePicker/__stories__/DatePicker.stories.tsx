@@ -1,103 +1,143 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { boolean, date, select, text } from '@storybook/addon-knobs';
+import { addDays, Locale, startOfWeek } from 'date-fns';
+import enUSLocale from 'date-fns/locale/en-US';
+import esLocale from 'date-fns/locale/es';
+import ruLocale from 'date-fns/locale/ru';
+import zhCNLocale from 'date-fns/locale/zh-CN';
 
+import { IconCalendar } from '../../../icons/IconCalendar/IconCalendar';
+import { maxDateDefault, minDateDefault } from '../../../utils/date';
+import { getSizeByMap } from '../../../utils/getSizeByMap';
 import { createMetadata } from '../../../utils/storybook';
-
-
-import mdx from './DatePicker.docs.mdx';
-
-import {getDate} from '../utils';
-import {DPicker} from "../DPicker";
-import {boolean, number, select, text} from "@storybook/addon-knobs";
+import { Button } from '../../Button/Button';
+import { CalendarPropView, CalendarPropViewDefault } from '../../Calendar/helpers';
 import {
   textFieldPropForm,
   textFieldPropFormDefault,
   textFieldPropSize,
   textFieldPropSizeDefault,
-  textFieldPropState,
+  textFieldPropStatus,
   textFieldPropView,
   textFieldPropViewDefault,
-  textFieldPropWidth,
-  textFieldPropWidthDefault
-} from "../../TextField/TextField";
-import {IconPhoto} from "../../../icons/IconPhoto/IconPhoto";
+} from '../../TextField/TextField';
+import { DatePicker } from '../DatePickerCanary';
+import {
+  datePickerPropDropdownForm,
+  datePickerPropDropdownFormDefault,
+  datePickerPropType,
+  datePickerPropTypeDefault,
+  DatePickerPropValue,
+} from '../helpers';
+
+import mdx from './DatePicker.docs.mdx';
+
+const localeProp = ['ru', 'en-US', 'zh-CN', 'es'] as const;
+type LocaleProp = typeof localeProp[number];
+const localeDefault: LocaleProp = localeProp[0];
+
+const localeMap: Record<LocaleProp, Locale> = {
+  'ru': ruLocale,
+  'en-US': enUSLocale,
+  'zh-CN': zhCNLocale,
+  'es': esLocale,
+};
+
 const defaultKnobs = () => ({
-  width: select('width', textFieldPropWidth, textFieldPropWidthDefault),
+  type: select('type', datePickerPropType, datePickerPropTypeDefault),
   form: select('form', textFieldPropForm, textFieldPropFormDefault),
-  state: select('state', ['', ...textFieldPropState], ''),
+  status: select('status', ['', ...textFieldPropStatus], ''),
+  withAdditionalControls: boolean('withAdditionalControls', false),
+  label: text('label', 'Заголовок'),
+  caption: text('caption', 'Подпись'),
+  required: boolean('required', false),
+  labelPosition: select('labelPosition', ['top', 'left'], 'top'),
   size: select('size', textFieldPropSize, textFieldPropSizeDefault),
   view: select('view', textFieldPropView, textFieldPropViewDefault),
   disabled: boolean('disabled', false),
-  type: select('type', ['text', 'textarea'], 'text'),
-  maxLength: number('maxLength', 200),
-  minRows: number('minRows', 1),
-  maxRows: number('maxRows', 5),
-  placeholder: text('placeholder', 'My placeholder'),
-  leftSideType: select('leftSideType', ['icon', 'text', 'false'], 'false'),
-  leftSideText: text('leftSideText', 'from'),
-  rightSideType: select('rightSideType', ['icon', 'text', 'false'], 'false'),
-  rightSideText: text('rightSideText', 'm²'),
+  withIcon: boolean('withIcon', false),
+  minDate: date('minDate', minDateDefault),
+  maxDate: date('maxDate', maxDateDefault),
+  withEvents: boolean('withEvents', false),
+  locale: select('locale', localeProp, localeDefault),
+  calendarView: select('calendarView', CalendarPropView, CalendarPropViewDefault),
+  dropdownForm: select(
+    'dropdownForm',
+    datePickerPropDropdownForm,
+    datePickerPropDropdownFormDefault,
+  ),
 });
+
+const additionalControls = () => {
+  return [<Button label="Кнопка" />, <Button label="Кнопка" />];
+};
 
 export function Playground() {
   const {
-    width,
     form,
-    state,
+    status,
+    label,
+    caption,
+    required,
+    labelPosition,
     size,
     view,
-    type,
-    maxLength,
-    minRows,
-    maxRows,
-    placeholder,
-    leftSideType,
-    leftSideText,
-    rightSideType,
-    rightSideText,
+    withIcon,
     disabled,
+    withEvents,
+    locale,
+    calendarView,
+    dropdownForm,
+    type,
+    minDate,
+    maxDate,
+    withAdditionalControls,
   } = defaultKnobs();
-  const [value, setValue] = React.useState<any>(getDate);
 
-  const handleChange = ( value : any) => {
-    setValue(value);
-  };
+  const [value, setValue] = useState<DatePickerPropValue<typeof type>>(null);
 
-  const leftSideSelect = {
-    text: leftSideText,
-    icon: IconPhoto,
-    false: undefined,
-  };
+  const currentDay = new Date();
 
-  const rightSideSelect = {
-    text: rightSideText,
-    icon: IconPhoto,
-    false: undefined,
-  };
+  const events = withEvents
+    ? [startOfWeek(currentDay, { locale: ruLocale }), currentDay, addDays(currentDay, 2)]
+    : undefined;
 
-  const leftSide = leftSideSelect[leftSideType];
-  const rightSide = rightSideSelect[rightSideType];
+  const icon = withIcon ? IconCalendar : undefined;
+
+  useEffect(() => {
+    setValue(null);
+  }, [type]);
 
   return (
-    <form>
-      <DPicker
-        value={value}
-        onChange={handleChange}
-
-        width={width}
-        form={form}
-        state={state || undefined}
-        size={size}
-        view={view}
+    <div style={{ maxWidth: 500 }}>
+      <DatePicker
         type={type}
-        maxLength={maxLength}
-        minRows={minRows}
-        maxRows={maxRows}
-        placeholder={placeholder}
-        leftSide={leftSide}
-        rightSide={rightSide}
+        width="full"
+        form={form}
+        label={label}
+        labelPosition={labelPosition}
+        caption={caption}
+        required={required}
+        value={value}
+        status={status || undefined}
+        view={view}
         disabled={disabled}
+        size={size}
+        onChange={({ value }) => setValue(value)}
+        rightSide={icon}
+        events={events}
+        locale={getSizeByMap(localeMap, locale)}
+        calendarView={calendarView}
+        dropdownForm={dropdownForm}
+        minDate={new Date(minDate)}
+        maxDate={new Date(maxDate)}
+        {...(type === 'date-range' && {
+          endFieldRightSide: icon,
+          startFieldRightSide: icon,
+        })}
+        renderAdditionalControls={withAdditionalControls ? additionalControls : undefined}
       />
-    </form>
+    </div>
   );
 }
 
@@ -110,7 +150,7 @@ export default createMetadata({
     },
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/v9Jkm2GrymD277dIGpRBSH/Consta-UI-Kit?node-id=57%3A1655',
+      url: 'https://www.figma.com/file/v9Jkm2GrymD277dIGpRBSH/Consta-UI-Kit?node-id=11302%3A58',
     },
   },
 });

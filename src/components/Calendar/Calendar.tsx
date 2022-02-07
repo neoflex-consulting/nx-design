@@ -1,42 +1,33 @@
-import './Calendar.css';
+import React, { forwardRef } from 'react';
 
-import React from 'react';
-
-import { cn } from '../../utils/bem';
 import { getSizeByMap } from '../../utils/getSizeByMap';
 
-import { CalendarViewOneMonth } from './CalendarViewOneMonth/CalendarViewOneMonth';
-import { CalendarViewSlider } from './CalendarViewSlider/CalendarViewSlider';
-import { CalendarViewTwoMonths } from './CalendarViewTwoMonths/CalendarViewTwoMonths';
+import { CalendarTypeDate } from './CalendarTypeDate/CalendarTypeDate';
+import { CalendarTypeDateTime } from './CalendarTypeDateTime/CalendarTypeDateTime';
+import { CalendarTypeMonth } from './CalendarTypeMonth/CalendarTypeMonth';
+import { CalendarTypeTime } from './CalendarTypeTime/CalendarTypeTime';
+import { CalendarTypeYear } from './CalendarTypeYear/CalendarTypeYear';
 import {
   CalendarComponent,
-  CalendarPropView,
-  calendarPropViewDefault,
-  CalendarViewComponent,
-} from './helpers';
+  CalendarPropType,
+  CalendarPropTypeDefault,
+  CalendarTypeComponent,
+} from './helpers/types';
 
-export const cnCalendar = cn('Calendar');
+const typeMap: Record<CalendarPropType, CalendarTypeComponent<CalendarPropType>> = {
+  'date': CalendarTypeDate,
+  'month': CalendarTypeMonth,
+  'year': CalendarTypeYear,
+  'time': CalendarTypeTime,
+  'date-time': CalendarTypeDateTime,
+} as const;
 
-const viewMap: Record<CalendarPropView, CalendarViewComponent> = {
-  oneMonth: CalendarViewOneMonth,
-  twoMonths: CalendarViewTwoMonths,
-  slider: CalendarViewSlider,
-};
+export const Calendar: CalendarComponent = forwardRef((props, ref) => {
+  const { type = CalendarPropTypeDefault, ...otherProps } = props;
 
-export const Calendar: CalendarComponent = React.forwardRef((props, ref) => {
-  const { view = calendarPropViewDefault, className, ...otherProps } = props;
+  const Component = getSizeByMap(typeMap, type);
 
-  const ViewComponent = getSizeByMap(viewMap, view);
-
-  return <ViewComponent {...otherProps} ref={ref} className={cnCalendar(null, [className])} />;
+  return <Component {...otherProps} ref={ref} />;
 });
 
-export * from './CalendarСell/CalendarСell';
-export * from './CalendarDay/CalendarDay';
-export * from './CalendarMonth/CalendarMonth';
-export * from './CalendarMonthLabel/CalendarMonthLabel';
-export * from './CalendarMonthToggler/CalendarMonthToggler';
-export * from './CalendarSlider/CalendarSlider';
-export * from './CalendarViewOneMonth/CalendarViewOneMonth';
-export * from './CalendarViewSlider/CalendarViewSlider';
-export * from './CalendarViewTwoMonths/CalendarViewTwoMonths';
+export * from './helpers/types';

@@ -1,17 +1,19 @@
-import React from 'react';
-import { startOfWeek } from 'date-fns';
-import ruLocale from 'date-fns/locale/ru';
+import React, { useState } from 'react';
 
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { StoryBookExample } from '../../../../../uiKit/components/StoryBookExample/StoryBookExample';
 import { Calendar } from '../../../Calendar';
 
-export type CalendarPropType = 'date' | 'date-range';
+export const CalendarExamplePeriod = () => {
+  const [rangeValue, setRangeValue] = useState<[Date?, Date?]>([]);
 
-export const CalendarExampleDateMin = () => {
   return (
     <StoryBookExample className={cnDocsDecorator('Section')}>
-      <Calendar minDate={startOfWeek(new Date(), { locale: ruLocale })} maxDate={new Date()} />
+      <Calendar
+        value={rangeValue}
+        onChangeRange={({ value }) => setRangeValue(value)}
+        view="slider"
+      />
     </StoryBookExample>
   );
 };

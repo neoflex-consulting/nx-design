@@ -76,9 +76,9 @@ $color-text-white: #ffffff;
   --color-control-bg-active: color($color-base-path a(50%)); /* Цвет тени в состонии нажатия  */
 
   /* Primary */
-  --color-control-bg-primary: color($color-base-path a(100%)); /* Цвет фона активного контрола */
-  --color-control-bg-primary-hover: color($color-base-path h(+2) s(+15%) l(-7%)); /* Цвет фона активного контрола по ховеру */
-  --color-control-bg-primary-focus: color($color-base-path h(+2) s(+15%) l(-7%)); /* Цвет фона активного контрола по ховеру */
+  --color-control-bg-primary: color($color-base-secondary a(100%)); /* Цвет фона активного контрола */
+  --color-control-bg-primary-hover: color($color-base-secondary h(+2) s(+15%) l(-7%)); /* Цвет фона активного контрола по ховеру */
+  --color-control-bg-primary-focus: color($color-base-secondary h(+2) s(+15%) l(-7%)); /* Цвет фона активного контрола по ховеру */
   --color-control-typo-primary: color($color-base-base l(+100%)); /* Цвет акцентного текста */
   --color-control-typo-primary-hover: color($color-base-base l(+100%)); /* Цвет акцентного текста */
 

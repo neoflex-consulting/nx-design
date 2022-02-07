@@ -1,15 +1,16 @@
 import * as React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { Calendar, cnCalendar, cnCalendarDay } from '../Calendar';
+import { Calendar } from '../Calendar';
+import { cnCalendarItem } from '../CalendarItem/CalendarItem';
 
 type CalendarProps = React.ComponentProps<typeof Calendar>;
 
-const testId = cnCalendar();
+const testId = 'Calendar';
 
 const getRender = () => screen.getByTestId(testId);
-const getCalendarDays = () => getRender().querySelectorAll(`.${cnCalendarDay()}`);
-const getCalendarDay = (item = 0) => getCalendarDays()[item];
+const getCalendarItems = () => getRender().querySelectorAll(`.${cnCalendarItem()}`);
+const getCalendarItem = (item = 0) => getCalendarItems()[item];
 
 const renderComponent = (props: CalendarProps = {}) => {
   return render(<Calendar {...props} data-testid={testId} />);
@@ -34,9 +35,9 @@ describe('Компонент Calendar', () => {
       const handleClick = jest.fn();
       renderComponent({ onChange: handleClick, currentVisibleDate: new Date(1970, 0) });
       // 1 Января
-      const calendarDay = getCalendarDay(3);
+      const CalendarItem = getCalendarItem(3);
 
-      fireEvent.click(calendarDay);
+      fireEvent.click(CalendarItem);
 
       expect(handleClick).toHaveBeenCalledTimes(1);
     });
@@ -44,9 +45,9 @@ describe('Компонент Calendar', () => {
       const handleClick = jest.fn();
       renderComponent({ onChange: handleClick, currentVisibleDate: new Date(1970, 0) });
 
-      const calendarDay = getCalendarDay(0);
+      const CalendarItem = getCalendarItem(0);
 
-      fireEvent.click(calendarDay);
+      fireEvent.click(CalendarItem);
 
       expect(handleClick).toHaveBeenCalledTimes(0);
     });
@@ -60,9 +61,9 @@ describe('Компонент Calendar', () => {
         maxDate: new Date(1970, 0, 3),
       });
 
-      const calendarDay = getCalendarDay(5);
+      const CalendarItem = getCalendarItem(5);
 
-      fireEvent.click(calendarDay);
+      fireEvent.click(CalendarItem);
 
       expect(handleClick).toHaveBeenCalledTimes(1);
     });
@@ -76,9 +77,9 @@ describe('Компонент Calendar', () => {
         maxDate: new Date(1970, 0, 3),
       });
 
-      const calendarDay = getCalendarDay(0);
+      const CalendarItem = getCalendarItem(0);
 
-      fireEvent.click(calendarDay);
+      fireEvent.click(CalendarItem);
 
       expect(handleClick).toHaveBeenCalledTimes(0);
     });

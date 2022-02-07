@@ -1,89 +1,159 @@
 import {
-  CalendarExampleView,
-  CalendarExampleViewTwo,
+  CalendarExampleViewClassic,
+  CalendarExampleViewBook,
   CalendarExampleViewSlider,
-  CalendarExampleCurrent,
 } from './examples/CalendarExampleView/CalendarExampleView';
 
-import { CalendarExampleDateMin } from './examples/CalendarExamplePeriod/CalendarExamplePeriod';
+import { CalendarExampleCurrentVisibleDate } from './examples/CalendarExampleCurrentVisibleDate/CalendarExampleCurrentVisibleDate';
+
+import {
+  CalendarExampleTypeYear,
+  CalendarExampleTypeMonth,
+  CalendarExampleTypeDate,
+  CalendarExampleTypeCalendar,
+  CalendarExampleTypeTime,
+} from './examples/CalendarExampleType/CalendarExampleType';
+
+import { CalendarExampleDateMin } from './examples/CalendarExampleDateMin/CalendarExampleDateMin';
+
+import { CalendarExampleMultiplicity } from './examples/CalendarExampleMultiplicity/CalendarExampleMultiplicity';
+
+import { CalendarExamplePeriod } from './examples/CalendarExamplePeriod/CalendarExamplePeriod';
 
 import { CalendarExampleLocale } from './examples/CalendarExampleLocale/CalendarExampleLocale';
 
 import { CalendarExampleEvents } from './examples/CalendarExampleEvents/CalendarExampleEvents';
 
+<!--info
+description: Календарь. Можно выбрать дату или период.
+-->
+
 # Calendar
 
-Календарь нужен, чтобы пользователь мог выбрать дату или период.
+```tsx
+import { Calendar } from 'nx-design/CalendarCanary';
+```
 
+Этот компонент нужен, чтобы пользователь мог выбрать дату или период.
+
+- [Тип календаря](#тип-календаря)
 - [Внешний вид](#внешний-вид)
-  - [Какой месяц показывать](#какой-месяц-показывать)
 - [Выбор даты](#выбор-даты)
   - [Ограничение выбора](#ограничение-выбора)
+  - [Какой месяц показывать](#какой-месяц-показывать)
+- [Выбор времени](#выбор-времени)
 - [События на календаре](#события-на-календаре)
 - [Локализация](#локализация)
+- [Импорт](#импорт)
 - [Список свойств](#свойства)
+
+## Тип календаря
+
+За содержимое календаря отвечает свойство `type`, варианты:
+
+- `'year'` — выбор года,
+- `'month'` — выбор месяца,
+- `'date'` — выбор даты,
+- `'date-time'` — выбор даты и времени,
+- `'time'` — выбор времени.
+
+##### type="year"
+
+```tsx
+<Calendar type="year" />
+```
+
+<CalendarExampleTypeYear />
+
+##### type="month"
+
+```tsx
+<Calendar type="month" />
+```
+
+<CalendarExampleTypeMonth />
+
+##### type="date"
+
+```tsx
+<Calendar type="date" />
+```
+
+<CalendarExampleTypeDate />
+
+##### type="date-time"
+
+```tsx
+<Calendar type="date-time" />
+```
+
+<CalendarExampleTypeCalendar />
+
+##### type="time"
+
+```tsx
+<Calendar type="time" />
+```
+
+<CalendarExampleTypeTime />
 
 ## Внешний вид
 
-За внешний вид календаря отвечает свойство `view`. Варианты:
+За внешний вид компонента отвечает свойство `view`. Варианты:
 
-- показать 1 месяц — `'oneMonth'` (отображается по умолчанию),
-- показать 2 месяца — `'twoMonths'`,
-- 2 месяца со слайдером — `'slider'`.
+- классический вид, одна страница календаря — `'classic'` (отображается по умолчанию),
+- в виде двух страничек — `'book'`,
+- в виде двух страничек со слайдером — `'slider'`.
 
-**Календарь на один месяц**
-
-<CalendarExampleView />
+##### view="classic"
 
 ```tsx
-<Calendar view="oneMonth" />
+<Calendar view="classic" />
 ```
 
-**Календарь на два месяца**
+<CalendarExampleViewClassic />
 
-<CalendarExampleViewTwo />
+##### view="book"
 
 ```tsx
-<Calendar view="twoMonths" />
+<Calendar view="book" />
 ```
 
-**Календарь со слайдером**
+<CalendarExampleViewBook />
+
+##### view="slider"
 
 <CalendarExampleViewSlider />
-
-```tsx
-<Calendar view="slider" />
-```
-
-### Какой месяц показывать
-
-Вы можете выбрать, какой месяц показывать. Для этого передайте дату в свойстве `currentVisibleDate`. Пользователь увидит месяц, в который входит эта дата.
-
-**Показывает месяц, в который входит начало текущей недели**
-
-<CalendarExampleCurrent />
-
-```tsx
-import { startOfWeek } from 'date-fns';
-import ruLocale from 'date-fns/locale/ru';
-
-<Calendar
-  currentVisibleDate={startOfWeek(new Date()), {locale: ruLocale})}
-/>
-```
 
 ## Выбор даты
 
 Выбранная дата передаётся в свойстве `value`.
 
-Пользователь может выбрать только одну дату или указать период, за это отвечает свойство `type`.
+Пользователь может выбрать одну дату или указать период. Период можно указать только при `type: 'date' | 'month' | 'year'`.
 
-- выбрать одну дату — `'date'` (отображается по умолчанию),
-- указать период — `'date-range'`.
+Получить событие выбора даты можно с помощью свойств `onChange` и `onChangeRange`.
 
-> Свойство `value` принимает разные типы в зависимости от значения свойства `type`. Набор типов описан в [CalendarPropValue](#свойства)
+> Свойство `value` описано в [CalendarPropValue](#свойства)
 
-> Событие выбора даты тоже зависит от свойства `type`. Варианты описаны в [CalendarPropOnChange](#свойства)
+> Событие выбора даты описано в [CalendarPropOnChange](#свойства) и в [CalendarPropOnChangeRange](#свойства)
+
+##### Пример с выбором периода
+
+```tsx
+export const CalendarExamplePeriod = () => {
+  const [rangeValue, setRangeValue] = useState<[Date?, Date?]>([]);
+
+  return (
+    <Calendar
+      value={rangeValue}
+      onChangeRange={({ value }) => setRangeValue(value)}
+      view="slider"
+    />
+  );
+};
+```
+
+<CalendarExamplePeriod />
 
 ### Ограничение выбора
 
@@ -91,24 +161,74 @@ import ruLocale from 'date-fns/locale/ru';
 
 Начало диапазона укажите в свойстве `minDate`, конец — в свойстве `maxDate`.
 
-**Календарь с диапазоном дат**
-
-<CalendarExampleDateMin />
+##### Календарь с диапазоном дат
 
 ```tsx
 import { startOfWeek } from 'date-fns';
 import ruLocale from 'date-fns/locale/ru';
 
-<Calendar minDate={startOfWeek(new Date(), { locale: ruLocale })} maxDate={new Date()} />;
+const minDate = startOfWeek(new Date(), { locale: ruLocale });
+const maxDate = new Date();
+
+export const CalendarExampleDateMin = () => {
+  const [value, setValue] = useState<Date | undefined>();
+  return (
+    <Calendar
+      type="date-time"
+      minDate={minDate}
+      maxDate={maxDate}
+      value={value}
+      onChange={({ value }) => setValue(value)}
+    />
+  );
+};
 ```
+
+<CalendarExampleDateMin />
+
+### Какой месяц показывать
+
+Вы можете выбрать, на какой странице открывать календарь.
+Для этого передайте дату в свойстве `currentVisibleDate`.
+Пользователь увидит страницу, на которой находится эта дата.
+
+##### Показывает месяц, в который входит начало текущей недели
+
+```tsx
+<Calendar currentVisibleDate={new Date(2000, 1, 1)} />
+```
+
+<CalendarExampleCurrentVisibleDate />
+
+## Выбор времени
+
+В режиме с выбором времени (`type="time"` или `type="date-time"`) можно показать часы, минуты и секунды.
+За их настройки отвечают эти свойства:
+
+- часы — `multiplicityHours`,
+- минуты — `multiplicityMinutes`,
+- секунды — `multiplicitySeconds`.
+
+По умолчанию значения всех свойств равны `1` (выводятся 24 часа, 60 минут, 60 секунд).
+
+Если нужно убрать секунды или другие единицы, передайте `0` в соответствующем свойстве.
+
+Если хотите показывать не все часы, минуты и секунды, передайте в соответствующем свойстве
+интервал между значениями. Например, если в `multiplicityHours` передать `2`,
+пользователь сможет выбрать только чётные часы — 0, 2, 4 и так далее.
+А если в `multiplicityMinutes` передать `15`, пользователь увидит только четверти часа.
+
+```tsx
+<Calendar type="time" multiplicityHours={2} multiplicityMinutes={5} multiplicitySeconds={0} />
+```
+
+<CalendarExampleMultiplicity />
 
 ## События на календаре
 
 Если какие-то события уже запланированы, укажите их даты в массиве `events`. Тогда их можно будет увидеть на календаре.
 
-**На этой неделе что-то запланировано**
-
-<CalendarExampleEvents />
+##### На этой неделе что-то запланировано
 
 ```tsx
 import { addDays, startOfWeek } from 'date-fns';
@@ -118,51 +238,100 @@ const events = [startOfWeek(new Date(), { locale: ruLocale }), new Date(), addDa
 <Calendar events={events} />;
 ```
 
+<CalendarExampleEvents />
+
 ## Локализация
 
 По умолчанию календарь отображается по-русски. Чтобы поменять язык,
 подключите библиотеку [date-fns](https://date-fns.org/) и укажите локализацию в свойстве `locale`.
 
-**Календарь по-французски**
-
-<CalendarExampleLocale />
+##### Календарь по-французски
 
 ```tsx
 import frLocale from 'date-fns/locale/fr';
 
-const CalendarExampleLocale = () => {
-  return <Calendar locale={frLocale} />;
+const CalendarLocale = {
+  ...frLocale,
+  words: {
+    hours: 'H',
+    minutes: 'Min',
+    seconds: 'S',
+  },
 };
+
+export const CalendarExampleLocale = () => {
+  return <Calendar type="date-time" locale={CalendarLocale} />;
+};
+```
+
+<CalendarExampleLocale />
+
+## Импорт
+
+```tsx
+import { Calendar } from 'nx-design/CalendarCanary';
 ```
 
 ## Свойства
 
-```tsx
+```ts
 import { Locale } from 'date-fns';
 import ruLocale from 'date-fns/locale/ru';
 
-export type CalendarPropType = 'date' | 'date-range';
+type CalendarPropValue = Date | [Date?, Date?];
 
-export type CalendarPropValue<TYPE extends CalendarPropType> = TYPE extends 'date'
-  ? Date
-  : [Date?, Date?];
+type СapableRangeType = 'date' | 'month' | 'year';
 
-export type CalendarPropOnChange<TYPE extends CalendarPropType> = (props: {
-  value: CalendarPropValue<TYPE>;
-  e: React.MouseEvent<HTMLDivElement>;
+type CalendarPropValue<TYPE> = TYPE extends СapableRangeType ? Date | DateRange : Date;
+
+type CalendarPropOnChange = (props: {
+  value: Date;
+  e: React.MouseEvent<HTMLButtonElement>;
 }) => void;
+
+type CalendarPropOnChangeRange<TYPE> = TYPE extends СapableRangeType
+  ? (props: { value: DateRange; e: React.MouseEvent<HTMLButtonElement> }) => void
+  : never;
+
+type LocaleWords = {
+  words?: {
+    hours?: string;
+    minutes?: string;
+    seconds?: string;
+  };
+};
+
+export type CalendarPropLocale = Locale & LocaleWords;
+
+export type CalendarAdditionalControlRenderProp =
+  | React.ReactNode
+  | React.ReactNode[]
+  | AdditionalControlRenderType;
+
+export type AdditionalControlRenderType = (
+  props: CalendarAdditionalControlRenderProps,
+) => React.ReactNode | React.ReactNode[];
+
+export type CalendarAdditionalControlRenderProps = {
+  currentVisibleDate?: Date;
+};
 ```
 
-| Свойство                                         | Тип или варианты значения           | По умолчанию | Описание                                                          |
-| ------------------------------------------------ | ----------------------------------- | ------------ | ----------------------------------------------------------------- |
-| [`view?`](#внешний-вид)                          | `'oneMonth', 'twoMonths', 'slider'` | `'oneMonth'` | Вид календаря                                                     |
-| [`type?`](#выбор-даты)                           | `'date'`, `'date-range'`            | `'date'`     | Тип календаря                                                     |
-| [`value?`](#выбор-даты)                          | `CalendarPropValue`                 | -            | Выбранная дата или диапазон дат                                   |
-| [`minDate?`](#ограничение-выбора)                | `Date`                              | -            | Ограничение выбора дат по меньшей дате                            |
-| [`maxDate?`](#ограничение-выбора)                | `Date`                              | -            | Ограничение выбора дат по большей дате                            |
-| [`events?`](#события-на-календаре)               | `Date[]`                            | -            | События                                                           |
-| [`locale?`](#локализация)                        | `Locale`                            | `ruLocale`   | Локализация                                                       |
-| [`currentVisibleDate?`](#какой-месяц-показывать) | `Date`                              | `new Date()` | Дата, которая входит в страницу календаря, которую нужно показать |
-| [`onChange?`](#выбор-даты)                       | `CalendarPropOnChange`              | -            | Обработчик событий выбора даты или диапазона дат                  |
-| `ref?`                                           | `React.Ref<HTMLDivElement>`         | —            | Ссылка на корневой DOM-элемент компонента                         |
-| `className?`                                     | `string`                            | —            | Дополнительные CSS-классы                                         |
+| Свойство                                         | Тип или варианты значения                              | По умолчанию | Описание                                                                  |
+| ------------------------------------------------ | ------------------------------------------------------ | ------------ | ------------------------------------------------------------------------- |
+| [`view?`](#внешний-вид)                          | `'classic'`, `'book'`, `'slider'`                      | `'classic'`  | Вид календаря                                                             |
+| [`type?`](#тип-календаря)                        | `'date'`, `'month'`, `'year'`, `'time'`, `'date-time'` | `'date'`     | Тип календаря                                                             |
+| [`value?`](#выбор-даты)                          | `CalendarPropValue`                                    | -            | Выбранная дата или диапазон дат                                           |
+| [`minDate?`](#ограничение-выбора)                | `Date`                                                 | -            | Ограничение выбора дат по меньшей дате                                    |
+| [`maxDate?`](#ограничение-выбора)                | `Date`                                                 | -            | Ограничение выбора дат по большей дате                                    |
+| [`events?`](#события-на-календаре)               | `Date[]`                                               | -            | События                                                                   |
+| [`locale?`](#локализация)                        | `CalendarPropLocale`                                   | `ruLocale`   | Локализация                                                               |
+| [`currentVisibleDate?`](#какой-месяц-показывать) | `Date`                                                 | `new Date()` | Дата, которая входит в страницу календаря, которую нужно показать         |
+| [`onChange?`](#выбор-даты)                       | `CalendarPropOnChange`                                 | -            | Обработчик событий выбора даты                                            |
+| [`onChangeRange?`](#выбор-даты)                  | `CalendarPropOnChangeRange`                            | -            | Обработчик событий выбора диапазона дат                                   |
+| [`multiplicitySeconds?`](#выбор-времени)         | `number`                                               | 1            | Интервал для вывода секунд (1 — показать все секунды, 0 — убрать секунды) |
+| [`multiplicityMinutes?`](#выбор-времени)         | `number`                                               | 1            | Интервал для вывода минут (1 — показать все минуты, 0 — убрать минуты)    |
+| [`multiplicityHours?`](#выбор-времени)           | `number`                                               | 1            | Интервал для вывода часов (1 — показать все часы, 0 — убрать часы)        |
+| `ref?`                                           | `React.Ref<HTMLDivElement>`                            | -            | Ссылка на корневой DOM-элемент компонента                                 |
+| `className?`                                     | `string`                                               | -            | Дополнительные CSS-классы                                                 |
+| `renderAdditionalControls?`                      | `CalendarAdditionalControlRenderProp`                  | -            | Дополнительные конторолы для выбора даты                                  |

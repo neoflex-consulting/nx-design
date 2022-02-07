@@ -71,7 +71,7 @@ const data: ComponentsGridProps['data'] = [
   {
     href: '/?path=/story/components-datepicker--playground',
     name: 'DatePicker',
-    description: 'Выбор даты. Можно выбрать один вариант.',
+    description: 'Поле со всплывающим календарём, в котором можно выбрать дату или период.',
   },
   {
     href: '/?path=/story/components-file--playground',

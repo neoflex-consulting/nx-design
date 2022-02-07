@@ -5,7 +5,6 @@ import React from 'react';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { cn } from '../../../../../utils/bem';
 import { Item, Notification } from '../../../Notification';
-import {Button} from "../../../../Button/Button";
 
 const cnNotificationExampleStatus = cn('NotificationExampleStatus');
 
