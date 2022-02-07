@@ -178,7 +178,7 @@ export const DatePickerExampleFormat = () => {
 
 ```tsx
 <DatePicker status="success" />
-<DatePicker status="alert" />
+<DatePicker status="error" />
 <DatePicker status="warning" />
 <DatePicker/>
 ```
@@ -202,12 +202,12 @@ export const DatePickerExampleFormat = () => {
 С помощью статуса можно выделить поле: показать, где ошибка, или, наоборот,
 отметить правильно заполненные поля.
 
-За статус отвечает свойство `status`. Варианты: `success`, `alert` и `warning`.
+За статус отвечает свойство `status`. Варианты: `success`, `error` и `warning`.
 Если статус не указан, поле будет обычным.
 
 ```tsx
 <DatePicker status="success" />
-<DatePicker status="alert" />
+<DatePicker status="error" />
 <DatePicker status="warning" />
 <DatePicker/>
 ```
@@ -315,14 +315,14 @@ export const DatePickerExampleOnError = () => {
         minDate={minDate}
         maxDate={maxDate}
         ref={ref}
-        status={error ? 'alert' : undefined}
+        status={error ? 'error' : undefined}
         value={value}
         onChange={onChange}
         type="date-range"
         onError={onError}
       />
       {error && (
-        <Tooltip status="alert" anchorRef={ref}>
+        <Tooltip status="error" anchorRef={ref}>
           {error}
         </Tooltip>
       )}
@@ -403,7 +403,7 @@ type DatePickerPropOnError = (
 | `size?`                                                                    | `'m', 'xs', 's', 'l'`                                                                                                                                               | `'m'`                 | Размер, см. [TextField](?path=/docs/components-textfield--playground)                                                  |
 | `form?`                                                                    | `'default', 'brick', 'round', 'clearRound', 'roundClear', 'clearDefault', 'defaultClear', 'defaultBrick', 'brickDefault', 'brickClear', 'clearBrick', 'clearClear'` | `'default'`           | Форма поля, см. [TextField](?path=/docs/components-textfield--playground)                                              |
 | `view?`                                                                    | `'default', 'clear'`                                                                                                                                                | `'default'`           | Внешний вид поля, см. [TextField](?path=/docs/components-textfield--playground)                                        |
-| `status?`                                                                  | `''alert', 'success', 'warning'`                                                                                                                                    | -                     | Статус поля, см. [TextField](?path=/docs/components-textfield--playground)                                             |
+| `status?`                                                                  | `''error', 'success', 'warning'`                                                                                                                                    | -                     | Статус поля, см. [TextField](?path=/docs/components-textfield--playground)                                             |
 | `onFocus?`                                                                 | `React.FocusEventHandler<HTMLElement>`                                                                                                                              | -                     | Событие по фокусу в поле, см. [TextField](?path=/docs/components-textfield--playground)                                |
 | `onBlur?`                                                                  | `React.FocusEventHandler<HTMLElement>`                                                                                                                              | -                     | Событие при потере фокуса в поле, см. [TextField](?path=/docs/components-textfield--playground)                        |
 | `autoFocus?`                                                               | `boolean`                                                                                                                                                           | -                     | Перемещает фокус в поле, см. [TextField](?path=/docs/components-textfield--playground)                                 |

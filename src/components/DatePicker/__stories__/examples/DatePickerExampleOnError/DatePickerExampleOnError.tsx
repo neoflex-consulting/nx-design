@@ -50,14 +50,14 @@ export const DatePickerExampleOnError = () => {
         minDate={minDate}
         maxDate={maxDate}
         ref={ref}
-        status={error ? 'alert' : undefined}
+        status={error ? 'error' : undefined}
         value={value}
         onChange={onChange}
         type="date-range"
         onError={onError}
       />
       {error && (
-        <Tooltip status="alert" anchorRef={ref}>
+        <Tooltip status="error" anchorRef={ref}>
           {error}
         </Tooltip>
       )}

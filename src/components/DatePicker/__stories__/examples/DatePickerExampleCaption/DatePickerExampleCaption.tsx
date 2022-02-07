@@ -18,7 +18,7 @@ export const DatePickerExampleCaption = () => {
       <DatePicker
         value={value}
         onChange={({ value }) => setValue(value)}
-        status="alert"
+        status="error"
         caption="Это подпись"
       />
       <DatePicker
