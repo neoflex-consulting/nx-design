@@ -13,7 +13,7 @@ export const presetGpnDark: ThemePreset = {
   color: {
     primary: 'gpnDark',
     accent: 'gpnDark',
-    invert: 'gpnDefault',
+    invert: 'gpnDark',
   },
   control: 'gpnDefault',
   font: 'gpnDefault',

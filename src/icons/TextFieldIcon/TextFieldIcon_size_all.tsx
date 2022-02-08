@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function TextFieldSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function TextFieldIconSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path d="M8.25 6.75C7.83579 6.75 7.5 7.08579 7.5 7.5V9C7.5 9.41421 7.83579 9.75 8.25 9.75C8.66421 9.75 9 9.41421 9 9V8.25H11.25V15.75H10.5C10.0858 15.75 9.75 16.0858 9.75 16.5C9.75 16.9142 10.0858 17.25 10.5 17.25H13.5C13.9142 17.25 14.25 16.9142 14.25 16.5C14.25 16.0858 13.9142 15.75 13.5 15.75H12.75V8.25H15V9C15 9.41421 15.3358 9.75 15.75 9.75C16.1642 9.75 16.5 9.41421 16.5 9V7.5C16.5 7.08579 16.1642 6.75 15.75 6.75H8.25Z" />
@@ -9,4 +9,4 @@ function TextFieldSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default TextFieldSizeAll;
+export default TextFieldIconSizeAll;

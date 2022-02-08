@@ -1,6 +1,6 @@
 .CalendarMonth {
-  --date-time-item-width: var(--control-height-s);
-  --date-time-item-height: var(--control-height-s);
+  --date-time-item-width: var(--control-height-m);
+  --date-time-item-height: var(--control-height-m);
   --date-time-cell-vertical-gap: var(--space-3xs);
   --date-time-cell-horisontal-gap: var(--space-3xs);
   --date-time-cell-width: calc(

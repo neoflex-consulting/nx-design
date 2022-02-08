@@ -26,7 +26,7 @@ export const DragNDropFieldTooltip: React.FC<DragNDropFieldTooltipProps> = ({
   return isHidden || errors.length === 0 ? null : (
     <Tooltip
       anchorRef={anchorRef}
-      status="alert"
+      status="error"
       size="l"
       isInteractive={false}
       onClickOutside={() => setIsHidden(true)}

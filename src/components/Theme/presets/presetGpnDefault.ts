@@ -12,8 +12,8 @@ import { ThemePreset } from '../Theme';
 export const presetGpnDefault: ThemePreset = {
   color: {
     primary: 'gpnDefault',
-    accent: 'gpnDark',
-    invert: 'gpnDark',
+    accent: 'gpnDefault',
+    invert: 'gpnDefault',
   },
   control: 'gpnDefault',
   font: 'gpnDefault',

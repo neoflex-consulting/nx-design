@@ -4,11 +4,11 @@
 */
 
 .CalendarTypeTime {
-  width: calc((var(--control-height-s) + (var(--space-3xs) * 2)) * 3);
+  width: calc((var(--control-height-m) + (var(--space-3xs) * 2)) * 3);
 
   &-Grid {
-    --date-time-item-width: var(--control-height-s);
-    --date-time-item-height: var(--control-height-s);
+    --date-time-item-width: var(--control-height-m);
+    --date-time-item-height: var(--control-height-m);
     --date-time-cell-vertical-gap: var(--space-3xs);
     --date-time-cell-horisontal-gap: var(--space-3xs);
     --date-time-cell-width: calc(

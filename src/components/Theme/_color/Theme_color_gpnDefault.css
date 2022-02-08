@@ -7,28 +7,42 @@ $color-base-system: #F4F5F8; /* Цвет системнный */
 $color-base-secondary: #FFCC66; /* Дополнительная переменная, от которой зависят цвета контролов */
 
 $color-base-normal: #13A1C9; /* Цвет нейтральный */
-$color-base-success: #4FB125; /* Цвет успеха */
+$color-base-success: #22c38e; /* Цвет успеха */
 $color-base-error: #E33131; /* Цвет ошибки */
 $color-base-warning: #ECB709; /* Цвет предупреждения */
 $color-base-caution: #D9A54C; /* Цвет осторожности */
 $color-base-critical: #45321A;
+$color-base-shadow: #002033; /* Цвет тени */
 
 $color-text-black: #090b1f;
 $color-text-white: #ffffff;
+
+
 
 /* stylelint-disable */
 .Theme_color_gpnDefault {
   /* //////////////////////////////
   // Цвета фонов /////////////// */
+  /*--color-bg-default: color($color-base-essential a(100%)); !* Цвет дефолта *!*/
+  /*--color-bg-secondary: color($color-base-project s(-75) l(+59)); !* Цвет дефолта *!*/
   --color-bg-default: color($color-base-essential a(100%)); /* Цвет дефолта */
-  --color-bg-secondary: color($color-base-project s(-75) l(+59)); /* Цвет дефолта */
+  --color-bg-secondary: color($color-base-essential l(-5)); /* Дополнительный цвет фона */
+
   --color-bg-brand: color($color-base-project a(100%)); /* Цвет фона брендированый */
   --color-bg-link: color($color-base-path a(100%)); /* Цвет фона ссылки */
   --color-bg-border: color($color-base-phantom a(20%) l(+10)); /* Цвет границ */
-  --color-bg-stripe: color($color-base-phantom l(-11) a(5%)); /* Цвет зебры (например, при окрашивании фона строк таблицы через одну) */
-  --color-bg-ghost: color($color-base-phantom l(-11) a(8%)); /* Цвет затенения */
-  --color-bg-tone: color($color-base-phantom l(-11) a(85%)); /* Цвет паранджи */
-  --color-bg-soft: color($color-base-essential a(90%)); /* Цвет молока */
+
+  /*--color-bg-stripe: color($color-base-phantom l(-11) a(5%)); !* Цвет зебры (например, при окрашивании фона строк таблицы через одну) *!*/
+  --color-bg-stripe: color($color-base-phantom a(6%)); /* Цвет зебры (например, при окрашивании фона строк таблицы через одну) */
+
+
+  /*--color-bg-ghost: color($color-base-phantom l(-11) a(8%)); !* Цвет затенения *!*/
+  /*--color-bg-tone: color($color-base-phantom l(-11) a(85%)); !* Цвет паранджи *!*/
+  /*--color-bg-soft: color($color-base-essential a(90%)); !* Цвет молока *!*/
+  --color-bg-ghost: color($color-base-phantom a(10%)); /* Цвет затенения */
+  --color-bg-tone: color($color-base-phantom l(-92%) a(85%)); /* Цвет паранджи */
+  --color-bg-soft: color($color-base-essential l(+100%) a(90%)); /* Цвет молока */
+
   --color-bg-system: color($color-base-system a(100%)); /* Цвет фона системнный */
   --color-bg-normal: color($color-base-normal h(-18) l(+45%)); /* Цвет фона нейтральный */
   --color-bg-success: color($color-base-success h(-40) s(-32%) l(+50%)); /* Цвет фона успеха */
@@ -94,8 +108,8 @@ $color-text-white: #ffffff;
   --color-control-typo-secondary-hover-shadow: color($color-text-black h(-235) s(-55) l(+82)); /* Цвет тени при наведении */
 
   /* Ghost */
-  --color-control-bg-ghost: color($color-base-essential); /* Цвет фона дополнительного контрола */
-  --color-control-bg-ghost-hover: color($color-base-caution s(+14%) l(+36%)); /* Цвет фона дополнительного контрола по ховеру */
+  --color-control-bg-ghost: color($color-base-phantom a(7%)); /* Цвет фона дополнительного контрола */
+  --color-control-bg-ghost-hover: color($color-base-phantom a(5%)); /* Цвет фона дополнительного контрола по ховеру */
   --color-control-bg-ghost-focus: color($color-base-caution h(+1) s(+14%) l(+32%)); /* Цвет фона дополнительного контрола по фокусу */
   --color-control-typo-ghost: color($color-base-base h(+1) l(+8%) a(80%)); /* Цвет дополнительного текста контрола */
   --color-control-typo-ghost-hover: color($color-text-black); /* Цвет акцентного текста */
@@ -115,7 +129,15 @@ $color-text-white: #ffffff;
   /* Disable */
   --color-control-bg-disable: color($color-base-path a(30%)); /* Цвет фона неактивного контрола */
   --color-control-bg-border-disable: color($color-base-phantom a(30%)); /* Цвет фона бордеров неактивного контрола */
-  --color-control-typo-disable: color($color-base-essential); /* Цвет основного текста неактивного контрола */
+  --color-control-typo-disable: color($color-base-base a(26%)); /* Цвет основного текста неактивного контрола */
 
+    /* /////////////////////////////
+  // Цвета тени /////////// */
+  --color-shadow-group-1: color($color-base-shadow a(2%));
+  --color-shadow-group-2: color($color-base-shadow a(16%));
+  --color-shadow-layer-1: color($color-base-shadow a(4%));
+  --color-shadow-layer-2: color($color-base-shadow a(12%));
+  --color-shadow-modal-1: color($color-base-shadow a(4%));
+  --color-shadow-modal-2: color($color-base-shadow a(12%));
 }
 /* stylelint-enable */
