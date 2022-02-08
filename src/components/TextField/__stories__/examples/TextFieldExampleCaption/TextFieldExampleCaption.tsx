@@ -20,8 +20,8 @@ export const TextFieldExampleCaption = () => {
       <TextField
         onChange={handleChange}
         value={value}
-        status="alert"
-        placeholder="Статус alert"
+        status="error"
+        placeholder="Статус error"
         caption="Это подпись"
       />
       <TextField

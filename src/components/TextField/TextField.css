@@ -141,16 +141,16 @@
       }
 
       &.TextField-InputContainer_status {
-        &_alert {
-          --container-border-color: var(--color-bg-alert);
+        &_error {
+          --container-border-color: var(--color-typo-error);
         }
 
         &_success {
-          --container-border-color: var(--color-bg-success);
+          --container-border-color: var(--color-typo-success);
         }
 
         &_warning {
-          --container-border-color: var(--color-bg-warning);
+          --container-border-color: var(--color-typo-warning);
         }
       }
 

@@ -34,8 +34,6 @@ export function ButtonExampleViewPrimary() {
 }
 
 export function ButtonExampleViewSecondary() {
-  const iconRight = <Icon icon={"edit"}/>
-  const iconLeft = <Icon icon={"chat"}/>
   return (
     <div className={cnDocsDecorator('Section', [wp.decorator({ distribute: 'left' })])}>
       <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>

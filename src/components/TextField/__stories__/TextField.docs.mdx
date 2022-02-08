@@ -205,7 +205,7 @@ const App = () => {
 
 ```tsx
 <TextField status="success" placeholder="Статус success" caption="Это подпись" />
-<TextField status="alert" placeholder="Статус alert" caption="Это подпись" />
+<TextField status="error" placeholder="Статус error" caption="Это подпись" />
 <TextField status="warning" placeholder="Статус warning" caption="Это подпись" />
 
 <TextField placeholder="Обычное поле" caption="Это подпись" />
@@ -241,12 +241,12 @@ const App = () => {
 С помощью статуса можно выделить поле: показать, где ошибка, или, наоборот,
 отметить правильно заполненные поля.
 
-За статус отвечает свойство `status`. Варианты: `success`, `alert` и `warning`.
+За статус отвечает свойство `status`. Варианты: `success`, `error` и `warning`.
 Если статус не указан, поле будет обычным.
 
 ```tsx
 <TextField status="success" placeholder="Статус success" />
-<TextField status="alert" placeholder="Статус alert" />
+<TextField status="error" placeholder="Статус error" />
 <TextField status="warning" placeholder="Статус warning" />
 <TextField placeholder="Обычное поле" />
 ```
@@ -368,7 +368,7 @@ import { TextField } from '@consta/uikit/TextField';
 | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------------------------------------------------------------------------------------------------- |
 | [`type?`](#тип-поля)                       | `'text'`, `'textarea'`, `'number'`                                                                                                                                   | `'text'`     | Тип поля (и тег для поля в DOM)                                                                           |
 | [`step?`](#тип-поля)                       | `string` <code>&#124;</code> `number`                                                                                                                                | `1`          | Шаг, на который меняется число в поле по кнопкам-стрелочкам при `type=number`. Целое число                |
-| [`status?`](#статус-поля)                  | `'', 'alert', 'success', 'warning'`                                                                                                                                  | `' '`        | Тип поля                                                                                                  |
+| [`status?`](#статус-поля)                  | `'', 'error', 'success', 'warning'`                                                                                                                                  | `' '`        | Тип поля                                                                                                  |
 | [`disabled?`](#внешний-вид)                | `boolean`                                                                                                                                                            | -            | Делает поле неактивным                                                                                    |
 | [`size?`](#размеры)                        | `'xs', 's', 'm', 'l'`                                                                                                                                                | `'m'`        | Размер шрифта, отступы и высота поля                                                                      |
 | [`width?`](#размеры)                       | `'full', 'default'`                                                                                                                                                  | `'default'`  | Ширина поля                                                                                               |

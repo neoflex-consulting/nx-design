@@ -1,6 +1,6 @@
 .FieldLabel {
   &-Star {
     margin-left: var(--space-3xs);
-    color: var(--color-bg-alert);
+    color: var(--color-typo-error);
   }
 }

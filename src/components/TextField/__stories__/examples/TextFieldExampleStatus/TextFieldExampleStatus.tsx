@@ -16,7 +16,7 @@ export const TextFieldExampleStatus = () => {
         status="success"
         placeholder="Статус success"
       />
-      <TextField onChange={handleChange} value={value} status="alert" placeholder="Статус error" />
+      <TextField onChange={handleChange} value={value} status="error" placeholder="Статус error" />
       <TextField
         onChange={handleChange}
         value={value}
