@@ -1,5 +1,5 @@
 import {createMetadata} from "../../../utils/storybook";
-import mdx from "../../Table/__stories__/TableAg.docs.mdx";
+import mdx from "./TableAg.docs.mdx";
 import React from "react";
 import {TableAg} from "../TableAg";
 
