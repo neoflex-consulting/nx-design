@@ -389,7 +389,7 @@ import {Gbp} from '../../Gbp/Gbp';
 import {Gift} from '../../Gift/Gift';
 import {Globe} from '../../Globe/Globe';
 import {GraduationCap} from '../../GraduationCap/GraduationCap';
-import {Grid} from '../../Grid/Grid';
+import {GridIcon} from '../../GridIcon/GridIcon';
 import {Group} from '../../Group/Group';
 import {GroupCheck} from '../../GroupCheck/GroupCheck';
 import {Hdd} from '../../Hdd/Hdd';
@@ -761,7 +761,7 @@ const neoicons = {
   Gift,
   Globe,
   GraduationCap,
-  Grid,
+  GridIcon,
   Group,
   GroupCheck,
   Hdd,
