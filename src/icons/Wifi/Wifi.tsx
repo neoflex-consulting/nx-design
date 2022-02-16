@@ -7,5 +7,5 @@ export const Wifi = createIcon({
   m: WifiSizeAll,
   s: WifiSizeAll,
   xs: WifiSizeAll,
-  name: 'Wifi',
+  name: 'IconWifi',
 });

@@ -7,5 +7,5 @@ export const CaretLeftS = createIcon({
   m: CaretLeftSSizeAll,
   s: CaretLeftSSizeAll,
   xs: CaretLeftSSizeAll,
-  name: 'CaretLeftS',
+  name: 'IconCaretLeftS',
 });

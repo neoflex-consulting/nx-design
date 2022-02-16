@@ -7,5 +7,5 @@ export const ChatQuestion = createIcon({
   m: ChatQuestionSizeAll,
   s: ChatQuestionSizeAll,
   xs: ChatQuestionSizeAll,
-  name: 'ChatQuestion',
+  name: 'IconChatQuestion',
 });

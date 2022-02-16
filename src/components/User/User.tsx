@@ -3,7 +3,7 @@ import './User.css';
 import React from 'react';
 
 import { IconProps, IconPropSize } from '../../icons/_Icon/Icon';
-import { IconSelect } from '../../icons/IconSelect/IconSelect';
+import { CaretDown } from '../../icons/CaretDown/CaretDown';
 import { cn } from '../../utils/bem';
 import { getSizeByMap } from '../../utils/getSizeByMap';
 import { forwardRefWithAs } from '../../utils/types/PropsWithAsAttributes';
@@ -123,7 +123,7 @@ export const User = forwardRefWithAs<Props>((props, ref) => {
         </div>
       )}
       {withArrow && (
-        <IconSelect
+        <CaretDown
           className={cnUser('Icon')}
           size={getSizeByMap(iconSizeMap, size)}
           view="secondary"

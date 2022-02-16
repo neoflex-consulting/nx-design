@@ -7,5 +7,5 @@ export const ExternalLinkS = createIcon({
   m: ExternalLinkSSizeAll,
   s: ExternalLinkSSizeAll,
   xs: ExternalLinkSSizeAll,
-  name: 'ExternalLinkS',
+  name: 'IconExternalLinkS',
 });

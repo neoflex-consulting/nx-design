@@ -7,5 +7,5 @@ export const History = createIcon({
   m: HistorySizeAll,
   s: HistorySizeAll,
   xs: HistorySizeAll,
-  name: 'History',
+  name: 'IconHistory',
 });

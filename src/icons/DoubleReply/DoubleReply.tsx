@@ -7,5 +7,5 @@ export const DoubleReply = createIcon({
   m: DoubleReplySizeAll,
   s: DoubleReplySizeAll,
   xs: DoubleReplySizeAll,
-  name: 'DoubleReply',
+  name: 'IconDoubleReply',
 });

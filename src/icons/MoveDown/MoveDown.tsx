@@ -7,5 +7,5 @@ export const MoveDown = createIcon({
   m: MoveDownSizeAll,
   s: MoveDownSizeAll,
   xs: MoveDownSizeAll,
-  name: 'MoveDown',
+  name: 'IconMoveDown',
 });

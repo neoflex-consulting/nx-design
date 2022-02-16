@@ -7,5 +7,5 @@ export const Keyboard = createIcon({
   m: KeyboardSizeAll,
   s: KeyboardSizeAll,
   xs: KeyboardSizeAll,
-  name: 'Keyboard',
+  name: 'IconKeyboard',
 });

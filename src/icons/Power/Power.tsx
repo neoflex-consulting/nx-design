@@ -7,5 +7,5 @@ export const Power = createIcon({
   m: PowerSizeAll,
   s: PowerSizeAll,
   xs: PowerSizeAll,
-  name: 'Power',
+  name: 'IconPower',
 });

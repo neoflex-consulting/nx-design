@@ -7,5 +7,5 @@ export const EditorRegion = createIcon({
   m: EditorRegionSizeAll,
   s: EditorRegionSizeAll,
   xs: EditorRegionSizeAll,
-  name: 'EditorRegion',
+  name: 'IconEditorRegion',
 });

@@ -7,5 +7,5 @@ export const EditorValueHolder = createIcon({
   m: EditorValueHolderSizeAll,
   s: EditorValueHolderSizeAll,
   xs: EditorValueHolderSizeAll,
-  name: 'EditorValueHolder',
+  name: 'IconEditorValueHolder',
 });

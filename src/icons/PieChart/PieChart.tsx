@@ -7,5 +7,5 @@ export const PieChart = createIcon({
   m: PieChartSizeAll,
   s: PieChartSizeAll,
   xs: PieChartSizeAll,
-  name: 'PieChart',
+  name: 'IconPieChart',
 });

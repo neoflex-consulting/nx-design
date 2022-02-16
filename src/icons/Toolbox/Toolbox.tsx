@@ -7,5 +7,5 @@ export const Toolbox = createIcon({
   m: ToolboxSizeAll,
   s: ToolboxSizeAll,
   xs: ToolboxSizeAll,
-  name: 'Toolbox',
+  name: 'IconToolbox',
 });

@@ -7,5 +7,5 @@ export const PauseC = createIcon({
   m: PauseCSizeAll,
   s: PauseCSizeAll,
   xs: PauseCSizeAll,
-  name: 'PauseC',
+  name: 'IconPauseC',
 });

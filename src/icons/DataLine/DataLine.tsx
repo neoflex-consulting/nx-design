@@ -7,5 +7,5 @@ export const DataLine = createIcon({
   m: DataLineSizeAll,
   s: DataLineSizeAll,
   xs: DataLineSizeAll,
-  name: 'DataLine',
+  name: 'IconDataLine',
 });

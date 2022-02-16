@@ -7,5 +7,5 @@ export const LinkRemove = createIcon({
   m: LinkRemoveSizeAll,
   s: LinkRemoveSizeAll,
   xs: LinkRemoveSizeAll,
-  name: 'LinkRemove',
+  name: 'IconLinkRemove',
 });

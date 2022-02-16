@@ -7,5 +7,5 @@ export const FilterCheck = createIcon({
   m: FilterCheckSizeAll,
   s: FilterCheckSizeAll,
   xs: FilterCheckSizeAll,
-  name: 'FilterCheck',
+  name: 'IconFilterCheck',
 });

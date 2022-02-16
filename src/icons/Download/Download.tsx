@@ -7,5 +7,5 @@ export const Download = createIcon({
   m: DownloadSizeAll,
   s: DownloadSizeAll,
   xs: DownloadSizeAll,
-  name: 'Download',
+  name: 'IconDownload',
 });

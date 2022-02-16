@@ -7,5 +7,5 @@ export const TablePivot = createIcon({
   m: TablePivotSizeAll,
   s: TablePivotSizeAll,
   xs: TablePivotSizeAll,
-  name: 'TablePivot',
+  name: 'IconTablePivot',
 });

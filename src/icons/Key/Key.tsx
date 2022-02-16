@@ -7,5 +7,5 @@ export const Key = createIcon({
   m: KeySizeAll,
   s: KeySizeAll,
   xs: KeySizeAll,
-  name: 'Key',
+  name: 'IconKey',
 });

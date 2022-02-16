@@ -7,5 +7,5 @@ export const CalendarRecur = createIcon({
   m: CalendarRecurSizeAll,
   s: CalendarRecurSizeAll,
   xs: CalendarRecurSizeAll,
-  name: 'CalendarRecur',
+  name: 'IconCalendarRecur',
 });

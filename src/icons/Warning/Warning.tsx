@@ -7,5 +7,5 @@ export const Warning = createIcon({
   m: WarningSizeAll,
   s: WarningSizeAll,
   xs: WarningSizeAll,
-  name: 'Warning',
+  name: 'IconWarning',
 });

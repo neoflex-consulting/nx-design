@@ -7,5 +7,5 @@ export const ArrowBackward = createIcon({
   m: ArrowBackwardSizeAll,
   s: ArrowBackwardSizeAll,
   xs: ArrowBackwardSizeAll,
-  name: 'ArrowBackward'
+  name: 'IconArrowBackward'
 });

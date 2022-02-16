@@ -7,5 +7,5 @@ export const News = createIcon({
   m: NewsSizeAll,
   s: NewsSizeAll,
   xs: NewsSizeAll,
-  name: 'News',
+  name: 'IconNews',
 });

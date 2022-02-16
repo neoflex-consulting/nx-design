@@ -7,5 +7,5 @@ export const Print = createIcon({
   m: PrintSizeAll,
   s: PrintSizeAll,
   xs: PrintSizeAll,
-  name: 'Print',
+  name: 'IconPrint',
 });

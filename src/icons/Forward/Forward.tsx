@@ -7,5 +7,5 @@ export const Forward = createIcon({
   m: ForwardSizeAll,
   s: ForwardSizeAll,
   xs: ForwardSizeAll,
-  name: 'Forward',
+  name: 'IconForward',
 });

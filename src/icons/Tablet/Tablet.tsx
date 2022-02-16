@@ -7,5 +7,5 @@ export const Tablet = createIcon({
   m: TabletSizeAll,
   s: TabletSizeAll,
   xs: TabletSizeAll,
-  name: 'Tablet',
+  name: 'IconTablet',
 });

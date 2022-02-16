@@ -7,5 +7,5 @@ export const CheckOn = createIcon({
   m: CheckOnSizeAll,
   s: CheckOnSizeAll,
   xs: CheckOnSizeAll,
-  name: 'CheckOn',
+  name: 'IconCheckOn',
 });

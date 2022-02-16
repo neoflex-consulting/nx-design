@@ -7,5 +7,5 @@ export const Drag = createIcon({
   m: DragSizeAll,
   s: DragSizeAll,
   xs: DragSizeAll,
-  name: 'Drag',
+  name: 'IconDrag',
 });

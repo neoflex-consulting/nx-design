@@ -1,9 +1,9 @@
 import { IconProps } from '../../../icons/_Icon/Icon';
 import { CheckDouble } from '../../../icons/CheckDouble/CheckDouble';
-import { IconAttach } from '../../../icons/IconAttach/IconAttach';
-import { IconBag } from '../../../icons/IconBag/IconBag';
-import { IconEye } from '../../../icons/IconEye/IconEye';
-import { IconSun } from '../../../icons/IconSun/IconSun';
+import { Layers } from '../../../icons/Layers/Layers';
+import { Bank } from '../../../icons/Bank/Bank';
+import { Eye } from '../../../icons/Eye/Eye';
+import { Wifi } from '../../../icons/Wifi/Wifi';
 import { BadgePropStatus } from '../../Badge/Badge';
 import { ContextMenuAccent } from '../helpers';
 
@@ -32,7 +32,7 @@ export declare type Item = {
 export const exampleItems: Item[] = [
   {
     name: 'Скрепка',
-    icon: IconAttach,
+    icon: Layers,
     accent: 'success',
     group: 1,
     subMenu: [
@@ -47,7 +47,7 @@ export const exampleItems: Item[] = [
         subMenu: [
           {
             name: 'Пункт - 3',
-            icon: IconSun,
+            icon: Wifi,
             subMenu: [
               {
                 name: 'Пункт - 5',
@@ -59,7 +59,7 @@ export const exampleItems: Item[] = [
           },
           {
             name: 'Пункт - 4',
-            icon: IconSun,
+            icon: Wifi,
             subMenu: [
               {
                 name: 'Пункт - 7',
@@ -71,7 +71,7 @@ export const exampleItems: Item[] = [
           },
           {
             name: 'Пункт - 9',
-            icon: IconSun,
+            icon: Wifi,
           },
         ],
       },
@@ -80,7 +80,7 @@ export const exampleItems: Item[] = [
   {
     name: 'Глаз',
     status: 'normal',
-    icon: IconEye,
+    icon: Eye,
     accent: 'success',
     group: 1,
   },
@@ -94,14 +94,14 @@ export const exampleItems: Item[] = [
   {
     name: 'Чемодан',
     group: 2,
-    icon: IconBag,
+    icon: Bank,
     switch: false,
     accent: 'error',
   },
   {
     name: 'Солнце',
     group: 2,
-    icon: IconSun,
+    icon: Wifi,
     switch: false,
     accent: 'error',
     disabled: true,

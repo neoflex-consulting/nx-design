@@ -7,5 +7,5 @@ export const Refresh = createIcon({
   m: RefreshSizeAll,
   s: RefreshSizeAll,
   xs: RefreshSizeAll,
-  name: 'Refresh',
+  name: 'IconRefresh',
 });

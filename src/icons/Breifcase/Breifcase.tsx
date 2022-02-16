@@ -7,5 +7,5 @@ export const Breifcase = createIcon({
   m: BreifcaseSizeAll,
   s: BreifcaseSizeAll,
   xs: BreifcaseSizeAll,
-  name: 'Breifcase',
+  name: 'IconBreifcase',
 });

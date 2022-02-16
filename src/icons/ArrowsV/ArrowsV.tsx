@@ -7,5 +7,5 @@ export const ArrowsV = createIcon({
   m: ArrowsVSizeAll,
   s: ArrowsVSizeAll,
   xs: ArrowsVSizeAll,
-  name: 'ArrowsV',
+  name: 'IconArrowsV',
 });

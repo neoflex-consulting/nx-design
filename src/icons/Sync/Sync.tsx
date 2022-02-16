@@ -7,5 +7,5 @@ export const Sync = createIcon({
   m: SyncSizeAll,
   s: SyncSizeAll,
   xs: SyncSizeAll,
-  name: 'Sync',
+  name: 'IconSync',
 });

@@ -7,5 +7,5 @@ export const Notepad = createIcon({
   m: NotepadSizeAll,
   s: NotepadSizeAll,
   xs: NotepadSizeAll,
-  name: 'Notepad',
+  name: 'IconNotepad',
 });

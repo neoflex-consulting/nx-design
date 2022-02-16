@@ -7,5 +7,5 @@ export const Percent = createIcon({
   m: PercentSizeAll,
   s: PercentSizeAll,
   xs: PercentSizeAll,
-  name: 'Percent',
+  name: 'IconPercent',
 });

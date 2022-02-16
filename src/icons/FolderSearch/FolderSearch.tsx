@@ -7,5 +7,5 @@ export const FolderSearch = createIcon({
   m: FolderSearchSizeAll,
   s: FolderSearchSizeAll,
   xs: FolderSearchSizeAll,
-  name: 'FolderSearch',
+  name: 'IconFolderSearch',
 });

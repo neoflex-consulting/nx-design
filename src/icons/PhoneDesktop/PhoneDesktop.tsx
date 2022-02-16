@@ -7,5 +7,5 @@ export const PhoneDesktop = createIcon({
   m: PhoneDesktopSizeAll,
   s: PhoneDesktopSizeAll,
   xs: PhoneDesktopSizeAll,
-  name: 'PhoneDesktop',
+  name: 'IconPhoneDesktop',
 });

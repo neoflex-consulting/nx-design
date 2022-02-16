@@ -7,5 +7,5 @@ export const FileEps = createIcon({
   m: FileEpsSizeAll,
   s: FileEpsSizeAll,
   xs: FileEpsSizeAll,
-  name: 'FileEps',
+  name: 'IconFileEps',
 });

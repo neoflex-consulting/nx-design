@@ -7,5 +7,5 @@ export const Book = createIcon({
   m: BookSizeAll,
   s: BookSizeAll,
   xs: BookSizeAll,
-  name: 'Book',
+  name: 'IconBook',
 });

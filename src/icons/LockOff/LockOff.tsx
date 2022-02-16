@@ -7,5 +7,5 @@ export const LockOff = createIcon({
   m: LockOffSizeAll,
   s: LockOffSizeAll,
   xs: LockOffSizeAll,
-  name: 'LockOff',
+  name: 'IconLockOff',
 });

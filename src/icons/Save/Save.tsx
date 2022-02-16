@@ -7,5 +7,5 @@ export const Save = createIcon({
   m: SaveSizeAll,
   s: SaveSizeAll,
   xs: SaveSizeAll,
-  name: 'Save',
+  name: 'IconSave',
 });

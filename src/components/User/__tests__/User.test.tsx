@@ -118,7 +118,7 @@ describe('Компонент Avatar', () => {
       it(`элемент Arrow отобразился c иконкой`, () => {
         renderComponent({ withArrow: true });
 
-        expect(getArrow()).toHaveClass('IconSelect');
+        expect(getArrow()).toHaveClass('CaretDown');
       });
     });
   });

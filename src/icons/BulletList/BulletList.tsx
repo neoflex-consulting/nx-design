@@ -7,5 +7,5 @@ export const BulletList = createIcon({
   m: BulletListSizeAll,
   s: BulletListSizeAll,
   xs: BulletListSizeAll,
-  name: 'BulletList',
+  name: 'IconBulletList',
 });

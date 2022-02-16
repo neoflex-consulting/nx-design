@@ -7,5 +7,5 @@ export const Spinner = createIcon({
   m: SpinnerSizeAll,
   s: SpinnerSizeAll,
   xs: SpinnerSizeAll,
-  name: 'Spinner',
+  name: 'IconSpinner',
 });

@@ -7,5 +7,5 @@ export const Lightbulbt = createIcon({
   m: LightbulbtSizeAll,
   s: LightbulbtSizeAll,
   xs: LightbulbtSizeAll,
-  name: 'Lightbulbt',
+  name: 'IconLightbulbt',
 });

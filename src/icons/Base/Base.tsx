@@ -7,5 +7,5 @@ export const Base = createIcon({
   m: BaseSizeAll,
   s: BaseSizeAll,
   xs: BaseSizeAll,
-  name: 'Base',
+  name: 'IconBase',
 });

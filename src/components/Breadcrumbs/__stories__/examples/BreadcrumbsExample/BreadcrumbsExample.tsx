@@ -1,31 +1,31 @@
 import React from 'react';
 
-import { IconCards } from '../../../../../icons/IconCards/IconCards';
-import { IconDrag } from '../../../../../icons/IconDrag/IconDrag';
-import { IconHand } from '../../../../../icons/IconHand/IconHand';
-import { IconLeaf } from '../../../../../icons/IconLeaf/IconLeaf';
+import { GridIcon } from '../../../../../icons/GridIcon/GridIcon';
+import { Drag } from '../../../../../icons/Drag/Drag';
+import { Desktop } from '../../../../../icons/Desktop/Desktop';
+import { Heart } from '../../../../../icons/Heart/Heart';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { StoryBookExample } from '../../../../../uiKit/components/StoryBookExample/StoryBookExample';
 import { Breadcrumbs } from '../../../Breadcrumbs';
 
 const pages = [
   {
-    icon: IconHand,
+    icon: Desktop,
     label: 'Home',
     link: 'https://url.com',
   },
   {
-    icon: IconLeaf,
+    icon: Heart,
     label: 'Page1',
     link: 'https://url.com/page-1',
   },
   {
-    icon: IconCards,
+    icon: GridIcon,
     label: 'Page2',
     link: 'https://url.com/page-2',
   },
   {
-    icon: IconDrag,
+    icon: Drag,
     label: 'Page3',
     link: 'https://url.com/page-3',
   },

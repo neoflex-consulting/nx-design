@@ -7,5 +7,5 @@ export const GraduationCap = createIcon({
   m: GraduationCapSizeAll,
   s: GraduationCapSizeAll,
   xs: GraduationCapSizeAll,
-  name: 'GraduationCap',
+  name: 'IconGraduationCap',
 });

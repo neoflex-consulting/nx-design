@@ -7,5 +7,5 @@ export const FastBackward = createIcon({
   m: FastBackwardSizeAll,
   s: FastBackwardSizeAll,
   xs: FastBackwardSizeAll,
-  name: 'FastBackward',
+  name: 'IconFastBackward',
 });

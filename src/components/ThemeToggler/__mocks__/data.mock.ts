@@ -1,7 +1,7 @@
 import { IconProps } from '../../../icons/_Icon/Icon';
-import { IconLightningBolt } from '../../../icons/IconLightningBolt/IconLightningBolt';
-import { IconMoon } from '../../../icons/IconMoon/IconMoon';
-import { IconSun } from '../../../icons/IconSun/IconSun';
+import { Flash } from '../../../icons/Flash/Flash';
+import { DocRightClose } from '../../../icons/DocRightClose/DocRightClose';
+import { Wifi } from '../../../icons/Wifi/Wifi';
 import { presetGpnDisplay } from '../../Theme/presets/presetGpnDisplay';
 import { presetGpnDark, presetGpnDefault, ThemePreset } from '../../Theme/Theme';
 
@@ -15,12 +15,12 @@ export const exampleThemesTwo: Theme[] = [
   {
     theme: presetGpnDefault,
     label: 'Default',
-    icon: IconSun,
+    icon: Wifi,
   },
   {
     theme: presetGpnDark,
     label: 'Dark',
-    icon: IconMoon,
+    icon: DocRightClose,
   },
 ];
 
@@ -28,16 +28,16 @@ export const exampleThemesThree: Theme[] = [
   {
     theme: presetGpnDefault,
     label: 'Default',
-    icon: IconSun,
+    icon: Wifi,
   },
   {
     theme: presetGpnDark,
     label: 'Dark',
-    icon: IconMoon,
+    icon: DocRightClose,
   },
   {
     theme: presetGpnDisplay,
     label: 'Display',
-    icon: IconLightningBolt,
+    icon: Flash,
   },
 ];

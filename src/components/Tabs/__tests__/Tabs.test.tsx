@@ -2,7 +2,7 @@ import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { IconProps } from '../../../icons/_Icon/Icon';
-import { IconCamera } from '../../../icons/IconCamera/IconCamera';
+import { Camera } from '../../../icons/Camera/Camera';
 import { cnMixFocus } from '../../../mixs/MixFocus/MixFocus';
 import { cnTabs, cnTabsTab, Tabs, TabsProps as Props, tabsSizes, tabsViews } from '../Tabs';
 
@@ -18,15 +18,15 @@ type TabsProps = Props<Item>;
 const items: Item[] = [
   {
     name: 'один',
-    icon: IconCamera,
+    icon: Camera,
   },
   {
     name: 'два',
-    icon: IconCamera,
+    icon: Camera,
   },
   {
     name: 'три',
-    icon: IconCamera,
+    icon: Camera,
   },
 ];
 
@@ -103,7 +103,7 @@ describe('Компонент Tabs', () => {
       it(`иконка отображается`, () => {
         renderComponent({});
         const icon = getIcon();
-        expect(icon).toHaveClass('IconCamera');
+        expect(icon).toHaveClass('Camera');
       });
     });
     describe('проверка onlyIcon', () => {

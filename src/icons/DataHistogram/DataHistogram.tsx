@@ -7,5 +7,5 @@ export const DataHistogram = createIcon({
   m: DataHistogramSizeAll,
   s: DataHistogramSizeAll,
   xs: DataHistogramSizeAll,
-  name: 'DataHistogram',
+  name: 'IconDataHistogram',
 });

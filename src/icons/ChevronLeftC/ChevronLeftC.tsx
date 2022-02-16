@@ -7,5 +7,5 @@ export const ChevronLeftC = createIcon({
   m: ChevronLeftCSizeAll,
   s: ChevronLeftCSizeAll,
   xs: ChevronLeftCSizeAll,
-  name: 'ChevronLeftC',
+  name: 'IconChevronLeftC',
 });

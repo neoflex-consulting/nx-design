@@ -7,5 +7,5 @@ export const ArrowMove = createIcon({
   m: ArrowMoveSizeAll,
   s: ArrowMoveSizeAll,
   xs: ArrowMoveSizeAll,
-  name: 'ArrowMove'
+  name: 'IconArrowMove'
 });

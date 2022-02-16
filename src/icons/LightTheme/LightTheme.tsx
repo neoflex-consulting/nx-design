@@ -7,5 +7,5 @@ export const LightTheme = createIcon({
   m: LightThemeSizeAll,
   s: LightThemeSizeAll,
   xs: LightThemeSizeAll,
-  name: 'LightTheme',
+  name: 'IconLightTheme',
 });

@@ -7,5 +7,5 @@ export const StrokeGrid = createIcon({
   m: StrokeGridSizeAll,
   s: StrokeGridSizeAll,
   xs: StrokeGridSizeAll,
-  name: 'StrokeGrid',
+  name: 'IconStrokeGrid',
 });

@@ -7,5 +7,5 @@ export const Tools = createIcon({
   m: ToolsSizeAll,
   s: ToolsSizeAll,
   xs: ToolsSizeAll,
-  name: 'Tools',
+  name: 'IconTools',
 });

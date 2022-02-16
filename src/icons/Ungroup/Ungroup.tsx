@@ -7,5 +7,5 @@ export const Ungroup = createIcon({
   m: UngroupSizeAll,
   s: UngroupSizeAll,
   xs: UngroupSizeAll,
-  name: 'Ungroup',
+  name: 'IconUngroup',
 });

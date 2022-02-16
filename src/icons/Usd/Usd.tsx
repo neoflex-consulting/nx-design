@@ -7,5 +7,5 @@ export const Usd = createIcon({
   m: UsdSizeAll,
   s: UsdSizeAll,
   xs: UsdSizeAll,
-  name: 'Usd',
+  name: 'IconUsd',
 });

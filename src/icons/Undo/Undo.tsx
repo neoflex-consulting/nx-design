@@ -7,5 +7,5 @@ export const Undo = createIcon({
   m: UndoSizeAll,
   s: UndoSizeAll,
   xs: UndoSizeAll,
-  name: 'Undo',
+  name: 'IconUndo',
 });

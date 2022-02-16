@@ -7,5 +7,5 @@ export const FastForward = createIcon({
   m: FastForwardSizeAll,
   s: FastForwardSizeAll,
   xs: FastForwardSizeAll,
-  name: 'FastForward',
+  name: 'IconFastForward',
 });

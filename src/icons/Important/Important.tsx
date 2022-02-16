@@ -7,5 +7,5 @@ export const Important = createIcon({
   m: ImportantSizeAll,
   s: ImportantSizeAll,
   xs: ImportantSizeAll,
-  name: 'Important',
+  name: 'IconImportant',
 });

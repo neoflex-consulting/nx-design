@@ -7,5 +7,5 @@ export const EllipsisV = createIcon({
   m: EllipsisVSizeAll,
   s: EllipsisVSizeAll,
   xs: EllipsisVSizeAll,
-  name: 'EllipsisV',
+  name: 'IconEllipsisV',
 });

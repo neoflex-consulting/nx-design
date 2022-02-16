@@ -7,5 +7,5 @@ export const ChatDialog = createIcon({
   m: ChatDialogSizeAll,
   s: ChatDialogSizeAll,
   xs: ChatDialogSizeAll,
-  name: 'ChatDialog',
+  name: 'IconChatDialog',
 });

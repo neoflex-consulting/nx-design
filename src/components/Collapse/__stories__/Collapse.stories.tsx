@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { boolean, select, text } from '@storybook/addon-knobs';
 
 import { Plus } from '../../../icons/Plus/Plus';
-import { IconRemove } from '../../../icons/IconRemove/IconRemove';
-import { IconSun } from '../../../icons/IconSun/IconSun';
+import { Minus } from '../../../icons/Minus/Minus';
+import { Wifi } from '../../../icons/Wifi/Wifi';
 import { getSizeByMap } from '../../../utils/getSizeByMap';
 import { createMetadata } from '../../../utils/storybook';
 import { Badge } from '../../Badge/Badge';
@@ -71,7 +71,7 @@ export function Playground() {
 
   const defaultRightSide: React.ReactNode = [
     <Badge label="Статус" size="s" />,
-    <IconSun size={getSizeByMap(sizeIconMap, size)} />,
+    <Wifi size={getSizeByMap(sizeIconMap, size)} />,
   ];
 
   return (
@@ -94,7 +94,7 @@ export function Playground() {
       {...(withCustomIcon
         ? {
             icon: Plus,
-            closeIcon: IconRemove,
+            closeIcon: Minus,
           }
         : {
             directionIcon,

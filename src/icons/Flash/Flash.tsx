@@ -7,5 +7,5 @@ export const Flash = createIcon({
   m: FlashSizeAll,
   s: FlashSizeAll,
   xs: FlashSizeAll,
-  name: 'Flash',
+  name: 'IconFlash',
 });

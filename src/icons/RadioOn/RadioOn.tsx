@@ -7,5 +7,5 @@ export const RadioOn = createIcon({
   m: RadioOnSizeAll,
   s: RadioOnSizeAll,
   xs: RadioOnSizeAll,
-  name: 'RadioOn',
+  name: 'IconRadioOn',
 });

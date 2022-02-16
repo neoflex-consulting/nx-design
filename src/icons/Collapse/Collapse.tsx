@@ -7,5 +7,5 @@ export const Collapse = createIcon({
   m: CollapseSizeAll,
   s: CollapseSizeAll,
   xs: CollapseSizeAll,
-  name: 'Collapse',
+  name: 'IconCollapse',
 });

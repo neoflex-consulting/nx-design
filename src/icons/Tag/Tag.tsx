@@ -7,5 +7,5 @@ export const Tag = createIcon({
   m: TagSizeAll,
   s: TagSizeAll,
   xs: TagSizeAll,
-  name: 'Tag',
+  name: 'IconTag',
 });

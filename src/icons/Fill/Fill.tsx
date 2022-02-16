@@ -7,5 +7,5 @@ export const Fill = createIcon({
   m: FillSizeAll,
   s: FillSizeAll,
   xs: FillSizeAll,
-  name: 'Fill',
+  name: 'IconFill',
 });

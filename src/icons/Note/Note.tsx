@@ -7,5 +7,5 @@ export const Note = createIcon({
   m: NoteSizeAll,
   s: NoteSizeAll,
   xs: NoteSizeAll,
-  name: 'Note',
+  name: 'IconNote',
 });

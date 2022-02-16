@@ -7,5 +7,5 @@ export const Bug = createIcon({
   m: BugSizeAll,
   s: BugSizeAll,
   xs: BugSizeAll,
-  name: 'Bug',
+  name: 'IconBug',
 });

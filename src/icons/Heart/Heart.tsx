@@ -7,5 +7,5 @@ export const Heart = createIcon({
   m: HeartSizeAll,
   s: HeartSizeAll,
   xs: HeartSizeAll,
-  name: 'Heart',
+  name: 'IconHeart',
 });

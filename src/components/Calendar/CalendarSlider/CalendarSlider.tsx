@@ -2,7 +2,7 @@ import './CalendarSlider.css';
 
 import React from 'react';
 
-import { IconForward } from '../../../icons/IconForward/IconForward';
+import { ArrowRight } from '../../../icons/ArrowRight/ArrowRight';
 import { cn } from '../../../utils/bem';
 import { PropsWithHTMLAttributes } from '../../../utils/types/PropsWithHTMLAttributes';
 import { Button } from '../../Button/Button';
@@ -49,7 +49,7 @@ export const CalendarSlider: React.FC<CalendarSliderProps> = (props) => {
       <Button
         className={cnCalendarSlider('Button', { direction: 'prev' })}
         view="ghost"
-        iconLeft={IconForward}
+        iconLeft={ArrowRight}
         onClick={onPrev}
       />
       <div
@@ -107,7 +107,7 @@ export const CalendarSlider: React.FC<CalendarSliderProps> = (props) => {
       <Button
         className={cnCalendarSlider('Button', { direction: 'next' })}
         view="ghost"
-        iconLeft={IconForward}
+        iconLeft={ArrowRight}
         onClick={onNext}
       />
     </div>

@@ -7,5 +7,5 @@ export const PlusC = createIcon({
   m: PlusCSizeAll,
   s: PlusCSizeAll,
   xs: PlusCSizeAll,
-  name: 'PlusC',
+  name: 'IconPlusC',
 });

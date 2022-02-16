@@ -2,7 +2,7 @@ import './HeaderSearchBar.css';
 
 import React, { FormEventHandler } from 'react';
 
-import { IconSearch } from '../../../icons/IconSearch/IconSearch';
+import { Search } from '../../../icons/Search/Search';
 import { cn } from '../../../utils/bem';
 import { PropsWithJsxAttributes } from '../../../utils/types/PropsWithJsxAttributes';
 import { TextField, TextFieldPropOnChange, TextFieldPropValue } from '../../TextField/TextField';
@@ -59,7 +59,7 @@ export const HeaderSearchBar: React.FC<SearchBarProps> = ({
         width="full"
         value={value}
         onChange={onChange}
-        leftSide={IconSearch}
+        leftSide={Search}
       />
     </form>
   );

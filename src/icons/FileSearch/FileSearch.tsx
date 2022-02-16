@@ -7,5 +7,5 @@ export const FileSearch = createIcon({
   m: FileSearchSizeAll,
   s: FileSearchSizeAll,
   xs: FileSearchSizeAll,
-  name: 'FileSearch',
+  name: 'IconFileSearch',
 });

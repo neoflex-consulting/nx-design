@@ -7,5 +7,5 @@ export const Form = createIcon({
   m: FormSizeAll,
   s: FormSizeAll,
   xs: FormSizeAll,
-  name: 'Form',
+  name: 'IconForm',
 });

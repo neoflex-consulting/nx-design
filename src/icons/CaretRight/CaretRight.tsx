@@ -7,5 +7,5 @@ export const CaretRight = createIcon({
   m: CaretRightSizeAll,
   s: CaretRightSizeAll,
   xs: CaretRightSizeAll,
-  name: 'CaretRight',
+  name: 'IconCaretRight',
 });

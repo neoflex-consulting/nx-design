@@ -7,5 +7,5 @@ export const Square = createIcon({
   m: SquareSizeAll,
   s: SquareSizeAll,
   xs: SquareSizeAll,
-  name: 'Square',
+  name: 'IconSquare',
 });

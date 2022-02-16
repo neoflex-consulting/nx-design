@@ -7,5 +7,5 @@ export const TimerOn = createIcon({
   m: TimerOnSizeAll,
   s: TimerOnSizeAll,
   xs: TimerOnSizeAll,
-  name: 'TimerOn',
+  name: 'IconTimerOn',
 });

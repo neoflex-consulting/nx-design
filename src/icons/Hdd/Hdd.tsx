@@ -7,5 +7,5 @@ export const Hdd = createIcon({
   m: HddSizeAll,
   s: HddSizeAll,
   xs: HddSizeAll,
-  name: 'Hdd',
+  name: 'IconHdd',
 });

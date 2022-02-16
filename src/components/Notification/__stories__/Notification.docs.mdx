@@ -122,10 +122,10 @@ import { cn } from '@bem-react/classname';
 import { Button } from 'nx-design/Button';
 import { IconProps } from 'nx-design/Icon';
 import { Plus } from 'nx-design/Plus';
-import { IconThumbUp } from 'nx-design/IconThumbUp';
+import { CheckDouble } from 'nx-design/CheckDouble';
 import { WarningC } from 'nx-design/WarningC';
-import { IconRing } from 'nx-design/IconRing';
-import { IconProcessing } from 'nx-design/IconProcessing';
+import { Bell } from 'nx-design/Bell';
+import { SettingsDev } from 'nx-design/SettingsDev';
 import { Notification, NotificationItemStatus, Item } from 'nx-design/Notification';
 
 function reducer(
@@ -142,11 +142,11 @@ function reducer(
 
 const getItemIconByStatus = (status: NotificationItemStatus): React.FC<IconProps> | undefined => {
   const mapIconByStatus: Record<NotificationItemStatus, React.FC<IconProps>> = {
-    success: IconThumbUp,
+    success: CheckDouble,
     warning: WarningC,
     error: WarningC,
-    system: IconProcessing,
-    info: IconRing,
+    system: SettingsDev,
+    info: Bell,
     basic: WarningC
   };
   return mapIconByStatus[status];

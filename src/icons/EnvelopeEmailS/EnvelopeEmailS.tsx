@@ -7,5 +7,5 @@ export const EnvelopeEmailS = createIcon({
   m: EnvelopeEmailSSizeAll,
   s: EnvelopeEmailSSizeAll,
   xs: EnvelopeEmailSSizeAll,
-  name: 'EnvelopeEmailS',
+  name: 'IconEnvelopeEmailS',
 });

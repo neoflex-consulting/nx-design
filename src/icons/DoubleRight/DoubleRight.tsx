@@ -7,5 +7,5 @@ export const DoubleRight = createIcon({
   m: DoubleRightSizeAll,
   s: DoubleRightSizeAll,
   xs: DoubleRightSizeAll,
-  name: 'DoubleRight',
+  name: 'IconDoubleRight',
 });

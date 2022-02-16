@@ -7,5 +7,5 @@ export const PhoneDev = createIcon({
   m: PhoneDevSizeAll,
   s: PhoneDevSizeAll,
   xs: PhoneDevSizeAll,
-  name: 'PhoneDev',
+  name: 'IconPhoneDev',
 });

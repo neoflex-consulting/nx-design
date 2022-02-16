@@ -7,5 +7,5 @@ export const Edit = createIcon({
   m: EditSizeAll,
   s: EditSizeAll,
   xs: EditSizeAll,
-  name: 'Edit',
+  name: 'IconEdit',
 });

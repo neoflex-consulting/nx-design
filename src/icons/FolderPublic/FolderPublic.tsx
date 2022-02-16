@@ -7,5 +7,5 @@ export const FolderPublic = createIcon({
   m: FolderPublicSizeAll,
   s: FolderPublicSizeAll,
   xs: FolderPublicSizeAll,
-  name: 'FolderPublic',
+  name: 'IconFolderPublic',
 });

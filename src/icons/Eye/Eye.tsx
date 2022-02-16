@@ -7,5 +7,5 @@ export const Eye = createIcon({
   m: EyeSizeAll,
   s: EyeSizeAll,
   xs: EyeSizeAll,
-  name: 'Eye',
+  name: 'IconEye',
 });

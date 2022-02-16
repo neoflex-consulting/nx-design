@@ -7,5 +7,5 @@ export const Aggregate = createIcon({
   m: AggregateSizeAll,
   s: AggregateSizeAll,
   xs: AggregateSizeAll,
-  name: 'Aggregate'
+  name: 'IconAggregate'
 });

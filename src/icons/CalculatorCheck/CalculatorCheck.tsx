@@ -7,5 +7,5 @@ export const CalculatorCheck = createIcon({
   m: CalculatorCheckSizeAll,
   s: CalculatorCheckSizeAll,
   xs: CalculatorCheckSizeAll,
-  name: 'CalculatorCheck',
+  name: 'IconCalculatorCheck',
 });

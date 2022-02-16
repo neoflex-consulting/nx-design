@@ -3,7 +3,7 @@ import './TagBase.css';
 import React from 'react';
 
 import { IconProps, IconPropSize } from '../../icons/_Icon/Icon';
-import { IconClose } from '../../icons/IconClose/IconClose';
+import { Close } from '../../icons/Close/Close';
 import { cn } from '../../utils/bem';
 import { getSizeByMap } from '../../utils/getSizeByMap';
 import { forwardRefWithAs } from '../../utils/types/PropsWithAsAttributes';
@@ -61,7 +61,7 @@ export const TagBase = forwardRefWithAs<Props>((props, ref) => {
   const Tag = as as string;
   const withCancel = typeof onCancel === 'function';
   const withIcon = !!Icon;
-  const IconCloseSize = getSizeByMap(sizeMap, size);
+  const CloseSize = getSizeByMap(sizeMap, size);
   const IconSize = getSizeByMap(sizeMap, size, iconSize);
 
   return (
@@ -90,7 +90,7 @@ export const TagBase = forwardRefWithAs<Props>((props, ref) => {
           <span className={cnTagBase('Label')}>{label}</span>
           {withCancel && (
             <button className={cnTagBase('CancelButton')} type="button" onClick={onCancel}>
-              <IconClose className={cnTagBase('CancelIcon')} size={IconCloseSize} />
+              <Close className={cnTagBase('CancelIcon')} size={CloseSize} />
             </button>
           )}
         </>

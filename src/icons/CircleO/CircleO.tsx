@@ -7,5 +7,5 @@ export const CircleO = createIcon({
   m: CircleOSizeAll,
   s: CircleOSizeAll,
   xs: CircleOSizeAll,
-  name: 'CircleO',
+  name: 'IconCircleO',
 });

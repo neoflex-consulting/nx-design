@@ -7,5 +7,5 @@ export const Archive = createIcon({
   m: ArchiveSizeAll,
   s: ArchiveSizeAll,
   xs: ArchiveSizeAll,
-  name: 'Archive'
+  name: 'IconArchive'
 });

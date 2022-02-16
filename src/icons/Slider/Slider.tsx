@@ -7,5 +7,5 @@ export const Slider = createIcon({
   m: SliderSizeAll,
   s: SliderSizeAll,
   xs: SliderSizeAll,
-  name: 'Slider',
+  name: 'IconSlider',
 });

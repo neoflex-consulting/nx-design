@@ -7,5 +7,5 @@ export const FolderOpen = createIcon({
   m: FolderOpenSizeAll,
   s: FolderOpenSizeAll,
   xs: FolderOpenSizeAll,
-  name: 'FolderOpen',
+  name: 'IconFolderOpen',
 });

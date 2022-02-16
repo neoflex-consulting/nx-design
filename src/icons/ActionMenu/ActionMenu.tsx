@@ -7,5 +7,5 @@ export const ActionMenu = createIcon({
   m: ActionMenuSizeAll,
   s: ActionMenuSizeAll,
   xs: ActionMenuSizeAll,
-  name: 'ActionMenu'
+  name: 'IconActionMenu'
 });

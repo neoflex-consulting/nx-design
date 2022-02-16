@@ -7,5 +7,5 @@ export const TablePivotCheck = createIcon({
   m: TablePivotCheckSizeAll,
   s: TablePivotCheckSizeAll,
   xs: TablePivotCheckSizeAll,
-  name: 'TablePivotCheck',
+  name: 'IconTablePivotCheck',
 });

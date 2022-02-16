@@ -7,5 +7,5 @@ export const ArrowSwap = createIcon({
   m: ArrowSwapSizeAll,
   s: ArrowSwapSizeAll,
   xs: ArrowSwapSizeAll,
-  name: 'ArrowSwap',
+  name: 'IconArrowSwap',
 });

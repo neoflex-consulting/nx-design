@@ -2,7 +2,7 @@ import './TableSelectedOptionsList.css';
 
 import React from 'react';
 
-import { IconClose } from '../../../icons/IconClose/IconClose';
+import { Close } from '../../../icons/Close/Close';
 import { cn } from '../../../utils/bem';
 import { isNotNil } from '../../../utils/type-guards';
 import { Button } from '../../Button/Button';
@@ -74,7 +74,7 @@ export const TableSelectedOptionsList: React.FC<Props> = ({ values, onRemove, on
         size="xs"
         view="clear"
         onlyIcon
-        iconLeft={IconClose}
+        iconLeft={Close}
         className={cnTableSelectedOptionsList('Button')}
       />
     </div>

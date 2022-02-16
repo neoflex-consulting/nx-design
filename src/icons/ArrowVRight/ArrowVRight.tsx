@@ -7,5 +7,5 @@ export const ArrowVRight = createIcon({
   m: ArrowVRightSizeAll,
   s: ArrowVRightSizeAll,
   xs: ArrowVRightSizeAll,
-  name: 'ArrowVRight',
+  name: 'IconArrowVRight',
 });

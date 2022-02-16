@@ -7,5 +7,5 @@ export const BaseServer = createIcon({
   m: BaseServerSizeAll,
   s: BaseServerSizeAll,
   xs: BaseServerSizeAll,
-  name: 'BaseServer',
+  name: 'IconBaseServer',
 });

@@ -7,5 +7,5 @@ export const Control = createIcon({
   m: ControlSizeAll,
   s: ControlSizeAll,
   xs: ControlSizeAll,
-  name: 'Control',
+  name: 'IconControl',
 });

@@ -7,5 +7,5 @@ export const Clock = createIcon({
   m: ClockSizeAll,
   s: ClockSizeAll,
   xs: ClockSizeAll,
-  name: 'Clock',
+  name: 'IconClock',
 });

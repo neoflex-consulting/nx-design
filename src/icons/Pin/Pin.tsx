@@ -7,5 +7,5 @@ export const Pin = createIcon({
   m: PinSizeAll,
   s: PinSizeAll,
   xs: PinSizeAll,
-  name: 'Pin',
+  name: 'IconPin',
 });

@@ -7,5 +7,5 @@ export const Email = createIcon({
   m: EmailSizeAll,
   s: EmailSizeAll,
   xs: EmailSizeAll,
-  name: 'Email',
+  name: 'IconEmail',
 });

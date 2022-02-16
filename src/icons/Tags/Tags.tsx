@@ -7,5 +7,5 @@ export const Tags = createIcon({
   m: TagsSizeAll,
   s: TagsSizeAll,
   xs: TagsSizeAll,
-  name: 'Tags',
+  name: 'IconTags',
 });

@@ -7,5 +7,5 @@ export const Share = createIcon({
   m: ShareSizeAll,
   s: ShareSizeAll,
   xs: ShareSizeAll,
-  name: 'Share',
+  name: 'IconShare',
 });

@@ -7,5 +7,5 @@ export const Text = createIcon({
   m: TextSizeAll,
   s: TextSizeAll,
   xs: TextSizeAll,
-  name: 'Text',
+  name: 'IconText',
 });

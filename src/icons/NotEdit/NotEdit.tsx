@@ -7,5 +7,5 @@ export const NotEdit = createIcon({
   m: NotEditSizeAll,
   s: NotEditSizeAll,
   xs: NotEditSizeAll,
-  name: 'NotEdit',
+  name: 'IconNotEdit',
 });

@@ -7,5 +7,5 @@ export const Import = createIcon({
   m: ImportSizeAll,
   s: ImportSizeAll,
   xs: ImportSizeAll,
-  name: 'Import',
+  name: 'IconImport',
 });

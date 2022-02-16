@@ -7,5 +7,5 @@ export const ChatWarning = createIcon({
   m: ChatWarningSizeAll,
   s: ChatWarningSizeAll,
   xs: ChatWarningSizeAll,
-  name: 'ChatWarning',
+  name: 'IconChatWarning',
 });

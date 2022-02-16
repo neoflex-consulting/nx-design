@@ -7,5 +7,5 @@ export const FunctionField = createIcon({
   m: FunctionFieldSizeAll,
   s: FunctionFieldSizeAll,
   xs: FunctionFieldSizeAll,
-  name: 'FunctionField',
+  name: 'IconFunctionField',
 });

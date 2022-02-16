@@ -74,9 +74,9 @@ export const TabsExample = () => {
 ```tsx
 import React, { useState } from 'react';
 import { Tabs } from 'nx-design/Tabs';
-import { IconPhoto } from 'nx-design/IconPhoto';
-import { IconRing } from 'nx-design/IconRing';
-import { IconCamera } from 'nx-design/IconCamera';
+import { Image } from 'nx-design/Image';
+import { Bell } from 'nx-design/Bell';
+import { Camera } from 'nx-design/Camera';
 
 type Item = {
   name: string;
@@ -86,15 +86,15 @@ type Item = {
 const items = [
   {
     name: 'Первый',
-    icon: IconPhoto,
+    icon: Image,
   },
   {
     name: 'Второй',
-    icon: IconRing,
+    icon: Bell,
   },
   {
     name: 'Третий вариант',
-    icon: IconCamera,
+    icon: Camera,
   },
 ];
 

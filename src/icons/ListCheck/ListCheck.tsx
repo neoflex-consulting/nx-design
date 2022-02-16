@@ -7,5 +7,5 @@ export const ListCheck = createIcon({
   m: ListCheckSizeAll,
   s: ListCheckSizeAll,
   xs: ListCheckSizeAll,
-  name: 'ListCheck',
+  name: 'IconListCheck',
 });

@@ -5,7 +5,7 @@ import React, { useReducer } from 'react';
 import { IconProps } from '../../../../../icons/_Icon/Icon';
 import { Plus } from '../../../../../icons/Plus/Plus';
 import { WarningC } from '../../../../../icons/WarningC/WarningC';
-import { IconRing } from '../../../../../icons/IconRing/IconRing';
+import { Bell } from '../../../../../icons/Bell/Bell';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { cn } from '../../../../../utils/bem';
 import { Button } from '../../../../Button/Button';
@@ -15,7 +15,7 @@ const cnNotificationExampleTimer = cn('NotificationExampleTimer');
 
 const mapIconByStatus: Record<NotificationItemStatus, React.FC<IconProps> | undefined> = {
   error: WarningC,
-  info: IconRing,
+  info: Bell,
   system: undefined,
   success: undefined,
   warning: undefined,

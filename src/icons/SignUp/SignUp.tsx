@@ -7,5 +7,5 @@ export const SignUp = createIcon({
   m: SignUpSizeAll,
   s: SignUpSizeAll,
   xs: SignUpSizeAll,
-  name: 'SignUp',
+  name: 'IconSignUp',
 });

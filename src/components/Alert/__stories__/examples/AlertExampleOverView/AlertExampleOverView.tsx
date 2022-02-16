@@ -4,7 +4,7 @@ import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/D
 import { cnDocsExample } from '../../../../../uiKit/components/DocsExample/DocsExample';
 import * as wp from '../../../../../uiKit/whitepaper/whitepaper';
 import { Alert } from '../../../Alert';
-import {IconThumbUp} from "../../../../../icons/IconThumbUp/IconThumbUp";
+import {CheckDouble} from "../../../../../icons/CheckDouble/CheckDouble";
 
 export function AlertExampleOverView() {
   return (
@@ -83,13 +83,13 @@ export function AlertExampleOverView() {
         className={cnDocsDecorator('Section', [wp.tplGrid({ 'ratio': '1-1-1', 'col-gap': 'full' })])}
       >
         <div className={cnDocsExample()}>
-          <Alert label="with icon" view="filled" status="success" icon={IconThumbUp}/>
+          <Alert label="with icon" view="filled" status="success" icon={CheckDouble}/>
         </div>
         <div className={cnDocsExample()}>
-          <Alert label="with icon" view="outlined" status="success" icon={IconThumbUp}/>
+          <Alert label="with icon" view="outlined" status="success" icon={CheckDouble}/>
         </div>
         <div className={cnDocsExample()}>
-          <Alert label="with icon" view="bordered" status="success" icon={IconThumbUp}/>
+          <Alert label="with icon" view="bordered" status="success" icon={CheckDouble}/>
         </div>
       </div>
 

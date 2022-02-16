@@ -7,5 +7,5 @@ export const Separator = createIcon({
   m: SeparatorSizeAll,
   s: SeparatorSizeAll,
   xs: SeparatorSizeAll,
-  name: 'Separator',
+  name: 'IconSeparator',
 });

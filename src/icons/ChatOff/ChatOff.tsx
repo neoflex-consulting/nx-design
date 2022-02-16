@@ -7,5 +7,5 @@ export const ChatOff = createIcon({
   m: ChatOffSizeAll,
   s: ChatOffSizeAll,
   xs: ChatOffSizeAll,
-  name: 'ChatOff',
+  name: 'IconChatOff',
 });

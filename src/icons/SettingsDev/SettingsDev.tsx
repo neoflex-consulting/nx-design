@@ -7,5 +7,5 @@ export const SettingsDev = createIcon({
   m: SettingsDevSizeAll,
   s: SettingsDevSizeAll,
   xs: SettingsDevSizeAll,
-  name: 'SettingsDev',
+  name: 'IconSettingsDev',
 });

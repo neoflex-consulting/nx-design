@@ -7,5 +7,5 @@ export const DoubleDown = createIcon({
   m: DoubleDownSizeAll,
   s: DoubleDownSizeAll,
   xs: DoubleDownSizeAll,
-  name: 'DoubleDown',
+  name: 'IconDoubleDown',
 });

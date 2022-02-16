@@ -7,5 +7,5 @@ export const SystemSettings = createIcon({
   m: SystemSettingsSizeAll,
   s: SystemSettingsSizeAll,
   xs: SystemSettingsSizeAll,
-  name: 'SystemSettings',
+  name: 'IconSystemSettings',
 });

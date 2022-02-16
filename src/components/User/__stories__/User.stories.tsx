@@ -1,7 +1,7 @@
 import React from 'react';
 import { boolean, select, text } from '@storybook/addon-knobs';
 
-import { IconCrown } from '../../../icons/IconCrown/IconCrown';
+import { Flag } from '../../../icons/Flag/Flag';
 import { createMetadata } from '../../../utils/storybook';
 import {
   User,
@@ -42,7 +42,7 @@ export function Playground() {
     onlyAvatar,
     withIconRight,
   } = defaultKnobs();
-  const iconRight = !withArrow ? IconCrown : undefined;
+  const iconRight = !withArrow ? Flag : undefined;
   return (
     <div>
       <User

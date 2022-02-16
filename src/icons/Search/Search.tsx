@@ -7,5 +7,5 @@ export const Search = createIcon({
   m: SearchSizeAll,
   s: SearchSizeAll,
   xs: SearchSizeAll,
-  name: 'Search',
+  name: 'IconSearch',
 });

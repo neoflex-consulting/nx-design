@@ -7,5 +7,5 @@ export const Upload = createIcon({
   m: UploadSizeAll,
   s: UploadSizeAll,
   xs: UploadSizeAll,
-  name: 'Upload',
+  name: 'IconUpload',
 });

@@ -7,5 +7,5 @@ export const Close = createIcon({
   m: CloseSizeAll,
   s: CloseSizeAll,
   xs: CloseSizeAll,
-  name: 'Close',
+  name: 'IconClose',
 });

@@ -7,5 +7,5 @@ export const Try = createIcon({
   m: TrySizeAll,
   s: TrySizeAll,
   xs: TrySizeAll,
-  name: 'Try',
+  name: 'IconTry',
 });

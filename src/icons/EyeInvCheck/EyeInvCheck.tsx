@@ -7,5 +7,5 @@ export const EyeInvCheck = createIcon({
   m: EyeInvCheckSizeAll,
   s: EyeInvCheckSizeAll,
   xs: EyeInvCheckSizeAll,
-  name: 'EyeInvCheck',
+  name: 'IconEyeInvCheck',
 });

@@ -7,5 +7,5 @@ export const Delete = createIcon({
   m: DeleteSizeAll,
   s: DeleteSizeAll,
   xs: DeleteSizeAll,
-  name: 'Delete',
+  name: 'IconDelete',
 });

@@ -7,5 +7,5 @@ export const Rub = createIcon({
   m: RubSizeAll,
   s: RubSizeAll,
   xs: RubSizeAll,
-  name: 'Rub',
+  name: 'IconRub',
 });

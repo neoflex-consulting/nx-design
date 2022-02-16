@@ -7,5 +7,5 @@ export const BookFormula = createIcon({
   m: BookFormulaSizeAll,
   s: BookFormulaSizeAll,
   xs: BookFormulaSizeAll,
-  name: 'BookFormula',
+  name: 'IconBookFormula',
 });

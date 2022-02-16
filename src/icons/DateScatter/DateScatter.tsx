@@ -7,5 +7,5 @@ export const DateScatter = createIcon({
   m: DateScatterSizeAll,
   s: DateScatterSizeAll,
   xs: DateScatterSizeAll,
-  name: 'DateScatter',
+  name: 'IconDateScatter',
 });

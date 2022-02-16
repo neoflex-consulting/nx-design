@@ -5,7 +5,7 @@ import {cnDocsDecorator} from "../../../../../uiKit/components/DocsDecorator/Doc
 import * as wp from "../../../../../uiKit/whitepaper/whitepaper";
 import {Button} from "../../../../Button/Button";
 import {cnDocsExample} from "../../../../../uiKit/components/DocsExample/DocsExample";
-import {IconDiamond} from "../../../../../icons/IconDiamond/IconDiamond";
+import {Gift} from "../../../../../icons/Gift/Gift";
 
 export const TextFieldExampleOverView = () => {
   const [value, setValue] = useState<string | null>(null);
@@ -100,7 +100,7 @@ export const TextFieldExampleOverView = () => {
           <TextField leftSide="leftSide" value={value} onChange={handleChange} />
         </div>
         <div className={cnDocsExample()}>
-          <TextField leftSide={IconDiamond} rightSide="rightSide" value={value} onChange={handleChange} />
+          <TextField leftSide={Gift} rightSide="rightSide" value={value} onChange={handleChange} />
         </div>
       </div>
 

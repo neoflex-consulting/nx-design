@@ -7,5 +7,5 @@ export const TextFieldMask = createIcon({
   m: TextFieldMaskSizeAll,
   s: TextFieldMaskSizeAll,
   xs: TextFieldMaskSizeAll,
-  name: 'TextFieldMask',
+  name: 'IconTextFieldMask',
 });

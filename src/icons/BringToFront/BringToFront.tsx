@@ -7,5 +7,5 @@ export const BringToFront = createIcon({
   m: BringToFrontSizeAll,
   s: BringToFrontSizeAll,
   xs: BringToFrontSizeAll,
-  name: 'BringToFront',
+  name: 'IconBringToFront',
 });

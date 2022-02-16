@@ -7,5 +7,5 @@ export const FileDownload = createIcon({
   m: FileDownloadSizeAll,
   s: FileDownloadSizeAll,
   xs: FileDownloadSizeAll,
-  name: 'FileDownload',
+  name: 'IconFileDownload',
 });

@@ -7,5 +7,5 @@ export const Export = createIcon({
   m: ExportSizeAll,
   s: ExportSizeAll,
   xs: ExportSizeAll,
-  name: 'Export',
+  name: 'IconExport',
 });

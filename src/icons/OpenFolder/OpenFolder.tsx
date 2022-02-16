@@ -7,5 +7,5 @@ export const OpenFolder = createIcon({
   m: OpenFolderSizeAll,
   s: OpenFolderSizeAll,
   xs: OpenFolderSizeAll,
-  name: 'OpenFolder',
+  name: 'IconOpenFolder',
 });

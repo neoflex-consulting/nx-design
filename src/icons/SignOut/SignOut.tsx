@@ -7,5 +7,5 @@ export const SignOut = createIcon({
   m: SignOutSizeAll,
   s: SignOutSizeAll,
   xs: SignOutSizeAll,
-  name: 'SignOut',
+  name: 'IconSignOut',
 });

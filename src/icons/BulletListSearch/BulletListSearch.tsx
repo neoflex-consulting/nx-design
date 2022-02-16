@@ -7,5 +7,5 @@ export const BulletListSearch = createIcon({
   m: BulletListSearchSizeAll,
   s: BulletListSearchSizeAll,
   xs: BulletListSearchSizeAll,
-  name: 'BulletListSearch',
+  name: 'IconBulletListSearch',
 });

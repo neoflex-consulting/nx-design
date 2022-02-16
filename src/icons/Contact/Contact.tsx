@@ -7,5 +7,5 @@ export const Contact = createIcon({
   m: ContactSizeAll,
   s: ContactSizeAll,
   xs: ContactSizeAll,
-  name: 'Contact',
+  name: 'IconContact',
 });

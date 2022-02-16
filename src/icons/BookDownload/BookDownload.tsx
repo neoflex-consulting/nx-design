@@ -7,5 +7,5 @@ export const BookDownload = createIcon({
   m: BookDownloadSizeAll,
   s: BookDownloadSizeAll,
   xs: BookDownloadSizeAll,
-  name: 'BookDownload',
+  name: 'IconBookDownload',
 });

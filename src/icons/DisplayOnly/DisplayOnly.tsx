@@ -7,5 +7,5 @@ export const DisplayOnly = createIcon({
   m: DisplayOnlySizeAll,
   s: DisplayOnlySizeAll,
   xs: DisplayOnlySizeAll,
-  name: 'DisplayOnly',
+  name: 'IconDisplayOnly',
 });

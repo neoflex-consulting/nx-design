@@ -7,5 +7,5 @@ export const TextArea = createIcon({
   m: TextAreaSizeAll,
   s: TextAreaSizeAll,
   xs: TextAreaSizeAll,
-  name: 'TextArea',
+  name: 'IconTextArea',
 });

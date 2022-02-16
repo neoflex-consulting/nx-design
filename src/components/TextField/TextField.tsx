@@ -4,9 +4,9 @@ import React, { forwardRef, useEffect, useState } from 'react';
 import TextAreaAutoSize from 'react-textarea-autosize';
 
 import { useForkRef } from '../../hooks/useForkRef/useForkRef';
-import { IconClose } from '../../icons/IconClose/IconClose';
-import { IconSelect } from '../../icons/IconSelect/IconSelect';
-import { IconSelectOpen } from '../../icons/IconSelectOpen/IconSelectOpen';
+import { Close } from '../../icons/Close/Close';
+import { CaretDown } from '../../icons/CaretDown/CaretDown';
+import { CaretUp } from '../../icons/CaretUp/CaretUp';
 import { cn } from '../../utils/bem';
 import { getSizeByMap } from '../../utils/getSizeByMap';
 import { usePropsHandler } from '../EventInterceptor/usePropsHandler';
@@ -239,14 +239,14 @@ export function TextFieldRender<TYPE extends string>(
                 type="button"
                 className={cnTextField('CounterButton')}
               >
-                <IconSelectOpen size="xs" />
+                <CaretUp size="xs" />
               </button>
               <button
                 onClick={(e) => changeNumberValue(e, false)}
                 type="button"
                 className={cnTextField('CounterButton')}
               >
-                <IconSelect size="xs" />
+                <CaretDown size="xs" />
               </button>
             </div>
           )}
@@ -258,7 +258,7 @@ export function TextFieldRender<TYPE extends string>(
               onClick={handleClear}
               className={cnTextField('ClearButton')}
             >
-              <IconClose size="xs" className={cnTextField('ClearButtonIcon')} />
+              <Close size="xs" className={cnTextField('ClearButtonIcon')} />
             </button>
           )}
 

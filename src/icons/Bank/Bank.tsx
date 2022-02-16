@@ -7,5 +7,5 @@ export const Bank = createIcon({
   m: BankSizeAll,
   s: BankSizeAll,
   xs: BankSizeAll,
-  name: 'Bank',
+  name: 'IconBank',
 });

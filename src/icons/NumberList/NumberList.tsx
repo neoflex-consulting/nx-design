@@ -7,5 +7,5 @@ export const NumberList = createIcon({
   m: NumberListSizeAll,
   s: NumberListSizeAll,
   xs: NumberListSizeAll,
-  name: 'NumberList',
+  name: 'IconNumberList',
 });

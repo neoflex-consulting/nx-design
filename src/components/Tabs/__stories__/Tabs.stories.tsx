@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { boolean, object, select } from '@storybook/addon-knobs';
 
 import { IconProps } from '../../../icons/_Icon/Icon';
-import { IconCamera } from '../../../icons/IconCamera/IconCamera';
-import { IconPhone } from '../../../icons/IconPhone/IconPhone';
-import { IconPhoto } from '../../../icons/IconPhoto/IconPhoto';
-import { IconRing } from '../../../icons/IconRing/IconRing';
+import { Camera } from '../../../icons/Camera/Camera';
+import { Phone } from '../../../icons/Phone/Phone';
+import { Image } from '../../../icons/Image/Image';
+import { Bell } from '../../../icons/Bell/Bell';
 import { createMetadata } from '../../../utils/storybook';
 import {
   Tabs,
@@ -34,7 +34,7 @@ type Item = {
   icon?: React.FC<IconProps>;
 };
 
-const itemIcons = [IconPhoto, IconRing, IconCamera, IconPhone];
+const itemIcons = [Image, Bell, Camera, Phone];
 
 const getItems = (): Item[] => {
   const knobItems = object('items', [

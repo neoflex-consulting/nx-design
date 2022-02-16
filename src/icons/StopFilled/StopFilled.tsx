@@ -7,5 +7,5 @@ export const StopFilled = createIcon({
   m: StopFilledSizeAll,
   s: StopFilledSizeAll,
   xs: StopFilledSizeAll,
-  name: 'StopFilled',
+  name: 'IconStopFilled',
 });

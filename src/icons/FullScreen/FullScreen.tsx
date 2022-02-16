@@ -7,5 +7,5 @@ export const FullScreen = createIcon({
   m: FullScreenSizeAll,
   s: FullScreenSizeAll,
   xs: FullScreenSizeAll,
-  name: 'FullScreen',
+  name: 'IconFullScreen',
 });

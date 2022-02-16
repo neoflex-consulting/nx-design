@@ -7,5 +7,5 @@ export const Sertificat = createIcon({
   m: SertificatSizeAll,
   s: SertificatSizeAll,
   xs: SertificatSizeAll,
-  name: 'Sertificat',
+  name: 'IconSertificat',
 });

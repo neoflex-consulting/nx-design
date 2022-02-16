@@ -7,5 +7,5 @@ export const Phone = createIcon({
   m: PhoneSizeAll,
   s: PhoneSizeAll,
   xs: PhoneSizeAll,
-  name: 'Phone',
+  name: 'IconPhone',
 });

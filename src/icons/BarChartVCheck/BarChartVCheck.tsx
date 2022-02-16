@@ -7,5 +7,5 @@ export const BarChartVCheck = createIcon({
   m: BarChartVCheckSizeAll,
   s: BarChartVCheckSizeAll,
   xs: BarChartVCheckSizeAll,
-  name: 'BarChartVCheck',
+  name: 'IconBarChartVCheck',
 });

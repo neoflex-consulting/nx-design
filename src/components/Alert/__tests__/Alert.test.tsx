@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import { IconLeaf } from '../../../icons/IconLeaf/IconLeaf';
+import { Heart } from '../../../icons/Heart/Heart';
 import { cnAlert, Alert, alertPropView } from '../Alert';
 
 type AlertProps = React.ComponentProps<typeof Alert>;
@@ -45,12 +45,12 @@ describe('Компонент Alert', () => {
     });
     describe('проверка icon', () => {
       it(`иконка отображается`, () => {
-        renderComponent({ icon: IconLeaf });
+        renderComponent({ icon: Heart });
 
-        expect(getIcon()).toHaveClass('IconLeaf');
+        expect(getIcon()).toHaveClass('Heart');
       });
       it(`присвоился модификатор withIcon `, () => {
-        renderComponent({ icon: IconLeaf });
+        renderComponent({ icon: Heart });
 
         expect(getRender()).toHaveClass(cnAlert({ withIcon: true }));
       });

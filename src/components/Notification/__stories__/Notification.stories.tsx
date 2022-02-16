@@ -6,9 +6,9 @@ import {boolean, text} from '@storybook/addon-knobs';
 import { IconProps } from '../../../icons/_Icon/Icon';
 import { Plus } from '../../../icons/Plus/Plus';
 import { WarningC } from '../../../icons/WarningC/WarningC';
-import { IconProcessing } from '../../../icons/IconProcessing/IconProcessing';
-import { IconRing } from '../../../icons/IconRing/IconRing';
-import { IconThumbUp } from '../../../icons/IconThumbUp/IconThumbUp';
+import { SettingsDev } from '../../../icons/SettingsDev/SettingsDev';
+import { Bell } from '../../../icons/Bell/Bell';
+import { CheckDouble } from '../../../icons/CheckDouble/CheckDouble';
 import { cn } from '../../../utils/bem';
 import { createMetadata } from '../../../utils/storybook';
 import { Button } from '../../Button/Button';
@@ -34,11 +34,11 @@ const defaultKnobs = () => ({
 
 const getItemIconByStatus = (status: NotificationItemStatus): React.FC<IconProps> | undefined => {
   const mapIconByStatus: Record<NotificationItemStatus, React.FC<IconProps>> = {
-    success: IconThumbUp,
+    success: CheckDouble,
     warning: WarningC,
     error: WarningC,
-    system: IconProcessing,
-    info: IconRing,
+    system: SettingsDev,
+    info: Bell,
     basic: WarningC
   };
   return mapIconByStatus[status];

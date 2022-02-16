@@ -7,5 +7,5 @@ export const Plus = createIcon({
   m: PlusSizeAll,
   s: PlusSizeAll,
   xs: PlusSizeAll,
-  name: 'Plus',
+  name: 'IconPlus',
 });

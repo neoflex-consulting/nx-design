@@ -7,5 +7,5 @@ export const Comment = createIcon({
   m: CommentSizeAll,
   s: CommentSizeAll,
   xs: CommentSizeAll,
-  name: 'Comment',
+  name: 'IconComment',
 });

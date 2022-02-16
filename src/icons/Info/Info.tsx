@@ -7,5 +7,5 @@ export const Info = createIcon({
   m: InfoSizeAll,
   s: InfoSizeAll,
   xs: InfoSizeAll,
-  name: 'Info',
+  name: 'IconInfo',
 });

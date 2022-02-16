@@ -7,5 +7,5 @@ export const TextColor = createIcon({
   m: TextColorSizeAll,
   s: TextColorSizeAll,
   xs: TextColorSizeAll,
-  name: 'TextColor',
+  name: 'IconTextColor',
 });

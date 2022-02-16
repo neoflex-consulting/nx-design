@@ -7,5 +7,5 @@ export const Hourglass = createIcon({
   m: HourglassSizeAll,
   s: HourglassSizeAll,
   xs: HourglassSizeAll,
-  name: 'Hourglass',
+  name: 'IconHourglass',
 });

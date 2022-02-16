@@ -2,8 +2,8 @@ import './HeaderWithoutSearchExample.css';
 
 import React, { useState } from 'react';
 
-import { IconChat } from '../../../../../icons/IconChat/IconChat';
-import { IconRing } from '../../../../../icons/IconRing/IconRing';
+import { CommentChat } from '../../../../../icons/CommentChat/CommentChat';
+import { Bell } from '../../../../../icons/Bell/Bell';
 import { cn } from '../../../../../utils/bem';
 import { Typography } from '../../../../Typography/Typography';
 import {
@@ -59,10 +59,10 @@ export function HeaderWithoutSearchExample() {
       rightSide={
         <>
           <HeaderModule indent="s">
-            <HeaderButton iconLeft={IconChat} />
+            <HeaderButton iconLeft={CommentChat} />
           </HeaderModule>
           <HeaderModule indent="s">
-            <HeaderButton iconLeft={IconRing} />
+            <HeaderButton iconLeft={Bell} />
           </HeaderModule>
           <HeaderModule indent="s">
             <HeaderLogin

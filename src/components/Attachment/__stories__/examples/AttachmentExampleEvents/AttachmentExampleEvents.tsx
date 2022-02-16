@@ -2,7 +2,7 @@ import './AttachmentExampleEvents.css';
 
 import React from 'react';
 
-import { IconTrash } from '../../../../../icons/IconTrash/IconTrash';
+import { Delete } from '../../../../../icons/Delete/Delete';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { cnDocsExample } from '../../../../../uiKit/components/DocsExample/DocsExample';
 import { cn } from '../../../../../utils/bem';
@@ -19,7 +19,7 @@ export function AttachmentExampleEvents() {
         fileExtension="docx"
         fileDescription="1,5 Mб 21.02.2020, 14:12"
         loadingText="Загрузка"
-        buttonIcon={IconTrash}
+        buttonIcon={Delete}
         buttonTitle="Удалить"
         onClick={() => console.log('onClick')}
         onButtonClick={(e) => {

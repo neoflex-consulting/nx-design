@@ -7,5 +7,5 @@ export const TableColumn = createIcon({
   m: TableColumnSizeAll,
   s: TableColumnSizeAll,
   xs: TableColumnSizeAll,
-  name: 'TableColumn',
+  name: 'IconTableColumn',
 });

@@ -7,5 +7,5 @@ export const UserDelete = createIcon({
   m: UserDeleteSizeAll,
   s: UserDeleteSizeAll,
   xs: UserDeleteSizeAll,
-  name: 'UserDelete',
+  name: 'IconUserDelete',
 });

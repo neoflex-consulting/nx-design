@@ -7,5 +7,5 @@ export const Map = createIcon({
   m: MapSizeAll,
   s: MapSizeAll,
   xs: MapSizeAll,
-  name: 'Map',
+  name: 'IconMap',
 });

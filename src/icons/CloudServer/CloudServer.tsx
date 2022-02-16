@@ -7,5 +7,5 @@ export const CloudServer = createIcon({
   m: CloudServerSizeAll,
   s: CloudServerSizeAll,
   xs: CloudServerSizeAll,
-  name: 'CloudServer',
+  name: 'IconCloudServer',
 });

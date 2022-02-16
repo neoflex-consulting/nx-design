@@ -7,5 +7,5 @@ export const Paste = createIcon({
   m: PasteSizeAll,
   s: PasteSizeAll,
   xs: PasteSizeAll,
-  name: 'Paste',
+  name: 'IconPaste',
 });

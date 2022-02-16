@@ -7,5 +7,5 @@ export const Clip = createIcon({
   m: ClipSizeAll,
   s: ClipSizeAll,
   xs: ClipSizeAll,
-  name: 'Clip',
+  name: 'IconClip',
 });

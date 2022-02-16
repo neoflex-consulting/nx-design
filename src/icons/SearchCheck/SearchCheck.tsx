@@ -7,5 +7,5 @@ export const SearchCheck = createIcon({
   m: SearchCheckSizeAll,
   s: SearchCheckSizeAll,
   xs: SearchCheckSizeAll,
-  name: 'SearchCheck',
+  name: 'IconSearchCheck',
 });

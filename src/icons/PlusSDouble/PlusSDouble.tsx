@@ -7,5 +7,5 @@ export const PlusSDouble = createIcon({
   m: PlusSDoubleSizeAll,
   s: PlusSDoubleSizeAll,
   xs: PlusSDoubleSizeAll,
-  name: 'PlusSDouble',
+  name: 'IconPlusSDouble',
 });

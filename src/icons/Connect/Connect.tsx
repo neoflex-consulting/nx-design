@@ -7,5 +7,5 @@ export const Connect = createIcon({
   m: ConnectSizeAll,
   s: ConnectSizeAll,
   xs: ConnectSizeAll,
-  name: 'Connect',
+  name: 'IconConnect',
 });

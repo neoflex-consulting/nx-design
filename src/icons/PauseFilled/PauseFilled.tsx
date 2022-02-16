@@ -7,5 +7,5 @@ export const PauseFilled = createIcon({
   m: PauseFilledSizeAll,
   s: PauseFilledSizeAll,
   xs: PauseFilledSizeAll,
-  name: 'PauseFilled',
+  name: 'IconPauseFilled',
 });

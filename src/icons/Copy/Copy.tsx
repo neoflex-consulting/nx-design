@@ -7,5 +7,5 @@ export const Copy = createIcon({
   m: CopySizeAll,
   s: CopySizeAll,
   xs: CopySizeAll,
-  name: 'Copy',
+  name: 'IconCopy',
 });

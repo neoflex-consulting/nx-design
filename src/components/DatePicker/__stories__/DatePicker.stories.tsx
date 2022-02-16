@@ -6,7 +6,7 @@ import esLocale from 'date-fns/locale/es';
 import ruLocale from 'date-fns/locale/ru';
 import zhCNLocale from 'date-fns/locale/zh-CN';
 
-import { IconCalendar } from '../../../icons/IconCalendar/IconCalendar';
+import { Calendar } from '../../../icons/Calendar/Calendar';
 import { maxDateDefault, minDateDefault } from '../../../utils/date';
 import { getSizeByMap } from '../../../utils/getSizeByMap';
 import { createMetadata } from '../../../utils/storybook';
@@ -102,7 +102,7 @@ export function Playground() {
     ? [startOfWeek(currentDay, { locale: ruLocale }), currentDay, addDays(currentDay, 2)]
     : undefined;
 
-  const icon = withIcon ? IconCalendar : undefined;
+  const icon = withIcon ? Calendar : undefined;
 
   useEffect(() => {
     setValue(null);

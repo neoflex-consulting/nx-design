@@ -7,5 +7,5 @@ export const Binokulars = createIcon({
   m: BinokularsSizeAll,
   s: BinokularsSizeAll,
   xs: BinokularsSizeAll,
-  name: 'Binokulars',
+  name: 'IconBinokulars',
 });

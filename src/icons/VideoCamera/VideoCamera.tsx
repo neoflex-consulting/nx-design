@@ -7,5 +7,5 @@ export const VideoCamera = createIcon({
   m: VideoCameraSizeAll,
   s: VideoCameraSizeAll,
   xs: VideoCameraSizeAll,
-  name: 'VideoCamera',
+  name: 'IconVideoCamera',
 });

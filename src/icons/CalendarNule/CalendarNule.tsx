@@ -7,5 +7,5 @@ export const CalendarNule = createIcon({
   m: CalendarNuleSizeAll,
   s: CalendarNuleSizeAll,
   xs: CalendarNuleSizeAll,
-  name: 'CalendarNule',
+  name: 'IconCalendarNule',
 });

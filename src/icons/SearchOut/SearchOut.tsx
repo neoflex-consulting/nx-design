@@ -7,5 +7,5 @@ export const SearchOut = createIcon({
   m: SearchOutSizeAll,
   s: SearchOutSizeAll,
   xs: SearchOutSizeAll,
-  name: 'SearchOut',
+  name: 'IconSearchOut',
 });

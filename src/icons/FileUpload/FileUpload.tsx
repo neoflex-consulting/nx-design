@@ -7,5 +7,5 @@ export const FileUpload = createIcon({
   m: FileUploadSizeAll,
   s: FileUploadSizeAll,
   xs: FileUploadSizeAll,
-  name: 'FileUpload',
+  name: 'IconFileUpload',
 });

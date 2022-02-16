@@ -7,5 +7,5 @@ export const GridIcon = createIcon({
   m: GridIconSizeAll,
   s: GridIconSizeAll,
   xs: GridIconSizeAll,
-  name: 'GridIcon',
+  name: 'IconGrid',
 });

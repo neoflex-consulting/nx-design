@@ -7,5 +7,5 @@ export const Color = createIcon({
   m: ColorSizeAll,
   s: ColorSizeAll,
   xs: ColorSizeAll,
-  name: 'Color',
+  name: 'IconColor',
 });

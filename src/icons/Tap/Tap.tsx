@@ -7,5 +7,5 @@ export const Tap = createIcon({
   m: TapSizeAll,
   s: TapSizeAll,
   xs: TapSizeAll,
-  name: 'Tap',
+  name: 'IconTap',
 });

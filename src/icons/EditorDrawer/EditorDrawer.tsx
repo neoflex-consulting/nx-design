@@ -7,5 +7,5 @@ export const EditorDrawer = createIcon({
   m: EditorDrawerSizeAll,
   s: EditorDrawerSizeAll,
   xs: EditorDrawerSizeAll,
-  name: 'EditorDrawer',
+  name: 'IconEditorDrawer',
 });

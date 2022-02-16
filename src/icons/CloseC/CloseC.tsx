@@ -7,5 +7,5 @@ export const CloseC = createIcon({
   m: CloseCSizeAll,
   s: CloseCSizeAll,
   xs: CloseCSizeAll,
-  name: 'CloseC',
+  name: 'IconCloseC',
 });

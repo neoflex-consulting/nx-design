@@ -7,5 +7,5 @@ export const Play = createIcon({
   m: PlaySizeAll,
   s: PlaySizeAll,
   xs: PlaySizeAll,
-  name: 'Play',
+  name: 'IconPlay',
 });

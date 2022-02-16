@@ -7,5 +7,5 @@ export const TableSetV = createIcon({
   m: TableSetVSizeAll,
   s: TableSetVSizeAll,
   xs: TableSetVSizeAll,
-  name: 'TableSetV',
+  name: 'IconTableSetV',
 });

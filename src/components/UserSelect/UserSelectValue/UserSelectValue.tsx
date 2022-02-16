@@ -2,7 +2,7 @@ import './UserSelectValue.css';
 
 import React from 'react';
 
-import { IconClose } from '../../../icons/IconClose/IconClose';
+import { Close } from '../../../icons/Close/Close';
 import { cn } from '../../../utils/bem';
 import { User } from '../../User/User';
 
@@ -30,7 +30,7 @@ export const UserSelectValue: React.FC<UserValueProps> = (props) => {
       info={subLabel}
       size={size}
       view={multiple ? 'ghost' : 'clear'}
-      iconRight={!disabled && multiple ? IconClose : undefined}
+      iconRight={!disabled && multiple ? Close : undefined}
       onIconRightClick={!disabled && multiple ? handleRemove : undefined}
     />
   );

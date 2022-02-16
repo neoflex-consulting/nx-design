@@ -7,5 +7,5 @@ export const Clipboard = createIcon({
   m: ClipboardSizeAll,
   s: ClipboardSizeAll,
   xs: ClipboardSizeAll,
-  name: 'Clipboard',
+  name: 'IconClipboard',
 });

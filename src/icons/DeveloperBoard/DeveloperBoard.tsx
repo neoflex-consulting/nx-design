@@ -7,5 +7,5 @@ export const DeveloperBoard = createIcon({
   m: DeveloperBoardSizeAll,
   s: DeveloperBoardSizeAll,
   xs: DeveloperBoardSizeAll,
-  name: 'DeveloperBoard',
+  name: 'IconDeveloperBoard',
 });

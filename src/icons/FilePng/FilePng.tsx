@@ -7,5 +7,5 @@ export const FilePng = createIcon({
   m: FilePngSizeAll,
   s: FilePngSizeAll,
   xs: FilePngSizeAll,
-  name: 'FilePng',
+  name: 'IconFilePng',
 });

@@ -7,5 +7,5 @@ export const Repeat = createIcon({
   m: RepeatSizeAll,
   s: RepeatSizeAll,
   xs: RepeatSizeAll,
-  name: 'Repeat',
+  name: 'IconRepeat',
 });

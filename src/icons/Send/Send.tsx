@@ -7,5 +7,5 @@ export const Send = createIcon({
   m: SendSizeAll,
   s: SendSizeAll,
   xs: SendSizeAll,
-  name: 'Send',
+  name: 'IconSend',
 });

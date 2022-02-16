@@ -7,5 +7,5 @@ export const CheckC = createIcon({
   m: CheckCSizeAll,
   s: CheckCSizeAll,
   xs: CheckCSizeAll,
-  name: 'CheckC',
+  name: 'IconCheckC',
 });

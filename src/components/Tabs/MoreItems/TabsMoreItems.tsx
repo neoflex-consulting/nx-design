@@ -4,7 +4,7 @@ import React from 'react';
 import FocusTrap from 'focus-trap-react';
 
 import { useForkRef } from '../../../hooks/useForkRef/useForkRef';
-import { IconMeatball } from '../../../icons/IconMeatball/IconMeatball';
+import { Dotted } from '../../../icons/Dotted/Dotted';
 import { cn } from '../../../utils/bem';
 import { Button } from '../../Button/Button';
 import { Popover } from '../../Popover/Popover';
@@ -45,7 +45,7 @@ export const TabsMoreItems: TabsMoreItems = React.forwardRef(
             size="xs"
             view="ghost"
             onlyIcon
-            iconLeft={IconMeatball}
+            iconLeft={Dotted}
             onClick={() => setIsMoreItemsVisible((state) => !state)}
           />
         </div>

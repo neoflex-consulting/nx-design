@@ -7,5 +7,5 @@ export const Fort = createIcon({
   m: FortSizeAll,
   s: FortSizeAll,
   xs: FortSizeAll,
-  name: 'Fort',
+  name: 'IconFort',
 });

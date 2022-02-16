@@ -7,5 +7,5 @@ export const Dictionary = createIcon({
   m: DictionarySizeAll,
   s: DictionarySizeAll,
   xs: DictionarySizeAll,
-  name: 'Dictionary',
+  name: 'IconDictionary',
 });

@@ -7,5 +7,5 @@ export const FileAi = createIcon({
   m: FileAiSizeAll,
   s: FileAiSizeAll,
   xs: FileAiSizeAll,
-  name: 'FileAi',
+  name: 'IconFileAi',
 });

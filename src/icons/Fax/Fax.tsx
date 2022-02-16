@@ -7,5 +7,5 @@ export const Fax = createIcon({
   m: FaxSizeAll,
   s: FaxSizeAll,
   xs: FaxSizeAll,
-  name: 'Fax',
+  name: 'IconFax',
 });

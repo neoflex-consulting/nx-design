@@ -7,5 +7,5 @@ export const PaperClip = createIcon({
   m: PaperClipSizeAll,
   s: PaperClipSizeAll,
   xs: PaperClipSizeAll,
-  name: 'PaperClip',
+  name: 'IconPaperClip',
 });

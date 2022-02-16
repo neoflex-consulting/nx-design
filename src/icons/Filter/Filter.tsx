@@ -7,5 +7,5 @@ export const Filter = createIcon({
   m: FilterSizeAll,
   s: FilterSizeAll,
   xs: FilterSizeAll,
-  name: 'Filter',
+  name: 'IconFilter',
 });

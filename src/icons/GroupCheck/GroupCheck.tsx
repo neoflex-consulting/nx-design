@@ -7,5 +7,5 @@ export const GroupCheck = createIcon({
   m: GroupCheckSizeAll,
   s: GroupCheckSizeAll,
   xs: GroupCheckSizeAll,
-  name: 'GroupCheck',
+  name: 'IconGroupCheck',
 });

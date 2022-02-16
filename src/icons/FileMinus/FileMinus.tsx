@@ -7,5 +7,5 @@ export const FileMinus = createIcon({
   m: FileMinusSizeAll,
   s: FileMinusSizeAll,
   xs: FileMinusSizeAll,
-  name: 'FileMinus',
+  name: 'IconFileMinus',
 });

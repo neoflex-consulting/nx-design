@@ -7,5 +7,5 @@ export const Cookies = createIcon({
   m: CookiesSizeAll,
   s: CookiesSizeAll,
   xs: CookiesSizeAll,
-  name: 'Cookies',
+  name: 'IconCookies',
 });

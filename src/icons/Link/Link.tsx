@@ -7,5 +7,5 @@ export const Link = createIcon({
   m: LinkSizeAll,
   s: LinkSizeAll,
   xs: LinkSizeAll,
-  name: 'Link',
+  name: 'IconLink',
 });

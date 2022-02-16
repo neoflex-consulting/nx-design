@@ -7,5 +7,5 @@ export const ChevronUp = createIcon({
   m: ChevronUpSizeAll,
   s: ChevronUpSizeAll,
   xs: ChevronUpSizeAll,
-  name: 'ChevronUp',
+  name: 'IconChevronUp',
 });

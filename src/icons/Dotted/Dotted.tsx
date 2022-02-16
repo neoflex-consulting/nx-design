@@ -7,5 +7,5 @@ export const Dotted = createIcon({
   m: DottedSizeAll,
   s: DottedSizeAll,
   xs: DottedSizeAll,
-  name: 'Dotted',
+  name: 'IconDotted',
 });

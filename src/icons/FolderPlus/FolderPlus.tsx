@@ -7,5 +7,5 @@ export const FolderPlus = createIcon({
   m: FolderPlusSizeAll,
   s: FolderPlusSizeAll,
   xs: FolderPlusSizeAll,
-  name: 'FolderPlus',
+  name: 'IconFolderPlus',
 });

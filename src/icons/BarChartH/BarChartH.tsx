@@ -7,5 +7,5 @@ export const BarChartH = createIcon({
   m: BarChartHSizeAll,
   s: BarChartHSizeAll,
   xs: BarChartHSizeAll,
-  name: 'BarChartH',
+  name: 'IconBarChartH',
 });

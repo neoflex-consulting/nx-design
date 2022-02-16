@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { content } from '../../../__mocks__/mock.data';
 import { Plus } from '../../../../../icons/Plus/Plus';
-import { IconRemove } from '../../../../../icons/IconRemove/IconRemove';
+import { Minus } from '../../../../../icons/Minus/Minus';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { Collapse } from '../../../Collapse';
 
@@ -35,7 +35,7 @@ export const CollapseExampleIconCustomIcon = () => {
         isOpen={isOpen}
         onClick={() => setOpen(!isOpen)}
         icon={Plus}
-        closeIcon={IconRemove}
+        closeIcon={Minus}
       >
         {content}
       </Collapse>

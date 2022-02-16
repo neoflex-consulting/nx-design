@@ -7,5 +7,5 @@ export const Menu = createIcon({
   m: MenuSizeAll,
   s: MenuSizeAll,
   xs: MenuSizeAll,
-  name: 'Menu',
+  name: 'IconMenu',
 });

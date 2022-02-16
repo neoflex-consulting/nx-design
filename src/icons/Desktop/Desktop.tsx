@@ -7,5 +7,5 @@ export const Desktop = createIcon({
   m: DesktopSizeAll,
   s: DesktopSizeAll,
   xs: DesktopSizeAll,
-  name: 'Desktop',
+  name: 'IconDesktop',
 });

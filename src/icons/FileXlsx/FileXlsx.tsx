@@ -7,5 +7,5 @@ export const FileXlsx = createIcon({
   m: FileXlsxSizeAll,
   s: FileXlsxSizeAll,
   xs: FileXlsxSizeAll,
-  name: 'FileXlsx',
+  name: 'IconFileXlsx',
 });

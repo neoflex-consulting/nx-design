@@ -7,5 +7,5 @@ export const Dublicate = createIcon({
   m: DublicateSizeAll,
   s: DublicateSizeAll,
   xs: DublicateSizeAll,
-  name: 'Dublicate',
+  name: 'IconDublicate',
 });

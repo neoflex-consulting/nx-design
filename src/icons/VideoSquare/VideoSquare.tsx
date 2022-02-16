@@ -7,5 +7,5 @@ export const VideoSquare = createIcon({
   m: VideoSquareSizeAll,
   s: VideoSquareSizeAll,
   xs: VideoSquareSizeAll,
-  name: 'VideoSquare',
+  name: 'IconVideoSquare',
 });

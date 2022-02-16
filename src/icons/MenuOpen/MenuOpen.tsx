@@ -7,5 +7,5 @@ export const MenuOpen = createIcon({
   m: MenuOpenSizeAll,
   s: MenuOpenSizeAll,
   xs: MenuOpenSizeAll,
-  name: 'MenuOpen',
+  name: 'IconMenuOpen',
 });

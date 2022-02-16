@@ -7,5 +7,5 @@ export const Tasks = createIcon({
   m: TasksSizeAll,
   s: TasksSizeAll,
   xs: TasksSizeAll,
-  name: 'Tasks',
+  name: 'IconTasks',
 });

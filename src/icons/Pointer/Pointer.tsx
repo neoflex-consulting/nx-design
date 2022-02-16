@@ -7,5 +7,5 @@ export const Pointer = createIcon({
   m: PointerSizeAll,
   s: PointerSizeAll,
   xs: PointerSizeAll,
-  name: 'Pointer',
+  name: 'IconPointer',
 });

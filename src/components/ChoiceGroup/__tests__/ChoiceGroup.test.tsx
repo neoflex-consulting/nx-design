@@ -2,7 +2,7 @@ import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { IconProps } from '../../../icons/_Icon/Icon';
-import { IconCamera } from '../../../icons/IconCamera/IconCamera';
+import { Camera } from '../../../icons/Camera/Camera';
 import { cnMixFocus } from '../../../mixs/MixFocus/MixFocus';
 import {
   ChoiceGroup,
@@ -24,15 +24,15 @@ type Item = {
 const items: Item[] = [
   {
     name: 'один',
-    icon: IconCamera,
+    icon: Camera,
   },
   {
     name: 'два',
-    icon: IconCamera,
+    icon: Camera,
   },
   {
     name: 'три',
-    icon: IconCamera,
+    icon: Camera,
   },
 ];
 
@@ -143,7 +143,7 @@ describe('Компонент ChoiceGroup', () => {
     describe('проверка getIcon', () => {
       it(`иконка отображается`, () => {
         renderComponent({});
-        expect(getIcon()).toHaveClass('IconCamera');
+        expect(getIcon()).toHaveClass('Camera');
       });
     });
     describe('проверка onlyIcon', () => {

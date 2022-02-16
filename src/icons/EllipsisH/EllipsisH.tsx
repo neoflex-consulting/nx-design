@@ -7,5 +7,5 @@ export const EllipsisH = createIcon({
   m: EllipsisHSizeAll,
   s: EllipsisHSizeAll,
   xs: EllipsisHSizeAll,
-  name: 'EllipsisH',
+  name: 'IconEllipsisH',
 });

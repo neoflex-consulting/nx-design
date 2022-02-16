@@ -7,5 +7,5 @@ export const Backward = createIcon({
   m: BackwardSizeAll,
   s: BackwardSizeAll,
   xs: BackwardSizeAll,
-  name: 'Backward',
+  name: 'IconBackward',
 });

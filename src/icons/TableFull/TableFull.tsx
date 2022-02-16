@@ -7,5 +7,5 @@ export const TableFull = createIcon({
   m: TableFullSizeAll,
   s: TableFullSizeAll,
   xs: TableFullSizeAll,
-  name: 'TableFull',
+  name: 'IconTableFull',
 });

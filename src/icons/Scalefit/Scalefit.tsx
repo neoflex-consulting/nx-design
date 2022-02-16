@@ -7,5 +7,5 @@ export const Scalefit = createIcon({
   m: ScalefitSizeAll,
   s: ScalefitSizeAll,
   xs: ScalefitSizeAll,
-  name: 'Scalefit',
+  name: 'IconScalefit',
 });

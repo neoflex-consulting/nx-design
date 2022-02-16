@@ -7,5 +7,5 @@ export const Erase = createIcon({
   m: EraseSizeAll,
   s: EraseSizeAll,
   xs: EraseSizeAll,
-  name: 'Erase',
+  name: 'IconErase',
 });

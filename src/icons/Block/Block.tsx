@@ -7,5 +7,5 @@ export const Block = createIcon({
   m: BlockSizeAll,
   s: BlockSizeAll,
   xs: BlockSizeAll,
-  name: 'Block',
+  name: 'IconBlock',
 });

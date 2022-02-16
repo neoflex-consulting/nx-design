@@ -7,5 +7,5 @@ export const Status = createIcon({
   m: StatusSizeAll,
   s: StatusSizeAll,
   xs: StatusSizeAll,
-  name: 'Status',
+  name: 'IconStatus',
 });

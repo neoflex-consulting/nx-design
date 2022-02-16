@@ -7,5 +7,5 @@ export const Flag = createIcon({
   m: FlagSizeAll,
   s: FlagSizeAll,
   xs: FlagSizeAll,
-  name: 'Flag',
+  name: 'IconFlag',
 });

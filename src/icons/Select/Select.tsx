@@ -7,5 +7,5 @@ export const Select = createIcon({
   m: SelectSizeAll,
   s: SelectSizeAll,
   xs: SelectSizeAll,
-  name: 'Select',
+  name: 'IconSelect',
 });

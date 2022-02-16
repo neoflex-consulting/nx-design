@@ -7,5 +7,5 @@ export const LineChart = createIcon({
   m: LineChartSizeAll,
   s: LineChartSizeAll,
   xs: LineChartSizeAll,
-  name: 'LineChart',
+  name: 'IconLineChart',
 });

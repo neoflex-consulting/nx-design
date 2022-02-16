@@ -7,5 +7,5 @@ export const SortCheck = createIcon({
   m: SortCheckSizeAll,
   s: SortCheckSizeAll,
   xs: SortCheckSizeAll,
-  name: 'SortCheck',
+  name: 'IconSortCheck',
 });

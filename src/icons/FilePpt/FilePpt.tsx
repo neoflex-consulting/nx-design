@@ -7,5 +7,5 @@ export const FilePpt = createIcon({
   m: FilePptSizeAll,
   s: FilePptSizeAll,
   xs: FilePptSizeAll,
-  name: 'FilePpt',
+  name: 'IconFilePpt',
 });

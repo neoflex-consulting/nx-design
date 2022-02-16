@@ -7,5 +7,5 @@ export const Settings = createIcon({
   m: SettingsSizeAll,
   s: SettingsSizeAll,
   xs: SettingsSizeAll,
-  name: 'Settings',
+  name: 'IconSettings',
 });

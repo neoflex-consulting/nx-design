@@ -7,5 +7,5 @@ export const Directory = createIcon({
   m: DirectorySizeAll,
   s: DirectorySizeAll,
   xs: DirectorySizeAll,
-  name: 'Directory',
+  name: 'IconDirectory',
 });

@@ -7,5 +7,5 @@ export const DocRight = createIcon({
   m: DocRightSizeAll,
   s: DocRightSizeAll,
   xs: DocRightSizeAll,
-  name: 'DocRight',
+  name: 'IconDocRight',
 });

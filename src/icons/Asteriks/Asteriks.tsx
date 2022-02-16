@@ -7,5 +7,5 @@ export const Asteriks = createIcon({
   m: AsteriksSizeAll,
   s: AsteriksSizeAll,
   xs: AsteriksSizeAll,
-  name: 'Asteriks',
+  name: 'IconAsteriks',
 });

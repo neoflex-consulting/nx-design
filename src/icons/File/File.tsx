@@ -7,5 +7,5 @@ export const File = createIcon({
   m: FileSizeAll,
   s: FileSizeAll,
   xs: FileSizeAll,
-  name: 'File',
+  name: 'IconFile',
 });

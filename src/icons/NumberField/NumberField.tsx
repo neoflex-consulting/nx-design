@@ -7,5 +7,5 @@ export const NumberField = createIcon({
   m: NumberFieldSizeAll,
   s: NumberFieldSizeAll,
   xs: NumberFieldSizeAll,
-  name: 'NumberField',
+  name: 'IconNumberField',
 });

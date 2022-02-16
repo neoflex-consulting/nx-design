@@ -7,5 +7,5 @@ export const Disconnect = createIcon({
   m: DisconnectSizeAll,
   s: DisconnectSizeAll,
   xs: DisconnectSizeAll,
-  name: 'Disconnect',
+  name: 'IconDisconnect',
 });

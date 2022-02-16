@@ -7,5 +7,5 @@ export const FolderZip = createIcon({
   m: FolderZipSizeAll,
   s: FolderZipSizeAll,
   xs: FolderZipSizeAll,
-  name: 'FolderZip',
+  name: 'IconFolderZip',
 });

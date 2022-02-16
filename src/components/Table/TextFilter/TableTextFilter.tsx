@@ -2,7 +2,7 @@ import './TableTextFilter.css';
 
 import React, { useMemo, useState } from 'react';
 
-import { IconSearch } from '../../../icons/IconSearch/IconSearch';
+import { Search } from '../../../icons/Search/Search';
 import { cn } from '../../../utils/bem';
 import { Button } from '../../Button/Button';
 import { CheckboxGroup } from '../../CheckboxGroup/CheckboxGroup';
@@ -71,7 +71,7 @@ export const TableTextFilter: React.FC<TableTextFilterProps> = ({
         <TextField
           value={searchValue}
           onChange={({ value }) => setSearchValue(value)}
-          leftSide={IconSearch}
+          leftSide={Search}
           size="s"
           placeholder="Найти в списке"
           width="full"

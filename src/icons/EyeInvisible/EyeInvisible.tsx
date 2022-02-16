@@ -7,5 +7,5 @@ export const EyeInvisible = createIcon({
   m: EyeInvisibleSizeAll,
   s: EyeInvisibleSizeAll,
   xs: EyeInvisibleSizeAll,
-  name: 'EyeInvisible',
+  name: 'IconEyeInvisible',
 });

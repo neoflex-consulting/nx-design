@@ -3,9 +3,8 @@ import './Table.css';
 import React, { useMemo } from 'react';
 
 import { useComponentSize } from '../../hooks/useComponentSize/useComponentSize';
-import { IconSortDown } from '../../icons/IconSortDown/IconSortDown';
-import { IconSortUp } from '../../icons/IconSortUp/IconSortUp';
-import { IconUnsort } from '../../icons/IconUnsort/IconUnsort';
+import { SortDown } from '../../icons/SortDown/SortDown';
+import { SortUp } from '../../icons/SortUp/SortUp';
 import { sortBy as sortByDefault, updateAt } from '../../utils/array';
 import { cn } from '../../utils/bem';
 import { isNotNil } from '../../utils/type-guards';
@@ -298,8 +297,8 @@ export const Table = <T extends TableRow>({
 
   const getSortIcon = (column: TableColumn<T>) => {
     return (
-      (isSortedByColumn(column) && (sorting?.order === 'desc' ? IconSortDown : IconSortUp)) ||
-      IconUnsort
+      (isSortedByColumn(column) && (sorting?.order === 'desc' ? SortDown : SortUp)) ||
+      SortDown
     );
   };
 

@@ -7,5 +7,5 @@ export const Building = createIcon({
   m: BuildingSizeAll,
   s: BuildingSizeAll,
   xs: BuildingSizeAll,
-  name: 'Building',
+  name: 'IconBuilding',
 });

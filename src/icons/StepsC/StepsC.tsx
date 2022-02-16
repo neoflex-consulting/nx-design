@@ -7,5 +7,5 @@ export const StepsC = createIcon({
   m: StepsCSizeAll,
   s: StepsCSizeAll,
   xs: StepsCSizeAll,
-  name: 'StepsC',
+  name: 'IconStepsC',
 });

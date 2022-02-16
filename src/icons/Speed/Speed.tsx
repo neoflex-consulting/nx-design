@@ -7,5 +7,5 @@ export const Speed = createIcon({
   m: SpeedSizeAll,
   s: SpeedSizeAll,
   xs: SpeedSizeAll,
-  name: 'Speed',
+  name: 'IconSpeed',
 });

@@ -7,5 +7,5 @@ export const Inbox = createIcon({
   m: InboxSizeAll,
   s: InboxSizeAll,
   xs: InboxSizeAll,
-  name: 'Inbox',
+  name: 'IconInbox',
 });

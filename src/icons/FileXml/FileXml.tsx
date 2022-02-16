@@ -7,5 +7,5 @@ export const FileXml = createIcon({
   m: FileXmlSizeAll,
   s: FileXmlSizeAll,
   xs: FileXmlSizeAll,
-  name: 'FileXml',
+  name: 'IconFileXml',
 });

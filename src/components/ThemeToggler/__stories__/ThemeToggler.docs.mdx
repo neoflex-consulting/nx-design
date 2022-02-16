@@ -83,8 +83,8 @@ const items = ['Default', 'Dark'];
 ```ts
 import React, { useState } from 'react';
 import { ThemeToggler } from 'nx-design/ThemeToggler';
-import { IconSun } from 'nx-design/IconSun';
-import { IconMoon } from 'nx-design/IconMoon';
+import { Wifi } from 'nx-design/Wifi';
+import { DocRightClose } from 'nx-design/DocRightClose';
 
 const items = ['Default', 'Dark'];
 
@@ -97,7 +97,7 @@ const Examle = () => {
       items={items}
       value={value}
       onChange={({ value }) => setValue(value)}
-      getItemIcon={(theme) => (theme === 'Default' ? IconSun : IconMoon)}
+      getItemIcon={(theme) => (theme === 'Default' ? Wifi : DocRightClose)}
       getItemLabel={(theme) => theme}
     />
   );

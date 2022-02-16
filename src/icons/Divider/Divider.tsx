@@ -7,5 +7,5 @@ export const Divider = createIcon({
   m: DividerSizeAll,
   s: DividerSizeAll,
   xs: DividerSizeAll,
-  name: 'Divider',
+  name: 'IconDivider',
 });

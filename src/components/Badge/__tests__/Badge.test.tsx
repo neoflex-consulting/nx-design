@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import { IconCamera } from '../../../icons/IconCamera/IconCamera';
+import { Camera } from '../../../icons/Camera/Camera';
 import {
   Badge,
   badgePropForm,
@@ -79,9 +79,9 @@ describe('Компонент Badge', () => {
     });
     describe('проверка icon', () => {
       it(`иконка отображается`, () => {
-        renderComponent({ icon: IconCamera });
+        renderComponent({ icon: Camera });
 
-        expect(getIcon()).toHaveClass('IconCamera');
+        expect(getIcon()).toHaveClass('Camera');
       });
     });
     describe('проверка minified', () => {
@@ -97,7 +97,7 @@ describe('Компонент Badge', () => {
         expect(getRender().title).toEqual(label);
       });
       it(`нет дочерних элементов и не отображается label`, () => {
-        renderComponent({ minified: true, label: 'label', icon: IconCamera });
+        renderComponent({ minified: true, label: 'label', icon: Camera });
 
         expect(getRender()).toBeEmptyDOMElement();
       });

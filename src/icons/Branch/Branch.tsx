@@ -7,5 +7,5 @@ export const Branch = createIcon({
   m: BranchSizeAll,
   s: BranchSizeAll,
   xs: BranchSizeAll,
-  name: 'Branch',
+  name: 'IconBranch',
 });

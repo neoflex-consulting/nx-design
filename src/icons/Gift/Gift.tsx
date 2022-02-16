@@ -7,5 +7,5 @@ export const Gift = createIcon({
   m: GiftSizeAll,
   s: GiftSizeAll,
   xs: GiftSizeAll,
-  name: 'Gift',
+  name: 'IconGift',
 });

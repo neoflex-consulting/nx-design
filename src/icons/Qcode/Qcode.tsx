@@ -7,5 +7,5 @@ export const Qcode = createIcon({
   m: QcodeSizeAll,
   s: QcodeSizeAll,
   xs: QcodeSizeAll,
-  name: 'Qcode',
+  name: 'IconQcode',
 });

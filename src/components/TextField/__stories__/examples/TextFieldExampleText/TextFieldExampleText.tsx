@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { IconDiamond } from '../../../../../icons/IconDiamond/IconDiamond';
+import { Gift } from '../../../../../icons/Gift/Gift';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { StoryBookExample } from '../../../../../uiKit/components/StoryBookExample/StoryBookExample';
 import { TextField } from '../../../TextField';
@@ -44,7 +44,7 @@ export const TextFieldExampleTextRight = () => {
 
   return (
     <StoryBookExample className={cnDocsDecorator('Section')}>
-      <TextField leftSide={IconDiamond} rightSide="карат" value={value} onChange={handleChange} />
+      <TextField leftSide={Gift} rightSide="карат" value={value} onChange={handleChange} />
     </StoryBookExample>
   );
 };

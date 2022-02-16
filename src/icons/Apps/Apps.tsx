@@ -7,5 +7,5 @@ export const Apps = createIcon({
   m: AppsSizeAll,
   s: AppsSizeAll,
   xs: AppsSizeAll,
-  name: 'Apps'
+  name: 'IconApps'
 });

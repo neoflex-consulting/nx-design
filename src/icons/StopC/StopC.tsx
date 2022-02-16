@@ -7,5 +7,5 @@ export const StopC = createIcon({
   m: StopCSizeAll,
   s: StopCSizeAll,
   xs: StopCSizeAll,
-  name: 'StopC',
+  name: 'IconStopC',
 });

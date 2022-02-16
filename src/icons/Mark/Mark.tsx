@@ -7,5 +7,5 @@ export const Mark = createIcon({
   m: MarkSizeAll,
   s: MarkSizeAll,
   xs: MarkSizeAll,
-  name: 'Mark',
+  name: 'IconMark',
 });

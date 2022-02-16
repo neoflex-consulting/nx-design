@@ -7,5 +7,5 @@ export const Minus = createIcon({
   m: MinusSizeAll,
   s: MinusSizeAll,
   xs: MinusSizeAll,
-  name: 'Minus',
+  name: 'IconMinus',
 });

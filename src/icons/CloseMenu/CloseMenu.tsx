@@ -7,5 +7,5 @@ export const CloseMenu = createIcon({
   m: CloseMenuSizeAll,
   s: CloseMenuSizeAll,
   xs: CloseMenuSizeAll,
-  name: 'CloseMenu',
+  name: 'IconCloseMenu',
 });

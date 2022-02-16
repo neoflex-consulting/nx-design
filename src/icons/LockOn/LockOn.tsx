@@ -7,5 +7,5 @@ export const LockOn = createIcon({
   m: LockOnSizeAll,
   s: LockOnSizeAll,
   xs: LockOnSizeAll,
-  name: 'LockOn',
+  name: 'IconLockOn',
 });

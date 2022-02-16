@@ -7,5 +7,5 @@ export const Users = createIcon({
   m: UsersSizeAll,
   s: UsersSizeAll,
   xs: UsersSizeAll,
-  name: 'Users',
+  name: 'IconUsers',
 });

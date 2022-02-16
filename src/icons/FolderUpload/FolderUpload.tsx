@@ -7,5 +7,5 @@ export const FolderUpload = createIcon({
   m: FolderUploadSizeAll,
   s: FolderUploadSizeAll,
   xs: FolderUploadSizeAll,
-  name: 'FolderUpload',
+  name: 'IconFolderUpload',
 });

@@ -7,5 +7,5 @@ export const StarFill = createIcon({
   m: StarFillSizeAll,
   s: StarFillSizeAll,
   xs: StarFillSizeAll,
-  name: 'StarFill',
+  name: 'IconStarFill',
 });

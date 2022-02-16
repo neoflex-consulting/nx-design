@@ -7,5 +7,5 @@ export const TextFieldIcon = createIcon({
   m: TextFieldIconSizeAll,
   s: TextFieldIconSizeAll,
   xs: TextFieldIconSizeAll,
-  name: 'TextFieldIcon',
+  name: 'IconTextField',
 });

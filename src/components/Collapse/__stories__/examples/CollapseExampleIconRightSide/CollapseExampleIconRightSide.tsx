@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { content } from '../../../__mocks__/mock.data';
 import { WarningC } from '../../../../../icons/WarningC/WarningC';
-import { IconSettings } from '../../../../../icons/IconSettings/IconSettings';
+import { Settings } from '../../../../../icons/Settings/Settings';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { Badge } from '../../../../Badge/Badge';
 import { Button } from '../../../../Button/Button';
@@ -39,7 +39,7 @@ export const CollapseExampleIconRightSideButton = () => {
         onClick={() => setOpen(!isOpen)}
         rightSide={
           <Button
-            iconLeft={IconSettings}
+            iconLeft={Settings}
             size="xs"
             view="ghost"
             onClick={(e) => {

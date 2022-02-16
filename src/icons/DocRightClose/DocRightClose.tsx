@@ -7,5 +7,5 @@ export const DocRightClose = createIcon({
   m: DocRightCloseSizeAll,
   s: DocRightCloseSizeAll,
   xs: DocRightCloseSizeAll,
-  name: 'DocRightClose',
+  name: 'IconDocRightClose',
 });

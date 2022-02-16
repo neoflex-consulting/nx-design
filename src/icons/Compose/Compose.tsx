@@ -7,5 +7,5 @@ export const Compose = createIcon({
   m: ComposeSizeAll,
   s: ComposeSizeAll,
   xs: ComposeSizeAll,
-  name: 'Compose',
+  name: 'IconCompose',
 });

@@ -7,5 +7,5 @@ export const Colorpicker = createIcon({
   m: ColorpickerSizeAll,
   s: ColorpickerSizeAll,
   xs: ColorpickerSizeAll,
-  name: 'Colorpicker',
+  name: 'IconColorpicker',
 });

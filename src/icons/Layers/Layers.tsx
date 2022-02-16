@@ -7,5 +7,5 @@ export const Layers = createIcon({
   m: LayersSizeAll,
   s: LayersSizeAll,
   xs: LayersSizeAll,
-  name: 'Layers',
+  name: 'IconLayers',
 });

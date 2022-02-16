@@ -7,5 +7,5 @@ export const Question = createIcon({
   m: QuestionSizeAll,
   s: QuestionSizeAll,
   xs: QuestionSizeAll,
-  name: 'Question',
+  name: 'IconQuestion',
 });

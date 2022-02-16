@@ -7,5 +7,5 @@ export const FileCsv = createIcon({
   m: FileCsvSizeAll,
   s: FileCsvSizeAll,
   xs: FileCsvSizeAll,
-  name: 'FileCsv',
+  name: 'IconFileCsv',
 });

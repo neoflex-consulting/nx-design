@@ -7,5 +7,5 @@ export const Gbp = createIcon({
   m: GbpSizeAll,
   s: GbpSizeAll,
   xs: GbpSizeAll,
-  name: 'Gbp',
+  name: 'IconGbp',
 });

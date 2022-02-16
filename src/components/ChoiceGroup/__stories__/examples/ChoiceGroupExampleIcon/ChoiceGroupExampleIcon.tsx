@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 import { IconProps } from '../../../../../icons/_Icon/Icon';
-import { IconCamera } from '../../../../../icons/IconCamera/IconCamera';
-import { IconPhoto } from '../../../../../icons/IconPhoto/IconPhoto';
-import { IconRing } from '../../../../../icons/IconRing/IconRing';
+import { Camera } from '../../../../../icons/Camera/Camera';
+import { Image } from '../../../../../icons/Image/Image';
+import { Bell } from '../../../../../icons/Bell/Bell';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { StoryBookExample } from '../../../../../uiKit/components/StoryBookExample/StoryBookExample';
 import { ChoiceGroup } from '../../../ChoiceGroup';
@@ -16,15 +16,15 @@ type Item = {
 const items = [
   {
     name: 'Первый',
-    icon: IconPhoto,
+    icon: Image,
   },
   {
     name: 'Второй',
-    icon: IconRing,
+    icon: Bell,
   },
   {
     name: 'Третий вариант',
-    icon: IconCamera,
+    icon: Camera,
   },
 ];
 

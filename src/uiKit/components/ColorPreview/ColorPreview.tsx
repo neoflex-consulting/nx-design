@@ -5,7 +5,7 @@ import './ColorPreview.css';
 import React from 'react';
 
 import { Typography } from '../../../components/Typography/Typography';
-import { IconCopy } from '../../../icons/IconCopy/IconCopy';
+import { Copy } from '../../../icons/Copy/Copy';
 import { cn } from '../../cn';
 import * as wp from '../../whitepaper/whitepaper';
 
@@ -62,7 +62,7 @@ export const ColorPreview: React.FC<Props> = ({
             clickHandler();
           }}
         >
-          <IconCopy size="xs" />
+          <Copy size="xs" />
           <Typography size="s" font="mono">
             {value}
           </Typography>

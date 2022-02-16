@@ -7,5 +7,5 @@ export const Bell = createIcon({
   m: BellSizeAll,
   s: BellSizeAll,
   xs: BellSizeAll,
-  name: 'Bell',
+  name: 'IconBell',
 });

@@ -7,5 +7,5 @@ export const Notebook = createIcon({
   m: NotebookSizeAll,
   s: NotebookSizeAll,
   xs: NotebookSizeAll,
-  name: 'Notebook',
+  name: 'IconNotebook',
 });

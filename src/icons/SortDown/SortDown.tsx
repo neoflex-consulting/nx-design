@@ -7,5 +7,5 @@ export const SortDown = createIcon({
   m: SortDownSizeAll,
   s: SortDownSizeAll,
   xs: SortDownSizeAll,
-  name: 'SortDown',
+  name: 'IconSortDown',
 });

@@ -7,5 +7,5 @@ export const CheckFull = createIcon({
   m: CheckFullSizeAll,
   s: CheckFullSizeAll,
   xs: CheckFullSizeAll,
-  name: 'CheckFull',
+  name: 'IconCheckFull',
 });

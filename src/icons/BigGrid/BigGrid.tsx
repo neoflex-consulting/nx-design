@@ -7,5 +7,5 @@ export const BigGrid = createIcon({
   m: BigGridSizeAll,
   s: BigGridSizeAll,
   xs: BigGridSizeAll,
-  name: 'BigGrid',
+  name: 'IconBigGrid',
 });

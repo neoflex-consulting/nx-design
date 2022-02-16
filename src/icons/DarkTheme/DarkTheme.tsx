@@ -7,5 +7,5 @@ export const DarkTheme = createIcon({
   m: DarkThemeSizeAll,
   s: DarkThemeSizeAll,
   xs: DarkThemeSizeAll,
-  name: 'DarkTheme',
+  name: 'IconDarkTheme',
 });

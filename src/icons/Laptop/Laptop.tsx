@@ -7,5 +7,5 @@ export const Laptop = createIcon({
   m: LaptopSizeAll,
   s: LaptopSizeAll,
   xs: LaptopSizeAll,
-  name: 'Laptop',
+  name: 'IconLaptop',
 });

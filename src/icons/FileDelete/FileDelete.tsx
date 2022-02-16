@@ -7,5 +7,5 @@ export const FileDelete = createIcon({
   m: FileDeleteSizeAll,
   s: FileDeleteSizeAll,
   xs: FileDeleteSizeAll,
-  name: 'FileDelete',
+  name: 'IconFileDelete',
 });

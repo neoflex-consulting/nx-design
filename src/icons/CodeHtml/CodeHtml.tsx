@@ -7,5 +7,5 @@ export const CodeHtml = createIcon({
   m: CodeHtmlSizeAll,
   s: CodeHtmlSizeAll,
   xs: CodeHtmlSizeAll,
-  name: 'CodeHtml',
+  name: 'IconCodeHtml',
 });

@@ -7,5 +7,5 @@ export const FolderDelete = createIcon({
   m: FolderDeleteSizeAll,
   s: FolderDeleteSizeAll,
   xs: FolderDeleteSizeAll,
-  name: 'FolderDelete',
+  name: 'IconFolderDelete',
 });

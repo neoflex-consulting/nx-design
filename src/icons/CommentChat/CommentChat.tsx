@@ -7,5 +7,5 @@ export const CommentChat = createIcon({
   m: CommentChatSizeAll,
   s: CommentChatSizeAll,
   xs: CommentChatSizeAll,
-  name: 'CommentChat',
+  name: 'IconCommentChat',
 });

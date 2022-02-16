@@ -7,5 +7,5 @@ export const Ancore = createIcon({
   m: AncoreSizeAll,
   s: AncoreSizeAll,
   xs: AncoreSizeAll,
-  name: 'Alert'
+  name: 'IconAlert'
 });

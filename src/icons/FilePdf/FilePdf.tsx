@@ -7,5 +7,5 @@ export const FilePdf = createIcon({
   m: FilePdfSizeAll,
   s: FilePdfSizeAll,
   xs: FilePdfSizeAll,
-  name: 'FilePdf',
+  name: 'IconFilePdf',
 });

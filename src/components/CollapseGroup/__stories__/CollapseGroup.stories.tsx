@@ -3,7 +3,7 @@ import { boolean, select } from '@storybook/addon-knobs';
 
 import { Item, items } from '../__mocks__/mock.data';
 import { Plus } from '../../../icons/Plus/Plus';
-import { IconRemove } from '../../../icons/IconRemove/IconRemove';
+import { Minus } from '../../../icons/Minus/Minus';
 import { createMetadata } from '../../../utils/storybook';
 import { Badge } from '../../Badge/Badge';
 import {
@@ -90,7 +90,7 @@ export function Playground() {
       {...(withCustomIcon
         ? {
             icon: Plus,
-            closeIcon: IconRemove,
+            closeIcon: Minus,
           }
         : {
             directionIcon,

@@ -7,5 +7,5 @@ export const Eject = createIcon({
   m: EjectSizeAll,
   s: EjectSizeAll,
   xs: EjectSizeAll,
-  name: 'Eject',
+  name: 'IconEject',
 });

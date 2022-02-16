@@ -7,5 +7,5 @@ export const CloudUpload = createIcon({
   m: CloudUploadSizeAll,
   s: CloudUploadSizeAll,
   xs: CloudUploadSizeAll,
-  name: 'CloudUpload',
+  name: 'IconCloudUpload',
 });

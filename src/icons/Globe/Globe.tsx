@@ -7,5 +7,5 @@ export const Globe = createIcon({
   m: GlobeSizeAll,
   s: GlobeSizeAll,
   xs: GlobeSizeAll,
-  name: 'Globe',
+  name: 'IconGlobe',
 });

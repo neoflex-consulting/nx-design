@@ -7,5 +7,5 @@ export const Cloud = createIcon({
   m: CloudSizeAll,
   s: CloudSizeAll,
   xs: CloudSizeAll,
-  name: 'Cloud',
+  name: 'IconCloud',
 });

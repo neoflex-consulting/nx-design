@@ -7,5 +7,5 @@ export const ArrowDown = createIcon({
   m: ArrowDownSizeAll,
   s: ArrowDownSizeAll,
   xs: ArrowDownSizeAll,
-  name: 'ArrowDown'
+  name: 'IconArrowDown'
 });

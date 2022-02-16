@@ -7,5 +7,5 @@ export const Group = createIcon({
   m: GroupSizeAll,
   s: GroupSizeAll,
   xs: GroupSizeAll,
-  name: 'Group',
+  name: 'IconGroup',
 });

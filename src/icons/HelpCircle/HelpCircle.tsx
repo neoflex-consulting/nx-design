@@ -7,5 +7,5 @@ export const HelpCircle = createIcon({
   m: HelpCircleSizeAll,
   s: HelpCircleSizeAll,
   xs: HelpCircleSizeAll,
-  name: 'HelpCircle',
+  name: 'IconHelpCircle',
 });

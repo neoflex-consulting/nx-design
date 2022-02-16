@@ -7,5 +7,5 @@ export const Cub = createIcon({
   m: CubSizeAll,
   s: CubSizeAll,
   xs: CubSizeAll,
-  name: 'Cub',
+  name: 'IconCub',
 });

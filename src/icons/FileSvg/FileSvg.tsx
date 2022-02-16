@@ -7,5 +7,5 @@ export const FileSvg = createIcon({
   m: FileSvgSizeAll,
   s: FileSvgSizeAll,
   xs: FileSvgSizeAll,
-  name: 'FileSvg',
+  name: 'IconFileSvg',
 });

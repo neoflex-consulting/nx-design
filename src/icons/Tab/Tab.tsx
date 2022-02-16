@@ -7,5 +7,5 @@ export const Tab = createIcon({
   m: TabSizeAll,
   s: TabSizeAll,
   xs: TabSizeAll,
-  name: 'Tab',
+  name: 'IconTab',
 });

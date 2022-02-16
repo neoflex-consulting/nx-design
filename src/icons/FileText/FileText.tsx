@@ -7,5 +7,5 @@ export const FileText = createIcon({
   m: FileTextSizeAll,
   s: FileTextSizeAll,
   xs: FileTextSizeAll,
-  name: 'FileText',
+  name: 'IconFileText',
 });

@@ -7,5 +7,5 @@ export const TableRows = createIcon({
   m: TableRowsSizeAll,
   s: TableRowsSizeAll,
   xs: TableRowsSizeAll,
-  name: 'TableRows',
+  name: 'IconTableRows',
 });

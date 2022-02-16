@@ -7,5 +7,5 @@ export const Eur = createIcon({
   m: EurSizeAll,
   s: EurSizeAll,
   xs: EurSizeAll,
-  name: 'Eur',
+  name: 'IconEur',
 });

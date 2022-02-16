@@ -7,5 +7,5 @@ export const Reply = createIcon({
   m: ReplySizeAll,
   s: ReplySizeAll,
   xs: ReplySizeAll,
-  name: 'Reply',
+  name: 'IconReply',
 });

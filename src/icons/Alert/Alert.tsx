@@ -7,5 +7,5 @@ export const Alert = createIcon({
   m: AlertSizeAll,
   s: AlertSizeAll,
   xs: AlertSizeAll,
-  name: 'Alert'
+  name: 'IconAlert'
 });

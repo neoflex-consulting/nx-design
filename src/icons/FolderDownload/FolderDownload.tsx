@@ -7,5 +7,5 @@ export const FolderDownload = createIcon({
   m: FolderDownloadSizeAll,
   s: FolderDownloadSizeAll,
   xs: FolderDownloadSizeAll,
-  name: 'FolderDownload',
+  name: 'IconFolderDownload',
 });
