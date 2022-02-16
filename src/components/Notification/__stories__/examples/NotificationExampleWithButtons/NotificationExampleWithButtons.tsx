@@ -3,7 +3,7 @@ import './NotificationExampleWithButtons.css';
 import React, { useReducer } from 'react';
 
 import { IconProps } from '../../../../../icons/_Icon/Icon';
-import { IconAdd } from '../../../../../icons/IconAdd/IconAdd';
+import { Plus } from '../../../../../icons/Plus/Plus';
 import { cn } from '../../../../../utils/bem';
 import { Button } from '../../../../Button/Button';
 import { Item, Notification, NotificationItemStatus } from '../../../Notification';
@@ -68,37 +68,37 @@ export function NotificationExampleWithButtons() {
       <div className={cnNotificationExampleWithButtons('Buttons')}>
         <Button
           className={cnNotificationExampleWithButtons('ButtonAdd')}
-          iconLeft={IconAdd}
+          iconLeft={Plus}
           label="Выполненно"
           onClick={handleSuccessAdd}
         />
         <Button
           className={cnNotificationExampleWithButtons('ButtonAdd')}
-          iconLeft={IconAdd}
+          iconLeft={Plus}
           label="Ошибка"
           onClick={handleAlertAdd}
         />
         <Button
           className={cnNotificationExampleWithButtons('ButtonAdd')}
-          iconLeft={IconAdd}
+          iconLeft={Plus}
           label="Предупреждение"
           onClick={handleWarningAdd}
         />
         <Button
           className={cnNotificationExampleWithButtons('ButtonAdd')}
-          iconLeft={IconAdd}
+          iconLeft={Plus}
           label="Системное"
           onClick={handleSystemAdd}
         />
         <Button
           className={cnNotificationExampleWithButtons('ButtonAdd')}
-          iconLeft={IconAdd}
+          iconLeft={Plus}
           label="Нормальное"
           onClick={handleNormalAdd}
         />
         <Button
           className={cnNotificationExampleWithButtons('ButtonAdd')}
-          iconLeft={IconAdd}
+          iconLeft={Plus}
           label="Базовое"
           onClick={handleBasicAdd}
         />

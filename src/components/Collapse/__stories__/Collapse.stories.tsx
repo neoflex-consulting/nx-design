@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { boolean, select, text } from '@storybook/addon-knobs';
 
-import { IconAdd } from '../../../icons/IconAdd/IconAdd';
+import { Plus } from '../../../icons/Plus/Plus';
 import { IconRemove } from '../../../icons/IconRemove/IconRemove';
 import { IconSun } from '../../../icons/IconSun/IconSun';
 import { getSizeByMap } from '../../../utils/getSizeByMap';
@@ -93,7 +93,7 @@ export function Playground() {
         : { iconPosition })}
       {...(withCustomIcon
         ? {
-            icon: IconAdd,
+            icon: Plus,
             closeIcon: IconRemove,
           }
         : {

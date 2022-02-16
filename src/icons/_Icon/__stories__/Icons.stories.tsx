@@ -747,7 +747,6 @@ const names = Object.keys(neoicons) as Name[];
 export function Playground() {
   return (
     <div>
-      <div>Neoflex Icons</div>
       <div className="tpl-grid tpl-grid_s-ratio_1-1-1-1-1 tpl-grid_row-gap_full">
         {names.map((name) => (
           <IconsItem key={name} name={name} icon={neoicons[name]} {...defaultKnobs()} />

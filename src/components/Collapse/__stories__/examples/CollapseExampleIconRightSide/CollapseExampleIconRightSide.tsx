@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { content } from '../../../__mocks__/mock.data';
-import { IconAlert } from '../../../../../icons/IconAlert/IconAlert';
+import { WarningC } from '../../../../../icons/WarningC/WarningC';
 import { IconSettings } from '../../../../../icons/IconSettings/IconSettings';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { Badge } from '../../../../Badge/Badge';
@@ -19,7 +19,7 @@ export const CollapseExampleIconRightSideBadge = () => {
         onClick={() => setOpen(!isOpen)}
         rightSide={[
           <Badge label="Badge" status="success" />,
-          <IconAlert size="s" view="warning" />,
+          <WarningC size="s" view="warning" />,
         ]}
       >
         {content}

@@ -4,8 +4,8 @@ import * as React from 'react';
 import {boolean, text} from '@storybook/addon-knobs';
 
 import { IconProps } from '../../../icons/_Icon/Icon';
-import { IconAdd } from '../../../icons/IconAdd/IconAdd';
-import { IconAlert } from '../../../icons/IconAlert/IconAlert';
+import { Plus } from '../../../icons/Plus/Plus';
+import { WarningC } from '../../../icons/WarningC/WarningC';
 import { IconProcessing } from '../../../icons/IconProcessing/IconProcessing';
 import { IconRing } from '../../../icons/IconRing/IconRing';
 import { IconThumbUp } from '../../../icons/IconThumbUp/IconThumbUp';
@@ -35,11 +35,11 @@ const defaultKnobs = () => ({
 const getItemIconByStatus = (status: NotificationItemStatus): React.FC<IconProps> | undefined => {
   const mapIconByStatus: Record<NotificationItemStatus, React.FC<IconProps>> = {
     success: IconThumbUp,
-    warning: IconAlert,
-    error: IconAlert,
+    warning: WarningC,
+    error: WarningC,
     system: IconProcessing,
     info: IconRing,
-    basic: IconAlert
+    basic: WarningC
   };
   return mapIconByStatus[status];
 };
@@ -103,7 +103,7 @@ export function Playground() {
         <div className={cnNotificationStories('Buttons')}>
           <Button
             className={cnNotificationStories('ButtonAdd')}
-            iconLeft={IconAdd}
+            iconLeft={Plus}
             view="ghost"
             size="s"
             width="full"
@@ -112,7 +112,7 @@ export function Playground() {
           />
           <Button
             className={cnNotificationStories('ButtonAdd')}
-            iconLeft={IconAdd}
+            iconLeft={Plus}
             view="ghost"
             size="s"
             width="full"
@@ -121,7 +121,7 @@ export function Playground() {
           />
           <Button
             className={cnNotificationStories('ButtonAdd')}
-            iconLeft={IconAdd}
+            iconLeft={Plus}
             view="ghost"
             size="s"
             width="full"
@@ -130,7 +130,7 @@ export function Playground() {
           />
           <Button
             className={cnNotificationStories('ButtonAdd')}
-            iconLeft={IconAdd}
+            iconLeft={Plus}
             view="ghost"
             size="s"
             width="full"
@@ -139,7 +139,7 @@ export function Playground() {
           />
           <Button
             className={cnNotificationStories('ButtonAdd')}
-            iconLeft={IconAdd}
+            iconLeft={Plus}
             view="ghost"
             size="s"
             width="full"
@@ -148,7 +148,7 @@ export function Playground() {
           />
           <Button
             className={cnNotificationStories('ButtonAdd')}
-            iconLeft={IconAdd}
+            iconLeft={Plus}
             view="ghost"
             size="s"
             width="full"

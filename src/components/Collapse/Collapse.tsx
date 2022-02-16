@@ -3,7 +3,7 @@ import './Collapse.css';
 import React from 'react';
 
 import { IconProps, IconPropSize } from '../../icons/_Icon/Icon';
-import { IconArrowDown } from '../../icons/IconArrowDown/IconArrowDown';
+import { ChevronDown } from '../../icons/ChevronDown/ChevronDown';
 import { cn } from '../../utils/bem';
 import { getSizeByMap } from '../../utils/getSizeByMap';
 import { PropsWithHTMLAttributesAndRef } from '../../utils/types/PropsWithHTMLAttributes';
@@ -114,7 +114,7 @@ export const Collapse: Collapse = React.forwardRef<HTMLDivElement, CollapseProps
     children,
     hoverEffect,
     divider,
-    icon = IconArrowDown,
+    icon = ChevronDown,
     closeIcon,
     rightSide,
     horizontalSpace,

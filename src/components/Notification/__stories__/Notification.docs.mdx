@@ -121,9 +121,9 @@ import * as React from 'react';
 import { cn } from '@bem-react/classname';
 import { Button } from 'nx-design/Button';
 import { IconProps } from 'nx-design/Icon';
-import { IconAdd } from 'nx-design/IconAdd';
+import { Plus } from 'nx-design/Plus';
 import { IconThumbUp } from 'nx-design/IconThumbUp';
-import { IconAlert } from 'nx-design/IconAlert';
+import { WarningC } from 'nx-design/WarningC';
 import { IconRing } from 'nx-design/IconRing';
 import { IconProcessing } from 'nx-design/IconProcessing';
 import { Notification, NotificationItemStatus, Item } from 'nx-design/Notification';
@@ -143,11 +143,11 @@ function reducer(
 const getItemIconByStatus = (status: NotificationItemStatus): React.FC<IconProps> | undefined => {
   const mapIconByStatus: Record<NotificationItemStatus, React.FC<IconProps>> = {
     success: IconThumbUp,
-    warning: IconAlert,
-    error: IconAlert,
+    warning: WarningC,
+    error: WarningC,
     system: IconProcessing,
     info: IconRing,
-    basic: IconAlert
+    basic: WarningC
   };
   return mapIconByStatus[status];
 };
@@ -182,37 +182,37 @@ function NotificationExample() {
       <div className={cnNotificationStories('Buttons')}>
         <Button
           className={cnNotificationStories('ButtonAdd')}
-          iconLeft={IconAdd}
+          iconLeft={Plus}
           label="Выполненно"
           onClick={handleSuccessAdd}
         />
         <Button
           className={cnNotificationStories('ButtonAdd')}
-          iconLeft={IconAdd}
+          iconLeft={Plus}
           label="Ошибка"
           onClick={handleAlertAdd}
         />
         <Button
           className={cnNotificationStories('ButtonAdd')}
-          iconLeft={IconAdd}
+          iconLeft={Plus}
           label="Предупреждение"
           onClick={handleWarningAdd}
         />
         <Button
           className={cnNotificationStories('ButtonAdd')}
-          iconLeft={IconAdd}
+          iconLeft={Plus}
           label="Системное"
           onClick={handleSystemAdd}
         />
         <Button
           className={cnNotificationStories('ButtonAdd')}
-          iconLeft={IconAdd}
+          iconLeft={Plus}
           label="Нормальное"
           onClick={handleNormalAdd}
         />
         <Button
           className={cnNotificationStories('ButtonAdd')}
-          iconLeft={IconAdd}
+          iconLeft={Plus}
           label="Базовое"
           onClick={handleBasicAdd}
         />

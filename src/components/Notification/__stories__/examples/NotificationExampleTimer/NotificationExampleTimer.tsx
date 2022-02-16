@@ -3,8 +3,8 @@ import './NotificationExampleTimer.css';
 import React, { useReducer } from 'react';
 
 import { IconProps } from '../../../../../icons/_Icon/Icon';
-import { IconAdd } from '../../../../../icons/IconAdd/IconAdd';
-import { IconAlert } from '../../../../../icons/IconAlert/IconAlert';
+import { Plus } from '../../../../../icons/Plus/Plus';
+import { WarningC } from '../../../../../icons/WarningC/WarningC';
 import { IconRing } from '../../../../../icons/IconRing/IconRing';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { cn } from '../../../../../utils/bem';
@@ -14,7 +14,7 @@ import { Item, Notification, NotificationItemStatus } from '../../../Notificatio
 const cnNotificationExampleTimer = cn('NotificationExampleTimer');
 
 const mapIconByStatus: Record<NotificationItemStatus, React.FC<IconProps> | undefined> = {
-  error: IconAlert,
+  error: WarningC,
   info: IconRing,
   system: undefined,
   success: undefined,
@@ -64,13 +64,13 @@ export const NotificationExampleTimer: React.FC = () => {
       <div className={cnNotificationExampleTimer('Buttons')}>
         <Button
           className={cnNotificationExampleTimer('ButtonAdd')}
-          iconLeft={IconAdd}
+          iconLeft={Plus}
           label="Обычный таймер"
           onClick={handleNormalAdd}
         />
         <Button
           className={cnNotificationExampleTimer('ButtonAdd')}
-          iconLeft={IconAdd}
+          iconLeft={Plus}
           label="Тревожный таймер"
           onClick={handleAlertAdd}
         />

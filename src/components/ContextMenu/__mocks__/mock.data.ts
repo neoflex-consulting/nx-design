@@ -1,5 +1,5 @@
 import { IconProps } from '../../../icons/_Icon/Icon';
-import { IconAllDone } from '../../../icons/IconAllDone/IconAllDone';
+import { CheckDouble } from '../../../icons/CheckDouble/CheckDouble';
 import { IconAttach } from '../../../icons/IconAttach/IconAttach';
 import { IconBag } from '../../../icons/IconBag/IconBag';
 import { IconEye } from '../../../icons/IconEye/IconEye';
@@ -87,7 +87,7 @@ export const exampleItems: Item[] = [
   {
     name: 'Две галочки',
     group: 2,
-    icon: IconAllDone,
+    icon: CheckDouble,
     switch: false,
     accent: 'error',
   },

@@ -2,7 +2,7 @@ import './ContextMenuExampleSize.css';
 
 import React, { useRef } from 'react';
 
-import { IconAdd } from '../../../../../icons/IconAdd/IconAdd';
+import { Plus } from '../../../../../icons/Plus/Plus';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { StoryBookExample } from '../../../../../uiKit/components/StoryBookExample/StoryBookExample';
 import { cn } from '../../../../../utils/bem';
@@ -17,7 +17,7 @@ export const ContextMenuExampleSizeS = () => {
   const ref = useRef(null);
   return (
     <StoryBookExample className={cnDocsDecorator('Section', [cnContextMenuExampleSize()])}>
-      <Button iconLeft={IconAdd} ref={ref} label="Меню размера S" />
+      <Button iconLeft={Plus} ref={ref} label="Меню размера S" />
       <ContextMenu
         items={items}
         getLabel={(item) => item}
@@ -33,7 +33,7 @@ export const ContextMenuExampleSizeM = () => {
   const ref = useRef(null);
   return (
     <StoryBookExample className={cnDocsDecorator('Section', [cnContextMenuExampleSize()])}>
-      <Button iconLeft={IconAdd} ref={ref} label="Меню размера M" />
+      <Button iconLeft={Plus} ref={ref} label="Меню размера M" />
       <ContextMenu
         items={items}
         getLabel={(item) => item}
@@ -49,7 +49,7 @@ export const ContextMenuExampleSizeL = () => {
   const ref = useRef(null);
   return (
     <StoryBookExample className={cnDocsDecorator('Section', [cnContextMenuExampleSize()])}>
-      <Button iconLeft={IconAdd} ref={ref} label="Меню размера L" />
+      <Button iconLeft={Plus} ref={ref} label="Меню размера L" />
       <ContextMenu
         items={items}
         getLabel={(item) => item}

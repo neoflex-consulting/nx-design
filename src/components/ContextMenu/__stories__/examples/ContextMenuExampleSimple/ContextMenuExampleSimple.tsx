@@ -2,7 +2,7 @@ import './ContextMenuExampleSimple.css';
 
 import React, { useRef } from 'react';
 
-import { IconAdd } from '../../../../../icons/IconAdd/IconAdd';
+import { Plus } from '../../../../../icons/Plus/Plus';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { StoryBookExample } from '../../../../../uiKit/components/StoryBookExample/StoryBookExample';
 import { cn } from '../../../../../utils/bem';
@@ -17,7 +17,7 @@ export const ContextMenuExampleSimple = () => {
   const ref = useRef(null);
   return (
     <StoryBookExample className={cnDocsDecorator('Section', [cnContextMenuExampleSimple()])}>
-      <Button iconLeft={IconAdd} ref={ref} />
+      <Button iconLeft={Plus} ref={ref} />
       <ContextMenu
         items={items}
         getLabel={(item) => item}

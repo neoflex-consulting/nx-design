@@ -3,7 +3,7 @@ import './ContextMenuExampleSide.css';
 import React, { useRef, useState } from 'react';
 
 import { IconProps } from '../../../../../icons/_Icon/Icon';
-import { IconAdd } from '../../../../../icons/IconAdd/IconAdd';
+import { Plus } from '../../../../../icons/Plus/Plus';
 import { IconInfo } from '../../../../../icons/IconInfo/IconInfo';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { StoryBookExample } from '../../../../../uiKit/components/StoryBookExample/StoryBookExample';
@@ -79,7 +79,7 @@ export const ContextMenuExampleSide = () => {
 
   return (
     <StoryBookExample className={cnDocsDecorator('Section', [cnContextMenuExampleSide()])}>
-      <Button iconLeft={IconAdd} ref={ref} />
+      <Button iconLeft={Plus} ref={ref} />
       <ContextMenu
         items={items}
         getLabel={getLabel}

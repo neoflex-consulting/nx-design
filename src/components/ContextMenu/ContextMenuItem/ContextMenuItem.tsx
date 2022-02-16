@@ -2,7 +2,7 @@ import './ContextMenuItem.css';
 
 import React from 'react';
 
-import { IconArrowRight } from '../../../icons/IconArrowRight/IconArrowRight';
+import { ChevronRight } from '../../../icons/ChevronRight/ChevronRight';
 import { cn } from '../../../utils/bem';
 import { Typography } from '../../Typography/Typography';
 import { contextMenuDefaultSize, ContextMenuItem as ContextMenuItemType } from '../helpers';
@@ -16,7 +16,7 @@ function renderSide(
 ): React.ReactNode {
   const sides = side ? [...(Array.isArray(side) ? side : [side])] : [];
   if (withArrow) {
-    sides.push(<IconArrowRight size="xs" view="secondary" />);
+    sides.push(<ChevronRight size="xs" view="secondary" />);
   }
   const sidesRender: React.ReactNode[] = sides.map((item, index) => (
     <div

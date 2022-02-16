@@ -39,7 +39,7 @@ export const ContextMenuExampleSimple = () => {
   const ref = useRef(null);
   return (
     <>
-      <Button iconLeft={IconAdd} ref={ref} />
+      <Button iconLeft={Plus} ref={ref} />
       <ContextMenu
         items={items}
         getLabel={(item) => item}
@@ -141,7 +141,7 @@ export const ContextMenuExampleSide = () => {
 
   return (
     <>
-      <Button iconLeft={IconAdd} ref={ref} />
+      <Button iconLeft={Plus} ref={ref} />
       <ContextMenu
         items={items}
         getLabel={getLabel}
@@ -214,7 +214,7 @@ export const ContextMenuExampleGroups = () => {
   const ref = useRef(null);
   return (
     <StoryBookExample className={cnDocsDecorator('Section', [cnContextMenuExampleGroups()])}>
-      <Button iconLeft={IconAdd} ref={ref} />
+      <Button iconLeft={Plus} ref={ref} />
       <ContextMenu
         items={items}
         getLabel={(item) => item.name}
@@ -294,7 +294,7 @@ export const ContextMenuExampleSubMenu = () => {
   const ref2 = useRef(null);
   return (
     <StoryBookExample className={cnDocsDecorator('Section', [cnContextMenuExampleSubMenu()])}>
-      <Button iconLeft={IconAdd} ref={ref1} />
+      <Button iconLeft={Plus} ref={ref1} />
       <ContextMenu
         items={items}
         getLabel={(item) => item.name}
@@ -303,7 +303,7 @@ export const ContextMenuExampleSubMenu = () => {
         subMenuDirection="leftStartUp"
         getSubItems={(item) => item.menu}
       />
-      <Button iconLeft={IconAdd} ref={ref2} />
+      <Button iconLeft={Plus} ref={ref2} />
       <ContextMenu
         items={items}
         getLabel={(item) => item.name}
@@ -331,7 +331,7 @@ export const ContextMenuExampleOutsideClick = () => {
   const [isOpen, setIsOpen] = useState<boolean>(true);
   return (
     <>
-      <Button iconLeft={IconAdd} ref={ref} onClick={() => setIsOpen(!isOpen)} />
+      <Button iconLeft={Plus} ref={ref} onClick={() => setIsOpen(!isOpen)} />
       {isOpen && (
         <ContextMenu
           items={items}

@@ -2,7 +2,7 @@ import React from 'react';
 import { boolean, select } from '@storybook/addon-knobs';
 
 import { Item, items } from '../__mocks__/mock.data';
-import { IconAdd } from '../../../icons/IconAdd/IconAdd';
+import { Plus } from '../../../icons/Plus/Plus';
 import { IconRemove } from '../../../icons/IconRemove/IconRemove';
 import { createMetadata } from '../../../utils/storybook';
 import { Badge } from '../../Badge/Badge';
@@ -89,7 +89,7 @@ export function Playground() {
         : { iconPosition })}
       {...(withCustomIcon
         ? {
-            icon: IconAdd,
+            icon: Plus,
             closeIcon: IconRemove,
           }
         : {
