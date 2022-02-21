@@ -14,6 +14,7 @@ import {
 } from '../helpers';
 
 import { DatePickerFieldTypeDateProps, getPartsDate } from './helpers';
+import {Calendar} from "../../../icons/Calendar/Calendar";
 
 export const DatePickerFieldTypeDate = React.forwardRef<
   HTMLDivElement,
@@ -29,6 +30,7 @@ export const DatePickerFieldTypeDate = React.forwardRef<
     maxDate = maxDateDefault,
     value,
     inputRef: inputRefProp,
+    rightSide,
     ...otherProps
   } = props;
 
@@ -197,9 +199,12 @@ export const DatePickerFieldTypeDate = React.forwardRef<
     imaskRef.current?.updateValue();
   }, [stringValue]);
 
+  const icon = rightSide == undefined ? Calendar : undefined;
+
   return (
     <TextField
       {...otherProps}
+      rightSide={icon}
       type="text"
       inputContainerRef={ref}
       inputRef={useForkRef([inputRef, inputRefProp])}

@@ -176,7 +176,7 @@
 
       &.TextField-InputContainer_focus {
         z-index: 1;
-        border-color: var(--color-control-bg-border-focus);
+        border-color: var(--color-control-bg-border-default-hover);
         outline: none;
 
         &.TextField-InputContainer_form_clearClear {

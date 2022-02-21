@@ -8,7 +8,7 @@ import {
   DatePicker,
   DatePickerPropOnChange,
   DatePickerPropOnError,
-} from '../../../DatePickerCanary';
+} from '../../../DatePicker';
 
 const minDate = new Date(2000, 1, 1);
 const maxDate = new Date(2001, 1, 1);

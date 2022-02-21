@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { StoryBookExample } from '../../../../../uiKit/components/StoryBookExample/StoryBookExample';
-import { DatePicker } from '../../../DatePickerCanary';
+import { DatePicker } from '../../../DatePicker';
 
 export const DatePickerExampleMulti = () => {
   const [value, setValue] = useState<Date | null>(null);

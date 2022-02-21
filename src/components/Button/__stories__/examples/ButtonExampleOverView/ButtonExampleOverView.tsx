@@ -6,7 +6,6 @@ import * as wp from '../../../../../uiKit/whitepaper/whitepaper';
 import {Button} from "../../../Button";
 import {ArrowRight} from "../../../../../icons/ArrowRight/ArrowRight";
 import {Plus} from "../../../../../icons/Plus/Plus";
-import {ButtonExampleViewPrimary} from "../ButtonExampleView/ButtonExampleView";
 import {Edit} from "../../../../../icons/Edit/Edit";
 import {Chat} from "../../../../../icons/Chat/Chat";
 import {Settings} from "../../../../../icons/Settings/Settings";

@@ -9,9 +9,7 @@ module.exports = {
     'airbnb',
     'airbnb/hooks',
     'plugin:import/typescript',
-    'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
-    'prettier/@typescript-eslint',
     'prettier/react',
   ],
   globals: {
@@ -33,7 +31,6 @@ module.exports = {
     'import',
     'jsx-a11y',
     'react-hooks',
-    '@typescript-eslint',
     'simple-import-sort',
   ],
   overrides: [
@@ -46,12 +43,10 @@ module.exports = {
   ],
   rules: {
     'func-names': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/no-use-before-define': 'off',
-    'quote-props': ['error', 'consistent-as-needed'],
+    'quote-props': ['off', 'consistent-as-needed'],
     'react/prop-types': 'off',
     'react/destructuring-assignment': 'off',
-    'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx'] }],
+    'react/jsx-filename-extension': ['off', { extensions: ['.jsx', '.tsx'] }],
     'react/jsx-props-no-spreading': 'off',
     'react/state-in-constructor': 'off',
     'react/static-property-placement': 'off',
@@ -60,13 +55,13 @@ module.exports = {
     'import/export': 'off',
     'import/named': 'off',
     'import/order': 'off',
-    'import/first': 'error',
-    'import/newline-after-import': 'error',
-    'import/no-duplicates': 'error',
+    'import/first': 'off',
+    'import/newline-after-import': 'off',
+    'import/no-duplicates': 'off',
     'import/no-extraneous-dependencies': 'off',
     'import/prefer-default-export': 'off',
     'import/extensions': [
-      'error',
+      'off',
       'ignorePackages',
       {
         js: 'never',
@@ -76,7 +71,7 @@ module.exports = {
       },
     ],
     'simple-import-sort/sort': [
-      'error',
+      'off',
       {
         // https://github.com/lydell/eslint-plugin-simple-import-sort/blob/master/examples/.eslintrc.js#L71
         groups: [
@@ -92,7 +87,7 @@ module.exports = {
       },
     ],
     'import/no-cycle': 'off',
-    'no-unused-vars': 'error',
+    'no-unused-vars': 'off',
     'no-restricted-syntax': 'off',
     'consistent-return': 'off',
     'no-unused-expressions': 'off',
@@ -102,7 +97,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'off',
     'default-case': 'off',
     'jsx-a11y/label-has-associated-control': [
-      'error',
+      'off',
       {
         required: {
           some: ['nesting', 'id'],
@@ -110,7 +105,7 @@ module.exports = {
       },
     ],
     'jsx-a11y/label-has-for': [
-      'error',
+      'off',
       {
         required: {
           some: ['nesting', 'id'],

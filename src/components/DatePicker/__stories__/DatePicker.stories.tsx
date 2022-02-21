@@ -21,7 +21,7 @@ import {
   textFieldPropView,
   textFieldPropViewDefault,
 } from '../../TextField/TextField';
-import { DatePicker } from '../DatePickerCanary';
+import { DatePicker } from '../DatePicker';
 import {
   datePickerPropDropdownForm,
   datePickerPropDropdownFormDefault,
@@ -55,7 +55,7 @@ const defaultKnobs = () => ({
   size: select('size', textFieldPropSize, textFieldPropSizeDefault),
   view: select('view', textFieldPropView, textFieldPropViewDefault),
   disabled: boolean('disabled', false),
-  withIcon: boolean('withIcon', false),
+  rightSide: boolean('rightSide (withIcon)', true),
   minDate: date('minDate', minDateDefault),
   maxDate: date('maxDate', maxDateDefault),
   withEvents: boolean('withEvents', false),
@@ -82,7 +82,7 @@ export function Playground() {
     labelPosition,
     size,
     view,
-    withIcon,
+    rightSide,
     disabled,
     withEvents,
     locale,
@@ -102,7 +102,7 @@ export function Playground() {
     ? [startOfWeek(currentDay, { locale: ruLocale }), currentDay, addDays(currentDay, 2)]
     : undefined;
 
-  const icon = withIcon ? Calendar : undefined;
+  const icon = rightSide ? undefined : Calendar;
 
   useEffect(() => {
     setValue(null);

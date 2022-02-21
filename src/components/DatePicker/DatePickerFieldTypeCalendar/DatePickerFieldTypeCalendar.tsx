@@ -13,6 +13,7 @@ import {
 } from '../helpers';
 
 import { DatePickerFieldTypeCalendarProps, getParts, getPartsDate, useImask } from './helpers';
+import {Calendar} from "../../../icons/Calendar/Calendar";
 
 export const DatePickerFieldTypeCalendar = React.forwardRef<
   HTMLDivElement,
@@ -31,6 +32,7 @@ export const DatePickerFieldTypeCalendar = React.forwardRef<
     multiplicityHours,
     multiplicitySeconds,
     multiplicityMinutes,
+    rightSide,
     ...otherProps
   } = props;
 
@@ -123,9 +125,12 @@ export const DatePickerFieldTypeCalendar = React.forwardRef<
     }
   }, [handleChange]);
 
+  const icon = rightSide == undefined ? Calendar : undefined;
+
   return (
     <TextField
       {...otherProps}
+      rightSide={icon}
       type="text"
       inputContainerRef={ref}
       inputRef={useForkRef([inputRef, inputRefProp])}

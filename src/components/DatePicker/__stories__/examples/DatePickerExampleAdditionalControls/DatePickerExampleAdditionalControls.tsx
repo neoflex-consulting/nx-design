@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Button } from '../../../../Button/Button';
 import { CalendarAdditionalControlRenderProps } from '../../../../Calendar/helpers';
-import { DatePicker, DatePickerPropValue } from '../../../DatePickerCanary';
+import { DatePicker, DatePickerPropValue } from '../../../DatePicker';
 
 export const DatePickerExampleAdditionalControls = () => {
   const [value, setValue] = useState<DatePickerPropValue<'date-range'>>([undefined, undefined]);
