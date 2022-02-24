@@ -50,7 +50,7 @@ const defaultKnobs = () => ({
   withAdditionalControls: boolean('withAdditionalControls', false),
   label: text('label', 'Заголовок'),
   caption: text('caption', 'Подпись'),
-  placeholder: text('placeholder', 'ДД.ММ.ГГГГ'),
+  placeholder: text('placeholder', ''),
   required: boolean('required', false),
   labelPosition: select('labelPosition', ['top', 'left'], 'top'),
   size: select('size', textFieldPropSize, textFieldPropSizeDefault),
@@ -111,7 +111,7 @@ export function Playground() {
   }, [type]);
 
   return (
-    <div style={{ maxWidth: 500 }}>
+    <div style={{ maxWidth: 300 }}>
       <DatePicker
         type={type}
         width="full"
