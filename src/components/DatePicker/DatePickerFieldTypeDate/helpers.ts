@@ -64,7 +64,7 @@ export const getPartsDate = (
   value: string,
   format: string,
   separator: string,
-  markers: string[] = ['dd', 'MM', 'yyyy'],
+  markers: string[] = ['yyyy', 'MM', 'dd'],
 ) => {
   const formatArray = format.split(separator);
   const valueArray = value.split(separator);

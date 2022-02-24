@@ -51,11 +51,11 @@ export const DatePickerFieldTypeDate = React.forwardRef<
           return;
         }
 
-        const [dd, MM, yyyy] = getPartsDate(stringValue, formatProp, separator);
+        const [yyyy, MM, dd] = getPartsDate(stringValue, formatProp, separator);
 
         if (dd && MM && yyyy) {
           const date = parse(
-            `${dd}${datePickerPropSeparatorDefault}${MM}${datePickerPropSeparatorDefault}${yyyy}`,
+            `${yyyy}${datePickerPropSeparatorDefault}${MM}${datePickerPropSeparatorDefault}${dd}`,
             datePickerPropFormatTypeDate,
             new Date(),
           );
@@ -124,14 +124,14 @@ export const DatePickerFieldTypeDate = React.forwardRef<
         format: (date) => format(date, formatProp),
         parse: (string) => parse(string, formatProp, new Date()),
         validate: (string: string) => {
-          const [dd, MM, yyyy] = getPartsDate(string, formatProp, separator);
+          const [yyyy, MM, dd] = getPartsDate(string, formatProp, separator);
 
           if (
             dd &&
             MM &&
             !isValid(
               parse(
-                `${dd}${datePickerPropSeparatorDefault}${MM}${datePickerPropSeparatorDefault}${leapYear}`,
+                `${leapYear}${datePickerPropSeparatorDefault}${MM}${datePickerPropSeparatorDefault}${dd}`,
                 datePickerPropFormatTypeDate,
                 new Date(),
               ),
@@ -155,7 +155,7 @@ export const DatePickerFieldTypeDate = React.forwardRef<
             yyyy &&
             !isValid(
               parse(
-                `${dd}${datePickerPropSeparatorDefault}${MM}${datePickerPropSeparatorDefault}${yyyy}`,
+                `${yyyy}${datePickerPropSeparatorDefault}${MM}${datePickerPropSeparatorDefault}${dd}`,
                 datePickerPropFormatTypeDate,
                 new Date(),
               ),

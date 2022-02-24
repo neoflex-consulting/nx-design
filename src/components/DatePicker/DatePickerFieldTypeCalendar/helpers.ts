@@ -95,7 +95,7 @@ export const getPartsDate = (
   value: string,
   format: string,
   separator: string,
-  markers: string[] = ['dd', 'MM', 'yyyy', 'HH', 'mm', 'ss'],
+  markers: string[] = ['yyyy', 'MM', 'dd', 'HH', 'mm', 'ss'],
 ) => {
   const formatArray = getParts(format, separator);
   const stringArray = getParts(value, separator);
@@ -192,14 +192,14 @@ export const useImask = (
       format: (date) => format(date, formatProp),
       parse: (string) => parse(string, formatProp, new Date()),
       validate: (string: string) => {
-        const [dd, MM, yyyy, HH, mm, ss] = getPartsDate(string, formatProp, separator);
+        const [yyyy, MM, dd, HH, mm, ss] = getPartsDate(string, formatProp, separator);
 
         if (
           dd &&
           MM &&
           !isValid(
             parse(
-              `${dd}${datePickerPropSeparatorDefault}${MM}${datePickerPropSeparatorDefault}${leapYear}`,
+              `${leapYear}${datePickerPropSeparatorDefault}${MM}${datePickerPropSeparatorDefault}${dd}`,
               datePickerPropFormatTypeDate,
               new Date(),
             ),
@@ -225,7 +225,7 @@ export const useImask = (
           yyyy &&
           !isValid(
             parse(
-              `${dd}${datePickerPropSeparatorDefault}${MM}${datePickerPropSeparatorDefault}${yyyy}`,
+              `${yyyy}${datePickerPropSeparatorDefault}${MM}${datePickerPropSeparatorDefault}${dd}`,
               datePickerPropFormatTypeDate,
               new Date(),
             ),

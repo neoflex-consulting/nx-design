@@ -156,7 +156,7 @@ export type DatePickerPropOnError = (
 ) => void;
 
 export const datePickerPropSeparatorDefault = '-';
-export const datePickerPropFormatTypeDate = `dd${datePickerPropSeparatorDefault}MM${datePickerPropSeparatorDefault}yyyy`;
+export const datePickerPropFormatTypeDate = `yyyy${datePickerPropSeparatorDefault}MM${datePickerPropSeparatorDefault}dd`;
 
 export const datePickerPropFormatTypeCalendar = `${datePickerPropFormatTypeDate} HH:mm:ss`;
 

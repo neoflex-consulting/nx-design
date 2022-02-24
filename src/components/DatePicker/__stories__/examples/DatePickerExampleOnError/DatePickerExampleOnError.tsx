@@ -12,7 +12,7 @@ import {
 
 const minDate = new Date(2000, 1, 1);
 const maxDate = new Date(2001, 1, 1);
-const formatDate = (date: Date) => format(date, 'dd.MM.yyyy');
+const formatDate = (date: Date) => format(date, 'yyyy-MM-dd');
 
 export const DatePickerExampleOnError = () => {
   const ref = useRef<HTMLDivElement>(null);

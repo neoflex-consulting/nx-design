@@ -55,11 +55,11 @@ export const DatePickerFieldTypeCalendar = React.forwardRef<
         }
 
         const partsDate = getPartsDate(stringValue, formatProp, separator);
-        const [dd, MM, yyyy, HH, mm, ss] = partsDate;
+        const [yyyy, MM, dd, HH, mm, ss] = partsDate;
 
         if (partsDate.filter((item) => !!item).length === formatParts.length) {
           const date = parse(
-            `${dd}${datePickerPropSeparatorDefault}${MM}${datePickerPropSeparatorDefault}${yyyy} ${HH ||
+            `${yyyy}${datePickerPropSeparatorDefault}${MM}${datePickerPropSeparatorDefault}${dd} ${HH ||
               '00'}:${mm || '00'}:${ss || '00'}`,
             datePickerPropFormatTypeCalendar,
             new Date(),
