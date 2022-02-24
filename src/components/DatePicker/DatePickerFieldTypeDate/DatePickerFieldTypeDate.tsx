@@ -9,7 +9,6 @@ import { TextField } from '../../TextField/TextField';
 import {
   datePickerErrorTypes,
   datePickerPropFormatTypeDate,
-  datePickerPropPlaceholderTypeDate,
   datePickerPropSeparatorDefault,
 } from '../helpers';
 
@@ -23,7 +22,6 @@ export const DatePickerFieldTypeDate = React.forwardRef<
   const {
     format: formatProp = datePickerPropFormatTypeDate,
     separator = datePickerPropSeparatorDefault,
-    placeholder = datePickerPropPlaceholderTypeDate,
     onChange,
     onError,
     minDate = minDateDefault,
@@ -209,7 +207,6 @@ export const DatePickerFieldTypeDate = React.forwardRef<
       inputContainerRef={ref}
       inputRef={useForkRef([inputRef, inputRefProp])}
       value={stringValue}
-      placeholder={placeholder}
     />
   );
 });

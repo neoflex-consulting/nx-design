@@ -155,12 +155,10 @@ export type DatePickerPropOnError = (
       },
 ) => void;
 
-export const datePickerPropSeparatorDefault = '.';
+export const datePickerPropSeparatorDefault = '-';
 export const datePickerPropFormatTypeDate = `dd${datePickerPropSeparatorDefault}MM${datePickerPropSeparatorDefault}yyyy`;
-export const datePickerPropPlaceholderTypeDate = `ДД${datePickerPropSeparatorDefault}ММ${datePickerPropSeparatorDefault}ГГГГ`;
 
 export const datePickerPropFormatTypeCalendar = `${datePickerPropFormatTypeDate} HH:mm:ss`;
-export const datePickerPropPlaceholderTypeCalendar = `${datePickerPropPlaceholderTypeDate} ЧЧ:ММ:СС`;
 
 export const normalizeRangeValue = (dateRange: DateRange): DateRange => {
   if (dateRange[0] && dateRange[1] && dateRange[0]?.getTime() > dateRange[1]?.getTime()) {
