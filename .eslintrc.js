@@ -7,7 +7,6 @@ module.exports = {
   },
   extends: [
     'airbnb',
-    'airbnb/hooks',
     'plugin:import/typescript',
     'plugin:prettier/recommended',
     'prettier/react',
@@ -16,7 +15,6 @@ module.exports = {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
-  parser: '@typescript-eslint/parser',
   parserOptions: {
     createDefaultProgram: true,
     ecmaFeatures: {
@@ -29,17 +27,7 @@ module.exports = {
   plugins: [
     'react',
     'import',
-    'jsx-a11y',
-    'react-hooks',
     'simple-import-sort',
-  ],
-  overrides: [
-    {
-      files: '*.js',
-      rules: {
-        '@typescript-eslint/no-var-requires': 'off',
-      },
-    },
   ],
   rules: {
     'func-names': 'off',
@@ -94,7 +82,6 @@ module.exports = {
     'react/no-array-index-key': 'off',
     'no-shadow': 'off',
     'no-plusplus': 'off',
-    'react-hooks/exhaustive-deps': 'off',
     'default-case': 'off',
     'jsx-a11y/label-has-associated-control': [
       'off',

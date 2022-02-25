@@ -197,7 +197,7 @@ export const DatePickerFieldTypeDate = React.forwardRef<
     imaskRef.current?.updateValue();
   }, [stringValue]);
 
-  const icon = rightSide == undefined ? Calendar : undefined;
+  const icon = rightSide === undefined ? Calendar : undefined;
 
   return (
     <TextField
