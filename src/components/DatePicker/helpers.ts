@@ -108,7 +108,7 @@ export type DatePickerProps<
     endFieldOnBlur?: DatePickerPropCalendarStartOnFocus<TYPE>;
     label?: string;
     caption?: string;
-    labelPosition?: 'top' | 'left';
+    labelPosition?: 'top' | 'left' | 'bottom' | 'right';
     onChangeCurrentVisibleDate?: (date: Date) => void;
     currentVisibleDate?: Date;
     multiplicitySeconds?: number;

@@ -158,7 +158,7 @@ export const DatePickerFieldTypeDateRange = forwardRef<
       className={cnDatePickerFieldTypeDateRange({ view, labelPosition, width, size }, [className])}
       ref={ref}
     >
-      {label && (
+      {label && ( labelPosition =="left" || labelPosition =="top" ) && (
         <FieldLabel
           required={required}
           className={cnDatePickerFieldTypeDateRange('Label', { labelPosition })}
@@ -196,6 +196,15 @@ export const DatePickerFieldTypeDateRange = forwardRef<
             focused={endFocused}
           />
         </div>
+        {label && ( labelPosition =="right" || labelPosition =="bottom" ) && (
+          <FieldLabel
+            required={required}
+            className={cnDatePickerFieldTypeDateRange('Label', { labelPosition })}
+            size={size}
+          >
+            {label}
+          </FieldLabel>
+        )}
         {caption && (
           <FieldCaption className={cnDatePickerFieldTypeDateRange('Caption')} status={status}>
             {caption}

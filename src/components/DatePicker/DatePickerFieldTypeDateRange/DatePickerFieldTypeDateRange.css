@@ -64,6 +64,31 @@
         margin-right: var(--space-s);
       }
     }
+
+    &_bottom {
+       flex-direction: column;
+
+        & > *:not(:last-child) {
+            margin-top: var(--space-xs);
+          }
+     }
+
+    &_right {
+       flex-direction: row;
+
+        & .DatePickerFieldTypeDateRange-Label {
+            display: inline-flex;
+            align-items: center;
+            height: var(--input-height);
+          }
+
+    & > *:not(:last-child) {
+        margin-left: var(--space-s);
+      }
+    }
+
+
+
   }
 
   &-Body {

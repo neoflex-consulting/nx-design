@@ -45,7 +45,7 @@ export type DatePickerFieldTypeDateProps = PropsWithHTMLAttributes<
     focused?: boolean;
     label?: string;
     caption?: string;
-    labelPosition?: 'top' | 'left';
+    labelPosition?: 'top' | 'left' | 'bottom' | 'right';
   },
   HTMLDivElement
 >;

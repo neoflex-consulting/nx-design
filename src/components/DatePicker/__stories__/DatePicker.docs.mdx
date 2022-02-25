@@ -166,6 +166,8 @@ export const DatePickerExampleFormat = () => {
 ```tsx
 <DatePicker label="Лейбл" labelPosition="top" />
 <DatePicker label="Лейбл" labelPosition="left" />
+<DatePicker label="Лейбл" labelPosition="bottom" />
+<DatePicker label="Лейбл" labelPosition="right" />
 ```
 
 <DatePickerExampleLabel />
@@ -388,7 +390,7 @@ type DatePickerPropOnError = (
 | [`value?`](#выбор-даты)                                                    | `DatePickerPropValue<TYPE>`                                                                                                                                         | -                     | Выбранная дата или период                                                                                              |
 | [`type?`](#тип-дата-или-период)                                            | `'date'`, `'date-range'`, `'date-time'`                                                                                                                             | `date`                | Тип календаря: выбор даты или выбор периода                                                                            |
 | [`label?`](#лейбл)                                                         | `string`                                                                                                                                                            | -                     | Лейбл к полю ввода                                                                                                     |
-| [`labelPosition?`](#лейбл)                                                 | `'top', 'left'`                                                                                                                                                     | `'top'`               | Положение лейбла относительно поля                                                                                     |
+| [`labelPosition?`](#лейбл)                                                 | `'top', 'left'`, 'bottom'`, 'right'`                                                                                                                                | `'top'`               | Положение лейбла относительно поля                                                                                     |
 | [`caption?`](#подпись)                                                     | `string`                                                                                                                                                            | -                     | Подпись под полем ввода                                                                                                |
 | [`required?`](#обязательность)                                             | `boolean`                                                                                                                                                           | -                     | Нужно заполнить                                                                                                        |
 | `minDate?`                                                                 | `Date`                                                                                                                                                              | `01.01.0001 00:00:00` | Ограничение выбора по меньшей дате, см. [Calendar](/?path=/docs/components-calendar--playground)                       |

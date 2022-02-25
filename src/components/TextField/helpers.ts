@@ -114,7 +114,7 @@ export type TextFieldProps<TYPE extends string> = PropsWithHTMLAttributes<
     children?: never;
     label?: string;
     caption?: string;
-    labelPosition?: 'top' | 'left';
+    labelPosition?: 'top' | 'left' | 'bottom' | 'right';
     focused?: boolean;
   },
   HTMLDivElement

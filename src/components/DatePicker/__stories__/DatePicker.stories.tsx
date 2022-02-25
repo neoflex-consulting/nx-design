@@ -52,7 +52,7 @@ const defaultKnobs = () => ({
   caption: text('caption', 'Подпись'),
   placeholder: text('placeholder', ''),
   required: boolean('required', false),
-  labelPosition: select('labelPosition', ['top', 'left'], 'top'),
+  labelPosition: select('labelPosition', ['top', 'left', 'bottom', 'right'], 'top'),
   size: select('size', textFieldPropSize, textFieldPropSizeDefault),
   view: select('view', textFieldPropView, textFieldPropViewDefault),
   disabled: boolean('disabled', false),
