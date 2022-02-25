@@ -28,8 +28,11 @@ module.exports = {
     'react',
     'import',
     'simple-import-sort',
+    'react-hooks'
   ],
   rules: {
+    'react-hooks/rules-of-hooks': 'off',
+    'react-hooks/exhaustive-deps': 'off',
     'func-names': 'off',
     'quote-props': ['off', 'consistent-as-needed'],
     'react/prop-types': 'off',
