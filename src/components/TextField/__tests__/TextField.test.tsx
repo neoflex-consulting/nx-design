@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { Plus } from '../../../icons/Plus/Plus';
+import { IconPlus } from '../../../icons/IconPlus/IconPlus';
 import {
   cnTextField,
   TextField,
@@ -135,7 +135,7 @@ describe('Компонент Button', () => {
         expect(leftSide).toHaveTextContent(leftSideText);
       });
       it(`отображается как иконка`, () => {
-        renderComponent({ leftSide: Plus });
+        renderComponent({ leftSide: IconPlus });
 
         const leftSide = getleftSide() as Element;
 
@@ -143,7 +143,7 @@ describe('Компонент Button', () => {
 
         const icon = leftSide.querySelector(`.${cnTextField('Icon')}`);
 
-        expect(icon).toHaveClass('Plus');
+        expect(icon).toHaveClass('IconPlus');
       });
     });
     describe('проверка rightSide', () => {
@@ -158,7 +158,7 @@ describe('Компонент Button', () => {
         expect(rightSide).toHaveTextContent(rightSideText);
       });
       it(`отображается как иконка`, () => {
-        renderComponent({ rightSide: Plus });
+        renderComponent({ rightSide: IconPlus });
 
         const rightSide = getRightSide() as Element;
 
@@ -166,7 +166,7 @@ describe('Компонент Button', () => {
 
         const icon = rightSide.querySelector(`.${cnTextField('Icon')}`);
 
-        expect(icon).toHaveClass('Plus');
+        expect(icon).toHaveClass('IconPlus');
       });
     });
   });

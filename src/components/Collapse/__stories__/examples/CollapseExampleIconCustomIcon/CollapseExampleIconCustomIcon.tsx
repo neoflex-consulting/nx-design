@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 import { content } from '../../../__mocks__/mock.data';
-import { Plus } from '../../../../../icons/Plus/Plus';
-import { Minus } from '../../../../../icons/Minus/Minus';
+import { IconPlus } from '../../../../../icons/IconPlus/IconPlus';
+import { IconMinus } from '../../../../../icons/IconMinus/IconMinus';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { Collapse } from '../../../Collapse';
 
@@ -15,7 +15,7 @@ export const CollapseExampleIconCustomIconDirection = () => {
         label="Здесь у иконки меняется направление"
         isOpen={isOpen}
         onClick={() => setOpen(!isOpen)}
-        icon={Plus}
+        icon={IconPlus}
         directionIcon="up"
         closeDirectionIcon="downRight"
       >
@@ -34,8 +34,8 @@ export const CollapseExampleIconCustomIcon = () => {
         label="Здесь меняется иконка"
         isOpen={isOpen}
         onClick={() => setOpen(!isOpen)}
-        icon={Plus}
-        closeIcon={Minus}
+        icon={IconPlus}
+        closeIcon={IconMinus}
       >
         {content}
       </Collapse>

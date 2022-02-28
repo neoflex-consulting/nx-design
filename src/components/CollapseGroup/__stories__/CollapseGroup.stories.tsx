@@ -2,8 +2,8 @@ import React from 'react';
 import { boolean, select } from '@storybook/addon-knobs';
 
 import { Item, items } from '../__mocks__/mock.data';
-import { Plus } from '../../../icons/Plus/Plus';
-import { Minus } from '../../../icons/Minus/Minus';
+import { IconPlus } from '../../../icons/IconPlus/IconPlus';
+import { IconMinus } from '../../../icons/IconMinus/IconMinus';
 import { createMetadata } from '../../../utils/storybook';
 import { Badge } from '../../Badge/Badge';
 import {
@@ -89,8 +89,8 @@ export function Playground() {
         : { iconPosition })}
       {...(withCustomIcon
         ? {
-            icon: Plus,
-            closeIcon: Minus,
+            icon: IconPlus,
+            closeIcon: IconMinus,
           }
         : {
             directionIcon,

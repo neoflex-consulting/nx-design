@@ -2,7 +2,7 @@ import * as React from 'react';
 import { act, fireEvent, render, screen } from '@testing-library/react';
 
 import { cnIcon } from '../../../icons/_Icon/Icon';
-import { Plus } from '../../../icons/Plus/Plus';
+import { IconPlus } from '../../../icons/IconPlus/IconPlus';
 import { cnNotification, Notification, notificationItemStatus } from '../Notification';
 
 type NotificationProps = React.ComponentProps<typeof Notification>;
@@ -87,7 +87,7 @@ describe('Компонент Notification', () => {
         const items: NotificationProps['items'] = [
           {
             key: 1,
-            icon: Plus,
+            icon: IconPlus,
           },
         ];
 

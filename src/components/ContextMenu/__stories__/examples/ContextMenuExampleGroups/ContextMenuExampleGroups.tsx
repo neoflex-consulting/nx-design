@@ -2,7 +2,7 @@ import './ContextMenuExampleGroups.css';
 
 import React, { useRef } from 'react';
 
-import { Plus } from '../../../../../icons/Plus/Plus';
+import { IconPlus } from '../../../../../icons/IconPlus/IconPlus';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { StoryBookExample } from '../../../../../uiKit/components/StoryBookExample/StoryBookExample';
 import { cn } from '../../../../../utils/bem';
@@ -56,7 +56,7 @@ export const ContextMenuExampleGroups = () => {
   const ref = useRef(null);
   return (
     <StoryBookExample className={cnDocsDecorator('Section', [cnContextMenuExampleGroups()])}>
-      <Button iconLeft={Plus} ref={ref} />
+      <Button iconLeft={IconPlus} ref={ref} />
       <ContextMenu
         items={items}
         getLabel={(item) => item.name}

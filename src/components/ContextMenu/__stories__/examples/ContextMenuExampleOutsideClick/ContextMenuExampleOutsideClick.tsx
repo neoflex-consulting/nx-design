@@ -2,7 +2,7 @@ import './ContextMenuExampleOutsideClick.css';
 
 import React, { useRef, useState } from 'react';
 
-import { Plus } from '../../../../../icons/Plus/Plus';
+import { IconPlus } from '../../../../../icons/IconPlus/IconPlus';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { StoryBookExample } from '../../../../../uiKit/components/StoryBookExample/StoryBookExample';
 import { cn } from '../../../../../utils/bem';
@@ -18,7 +18,7 @@ export const ContextMenuExampleOutsideClick = () => {
   const [isOpen, setIsOpen] = useState<boolean>(true);
   return (
     <StoryBookExample className={cnDocsDecorator('Section', [cnContextMenuExampleOutsideClick()])}>
-      <Button iconLeft={Plus} ref={ref} onClick={() => setIsOpen(!isOpen)} />
+      <Button iconLeft={IconPlus} ref={ref} onClick={() => setIsOpen(!isOpen)} />
       {isOpen && (
         <ContextMenu
           items={items}

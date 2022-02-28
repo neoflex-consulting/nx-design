@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Plus } from '../../../../../icons/Plus/Plus';
+import { IconPlus } from '../../../../../icons/IconPlus/IconPlus';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { StoryBookExample } from '../../../../../uiKit/components/StoryBookExample/StoryBookExample';
 import { Typography } from '../../../../Typography/Typography';
@@ -20,7 +20,7 @@ export function FileFieldExampleWithoutRenderPropIcon() {
   return (
     <StoryBookExample className={cnDocsDecorator('Section')}>
       <FileField id="FileFieldExampleWithoutRenderPropIcon">
-        <Plus view="alert" />
+        <IconPlus view="alert" />
       </FileField>
     </StoryBookExample>
   );

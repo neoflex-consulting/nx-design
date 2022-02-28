@@ -2,7 +2,7 @@ import './ContextMenuExampleSubMenu.css';
 
 import React, { useRef } from 'react';
 
-import { Plus } from '../../../../../icons/Plus/Plus';
+import { IconPlus } from '../../../../../icons/IconPlus/IconPlus';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { StoryBookExample } from '../../../../../uiKit/components/StoryBookExample/StoryBookExample';
 import { cn } from '../../../../../utils/bem';
@@ -55,7 +55,7 @@ export const ContextMenuExampleSubMenu = () => {
   const ref2 = useRef(null);
   return (
     <StoryBookExample className={cnDocsDecorator('Section', [cnContextMenuExampleSubMenu()])}>
-      <Button iconLeft={Plus} ref={ref1} />
+      <Button iconLeft={IconPlus} ref={ref1} />
       <ContextMenu
         items={items}
         getLabel={(item) => item.name}
@@ -66,7 +66,7 @@ export const ContextMenuExampleSubMenu = () => {
         spareDirection="downStartRight"
         getSubItems={(item) => item.menu}
       />
-      <Button iconLeft={Plus} ref={ref2} />
+      <Button iconLeft={IconPlus} ref={ref2} />
       <ContextMenu
         items={items}
         getLabel={(item) => item.name}
