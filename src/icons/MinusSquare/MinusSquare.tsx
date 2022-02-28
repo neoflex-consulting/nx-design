@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import MinusSquareSizeAll from './MinusSquare_size_all';
+import IconMinusSquareSizeAll from './IconMinusSquare_size_all';
 
-export const MinusSquare = createIcon({
-  l: MinusSquareSizeAll,
-  m: MinusSquareSizeAll,
-  s: MinusSquareSizeAll,
-  xs: MinusSquareSizeAll,
+export const IconMinusSquare = createIcon({
+  l: IconMinusSquareSizeAll,
+  m: IconMinusSquareSizeAll,
+  s: IconMinusSquareSizeAll,
+  xs: IconMinusSquareSizeAll,
   name: 'IconMinusSquare',
 });

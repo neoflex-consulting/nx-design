@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 
-import { ChevronDown } from '../../icons/ChevronDown/ChevronDown';
+import { IconChevronDown } from '../../icons/IconChevronDown/IconChevronDown';
 import {
   Collapse,
   collapsePropCloseDirectionIconDefault,
@@ -22,7 +22,7 @@ const CollapseGroupRender: CollapseGroupRenderFunction = (props, ref) => {
     view = collapsePropViewDefault,
     hoverEffect,
     divider,
-    icon = ChevronDown,
+    icon = IconChevronDown,
     closeIcon,
     getItemRightSide,
     horizontalSpace,

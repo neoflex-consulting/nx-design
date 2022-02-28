@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import RadioOnSizeAll from './RadioOn_size_all';
+import IconRadioOnSizeAll from './IconRadioOn_size_all';
 
-export const RadioOn = createIcon({
-  l: RadioOnSizeAll,
-  m: RadioOnSizeAll,
-  s: RadioOnSizeAll,
-  xs: RadioOnSizeAll,
+export const IconRadioOn = createIcon({
+  l: IconRadioOnSizeAll,
+  m: IconRadioOnSizeAll,
+  s: IconRadioOnSizeAll,
+  xs: IconRadioOnSizeAll,
   name: 'IconRadioOn',
 });

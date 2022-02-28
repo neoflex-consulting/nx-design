@@ -21,8 +21,8 @@ import {
 } from '../Button';
 
 import mdx from './Button.docs.mdx';
-import {User} from "../../../icons/User/User";
-import {CaretDown} from "../../../icons/CaretDown/CaretDown";
+import {IconUser} from "../../../icons/IconUser/IconUser";
+import {IconCaretDown} from "../../../icons/IconCaretDown/IconCaretDown";
 
 const defaultKnobs = () => ({
   width: select('Width', buttonPropWidth, buttonPropWidthDefault),
@@ -66,8 +66,8 @@ export function Playground() {
           label={label}
           onlyIcon={onlyIcon}
           onClick={action('click')}
-          iconRight={iconRight ? User : undefined}
-          iconLeft={iconLeft ? CaretDown : undefined}
+          iconRight={iconRight ? IconUser : undefined}
+          iconLeft={iconLeft ? IconCaretDown : undefined}
         />
       </div>
     </EventInterceptorProvider>

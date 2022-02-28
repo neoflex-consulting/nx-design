@@ -2,7 +2,7 @@ import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { IconProps } from '../../../icons/_Icon/Icon';
-import { Camera } from '../../../icons/Camera/Camera';
+import { IconCamera } from '../../../icons/IconCamera/IconCamera';
 import { cnMixFocus } from '../../../mixs/MixFocus/MixFocus';
 import {
   ChoiceGroup,
@@ -24,15 +24,15 @@ type Item = {
 const items: Item[] = [
   {
     name: 'один',
-    icon: Camera,
+    icon: IconCamera,
   },
   {
     name: 'два',
-    icon: Camera,
+    icon: IconCamera,
   },
   {
     name: 'три',
-    icon: Camera,
+    icon: IconCamera,
   },
 ];
 

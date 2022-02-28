@@ -3,8 +3,8 @@ import './ContextMenuExampleSide.css';
 import React, { useRef, useState } from 'react';
 
 import { IconProps } from '../../../../../icons/_Icon/Icon';
-import { Plus } from '../../../../../icons/Plus/Plus';
-import { Info } from '../../../../../icons/Info/Info';
+import { IconPlus } from '../../../../../icons/IconPlus/IconPlus';
+import { IconInfo } from '../../../../../icons/IconInfo/IconInfo';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { StoryBookExample } from '../../../../../uiKit/components/StoryBookExample/StoryBookExample';
 import { cn } from '../../../../../utils/bem';
@@ -23,18 +23,18 @@ type Item = {
 const menuItems: Item[] = [
   {
     name: 'Пункт 1',
-    icon: Info,
+    icon: IconInfo,
     status: 'success',
   },
   {
     name: 'Пункт 2',
-    icon: Info,
+    icon: IconInfo,
     status: 'warning',
     switch: false,
   },
   {
     name: 'Пункт 3',
-    icon: Info,
+    icon: IconInfo,
     status: 'success',
     switch: true,
   },
@@ -79,7 +79,7 @@ export const ContextMenuExampleSide = () => {
 
   return (
     <StoryBookExample className={cnDocsDecorator('Section', [cnContextMenuExampleSide()])}>
-      <Button iconLeft={Plus} ref={ref} />
+      <Button iconLeft={IconPlus} ref={ref} />
       <ContextMenu
         items={items}
         getLabel={getLabel}

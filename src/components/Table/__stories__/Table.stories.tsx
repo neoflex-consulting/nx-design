@@ -14,7 +14,7 @@ import {
   tableWithMergedCellsData,
   tableWithMultiLevelHeadersData,
 } from '../__mock__/data.mock';
-import { Copy } from '../../../icons/Copy/Copy';
+import { IconCopy } from '../../../icons/IconCopy/IconCopy';
 import { updateAt } from '../../../utils/array';
 import { cn } from '../../../utils/bem';
 import { createMetadata, createStory } from '../../../utils/storybook';
@@ -207,7 +207,7 @@ const WithOnRowHoverContent = <T extends TableRow>(): JSX.Element => {
       <Button
         view="ghost"
         size="xs"
-        iconLeft={Copy}
+        iconLeft={IconCopy}
         onlyIcon
         style={{ visibility: hoveredRow === row.id ? 'initial' : 'hidden' }}
       />

@@ -3,7 +3,7 @@ import './StepsStep.css';
 import React from 'react';
 
 import { IconPropSize } from '../../../icons/_Icon/Icon';
-import { Check } from '../../../icons/Check/Check';
+import { IconCheck } from '../../../icons/IconCheck/IconCheck';
 import { cn } from '../../../utils/bem';
 import { getSizeByMap } from '../../../utils/getSizeByMap';
 import { StepsPropSize } from '../Steps';
@@ -51,7 +51,7 @@ export const StepsStep = React.forwardRef<HTMLButtonElement, Props>((props, ref)
       title={label}
       onClick={clickHandler}
     >
-      {completed && <Check className={cnStepsStep('Icon')} size={iconSize} />}
+      {completed && <IconCheck className={cnStepsStep('Icon')} size={iconSize} />}
       {label}
     </button>
   );

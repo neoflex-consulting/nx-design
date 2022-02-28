@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { useChoiceGroup } from '../../hooks/useChoiceGroup/useChoiceGroup';
 import { IconProps, IconPropSize } from '../../icons/_Icon/Icon';
-import { Check } from '../../icons/Check/Check';
+import { IconCheck } from '../../icons/IconCheck/IconCheck';
 import { getSizeByMap } from '../../utils/getSizeByMap';
 import { setRef } from '../../utils/setRef';
 import { PropsWithHTMLAttributesAndRef } from '../../utils/types/PropsWithHTMLAttributes';
@@ -105,7 +105,7 @@ export const ThemeToggler: ThemeToggler = React.forwardRef((props, componentRef)
   };
 
   const renderChecks = (item: Item) => {
-    return getChecked(item) && <Check size={iconSize} />;
+    return getChecked(item) && <IconCheck size={iconSize} />;
   };
 
   if (items.length <= 1) {

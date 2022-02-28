@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import RefreshSizeAll from './Refresh_size_all';
+import IconRefreshSizeAll from './IconRefresh_size_all';
 
-export const Refresh = createIcon({
-  l: RefreshSizeAll,
-  m: RefreshSizeAll,
-  s: RefreshSizeAll,
-  xs: RefreshSizeAll,
+export const IconRefresh = createIcon({
+  l: IconRefreshSizeAll,
+  m: IconRefreshSizeAll,
+  s: IconRefreshSizeAll,
+  xs: IconRefreshSizeAll,
   name: 'IconRefresh',
 });

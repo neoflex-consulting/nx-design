@@ -1,9 +1,9 @@
 import { IconProps } from '../../../icons/_Icon/Icon';
-import { CheckDouble } from '../../../icons/CheckDouble/CheckDouble';
-import { Layers } from '../../../icons/Layers/Layers';
-import { Bank } from '../../../icons/IconBank/IconBank';
-import { Eye } from '../../../icons/Eye/Eye';
-import { Wifi } from '../../../icons/Wifi/Wifi';
+import { IconCheckDouble } from '../../../icons/IconCheckDouble/IconCheckDouble';
+import { IconLayers } from '../../../icons/IconLayers/IconLayers';
+import { IconBank } from '../../../icons/IconBank/IconBank';
+import { IconEye } from '../../../icons/IconEye/IconEye';
+import { IconWifi } from '../../../icons/IconWifi/IconWifi';
 import { BadgePropStatus } from '../../Badge/Badge';
 import { ContextMenuAccent } from '../helpers';
 
@@ -32,7 +32,7 @@ export declare type Item = {
 export const exampleItems: Item[] = [
   {
     name: 'Скрепка',
-    icon: Layers,
+    icon: IconLayers,
     accent: 'success',
     group: 1,
     subMenu: [
@@ -47,7 +47,7 @@ export const exampleItems: Item[] = [
         subMenu: [
           {
             name: 'Пункт - 3',
-            icon: Wifi,
+            icon: IconWifi,
             subMenu: [
               {
                 name: 'Пункт - 5',
@@ -59,7 +59,7 @@ export const exampleItems: Item[] = [
           },
           {
             name: 'Пункт - 4',
-            icon: Wifi,
+            icon: IconWifi,
             subMenu: [
               {
                 name: 'Пункт - 7',
@@ -71,7 +71,7 @@ export const exampleItems: Item[] = [
           },
           {
             name: 'Пункт - 9',
-            icon: Wifi,
+            icon: IconWifi,
           },
         ],
       },
@@ -80,28 +80,28 @@ export const exampleItems: Item[] = [
   {
     name: 'Глаз',
     status: 'normal',
-    icon: Eye,
+    icon: IconEye,
     accent: 'success',
     group: 1,
   },
   {
     name: 'Две галочки',
     group: 2,
-    icon: CheckDouble,
+    icon: IconCheckDouble,
     switch: false,
     accent: 'error',
   },
   {
     name: 'Чемодан',
     group: 2,
-    icon: Bank,
+    icon: IconBank,
     switch: false,
     accent: 'error',
   },
   {
     name: 'Солнце',
     group: 2,
-    icon: Wifi,
+    icon: IconWifi,
     switch: false,
     accent: 'error',
     disabled: true,

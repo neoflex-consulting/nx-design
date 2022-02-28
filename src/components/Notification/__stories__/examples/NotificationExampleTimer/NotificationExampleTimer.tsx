@@ -3,9 +3,9 @@ import './NotificationExampleTimer.css';
 import React, { useReducer } from 'react';
 
 import { IconProps } from '../../../../../icons/_Icon/Icon';
-import { Plus } from '../../../../../icons/Plus/Plus';
-import { WarningC } from '../../../../../icons/WarningC/WarningC';
-import { Bell } from '../../../../../icons/Bell/Bell';
+import { IconPlus } from '../../../../../icons/IconPlus/IconPlus';
+import { IconWarningC } from '../../../../../icons/IconWarningC/IconWarningC';
+import { IconBell } from '../../../../../icons/IconBell/IconBell';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { cn } from '../../../../../utils/bem';
 import { Button } from '../../../../Button/Button';
@@ -14,8 +14,8 @@ import { Item, Notification, NotificationItemStatus } from '../../../Notificatio
 const cnNotificationExampleTimer = cn('NotificationExampleTimer');
 
 const mapIconByStatus: Record<NotificationItemStatus, React.FC<IconProps> | undefined> = {
-  error: WarningC,
-  info: Bell,
+  error: IconWarningC,
+  info: IconBell,
   system: undefined,
   success: undefined,
   warning: undefined,
@@ -64,13 +64,13 @@ export const NotificationExampleTimer: React.FC = () => {
       <div className={cnNotificationExampleTimer('Buttons')}>
         <Button
           className={cnNotificationExampleTimer('ButtonAdd')}
-          iconLeft={Plus}
+          iconLeft={IconPlus}
           label="Обычный таймер"
           onClick={handleNormalAdd}
         />
         <Button
           className={cnNotificationExampleTimer('ButtonAdd')}
-          iconLeft={Plus}
+          iconLeft={IconPlus}
           label="Тревожный таймер"
           onClick={handleAlertAdd}
         />

@@ -35,338 +35,337 @@ import {IconBarChartH} from '../../IconBarChartH/IconBarChartH';
 import {IconBarChartV} from '../../IconBarChartV/IconBarChartV';
 import {IconBarChartVCheck} from '../../IconBarChartVCheck/IconBarChartVCheck';
 import {IconBase} from '../../IconBase/IconBase';
-import {BaseServer} from '../../BaseServer/BaseServer';
-import {Bell} from '../../Bell/Bell';
-import {BellOff} from '../../BellOff/BellOff';
-import {BigGrid} from '../../BigGrid/BigGrid';
-import {Binokulars} from '../../Binokulars/Binokulars';
-import {Block} from '../../Block/Block';
-import {Book} from '../../Book/Book';
-import {BookDownload} from '../../BookDownload/BookDownload';
-import {BookFinance} from '../../BookFinance/BookFinance';
-import {BookFormula} from '../../BookFormula/BookFormula';
-import {BookUpload} from '../../BookUpload/BookUpload';
-import {BookWarning} from '../../BookWarning/BookWarning';
-import {Branch} from '../../Branch/Branch';
-import {Breifcase} from '../../Breifcase/Breifcase';
-import {BringToFront} from '../../BringToFront/BringToFront';
-import {Bug} from '../../Bug/Bug';
-import {Building} from '../../Building/Building';
-import {BulletList} from '../../BulletList/BulletList';
-import {BulletListSearch} from '../../BulletListSearch/BulletListSearch';
-import {Calculator} from '../../Calculator/Calculator';
-import {CalculatorCheck} from '../../CalculatorCheck/CalculatorCheck';
-import {Calendar} from '../../Calendar/Calendar';
-import {CalendarCheck} from '../../CalendarCheck/CalendarCheck';
-import {CalendarDate} from '../../CalendarDate/CalendarDate'
-import {CalendarDelete} from '../../CalendarDelete/CalendarDelete';
-import {CalendarMinus} from '../../CalendarMinus/CalendarMinus';
-import {CalendarNule} from '../../CalendarNule/CalendarNule';
-import {CalendarPlus} from '../../CalendarPlus/CalendarPlus';
-import {CalendarRecur} from '../../CalendarRecur/CalendarRecur';
-import {Camera} from '../../Camera/Camera';
-import {CaretDown} from '../../CaretDown/CaretDown';
-import {CaretDownS} from '../../CaretDownS/CaretDownS';
-import {CaretLeft} from '../../CaretLeft/CaretLeft';
-import {CaretLeftS} from '../../CaretLeftS/CaretLeftS';
-import {CaretRight} from '../../CaretRight/CaretRight';
-import {CaretRightS} from '../../CaretRightS/CaretRightS';
-import {CaretUp} from '../../CaretUp/CaretUp';
-import {CaretUpS} from '../../CaretUpS/CaretUpS';
-import {Chat} from '../../Chat/Chat';
-import {ChatDialog} from '../../ChatDialog/ChatDialog';
-import {ChatHelp} from '../../ChatHelp/ChatHelp';
-import {ChatOff} from '../../ChatOff/ChatOff';
-import {ChatQuestion} from '../../ChatQuestion/ChatQuestion';
-import {ChatWarning} from '../../ChatWarning/ChatWarning';
-import {Check} from '../../Check/Check';
-import {CheckC} from '../../CheckC/CheckC';
-import {CheckCFilled} from '../../CheckCFilled/CheckCFilled';
-import {CheckDouble} from '../../CheckDouble/CheckDouble';
-import {CheckFull} from '../../CheckFull/CheckFull';
-import {CheckOn} from '../../CheckOn/CheckOn';
-import {CheckStatus} from '../../CheckStatus/CheckStatus';
-import {ChevronDown} from '../../ChevronDown/ChevronDown';
-import {ChevronDownC} from '../../ChevronDownC/ChevronDownC';
-import {ChevronLeft} from '../../ChevronLeft/ChevronLeft';
-import {ChevronLeftC} from '../../ChevronLeftC/ChevronLeftC';
-import {ChevronRight} from '../../ChevronRight/ChevronRight';
-import {ChevronRightC} from '../../ChevronRightC/ChevronRightC';
-import {ChevronUp} from '../../ChevronUp/ChevronUp';
-import {ChevronUpC} from '../../ChevronUpC/ChevronUpC';
-import {Circle} from '../../Circle/Circle';
-import {CircleF} from '../../CircleF/CircleF';
-import {CircleO} from '../../CircleO/CircleO';
-import {Clip} from '../../Clip/Clip';
-import {Clipboard} from '../../Clipboard/Clipboard';
-import {Clock} from '../../Clock/Clock';
-import {Close} from '../../Close/Close';
-import {CloseC} from '../../CloseC/CloseC';
-import {CloseMenu} from '../../CloseMenu/CloseMenu';
-import {Cloud} from '../../Cloud/Cloud';
-import {CloudDownload} from '../../CloudDownload/CloudDownload';
-import {CloudServer} from '../../CloudServer/CloudServer';
-import {CloudUpload} from '../../CloudUpload/CloudUpload';
-import {Code} from '../../Code/Code';
-import {CodeHtml} from '../../CodeHtml/CodeHtml';
-import {Collapse} from '../../Collapse/Collapse';
-import {Color} from '../../Color/Color';
-import {Colorpicker} from '../../Colorpicker/Colorpicker';
-import {Comment} from '../../Comment/Comment';
-import {CommentChat} from '../../CommentChat/CommentChat';
-import {Compose} from '../../Compose/Compose';
-import {Connect} from '../../Connect/Connect';
-import {Contact} from '../../Contact/Contact';
-import {Control} from '../../Control/Control';
-import {Cookies} from '../../Cookies/Cookies';
-import {Copy} from '../../Copy/Copy';
-import {Cub} from '../../Cub/Cub';
-import {Cut} from '../../Cut/Cut';
-import {DarkTheme} from '../../DarkTheme/DarkTheme';
-import {DataHistogram} from '../../DataHistogram/DataHistogram';
-import {DataLine} from '../../DataLine/DataLine';
-import {DateScatter} from '../../DateScatter/DateScatter';
-import {Delete} from '../../Delete/Delete';
-import {Design} from '../../Design/Design';
-import {Desktop} from '../../Desktop/Desktop';
-import {DeveloperBoard} from '../../DeveloperBoard/DeveloperBoard';
-import {Dictionary} from '../../Dictionary/Dictionary';
-import {Directory} from '../../Directory/Directory';
-import {Disconnect} from '../../Disconnect/Disconnect';
-import {DisplayOnly} from '../../DisplayOnly/DisplayOnly';
-import {Divider} from '../../Divider/Divider';
-import {DocBottom} from '../../DocBottom/DocBottom';
-import {DocLeft} from '../../DocLeft/DocLeft';
-import {DocLeftClose} from '../../DocLeftClose/DocLeftClose';
-import {DocRight} from '../../DocRight/DocRight';
-import {DocRightClose} from '../../DocRightClose/DocRightClose';
-import {DocTop} from '../../DocTop/DocTop';
-import {Document} from '../../Document/Document';
-import {Documents} from '../../Documents/Documents';
-import {Dotted} from '../../Dotted/Dotted';
-import {DoubleDown} from '../../DoubleDown/DoubleDown';
-import {DoubleLeft} from '../../DoubleLeft/DoubleLeft';
-import {DoubleReply} from '../../DoubleReply/DoubleReply';
-import {DoubleRight} from '../../DoubleRight/DoubleRight';
-import {DoubleUp} from '../../DoubleUp/DoubleUp';
-import {Down} from '../../Down/Down';
-import {Download} from '../../Download/Download';
-import {Drag} from '../../Drag/Drag';
-import {DragAndDrop} from '../../DragAndDrop/DragAndDrop'
-import {Dublicate} from '../../Dublicate/Dublicate';
+import {IconBaseServer} from '../../IconBaseServer/IconBaseServer';
+import {IconBell} from '../../IconBell/IconBell';
+import {IconBellOff} from '../../IconBellOff/IconBellOff';
+import {IconBigGrid} from '../../IconBigGrid/IconBigGrid';
+import {IconBinokulars} from '../../IconBinokulars/IconBinokulars';
+import {IconBlock} from '../../IconBlock/IconBlock';
+import {IconBook} from '../../IconBook/IconBook';
+import {IconBookDownload} from '../../IconBookDownload/IconBookDownload';
+import {IconBookFinance} from '../../IconBookFinance/IconBookFinance';
+import {IconBookFormula} from '../../IconBookFormula/IconBookFormula';
+import {IconBookUpload} from '../../IconBookUpload/IconBookUpload';
+import {IconBookWarning} from '../../IconBookWarning/IconBookWarning';
+import {IconBranch} from '../../IconBranch/IconBranch';
+import {IconBreifcase} from '../../IconBreifcase/IconBreifcase';
+import {IconBringToFront} from '../../IconBringToFront/IconBringToFront';
+import {IconBug} from '../../IconBug/IconBug';
+import {IconBuilding} from '../../IconBuilding/IconBuilding';
+import {IconBulletList} from '../../IconBulletList/IconBulletList';
+import {IconBulletListSearch} from '../../IconBulletListSearch/IconBulletListSearch';
+import {IconCalculator} from '../../IconCalculator/IconCalculator';
+import {IconCalculatorCheck} from '../../IconCalculatorCheck/IconCalculatorCheck';
+import {IconCalendar} from '../../IconCalendar/IconCalendar';
+import {IconCalendarCheck} from '../../IconCalendarCheck/IconCalendarCheck';
+import {IconCalendarDate} from '../../IconCalendarDate/IconCalendarDate'
+import {IconCalendarDelete} from '../../IconCalendarDelete/IconCalendarDelete';
+import {IconCalendarMinus} from '../../IconCalendarMinus/IconCalendarMinus';
+import {IconCalendarNule} from '../../IconCalendarNule/IconCalendarNule';
+import {IconCalendarPlus} from '../../IconCalendarPlus/IconCalendarPlus';
+import {IconCalendarRecur} from '../../IconCalendarRecur/IconCalendarRecur';
+import {IconCamera} from '../../IconCamera/IconCamera';
+import {IconCaretDown} from '../../IconCaretDown/IconCaretDown';
+import {IconCaretDownS} from '../../IconCaretDownS/IconCaretDownS';
+import {IconCaretLeft} from '../../IconCaretLeft/IconCaretLeft';
+import {IconCaretLeftS} from '../../IconCaretLeftS/IconCaretLeftS';
+import {IconCaretRight} from '../../IconCaretRight/IconCaretRight';
+import {IconCaretRightS} from '../../IconCaretRightS/IconCaretRightS';
+import {IconCaretUp} from '../../IconCaretUp/IconCaretUp';
+import {IconCaretUpS} from '../../IconCaretUpS/IconCaretUpS';
+import {IconChat} from '../../IconChat/IconChat';
+import {IconChatDialog} from '../../IconChatDialog/IconChatDialog';
+import {IconChatHelp} from '../../IconChatHelp/IconChatHelp';
+import {IconChatOff} from '../../IconChatOff/IconChatOff';
+import {IconChatQuestion} from '../../IconChatQuestion/IconChatQuestion';
+import {IconChatWarning} from '../../IconChatWarning/IconChatWarning';
+import {IconCheck} from '../../IconCheck/IconCheck';
+import {IconCheckC} from '../../IconCheckC/IconCheckC';
+import {IconCheckCFilled} from '../../IconCheckCFilled/IconCheckCFilled';
+import {IconCheckDouble} from '../../IconCheckDouble/IconCheckDouble';
+import {IconCheckFull} from '../../IconCheckFull/IconCheckFull';
+import {IconCheckOn} from '../../IconCheckOn/IconCheckOn';
+import {IconCheckStatus} from '../../IconCheckStatus/IconCheckStatus';
+import {IconChevronDown} from '../../IconChevronDown/IconChevronDown';
+import {IconChevronDownC} from '../../IconChevronDownC/IconChevronDownC';
+import {IconChevronLeft} from '../../IconChevronLeft/IconChevronLeft';
+import {IconChevronLeftC} from '../../IconChevronLeftC/IconChevronLeftC';
+import {IconChevronRight} from '../../IconChevronRight/IconChevronRight';
+import {IconChevronRightC} from '../../IconChevronRightC/IconChevronRightC';
+import {IconChevronUp} from '../../IconChevronUp/IconChevronUp';
+import {IconChevronUpC} from '../../IconChevronUpC/IconChevronUpC';
+import {IconCircle} from '../../IconCircle/IconCircle';
+import {IconCircleF} from '../../IconCircleF/IconCircleF';
+import {IconCircleO} from '../../IconCircleO/IconCircleO';
+import {IconClip} from '../../IconClip/IconClip';
+import {IconClipboard} from '../../IconClipboard/IconClipboard';
+import {IconClock} from '../../IconClock/IconClock';
+import {IconClose} from '../../IconClose/IconClose';
+import {IconCloseC} from '../../IconCloseC/IconCloseC';
+import {IconCloseMenu} from '../../IconCloseMenu/IconCloseMenu';
+import {IconCloud} from '../../IconCloud/IconCloud';
+import {IconCloudDownload} from '../../IconCloudDownload/IconCloudDownload';
+import {IconCloudServer} from '../../IconCloudServer/IconCloudServer';
+import {IconCloudUpload} from '../../IconCloudUpload/IconCloudUpload';
+import {IconCode} from '../../IconCode/IconCode';
+import {IconCodeHtml} from '../../IconCodeHtml/IconCodeHtml';
+import {IconCollapse} from '../../IconCollapse/IconCollapse';
+import {IconColor} from '../../IconColor/IconColor';
+import {IconColorpicker} from '../../IconColorpicker/IconColorpicker';
+import {IconComment} from '../../IconComment/IconComment';
+import {IconCommentChat} from '../../IconCommentChat/IconCommentChat';
+import {IconCompose} from '../../IconCompose/IconCompose';
+import {IconConnect} from '../../IconConnect/IconConnect';
+import {IconContact} from '../../IconContact/IconContact';
+import {IconControl} from '../../IconControl/IconControl';
+import {IconCookies} from '../../IconCookies/IconCookies';
+import {IconCopy} from '../../IconCopy/IconCopy';
+import {IconCub} from '../../IconCub/IconCub';
+import {IconCut} from '../../IconCut/IconCut';
+import {IconDarkTheme} from '../../IconDarkTheme/IconDarkTheme';
+import {IconDataHistogram} from '../../IconDataHistogram/IconDataHistogram';
+import {IconDataLine} from '../../IconDataLine/IconDataLine';
+import {IconDateScatter} from '../../IconDateScatter/IconDateScatter';
+import {IconDelete} from '../../IconDelete/IconDelete';
+import {IconDesign} from '../../IconDesign/IconDesign';
+import {IconDesktop} from '../../IconDesktop/IconDesktop';
+import {IconDeveloperBoard} from '../../IconDeveloperBoard/IconDeveloperBoard';
+import {IconDictionary} from '../../IconDictionary/IconDictionary';
+import {IconDirectory} from '../../IconDirectory/IconDirectory';
+import {IconDisconnect} from '../../IconDisconnect/IconDisconnect';
+import {IconDisplayOnly} from '../../IconDisplayOnly/IconDisplayOnly';
+import {IconDivider} from '../../IconDivider/IconDivider';
+import {IconDocBottom} from '../../IconDocBottom/IconDocBottom';
+import {IconDocLeft} from '../../IconDocLeft/IconDocLeft';
+import {IconDocLeftClose} from '../../IconDocLeftClose/IconDocLeftClose';
+import {IconDocRight} from '../../IconDocRight/IconDocRight';
+import {IconDocRightClose} from '../../IconDocRightClose/IconDocRightClose';
+import {IconDocTop} from '../../IconDocTop/IconDocTop';
+import {IconDocument} from '../../IconDocument/IconDocument';
+import {IconDocuments} from '../../IconDocuments/IconDocuments';
+import {IconDotted} from '../../IconDotted/IconDotted';
+import {IconDoubleDown} from '../../IconDoubleDown/IconDoubleDown';
+import {IconDoubleLeft} from '../../IconDoubleLeft/IconDoubleLeft';
+import {IconDoubleReply} from '../../IconDoubleReply/IconDoubleReply';
+import {IconDoubleRight} from '../../IconDoubleRight/IconDoubleRight';
+import {IconDoubleUp} from '../../IconDoubleUp/IconDoubleUp';
+import {IconDown} from '../../IconDown/IconDown';
+import {IconDownload} from '../../IconDownload/IconDownload';
+import {IconDrag} from '../../IconDrag/IconDrag';
+import {IconDragAndDrop} from '../../IconDragAndDrop/IconDragAndDrop'
+import {IconDublicate} from '../../IconDublicate/IconDublicate';
 import {IconEdit} from '../../IconEdit/IconEdit';
-import {EditorDrawer} from '../../EditorDrawer/EditorDrawer';
-import {EditorRegion} from '../../EditorRegion/EditorRegion';
-import {EditorValueHolder} from '../../EditorValueHolder/EditorValueHolder';
-import {Eject} from '../../Eject/Eject';
-import {EllipsisH} from '../../EllipsisH/EllipsisH';
-import {EllipsisV} from '../../EllipsisV/EllipsisV';
-import {Email} from '../../Email/Email';
-import {EnvelopeEmailS} from '../../EnvelopeEmailS/EnvelopeEmailS';
-import {Erase} from '../../Erase/Erase';
-import {Eur} from '../../Eur/Eur';
-import {Export} from '../../Export/Export';
-import {ExternalLink} from '../../ExternalLink/ExternalLink';
-import {ExternalLinkS} from '../../ExternalLinkS/ExternalLinkS';
-import {Eye} from '../../Eye/Eye';
-import {EyeInvCheck} from '../../EyeInvCheck/EyeInvCheck';
-import {EyeInvisible} from '../../EyeInvisible/EyeInvisible';
-import {FastBackward} from '../../FastBackward/FastBackward';
-import {FastForward} from '../../FastForward/FastForward';
-import {Fax} from '../../Fax/Fax';
-import {File} from '../../File/File';
-import {FileAi} from '../../FileAi/FileAi';
-import {FileCsv} from '../../FileCsv/FileCsv';
-import {FileDelete} from '../../FileDelete/FileDelete';
-import {FileDoc} from '../../FileDoc/FileDoc';
-import {FileDownload} from '../../FileDownload/FileDownload';
-import {FileEps} from '../../FileEps/FileEps';
-import {FileMinus} from '../../FileMinus/FileMinus';
-import {FilePdf} from '../../FilePdf/FilePdf';
-import {FilePlus} from '../../FilePlus/FilePlus';
-import {FilePng} from '../../FilePng/FilePng';
-import {FilePpt} from '../../FilePpt/FilePpt';
-import {Files} from '../../Files/Files';
-import {FileSearch} from '../../FileSearch/FileSearch';
-import {FileSvg} from '../../FileSvg/FileSvg';
-import {FileText} from '../../FileText/FileText';
-import {FileUpload} from '../../FileUpload/FileUpload';
-import {FileXlsx} from '../../FileXlsx/FileXlsx';
-import {FileXml} from '../../FileXml/FileXml';
-import {FileZip} from '../../FileZip/FileZip';
-import {Fill} from '../../Fill/Fill';
-import {Filter} from '../../Filter/Filter';
-import {FilterCheck} from '../../FilterCheck/FilterCheck';
-import {Flag} from '../../Flag/Flag';
-import {Flash} from '../../Flash/Flash';
-import {Folder} from '../../Folder/Folder';
-import {FolderDelete} from '../../FolderDelete/FolderDelete';
-import {FolderDownload} from '../../FolderDownload/FolderDownload';
-import {FolderMinus} from '../../FolderMinus/FolderMinus';
-import {FolderOpen} from '../../FolderOpen/FolderOpen';
-import {FolderPlus} from '../../FolderPlus/FolderPlus';
-import {FolderPublic} from '../../FolderPublic/FolderPublic';
-import {FolderSearch} from '../../FolderSearch/FolderSearch';
-import {FolderUpload} from '../../FolderUpload/FolderUpload';
-import {FolderZip} from '../../FolderZip/FolderZip';
-import {Form} from '../../Form/Form';
-import {Fort} from '../../Fort/Fort';
-import {Forward} from '../../Forward/Forward';
-import {FullScreen} from '../../FullScreen/FullScreen';
-import {FullScreenExit} from '../../FullScreenExit/FullScreenExit';
-import {FunctionField} from '../../FunctionField/FunctionField';
-import {Gbp} from '../../Gbp/Gbp';
-import {Gift} from '../../Gift/Gift';
-import {Globe} from '../../Globe/Globe';
-import {GraduationCap} from '../../GraduationCap/GraduationCap';
-import {GridIcon} from '../../GridIcon/GridIcon';
-import {Group} from '../../Group/Group';
-import {GroupCheck} from '../../GroupCheck/GroupCheck';
-import {Hdd} from '../../Hdd/Hdd';
-import {Heart} from '../../Heart/Heart';
-import {HelpCircle} from '../../HelpCircle/HelpCircle';
-import {History} from '../../History/History';
-import {Home} from '../../Home/Home';
-import {Hourglass} from '../../Hourglass/Hourglass';
-import {Image} from '../../Image/Image';
-import {Import} from '../../Import/Import';
-import {Important} from '../../Important/Important';
-import {Inbox} from '../../Inbox/Inbox';
-import {Info} from '../../Info/Info';
-import {Key} from '../../Key/Key';
-import {Keyboard} from '../../Keyboard/Keyboard';
-import {Laptop} from '../../Laptop/Laptop';
-import {Layers} from '../../Layers/Layers';
-import {Lightbulbt} from '../../Lightbulbt/Lightbulbt';
-import {LightTheme} from '../../LightTheme/LightTheme';
-import {LineChart} from '../../LineChart/LineChart';
-import {Link} from '../../Link/Link';
-import {LinkRemove} from '../../LinkRemove/LinkRemove';
-import {ListCheck} from '../../ListCheck/ListCheck';
-import {Location} from '../../Location/Location';
-import {LocationMap} from '../../LocationMap/LocationMap';
-import {LockOff} from '../../LockOff/LockOff';
-import {LockOn} from '../../LockOn/LockOn';
-
-import {Map} from '../../Map/Map';
-import {MapSigns} from '../../MapSigns/MapSigns';
-import {Mark} from '../../Mark/Mark';
-import {Menu} from '../../Menu/Menu';
-import {MenuOpen} from '../../MenuOpen/MenuOpen';
-import {Minus} from '../../Minus/Minus';
-import {MinusC} from '../../MinusC/MinusC';
-import {MinusCheck} from '../../MinusCheck/MinusCheck';
-import {MinusSCheck} from '../../MinusSCheck/MinusSCheck';
-import {MinusSquare} from '../../MinusSquare/MinusSquare';
-import {Money} from '../../Money/Money';
-import {MoveDown} from '../../MoveDown/MoveDown';
-import {MoveUp} from '../../MoveUp/MoveUp';
-import {News} from '../../News/News';
-import {Note} from '../../Note/Note';
-import {Notebook} from '../../Notebook/Notebook';
-import {NotEdit} from '../../NotEdit/NotEdit';
-import {Notepad} from '../../Notepad/Notepad';
-import {NumberField} from '../../NumberField/NumberField';
-import {NumberList} from '../../NumberList/NumberList';
-import {OpenFolder} from '../../OpenFolder/OpenFolder';
-import {Paste} from '../../Paste/Paste';
-import {Pause} from '../../Pause/Pause';
-import {PauseC} from '../../PauseC/PauseC';
-import {PauseFilled} from '../../PauseFilled/PauseFilled';
-import {Percent} from '../../Percent/Percent';
-import {Phone} from '../../Phone/Phone';
-import {PhoneDesktop} from '../../PhoneDesktop/PhoneDesktop';
-import {PhoneDev} from '../../PhoneDev/PhoneDev';
-import {PieChart} from '../../PieChart/PieChart';
-import {Pin} from '../../Pin/Pin';
-import {Play} from '../../Play/Play';
-import {PlayC} from '../../PlayC/PlayC';
-import {PlayFilled} from '../../PlayFilled/PlayFilled';
-import {Plus} from '../../Plus/Plus';
-import {PlusC} from '../../PlusC/PlusC';
-import {PlusSCheck} from '../../PlusSCheck/PlusSCheck';
-import {PlusSDouble} from '../../PlusSDouble/PlusSDouble';
-import {PlusSDoubleCheck} from '../../PlusSDoubleCheck/PlusSDoubleCheck';
-import {PlusSquare} from '../../PlusSquare/PlusSquare';
-import {Pointer} from '../../Pointer/Pointer';
-import {Power} from '../../Power/Power';
-import {Print} from '../../Print/Print';
-import {Qcode} from '../../Qcode/Qcode';
-import {Question} from '../../Question/Question';
-import {RadioOn} from '../../RadioOn/RadioOn';
-import {Refresh} from '../../Refresh/Refresh';
-import {Repeat} from '../../Repeat/Repeat';
-import {Reply} from '../../Reply/Reply';
-import {Rub} from '../../Rub/Rub';
-import {Save} from '../../Save/Save';
-import {Scalefit} from '../../Scalefit/Scalefit';
-import {Search} from '../../Search/Search';
-import {SearchCheck} from '../../SearchCheck/SearchCheck';
-import {SearchIn} from '../../SearchIn/SearchIn';
-import {SearchOut} from '../../SearchOut/SearchOut';
+import {IconEditorDrawer} from '../../IconEditorDrawer/IconEditorDrawer';
+import {IconEditorRegion} from '../../IconEditorRegion/IconEditorRegion';
+import {IconEditorValueHolder} from '../../IconEditorValueHolder/IconEditorValueHolder';
+import {IconEject} from '../../IconEject/IconEject';
+import {IconEllipsisH} from '../../IconEllipsisH/IconEllipsisH';
+import {IconEllipsisV} from '../../IconEllipsisV/IconEllipsisV';
+import {IconEmail} from '../../IconEmail/IconEmail';
+import {IconEnvelopeEmailS} from '../../IconEnvelopeEmailS/IconEnvelopeEmailS';
+import {IconErase} from '../../IconErase/IconErase';
+import {IconEur} from '../../IconEur/IconEur';
+import {IconExport} from '../../IconExport/IconExport';
+import {IconExternalLink} from '../../IconExternalLink/IconExternalLink';
+import {IconExternalLinkS} from '../../IconExternalLinkS/IconExternalLinkS';
+import {IconEye} from '../../IconEye/IconEye';
+import {IconEyeInvCheck} from '../../IconEyeInvCheck/IconEyeInvCheck';
+import {IconEyeInvisible} from '../../IconEyeInvisible/IconEyeInvisible';
+import {IconFastBackward} from '../../IconFastBackward/IconFastBackward';
+import {IconFastForward} from '../../IconFastForward/IconFastForward';
+import {IconFax} from '../../IconFax/IconFax';
+import {IconFile} from '../../IconFile/IconFile';
+import {IconFileAi} from '../../IconFileAi/IconFileAi';
+import {IconFileCsv} from '../../IconFileCsv/IconFileCsv';
+import {IconFileDelete} from '../../IconFileDelete/IconFileDelete';
+import {IconFileDoc} from '../../IconFileDoc/IconFileDoc';
+import {IconFileDownload} from '../../IconFileDownload/IconFileDownload';
+import {IconFileEps} from '../../IconFileEps/IconFileEps';
+import {IconFileMinus} from '../../IconFileMinus/IconFileMinus';
+import {IconFilePdf} from '../../IconFilePdf/IconFilePdf';
+import {IconFilePlus} from '../../IconFilePlus/IconFilePlus';
+import {IconFilePng} from '../../IconFilePng/IconFilePng';
+import {IconFilePpt} from '../../IconFilePpt/IconFilePpt';
+import {IconFiles} from '../../IconFiles/IconFiles';
+import {IconFileSearch} from '../../IconFileSearch/IconFileSearch';
+import {IconFileSvg} from '../../IconFileSvg/IconFileSvg';
+import {IconFileText} from '../../IconFileText/IconFileText';
+import {IconFileUpload} from '../../IconFileUpload/IconFileUpload';
+import {IconFileXlsx} from '../../IconFileXlsx/IconFileXlsx';
+import {IconFileXml} from '../../IconFileXml/IconFileXml';
+import {IconFileZip} from '../../IconFileZip/IconFileZip';
+import {IconFill} from '../../IconFill/IconFill';
+import {IconFilter} from '../../IconFilter/IconFilter';
+import {IconFilterCheck} from '../../IconFilterCheck/IconFilterCheck';
+import {IconFlag} from '../../IconFlag/IconFlag';
+import {IconFlash} from '../../IconFlash/IconFlash';
+import {IconFolder} from '../../IconFolder/IconFolder';
+import {IconFolderDelete} from '../../IconFolderDelete/IconFolderDelete';
+import {IconFolderDownload} from '../../IconFolderDownload/IconFolderDownload';
+import {IconFolderMinus} from '../../IconFolderMinus/IconFolderMinus';
+import {IconFolderOpen} from '../../IconFolderOpen/IconFolderOpen';
+import {IconFolderPlus} from '../../IconFolderPlus/IconFolderPlus';
+import {IconFolderPublic} from '../../IconFolderPublic/IconFolderPublic';
+import {IconFolderSearch} from '../../IconFolderSearch/IconFolderSearch';
+import {IconFolderUpload} from '../../IconFolderUpload/IconFolderUpload';
+import {IconFolderZip} from '../../IconFolderZip/IconFolderZip';
+import {IconForm} from '../../IconForm/IconForm';
+import {IconFort} from '../../IconFort/IconFort';
+import {IconForward} from '../../IconForward/IconForward';
+import {IconFullScreen} from '../../IconFullScreen/IconFullScreen';
+import {IconFullScreenExit} from '../../IconFullScreenExit/IconFullScreenExit';
+import {IconFunctionField} from '../../IconFunctionField/IconFunctionField';
+import {IconGbp} from '../../IconGbp/IconGbp';
+import {IconGift} from '../../IconGift/IconGift';
+import {IconGlobe} from '../../IconGlobe/IconGlobe';
+import {IconGraduationCap} from '../../IconGraduationCap/IconGraduationCap';
+import {IconGridIcon} from '../../IconGridIcon/IconGridIcon';
+import {IconGroup} from '../../IconGroup/IconGroup';
+import {IconGroupCheck} from '../../IconGroupCheck/IconGroupCheck';
+import {IconHdd} from '../../IconHdd/IconHdd';
+import {IconHeart} from '../../IconHeart/IconHeart';
+import {IconHelpCircle} from '../../IconHelpCircle/IconHelpCircle';
+import {IconHistory} from '../../IconHistory/IconHistory';
+import {IconHome} from '../../IconHome/IconHome';
+import {IconHourglass} from '../../IconHourglass/IconHourglass';
+import {IconImage} from '../../IconImage/IconImage';
+import {IconImport} from '../../IconImport/IconImport';
+import {IconImportant} from '../../IconImportant/IconImportant';
+import {IconInbox} from '../../IconInbox/IconInbox';
+import {IconInfo} from '../../IconInfo/IconInfo';
+import {IconKey} from '../../IconKey/IconKey';
+import {IconKeyboard} from '../../IconKeyboard/IconKeyboard';
+import {IconLaptop} from '../../IconLaptop/IconLaptop';
+import {IconLayers} from '../../IconLayers/IconLayers';
+import {IconLightbulbt} from '../../IconLightbulbt/IconLightbulbt';
+import {IconLightTheme} from '../../IconLightTheme/IconLightTheme';
+import {IconLineChart} from '../../IconLineChart/IconLineChart';
+import {IconLink} from '../../IconLink/IconLink';
+import {IconLinkRemove} from '../../IconLinkRemove/IconLinkRemove';
+import {IconListCheck} from '../../IconListCheck/IconListCheck';
+import {IconLocation} from '../../IconLocation/IconLocation';
+import {IconLocationMap} from '../../IconLocationMap/IconLocationMap';
+import {IconLockOff} from '../../IconLockOff/IconLockOff';
+import {IconLockOn} from '../../IconLockOn/IconLockOn';
+import {IconMap} from '../../IconMap/IconMap';
+import {IconMapSigns} from '../../IconMapSigns/IconMapSigns';
+import {IconMark} from '../../IconMark/IconMark';
+import {IconMenu} from '../../IconMenu/IconMenu';
+import {IconMenuOpen} from '../../IconMenuOpen/IconMenuOpen';
+import {IconMinus} from '../../IconMinus/IconMinus';
+import {IconMinusC} from '../../IconMinusC/IconMinusC';
+import {IconMinusCheck} from '../../IconMinusCheck/IconMinusCheck';
+import {IconMinusSCheck} from '../../IconMinusSCheck/IconMinusSCheck';
+import {IconMinusSquare} from '../../IconMinusSquare/IconMinusSquare';
+import {IconMoney} from '../../IconMoney/IconMoney';
+import {IconMoveDown} from '../../IconMoveDown/IconMoveDown';
+import {IconMoveUp} from '../../IconMoveUp/IconMoveUp';
+import {IconNews} from '../../IconNews/IconNews';
+import {IconNote} from '../../IconNote/IconNote';
+import {IconNotebook} from '../../IconNotebook/IconNotebook';
+import {IconNotEdit} from '../../IconNotEdit/IconNotEdit';
+import {IconNotepad} from '../../IconNotepad/IconNotepad';
+import {IconNumberField} from '../../IconNumberField/IconNumberField';
+import {IconNumberList} from '../../IconNumberList/IconNumberList';
+import {IconOpenFolder} from '../../IconOpenFolder/IconOpenFolder';
+import {IconPaste} from '../../IconPaste/IconPaste';
+import {IconPause} from '../../IconPause/IconPause';
+import {IconPauseC} from '../../IconPauseC/IconPauseC';
+import {IconPauseFilled} from '../../IconPauseFilled/IconPauseFilled';
+import {IconPercent} from '../../IconPercent/IconPercent';
+import {IconPhone} from '../../IconPhone/IconPhone';
+import {IconPhoneDesktop} from '../../IconPhoneDesktop/IconPhoneDesktop';
+import {IconPhoneDev} from '../../IconPhoneDev/IconPhoneDev';
+import {IconPieChart} from '../../IconPieChart/IconPieChart';
+import {IconPin} from '../../IconPin/IconPin';
+import {IconPlay} from '../../IconPlay/IconPlay';
+import {IconPlayC} from '../../IconPlayC/IconPlayC';
+import {IconPlayFilled} from '../../IconPlayFilled/IconPlayFilled';
+import {IconPlus} from '../../IconPlus/IconPlus';
+import {IconPlusC} from '../../IconPlusC/IconPlusC';
+import {IconPlusSCheck} from '../../IconPlusSCheck/IconPlusSCheck';
+import {IconPlusSDouble} from '../../IconPlusSDouble/IconPlusSDouble';
+import {IconPlusSDoubleCheck} from '../../IconPlusSDoubleCheck/IconPlusSDoubleCheck';
+import {IconPlusSquare} from '../../IconPlusSquare/IconPlusSquare';
+import {IconPointer} from '../../IconPointer/IconPointer';
+import {IconPower} from '../../IconPower/IconPower';
+import {IconPrint} from '../../IconPrint/IconPrint';
+import {IconQcode} from '../../IconQcode/IconQcode';
+import {IconQuestion} from '../../IconQuestion/IconQuestion';
+import {IconRadioOn} from '../../IconRadioOn/IconRadioOn';
+import {IconRefresh} from '../../IconRefresh/IconRefresh';
+import {IconRepeat} from '../../IconRepeat/IconRepeat';
+import {IconReply} from '../../IconReply/IconReply';
+import {IconRub} from '../../IconRub/IconRub';
+import {IconSave} from '../../IconSave/IconSave';
+import {IconScalefit} from '../../IconScalefit/IconScalefit';
+import {IconSearch} from '../../IconSearch/IconSearch';
+import {IconSearchCheck} from '../../IconSearchCheck/IconSearchCheck';
+import {IconSearchIn} from '../../IconSearchIn/IconSearchIn';
+import {IconSearchOut} from '../../IconSearchOut/IconSearchOut';
 import {IconSelect} from '../../IconSelect/IconSelect';
-import {Send} from '../../Send/Send';
-import {Separator} from '../../Separator/Separator';
-import {Sertificat} from '../../Sertificat/Sertificat';
-import {Server} from '../../Server/Server';
-import {Settings} from '../../Settings/Settings';
-import {SettingsDev} from '../../SettingsDev/SettingsDev';
-import {Share} from '../../Share/Share';
-import {SignOut} from '../../SignOut/SignOut';
-import {SignUp} from '../../SignUp/SignUp';
-import {Slider} from '../../Slider/Slider';
-import {SortCheck} from '../../SortCheck/SortCheck';
-import {SortDown} from '../../SortDown/SortDown';
-import {SortUp} from '../../SortUp/SortUp';
-import {Speed} from '../../Speed/Speed';
-import {Spinner} from '../../Spinner/Spinner';
-import {Star} from '../../Star/Star';
-import {StarFill} from '../../StarFill/StarFill';
-import {Status} from '../../Status/Status';
-import {Step} from '../../Step/Step';
-import {StepsC} from '../../StepsC/StepsC';
-import {StopC} from '../../StopC/StopC';
-import {StopFilled} from '../../StopFilled/StopFilled';
-import {StrokeGrid} from '../../StrokeGrid/StrokeGrid';
-import {Switcher} from '../../Switcher/Switcher';
-import {Sync} from '../../Sync/Sync';
-import {SystemSettings} from '../../SystemSettings/SystemSettings';
-import {Tab} from '../../Tab/Tab';
-import {TableFull} from '../../TableFull/TableFull';
-import {TableColumn} from '../../TableColumn/TableColumn';
-import {TablePivot} from '../../TablePivot/TablePivot';
-import {TablePivotCheck} from '../../TablePivotCheck/TablePivotCheck';
-import {TableRows} from '../../TableRows/TableRows';
-import {TableSetV} from '../../TableSetV/TableSetV';
-import {Tablet} from '../../Tablet/Tablet';
-import {Tag} from '../../Tag/Tag';
-import {Tags} from '../../Tags/Tags';
-import {Tap} from '../../Tap/Tap';
-import {Target} from '../../Target/Target';
-import {Tasks} from '../../Tasks/Tasks';
-import {Text} from '../../Text/Text';
-import {TextArea} from '../../TextArea/TextArea';
-import {TextColor} from '../../TextColor/TextColor';
-import {TextFieldIcon} from '../../TextFieldIcon/TextFieldIcon';
-import {TextFieldMask} from '../../TextFieldMask/TextFieldMask';
-import {TimerOn} from '../../TimerOn/TimerOn'
-import {Toolbox} from '../../Toolbox/Toolbox';
-import {Tools} from '../../Tools/Tools';
-import {Try} from '../../Try/Try';
-import {Undo} from '../../Undo/Undo';
-import {Ungroup} from '../../Ungroup/Ungroup';
-import {Up} from '../../Up/Up';
-import {Upload} from '../../Upload/Upload';
-import {Usd} from '../../Usd/Usd';
-import {User} from '../../User/User';
-import {UserAdd} from '../../UserAdd/UserAdd';
-import {UserDelete} from '../../UserDelete/UserDelete';
-import {Users} from '../../Users/Users';
-import {VideoCamera} from '../../VideoCamera/VideoCamera';
-import {VideoSquare} from '../../VideoSquare/VideoSquare';
-import {Warning} from '../../Warning/Warning';
-import {WarningC} from '../../WarningC/WarningC';
-import {Wifi} from '../../Wifi/Wifi';
+import {IconSend} from '../../IconSend/IconSend';
+import {IconSeparator} from '../../IconSeparator/IconSeparator';
+import {IconSertificat} from '../../IconSertificat/IconSertificat';
+import {IconServer} from '../../IconServer/IconServer';
+import {IconSettings} from '../../IconSettings/IconSettings';
+import {IconSettingsDev} from '../../IconSettingsDev/IconSettingsDev';
+import {IconShare} from '../../IconShare/IconShare';
+import {IconSignOut} from '../../IconSignOut/IconSignOut';
+import {IconSignUp} from '../../IconSignUp/IconSignUp';
+import {IconSlider} from '../../IconSlider/IconSlider';
+import {IconSortCheck} from '../../IconSortCheck/IconSortCheck';
+import {IconSortDown} from '../../IconSortDown/IconSortDown';
+import {IconSortUp} from '../../IconSortUp/IconSortUp';
+import {IconSpeed} from '../../IconSpeed/IconSpeed';
+import {IconSpinner} from '../../IconSpinner/IconSpinner';
+import {IconStar} from '../../IconStar/IconStar';
+import {IconStarFill} from '../../IconStarFill/IconStarFill';
+import {IconStatus} from '../../IconStatus/IconStatus';
+import {IconStep} from '../../IconStep/IconStep';
+import {IconStepsC} from '../../IconStepsC/IconStepsC';
+import {IconStopC} from '../../IconStopC/IconStopC';
+import {IconStopFilled} from '../../IconStopFilled/IconStopFilled';
+import {IconStrokeGrid} from '../../IconStrokeGrid/IconStrokeGrid';
+import {IconSwitcher} from '../../IconSwitcher/IconSwitcher';
+import {IconSync} from '../../IconSync/IconSync';
+import {IconSystemSettings} from '../../IconSystemSettings/IconSystemSettings';
+import {IconTab} from '../../IconTab/IconTab';
+import {IconTableFull} from '../../IconTableFull/IconTableFull';
+import {IconTableColumn} from '../../IconTableColumn/IconTableColumn';
+import {IconTablePivot} from '../../IconTablePivot/IconTablePivot';
+import {IconTablePivotCheck} from '../../IconTablePivotCheck/IconTablePivotCheck';
+import {IconTableRows} from '../../IconTableRows/IconTableRows';
+import {IconTableSetV} from '../../IconTableSetV/IconTableSetV';
+import {IconTablet} from '../../IconTablet/IconTablet';
+import {IconTag} from '../../IconTag/IconTag';
+import {IconTags} from '../../IconTags/IconTags';
+import {IconTap} from '../../IconTap/IconTap';
+import {IconTarget} from '../../IconTarget/IconTarget';
+import {IconTasks} from '../../IconTasks/IconTasks';
+import {IconText} from '../../IconText/IconText';
+import {IconTextArea} from '../../IconTextArea/IconTextArea';
+import {IconTextColor} from '../../IconTextColor/IconTextColor';
+import {IconTextField} from '../../IconTextField/IconTextField';
+import {IconTextFieldMask} from '../../IconTextFieldMask/IconTextFieldMask';
+import {IconTimerOn} from '../../IconTimerOn/IconTimerOn'
+import {IconToolbox} from '../../IconToolbox/IconToolbox';
+import {IconTools} from '../../IconTools/IconTools';
+import {IconTry} from '../../IconTry/IconTry';
+import {IconUndo} from '../../IconUndo/IconUndo';
+import {IconUngroup} from '../../IconUngroup/IconUngroup';
+import {IconUp} from '../../IconUp/IconUp';
+import {IconUpload} from '../../IconUpload/IconUpload';
+import {IconUsd} from '../../IconUsd/IconUsd';
+import {IconUser} from '../../IconUser/IconUser';
+import {IconUserAdd} from '../../IconUserAdd/IconUserAdd';
+import {IconUserDelete} from '../../IconUserDelete/IconUserDelete';
+import {IconUsers} from '../../IconUsers/IconUsers';
+import {IconVideoCamera} from '../../IconVideoCamera/IconVideoCamera';
+import {IconVideoSquare} from '../../IconVideoSquare/IconVideoSquare';
+import {IconWarning} from '../../IconWarning/IconWarning';
+import {IconWarningC} from '../../IconWarningC/IconWarningC';
+import {IconWifi} from '../../IconWifi/IconWifi';
 
 const defaultKnobs = () => ({
   size: select('size', ['xs', 's', 'm', 'l'], 'm'),
@@ -407,337 +406,337 @@ const neoicons = {
   IconBarChartV,
   IconBarChartVCheck,
   IconBase,
-  BaseServer,
-  Bell,
-  BellOff,
-  BigGrid,
-  Binokulars,
-  Block,
-  Book,
-  BookDownload,
-  BookFinance,
-  BookFormula,
-  BookUpload,
-  BookWarning,
-  Branch,
-  Breifcase,
-  BringToFront,
-  Bug,
-  Building,
-  BulletList,
-  BulletListSearch,
-  Calculator,
-  CalculatorCheck,
-  Calendar,
-  CalendarCheck,
-  CalendarDate,
-  CalendarDelete,
-  CalendarMinus,
-  CalendarNule,
-  CalendarPlus,
-  CalendarRecur,
-  Camera,
-  CaretDown,
-  CaretDownS,
-  CaretLeft,
-  CaretLeftS,
-  CaretRight,
-  CaretRightS,
-  CaretUp,
-  CaretUpS,
-  Chat,
-  ChatDialog,
-  ChatHelp,
-  ChatOff,
-  ChatQuestion,
-  ChatWarning,
-  Check,
-  CheckC,
-  CheckCFilled,
-  CheckDouble,
-  CheckFull,
-  CheckOn,
-  CheckStatus,
-  ChevronDown,
-  ChevronDownC,
-  ChevronLeft,
-  ChevronLeftC,
-  ChevronRight,
-  ChevronRightC,
-  ChevronUp,
-  ChevronUpC,
-  Circle,
-  CircleF,
-  CircleO,
-  Clip,
-  Clipboard,
-  Clock,
-  Close,
-  CloseC,
-  CloseMenu,
-  Cloud,
-  CloudDownload,
-  CloudServer,
-  CloudUpload,
-  Code,
-  CodeHtml,
-  Collapse,
-  Color,
-  Colorpicker,
-  Comment,
-  CommentChat,
-  Compose,
-  Connect,
-  Contact,
-  Control,
-  Cookies,
-  Copy,
-  Cub,
-  Cut,
-  DarkTheme,
-  DataHistogram,
-  DataLine,
-  DateScatter,
-  Delete,
-  Design,
-  Desktop,
-  DeveloperBoard,
-  Dictionary,
-  Directory,
-  Disconnect,
-  DisplayOnly,
-  Divider,
-  DocBottom,
-  DocLeft,
-  DocLeftClose,
-  DocRight,
-  DocRightClose,
-  DocTop,
-  Document,
-  Documents,
-  Dotted,
-  DoubleDown,
-  DoubleLeft,
-  DoubleReply,
-  DoubleRight,
-  DoubleUp,
-  Down,
-  Download,
-  Drag,
-  DragAndDrop,
-  Dublicate,
+  IconBaseServer,
+  IconBell,
+  IconBellOff,
+  IconBigGrid,
+  IconBinokulars,
+  IconBlock,
+  IconBook,
+  IconBookDownload,
+  IconBookFinance,
+  IconBookFormula,
+  IconBookUpload,
+  IconBookWarning,
+  IconBranch,
+  IconBreifcase,
+  IconBringToFront,
+  IconBug,
+  IconBuilding,
+  IconBulletList,
+  IconBulletListSearch,
+  IconCalculator,
+  IconCalculatorCheck,
+  IconCalendar,
+  IconCalendarCheck,
+  IconCalendarDate,
+  IconCalendarDelete,
+  IconCalendarMinus,
+  IconCalendarNule,
+  IconCalendarPlus,
+  IconCalendarRecur,
+  IconCamera,
+  IconCaretDown,
+  IconCaretDownS,
+  IconCaretLeft,
+  IconCaretLeftS,
+  IconCaretRight,
+  IconCaretRightS,
+  IconCaretUp,
+  IconCaretUpS,
+  IconChat,
+  IconChatDialog,
+  IconChatHelp,
+  IconChatOff,
+  IconChatQuestion,
+  IconChatWarning,
+  IconCheck,
+  IconCheckC,
+  IconCheckCFilled,
+  IconCheckDouble,
+  IconCheckFull,
+  IconCheckOn,
+  IconCheckStatus,
+  IconChevronDown,
+  IconChevronDownC,
+  IconChevronLeft,
+  IconChevronLeftC,
+  IconChevronRight,
+  IconChevronRightC,
+  IconChevronUp,
+  IconChevronUpC,
+  IconCircle,
+  IconCircleF,
+  IconCircleO,
+  IconClip,
+  IconClipboard,
+  IconClock,
+  IconClose,
+  IconCloseC,
+  IconCloseMenu,
+  IconCloud,
+  IconCloudDownload,
+  IconCloudServer,
+  IconCloudUpload,
+  IconCode,
+  IconCodeHtml,
+  IconCollapse,
+  IconColor,
+  IconColorpicker,
+  IconComment,
+  IconCommentChat,
+  IconCompose,
+  IconConnect,
+  IconContact,
+  IconControl,
+  IconCookies,
+  IconCopy,
+  IconCub,
+  IconCut,
+  IconDarkTheme,
+  IconDataHistogram,
+  IconDataLine,
+  IconDateScatter,
+  IconDelete,
+  IconDesign,
+  IconDesktop,
+  IconDeveloperBoard,
+  IconDictionary,
+  IconDirectory,
+  IconDisconnect,
+  IconDisplayOnly,
+  IconDivider,
+  IconDocBottom,
+  IconDocLeft,
+  IconDocLeftClose,
+  IconDocRight,
+  IconDocRightClose,
+  IconDocTop,
+  IconDocument,
+  IconDocuments,
+  IconDotted,
+  IconDoubleDown,
+  IconDoubleLeft,
+  IconDoubleReply,
+  IconDoubleRight,
+  IconDoubleUp,
+  IconDown,
+  IconDownload,
+  IconDrag,
+  IconDragAndDrop,
+  IconDublicate,
   IconEdit,
-  EditorDrawer,
-  EditorRegion,
-  EditorValueHolder,
-  Eject,
-  EllipsisH,
-  EllipsisV,
-  Email,
-  EnvelopeEmailS,
-  Erase,
-  Eur,
-  Export,
-  ExternalLink,
-  ExternalLinkS,
-  Eye,
-  EyeInvCheck,
-  EyeInvisible,
-  FastBackward,
-  FastForward,
-  Fax,
-  File,
-  FileAi,
-  FileCsv,
-  FileDelete,
-  FileDoc,
-  FileDownload,
-  FileEps,
-  FileMinus,
-  FilePdf,
-  FilePlus,
-  FilePng,
-  FilePpt,
-  Files,
-  FileSearch,
-  FileSvg,
-  FileText,
-  FileUpload,
-  FileXlsx,
-  FileXml,
-  FileZip,
-  Fill,
-  Filter,
-  FilterCheck,
-  Flag,
-  Flash,
-  Folder,
-  FolderDelete,
-  FolderDownload,
-  FolderMinus,
-  FolderOpen,
-  FolderPlus,
-  FolderPublic,
-  FolderSearch,
-  FolderUpload,
-  FolderZip,
-  Form,
-  Fort,
-  Forward,
-  FullScreen,
-  FullScreenExit,
-  FunctionField,
-  Gbp,
-  Gift,
-  Globe,
-  GraduationCap,
-  GridIcon,
-  Group,
-  GroupCheck,
-  Hdd,
-  Heart,
-  HelpCircle,
-  History,
-  Home,
-  Hourglass,
-  Image,
-  Import,
-  Important,
-  Inbox,
-  Info,
-  Key,
-  Keyboard,
-  Laptop,
-  Layers,
-  Lightbulbt,
-  LightTheme,
-  LineChart,
-  Link,
-  LinkRemove,
-  ListCheck,
-  Location,
-  LocationMap,
-  LockOff,
-  LockOn,
-  Map,
-  MapSigns,
-  Mark,
-  Menu,
-  MenuOpen,
-  Minus,
-  MinusC,
-  MinusCheck,
-  MinusSCheck,
-  MinusSquare,
-  Money,
-  MoveDown,
-  MoveUp,
-  News,
-  Note,
-  Notebook,
-  NotEdit,
-  Notepad,
-  NumberField,
-  NumberList,
-  OpenFolder,
-  Paste,
-  Pause,
-  PauseC,
-  PauseFilled,
-  Percent,
-  Phone,
-  PhoneDesktop,
-  PhoneDev,
-  PieChart,
-  Pin,
-  Play,
-  PlayC,
-  PlayFilled,
-  Plus,
-  PlusC,
-  PlusSCheck,
-  PlusSDouble,
-  PlusSDoubleCheck,
-  PlusSquare,
-  Pointer,
-  Power,
-  Print,
-  Qcode,
-  Question,
-  RadioOn,
-  Refresh,
-  Repeat,
-  Reply,
-  Rub,
-  Save,
-  Scalefit,
-  Search,
-  SearchCheck,
-  SearchIn,
-  SearchOut,
+  IconEditorDrawer,
+  IconEditorRegion,
+  IconEditorValueHolder,
+  IconEject,
+  IconEllipsisH,
+  IconEllipsisV,
+  IconEmail,
+  IconEnvelopeEmailS,
+  IconErase,
+  IconEur,
+  IconExport,
+  IconExternalLink,
+  IconExternalLinkS,
+  IconEye,
+  IconEyeInvCheck,
+  IconEyeInvisible,
+  IconFastBackward,
+  IconFastForward,
+  IconFax,
+  IconFile,
+  IconFileAi,
+  IconFileCsv,
+  IconFileDelete,
+  IconFileDoc,
+  IconFileDownload,
+  IconFileEps,
+  IconFileMinus,
+  IconFilePdf,
+  IconFilePlus,
+  IconFilePng,
+  IconFilePpt,
+  IconFiles,
+  IconFileSearch,
+  IconFileSvg,
+  IconFileText,
+  IconFileUpload,
+  IconFileXlsx,
+  IconFileXml,
+  IconFileZip,
+  IconFill,
+  IconFilter,
+  IconFilterCheck,
+  IconFlag,
+  IconFlash,
+  IconFolder,
+  IconFolderDelete,
+  IconFolderDownload,
+  IconFolderMinus,
+  IconFolderOpen,
+  IconFolderPlus,
+  IconFolderPublic,
+  IconFolderSearch,
+  IconFolderUpload,
+  IconFolderZip,
+  IconForm,
+  IconFort,
+  IconForward,
+  IconFullScreen,
+  IconFullScreenExit,
+  IconFunctionField,
+  IconGbp,
+  IconGift,
+  IconGlobe,
+  IconGraduationCap,
+  IconGridIcon,
+  IconGroup,
+  IconGroupCheck,
+  IconHdd,
+  IconHeart,
+  IconHelpCircle,
+  IconHistory,
+  IconHome,
+  IconHourglass,
+  IconImage,
+  IconImport,
+  IconImportant,
+  IconInbox,
+  IconInfo,
+  IconKey,
+  IconKeyboard,
+  IconLaptop,
+  IconLayers,
+  IconLightbulbt,
+  IconLightTheme,
+  IconLineChart,
+  IconLink,
+  IconLinkRemove,
+  IconListCheck,
+  IconLocation,
+  IconLocationMap,
+  IconLockOff,
+  IconLockOn,
+  IconMap,
+  IconMapSigns,
+  IconMark,
+  IconMenu,
+  IconMenuOpen,
+  IconMinus,
+  IconMinusC,
+  IconMinusCheck,
+  IconMinusSCheck,
+  IconMinusSquare,
+  IconMoney,
+  IconMoveDown,
+  IconMoveUp,
+  IconNews,
+  IconNote,
+  IconNotebook,
+  IconNotEdit,
+  IconNotepad,
+  IconNumberField,
+  IconNumberList,
+  IconOpenFolder,
+  IconPaste,
+  IconPause,
+  IconPauseC,
+  IconPauseFilled,
+  IconPercent,
+  IconPhone,
+  IconPhoneDesktop,
+  IconPhoneDev,
+  IconPieChart,
+  IconPin,
+  IconPlay,
+  IconPlayC,
+  IconPlayFilled,
+  IconPlus,
+  IconPlusC,
+  IconPlusSCheck,
+  IconPlusSDouble,
+  IconPlusSDoubleCheck,
+  IconPlusSquare,
+  IconPointer,
+  IconPower,
+  IconPrint,
+  IconQcode,
+  IconQuestion,
+  IconRadioOn,
+  IconRefresh,
+  IconRepeat,
+  IconReply,
+  IconRub,
+  IconSave,
+  IconScalefit,
+  IconSearch,
+  IconSearchCheck,
+  IconSearchIn,
+  IconSearchOut,
   IconSelect,
-  Send,
-  Separator,
-  Sertificat,
-  Server,
-  Settings,
-  SettingsDev,
-  Share,
-  SignOut,
-  SignUp,
-  Slider,
-  SortCheck,
-  SortDown,
-  SortUp,
-  Speed,
-  Spinner,
-  Star,
-  StarFill,
-  Status,
-  Step,
-  StepsC,
-  StopC,
-  StopFilled,
-  StrokeGrid,
-  Switcher,
-  Sync,
-  SystemSettings,
-  Tab,
-  TableFull,
-  TableColumn,
-  TablePivot,
-  TablePivotCheck,
-  TableRows,
-  TableSetV,
-  Tablet,
-  Tag,
-  Tags,
-  Tap,
-  Target,
-  Tasks,
-  Text,
-  TextArea,
-  TextColor,
-  TextField: TextFieldIcon,
-  TextFieldMask,
-  TimerOn,
-  Toolbox,
-  Tools,
-  Try,
-  Undo,
-  Ungroup,
-  Up,
-  Upload,
-  Usd,
-  User,
-  UserAdd,
-  UserDelete,
-  Users,
-  VideoCamera,
-  VideoSquare,
-  Warning,
-  WarningC,
-  Wifi
+  IconSend,
+  IconSeparator,
+  IconSertificat,
+  IconServer,
+  IconSettings,
+  IconSettingsDev,
+  IconShare,
+  IconSignOut,
+  IconSignUp,
+  IconSlider,
+  IconSortCheck,
+  IconSortDown,
+  IconSortUp,
+  IconSpeed,
+  IconSpinner,
+  IconStar,
+  IconStarFill,
+  IconStatus,
+  IconStep,
+  IconStepsC,
+  IconStopC,
+  IconStopFilled,
+  IconStrokeGrid,
+  IconSwitcher,
+  IconSync,
+  IconSystemSettings,
+  IconTab,
+  IconTableFull,
+  IconTableColumn,
+  IconTablePivot,
+  IconTablePivotCheck,
+  IconTableRows,
+  IconTableSetV,
+  IconTablet,
+  IconTag,
+  IconTags,
+  IconTap,
+  IconTarget,
+  IconTasks,
+  IconText,
+  IconTextArea,
+  IconTextColor,
+  IconTextField,
+  IconTextFieldMask,
+  IconTimerOn,
+  IconToolbox,
+  IconTools,
+  IconTry,
+  IconUndo,
+  IconUngroup,
+  IconUp,
+  IconUpload,
+  IconUsd,
+  IconUser,
+  IconUserAdd,
+  IconUserDelete,
+  IconUsers,
+  IconVideoCamera,
+  IconVideoSquare,
+  IconWarning,
+  IconWarningC,
+  IconWifi
 } as const;
 
 type Name = keyof typeof neoicons;

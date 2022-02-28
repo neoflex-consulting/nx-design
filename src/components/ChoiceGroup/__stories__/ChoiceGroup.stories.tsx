@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { boolean, select } from '@storybook/addon-knobs';
 
 import { IconProps } from '../../../icons/_Icon/Icon';
-import { Camera } from '../../../icons/Camera/Camera';
-import { Copy } from '../../../icons/Copy/Copy';
-import { StarFill } from '../../../icons/StarFill/StarFill';
+import { IconCamera } from '../../../icons/IconCamera/IconCamera';
+import { IconCopy } from '../../../icons/IconCopy/IconCopy';
+import { IconStarFill } from '../../../icons/IconStarFill/IconStarFill';
 import { cn } from '../../../utils/bem';
 import { createMetadata } from '../../../utils/storybook';
 import {
@@ -29,15 +29,15 @@ declare type Item = {
 const items = [
   {
     name: 'один',
-    icon: Camera,
+    icon: IconCamera,
   },
   {
     name: 'два',
-    icon: Copy,
+    icon: IconCopy,
   },
   {
     name: 'три',
-    icon: StarFill,
+    icon: IconStarFill,
   },
 ];
 

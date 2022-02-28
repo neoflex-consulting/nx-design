@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SearchOutSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconSearchOutSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path d="M7.5 9.75C7.08579 9.75 6.75 10.0858 6.75 10.5C6.75 10.9142 7.08579 11.25 7.5 11.25H13.5C13.9142 11.25 14.25 10.9142 14.25 10.5C14.25 10.0858 13.9142 9.75 13.5 9.75H7.5Z" fill="black"/>
@@ -9,4 +9,4 @@ function SearchOutSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default SearchOutSizeAll;
+export default IconSearchOutSizeAll;

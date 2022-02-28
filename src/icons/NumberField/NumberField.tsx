@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import NumberFieldSizeAll from './NumberField_size_all';
+import IconNumberFieldSizeAll from './IconNumberField_size_all';
 
-export const NumberField = createIcon({
-  l: NumberFieldSizeAll,
-  m: NumberFieldSizeAll,
-  s: NumberFieldSizeAll,
-  xs: NumberFieldSizeAll,
+export const IconNumberField = createIcon({
+  l: IconNumberFieldSizeAll,
+  m: IconNumberFieldSizeAll,
+  s: IconNumberFieldSizeAll,
+  xs: IconNumberFieldSizeAll,
   name: 'IconNumberField',
 });

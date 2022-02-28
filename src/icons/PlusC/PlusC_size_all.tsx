@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function PlusCSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconPlusCSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path d="M11.25 7.5C11.25 7.08579 11.5858 6.75 12 6.75C12.4142 6.75 12.75 7.08579 12.75 7.5V11.25H16.5C16.9142 11.25 17.25 11.5858 17.25 12C17.25 12.4142 16.9142 12.75 16.5 12.75H12.75V16.5C12.75 16.9142 12.4142 17.25 12 17.25C11.5858 17.25 11.25 16.9142 11.25 16.5V12.75H7.5C7.08579 12.75 6.75 12.4142 6.75 12C6.75 11.5858 7.08579 11.25 7.5 11.25H11.25V7.5Z"/>
@@ -9,4 +9,4 @@ function PlusCSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default PlusCSizeAll;
+export default IconPlusCSizeAll;

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function NotepadSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconNotepadSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path d="M6.75 9C6.75 8.58579 7.08579 8.25 7.5 8.25H16.5C16.9142 8.25 17.25 8.58579 17.25 9C17.25 9.41421 16.9142 9.75 16.5 9.75H7.5C7.08579 9.75 6.75 9.41421 6.75 9Z" />
@@ -11,4 +11,4 @@ function NotepadSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default NotepadSizeAll;
+export default IconNotepadSizeAll;

@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import SeparatorSizeAll from './Separator_size_all';
+import IconSeparatorSizeAll from './IconSeparator_size_all';
 
-export const Separator = createIcon({
-  l: SeparatorSizeAll,
-  m: SeparatorSizeAll,
-  s: SeparatorSizeAll,
-  xs: SeparatorSizeAll,
+export const IconSeparator = createIcon({
+  l: IconSeparatorSizeAll,
+  m: IconSeparatorSizeAll,
+  s: IconSeparatorSizeAll,
+  xs: IconSeparatorSizeAll,
   name: 'IconSeparator',
 });

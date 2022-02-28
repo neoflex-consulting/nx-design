@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import SearchSizeAll from './Search_size_all';
+import IconSearchSizeAll from './IconSearch_size_all';
 
-export const Search = createIcon({
-  l: SearchSizeAll,
-  m: SearchSizeAll,
-  s: SearchSizeAll,
-  xs: SearchSizeAll,
+export const IconSearch = createIcon({
+  l: IconSearchSizeAll,
+  m: IconSearchSizeAll,
+  s: IconSearchSizeAll,
+  xs: IconSearchSizeAll,
   name: 'IconSearch',
 });

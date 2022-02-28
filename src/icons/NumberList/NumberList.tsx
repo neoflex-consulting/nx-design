@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import NumberListSizeAll from './NumberList_size_all';
+import IconNumberListSizeAll from './IconNumberList_size_all';
 
-export const NumberList = createIcon({
-  l: NumberListSizeAll,
-  m: NumberListSizeAll,
-  s: NumberListSizeAll,
-  xs: NumberListSizeAll,
+export const IconNumberList = createIcon({
+  l: IconNumberListSizeAll,
+  m: IconNumberListSizeAll,
+  s: IconNumberListSizeAll,
+  xs: IconNumberListSizeAll,
   name: 'IconNumberList',
 });

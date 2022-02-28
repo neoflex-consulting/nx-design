@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function PercentSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconPercentSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 3C5.84315 3 4.5 4.34315 4.5 6V8.25C4.5 9.90685 5.84315 11.25 7.5 11.25C9.15685 11.25 10.5 9.90685 10.5 8.25V6C10.5 4.34315 9.15685 3 7.5 3ZM9 8.25V6C9 5.17157 8.32843 4.5 7.5 4.5C6.67157 4.5 6 5.17157 6 6V8.25C6 9.07843 6.67157 9.75 7.5 9.75C8.32843 9.75 9 9.07843 9 8.25Z" />
@@ -10,4 +10,4 @@ function PercentSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default PercentSizeAll;
+export default IconPercentSizeAll;

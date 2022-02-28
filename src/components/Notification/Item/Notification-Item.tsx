@@ -3,7 +3,7 @@ import './Notification-Item.css';
 
 import React, { useEffect, useState } from 'react';
 
-import { Close } from '../../../icons/Close/Close';
+import { IconClose } from '../../../icons/IconClose/IconClose';
 import {Button} from '../../Button/Button';
 import { Typography } from '../../Typography/Typography';
 import { cnTheme } from '../../Theme/Theme';
@@ -109,7 +109,7 @@ export const NotificationItem: React.FC<NotificationItemProps> = (props) => {
         <Button
           className={cnNotification('CloseButton')}
           view="ghost"
-          iconLeft={Close}
+          iconLeft={IconClose}
           form="round"
           size="l"
           onClick={handleClose}

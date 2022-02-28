@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import NewsSizeAll from './News_size_all';
+import IconNewsSizeAll from './IconNews_size_all';
 
-export const News = createIcon({
-  l: NewsSizeAll,
-  m: NewsSizeAll,
-  s: NewsSizeAll,
-  xs: NewsSizeAll,
+export const IconNews = createIcon({
+  l: IconNewsSizeAll,
+  m: IconNewsSizeAll,
+  s: IconNewsSizeAll,
+  xs: IconNewsSizeAll,
   name: 'IconNews',
 });

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function MenuOpenSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconMenuOpenSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path d="M11.0303 17.0303C10.7374 17.3232 10.2626 17.3232 9.96967 17.0303C9.67678 16.7374 9.67678 16.2626 9.96967 15.9697L13.9393 12L9.96967 8.03033C9.67678 7.73744 9.67678 7.26256 9.96967 6.96967C10.2626 6.67678 10.7374 6.67678 11.0303 6.96967L15.5303 11.4697C15.8232 11.7626 15.8232 12.2374 15.5303 12.5303L11.0303 17.0303Z"/>
@@ -9,4 +9,4 @@ function MenuOpenSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default MenuOpenSizeAll;
+export default IconMenuOpenSizeAll;

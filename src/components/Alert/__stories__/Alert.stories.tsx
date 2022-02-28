@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { boolean, select, text } from '@storybook/addon-knobs';
 
-import { Heart } from '../../../icons/Heart/Heart';
+import { IconHeart } from '../../../icons/IconHeart/IconHeart';
 import { createMetadata } from '../../../utils/storybook';
 import {
   Alert,
@@ -34,7 +34,7 @@ export function Playground() {
       title={title}
       label={label}
       view={view}
-      icon={icon ? Heart : undefined}
+      icon={icon ? IconHeart : undefined}
     />
   );
 }

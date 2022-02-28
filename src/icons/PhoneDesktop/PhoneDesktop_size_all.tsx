@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function PhoneDesktopSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconPhoneDesktopSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path d="M19.5 3.75H6C5.58579 3.75 5.25 4.08579 5.25 4.5V7.5H3.75V4.5C3.75 3.25736 4.75736 2.25 6 2.25H19.5C20.7426 2.25 21.75 3.25736 21.75 4.5V13.5C21.75 14.7426 20.7426 15.75 19.5 15.75H15.75V17.25H17.25C17.6642 17.25 18 17.5858 18 18C18 18.4142 17.6642 18.75 17.25 18.75H11.25V17.25H14.25V15.75H11.25V14.25H19.5C19.9142 14.25 20.25 13.9142 20.25 13.5V4.5C20.25 4.08579 19.9142 3.75 19.5 3.75Z" />
@@ -10,4 +10,4 @@ function PhoneDesktopSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default PhoneDesktopSizeAll;
+export default IconPhoneDesktopSizeAll;

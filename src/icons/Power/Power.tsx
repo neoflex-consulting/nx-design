@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import PowerSizeAll from './Power_size_all';
+import IconPowerSizeAll from './IconPower_size_all';
 
-export const Power = createIcon({
-  l: PowerSizeAll,
-  m: PowerSizeAll,
-  s: PowerSizeAll,
-  xs: PowerSizeAll,
+export const IconPower = createIcon({
+  l: IconPowerSizeAll,
+  m: IconPowerSizeAll,
+  s: IconPowerSizeAll,
+  xs: IconPowerSizeAll,
   name: 'IconPower',
 });

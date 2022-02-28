@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean, select, text } from '@storybook/addon-knobs';
 
-import { Layers } from '../../../icons/Layers/Layers';
+import { IconLayers } from '../../../icons/IconLayers/IconLayers';
 import { createMetadata } from '../../../utils/storybook';
 import {
   tagBasePropGroupNumberValue,
@@ -25,7 +25,7 @@ export function Playground() {
   const { label, size, mode, group: groupProp, icon } = defaultKnobs();
   const [checked, setChecked] = useState<boolean>(false);
   const group = typeof groupProp === 'number' ? groupProp : undefined;
-  const Icon = icon ? Layers : undefined;
+  const Icon = icon ? IconLayers : undefined;
 
   function getTag() {
     switch (mode) {

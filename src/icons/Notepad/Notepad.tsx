@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import NotepadSizeAll from './Notepad_size_all';
+import IconNotepadSizeAll from './IconNotepad_size_all';
 
-export const Notepad = createIcon({
-  l: NotepadSizeAll,
-  m: NotepadSizeAll,
-  s: NotepadSizeAll,
-  xs: NotepadSizeAll,
+export const IconNotepad = createIcon({
+  l: IconNotepadSizeAll,
+  m: IconNotepadSizeAll,
+  s: IconNotepadSizeAll,
+  xs: IconNotepadSizeAll,
   name: 'IconNotepad',
 });

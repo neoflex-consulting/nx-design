@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function PauseSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconPauseSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path fill-rule="evenodd" clip-rule="evenodd" d="M3.75 3.75C3.75 2.92157 4.42157 2.25 5.25 2.25H9C9.82843 2.25 10.5 2.92157 10.5 3.75V20.25C10.5 21.0784 9.82843 21.75 9 21.75H5.25C4.42157 21.75 3.75 21.0784 3.75 20.25V3.75ZM5.25 4.25C5.25 3.97386 5.47386 3.75 5.75 3.75H8.5C8.77614 3.75 9 3.97386 9 4.25V19.75C9 20.0261 8.77614 20.25 8.5 20.25H5.75C5.47386 20.25 5.25 20.0261 5.25 19.75L5.25 4.25Z" />
@@ -9,4 +9,4 @@ function PauseSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default PauseSizeAll;
+export default IconPauseSizeAll;

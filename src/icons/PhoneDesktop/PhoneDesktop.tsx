@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import PhoneDesktopSizeAll from './PhoneDesktop_size_all';
+import IconPhoneDesktopSizeAll from './IconPhoneDesktop_size_all';
 
-export const PhoneDesktop = createIcon({
-  l: PhoneDesktopSizeAll,
-  m: PhoneDesktopSizeAll,
-  s: PhoneDesktopSizeAll,
-  xs: PhoneDesktopSizeAll,
+export const IconPhoneDesktop = createIcon({
+  l: IconPhoneDesktopSizeAll,
+  m: IconPhoneDesktopSizeAll,
+  s: IconPhoneDesktopSizeAll,
+  xs: IconPhoneDesktopSizeAll,
   name: 'IconPhoneDesktop',
 });

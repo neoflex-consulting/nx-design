@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import PinSizeAll from './Pin_size_all';
+import IconPinSizeAll from './IconPin_size_all';
 
-export const Pin = createIcon({
-  l: PinSizeAll,
-  m: PinSizeAll,
-  s: PinSizeAll,
-  xs: PinSizeAll,
+export const IconPin = createIcon({
+  l: IconPinSizeAll,
+  m: IconPinSizeAll,
+  s: IconPinSizeAll,
+  xs: IconPinSizeAll,
   name: 'IconPin',
 });

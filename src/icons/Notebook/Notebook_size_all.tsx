@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function NotebookSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconNotebookSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path fill-rule="evenodd" clip-rule="evenodd" d="M8.25 5.25C7.83579 5.25 7.5 5.58579 7.5 6V8.25C7.5 8.66421 7.83579 9 8.25 9H15C15.4142 9 15.75 8.66421 15.75 8.25V6C15.75 5.58579 15.4142 5.25 15 5.25H8.25ZM9 6.75V7.5H14.25V6.75H9Z" />
@@ -12,4 +12,4 @@ function NotebookSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default NotebookSizeAll;
+export default IconNotebookSizeAll;

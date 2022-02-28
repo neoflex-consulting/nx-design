@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function PlusSDoubleSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconPlusSDoubleSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path d="M13.125 7.125C13.5392 7.125 13.875 7.46079 13.875 7.875V10.125H16.125C16.5392 10.125 16.875 10.4608 16.875 10.875C16.875 11.2892 16.5392 11.625 16.125 11.625H13.875V13.875C13.875 14.2892 13.5392 14.625 13.125 14.625C12.7108 14.625 12.375 14.2892 12.375 13.875V11.625H10.125C9.71079 11.625 9.375 11.2892 9.375 10.875C9.375 10.4608 9.71079 10.125 10.125 10.125H12.375V7.875C12.375 7.46079 12.7108 7.125 13.125 7.125Z" />
@@ -10,4 +10,4 @@ function PlusSDoubleSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default PlusSDoubleSizeAll;
+export default IconPlusSDoubleSizeAll;

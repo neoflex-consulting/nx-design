@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function NewsSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconNewsSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path d="M5.25 8.25C5.25 7.83579 5.58579 7.5 6 7.5H15C15.4142 7.5 15.75 7.83579 15.75 8.25C15.75 8.66421 15.4142 9 15 9H6C5.58579 9 5.25 8.66421 5.25 8.25Z" />
@@ -12,4 +12,4 @@ function NewsSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default NewsSizeAll;
+export default IconNewsSizeAll;

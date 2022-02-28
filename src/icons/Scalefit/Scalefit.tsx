@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import ScalefitSizeAll from './Scalefit_size_all';
+import IconScalefitSizeAll from './IconScalefit_size_all';
 
-export const Scalefit = createIcon({
-  l: ScalefitSizeAll,
-  m: ScalefitSizeAll,
-  s: ScalefitSizeAll,
-  xs: ScalefitSizeAll,
+export const IconScalefit = createIcon({
+  l: IconScalefitSizeAll,
+  m: IconScalefitSizeAll,
+  s: IconScalefitSizeAll,
+  xs: IconScalefitSizeAll,
   name: 'IconScalefit',
 });

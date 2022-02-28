@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import PauseSizeAll from './Pause_size_all';
+import IconPauseSizeAll from './IconPause_size_all';
 
-export const Pause = createIcon({
-  l: PauseSizeAll,
-  m: PauseSizeAll,
-  s: PauseSizeAll,
-  xs: PauseSizeAll,
+export const IconPause = createIcon({
+  l: IconPauseSizeAll,
+  m: IconPauseSizeAll,
+  s: IconPauseSizeAll,
+  xs: IconPauseSizeAll,
   name: 'IconPause',
 });

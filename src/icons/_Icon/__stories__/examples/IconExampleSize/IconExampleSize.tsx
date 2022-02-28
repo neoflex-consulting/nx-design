@@ -2,13 +2,13 @@ import React from 'react';
 
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { StoryBookExample } from '../../../../../uiKit/components/StoryBookExample/StoryBookExample';
-import {DataHistogram} from "../../../../DataHistogram/DataHistogram";
+import {IconDataHistogram} from "../../../../IconDataHistogram/IconDataHistogram";
 
 export const IconExampleSize = () => (
   <StoryBookExample className={cnDocsDecorator('Section')}>
-    <DataHistogram size="xs" />
-    <DataHistogram size="s" />
-    <DataHistogram size="m" />
-    <DataHistogram size="l" />
+    <IconDataHistogram size="xs" />
+    <IconDataHistogram size="s" />
+    <IconDataHistogram size="m" />
+    <IconDataHistogram size="l" />
   </StoryBookExample>
 );

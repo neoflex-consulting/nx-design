@@ -4,8 +4,8 @@ import React from 'react';
 
 import { useResizeObserved } from '../../../hooks/useResizeObserved/useResizeObserved';
 import { useScrollPosition } from '../../../hooks/useScrollPosition/useScrollPosition';
-import { ChevronLeft } from '../../../icons/ChevronLeft/ChevronLeft';
-import { ChevronRight } from '../../../icons/ChevronRight/ChevronRight';
+import { IconChevronLeft } from '../../../icons/IconChevronLeft/IconChevronLeft';
+import { IconChevronRight } from '../../../icons/IconChevronRight/IconChevronRight';
 import { cn } from '../../../utils/bem';
 import { Button } from '../../Button/Button';
 import { getTabsWidth, TabsFitModeWrapperProps } from '../helpers';
@@ -83,7 +83,7 @@ export const TabsFitModeScrollWrapper = <ITEM,>({
                   ? firstVisibleTabIdx === 0
                   : lastVisibleTabIdx === items.length - 1
               }
-              iconLeft={buttonTo === 'prev' ? ChevronLeft : ChevronRight}
+              iconLeft={buttonTo === 'prev' ? IconChevronLeft : IconChevronRight}
               className={cnTabsFitModeScrollWrapper('Button', { to: buttonTo })}
               onClick={buttonTo === 'prev' ? scrollPrev : scrollNext}
             />

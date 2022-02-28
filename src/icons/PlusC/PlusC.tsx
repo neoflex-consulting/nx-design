@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import PlusCSizeAll from './PlusC_size_all';
+import IconPlusCSizeAll from './IconPlusC_size_all';
 
-export const PlusC = createIcon({
-  l: PlusCSizeAll,
-  m: PlusCSizeAll,
-  s: PlusCSizeAll,
-  xs: PlusCSizeAll,
+export const IconPlusC = createIcon({
+  l: IconPlusCSizeAll,
+  m: IconPlusCSizeAll,
+  s: IconPlusCSizeAll,
+  xs: IconPlusCSizeAll,
   name: 'IconPlusC',
 });

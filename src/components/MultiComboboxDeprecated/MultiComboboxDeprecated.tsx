@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
 
 import { useSelect } from '../../hooks/useSelectDeprecated/useSelect';
-import { Close } from '../../icons/Close/Close';
-import { CaretDown } from '../../icons/CaretDown/CaretDown';
+import { IconClose } from '../../icons/IconClose/IconClose';
+import { IconCaretDown } from '../../icons/IconCaretDown/IconCaretDown';
 import { cnMixFocus } from '../../mixs/MixFocus/MixFocus';
 import { scrollIntoView } from '../../utils/scrollIntoView';
 import { cnSelect } from '../SelectComponentsDeprecated/cnSelect';
@@ -338,7 +338,7 @@ export const MultiCombobox: MultiCombobox = (props) => {
               onFocus={handleClearButtonFocus}
               onBlur={handleClearButtonBlur}
             >
-              <Close size="xs" className={cnSelect('ClearIndicatorIcon')} />
+              <IconClose size="xs" className={cnSelect('ClearIndicatorIcon')} />
             </button>
           )}
           <div className={cnSelect('Delimiter')} />
@@ -348,7 +348,7 @@ export const MultiCombobox: MultiCombobox = (props) => {
             tabIndex={-1}
             onClick={handleToggleDropdown}
           >
-            <CaretDown size="xs" className={cnSelect('DropdownIndicatorIcon')} />
+            <IconCaretDown size="xs" className={cnSelect('DropdownIndicatorIcon')} />
           </button>
         </div>
       </div>

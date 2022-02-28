@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function RadioOnSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconRadioOnSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path fill-rule="evenodd" clip-rule="evenodd" d="M18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18C15.3137 18 18 15.3137 18 12Z" />
@@ -9,4 +9,4 @@ function RadioOnSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default RadioOnSizeAll;
+export default IconRadioOnSizeAll;

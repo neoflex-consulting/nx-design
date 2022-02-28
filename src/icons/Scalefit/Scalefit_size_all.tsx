@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function ScalefitSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconScalefitSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path d="M8.08565 10.5935C8.34441 10.2701 8.29197 9.79811 7.96852 9.53935C7.64507 9.2806 7.17311 9.33304 6.91435 9.65648L5.41435 11.5315C5.19522 11.8054 5.19522 12.1946 5.41435 12.4685L6.91435 14.3435C7.17311 14.667 7.64507 14.7194 7.96852 14.4607C8.29197 14.2019 8.34441 13.7299 8.08565 13.4065L7.56047 12.75H10.5C10.9142 12.75 11.25 12.4142 11.25 12C11.25 11.5858 10.9142 11.25 10.5 11.25H7.56047L8.08565 10.5935Z" />
@@ -10,4 +10,4 @@ function ScalefitSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default ScalefitSizeAll;
+export default IconScalefitSizeAll;

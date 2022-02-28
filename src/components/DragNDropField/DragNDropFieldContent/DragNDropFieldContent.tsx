@@ -2,7 +2,7 @@ import './DragNDropFieldContent.css';
 
 import React from 'react';
 
-import { Layers } from '../../../icons/Layers/Layers';
+import { IconLayers } from '../../../icons/IconLayers/IconLayers';
 import { cn } from '../../../utils/bem';
 import { Button } from '../../Button/Button';
 import { Typography } from '../../Typography/Typography';
@@ -35,7 +35,7 @@ export const DragNDropFieldContent: DragNDropFieldChildrenRenderProp = ({
       <Button
         className={cnDragNDropFieldContent('Button')}
         label={`Выбрать ${fileText}`}
-        iconLeft={Layers}
+        iconLeft={IconLayers}
         view="ghost"
         size="s"
         onClick={openFileDialog}

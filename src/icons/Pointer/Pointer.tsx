@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import PointerSizeAll from './Pointer_size_all';
+import IconPointerSizeAll from './IconPointer_size_all';
 
-export const Pointer = createIcon({
-  l: PointerSizeAll,
-  m: PointerSizeAll,
-  s: PointerSizeAll,
-  xs: PointerSizeAll,
+export const IconPointer = createIcon({
+  l: IconPointerSizeAll,
+  m: IconPointerSizeAll,
+  s: IconPointerSizeAll,
+  xs: IconPointerSizeAll,
   name: 'IconPointer',
 });

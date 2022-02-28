@@ -4,8 +4,8 @@ import React, { forwardRef, useRef } from 'react';
 
 import { useForkRef } from '../../hooks/useForkRef/useForkRef';
 import { useSelect } from '../../hooks/useSelect/useSelect';
-import { Close } from '../../icons/Close/Close';
-import { CaretDown } from '../../icons/CaretDown/CaretDown';
+import { IconClose } from '../../icons/IconClose/IconClose';
+import { IconCaretDown } from '../../icons/IconCaretDown/IconCaretDown';
 import { cnMixFocus } from '../../mixs/MixFocus/MixFocus';
 import { cnSelect } from '../SelectComponents/cnSelect';
 import {
@@ -228,7 +228,7 @@ function ComboboxRender<ITEM = DefaultItem, GROUP = DefaultGroup, MULTIPLE exten
               onClick={clearValue}
               className={cnSelect('ClearIndicator', [cnMixFocus()])}
             >
-              <Close size="xs" className={cnSelect('ClearIndicatorIcon')} />
+              <IconClose size="xs" className={cnSelect('ClearIndicatorIcon')} />
             </button>
           )}
           <span className={cnSelect('Delimiter')} />
@@ -238,7 +238,7 @@ function ComboboxRender<ITEM = DefaultItem, GROUP = DefaultGroup, MULTIPLE exten
             tabIndex={-1}
             onClick={handleToggleDropdown}
           >
-            <CaretDown size="xs" className={cnSelect('DropdownIndicatorIcon')} />
+            <IconCaretDown size="xs" className={cnSelect('DropdownIndicatorIcon')} />
           </button>
         </span>
       </div>

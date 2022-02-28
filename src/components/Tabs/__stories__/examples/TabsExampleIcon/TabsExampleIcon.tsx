@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 import { IconProps } from '../../../../../icons/_Icon/Icon';
-import { Camera } from '../../../../../icons/Camera/Camera';
-import { Image } from '../../../../../icons/Image/Image';
-import { Bell } from '../../../../../icons/Bell/Bell';
+import { IconCamera } from '../../../../../icons/IconCamera/IconCamera';
+import { IconImage } from '../../../../../icons/IconImage/IconImage';
+import { IconBell } from '../../../../../icons/IconBell/IconBell';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { StoryBookExample } from '../../../../../uiKit/components/StoryBookExample/StoryBookExample';
 import { Tabs } from '../../../Tabs';
@@ -16,15 +16,15 @@ type Item = {
 const items = [
   {
     name: 'Первый',
-    icon: Image,
+    icon: IconImage,
   },
   {
     name: 'Второй',
-    icon: Bell,
+    icon: IconBell,
   },
   {
     name: 'Третий вариант',
-    icon: Camera,
+    icon: IconCamera,
   },
 ];
 

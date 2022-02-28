@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import MoneySizeAll from './Money_size_all';
+import IconMoneySizeAll from './IconMoney_size_all';
 
-export const Money = createIcon({
-  l: MoneySizeAll,
-  m: MoneySizeAll,
-  s: MoneySizeAll,
-  xs: MoneySizeAll,
+export const IconMoney = createIcon({
+  l: IconMoneySizeAll,
+  m: IconMoneySizeAll,
+  s: IconMoneySizeAll,
+  xs: IconMoneySizeAll,
   name: 'IconMoney',
 });

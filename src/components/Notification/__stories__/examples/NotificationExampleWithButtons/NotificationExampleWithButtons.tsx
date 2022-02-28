@@ -3,15 +3,15 @@ import './NotificationExampleWithButtons.css';
 import React, { useReducer } from 'react';
 
 import { IconProps } from '../../../../../icons/_Icon/Icon';
-import { Plus } from '../../../../../icons/Plus/Plus';
+import { IconPlus } from '../../../../../icons/IconPlus/IconPlus';
 import { cn } from '../../../../../utils/bem';
 import { Button } from '../../../../Button/Button';
 import { Item, Notification, NotificationItemStatus } from '../../../Notification';
-import {Pin} from "../../../../../icons/Pin/Pin";
-import {Settings} from "../../../../../icons/Settings/Settings";
-import {CheckC} from "../../../../../icons/CheckC/CheckC";
-import {Info} from "../../../../../icons/Info/Info";
-import {Warning} from "../../../../../icons/Warning/Warning";
+import {IconPin} from "../../../../../icons/IconPin/IconPin";
+import {IconSettings} from "../../../../../icons/IconSettings/IconSettings";
+import {IconCheckC} from "../../../../../icons/IconCheckC/IconCheckC";
+import {IconInfo} from "../../../../../icons/IconInfo/IconInfo";
+import {IconWarning} from "../../../../../icons/IconWarning/IconWarning";
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 
 type State = Item[];
@@ -21,12 +21,12 @@ const cnNotificationExampleWithButtons = cn('NotificationExampleWithButtons');
 
 const getItemIconByStatus = (status: NotificationItemStatus): React.FC<IconProps> | undefined => {
   const mapIconByStatus: Record<NotificationItemStatus, React.FC<IconProps>> = {
-    success: CheckC,
-    warning: Info,
-    error: Warning,
-    system: Settings,
-    info: Info,
-    basic: Pin
+    success: IconCheckC,
+    warning: IconInfo,
+    error: IconWarning,
+    system: IconSettings,
+    info: IconInfo,
+    basic: IconPin
   };
   return mapIconByStatus[status];
 };
@@ -68,37 +68,37 @@ export function NotificationExampleWithButtons() {
       <div className={cnNotificationExampleWithButtons('Buttons')}>
         <Button
           className={cnNotificationExampleWithButtons('ButtonAdd')}
-          iconLeft={Plus}
+          iconLeft={IconPlus}
           label="Выполненно"
           onClick={handleSuccessAdd}
         />
         <Button
           className={cnNotificationExampleWithButtons('ButtonAdd')}
-          iconLeft={Plus}
+          iconLeft={IconPlus}
           label="Ошибка"
           onClick={handleAlertAdd}
         />
         <Button
           className={cnNotificationExampleWithButtons('ButtonAdd')}
-          iconLeft={Plus}
+          iconLeft={IconPlus}
           label="Предупреждение"
           onClick={handleWarningAdd}
         />
         <Button
           className={cnNotificationExampleWithButtons('ButtonAdd')}
-          iconLeft={Plus}
+          iconLeft={IconPlus}
           label="Системное"
           onClick={handleSystemAdd}
         />
         <Button
           className={cnNotificationExampleWithButtons('ButtonAdd')}
-          iconLeft={Plus}
+          iconLeft={IconPlus}
           label="Нормальное"
           onClick={handleNormalAdd}
         />
         <Button
           className={cnNotificationExampleWithButtons('ButtonAdd')}
-          iconLeft={Plus}
+          iconLeft={IconPlus}
           label="Базовое"
           onClick={handleBasicAdd}
         />

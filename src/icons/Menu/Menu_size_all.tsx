@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function MenuSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconMenuSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path d="M2.25 5.25C2.25 4.83579 2.58579 4.5 3 4.5H21C21.4142 4.5 21.75 4.83579 21.75 5.25C21.75 5.66421 21.4142 6 21 6H3C2.58579 6 2.25 5.66421 2.25 5.25Z"/>
@@ -10,4 +10,4 @@ function MenuSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default MenuSizeAll;
+export default IconMenuSizeAll;

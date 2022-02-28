@@ -2,7 +2,7 @@ import * as React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { cnIcon } from '../../../icons/_Icon/Icon';
-import { Layers } from '../../../icons/Layers/Layers';
+import { IconLayers } from '../../../icons/IconLayers/IconLayers';
 import { cnTagBase, TagBase, tagBasePropGroup, tagBasePropSize, tagBasePropView } from '../TagBase';
 
 type TagBaseProps = React.ComponentProps<typeof TagBase>;
@@ -123,10 +123,10 @@ describe('Компонент TagBase', () => {
     });
     describe('проверка icon', () => {
       it('отображает иконку', () => {
-        renderComponent({ label, icon: Layers });
+        renderComponent({ label, icon: IconLayers });
         const tagBase = screen.getByTestId(testId);
         const icon = tagBase.querySelector(`.${cnTagBase('Icon')}`) as HTMLButtonElement;
-        expect(icon).toHaveClass('Layers');
+        expect(icon).toHaveClass('IconLayers');
       });
     });
   });

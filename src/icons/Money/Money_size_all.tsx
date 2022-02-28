@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function MoneySizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconMoneySizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path fill-rule="evenodd" clip-rule="evenodd" d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15ZM12 13.5C12.8284 13.5 13.5 12.8284 13.5 12C13.5 11.1716 12.8284 10.5 12 10.5C11.1716 10.5 10.5 11.1716 10.5 12C10.5 12.8284 11.1716 13.5 12 13.5Z" />
@@ -13,4 +13,4 @@ function MoneySizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default MoneySizeAll;
+export default IconMoneySizeAll;

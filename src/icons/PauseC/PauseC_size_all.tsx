@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function PauseCSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconPauseCSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path d="M12.75 9C12.75 8.58579 13.0858 8.25 13.5 8.25H14.25C14.6642 8.25 15 8.58579 15 9V15C15 15.4142 14.6642 15.75 14.25 15.75H13.5C13.0858 15.75 12.75 15.4142 12.75 15V9Z" />
@@ -10,4 +10,4 @@ function PauseCSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default PauseCSizeAll;
+export default IconPauseCSizeAll;

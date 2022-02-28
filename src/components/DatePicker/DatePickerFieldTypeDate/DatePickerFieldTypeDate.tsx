@@ -13,7 +13,7 @@ import {
 } from '../helpers';
 
 import { DatePickerFieldTypeDateProps, getPartsDate } from './helpers';
-import {Calendar} from "../../../icons/Calendar/Calendar";
+import {IconCalendar} from "../../../icons/IconCalendar/IconCalendar";
 
 export const DatePickerFieldTypeDate = React.forwardRef<
   HTMLDivElement,
@@ -197,7 +197,7 @@ export const DatePickerFieldTypeDate = React.forwardRef<
     imaskRef.current?.updateValue();
   }, [stringValue]);
 
-  const icon = rightSide === undefined ? Calendar : undefined;
+  const icon = rightSide === undefined ? IconCalendar : undefined;
 
   return (
     <TextField

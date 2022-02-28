@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function PaperClipSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconPaperClipSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <g clip-path="url(#clip0)">
@@ -15,4 +15,4 @@ function PaperClipSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default PaperClipSizeAll;
+export default IconPaperClipSizeAll;

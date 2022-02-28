@@ -2,9 +2,9 @@ import './HeaderButtonExample.css';
 
 import React from 'react';
 
-import { CommentChat } from '../../../../../icons/CommentChat/CommentChat';
-import { Gift } from '../../../../../icons/Gift/Gift';
-import { Bell } from '../../../../../icons/Bell/Bell';
+import { IconCommentChat } from '../../../../../icons/IconCommentChat/IconCommentChat';
+import { IconGift } from '../../../../../icons/IconGift/IconGift';
+import { IconBell } from '../../../../../icons/IconBell/IconBell';
 import { cn } from '../../../../../utils/bem';
 import { Header, HeaderButton, HeaderModule } from '../../../Header';
 
@@ -17,13 +17,13 @@ export function HeaderButtonExample() {
       rightSide={
         <>
           <HeaderModule indent="s">
-            <HeaderButton iconLeft={Gift} />
+            <HeaderButton iconLeft={IconGift} />
           </HeaderModule>
           <HeaderModule indent="s">
-            <HeaderButton iconLeft={CommentChat} />
+            <HeaderButton iconLeft={IconCommentChat} />
           </HeaderModule>
           <HeaderModule indent="s">
-            <HeaderButton iconLeft={Bell} />
+            <HeaderButton iconLeft={IconBell} />
           </HeaderModule>
         </>
       }

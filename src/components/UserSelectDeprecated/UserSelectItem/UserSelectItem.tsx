@@ -3,7 +3,7 @@ import './UserSelectItem.css';
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
 
-import { Check } from '../../../icons/Check/Check';
+import { IconCheck } from '../../../icons/IconCheck/IconCheck';
 import { cn } from '../../../utils/bem';
 import { cnForCssTransition } from '../../../utils/cnForCssTransition';
 import { PropsWithHTMLAttributes } from '../../../utils/types/PropsWithHTMLAttributes';
@@ -47,7 +47,7 @@ export const UserSelectItem: React.FC<UserSelectItemProps> = (props) => {
           classNames={cnUserItemCssTransition}
           timeout={200}
         >
-          <Check className={cnUserItem('CheckIcon')} />
+          <IconCheck className={cnUserItem('CheckIcon')} />
         </CSSTransition>
       </div>
       {!subLabel ? (

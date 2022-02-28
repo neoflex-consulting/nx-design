@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function MoveDownSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconMoveDownSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path d="M11.25 3C11.25 2.58579 11.5858 2.25 12 2.25C12.4142 2.25 12.75 2.58579 12.75 3V16.9393L16.7197 12.9697C17.0126 12.6768 17.4874 12.6768 17.7803 12.9697C18.0732 13.2626 18.0732 13.7374 17.7803 14.0303L12.5303 19.2803C12.2374 19.5732 11.7626 19.5732 11.4697 19.2803L6.21967 14.0303C5.92678 13.7374 5.92678 13.2626 6.21967 12.9697C6.51256 12.6768 6.98744 12.6768 7.28033 12.9697L11.25 16.9393V3Z"/>
@@ -9,4 +9,4 @@ function MoveDownSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default MoveDownSizeAll;
+export default IconMoveDownSizeAll;

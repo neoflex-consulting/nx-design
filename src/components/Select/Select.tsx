@@ -11,7 +11,7 @@ import { SelectContainer } from '../SelectComponents/SelectContainer/SelectConta
 import { SelectDropdown } from '../SelectComponents/SelectDropdown/SelectDropdown';
 import { SelectItem } from '../SelectComponents/SelectItem/SelectItem';
 import { defaultPropForm, defaultPropSize, defaultPropView } from '../SelectComponents/types';
-import {ChevronDown} from "../../icons/ChevronDown/ChevronDown";
+import {IconChevronDown} from "../../icons/IconChevronDown/IconChevronDown";
 
 import {
   DefaultGroup,
@@ -166,7 +166,7 @@ function SelectRender<ITEM = DefaultItem, GROUP = DefaultGroup>(
             tabIndex={-1}
             onClick={handleToggleDropdown}
           >
-            <ChevronDown size="xs" className={cnSelect('DropdownIndicatorIcon')} />
+            <IconChevronDown size="xs" className={cnSelect('DropdownIndicatorIcon')} />
           </button>
         </span>
       </div>

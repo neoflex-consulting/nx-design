@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import SendSizeAll from './Send_size_all';
+import IconSendSizeAll from './IconSend_size_all';
 
-export const Send = createIcon({
-  l: SendSizeAll,
-  m: SendSizeAll,
-  s: SendSizeAll,
-  xs: SendSizeAll,
+export const IconSend = createIcon({
+  l: IconSendSizeAll,
+  m: IconSendSizeAll,
+  s: IconSendSizeAll,
+  xs: IconSendSizeAll,
   name: 'IconSend',
 });

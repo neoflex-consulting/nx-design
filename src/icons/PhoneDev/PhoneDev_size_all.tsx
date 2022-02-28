@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function PhoneDevSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconPhoneDevSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path d="M10.5 17.25C10.0858 17.25 9.75 17.5858 9.75 18C9.75 18.4142 10.0858 18.75 10.5 18.75H13.5C13.9142 18.75 14.25 18.4142 14.25 18C14.25 17.5858 13.9142 17.25 13.5 17.25H10.5Z" />
@@ -9,4 +9,4 @@ function PhoneDevSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default PhoneDevSizeAll;
+export default IconPhoneDevSizeAll;

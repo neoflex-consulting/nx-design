@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function PhoneSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconPhoneSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <g clip-path="url(#clip0)">
@@ -15,4 +15,4 @@ function PhoneSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default PhoneSizeAll;
+export default IconPhoneSizeAll;

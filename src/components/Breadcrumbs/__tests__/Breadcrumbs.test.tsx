@@ -2,8 +2,8 @@ import * as React from 'react';
 import { render } from '@testing-library/react';
 
 import { IconProps } from '../../../icons/_Icon/Icon';
-import { Camera } from '../../../icons/Camera/Camera';
-import { User } from '../../../icons/User/User';
+import { IconCamera } from '../../../icons/IconCamera/IconCamera';
+import { IconUser } from '../../../icons/IconUser/IconUser';
 import { breadcrumbPropSize, Breadcrumbs, cnBreadcrumbs } from '../Breadcrumbs';
 
 type Page = {
@@ -15,7 +15,7 @@ type Page = {
 
 const pages: Page[] = [
   {
-    icon: User,
+    icon: IconUser,
     label: 'Home',
     link: 'http://yandex.ru',
   },
@@ -24,7 +24,7 @@ const pages: Page[] = [
     link: 'http://google.ru',
   },
   {
-    icon: Camera,
+    icon: IconCamera,
     label: 'Page2',
     link: 'http://google1.ru',
   },

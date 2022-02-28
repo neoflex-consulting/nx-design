@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function PowerSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconPowerSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path d="M12 2.25C11.5858 2.25 11.25 2.58579 11.25 3V10.5C11.25 10.9142 11.5858 11.25 12 11.25C12.4142 11.25 12.75 10.9142 12.75 10.5V3C12.75 2.58579 12.4142 2.25 12 2.25Z" />
@@ -9,4 +9,4 @@ function PowerSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default PowerSizeAll;
+export default IconPowerSizeAll;

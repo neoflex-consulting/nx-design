@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean, number, select, text } from '@storybook/addon-knobs';
 
-import { Image } from '../../../icons/Image/Image';
+import { IconImage } from '../../../icons/IconImage/IconImage';
 import { createMetadata } from '../../../utils/storybook';
 import {
   eventInterceptorMap,
@@ -74,13 +74,13 @@ export function Playground() {
   const [value, setValue] = useState<string | null | undefined>(undefined);
   const leftSideSelect = {
     text: leftSideText,
-    icon: Image,
+    icon: IconImage,
     false: undefined,
   };
 
   const rightSideSelect = {
     text: rightSideText,
-    icon: Image,
+    icon: IconImage,
     false: undefined,
   };
 

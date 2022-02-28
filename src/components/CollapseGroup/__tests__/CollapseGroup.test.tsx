@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { Wifi } from '../../../icons/Wifi/Wifi';
+import { IconWifi } from '../../../icons/IconWifi/IconWifi';
 import { getSizeByMap } from '../../../utils/getSizeByMap';
 import { Badge } from '../../Badge/Badge';
 import { cnCollapse, sizeIconMap } from '../../Collapse/Collapse';
@@ -30,7 +30,7 @@ export const items: Item[] = [
 
 const defaultRightSide: React.ReactNode = [
   <Badge label="Статус" size="s" />,
-  <Wifi size={getSizeByMap(sizeIconMap, 'm')} />,
+  <IconWifi size={getSizeByMap(sizeIconMap, 'm')} />,
 ];
 
 const getItemLabel = (item: Item) => item.name;

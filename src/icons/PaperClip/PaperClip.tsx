@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import PaperClipSizeAll from './PaperClip_size_all';
+import IconPaperClipSizeAll from './IconPaperClip_size_all';
 
-export const PaperClip = createIcon({
-  l: PaperClipSizeAll,
-  m: PaperClipSizeAll,
-  s: PaperClipSizeAll,
-  xs: PaperClipSizeAll,
+export const IconPaperClip = createIcon({
+  l: IconPaperClipSizeAll,
+  m: IconPaperClipSizeAll,
+  s: IconPaperClipSizeAll,
+  xs: IconPaperClipSizeAll,
   name: 'IconPaperClip',
 });

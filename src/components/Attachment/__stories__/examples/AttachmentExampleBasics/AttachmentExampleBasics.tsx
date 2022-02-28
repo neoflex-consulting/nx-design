@@ -2,8 +2,8 @@ import './AttachmentExampleBasics.css';
 
 import React from 'react';
 
-import { Close } from '../../../../../icons/Close/Close';
-import { Delete } from '../../../../../icons/Delete/Delete';
+import { IconClose } from '../../../../../icons/IconClose/IconClose';
+import { IconDelete } from '../../../../../icons/IconDelete/IconDelete';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { cnDocsExample } from '../../../../../uiKit/components/DocsExample/DocsExample';
 import { cn } from '../../../../../utils/bem';
@@ -20,7 +20,7 @@ export function AttachmentExampleBasicsLoading() {
         fileExtension="pdf"
         loading
         loadingText="Загружено на 51%"
-        buttonIcon={Close}
+        buttonIcon={IconClose}
         buttonTitle="Отменить"
         onClick={() => console.log('onClick')}
         onButtonClick={(e) => {
@@ -40,7 +40,7 @@ export function AttachmentExampleBasicsError() {
         fileName="Инструкция по сборке марсохода"
         fileExtension="pdf"
         errorText="Файл слишком большой, максимум 100 ТБ"
-        buttonIcon={Close}
+        buttonIcon={IconClose}
         buttonTitle="Отменить"
         onClick={() => console.log('onClick')}
         onButtonClick={(e) => {
@@ -60,7 +60,7 @@ export function AttachmentExampleBasicsLoaded() {
         fileName="Инструкция по сборке марсохода"
         fileExtension="pdf"
         fileDescription="1,5 Mб • 21.02.2051, 14:12"
-        buttonIcon={Delete}
+        buttonIcon={IconDelete}
         buttonTitle="Удалить"
         onClick={() => console.log('onClick')}
         onButtonClick={(e) => {

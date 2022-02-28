@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SearchInSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconSearchInSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path d="M9.75 7.5C9.75 7.08579 10.0858 6.75 10.5 6.75C10.9142 6.75 11.25 7.08579 11.25 7.5V9.75H13.5C13.9142 9.75 14.25 10.0858 14.25 10.5C14.25 10.9142 13.9142 11.25 13.5 11.25H11.25V13.5C11.25 13.9142 10.9142 14.25 10.5 14.25C10.0858 14.25 9.75 13.9142 9.75 13.5V11.25H7.5C7.08579 11.25 6.75 10.9142 6.75 10.5C6.75 10.0858 7.08579 9.75 7.5 9.75H9.75V7.5Z"/>
@@ -9,4 +9,4 @@ function SearchInSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default SearchInSizeAll;
+export default IconSearchInSizeAll;

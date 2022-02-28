@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import MenuSizeAll from './Menu_size_all';
+import IconMenuSizeAll from './IconMenu_size_all';
 
-export const Menu = createIcon({
-  l: MenuSizeAll,
-  m: MenuSizeAll,
-  s: MenuSizeAll,
-  xs: MenuSizeAll,
+export const IconMenu = createIcon({
+  l: IconMenuSizeAll,
+  m: IconMenuSizeAll,
+  s: IconMenuSizeAll,
+  xs: IconMenuSizeAll,
   name: 'IconMenu',
 });

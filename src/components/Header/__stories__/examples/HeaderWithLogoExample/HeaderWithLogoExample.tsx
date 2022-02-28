@@ -2,8 +2,8 @@ import './HeaderWithLogoExample.css';
 
 import React, { useState } from 'react';
 
-import { CommentChat } from '../../../../../icons/CommentChat/CommentChat';
-import { Bell } from '../../../../../icons/Bell/Bell';
+import { IconCommentChat } from '../../../../../icons/IconCommentChat/IconCommentChat';
+import { IconBell } from '../../../../../icons/IconBell/IconBell';
 import { cn } from '../../../../../utils/bem';
 import {
   Header,
@@ -90,10 +90,10 @@ export function HeaderWithLogoExample() {
       rightSide={
         <>
           <HeaderModule indent="s">
-            <HeaderButton iconLeft={CommentChat} />
+            <HeaderButton iconLeft={IconCommentChat} />
           </HeaderModule>
           <HeaderModule indent="s">
-            <HeaderButton iconLeft={Bell} />
+            <HeaderButton iconLeft={IconBell} />
           </HeaderModule>
           <HeaderModule indent="s">
             <HeaderLogin

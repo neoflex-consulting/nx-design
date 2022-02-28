@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import ReplySizeAll from './Reply_size_all';
+import IconReplySizeAll from './IconReply_size_all';
 
-export const Reply = createIcon({
-  l: ReplySizeAll,
-  m: ReplySizeAll,
-  s: ReplySizeAll,
-  xs: ReplySizeAll,
+export const IconReply = createIcon({
+  l: IconReplySizeAll,
+  m: IconReplySizeAll,
+  s: IconReplySizeAll,
+  xs: IconReplySizeAll,
   name: 'IconReply',
 });

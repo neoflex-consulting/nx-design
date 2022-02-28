@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import NotEditSizeAll from './NotEdit_size_all';
+import IconNotEditSizeAll from './IconNotEdit_size_all';
 
-export const NotEdit = createIcon({
-  l: NotEditSizeAll,
-  m: NotEditSizeAll,
-  s: NotEditSizeAll,
-  xs: NotEditSizeAll,
+export const IconNotEdit = createIcon({
+  l: IconNotEditSizeAll,
+  m: IconNotEditSizeAll,
+  s: IconNotEditSizeAll,
+  xs: IconNotEditSizeAll,
   name: 'IconNotEdit',
 });

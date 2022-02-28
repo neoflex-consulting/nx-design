@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import NotebookSizeAll from './Notebook_size_all';
+import IconNotebookSizeAll from './IconNotebook_size_all';
 
-export const Notebook = createIcon({
-  l: NotebookSizeAll,
-  m: NotebookSizeAll,
-  s: NotebookSizeAll,
-  xs: NotebookSizeAll,
+export const IconNotebook = createIcon({
+  l: IconNotebookSizeAll,
+  m: IconNotebookSizeAll,
+  s: IconNotebookSizeAll,
+  xs: IconNotebookSizeAll,
   name: 'IconNotebook',
 });

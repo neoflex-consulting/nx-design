@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function NumberFieldSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconNumberFieldSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path d="M6 9C6 8.58579 6.33579 8.25 6.75 8.25C7.16421 8.25 7.5 8.58579 7.5 9V15C7.5 15.4142 7.16421 15.75 6.75 15.75C6.33579 15.75 6 15.4142 6 15V9Z" />
@@ -11,4 +11,4 @@ function NumberFieldSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default NumberFieldSizeAll;
+export default IconNumberFieldSizeAll;

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 import { content } from '../../../__mocks__/mock.data';
-import { WarningC } from '../../../../../icons/WarningC/WarningC';
-import { Settings } from '../../../../../icons/Settings/Settings';
+import { IconWarningC } from '../../../../../icons/IconWarningC/IconWarningC';
+import { IconSettings } from '../../../../../icons/IconSettings/IconSettings';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { Badge } from '../../../../Badge/Badge';
 import { Button } from '../../../../Button/Button';
@@ -19,7 +19,7 @@ export const CollapseExampleIconRightSideBadge = () => {
         onClick={() => setOpen(!isOpen)}
         rightSide={[
           <Badge label="Badge" status="success" />,
-          <WarningC size="s" view="warning" />,
+          <IconWarningC size="s" view="warning" />,
         ]}
       >
         {content}
@@ -39,7 +39,7 @@ export const CollapseExampleIconRightSideButton = () => {
         onClick={() => setOpen(!isOpen)}
         rightSide={
           <Button
-            iconLeft={Settings}
+            iconLeft={IconSettings}
             size="xs"
             view="ghost"
             onClick={(e) => {

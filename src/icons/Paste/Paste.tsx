@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import PasteSizeAll from './Paste_size_all';
+import IconPasteSizeAll from './IconPaste_size_all';
 
-export const Paste = createIcon({
-  l: PasteSizeAll,
-  m: PasteSizeAll,
-  s: PasteSizeAll,
-  xs: PasteSizeAll,
+export const IconPaste = createIcon({
+  l: IconPasteSizeAll,
+  m: IconPasteSizeAll,
+  s: IconPasteSizeAll,
+  xs: IconPasteSizeAll,
   name: 'IconPaste',
 });

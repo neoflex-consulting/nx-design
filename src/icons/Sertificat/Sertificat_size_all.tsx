@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SertificatSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconSertificatSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path d="M5.25 4.5H18.75C19.5784 4.5 20.25 5.17157 20.25 6V8.89878C20.8135 9.19665 21.3203 9.58742 21.75 10.0507V6C21.75 4.34315 20.4069 3 18.75 3H5.25C3.59315 3 2.25 4.34315 2.25 6V15C2.25 16.6569 3.59315 18 5.25 18H13.8007C13.3374 17.5703 12.9466 17.0635 12.6488 16.5H5.25C4.42157 16.5 3.75 15.8284 3.75 15V6C3.75 5.17157 4.42157 4.5 5.25 4.5Z" />
@@ -12,4 +12,4 @@ function SertificatSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default SertificatSizeAll;
+export default IconSertificatSizeAll;

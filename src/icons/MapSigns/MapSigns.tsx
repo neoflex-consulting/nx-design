@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import MapSignsSizeAll from './MapSigns_size_all';
+import IconMapSignsSizeAll from './IconMapSigns_size_all';
 
-export const MapSigns = createIcon({
-  l: MapSignsSizeAll,
-  m: MapSignsSizeAll,
-  s: MapSignsSizeAll,
-  xs: MapSignsSizeAll,
+export const IconMapSigns = createIcon({
+  l: IconMapSignsSizeAll,
+  m: IconMapSignsSizeAll,
+  s: IconMapSignsSizeAll,
+  xs: IconMapSignsSizeAll,
   name: 'IconMapSigns',
 });

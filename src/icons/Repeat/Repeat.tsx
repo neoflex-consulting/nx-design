@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import RepeatSizeAll from './Repeat_size_all';
+import IconRepeatSizeAll from './IconRepeat_size_all';
 
-export const Repeat = createIcon({
-  l: RepeatSizeAll,
-  m: RepeatSizeAll,
-  s: RepeatSizeAll,
-  xs: RepeatSizeAll,
+export const IconRepeat = createIcon({
+  l: IconRepeatSizeAll,
+  m: IconRepeatSizeAll,
+  s: IconRepeatSizeAll,
+  xs: IconRepeatSizeAll,
   name: 'IconRepeat',
 });

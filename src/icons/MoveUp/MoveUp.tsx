@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import MoveUpSizeAll from './MoveUp_size_all';
+import IconMoveUpSizeAll from './IconMoveUp_size_all';
 
-export const MoveUp = createIcon({
-  l: MoveUpSizeAll,
-  m: MoveUpSizeAll,
-  s: MoveUpSizeAll,
-  xs: MoveUpSizeAll,
+export const IconMoveUp = createIcon({
+  l: IconMoveUpSizeAll,
+  m: IconMoveUpSizeAll,
+  s: IconMoveUpSizeAll,
+  xs: IconMoveUpSizeAll,
   name: 'IconMoveUp',
 });

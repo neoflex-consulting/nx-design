@@ -5,15 +5,15 @@ import { cnDocsExample } from '../../../../../uiKit/components/DocsExample/DocsE
 import * as wp from '../../../../../uiKit/whitepaper/whitepaper';
 import {Button} from "../../../Button";
 import {IconArrowRight} from "../../../../../icons/IconArrowRight/IconArrowRight";
-import {Plus} from "../../../../../icons/Plus/Plus";
+import {IconPlus} from "../../../../../icons/IconPlus/IconPlus";
 import {IconEdit} from "../../../../../icons/IconEdit/IconEdit";
-import {Chat} from "../../../../../icons/Chat/Chat";
-import {Settings} from "../../../../../icons/Settings/Settings";
-import {Filter} from "../../../../../icons/Filter/Filter";
-import {Copy} from "../../../../../icons/Copy/Copy";
-import {Mark} from "../../../../../icons/Mark/Mark";
+import {IconChat} from "../../../../../icons/IconChat/IconChat";
+import {IconSettings} from "../../../../../icons/IconSettings/IconSettings";
+import {IconFilter} from "../../../../../icons/IconFilter/IconFilter";
+import {IconCopy} from "../../../../../icons/IconCopy/IconCopy";
+import {IconMark} from "../../../../../icons/IconMark/IconMark";
 import {IconArrowBackward} from "../../../../../icons/IconArrowBackward/IconArrowBackward";
-import {Save} from "../../../../../icons/Save/Save";
+import {IconSave} from "../../../../../icons/IconSave/IconSave";
 import {TextField} from "../../../../TextField/TextField";
 
 export function ButtonExampleOverView() {
@@ -29,7 +29,7 @@ export function ButtonExampleOverView() {
           <Button label="view = primary" iconRight={IconArrowRight} />
         </div>
         <div className={cnDocsExample()}>
-          <Button label="view = primary" iconLeft={Plus} onlyIcon />
+          <Button label="view = primary" iconLeft={IconPlus} onlyIcon />
         </div>
       </div>
 
@@ -43,7 +43,7 @@ export function ButtonExampleOverView() {
           <Button view="secondary" label="view = secondary"  iconLeft={ IconEdit } />
         </div>
         <div className={cnDocsExample()}>
-          <Button view="secondary" label="view = secondary"  iconRight={ Chat } onlyIcon />
+          <Button view="secondary" label="view = secondary"  iconRight={ IconChat } onlyIcon />
         </div>
       </div>
 
@@ -57,7 +57,7 @@ export function ButtonExampleOverView() {
           <Button disabled label="disabled" iconRight={IconArrowRight} />
         </div>
         <div className={cnDocsExample()}>
-          <Button disabled label="disabled" iconRight={Plus} onlyIcon />
+          <Button disabled label="disabled" iconRight={IconPlus} onlyIcon />
         </div>
       </div>
 
@@ -68,10 +68,10 @@ export function ButtonExampleOverView() {
           <Button view="ghost" label="view = ghost" />
         </div>
         <div className={cnDocsExample()}>
-          <Button view="ghost" label="view = ghost" iconLeft={Settings} />
+          <Button view="ghost" label="view = ghost" iconLeft={IconSettings} />
         </div>
         <div className={cnDocsExample()}>
-          <Button view="ghost" label="view = ghost" iconLeft={Filter} onlyIcon />
+          <Button view="ghost" label="view = ghost" iconLeft={IconFilter} onlyIcon />
         </div>
       </div>
 
@@ -82,10 +82,10 @@ export function ButtonExampleOverView() {
           <Button view="clear" label="view = clear" />
         </div>
         <div className={cnDocsExample()}>
-          <Button view="clear" label="view = clear" iconLeft={Copy} />
+          <Button view="clear" label="view = clear" iconLeft={IconCopy} />
         </div>
         <div className={cnDocsExample()}>
-          <Button view="clear" label="view = clear" iconLeft={Mark} onlyIcon />
+          <Button view="clear" label="view = clear" iconLeft={IconMark} onlyIcon />
         </div>
       </div>
 
@@ -99,7 +99,7 @@ export function ButtonExampleOverView() {
           <Button view="link" label="view = link" iconLeft={IconArrowBackward} />
         </div>
         <div className={cnDocsExample()}>
-          <Button view="link" label="view = link" iconLeft={Save} onlyIcon />
+          <Button view="link" label="view = link" iconLeft={IconSave} onlyIcon />
         </div>
       </div>
 

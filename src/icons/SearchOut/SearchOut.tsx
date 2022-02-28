@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import SearchOutSizeAll from './SearchOut_size_all';
+import IconSearchOutSizeAll from './IconSearchOut_size_all';
 
-export const SearchOut = createIcon({
-  l: SearchOutSizeAll,
-  m: SearchOutSizeAll,
-  s: SearchOutSizeAll,
-  xs: SearchOutSizeAll,
+export const IconSearchOut = createIcon({
+  l: IconSearchOutSizeAll,
+  m: IconSearchOutSizeAll,
+  s: IconSearchOutSizeAll,
+  xs: IconSearchOutSizeAll,
   name: 'IconSearchOut',
 });
