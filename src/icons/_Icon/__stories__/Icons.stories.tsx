@@ -219,7 +219,7 @@ import {IconGbp} from '../../IconGbp/IconGbp';
 import {IconGift} from '../../IconGift/IconGift';
 import {IconGlobe} from '../../IconGlobe/IconGlobe';
 import {IconGraduationCap} from '../../IconGraduationCap/IconGraduationCap';
-import {IconGridIcon} from '../../IconGridIcon/IconGridIcon';
+import {IconGrid} from '../../IconGrid/IconGrid';
 import {IconGroup} from '../../IconGroup/IconGroup';
 import {IconGroupCheck} from '../../IconGroupCheck/IconGroupCheck';
 import {IconHdd} from '../../IconHdd/IconHdd';
@@ -590,7 +590,7 @@ const neoicons = {
   IconGift,
   IconGlobe,
   IconGraduationCap,
-  IconGridIcon,
+  IconGrid,
   IconGroup,
   IconGroupCheck,
   IconHdd,
