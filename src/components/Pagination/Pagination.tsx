@@ -2,8 +2,8 @@ import './Pagination.css';
 
 import React from 'react';
 
-import { ArrowBackward } from '../../icons/ArrowBackward/ArrowBackward';
-import { ArrowRight } from '../../icons/ArrowRight/ArrowRight';
+import { IconArrowBackward } from '../../icons/IconArrowBackward/IconArrowBackward';
+import { IconArrowRight } from '../../icons/IconArrowRight/IconArrowRight';
 import { cn } from '../../utils/bem';
 import { PropsWithHTMLAttributesAndRef } from '../../utils/types/PropsWithHTMLAttributes';
 import { Button } from '../Button/Button';
@@ -82,7 +82,7 @@ export const Pagination: Pagination = React.forwardRef((props, ref) => {
     hotkeys = {
       nextPage: {
         label: 'Alt →',
-        values: ['Alt', 'ArrowRight'],
+        values: ['Alt', 'IconArrowRight'],
       },
       prevPage: {
         label: '← Alt',
@@ -172,7 +172,7 @@ export const Pagination: Pagination = React.forwardRef((props, ref) => {
                 show: currPage > 1,
               })}
               label="Назад"
-              iconLeft={ArrowBackward}
+              iconLeft={IconArrowBackward}
               view="ghost"
               form={form}
               size={size}
@@ -267,7 +267,7 @@ export const Pagination: Pagination = React.forwardRef((props, ref) => {
                 show: currPage < totalPages,
               })}
               label="Вперёд"
-              iconRight={ArrowRight}
+              iconRight={IconArrowRight}
               view="ghost"
               form={form}
               size={size}

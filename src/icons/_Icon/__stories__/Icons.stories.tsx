@@ -6,25 +6,25 @@ import {createMetadata} from '../../../utils/storybook';
 import {IconsItem} from './Item/Icons-Item';
 import mdx from './Icon.docs.mdx';
 
-import {ActionMenu} from "../../ActionMenu/ActionMenu";
-import {Aggregate} from '../../Aggregate/Aggregate';
-import {Alert} from '../../Alert/Alert';
-import {Ancore} from '../../Ancore/Ancore';
-import {Apps} from '../../Apps/Apps';
-import {Archive} from '../../Archive/Archive';
-import {ArrowBackward} from '../../ArrowBackward/ArrowBackward';
-import {ArrowDown} from '../../ArrowDown/ArrowDown';
-import {ArrowDownC} from '../../ArrowDownC/ArrowDownC';
-import {ArrowForward} from '../../ArrowForward/ArrowForward';
-import {ArrowLeft} from '../../ArrowLeft/ArrowLeft';
-import {ArrowLeftC} from '../../ArrowLeftC/ArrowLeftC'
-import {ArrowMove} from '../../ArrowMove/ArrowMove';
-import {ArrowRight} from '../../ArrowRight/ArrowRight';
-import {ArrowRightC} from '../../ArrowRightC/ArrowRightC';
-import {ArrowsH} from '../../ArrowsH/ArrowsH';
-import {ArrowsV} from '../../ArrowsV/ArrowsV';
-import {ArrowSwap} from '../../ArrowSwap/ArrowSwap';
-import {ArrowUp} from '../../ArrowUp/ArrowUp';
+import {IconActionMenu} from "../../IconActionMenu/IconActionMenu";
+import {IconAggregate} from '../../IconAggregate/IconAggregate';
+import {IconAlert} from '../../IconAlert/IconAlert';
+import {IconAncore} from '../../IconAncore/IconAncore';
+import {IconApps} from '../../IconApps/IconApps';
+import {IconArchive} from '../../IconArchive/IconArchive';
+import {IconArrowBackward} from '../../IconArrowBackward/IconArrowBackward';
+import {IconArrowDown} from '../../IconArrowDown/IconArrowDown';
+import {IconArrowDownC} from '../../IconArrowDownC/IconArrowDownC';
+import {IconArrowForward} from '../../IconArrowForward/IconArrowForward';
+import {IconArrowLeft} from '../../IconArrowLeft/IconArrowLeft';
+import {IconArrowLeftC} from '../../IconArrowLeftC/IconArrowLeftC'
+import {IconArrowMove} from '../../IconArrowMove/IconArrowMove';
+import {IconArrowRight} from '../../IconArrowRight/IconArrowRight';
+import {IconArrowRightC} from '../../IconArrowRightC/IconArrowRightC';
+import {IconArrowsH} from '../../IconArrowsH/IconArrowsH';
+import {IconArrowsV} from '../../IconArrowsV/IconArrowsV';
+import {IconArrowSwap} from '../../IconArrowSwap/IconArrowSwap';
+import {IconArrowUp} from '../../IconArrowUp/IconArrowUp';
 import {ArrowUpC} from '../../ArrowUpC/ArrowUpC';
 import {ArrowVLeft} from '../../ArrowVLeft/ArrowVLeft';
 import {ArrowVRight} from '../../ArrowVRight/ArrowVRight';
@@ -154,7 +154,7 @@ import {Download} from '../../Download/Download';
 import {Drag} from '../../Drag/Drag';
 import {DragAndDrop} from '../../DragAndDrop/DragAndDrop'
 import {Dublicate} from '../../Dublicate/Dublicate';
-import {Edit} from '../../Edit/Edit';
+import {IconEdit} from '../../IconEdit/IconEdit';
 import {EditorDrawer} from '../../EditorDrawer/EditorDrawer';
 import {EditorRegion} from '../../EditorRegion/EditorRegion';
 import {EditorValueHolder} from '../../EditorValueHolder/EditorValueHolder';
@@ -304,7 +304,7 @@ import {Search} from '../../Search/Search';
 import {SearchCheck} from '../../SearchCheck/SearchCheck';
 import {SearchIn} from '../../SearchIn/SearchIn';
 import {SearchOut} from '../../SearchOut/SearchOut';
-import {Select} from '../../Select/Select';
+import {IconSelect} from '../../IconSelect/IconSelect';
 import {Send} from '../../Send/Send';
 import {Separator} from '../../Separator/Separator';
 import {Sertificat} from '../../Sertificat/Sertificat';
@@ -378,25 +378,25 @@ const defaultKnobs = () => ({
 });
 
 const neoicons = {
-  ActionMenu,
-  Aggregate,
-  Alert,
-  Ancore,
-  Apps,
-  Archive,
-  ArrowBackward,
-  ArrowDown,
-  ArrowDownC,
-  ArrowForward,
-  ArrowLeft,
-  ArrowLeftC,
-  ArrowMove,
-  ArrowRight,
-  ArrowRightC,
-  ArrowsH,
-  ArrowsV,
-  ArrowSwap,
-  ArrowUp,
+  IconActionMenu,
+  IconAggregate,
+  IconAlert,
+  IconAncore,
+  IconApps,
+  IconArchive,
+  IconArrowBackward,
+  IconArrowDown,
+  IconArrowDownC,
+  IconArrowForward,
+  IconArrowLeft,
+  IconArrowLeftC,
+  IconArrowMove,
+  IconArrowRight,
+  IconArrowRightC,
+  IconArrowsH,
+  IconArrowsV,
+  IconArrowSwap,
+  IconArrowUp,
   ArrowUpC,
   ArrowVLeft,
   ArrowVRight,
@@ -526,7 +526,7 @@ const neoicons = {
   Drag,
   DragAndDrop,
   Dublicate,
-  Edit,
+  IconEdit,
   EditorDrawer,
   EditorRegion,
   EditorValueHolder,
@@ -675,7 +675,7 @@ const neoicons = {
   SearchCheck,
   SearchIn,
   SearchOut,
-  Select,
+  IconSelect,
   Send,
   Separator,
   Sertificat,

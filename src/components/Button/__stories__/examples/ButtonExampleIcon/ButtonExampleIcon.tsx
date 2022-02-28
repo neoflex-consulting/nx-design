@@ -4,8 +4,8 @@ import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/D
 import { cnDocsExample } from '../../../../../uiKit/components/DocsExample/DocsExample';
 import * as wp from '../../../../../uiKit/whitepaper/whitepaper';
 import { Button } from '../../../Button';
-import {ArrowLeft} from "../../../../../icons/ArrowLeft/ArrowLeft";
-import {ArrowRight} from "../../../../../icons/ArrowRight/ArrowRight";
+import {IconArrowLeft} from "../../../../../icons/IconArrowLeft/IconArrowLeft";
+import {IconArrowRight} from "../../../../../icons/IconArrowRight/IconArrowRight";
 import {Menu} from "../../../../../icons/Menu/Menu";
 import {Calendar} from "../../../../../icons/Calendar/Calendar";
 import {Filter} from "../../../../../icons/Filter/Filter";
@@ -14,10 +14,10 @@ export function ButtonExampleIconBasic() {
   return (
     <div className={cnDocsDecorator('Section', [wp.decorator({ distribute: 'left' })])}>
       <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
-        <Button label="Назад" iconLeft={ArrowLeft} />
+        <Button label="Назад" iconLeft={IconArrowLeft} />
       </div>
       <div className={cnDocsExample()}>
-        <Button label="Вперёд" iconRight={ArrowRight} />
+        <Button label="Вперёд" iconRight={IconArrowRight} />
       </div>
     </div>
   );

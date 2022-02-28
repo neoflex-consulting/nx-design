@@ -2,7 +2,7 @@ import './CalendarToggler.css';
 
 import React from 'react';
 
-import { ArrowRight } from '../../../icons/ArrowRight/ArrowRight';
+import { IconArrowRight } from '../../../icons/IconArrowRight/IconArrowRight';
 import { cn } from '../../../utils/bem';
 import { PropsWithJsxAttributes } from '../../../utils/types/PropsWithJsxAttributes';
 import { Button } from '../../Button/Button';
@@ -36,7 +36,7 @@ export const CalendarToggler: React.FC<CalendarTogglerProps> = (props) => {
         <Button
           className={cnCalendarToggler('Button', { direction: 'prev' })}
           onClick={prevOnClick}
-          iconLeft={ArrowRight}
+          iconLeft={IconArrowRight}
           size="s"
           view="clear"
           iconSize="s"
@@ -53,7 +53,7 @@ export const CalendarToggler: React.FC<CalendarTogglerProps> = (props) => {
         <Button
           className={cnCalendarToggler('Button', { direction: 'next' })}
           onClick={nextOnClick}
-          iconLeft={ArrowRight}
+          iconLeft={IconArrowRight}
           size="s"
           view="clear"
           iconSize="s"

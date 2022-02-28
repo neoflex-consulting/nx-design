@@ -4,15 +4,15 @@ import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/D
 import { cnDocsExample } from '../../../../../uiKit/components/DocsExample/DocsExample';
 import * as wp from '../../../../../uiKit/whitepaper/whitepaper';
 import {Button} from "../../../Button";
-import {ArrowRight} from "../../../../../icons/ArrowRight/ArrowRight";
+import {IconArrowRight} from "../../../../../icons/IconArrowRight/IconArrowRight";
 import {Plus} from "../../../../../icons/Plus/Plus";
-import {Edit} from "../../../../../icons/Edit/Edit";
+import {IconEdit} from "../../../../../icons/IconEdit/IconEdit";
 import {Chat} from "../../../../../icons/Chat/Chat";
 import {Settings} from "../../../../../icons/Settings/Settings";
 import {Filter} from "../../../../../icons/Filter/Filter";
 import {Copy} from "../../../../../icons/Copy/Copy";
 import {Mark} from "../../../../../icons/Mark/Mark";
-import {ArrowBackward} from "../../../../../icons/ArrowBackward/ArrowBackward";
+import {IconArrowBackward} from "../../../../../icons/IconArrowBackward/IconArrowBackward";
 import {Save} from "../../../../../icons/Save/Save";
 import {TextField} from "../../../../TextField/TextField";
 
@@ -26,7 +26,7 @@ export function ButtonExampleOverView() {
           <Button label="view = primary" />
         </div>
         <div className={cnDocsExample()}>
-          <Button label="view = primary" iconRight={ArrowRight} />
+          <Button label="view = primary" iconRight={IconArrowRight} />
         </div>
         <div className={cnDocsExample()}>
           <Button label="view = primary" iconLeft={Plus} onlyIcon />
@@ -40,7 +40,7 @@ export function ButtonExampleOverView() {
           <Button view="secondary" label="view = secondary" />
         </div>
         <div className={cnDocsExample()}>
-          <Button view="secondary" label="view = secondary"  iconLeft={ Edit } />
+          <Button view="secondary" label="view = secondary"  iconLeft={ IconEdit } />
         </div>
         <div className={cnDocsExample()}>
           <Button view="secondary" label="view = secondary"  iconRight={ Chat } onlyIcon />
@@ -54,7 +54,7 @@ export function ButtonExampleOverView() {
           <Button disabled label="disabled" />
         </div>
         <div className={cnDocsExample()}>
-          <Button disabled label="disabled" iconRight={ArrowRight} />
+          <Button disabled label="disabled" iconRight={IconArrowRight} />
         </div>
         <div className={cnDocsExample()}>
           <Button disabled label="disabled" iconRight={Plus} onlyIcon />
@@ -96,7 +96,7 @@ export function ButtonExampleOverView() {
           <Button view="link" label="view = link" />
         </div>
         <div className={cnDocsExample()}>
-          <Button view="link" label="view = link" iconLeft={ArrowBackward} />
+          <Button view="link" label="view = link" iconLeft={IconArrowBackward} />
         </div>
         <div className={cnDocsExample()}>
           <Button view="link" label="view = link" iconLeft={Save} onlyIcon />

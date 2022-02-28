@@ -44,7 +44,7 @@ export function Playground() {
     },
     nextPage: {
       label: 'Shift →',
-      values: ['Shift', 'ArrowRight'],
+      values: ['Shift', 'IconArrowRight'],
     },
   };
 

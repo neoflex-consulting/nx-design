@@ -4,8 +4,8 @@ import React from 'react';
 import { select } from '@storybook/addon-knobs';
 
 import { SimpleItem, simpleItems } from '../__mocks__/mock.data';
-import { ArrowBackward } from '../../../icons/ArrowBackward/ArrowBackward';
-import { ArrowRight } from '../../../icons/ArrowRight/ArrowRight';
+import { IconArrowBackward } from '../../../icons/IconArrowBackward/IconArrowBackward';
+import { IconArrowRight } from '../../../icons/IconArrowRight/IconArrowRight';
 import { cn } from '../../../utils/bem';
 import { createMetadata } from '../../../utils/storybook';
 import { Button } from '../../Button/Button';
@@ -71,14 +71,14 @@ export function Playground() {
         <Button
           onClick={handlePrev}
           label="Назад"
-          iconLeft={ArrowBackward}
+          iconLeft={IconArrowBackward}
           view="ghost"
           disabled={activeStep === 0}
         />
         <Button
           onClick={handleNext}
           label="Дальше"
-          iconRight={ArrowRight}
+          iconRight={IconArrowRight}
           disabled={activeStep === simpleItems.length - 1}
         />
       </div>

@@ -6,7 +6,7 @@ import * as wp from '../../../../../uiKit/whitepaper/whitepaper';
 import { Button } from '../../../Button';
 import {ChevronRight} from "../../../../../icons/ChevronRight/ChevronRight";
 import {ChevronLeft} from "../../../../../icons/ChevronLeft/ChevronLeft";
-import {Edit} from "../../../../../icons/Edit/Edit";
+import {IconEdit} from "../../../../../icons/IconEdit/IconEdit";
 
 export function ButtonExampleNameSemantics() {
   return (
@@ -91,7 +91,7 @@ export function ButtonExampleNameOverflow() {
       <div className={cnDocsExample()}>
         <div className={wp.decorator({ distribute: 'left' })}>
           <Button label="Редактировать" className={wp.decorator({ 'indent-r': 's' })} />
-          <Button label="Редактировать" iconRight={Edit} onlyIcon />
+          <Button label="Редактировать" iconRight={IconEdit} onlyIcon />
         </div>
         <p className={cnDocsExample('Status', { view: 'right' })}>Правильно</p>
       </div>

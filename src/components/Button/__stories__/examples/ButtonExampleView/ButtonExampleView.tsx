@@ -5,14 +5,14 @@ import { cnDocsExample } from '../../../../../uiKit/components/DocsExample/DocsE
 import * as wp from '../../../../../uiKit/whitepaper/whitepaper';
 import { Button } from '../../../Button';
 import {Plus} from "../../../../../icons/Plus/Plus";
-import {ArrowRight} from "../../../../../icons/ArrowRight/ArrowRight";
+import {IconArrowRight} from "../../../../../icons/IconArrowRight/IconArrowRight";
 import {Chat} from "../../../../../icons/Chat/Chat";
 import {Copy} from "../../../../../icons/Copy/Copy";
-import {Edit} from "../../../../../icons/Edit/Edit";
+import {IconEdit} from "../../../../../icons/IconEdit/IconEdit";
 import {Settings} from "../../../../../icons/Settings/Settings";
 import {Filter} from "../../../../../icons/Filter/Filter";
 import {Mark} from "../../../../../icons/Mark/Mark";
-import {ArrowBackward} from "../../../../../icons/ArrowBackward/ArrowBackward";
+import {IconArrowBackward} from "../../../../../icons/IconArrowBackward/IconArrowBackward";
 import {Save} from "../../../../../icons/Save/Save";
 
 export function ButtonExampleViewPrimary() {
@@ -23,7 +23,7 @@ export function ButtonExampleViewPrimary() {
         <Button label="Войти" />
       </div>
       <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
-        <Button label="Продолжить" iconRight={ArrowRight} />
+        <Button label="Продолжить" iconRight={IconArrowRight} />
       </div>
       <div className={cnDocsExample()}>
         <Button label="Добавить" iconLeft={Plus} onlyIcon />
@@ -39,7 +39,7 @@ export function ButtonExampleViewSecondary() {
         <Button view="secondary" label="Читать далее" />
       </div>
       <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
-        <Button view="secondary" label="Комментировать" iconLeft={ Edit } />
+        <Button view="secondary" label="Комментировать" iconLeft={ IconEdit } />
       </div>
       <div className={cnDocsExample()}>
         <Button view="secondary" label="Редактировать" iconRight={ Chat } onlyIcon />
@@ -87,7 +87,7 @@ export function ButtonExampleViewLink() {
         <Button view="link" label="Ссылка" />
       </div>
       <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
-        <Button view="link" label="Назад" iconLeft={ArrowBackward} />
+        <Button view="link" label="Назад" iconLeft={IconArrowBackward} />
       </div>
       <div className={cnDocsExample()}>
         <Button view="link" label="Сохранить" iconLeft={Save} onlyIcon />
@@ -103,7 +103,7 @@ export function ButtonExampleViewDisabled() {
         <Button disabled label="Войти" />
       </div>
       <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
-        <Button disabled label="Продолжить" iconRight={ArrowRight} />
+        <Button disabled label="Продолжить" iconRight={IconArrowRight} />
       </div>
       <div className={cnDocsExample()}>
         <Button disabled label="Добавить" iconRight={Plus} onlyIcon />
