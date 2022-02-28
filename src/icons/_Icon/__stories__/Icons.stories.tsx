@@ -25,16 +25,16 @@ import {IconArrowsH} from '../../IconArrowsH/IconArrowsH';
 import {IconArrowsV} from '../../IconArrowsV/IconArrowsV';
 import {IconArrowSwap} from '../../IconArrowSwap/IconArrowSwap';
 import {IconArrowUp} from '../../IconArrowUp/IconArrowUp';
-import {ArrowUpC} from '../../ArrowUpC/ArrowUpC';
-import {ArrowVLeft} from '../../ArrowVLeft/ArrowVLeft';
-import {ArrowVRight} from '../../ArrowVRight/ArrowVRight';
-import {Asteriks} from '../../Asteriks/Asteriks';
-import {Backward} from '../../Backward/Backward';
-import {Bank} from '../../Bank/Bank';
-import {BarChartH} from '../../BarChartH/BarChartH';
-import {BarChartV} from '../../BarChartV/BarChartV';
-import {BarChartVCheck} from '../../BarChartVCheck/BarChartVCheck';
-import {Base} from '../../Base/Base';
+import {IconArrowUpC} from '../../IconArrowUpC/IconArrowUpC';
+import {IconArrowVLeft} from '../../IconArrowVLeft/IconArrowVLeft';
+import {IconArrowVRight} from '../../IconArrowVRight/IconArrowVRight';
+import {IconAsteriks} from '../../IconAsteriks/IconAsteriks';
+import {IconBackward} from '../../IconBackward/IconBackward';
+import {IconBank} from '../../IconBank/IconBank';
+import {IconBarChartH} from '../../IconBarChartH/IconBarChartH';
+import {IconBarChartV} from '../../IconBarChartV/IconBarChartV';
+import {IconBarChartVCheck} from '../../IconBarChartVCheck/IconBarChartVCheck';
+import {IconBase} from '../../IconBase/IconBase';
 import {BaseServer} from '../../BaseServer/BaseServer';
 import {Bell} from '../../Bell/Bell';
 import {BellOff} from '../../BellOff/BellOff';
@@ -397,16 +397,16 @@ const neoicons = {
   IconArrowsV,
   IconArrowSwap,
   IconArrowUp,
-  ArrowUpC,
-  ArrowVLeft,
-  ArrowVRight,
-  Asteriks,
-  Backward,
-  Bank,
-  BarChartH,
-  BarChartV,
-  BarChartVCheck,
-  Base,
+  IconArrowUpC,
+  IconArrowVLeft,
+  IconArrowVRight,
+  IconAsteriks,
+  IconBackward,
+  IconBank,
+  IconBarChartH,
+  IconBarChartV,
+  IconBarChartVCheck,
+  IconBase,
   BaseServer,
   Bell,
   BellOff,

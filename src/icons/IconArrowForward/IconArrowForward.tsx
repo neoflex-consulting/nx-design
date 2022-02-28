@@ -1,11 +1,11 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import IconAIconArrowForwardSizeAll from './IconArrowForward_size_all';
+import IconArrowForwardSizeAll from './IconArrowForward_size_all';
 
-export const IconAIconArrowForward = createIcon({
-  l: IconAIconArrowForwardSizeAll,
-  m: IconAIconArrowForwardSizeAll,
-  s: IconAIconArrowForwardSizeAll,
-  xs: IconAIconArrowForwardSizeAll,
+export const IconArrowForward = createIcon({
+  l: IconArrowForwardSizeAll,
+  m: IconArrowForwardSizeAll,
+  s: IconArrowForwardSizeAll,
+  xs: IconArrowForwardSizeAll,
   name: 'IconArrowForward'
 });

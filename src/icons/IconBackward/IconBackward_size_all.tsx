@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function BackwardSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconBackwardSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path fill-rule="evenodd" clip-rule="evenodd" d="M12.3107 3.75H13.5C13.6344 3.75 13.7646 3.76767 13.8885 3.80081L11.6893 6H13.8107L14.9492 4.86147C14.9823 4.98539 15 5.11563 15 5.25V6H16.5V5.25C16.5 3.59315 15.1569 2.25 13.5 2.25H5.25C3.59315 2.25 2.25 3.59315 2.25 5.25V13.5C2.25 15.1569 3.59315 16.5 5.25 16.5H6V15H5.25C5.11563 15 4.98539 14.9823 4.86147 14.9492L6 13.8107V11.6893L3.80081 13.8885C3.76767 13.7646 3.75 13.6344 3.75 13.5V12.3107L6 10.0607V7.93934L3.75 10.1893V8.56066L8.56066 3.75H10.1893L7.93934 6H10.0607L12.3107 3.75ZM6.43934 3.75H5.25C4.42157 3.75 3.75 4.42157 3.75 5.25V6.43934L6.43934 3.75Z" />
@@ -9,4 +9,4 @@ function BackwardSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default BackwardSizeAll;
+export default IconBackwardSizeAll;

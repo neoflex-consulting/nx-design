@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function BaseSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconBaseSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path fill-rule="evenodd" clip-rule="evenodd" d="M19.5 6.375C19.5 8.65317 16.1421 10.5 12 10.5C7.85786 10.5 4.5 8.65317 4.5 6.375C4.5 4.09683 7.85786 2.25 12 2.25C16.1421 2.25 19.5 4.09683 19.5 6.375ZM18 6.375C18 6.71425 17.7307 7.34485 16.5804 7.97749C15.4842 8.58043 13.8676 9 12 9C10.1324 9 8.51583 8.58043 7.41958 7.97749C6.26932 7.34485 6 6.71425 6 6.375C6 6.03575 6.26932 5.40515 7.41958 4.77251C8.51583 4.16957 10.1324 3.75 12 3.75C13.8676 3.75 15.4842 4.16957 16.5804 4.77251C17.7307 5.40515 18 6.03575 18 6.375Z" />
@@ -11,4 +11,4 @@ function BaseSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default BaseSizeAll;
+export default IconBaseSizeAll;

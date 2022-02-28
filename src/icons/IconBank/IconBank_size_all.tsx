@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function BankSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconBankSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path d="M12.75 6C12.75 6.41421 12.4142 6.75 12 6.75C11.5858 6.75 11.25 6.41421 11.25 6C11.25 5.58579 11.5858 5.25 12 5.25C12.4142 5.25 12.75 5.58579 12.75 6Z"/>
@@ -9,4 +9,4 @@ function BankSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default BankSizeAll;
+export default IconBankSizeAll;

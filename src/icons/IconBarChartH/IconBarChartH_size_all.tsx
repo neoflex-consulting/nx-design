@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function BarChartHSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconBarChartHSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path fill-rule="evenodd" clip-rule="evenodd" d="M5.25 3C4.00736 3 3 4.00736 3 5.25C3 6.49264 4.00736 7.5 5.25 7.5H10.5C11.7426 7.5 12.75 6.49264 12.75 5.25C12.75 4.00736 11.7426 3 10.5 3H5.25ZM10.5 4.5H5.25C4.83579 4.5 4.5 4.83579 4.5 5.25C4.5 5.66421 4.83579 6 5.25 6H10.5C10.9142 6 11.25 5.66421 11.25 5.25C11.25 4.83579 10.9142 4.5 10.5 4.5Z"/>
@@ -10,4 +10,4 @@ function BarChartHSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default BarChartHSizeAll;
+export default IconBarChartHSizeAll;

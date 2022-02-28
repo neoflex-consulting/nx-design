@@ -1,7 +1,7 @@
 import { IconProps } from '../../../icons/_Icon/Icon';
 import { CheckDouble } from '../../../icons/CheckDouble/CheckDouble';
 import { Layers } from '../../../icons/Layers/Layers';
-import { Bank } from '../../../icons/Bank/Bank';
+import { Bank } from '../../../icons/IconBank/IconBank';
 import { Eye } from '../../../icons/Eye/Eye';
 import { Wifi } from '../../../icons/Wifi/Wifi';
 import { BadgePropStatus } from '../../Badge/Badge';

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function ArrowUpCSizeAll(props: React.SVGProps<SVGSVGElement>) {
+function IconArrowUpCSizeAll(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path d="M7.71967 11.7803C7.42678 11.4874 7.42678 11.0126 7.71967 10.7197L11.4697 6.96967C11.7626 6.67678 12.2374 6.67678 12.5303 6.96967L16.2803 10.7197C16.5732 11.0126 16.5732 11.4874 16.2803 11.7803C15.9874 12.0732 15.5126 12.0732 15.2197 11.7803L12.75 9.31066V16.5C12.75 16.9142 12.4142 17.25 12 17.25C11.5858 17.25 11.25 16.9142 11.25 16.5V9.31066L8.78033 11.7803C8.48744 12.0732 8.01256 12.0732 7.71967 11.7803Z" />
@@ -9,4 +9,4 @@ function ArrowUpCSizeAll(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default ArrowUpCSizeAll;
+export default IconArrowUpCSizeAll;
