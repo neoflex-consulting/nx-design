@@ -39,7 +39,7 @@ const App = () => (
 );
 ```
 
-[Что такое темы и как с ними работать](https://consta-uikit.vercel.app/?path=/docs/thematization-what-are-themes--page)
+[Что такое темы и как с ними работать](http://cloud2:6006/?path=/docs/thematization-what-are-themes--page)
 
 ## Документация и стенд
 
@@ -49,4 +49,4 @@ const App = () => (
 
 ## Лицензия
 
-Дизайн-систему можно использовать бесплатно, она распространяется «Неофлекс» на условиях открытой [лицензии MIT](https://consta.gazprom-neft.ru/static/licence_mit.pdf).
+Дизайн-систему можно использовать бесплатно, она распространяется «Неофлекс» на условиях открытой [лицензии MIT].

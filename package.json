@@ -1,6 +1,6 @@
 {
   "name": "nx-design",
-  "version": "1.2.45",
+  "version": "1.2.46",
   "keywords": [
     "ui-kit",
     "design-system",
@@ -165,7 +165,7 @@
     "typescript": "3.9.9",
     "typescript-eslint-parser": "^22.0.0"
   },
-  "homepage": "https://consta-uikit.vercel.app",
+  "homepage": "http://cloud2:6006/",
   "description": "NX Design — дизайн-система для разработки интерфейсов, написана на [React](https://reactjs.org/), сделана и поддерживается в «Неофлекс».",
   "main": ".eslintrc.js",
   "directories": {

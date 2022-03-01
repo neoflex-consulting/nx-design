@@ -44,7 +44,7 @@ addons.setConfig({
     inputTextColor: colors['--color-control-typo-default'],
     inputBorderRadius: 4,
     brandTitle: 'Neoflex storybook',
-    brandUrl: 'https://consta-uikit.vercel.app',
+    brandUrl: 'http://cloud2:6006/',
     brandImage: logo,
   }),
 });
