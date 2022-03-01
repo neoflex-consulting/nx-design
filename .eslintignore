@@ -4,4 +4,4 @@ build/*
 dist/*
 builder/*
 build.config.js
-
+src/icons/*
