@@ -1,6 +1,7 @@
 import { DatePickerExampleValue } from './examples/DatePickerExampleValue/DatePickerExampleValue';
 import { DatePickerExampleOnError } from './examples/DatePickerExampleOnError/DatePickerExampleOnError';
 import { DatePickerExampleFormat } from './examples/DatePickerExampleFormat/DatePickerExampleFormat';
+import { DatePickerExampleShowPicker } from './examples/DatePickerExampleShowPicker/DatePickerExampleShowPicker';
 import { DatePickerExampleAdditionalControls } from './examples/DatePickerExampleAdditionalControls/DatePickerExampleAdditionalControls';
 import { DatePickerExampleStatus } from './examples/DatePickerExampleStatus/DatePickerExampleStatus';
 import { DatePickerExampleLabel } from './examples/DatePickerExampleLabel/DatePickerExampleLabel';
@@ -34,6 +35,7 @@ import { DatePicker } from 'nx-design/DatePicker';
 - [Выбор даты](#выбор-даты)
 - [Тип: дата или период](#тип-дата-или-период)
 - [Формат даты](#формат-даты)
+- [Формат календаря](#формат-календаря)
 - [Интервал при выборе времени](#интервал-при-выборе-времени)
 - [Свойства поля ввода](#свойства-поля-ввода)
   - [Лейбл](#лейбл)
@@ -136,6 +138,44 @@ export const DatePickerExampleFormat = () => {
 ```
 
 <DatePickerExampleFormat />
+
+## Формат календаря
+
+За формат календаря отвечает свойство showPicker:
+
+- `'date'` - Выбор дня, месяца и года `format='yyyy-MM-dd'`
+- `'month'` - Выбор месяца и года `format='yyyy-MM'`
+- `'year'` - Выбор только года `format='yyyy'`
+
+```tsx
+export const DatePickerExampleShowPicker = () => {
+  const [value, setValue] = useState<Date | null>(null);
+  return (
+    <div>
+      <DatePicker
+        value={value}
+        onChange={({ value }) => setValue(value)}
+        label="Полная дата"
+        showPicker={"date"}
+      />
+      <DatePicker
+        value={value}
+        onChange={({ value }) => setValue(value)}
+        label="Только год и месяц"
+        showPicker={"month"}
+      />
+      <DatePicker
+        value={valueYear}
+        onChange={({ value }) => setValue(value)}
+        label="Только год"
+        showPicker={"year"}
+      />
+    </div>
+  );
+};
+```
+
+<DatePickerExampleShowPicker />
 
 ## Интервал при выборе времени
 
@@ -389,6 +429,7 @@ type DatePickerPropOnError = (
 | [`onChange?`](#выбор-даты)                                                 | `DatePickerPropOnChange<TYPE>`                                                                                                                                      | -                     | Событие выбора даты или периода                                                                                        |
 | [`value?`](#выбор-даты)                                                    | `DatePickerPropValue<TYPE>`                                                                                                                                         | -                     | Выбранная дата или период                                                                                              |
 | [`type?`](#тип-дата-или-период)                                            | `'date'`, `'date-range'`, `'date-time'`                                                                                                                             | `date`                | Тип календаря: выбор даты или выбор периода                                                                            |
+| [`showPicker?`](#формат-календаря)                                         | `'date'`, `'month'`, `'year'`                                                                                                                                       | `date`                | Тип календаря: выбор полной даты (День + Месяц + Год), выбор Месяц + Год или выбор Год                                 |
 | [`label?`](#лейбл)                                                         | `string`                                                                                                                                                            | -                     | Лейбл к полю ввода                                                                                                     |
 | [`labelPosition?`](#лейбл)                                                 | `'top', 'left'`, 'bottom'`, 'right'`                                                                                                                                | `'top'`               | Положение лейбла относительно поля                                                                                     |
 | [`caption?`](#подпись)                                                     | `string`                                                                                                                                                            | -                     | Подпись под полем ввода                                                                                                |

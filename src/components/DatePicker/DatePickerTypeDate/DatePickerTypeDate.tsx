@@ -85,6 +85,7 @@ export const DatePickerTypeDate: DatePickerTypeComponent<'date'> = forwardRef((p
         ref={fieldRef}
         onFocus={onFocusHandler}
         style={style}
+        showPicker={showPicker}
       />
       <DatePickerDropdown
         ref={calendarRef}

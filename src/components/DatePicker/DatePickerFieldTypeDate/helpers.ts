@@ -7,7 +7,7 @@ import {
   TextFieldPropView,
   TextFieldPropWidth,
 } from '../../TextField/TextField';
-import { DatePickerPropOnError } from '../helpers';
+import {DatePickerPropOnError, ShowPickerPropType} from '../helpers';
 
 type DatePickerFieldTypeDatePropOnChange = (props: { e: Event; value: Date | null }) => void;
 
@@ -46,6 +46,7 @@ export type DatePickerFieldTypeDateProps = PropsWithHTMLAttributes<
     label?: string;
     caption?: string;
     labelPosition?: 'top' | 'left' | 'bottom' | 'right';
+    showPicker?: ShowPickerPropType;
   },
   HTMLDivElement
 >;

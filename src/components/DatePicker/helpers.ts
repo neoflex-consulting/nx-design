@@ -164,8 +164,17 @@ export const getDatePickerPropSeparator = (separator: string | undefined) => {
   return separator || datePickerPropSeparatorDefault;
 }
 
-export const getDatePickerPropFormatTypeDate = (separator: string | undefined) => {
-  return `yyyy${getDatePickerPropSeparator(separator)}MM${getDatePickerPropSeparator(separator)}dd`;
+export const getDatePickerPropFormatTypeDate = (separator: string | undefined, showPicker: ShowPickerPropType | undefined) => {
+  console.log(showPicker)
+  if (showPicker === showPickerPropType[1]) {
+    return `yyyy${getDatePickerPropSeparator(separator)}MM`;
+  }
+  if (showPicker === showPickerPropType[2]) {
+    return `yyyy`;
+  }
+  else {
+    return `yyyy${getDatePickerPropSeparator(separator)}MM${getDatePickerPropSeparator(separator)}dd`;
+  }
 }
 
 export const datePickerPropSeparatorDefault = '-';

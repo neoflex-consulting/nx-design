@@ -21,7 +21,8 @@ export const DatePickerFieldTypeDate = React.forwardRef<
 >((props, ref) => {
   const {
     separator,
-    format: formatProp = getDatePickerPropFormatTypeDate(separator),
+    showPicker,
+    format: formatProp = getDatePickerPropFormatTypeDate(separator, showPicker),
     onChange,
     onError,
     minDate = minDateDefault,
@@ -56,7 +57,7 @@ export const DatePickerFieldTypeDate = React.forwardRef<
         if (dd && MM && yyyy) {
           const date = parse(
             `${yyyy}${getDatePickerPropSeparator(separator)}${MM}${getDatePickerPropSeparator(separator)}${dd}`,
-            getDatePickerPropFormatTypeDate(separator),
+            getDatePickerPropFormatTypeDate(separator, showPicker),
             new Date(),
           );
           if (!isWithinInterval(date, { start: minDate, end: maxDate })) {
@@ -132,7 +133,7 @@ export const DatePickerFieldTypeDate = React.forwardRef<
             !isValid(
               parse(
                 `${leapYear}${getDatePickerPropSeparator(separator)}${MM}${getDatePickerPropSeparator(separator)}${dd}`,
-                getDatePickerPropFormatTypeDate(separator),
+                getDatePickerPropFormatTypeDate(separator, showPicker),
                 new Date(),
               ),
             )
@@ -156,7 +157,7 @@ export const DatePickerFieldTypeDate = React.forwardRef<
             !isValid(
               parse(
                 `${yyyy}${getDatePickerPropSeparator(separator)}${MM}${getDatePickerPropSeparator(separator)}${dd}`,
-                getDatePickerPropFormatTypeDate(separator),
+                getDatePickerPropFormatTypeDate(separator, showPicker),
                 new Date(),
               ),
             )
