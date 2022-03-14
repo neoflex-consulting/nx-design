@@ -155,6 +155,14 @@ export type DatePickerPropOnError = (
       },
 ) => void;
 
+export const getDatePickerPropSeparator = (separator: string | undefined) => {
+  return separator || datePickerPropSeparatorDefault;
+}
+
+export const getDatePickerPropFormatTypeDate = (separator: string | undefined) => {
+  return `yyyy${getDatePickerPropSeparator(separator)}MM${getDatePickerPropSeparator(separator)}dd`;
+}
+
 export const datePickerPropSeparatorDefault = '-';
 export const datePickerPropFormatTypeDate = `yyyy${datePickerPropSeparatorDefault}MM${datePickerPropSeparatorDefault}dd`;
 

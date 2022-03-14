@@ -27,7 +27,7 @@ import {
   datePickerErrorTypes,
   datePickerPropFormatTypeDate,
   DatePickerPropOnError,
-  datePickerPropSeparatorDefault,
+  getDatePickerPropSeparator,
   getTimeEnum,
 } from '../helpers';
 
@@ -199,7 +199,7 @@ export const useImask = (
           MM &&
           !isValid(
             parse(
-              `${leapYear}${datePickerPropSeparatorDefault}${MM}${datePickerPropSeparatorDefault}${dd}`,
+              `${leapYear}${getDatePickerPropSeparator(separator)}${MM}${getDatePickerPropSeparator(separator)}${dd}`,
               datePickerPropFormatTypeDate,
               new Date(),
             ),
@@ -225,7 +225,7 @@ export const useImask = (
           yyyy &&
           !isValid(
             parse(
-              `${yyyy}${datePickerPropSeparatorDefault}${MM}${datePickerPropSeparatorDefault}${dd}`,
+              `${yyyy}${getDatePickerPropSeparator(separator)}${MM}${getDatePickerPropSeparator(separator)}${dd}`,
               datePickerPropFormatTypeDate,
               new Date(),
             ),

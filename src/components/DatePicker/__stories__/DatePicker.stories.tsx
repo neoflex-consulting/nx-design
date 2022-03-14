@@ -51,6 +51,7 @@ const defaultKnobs = () => ({
   label: text('label', 'Заголовок'),
   caption: text('caption', 'Подпись'),
   placeholder: text('placeholder', ''),
+  separator: text('separator', '-'),
   required: boolean('required', false),
   labelPosition: select('labelPosition', ['top', 'left', 'bottom', 'right'], 'top'),
   size: select('size', textFieldPropSize, textFieldPropSizeDefault),
@@ -93,7 +94,8 @@ export function Playground() {
     minDate,
     maxDate,
     withAdditionalControls,
-    placeholder
+    placeholder,
+    separator
   } = defaultKnobs();
 
   const [value, setValue] = useState<DatePickerPropValue<typeof type>>(null);
@@ -139,6 +141,7 @@ export function Playground() {
         })}
         renderAdditionalControls={withAdditionalControls ? additionalControls : undefined}
         placeholder={placeholder}
+        separator={separator}
       />
     </div>
   );
