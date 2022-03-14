@@ -17,6 +17,10 @@ export const datePickerPropType = ['date', 'date-range', 'date-time'] as const;
 export type DatePickerPropType = typeof datePickerPropType[number];
 export const datePickerPropTypeDefault = datePickerPropType[0];
 
+export const showPickerPropType = ['date', 'month', 'year'] as const;
+export type ShowPickerPropType = typeof showPickerPropType[number];
+export const showPickerPropTypeDefault = showPickerPropType[0];
+
 export type DatePickerPropCalendarView = CalendarPropView;
 
 export const datePickerErrorTypes = [
@@ -114,6 +118,7 @@ export type DatePickerProps<
     multiplicitySeconds?: number;
     multiplicityMinutes?: number;
     multiplicityHours?: number;
+    showPicker?: ShowPickerPropType;
   },
   HTMLDivElement
 >;

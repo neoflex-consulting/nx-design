@@ -21,13 +21,13 @@ import {
   textFieldPropView,
   textFieldPropViewDefault,
 } from '../../TextField/TextField';
-import { DatePicker } from '../DatePicker';
+import {DatePicker, showPickerPropType} from '../DatePicker';
 import {
   datePickerPropDropdownForm,
   datePickerPropDropdownFormDefault,
   datePickerPropType,
   datePickerPropTypeDefault,
-  DatePickerPropValue,
+  DatePickerPropValue, showPickerPropTypeDefault,
 } from '../helpers';
 
 import mdx from './DatePicker.docs.mdx';
@@ -45,6 +45,7 @@ const localeMap: Record<LocaleProp, Locale> = {
 
 const defaultKnobs = () => ({
   type: select('type', datePickerPropType, datePickerPropTypeDefault),
+  showPicker: select('showPicker', showPickerPropType, showPickerPropTypeDefault),
   form: select('form', textFieldPropForm, textFieldPropFormDefault),
   status: select('status', ['', ...textFieldPropStatus], ''),
   withAdditionalControls: boolean('withAdditionalControls', false),
@@ -95,7 +96,8 @@ export function Playground() {
     maxDate,
     withAdditionalControls,
     placeholder,
-    separator
+    separator,
+    showPicker
   } = defaultKnobs();
 
   const [value, setValue] = useState<DatePickerPropValue<typeof type>>(null);
@@ -142,6 +144,7 @@ export function Playground() {
         renderAdditionalControls={withAdditionalControls ? additionalControls : undefined}
         placeholder={placeholder}
         separator={separator}
+        showPicker={showPicker}
       />
     </div>
   );

@@ -10,13 +10,13 @@ import {
   DatePickerComponent,
   DatePickerPropType,
   datePickerPropTypeDefault,
-  DatePickerTypeComponent,
+  DatePickerTypeComponent
 } from './helpers';
 
 const typeMap: Record<DatePickerPropType, DatePickerTypeComponent<DatePickerPropType>> = {
   'date': DatePickerTypeDate,
   'date-range': DatePickerTypeDateRange,
-  'date-time': DatePickerTypeCalendar,
+  'date-time': DatePickerTypeCalendar
 };
 
 export const DatePicker: DatePickerComponent = forwardRef((props, ref) => {

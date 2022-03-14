@@ -111,7 +111,7 @@ export const DatePickerFieldTypeCalendar = React.forwardRef<
       // то можно считать что поле нуждается в очистке
       setStringValue('');
     }
-  }, [value?.getTime()]);
+  }, [value]);
 
   // задаем нативный oninput, так как с маской по другому не будет работать
   // обнавляем oninput при смене handleChange

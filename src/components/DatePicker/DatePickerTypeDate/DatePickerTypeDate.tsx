@@ -21,6 +21,7 @@ export const DatePickerTypeDate: DatePickerTypeComponent<'date'> = forwardRef((p
     onChangeCurrentVisibleDate: onChangeCurrentVisibleDateProp,
     renderAdditionalControls,
     style,
+    showPicker,
     ...otherProps
   } = props;
 
@@ -90,7 +91,7 @@ export const DatePickerTypeDate: DatePickerTypeComponent<'date'> = forwardRef((p
         anchorRef={fieldRef}
         isOpen={calendarVisible}
         value={props.value || undefined}
-        type="date"
+        type={showPicker}
         view={calendarView}
         events={events}
         locale={locale}
