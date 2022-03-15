@@ -71,7 +71,7 @@ export type DatePickerFieldTypeCalendarProps = PropsWithHTMLAttributes<
     multiplicityHours?: number;
     label?: string;
     caption?: string;
-    labelPosition?: 'top' | 'left' | 'bottom' | 'right';
+    labelPosition?: 'top' | 'left';
     showPicker?: ShowPickerPropType;
   },
   HTMLDivElement

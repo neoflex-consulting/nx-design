@@ -54,7 +54,7 @@ const defaultKnobs = () => ({
   placeholder: text('placeholder', ''),
   separator: text('separator', '-'),
   required: boolean('required', false),
-  labelPosition: select('labelPosition', ['top', 'left', 'bottom', 'right'], 'top'),
+  labelPosition: select('labelPosition', ['top', 'left'], 'top'),
   size: select('size', textFieldPropSize, textFieldPropSizeDefault),
   view: select('view', textFieldPropView, textFieldPropViewDefault),
   disabled: boolean('disabled', false),

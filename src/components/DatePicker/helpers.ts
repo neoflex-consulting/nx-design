@@ -112,7 +112,7 @@ export type DatePickerProps<
     endFieldOnBlur?: DatePickerPropCalendarStartOnFocus<TYPE>;
     label?: string;
     caption?: string;
-    labelPosition?: 'top' | 'left' | 'bottom' | 'right';
+    labelPosition?: 'top' | 'left';
     onChangeCurrentVisibleDate?: (date: Date) => void;
     currentVisibleDate?: Date;
     multiplicitySeconds?: number;
@@ -165,7 +165,6 @@ export const getDatePickerPropSeparator = (separator: string | undefined) => {
 }
 
 export const getDatePickerPropFormatTypeDate = (separator: string | undefined, showPicker: ShowPickerPropType | undefined) => {
-  console.log(showPicker)
   if (showPicker === showPickerPropType[1]) {
     return `yyyy${getDatePickerPropSeparator(separator)}MM`;
   }

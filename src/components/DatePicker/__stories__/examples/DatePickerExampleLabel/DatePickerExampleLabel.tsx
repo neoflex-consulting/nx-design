@@ -21,18 +21,6 @@ export const DatePickerExampleLabel = () => {
         label="Лейбл"
         labelPosition="left"
       />
-      <DatePicker
-        value={value}
-        onChange={({ value }) => setValue(value)}
-        label="Лейбл"
-        labelPosition="bottom"
-      />
-      <DatePicker
-        value={value}
-        onChange={({ value }) => setValue(value)}
-        label="Лейбл"
-        labelPosition="right"
-      />
     </StoryBookExample>
   );
 };
