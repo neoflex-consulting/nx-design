@@ -59,6 +59,7 @@ export const DatePickerFieldTypeDateRange = forwardRef<
     labelPosition,
     caption,
     width,
+    showPicker,
     ...otherProps
   } = props;
 
@@ -181,6 +182,7 @@ export const DatePickerFieldTypeDateRange = forwardRef<
             onFocus={startFieldOnFocus}
             onBlur={startFieldOnBlur}
             focused={startFocused}
+            showPicker={showPicker}
           />
           <DatePickerFieldTypeDate
             {...commonProps}
@@ -194,6 +196,7 @@ export const DatePickerFieldTypeDateRange = forwardRef<
             onFocus={endFieldOnFocus}
             onBlur={endFieldOnBlur}
             focused={endFocused}
+            showPicker={showPicker}
           />
         </div>
         {label && ( labelPosition =="right" || labelPosition =="bottom" ) && (

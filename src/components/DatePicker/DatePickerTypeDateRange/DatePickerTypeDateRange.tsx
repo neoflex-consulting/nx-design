@@ -37,6 +37,7 @@ export const DatePickerTypeDateRange: DatePickerTypeComponent<'date-range'> = fo
       currentVisibleDate: currentVisibleDateProp,
       onChangeCurrentVisibleDate: onChangeCurrentVisibleDateProp,
       renderAdditionalControls,
+      showPicker,
       ...fieldProps
     } = props;
 
@@ -181,9 +182,10 @@ export const DatePickerTypeDateRange: DatePickerTypeComponent<'date-range'> = fo
           endFieldOnBlur={endFieldOnBlurHandler}
           startFocused={startFocused}
           endFocused={endFocused}
+          showPicker={showPicker}
         />
         <DatePickerDropdown
-          type="date"
+          type={showPicker}
           ref={calendarRef}
           anchorRef={startFieldRef}
           isOpen={calendarVisible}

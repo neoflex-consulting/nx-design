@@ -7,11 +7,16 @@ import { maxDateDefault, minDateDefault } from '../../../utils/date';
 import { TextField } from '../../TextField/TextField';
 import {
   datePickerErrorTypes,
-  datePickerPropFormatTypeCalendar,
   getDatePickerPropSeparator
 } from '../helpers';
 
-import { DatePickerFieldTypeCalendarProps, getParts, getPartsDate, useImask } from './helpers';
+import {
+  DatePickerFieldTypeCalendarProps,
+  getDatePickerPropFormatTypeCalendar,
+  getParts,
+  getPartsDate,
+  useImask
+} from './helpers';
 import {IconCalendar} from "../../../icons/IconCalendar/IconCalendar";
 
 export const DatePickerFieldTypeCalendar = React.forwardRef<
@@ -19,8 +24,8 @@ export const DatePickerFieldTypeCalendar = React.forwardRef<
   DatePickerFieldTypeCalendarProps
 >((props, ref) => {
   const {
-    format: formatProp = datePickerPropFormatTypeCalendar,
     separator,
+    format: formatProp = getDatePickerPropFormatTypeCalendar(separator),
     onChange,
     onError,
     minDate = minDateDefault,
@@ -41,7 +46,7 @@ export const DatePickerFieldTypeCalendar = React.forwardRef<
     value && isValid(value) ? format(value, formatProp) : null,
   );
 
-  const formatParts = useMemo(() => getParts(formatProp, getDatePickerPropSeparator(separator)), [formatProp, separator]);
+  const formatParts = useMemo(() => getParts(formatProp, getDatePickerPropSeparator(separator)), [formatProp, getDatePickerPropSeparator(separator)]);
 
   const handleChange = useCallback(
     (e: Event, stringValue: string | null) => {
@@ -61,7 +66,7 @@ export const DatePickerFieldTypeCalendar = React.forwardRef<
           const date = parse(
             `${yyyy}${getDatePickerPropSeparator(separator)}${MM}${getDatePickerPropSeparator(separator)}${dd} ${HH ||
               '00'}:${mm || '00'}:${ss || '00'}`,
-            datePickerPropFormatTypeCalendar,
+            getDatePickerPropFormatTypeCalendar(separator),
             new Date(),
           );
           if (!isWithinInterval(date, { start: minDate, end: maxDate })) {

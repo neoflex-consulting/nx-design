@@ -94,7 +94,7 @@ export const DatePickerFieldTypeDate = React.forwardRef<
       // то можно считать что поле нуждается в очистке
       setStringValue('');
     }
-  }, [value?.getTime()]);
+  }, [value]);
 
   // задаем маску и сохраняем обьект маски в ref
   // обнавляем при смене формата

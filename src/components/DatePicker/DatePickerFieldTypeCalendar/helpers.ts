@@ -29,6 +29,7 @@ import {
   DatePickerPropOnError,
   getDatePickerPropSeparator,
   getTimeEnum,
+  ShowPickerPropType,
 } from '../helpers';
 
 type DatePickerFieldTypeCalendarPropOnChange = (props: { e: Event; value: Date | null }) => void;
@@ -71,9 +72,14 @@ export type DatePickerFieldTypeCalendarProps = PropsWithHTMLAttributes<
     label?: string;
     caption?: string;
     labelPosition?: 'top' | 'left' | 'bottom' | 'right';
+    showPicker?: ShowPickerPropType;
   },
   HTMLDivElement
 >;
+
+export const getDatePickerPropFormatTypeCalendar = (separator: string | undefined) => {
+    return `yyyy${getDatePickerPropSeparator(separator)}MM${getDatePickerPropSeparator(separator)}dd HH:mm:ss`;
+}
 
 const getPartDate = (formatArray: string[], stringArray: string[], marker: string) => {
   const index = formatArray.indexOf(marker);
