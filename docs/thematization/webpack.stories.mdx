@@ -1,0 +1,77 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta
+  title="Тематизация|Webpack"
+  id="webpack-includes"
+  parameters={{ order: 420 }}
+/>
+
+# Как подключить темы в проект с Webpack
+
+Данный раздел описывает решение проблемы с подключением стилей к проекту, в котором используется webpack с минификацией имен классов.
+
+Без добавления данного исполючения, все классы библиотеки будут переименованы автоматически с `Theme` на `Theme_Theme__31hsd` по схеме `fileNameOrFolder + '_' + localName + '__' + hash`
+
+- [Шаг 1. Проверьте, используется ли css-loader](#шаг-1-проверьте-использование-css-loader)
+- [Шаг 2. Проверьте, используется ли ли в нем минификация CSS с помощью getLocalIdent](#шаг-2-проверьте-использование-минификации)
+- [Шаг 3. Переопределите функцию getCSSModuleLocalIdent](#шаг-3-переопределите-функцию-getCSSModuleLocalIdent)
+
+## Шаг 1. Проверьте, используется ли css-loader
+
+Откройте файл с webpack конфигурацией webpack.config.js
+
+
+## Шаг 2. Проверьте, используется ли ли в нем минификация CSS с помощью getLocalIdent
+
+```
+test: /\.(css|scss)$/,
+use: [
+    {
+        loader: 'css-loader',
+        options: {
+            sourceMap: isEnvDevelopment,
+            modules: {
+                getLocalIdent: getCSSModuleLocalIdent,
+                exportLocalsConvention: 'camelCase'
+            }
+        }
+    }
+]
+```
+
+## Шаг 3. Переопределите функцию getCSSModuleLocalIdent
+
+Замените `fileNameOrFolder + '_' + localName + '__' + hash` на `context.resourcePath.includes('nx-design') ? localName : fileNameOrFolder + '_' + localName + '__' + hash`
+
+```
+function getCSSModuleLocalIdent (
+    context,
+    localIdentName,
+    localName,
+    options
+) {
+    // Use the filename or folder name, based on some uses the index.js / index.module.(css|scss|sass) project style
+    const fileNameOrFolder = context.resourcePath.match(
+        /index\.module\.(css|scss|sass)$/
+    )
+        ? '[folder]'
+        : '[name]';
+    // Create a hash based on a the file location and class name. Will be unique across a project, and close to globally unique.
+    const hash = loaderUtils.getHashDigest(
+        path.posix.relative(context.rootContext, context.resourcePath) + localName,
+        'md5',
+        'base64',
+        5
+    );
+    // Use loaderUtils to find the file or folder name
+    const className = loaderUtils.interpolateName(
+        context,
+        context.resourcePath.includes('nx-design') ? localName : fileNameOrFolder + '_' + localName + '__' + hash,
+        options
+    );
+    // Remove the .module that appears in every classname when based on the file and replace all "." with "_".
+    return className.replace('.module_', '_').replace(/\./g, '_');
+};
+```
+
+Готово
