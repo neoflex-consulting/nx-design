@@ -22,7 +22,7 @@ export const DatePickerFieldTypeDate = React.forwardRef<
   const {
     separator,
     showPicker,
-    format: formatProp = getDatePickerPropFormatTypeDate(separator, showPicker),
+    formatMask,
     onChange,
     onError,
     minDate = minDateDefault,
@@ -33,6 +33,7 @@ export const DatePickerFieldTypeDate = React.forwardRef<
     ...otherProps
   } = props;
 
+  const formatProp = formatMask || getDatePickerPropFormatTypeDate(separator, showPicker)
   const inputRef = useRef<HTMLInputElement>(null);
   const imaskRef = useRef<IMask.InputMask<IMask.MaskedDateOptions> | null>(null);
   const onChangeRef = useMutableRef(onChange);

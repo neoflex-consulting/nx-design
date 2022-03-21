@@ -25,7 +25,7 @@ export const DatePickerFieldTypeCalendar = React.forwardRef<
 >((props, ref) => {
   const {
     separator,
-    format: formatProp = getDatePickerPropFormatTypeCalendar(separator),
+    formatMask,
     onChange,
     onError,
     minDate = minDateDefault,
@@ -39,6 +39,7 @@ export const DatePickerFieldTypeCalendar = React.forwardRef<
     ...otherProps
   } = props;
 
+  const formatProp = formatMask || getDatePickerPropFormatTypeCalendar(separator)
   const inputRef = useRef<HTMLInputElement>(null);
   const onChangeRef = useMutableRef(onChange);
 

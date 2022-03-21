@@ -32,7 +32,7 @@ export const DatePickerTypeCalendar: DatePickerTypeComponent<'date-time'> = forw
     } = props;
 
     const [multiplicityHours, multiplicityMinutes, multiplicitySeconds] = getMultiplicityTime(
-      otherProps.format || datePickerPropFormatTypeCalendar,
+      otherProps.formatMask || datePickerPropFormatTypeCalendar,
       multiplicityHoursProp,
       multiplicityMinutesProp,
       multiplicitySecondsProp,

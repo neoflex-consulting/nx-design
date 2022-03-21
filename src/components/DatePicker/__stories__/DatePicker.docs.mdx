@@ -99,15 +99,15 @@ const DatePickerExampleTypeCalendar = () => {
 
 ## Формат даты
 
-За формат даты отвечают два свойства вместе:
+За формат даты отвечают два свойства:
 
-- `format` — маска для отображения даты,
-- `separator` — разделитель, который нужно использовать в этой маске.
+- `formatMask` — маска для отображения даты,
+- `separator` — разделитель, который нужно использовать.
 
-`format` по умолчанию зависит от `type`:
+`formatMask` по умолчанию зависит от `type`:
 
-- `type=date` или `type=date-range` — `format='yyyy-MM-dd'`
-- `type=date-time` — `format='yyyy-MM-dd HH:mm:ss'`
+- `type=date` или `type=date-range` — `formatMask='yyyy-MM-dd'`
+- `type=date-time` — `formatMask='yyyy-MM-dd HH:mm:ss'`
 
 `separator` — точка `'.'`
 
@@ -115,7 +115,7 @@ const DatePickerExampleTypeCalendar = () => {
 
 Разделитель между промежутками времени — всегда двоеточие `':'`
 
-Чтобы задать формат, который используется в США, укажите `format='MM/dd/yyyy HH:mm:ss'`, `separator='/'`.
+Чтобы задать формат, который используется в США, укажите `formatMask='MM/dd/yyyy HH:mm:ss'`.
 
 > **Важно:** если тип требует ввода даты с точностью до дня, то и формат нужно указывать с точностью до дня, если тип даты предполагает только месяц и год, в формате нужно указать только месяц и год
 
@@ -127,8 +127,7 @@ export const DatePickerExampleFormat = () => {
   return (
     <DatePicker
       type="date-time"
-      format="MM/dd/yyyy HH:mm"
-      separator="/"
+      formatMask="MM/dd/yyyy HH:mm"
       placeholder="ММ/ДД/ГГГГ ЧЧ:ММ"
       value={value}
       onChange={({ value }) => setValue(value)}
@@ -143,9 +142,9 @@ export const DatePickerExampleFormat = () => {
 
 За формат календаря отвечает свойство showPicker:
 
-- `'date'` - Выбор дня, месяца и года `format='yyyy-MM-dd'`
-- `'month'` - Выбор месяца и года `format='yyyy-MM'`
-- `'year'` - Выбор только года `format='yyyy'`
+- `'date'` - Выбор дня, месяца и года `formatMask='yyyy-MM-dd'`
+- `'month'` - Выбор месяца и года `formatMask='yyyy-MM'`
+- `'year'` - Выбор только года `formatMask='yyyy'`
 
 ```tsx
 export const DatePickerExampleShowPicker = () => {

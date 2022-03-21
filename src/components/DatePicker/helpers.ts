@@ -94,7 +94,7 @@ export type DatePickerProps<
     inputRef?: DatePickerPropCalendarInputRef<TYPE>;
     ariaLabel?: string;
     iconSize?: IconPropSize;
-    format?: string;
+    formatMask?: string;
     separator?: string;
     dropdownForm?: DatePickerPropDropdownForm;
     width?: DatePickerPropCalendarWidth<TYPE>;

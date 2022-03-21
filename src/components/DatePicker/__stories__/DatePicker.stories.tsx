@@ -53,6 +53,7 @@ const defaultKnobs = () => ({
   caption: text('caption', 'Подпись'),
   placeholder: text('placeholder', ''),
   separator: text('separator', '-'),
+  formatMask: text('formatMask', ''),
   required: boolean('required', false),
   labelPosition: select('labelPosition', ['top', 'left'], 'top'),
   size: select('size', textFieldPropSize, textFieldPropSizeDefault),
@@ -97,6 +98,7 @@ export function Playground() {
     withAdditionalControls,
     placeholder,
     separator,
+    formatMask,
     showPicker
   } = defaultKnobs();
 
@@ -143,6 +145,7 @@ export function Playground() {
         })}
         renderAdditionalControls={withAdditionalControls ? additionalControls : undefined}
         placeholder={placeholder}
+        formatMask={formatMask}
         separator={separator}
         showPicker={showPicker}
       />
