@@ -56,8 +56,6 @@ export const CalendarTypeDate: CalendarTypeComponent<'date'> = forwardRef((props
   });
 
   if (changeMonth) {
-    console.log("58 - changeMonth")
-    console.log(changeMonth)
     return (
       <CalendarTypeMonth
         {...otherProps}
@@ -105,8 +103,6 @@ export const CalendarTypeDate: CalendarTypeComponent<'date'> = forwardRef((props
   const prevMonthHandle = () => setCurrentVisibleDate(addMonths(currentVisibleDate, -1));
 
   if (view === CalendarPropView[0]) {
-    console.log("108 - CalendarPropView[0]")
-    console.log(CalendarPropView[0])
     return (
       <div {...otherProps} ref={ref} className={cnCalendarMixLayout({ view }, [className])}>
         <CalendarToggler
@@ -140,8 +136,6 @@ export const CalendarTypeDate: CalendarTypeComponent<'date'> = forwardRef((props
   const pageTwoLabel = getMouthLabelWithYear(pageTwoCurrentVisibleDate, locale);
 
   if (view === CalendarPropView[1]) {
-    console.log("143 - CalendarPropView[1]")
-    console.log(CalendarPropView[1])
     return (
       <>
         <div {...otherProps} ref={ref} className={cnCalendarMixLayout({ view }, [className])}>
