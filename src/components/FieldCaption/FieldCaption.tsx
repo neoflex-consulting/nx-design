@@ -22,7 +22,7 @@ export const FieldCaption = forwardRefWithAs<FieldCaptionProps>((props, ref) => 
       {...otherProps}
       ref={ref}
       size="xs"
-      lineHeight="2xs"
+      // heightLine="2xs"
     >
       {children}
     </Typography>

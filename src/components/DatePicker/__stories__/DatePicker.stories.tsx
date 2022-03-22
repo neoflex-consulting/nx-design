@@ -149,6 +149,18 @@ export function Playground() {
         separator={separator}
         showPicker={showPicker}
       />
+      <DatePicker
+        value={value}
+        onChange={({ value }) => setValue(value)}
+        label="Только год и месяц"
+        showPicker={"month"}
+      />
+      <DatePicker
+        value={value}
+        onChange={({ value }) => setValue(value)}
+        label="Только год"
+        showPicker={"year"}
+      />
     </div>
   );
 }

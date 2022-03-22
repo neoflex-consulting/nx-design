@@ -166,7 +166,6 @@ export const CalendarTypeDate: CalendarTypeComponent<'date'> = forwardRef((props
     );
   }
 
-  console.log("175 - all")
   return (
     <div {...otherProps} ref={ref} className={cnCalendarMixLayout({ view }, [className])}>
       <CalendarYearSlider

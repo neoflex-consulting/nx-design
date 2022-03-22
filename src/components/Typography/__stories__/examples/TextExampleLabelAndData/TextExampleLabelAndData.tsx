@@ -11,15 +11,13 @@ export const TextExampleLabelAndData = () => {
         <Typography
           as="div"
           align="left"
-          font="primary"
-          lineHeight="l"
           size="s"
           view="secondary"
           type="p"
         >
           ФИО
         </Typography>
-        <Typography as="div" align="left" font="mono" lineHeight="l" size="l" view="primary">
+        <Typography as="div" align="left" size="l" view="primary">
           Иванов Дмитрий Петрович
         </Typography>
       </div>
@@ -27,15 +25,13 @@ export const TextExampleLabelAndData = () => {
         <Typography
           as="div"
           align="left"
-          font="primary"
-          lineHeight="l"
           size="s"
           view="secondary"
           type="p"
         >
           Должность
         </Typography>
-        <Typography as="div" align="left" font="mono" lineHeight="l" size="l" view="primary">
+        <Typography as="div" align="left" size="l" view="primary">
           Инженер по бурению
         </Typography>
       </div>
@@ -43,15 +39,13 @@ export const TextExampleLabelAndData = () => {
         <Typography
           as="div"
           align="left"
-          font="primary"
-          lineHeight="l"
           size="s"
           view="secondary"
           type="p"
         >
           Подразделение
         </Typography>
-        <Typography as="div" align="left" font="mono" lineHeight="l" size="l" view="primary">
+        <Typography as="div" align="left" size="l" view="primary">
           Группа разведки и бурения
         </Typography>
       </div>

@@ -64,7 +64,6 @@ export const DatePickerDropdown: DatePickerDropdownComponent = forwardRef((props
   } = props;
 
   const rootRef = useRef<HTMLDivElement>(null);
-
   return (
     <CSSTransition
       in={isOpen}

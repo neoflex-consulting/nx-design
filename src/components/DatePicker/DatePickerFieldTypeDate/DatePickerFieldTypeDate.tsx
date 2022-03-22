@@ -9,7 +9,7 @@ import { TextField } from '../../TextField/TextField';
 import {
   datePickerErrorTypes,
   getDatePickerPropSeparator,
-  getDatePickerPropFormatTypeDate
+  getDatePickerPropFormatTypeDate, showPickerPropType
 } from '../helpers';
 
 import { DatePickerFieldTypeDateProps, getPartsDate } from './helpers';
@@ -55,7 +55,7 @@ export const DatePickerFieldTypeDate = React.forwardRef<
 
         const [yyyy, MM, dd] = getPartsDate(stringValue, formatProp, getDatePickerPropSeparator(separator));
 
-        if (dd && MM && yyyy) {
+        if (dd && MM && yyyy && showPicker === showPickerPropType[0]) {
           const date = parse(
             `${yyyy}${getDatePickerPropSeparator(separator)}${MM}${getDatePickerPropSeparator(separator)}${dd}`,
             getDatePickerPropFormatTypeDate(separator, showPicker),
@@ -76,7 +76,52 @@ export const DatePickerFieldTypeDate = React.forwardRef<
             return;
           }
           onChange({ e, value: date });
-        } else {
+        }
+        else if (MM && yyyy && showPicker === showPickerPropType[1]) {
+          const date = parse(
+            `${yyyy}${getDatePickerPropSeparator(separator)}${MM}`,
+            getDatePickerPropFormatTypeDate(separator, showPicker),
+            new Date(),
+          );
+          if (!isWithinInterval(date, { start: minDate, end: maxDate })) {
+            onError &&
+            onError({
+              type: datePickerErrorTypes[0],
+              stringValue,
+              dd,
+              MM,
+              yyyy,
+              date,
+            });
+
+            onChange({ e, value: null });
+            return;
+          }
+          onChange({ e, value: date });
+        }
+        else if (yyyy && showPicker === showPickerPropType[2]) {
+          const date = parse(
+            `${yyyy}`,
+            getDatePickerPropFormatTypeDate(separator, showPicker),
+            new Date(),
+          );
+          if (!isWithinInterval(date, { start: minDate, end: maxDate })) {
+            onError &&
+            onError({
+              type: datePickerErrorTypes[0],
+              stringValue,
+              dd,
+              MM,
+              yyyy,
+              date,
+            });
+
+            onChange({ e, value: null });
+            return;
+          }
+          onChange({ e, value: date });
+        }
+        else {
           onChange({ e, value: null });
         }
       }
@@ -147,7 +192,6 @@ export const DatePickerFieldTypeDate = React.forwardRef<
                 MM,
                 yyyy,
               });
-
             return false;
           }
 
@@ -171,7 +215,6 @@ export const DatePickerFieldTypeDate = React.forwardRef<
                 MM,
                 yyyy,
               });
-
             return false;
           }
 
