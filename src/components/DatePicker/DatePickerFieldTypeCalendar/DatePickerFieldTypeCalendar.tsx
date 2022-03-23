@@ -39,7 +39,7 @@ export const DatePickerFieldTypeCalendar = React.forwardRef<
     ...otherProps
   } = props;
 
-  const formatProp = formatMask || getDatePickerPropFormatTypeCalendar(separator)
+  const formatProp = getDatePickerPropFormatTypeCalendar(separator, formatMask)
   const inputRef = useRef<HTMLInputElement>(null);
   const onChangeRef = useMutableRef(onChange);
 
@@ -47,8 +47,7 @@ export const DatePickerFieldTypeCalendar = React.forwardRef<
     value && isValid(value) ? format(value, formatProp) : null,
   );
 
-  const formatParts = useMemo(() => getParts(formatProp, getDatePickerPropSeparator(separator)), [formatProp, getDatePickerPropSeparator(separator)]);
-
+  const formatParts = useMemo(() => getParts(formatProp, getDatePickerPropSeparator(separator, formatMask)), [formatProp, getDatePickerPropSeparator(separator, formatMask)]);
   const handleChange = useCallback(
     (e: Event, stringValue: string | null) => {
       setStringValue(stringValue);
@@ -60,14 +59,14 @@ export const DatePickerFieldTypeCalendar = React.forwardRef<
           return;
         }
 
-        const partsDate = getPartsDate(stringValue, formatProp, getDatePickerPropSeparator(separator));
+        const partsDate = getPartsDate(stringValue, formatProp, getDatePickerPropSeparator(separator, formatMask));
         const [yyyy, MM, dd, HH, mm, ss] = partsDate;
 
         if (partsDate.filter((item) => !!item).length === formatParts.length) {
           const date = parse(
-            `${yyyy}${getDatePickerPropSeparator(separator)}${MM}${getDatePickerPropSeparator(separator)}${dd} ${HH ||
+            `${yyyy}${getDatePickerPropSeparator(separator, formatMask)}${MM}${getDatePickerPropSeparator(separator, formatMask)}${dd} ${HH ||
               '00'}:${mm || '00'}:${ss || '00'}`,
-            getDatePickerPropFormatTypeCalendar(separator),
+            getDatePickerPropFormatTypeCalendar(separator, formatMask),
             new Date(),
           );
           if (!isWithinInterval(date, { start: minDate, end: maxDate })) {
@@ -92,12 +91,12 @@ export const DatePickerFieldTypeCalendar = React.forwardRef<
         }
       }
     },
-    [minDate?.getTime(), maxDate?.getTime(), formatProp, getDatePickerPropSeparator(separator)],
+    [minDate?.getTime(), maxDate?.getTime(), formatProp, getDatePickerPropSeparator(separator, formatMask)],
   );
 
   useImask(
     formatProp,
-    getDatePickerPropSeparator(separator),
+    getDatePickerPropSeparator(separator, formatMask),
     multiplicityHours,
     multiplicitySeconds,
     multiplicityMinutes,

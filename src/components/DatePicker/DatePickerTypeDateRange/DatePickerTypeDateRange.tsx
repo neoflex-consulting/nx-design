@@ -9,7 +9,7 @@ import {
   DatePickerDropdownPropOnChange,
 } from '../DatePickerDropdown/DatePickerDropdown';
 import { DatePickerFieldTypeDateRange } from '../DatePickerFieldTypeDateRange/DatePickerFieldTypeDateRange';
-import { DatePickerTypeComponent, normalizeRangeValue } from '../helpers';
+import {DatePickerTypeComponent, normalizeRangeValue, showPickerPropType} from '../helpers';
 import { useCurrentVisibleDate } from '../useCurrentVisibleDate';
 
 export const DatePickerTypeDateRange: DatePickerTypeComponent<'date-range'> = forwardRef(
@@ -41,6 +41,7 @@ export const DatePickerTypeDateRange: DatePickerTypeComponent<'date-range'> = fo
       ...fieldProps
     } = props;
 
+    const showPickerDefault = showPicker || showPickerPropType[0];
     const startFieldRef = useRef<HTMLDivElement>(null);
     const endFieldRef = useRef<HTMLDivElement>(null);
     const startFieldInputRef = useRef<HTMLInputElement>(null);
@@ -182,10 +183,10 @@ export const DatePickerTypeDateRange: DatePickerTypeComponent<'date-range'> = fo
           endFieldOnBlur={endFieldOnBlurHandler}
           startFocused={startFocused}
           endFocused={endFocused}
-          showPicker={showPicker}
+          showPicker={showPickerDefault}
         />
         <DatePickerDropdown
-          type={showPicker}
+          type={showPickerDefault}
           ref={calendarRef}
           anchorRef={startFieldRef}
           isOpen={calendarVisible}

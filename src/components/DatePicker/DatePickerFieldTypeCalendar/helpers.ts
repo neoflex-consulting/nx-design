@@ -25,8 +25,8 @@ import {
 } from '../../TextField/TextField';
 import {
   datePickerErrorTypes,
-  datePickerPropFormatTypeDate,
   DatePickerPropOnError,
+  getDatePickerPropFormatTypeDate,
   getDatePickerPropSeparator,
   getTimeEnum,
   ShowPickerPropType,
@@ -77,8 +77,8 @@ export type DatePickerFieldTypeCalendarProps = PropsWithHTMLAttributes<
   HTMLDivElement
 >;
 
-export const getDatePickerPropFormatTypeCalendar = (separator: string | undefined) => {
-    return `yyyy${getDatePickerPropSeparator(separator)}MM${getDatePickerPropSeparator(separator)}dd HH:mm:ss`;
+export const getDatePickerPropFormatTypeCalendar = (separator: string | undefined, formatMask: string | undefined) => {
+    return `yyyy${getDatePickerPropSeparator(separator, formatMask)}MM${getDatePickerPropSeparator(separator, formatMask)}dd HH:mm:ss`;
 }
 
 const getPartDate = (formatArray: string[], stringArray: string[], marker: string) => {
@@ -198,15 +198,15 @@ export const useImask = (
       format: (date) => format(date, formatProp),
       parse: (string) => parse(string, formatProp, new Date()),
       validate: (string: string) => {
-        const [yyyy, MM, dd, HH, mm, ss] = getPartsDate(string, formatProp, separator);
+        const [yyyy, MM, dd, HH, mm, ss] = getPartsDate(string, formatProp, getDatePickerPropSeparator(separator, formatProp));
 
         if (
           dd &&
           MM &&
           !isValid(
             parse(
-              `${leapYear}${getDatePickerPropSeparator(separator)}${MM}${getDatePickerPropSeparator(separator)}${dd}`,
-              datePickerPropFormatTypeDate,
+              `${leapYear}${getDatePickerPropSeparator(separator, formatProp)}${MM}${getDatePickerPropSeparator(separator, formatProp)}${dd}`,
+              getDatePickerPropFormatTypeDate(separator, undefined, formatProp),
               new Date(),
             ),
           )
@@ -231,8 +231,8 @@ export const useImask = (
           yyyy &&
           !isValid(
             parse(
-              `${yyyy}${getDatePickerPropSeparator(separator)}${MM}${getDatePickerPropSeparator(separator)}${dd}`,
-              datePickerPropFormatTypeDate,
+              `${yyyy}${getDatePickerPropSeparator(separator, formatProp)}${MM}${getDatePickerPropSeparator(separator, formatProp)}${dd}`,
+              getDatePickerPropFormatTypeDate(separator, undefined, formatProp),
               new Date(),
             ),
           )
@@ -255,7 +255,7 @@ export const useImask = (
       },
       // проблема в типах IMask
     }) as unknown) as IMask.InputMask<IMask.MaskedDateOptions>;
-  }, [formatProp, separator, multiplicityHours, multiplicitySeconds, multiplicityMinutes]);
+  }, [formatProp, getDatePickerPropSeparator(separator, formatProp), multiplicityHours, multiplicitySeconds, multiplicityMinutes]);
 
   // Нужно для синхранизации value c Imask,
   // так как value мы можем задать через пропс без самого ввода,
