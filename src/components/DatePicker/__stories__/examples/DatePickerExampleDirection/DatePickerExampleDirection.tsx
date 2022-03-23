@@ -11,12 +11,12 @@ export const DatePickerExampleDirection = () => {
       <DatePicker
         value={value}
         onChange={({ value }) => setValue(value)}
-        direction={"upStartLeft"}
+        direction={"downStartLeft"}
       />
       <DatePicker
         value={value}
         onChange={({ value }) => setValue(value)}
-        direction={"downStartRight"}
+        direction={"upStartLeft"}
       />
     </StoryBookExample>
   );

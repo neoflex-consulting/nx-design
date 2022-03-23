@@ -35,6 +35,8 @@ export const DatePickerExampleAdditionalControls = () => {
   return (
     <DatePicker
       value={value}
+      label={"Допольниктельные кнопки"}
+      labelPosition={"top"}
       type="date-range"
       onChange={({ value }) => setValue(value)}
       renderAdditionalControls={ControlRender}
