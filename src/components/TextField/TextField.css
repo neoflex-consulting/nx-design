@@ -201,10 +201,10 @@
         --clear-button-color: var(--color-control-typo-disable);
         background: var(--color-control-bg-disable);
         border-color: var(--color-control-bg-border-disable);
-        pointer-events: none;
 
         & .TextField-Input {
           color: var(--color-control-typo-disable);
+          cursor: not-allowed;
         }
 
         & .TextField-Input::placeholder {
