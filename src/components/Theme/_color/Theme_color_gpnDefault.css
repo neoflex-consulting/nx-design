@@ -127,9 +127,9 @@ $color-text-white: #ffffff;
   --color-control-typo-link-hover: color($color-base-base h(+1) l(+8%) a(75%)); /* Цвет акцентного текста */
 
   /* Disable */
-  --color-control-bg-disable: color($color-base-path a(30%)); /* Цвет фона неактивного контрола */
-  --color-control-bg-border-disable: color($color-base-phantom a(30%)); /* Цвет фона бордеров неактивного контрола */
-  --color-control-typo-disable: color($color-base-base a(26%)); /* Цвет основного текста неактивного контрола */
+  --color-control-bg-disable: color($color-base-path h(-228) s(-29) l(+62)); /* Цвет фона неактивного контрола */
+  --color-control-bg-border-disable: color($color-base-phantom h(-230) s(-44) l(+64)); /* Цвет фона бордеров неактивного контрола */
+  --color-control-typo-disable: color($color-base-base h(-232) s(-50) l(+52)); /* Цвет основного текста неактивного контрола */
 
     /* /////////////////////////////
   // Цвета тени /////////// */
