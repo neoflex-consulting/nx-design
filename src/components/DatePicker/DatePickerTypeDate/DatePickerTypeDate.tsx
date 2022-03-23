@@ -22,6 +22,7 @@ export const DatePickerTypeDate: DatePickerTypeComponent<'date'> = forwardRef((p
     renderAdditionalControls,
     style,
     showPicker,
+    direction,
     ...otherProps
   } = props;
 
@@ -108,6 +109,7 @@ export const DatePickerTypeDate: DatePickerTypeComponent<'date'> = forwardRef((p
         renderAdditionalControls={renderAdditionalControls}
         zIndex={typeof style?.zIndex === 'number' ? style.zIndex + 1 : undefined}
         onChangeCurrentVisibleDate={setCalendarVisibleDate}
+        direction={direction}
       />
     </>
   );

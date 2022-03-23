@@ -38,6 +38,7 @@ export const DatePickerTypeDateRange: DatePickerTypeComponent<'date-range'> = fo
       onChangeCurrentVisibleDate: onChangeCurrentVisibleDateProp,
       renderAdditionalControls,
       showPicker,
+      direction,
       ...fieldProps
     } = props;
 
@@ -202,6 +203,7 @@ export const DatePickerTypeDateRange: DatePickerTypeComponent<'date-range'> = fo
           onChange={hadleChange}
           renderAdditionalControls={renderAdditionalControls}
           zIndex={typeof style?.zIndex === 'number' ? style.zIndex + 1 : undefined}
+          direction={direction}
         />
       </>
     );
