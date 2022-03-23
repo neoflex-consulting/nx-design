@@ -12,7 +12,9 @@ import {
   DatePickerExampleTypeDateRange,
   DatePickerExampleTypeCalendar,
 } from './examples/DatePickerExampleType/DatePickerExampleType';
-import { DatePickerExampleMulti } from './examples/DatePickerExampleMulti/DatePickerExampleMulti';
+import { DatePickerExampleMulti } from './examples/DatePickerExampleMulti/DatePickerExampleMulti'; import {
+  DatePickerExampleDirection
+} from "./examples/DatePickerExampleDirection/DatePickerExampleDirection";
 
 <!--info
 description: Поле, в котором можно выбрать дату или период.
@@ -43,6 +45,7 @@ import { DatePicker } from 'nx-design/DatePicker';
   - [Обязательность](#обязательность)
   - [Статус](#статус-поля)
   - [Дополнительные контролы](#дополнительные-контролы)
+  - [Раположение](#расположение-поля)
 - [Обработка ошибок](#обработка-ошибок)
 - [Импорт](#импорт)
 - [Список свойств](#свойства)
@@ -324,6 +327,27 @@ export const DatePickerExampleAdditionalControls = () => {
 
 <DatePickerExampleAdditionalControls />
 
+### Раположение
+
+Чтобы изменить расположение календаря относительно поля ввода, используйте свойство `direction`
+
+Значение по-умолчанию: `downStartLeft`
+
+```tsx
+      <DatePicker
+        value={value}
+        onChange={({ value }) => setValue(value)}
+        direction={"upStartLeft"}
+      />
+      <DatePicker
+        value={value}
+        onChange={({ value }) => setValue(value)}
+        direction={"downStartRight"}
+      />
+```
+
+<DatePickerExampleDirection />
+
 ## Обработка ошибок
 
 Вы можете отследить ошибки, которые могут возникнуть у пользователя при вводе даты,
@@ -451,6 +475,7 @@ type DatePickerPropOnError = (
 | [`value?`](#выбор-даты)                                                    | `DatePickerPropValue<TYPE>`                                                                                                                                         | -                     | Выбранная дата или период                                                                                              |
 | [`type?`](#тип-дата-или-период)                                            | `'date'`, `'date-range'`, `'date-time'`                                                                                                                             | `date`                | Тип календаря: выбор даты или выбор периода                                                                            |
 | [`showPicker?`](#формат-календаря)                                         | `'date'`, `'month'`, `'year'`                                                                                                                                       | `date`                | Тип календаря: выбор полной даты (День + Месяц + Год), выбор Месяц + Год или выбор Год                                 |
+| [`direction?`](#расположение-поля)                                         | `'downStartLeft'`, `'upStartLeft'`  , `'downStartRight'` , `'upStartRight'` , `'leftStartUp'` , `'leftStartDown'` , `'rightStartUp'` , `'rightStartDown'`           | `downStartLeft`       | Расположение календаря относительно поля ввода                                                                         |
 | [`label?`](#лейбл)                                                         | `string`                                                                                                                                                            | -                     | Лейбл к полю ввода                                                                                                     |
 | [`labelPosition?`](#лейбл)                                                 | `'top', 'left'`                                                                                                                                                     | `'top'`               | Положение лейбла относительно поля                                                                                     |
 | [`caption?`](#подпись)                                                     | `string`                                                                                                                                                            | -                     | Подпись под полем ввода                                                                                                |

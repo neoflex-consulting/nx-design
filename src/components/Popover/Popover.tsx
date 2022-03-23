@@ -52,6 +52,8 @@ export const directions = [...directionsStartCenter, ...directionsStartEdge];
 
 export type Direction = typeof directions[number];
 
+export type DirectionsStartEdge = typeof directionsStartEdge[number];
+
 export type Position = { x: number; y: number } | undefined;
 
 export type PositioningProps =

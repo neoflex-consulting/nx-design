@@ -12,7 +12,7 @@ import {
   TextFieldPropView,
   TextFieldPropWidth,
 } from '../TextField/TextField';
-import {Direction} from "../Popover/Popover";
+import {DirectionsStartEdge} from "../Popover/Popover";
 
 export const datePickerPropType = ['date', 'date-range', 'date-time'] as const;
 export type DatePickerPropType = typeof datePickerPropType[number];
@@ -120,7 +120,7 @@ export type DatePickerProps<
     multiplicityMinutes?: number;
     multiplicityHours?: number;
     showPicker?: ShowPickerPropType;
-    direction?: Direction;
+    direction?: DirectionsStartEdge;
   },
   HTMLDivElement
 >;

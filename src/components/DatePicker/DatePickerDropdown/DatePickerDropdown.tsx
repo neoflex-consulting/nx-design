@@ -14,7 +14,7 @@ import {
   CalendarPropOnChange,
   CalendarPropType,
 } from '../../Calendar/Calendar';
-import {Direction, directionsStartEdge, Popover} from '../../Popover/Popover';
+import {DirectionsStartEdge, directionsStartEdge, Popover} from '../../Popover/Popover';
 import {
   DatePickerPropCalendarView,
   DatePickerPropDropdownForm,
@@ -44,7 +44,7 @@ export type DatePickerDropdownProps = PropsWithHTMLAttributesAndRef<
     multiplicitySeconds?: number;
     multiplicityMinutes?: number;
     multiplicityHours?: number;
-    direction?: Direction;
+    direction?: DirectionsStartEdge;
   },
   HTMLDivElement
 >;
