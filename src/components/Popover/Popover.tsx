@@ -135,6 +135,13 @@ export const Popover = React.forwardRef<HTMLDivElement, Props>((props, component
   const { current: previousDirection } = previousDirectionRef;
   const [bannedDirections, setBannedDirections] = React.useState<readonly Direction[]>([]);
 
+  useEffect(() => {
+    updateAnchorClientRect()
+    }, [
+      anchorRef !== null && anchorRef !== undefined && anchorRef.current !== null  && anchorRef.current !== undefined && anchorRef.current.getBoundingClientRect().y,
+      anchorRef !== null && anchorRef !== undefined && anchorRef.current !== null  && anchorRef.current !== undefined && anchorRef.current.getBoundingClientRect().x
+    ]);
+
   const resetBannedDirections = () => {
     setBannedDirections((state) => (state.length ? [] : state));
     previousDirectionRef.current = null;
