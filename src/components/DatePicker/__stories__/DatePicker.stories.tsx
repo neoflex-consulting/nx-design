@@ -31,7 +31,7 @@ import {
 } from '../helpers';
 
 import mdx from './DatePicker.docs.mdx';
-import {Direction, directionsStartEdge} from "../../Popover/Popover";
+import {directionsStartEdge} from "../../Popover/Popover";
 
 const localeProp = ['ru', 'en-US', 'zh-CN', 'es'] as const;
 type LocaleProp = typeof localeProp[number];
