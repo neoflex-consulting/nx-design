@@ -41,7 +41,7 @@ export function Playground() {
     cursor,
     display,
     // font,
-    // lineHeight,
+    // heightLine,
     size,
     spacing,
     // fontStyle,
@@ -59,7 +59,7 @@ export function Playground() {
       cursor={cursor || undefined}
       display={display || undefined}
       // font={font}
-      // lineHeight={lineHeight || undefined}
+      // heightLine={heightLine || undefined}
       size={size}
       spacing={spacing || undefined}
       // fontStyle={fontStyle || undefined}

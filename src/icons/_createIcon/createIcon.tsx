@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {forwardRef} from 'react';
 
 import { cnIcon, Icon, IconProps } from '../_Icon/Icon';
 
@@ -11,31 +11,36 @@ type CreateIconArguments = {
   name: string;
 };
 
+function getSvgBySize(
+  size: IconProps['size'] | undefined,
+  l: SizeComponent,
+  m: SizeComponent,
+  s: SizeComponent,
+  xs: SizeComponent,
+  ) {
+  switch (size) {
+    case 'xs':
+      return xs;
+    case 's':
+      return s;
+    case 'm':
+      return m;
+    case 'l':
+      return l;
+    default:
+      return m;
+  }
+}
+
 export function createIcon({ l, m, s, xs, name }: CreateIconArguments) {
-  const IconComponent: React.FC<IconProps> = (props) => {
-    function getSvgBySize(size: IconProps['size'] | undefined) {
-      switch (size) {
-        case 'xs':
-          return xs;
-        case 's':
-          return s;
-        case 'm':
-          return m;
-        case 'l':
-          return l;
-        default:
-          return m;
-      }
-    }
-
-    const Svg: SizeComponent = getSvgBySize(props.size);
-
+  const IconComponent = forwardRef<HTMLSpanElement, IconProps>((props, ref) => {
+    const Svg = getSvgBySize(props.size, l, m, s, xs);
     return (
-      <Icon {...props} className={cnIcon(null, [name, props.className])}>
+      <Icon {...props} className={cnIcon(null, [name, props.className])} ref={ref}>
         <Svg className={cnIcon('Svg')} />
       </Icon>
     );
-  };
+  });
 
   return IconComponent;
 }

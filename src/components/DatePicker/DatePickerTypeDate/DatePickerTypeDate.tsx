@@ -7,7 +7,7 @@ import { useFlag } from '../../../hooks/useFlag/useFlag';
 import { setRef } from '../../../utils/setRef';
 import { DatePickerDropdown } from '../DatePickerDropdown/DatePickerDropdown';
 import { DatePickerFieldTypeDate } from '../DatePickerFieldTypeDate/DatePickerFieldTypeDate';
-import { DatePickerTypeComponent } from '../helpers';
+import {DatePickerTypeComponent, showPickerPropType} from '../helpers';
 import { useCurrentVisibleDate } from '../useCurrentVisibleDate';
 
 export const DatePickerTypeDate: DatePickerTypeComponent<'date'> = forwardRef((props, ref) => {
@@ -22,9 +22,11 @@ export const DatePickerTypeDate: DatePickerTypeComponent<'date'> = forwardRef((p
     renderAdditionalControls,
     style,
     showPicker,
+    direction,
     ...otherProps
   } = props;
 
+  const showPickerDefault = showPicker || showPickerPropType[0];
   const fieldRef = useRef<HTMLDivElement>(null);
   const calendarRef = useRef<HTMLDivElement>(null);
 
@@ -85,14 +87,14 @@ export const DatePickerTypeDate: DatePickerTypeComponent<'date'> = forwardRef((p
         ref={fieldRef}
         onFocus={onFocusHandler}
         style={style}
-        showPicker={showPicker}
+        showPicker={showPickerDefault}
       />
       <DatePickerDropdown
         ref={calendarRef}
         anchorRef={fieldRef}
         isOpen={calendarVisible}
         value={props.value || undefined}
-        type={showPicker}
+        type={showPickerDefault}
         view={calendarView}
         events={events}
         locale={locale}
@@ -107,6 +109,7 @@ export const DatePickerTypeDate: DatePickerTypeComponent<'date'> = forwardRef((p
         renderAdditionalControls={renderAdditionalControls}
         zIndex={typeof style?.zIndex === 'number' ? style.zIndex + 1 : undefined}
         onChangeCurrentVisibleDate={setCalendarVisibleDate}
+        direction={direction}
       />
     </>
   );

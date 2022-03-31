@@ -9,8 +9,6 @@ export const TextExampleHeadingAndParagraph = () => {
       <Typography
         as="div"
         align="left"
-        font="primary"
-        lineHeight="l"
         size="2xl"
         spacing="m"
         transform="uppercase"
@@ -20,7 +18,7 @@ export const TextExampleHeadingAndParagraph = () => {
       >
         Заголовок несет суть
       </Typography>
-      <Typography as="p" align="left" font="mono" lineHeight="s" size="s" view="primary">
+      <Typography as="p" align="left" size="s" view="primary">
         Абзац — это часть текста между отступами с новой строки. Абзац можно назвать микротекстом. В
         общей теме могут выделяться и микротемы. При этом каждый абзац раскрывает свою микротему.
         Что же ещё можно сказать про абзацы? Мы видим, что обычно в абзацах несколько предложений. И

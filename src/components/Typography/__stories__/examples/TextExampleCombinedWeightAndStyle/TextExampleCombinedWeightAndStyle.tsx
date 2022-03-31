@@ -6,7 +6,7 @@ import { Typography } from '../../../Typography';
 export const TextExampleCombinedWeightAndStyle = () => {
   return (
     <div className={cnDocsDecorator('Section')}>
-      <Typography as="div" align="left" font="primary" lineHeight="l" size="m" view="primary" type="p">
+      <Typography as="div" align="left" size="m" view="primary" type="p">
         <Typography as="span">
           Примечание.&nbsp;
         </Typography>

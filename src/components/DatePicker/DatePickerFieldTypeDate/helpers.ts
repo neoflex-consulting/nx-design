@@ -38,7 +38,7 @@ export type DatePickerFieldTypeDateProps = PropsWithHTMLAttributes<
     ariaLabel?: string;
     iconSize?: IconPropSize;
     children?: never;
-    format?: string;
+    formatMask?: string;
     separator?: string;
     minDate?: Date;
     maxDate?: Date;

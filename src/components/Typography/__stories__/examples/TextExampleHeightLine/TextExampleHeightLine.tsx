@@ -4,7 +4,7 @@ import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/D
 import * as wp from '../../../../../uiKit/whitepaper/whitepaper';
 import { Typography} from '../../../Typography';
 
-export const TextExampleLineheight = () => {
+export const TextExampleHeightLine = () => {
   return (
     <div
       className={cnDocsDecorator('Section', [

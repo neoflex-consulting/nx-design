@@ -4,16 +4,19 @@ import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/D
 import { StoryBookExample } from '../../../../../uiKit/components/StoryBookExample/StoryBookExample';
 import { DatePicker } from '../../../DatePicker';
 
-export const DatePickerExampleFormat = () => {
+export const DatePickerExampleDirection = () => {
   const [value, setValue] = useState<Date | null>(null);
   return (
     <StoryBookExample className={cnDocsDecorator('Section')}>
       <DatePicker
-        type="date-time"
-        formatMask="MM/dd/yyyy HH:mm"
-        placeholder="ММ/ДД/ГГГГ ЧЧ:ММ"
         value={value}
         onChange={({ value }) => setValue(value)}
+        direction={"downStartLeft"}
+      />
+      <DatePicker
+        value={value}
+        onChange={({ value }) => setValue(value)}
+        direction={"upStartLeft"}
       />
     </StoryBookExample>
   );

@@ -14,7 +14,7 @@ import {
   CalendarPropOnChange,
   CalendarPropType,
 } from '../../Calendar/Calendar';
-import { Popover } from '../../Popover/Popover';
+import {DirectionsStartEdge, directionsStartEdge, Popover} from '../../Popover/Popover';
 import {
   DatePickerPropCalendarView,
   DatePickerPropDropdownForm,
@@ -44,6 +44,7 @@ export type DatePickerDropdownProps = PropsWithHTMLAttributesAndRef<
     multiplicitySeconds?: number;
     multiplicityMinutes?: number;
     multiplicityHours?: number;
+    direction?: DirectionsStartEdge;
   },
   HTMLDivElement
 >;
@@ -60,11 +61,12 @@ export const DatePickerDropdown: DatePickerDropdownComponent = forwardRef((props
     isOpen,
     className,
     zIndex,
+    direction,
     ...otherProps
   } = props;
 
+  const directionDefault = direction || directionsStartEdge[0];
   const rootRef = useRef<HTMLDivElement>(null);
-
   return (
     <CSSTransition
       in={isOpen}
@@ -78,8 +80,8 @@ export const DatePickerDropdown: DatePickerDropdownComponent = forwardRef((props
         ref={useForkRef([ref, rootRef])}
         anchorRef={anchorRef}
         className={cnDatePickerDropdown({ form }, [className])}
-        direction="downStartLeft"
-        spareDirection="downStartLeft"
+        direction={directionDefault}
+        spareDirection={directionDefault}
         possibleDirections={['downStartLeft', 'upStartLeft', 'downStartRight', 'upStartRight']}
         style={{ zIndex }}
       >

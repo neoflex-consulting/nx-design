@@ -31,6 +31,7 @@ import {
 } from '../helpers';
 
 import mdx from './DatePicker.docs.mdx';
+import {directionsStartEdge} from "../../Popover/Popover";
 
 const localeProp = ['ru', 'en-US', 'zh-CN', 'es'] as const;
 type LocaleProp = typeof localeProp[number];
@@ -46,6 +47,7 @@ const localeMap: Record<LocaleProp, Locale> = {
 const defaultKnobs = () => ({
   type: select('type', datePickerPropType, datePickerPropTypeDefault),
   showPicker: select('showPicker', showPickerPropType, showPickerPropTypeDefault),
+  direction: select('direction', directionsStartEdge, directionsStartEdge[0]),
   form: select('form', textFieldPropForm, textFieldPropFormDefault),
   status: select('status', ['', ...textFieldPropStatus], ''),
   withAdditionalControls: boolean('withAdditionalControls', false),
@@ -53,6 +55,7 @@ const defaultKnobs = () => ({
   caption: text('caption', 'Подпись'),
   placeholder: text('placeholder', ''),
   separator: text('separator', '-'),
+  formatMask: text('formatMask', ''),
   required: boolean('required', false),
   labelPosition: select('labelPosition', ['top', 'left'], 'top'),
   size: select('size', textFieldPropSize, textFieldPropSizeDefault),
@@ -97,7 +100,9 @@ export function Playground() {
     withAdditionalControls,
     placeholder,
     separator,
-    showPicker
+    formatMask,
+    showPicker,
+    direction
   } = defaultKnobs();
 
   const [value, setValue] = useState<DatePickerPropValue<typeof type>>(null);
@@ -115,7 +120,7 @@ export function Playground() {
   }, [type]);
 
   return (
-    <div style={{ maxWidth: 300 }}>
+    <div style={{ left: '600px', maxWidth: 150 }}>
       <DatePicker
         type={type}
         width="full"
@@ -143,8 +148,10 @@ export function Playground() {
         })}
         renderAdditionalControls={withAdditionalControls ? additionalControls : undefined}
         placeholder={placeholder}
+        formatMask={formatMask}
         separator={separator}
         showPicker={showPicker}
+        direction={direction}
       />
     </div>
   );

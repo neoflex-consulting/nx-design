@@ -12,6 +12,7 @@ import {
   TextFieldPropView,
   TextFieldPropWidth,
 } from '../TextField/TextField';
+import {DirectionsStartEdge} from "../Popover/Popover";
 
 export const datePickerPropType = ['date', 'date-range', 'date-time'] as const;
 export type DatePickerPropType = typeof datePickerPropType[number];
@@ -94,7 +95,7 @@ export type DatePickerProps<
     inputRef?: DatePickerPropCalendarInputRef<TYPE>;
     ariaLabel?: string;
     iconSize?: IconPropSize;
-    format?: string;
+    formatMask?: string;
     separator?: string;
     dropdownForm?: DatePickerPropDropdownForm;
     width?: DatePickerPropCalendarWidth<TYPE>;
@@ -119,6 +120,7 @@ export type DatePickerProps<
     multiplicityMinutes?: number;
     multiplicityHours?: number;
     showPicker?: ShowPickerPropType;
+    direction?: DirectionsStartEdge;
   },
   HTMLDivElement
 >;
@@ -160,19 +162,24 @@ export type DatePickerPropOnError = (
       },
 ) => void;
 
-export const getDatePickerPropSeparator = (separator: string | undefined) => {
-  return separator || datePickerPropSeparatorDefault;
+export const getDatePickerPropSeparator = (separator: string | undefined, formatProp: string | undefined) => {
+  if (separator) return separator
+  else if (formatProp && formatProp.match(/[\W]/) !== null) {
+    // @ts-ignore
+    return formatProp.match(/[\W]/)[0]
+  }
+  else return datePickerPropSeparatorDefault
 }
 
-export const getDatePickerPropFormatTypeDate = (separator: string | undefined, showPicker: ShowPickerPropType | undefined) => {
+export const getDatePickerPropFormatTypeDate = (separator: string | undefined, showPicker: ShowPickerPropType | undefined, formatMask: string | undefined) => {
   if (showPicker === showPickerPropType[1]) {
-    return `yyyy${getDatePickerPropSeparator(separator)}MM`;
+    return `yyyy${getDatePickerPropSeparator(separator, formatMask)}MM`;
   }
   if (showPicker === showPickerPropType[2]) {
     return `yyyy`;
   }
   else {
-    return `yyyy${getDatePickerPropSeparator(separator)}MM${getDatePickerPropSeparator(separator)}dd`;
+    return `yyyy${getDatePickerPropSeparator(separator, formatMask)}MM${getDatePickerPropSeparator(separator, formatMask)}dd`;
   }
 }
 

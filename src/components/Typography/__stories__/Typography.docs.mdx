@@ -2,13 +2,12 @@ import { TextExampleAlign } from './examples/TextExampleAlign/TextExampleAlign';
 import { TextExampleCombinedWeightAndStyle } from './examples/TextExampleCombinedWeightAndStyle/TextExampleCombinedWeightAndStyle';
 import { TextExampleHeadingAndParagraph } from './examples/TextExampleHeadingAndParagraph/TextExampleHeadingAndParagraph';
 import { TextExampleLabelAndData } from './examples/TextExampleLabelAndData/TextExampleLabelAndData';
-import { TextExampleLineheight } from './examples/TextExampleLineheight/TextExampleLineheight';
+//import { TextExampleHeightLine } from './examples/TextExampleHeightLine/TextExampleHeightLine';
 import { TextExampleSize } from './examples/TextExampleSize/TextExampleSize';
 import { TextExampleSpacing } from './examples/TextExampleSpacing/TextExampleSpacing';
 import { TextExampleStyle } from './examples/TextExampleStyle/TextExampleStyle';
 import { TextExampleTransform } from './examples/TextExampleTransform/TextExampleTransform';
 import { TextExampleView } from './examples/TextExampleView/TextExampleView';
-import { TextExampleWeight } from './examples/TextExampleWeight/TextExampleWeight';
 
 # Typography
 
@@ -21,7 +20,6 @@ import { TextExampleWeight } from './examples/TextExampleWeight/TextExampleWeigh
   - [Насыщенность](#насыщенность) `weight`
   - [Наклон](#наклон) `fontStyle`
   - [Межбуквенный интервал](#межбуквенный-интервал) `spacing`
-  - [Высота строки](#высота-строки) `lineHeight`
   - [Отображение курсора](#отображение-курсора) `cursor`
   - [Регистр](#регистр) `transform`
   - [Выравнивание](#выравнивание) `align`
@@ -140,30 +138,6 @@ import { TextExampleWeight } from './examples/TextExampleWeight/TextExampleWeigh
 
 <TextExampleSpacing />
 
-### Высота строки
-
-`lineHeight` отвечает за высоту строки.
-
-```ts
-<Typography lineHeight="2xs">
-  «Неофлекс» ведет работу в крупнейших российских банках.
-</Typography>
-<Typography lineHeight="xs">
-  «Неофлекс» ведет работу в крупнейших российских банках.
-</Typography>
-<Typography lineHeight="s">
-  «Неофлекс» ведет работу в крупнейших российских банках.
-</Typography>
-<Typography lineHeight="m">
-  «Неофлекс» ведет работу в крупнейших российских банках.
-</Typography>
-<Typography lineHeight="l">
-  «Неофлекс» ведет работу в крупнейших российских банках.
-</Typography>
-```
-
-<TextExampleLineheight />
-
 ### Регистр
 
 `transform` в значении `uppercase` переводит текст в верхний регистр.
@@ -209,7 +183,6 @@ import { TextExampleWeight } from './examples/TextExampleWeight/TextExampleWeigh
   as="div"
   align="left"
   font="sans"
-  lineHeight="l"
   size="2xl"
   spacing="m"
   transform="uppercase"
@@ -218,7 +191,7 @@ import { TextExampleWeight } from './examples/TextExampleWeight/TextExampleWeigh
 >
   Заголовок несет суть
 </Typography>
-<Typography as="p" align="left" font="serif" lineHeight="s" size="s" view="primary">
+<Typography as="p" align="left" font="serif" size="s" view="primary">
   Абзац — это часть текста между отступами с новой строки. Абзац можно назвать микротекстом.
   В общей теме могут выделяться и микротемы. При этом каждый абзац раскрывает свою
   микротему. Что же ещё можно сказать про абзацы? Мы видим, что обычно в абзацах несколько
@@ -233,22 +206,22 @@ import { TextExampleWeight } from './examples/TextExampleWeight/TextExampleWeigh
 Можно использовать в формах с данными.
 
 ```ts
-<Typography as="div" align="left" font="sans" lineHeight="l" size="s" view="secondary">
+<Typography as="div" align="left" font="sans" size="s" view="secondary">
   ФИО
 </Typography>
-<Typography as="div" align="left" font="serif" lineHeight="l" size="l" view="primary">
+<Typography as="div" align="left" font="serif" size="l" view="primary">
   Иванов Дмитрий Петрович
 </Typography>
-<Typography as="div" align="left" font="sans" lineHeight="l" size="s" view="secondary">
+<Typography as="div" align="left" font="sans" size="s" view="secondary">
   Должность
 </Typography>
-<Typography as="div" align="left" font="serif" lineHeight="l" size="l" view="primary">
+<Typography as="div" align="left" font="serif" size="l" view="primary">
   Инженер по бурению
 </Typography>
-<Typography as="div" align="left" font="sans" lineHeight="l" size="s" view="secondary">
+<Typography as="div" align="left" font="sans" size="s" view="secondary">
   Подразделение
 </Typography>
-<Typography as="div" align="left" font="serif" lineHeight="l" size="l" view="primary">
+<Typography as="div" align="left" font="serif" size="l" view="primary">
   Группа разведки и бурения
 </Typography>
 ```
@@ -262,7 +235,7 @@ import { TextExampleWeight } from './examples/TextExampleWeight/TextExampleWeigh
 интерфейса, прямую речь.
 
 ```ts
-<Typography as="div" align="left" font="sans" lineHeight="l" size="m" view="primary">
+<Typography as="div" align="left" font="sans" size="m" view="primary">
   <Typography as="span" fontStyle="italic">
     Примечание.&nbsp;
   </Typography>
@@ -284,7 +257,6 @@ import { TextExampleWeight } from './examples/TextExampleWeight/TextExampleWeigh
 | ----------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------------- |
 | [`view`](#цвет)                     | `'alert', 'brand', 'ghost', 'link', 'linkMinor', 'primary', 'secondary', 'success', 'warning'`, `primary` | `'primary'`  | Тип и цвет текста                                                         |
 | [`font`](#гарнитура)                | `'primary', 'mono';`                                                                                      | —            | Гарнитура                                                                 |
-| [`lineHeight`](#высота-строки)      | `'2xs', 'xs', 's', 'm', 'l'`                                                                              | `'m'`        | Высота строки                                                             |
 | [`spacing`](#межбуквенный-интервал) | `'xs', 's', 'm', 'l'`                                                                                     | —            | Межбуквенное расстояние                                                   |
 | [`fontStyle`](#начертание)          | `italic`                                                                                                  | —            | Начертание                                                                |
 | [`weight`](#насыщенность)           | `'black', 'bold', 'light', 'regular', 'semibold', 'thin'`                                                 | —            | Насыщенность                                                              |
@@ -317,7 +289,7 @@ export function App() {
       cursor = 'default'
       display = 'block'
       font = 'mono'
-      lineHeight = '2xs'
+
       size = 'm'
       spacing = 'xs'
       view = 'primary'
