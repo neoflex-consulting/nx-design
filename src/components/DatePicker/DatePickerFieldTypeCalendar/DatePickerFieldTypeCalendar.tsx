@@ -39,7 +39,8 @@ export const DatePickerFieldTypeCalendar = React.forwardRef<
     ...otherProps
   } = props;
 
-  const formatProp = getDatePickerPropFormatTypeCalendar(separator, formatMask)
+  const formatProp = getDatePickerPropFormatTypeCalendar(formatMask)
+  const separatorProp = getDatePickerPropSeparator(formatMask);
   const inputRef = useRef<HTMLInputElement>(null);
   const onChangeRef = useMutableRef(onChange);
 
@@ -47,7 +48,7 @@ export const DatePickerFieldTypeCalendar = React.forwardRef<
     value && isValid(value) ? format(value, formatProp) : null,
   );
 
-  const formatParts = useMemo(() => getParts(formatProp, getDatePickerPropSeparator(separator, formatMask)), [formatProp, getDatePickerPropSeparator(separator, formatMask)]);
+  const formatParts = useMemo(() => getParts(formatProp, separatorProp), [formatProp, separatorProp]);
   const handleChange = useCallback(
     (e: Event, stringValue: string | null) => {
       setStringValue(stringValue);
@@ -59,14 +60,14 @@ export const DatePickerFieldTypeCalendar = React.forwardRef<
           return;
         }
 
-        const partsDate = getPartsDate(stringValue, formatProp, getDatePickerPropSeparator(separator, formatMask));
+        const partsDate = getPartsDate(stringValue, formatProp, separatorProp);
         const [yyyy, MM, dd, HH, mm, ss] = partsDate;
 
         if (partsDate.filter((item) => !!item).length === formatParts.length) {
           const date = parse(
-            `${yyyy}${getDatePickerPropSeparator(separator, formatMask)}${MM}${getDatePickerPropSeparator(separator, formatMask)}${dd} ${HH ||
+            `${yyyy}${separatorProp}${MM}${separatorProp}${dd} ${HH ||
               '00'}:${mm || '00'}:${ss || '00'}`,
-            getDatePickerPropFormatTypeCalendar(separator, formatMask),
+            formatProp,
             new Date(),
           );
           if (!isWithinInterval(date, { start: minDate, end: maxDate })) {
@@ -91,12 +92,12 @@ export const DatePickerFieldTypeCalendar = React.forwardRef<
         }
       }
     },
-    [minDate?.getTime(), maxDate?.getTime(), formatProp, getDatePickerPropSeparator(separator, formatMask)],
+    [minDate?.getTime(), maxDate?.getTime(), formatProp, separatorProp],
   );
 
   useImask(
     formatProp,
-    getDatePickerPropSeparator(separator, formatMask),
+    separatorProp,
     multiplicityHours,
     multiplicitySeconds,
     multiplicityMinutes,

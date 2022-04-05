@@ -25,7 +25,7 @@ import {
 } from '../../TextField/TextField';
 import {
   datePickerErrorTypes,
-  DatePickerPropOnError,
+  DatePickerPropOnError, datePickerPropSeparatorDefault,
   getDatePickerPropFormatTypeDate,
   getDatePickerPropSeparator,
   getTimeEnum,
@@ -77,8 +77,11 @@ export type DatePickerFieldTypeCalendarProps = PropsWithHTMLAttributes<
   HTMLDivElement
 >;
 
-export const getDatePickerPropFormatTypeCalendar = (separator: string | undefined, formatMask: string | undefined) => {
-    return `yyyy${getDatePickerPropSeparator(separator, formatMask)}MM${getDatePickerPropSeparator(separator, formatMask)}dd HH:mm:ss`;
+export const getDatePickerPropFormatTypeCalendar = (formatMask: string | undefined) => {
+  if (formatMask)
+    return formatMask
+  else
+    return `yyyy${datePickerPropSeparatorDefault}MM${datePickerPropSeparatorDefault}dd HH:mm:ss`;
 }
 
 const getPartDate = (formatArray: string[], stringArray: string[], marker: string) => {
@@ -198,14 +201,14 @@ export const useImask = (
       format: (date) => format(date, formatProp),
       parse: (string) => parse(string, formatProp, new Date()),
       validate: (string: string) => {
-        const [yyyy, MM, dd, HH, mm, ss] = getPartsDate(string, formatProp, getDatePickerPropSeparator(separator, formatProp));
+        const [yyyy, MM, dd, HH, mm, ss] = getPartsDate(string, formatProp, getDatePickerPropSeparator(formatProp));
 
         if (
           dd &&
           MM &&
           !isValid(
             parse(
-              `${leapYear}${getDatePickerPropSeparator(separator, formatProp)}${MM}${getDatePickerPropSeparator(separator, formatProp)}${dd}`,
+              `${leapYear}${getDatePickerPropSeparator(formatProp)}${MM}${getDatePickerPropSeparator(separator, formatProp)}${dd}`,
               getDatePickerPropFormatTypeDate(separator, undefined, formatProp),
               new Date(),
             ),

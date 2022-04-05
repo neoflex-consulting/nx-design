@@ -162,31 +162,40 @@ export type DatePickerPropOnError = (
       },
 ) => void;
 
-export const getDatePickerPropSeparator = (separator: string | undefined, formatProp: string | undefined) => {
-  if (separator) return separator
-  else if (formatProp && formatProp.match(/[\W]/) !== null) {
+export const getDatePickerPropSeparator = (formatProp: string | undefined) => {
+  // if (separator) return separator
+  if (formatProp && formatProp.match(/[\W]/) !== null) {
     // @ts-ignore
     return formatProp.match(/[\W]/)[0]
   }
   else return datePickerPropSeparatorDefault
 }
 
-export const getDatePickerPropFormatTypeDate = (separator: string | undefined, showPicker: ShowPickerPropType | undefined, formatMask: string | undefined) => {
-  if (showPicker === showPickerPropType[1]) {
-    return `yyyy${getDatePickerPropSeparator(separator, formatMask)}MM`;
+export const getDatePickerPropFormatTypeDate = (showPicker: ShowPickerPropType | undefined, formatMask: string | undefined) => {
+   if (formatMask) {
+    return formatMask;
   }
-  if (showPicker === showPickerPropType[2]) {
+  else if (showPicker === showPickerPropType[1]) {
+    return `yyyy${datePickerPropSeparatorDefault}MM`;
+  }
+  else if (showPicker === showPickerPropType[2]) {
     return `yyyy`;
   }
   else {
-    return `yyyy${getDatePickerPropSeparator(separator, formatMask)}MM${getDatePickerPropSeparator(separator, formatMask)}dd`;
+    return datePickerPropFormatTypeDate;
   }
 }
 
 export const datePickerPropSeparatorDefault = '-';
 export const datePickerPropFormatTypeDate = `yyyy${datePickerPropSeparatorDefault}MM${datePickerPropSeparatorDefault}dd`;
+export const datePickerPropFormatTypeMonth = `yyyy${datePickerPropSeparatorDefault}MM`;
+export const datePickerPropFormatTypeYear = `yyyy`;
 
 export const datePickerPropFormatTypeCalendar = `${datePickerPropFormatTypeDate} HH:mm:ss`;
+
+export const getDatePickerPropFormat = (separator: string | undefined) => {
+  return `yyyy${separator}MM${separator}dd`;
+}
 
 export const normalizeRangeValue = (dateRange: DateRange): DateRange => {
   if (dateRange[0] && dateRange[1] && dateRange[0]?.getTime() > dateRange[1]?.getTime()) {
