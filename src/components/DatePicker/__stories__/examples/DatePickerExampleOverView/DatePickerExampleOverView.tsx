@@ -65,15 +65,16 @@ export const DatePickerExampleOverView = () => {
         className={cnDocsDecorator('Section', [wp.tplGrid({ 'ratio': '1-1-1', 'col-gap': 'full' })])}
       >
         <div className={cnDocsExample()}>
-          <DatePicker labelPosition={"top"} label={"Separator = /"} placeholder={'yyyy/MM/dd'} separator="/" value={value7} onChange={({ value }) => setValue7(value)} />
+          <DatePicker labelPosition={"top"} label={"FormatMask = yyyy/MM/dd"} placeholder={'yyyy/MM/dd'} formatMask="yyyy/MM/dd" value={value7} onChange={({ value }) => setValue7(value)} />
         </div>
         <div className={cnDocsExample()}>
-          <DatePicker labelPosition={"top"} label={"Separator = ."} placeholder={'yyyy.MM.dd'} separator="." value={value8} onChange={({ value }) => setValue8(value)} />
+          <DatePicker labelPosition={"top"} label={"FormatMask = dd>MM>yyyy"} placeholder={'dd>MM>yyyy'} formatMask="dd>MM>yyyy" value={value8} onChange={({ value }) => setValue8(value)} />
         </div>
         <div className={cnDocsExample()}>
-          <DatePicker labelPosition={"top"} label={"Separator = >"} placeholder={'yyyy>MM>dd'} separator=">" value={value9} onChange={({ value }) => setValue9(value)} />
+          <DatePicker labelPosition={"top"} label={"FormatMask = MM.yyyy.dd"} placeholder={'MM.yyyy.dd'} formatMask="MM.yyyy.dd" value={value9} onChange={({ value }) => setValue9(value)} />
         </div>
       </div>
+
       <div
         className={cnDocsDecorator('Section', [wp.tplGrid({ 'ratio': '1', 'col-gap': 'full' })])}
       >

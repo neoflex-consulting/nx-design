@@ -1,14 +1,11 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { format, isValid, isWithinInterval, parse } from 'date-fns';
+import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
+import {format, isValid, isWithinInterval, parse} from 'date-fns';
 
-import { useForkRef } from '../../../hooks/useForkRef/useForkRef';
-import { useMutableRef } from '../../../hooks/useMutableRef/useMutableRef';
-import { maxDateDefault, minDateDefault } from '../../../utils/date';
-import { TextField } from '../../TextField/TextField';
-import {
-  datePickerErrorTypes,
-  getDatePickerPropSeparator
-} from '../helpers';
+import {useForkRef} from '../../../hooks/useForkRef/useForkRef';
+import {useMutableRef} from '../../../hooks/useMutableRef/useMutableRef';
+import {maxDateDefault, minDateDefault} from '../../../utils/date';
+import {TextField} from '../../TextField/TextField';
+import {datePickerErrorTypes, getDatePickerPropSeparator} from '../helpers';
 
 import {
   DatePickerFieldTypeCalendarProps,

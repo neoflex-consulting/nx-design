@@ -8,10 +8,7 @@ import {leapYear, maxDateDefault, minDateDefault} from '../../../utils/date';
 import {TextField} from '../../TextField/TextField';
 import {
   datePickerErrorTypes,
-  datePickerPropFormatTypeDate,
-  datePickerPropFormatTypeMonth,
-  datePickerPropFormatTypeYear,
-  datePickerPropSeparatorDefault, getDatePickerPropFormat,
+  getDatePickerPropFormat,
   getDatePickerPropFormatTypeDate,
   getDatePickerPropSeparator,
   showPickerPropType

@@ -1,5 +1,5 @@
-import { IconComponent, IconPropSize } from '../../../icons/_Icon/Icon';
-import { PropsWithHTMLAttributes } from '../../../utils/types/PropsWithHTMLAttributes';
+import {IconComponent, IconPropSize} from '../../../icons/_Icon/Icon';
+import {PropsWithHTMLAttributes} from '../../../utils/types/PropsWithHTMLAttributes';
 import {
   TextFieldPropForm,
   TextFieldPropSize,
