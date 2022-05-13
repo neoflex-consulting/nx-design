@@ -115,7 +115,6 @@ export function Playground() {
 
   useEffect(() => {
     setValue(null);
-    setValue1(null);
   }, [type]);
 
   return (
