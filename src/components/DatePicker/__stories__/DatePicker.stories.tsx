@@ -104,6 +104,7 @@ export function Playground() {
   } = defaultKnobs();
 
   const [value, setValue] = useState<DatePickerPropValue<typeof type>>(null);
+  const [value1, setValue1] = useState<DatePickerPropValue<typeof type>>(null);
 
   const currentDay = new Date();
 
@@ -115,6 +116,7 @@ export function Playground() {
 
   useEffect(() => {
     setValue(null);
+    setValue1(null);
   }, [type]);
 
   return (
@@ -133,6 +135,37 @@ export function Playground() {
         disabled={disabled}
         size={size}
         onChange={({ value }) => setValue(value)}
+        rightSide={icon}
+        events={events}
+        locale={getSizeByMap(localeMap, locale)}
+        calendarView={calendarView}
+        dropdownForm={dropdownForm}
+        minDate={new Date(minDate)}
+        maxDate={new Date(maxDate)}
+        {...(type === 'date-range' && {
+          endFieldRightSide: icon,
+          startFieldRightSide: icon,
+        })}
+        renderAdditionalControls={withAdditionalControls ? additionalControls : undefined}
+        placeholder={placeholder}
+        formatMask={formatMask}
+        showPicker={showPicker}
+        direction={direction}
+      />
+      <DatePicker
+        type={type}
+        width="full"
+        form={form}
+        label={label}
+        labelPosition={labelPosition}
+        caption={caption}
+        required={required}
+        value={value1}
+        status={status || undefined}
+        view={view}
+        disabled={disabled}
+        size={size}
+        onChange={({ value }) => setValue1(value)}
         rightSide={icon}
         events={events}
         locale={getSizeByMap(localeMap, locale)}

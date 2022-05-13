@@ -1,6 +1,6 @@
 import { RefObject, useEffect } from 'react';
 
-export type ClickOutsideHandler = (event: MouseEvent) => void;
+export type ClickOutsideHandler = (event: MouseEvent | KeyboardEvent) => void;
 
 type UseClickOutsideProps = {
   isActive: boolean;
@@ -29,6 +29,16 @@ export function useClickOutside({
     };
     document.addEventListener('mousedown', handleClick);
 
-    return () => document.removeEventListener('mousedown', handleClick);
+    const handleClickTab = (event: KeyboardEvent) => {
+      if (event.code == 'Tab') {
+        handler(event);
+      }
+    };
+    document.addEventListener('keydown', handleClickTab);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClick);
+      document.removeEventListener('keydown', handleClickTab);
+    }
   }, [isActive, ignoreClicksInsideRefs, handler]);
 }
