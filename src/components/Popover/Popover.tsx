@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useEffect, useMemo} from 'react';
 
 import { ClickOutsideHandler, useClickOutside } from '../../hooks/useClickOutside/useClickOutside';
 import { useComponentSize } from '../../hooks/useComponentSize/useComponentSize';
@@ -102,7 +102,7 @@ const ContextConsumer: React.FC<{
   useClickOutside({
     isActive: !!onClickOutside,
     ignoreClicksInsideRefs: [...(ignoreClicksInsideRefs || []), ...(refs || [])],
-    handler: (event: MouseEvent) => onClickOutside?.(event),
+    handler: (event: MouseEvent | KeyboardEvent) => onClickOutside?.(event),
   });
 
   return <>{children}</>;
@@ -135,12 +135,10 @@ export const Popover = React.forwardRef<HTMLDivElement, Props>((props, component
   const { current: previousDirection } = previousDirectionRef;
   const [bannedDirections, setBannedDirections] = React.useState<readonly Direction[]>([]);
 
-  useEffect(() => {
-    updateAnchorClientRect()
-    }, [
-      anchorRef !== null && anchorRef !== undefined && anchorRef.current !== null  && anchorRef.current !== undefined && anchorRef.current.getBoundingClientRect().y,
-      anchorRef !== null && anchorRef !== undefined && anchorRef.current !== null  && anchorRef.current !== undefined && anchorRef.current.getBoundingClientRect().x
-    ]);
+  useMemo(()=> setAnchorClientRect(anchorRef?.current?.getBoundingClientRect()), [
+    anchorRef !== null && anchorRef !== undefined && anchorRef.current !== null  && anchorRef.current !== undefined && anchorRef.current.getBoundingClientRect().y,
+    anchorRef !== null && anchorRef !== undefined && anchorRef.current !== null  && anchorRef.current !== undefined && anchorRef.current.getBoundingClientRect().x
+  ])
 
   const resetBannedDirections = () => {
     setBannedDirections((state) => (state.length ? [] : state));
