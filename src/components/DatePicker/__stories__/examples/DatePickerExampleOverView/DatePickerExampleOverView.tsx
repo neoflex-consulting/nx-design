@@ -1,21 +1,7 @@
 import React, {useState} from 'react';
 
 import {DatePickerExampleAdditionalControls} from "../DatePickerExampleAdditionalControls/DatePickerExampleAdditionalControls";
-import {DatePickerExampleCaption} from "../DatePickerExampleCaption/DatePickerExampleCaption";
-import {DatePickerExampleFormat} from "../DatePickerExampleFormat/DatePickerExampleFormat";
-import {DatePickerExampleLabel} from "../DatePickerExampleLabel/DatePickerExampleLabel";
-import {DatePickerExampleMulti} from "../DatePickerExampleMulti/DatePickerExampleMulti";
-import {DatePickerExampleOnError} from "../DatePickerExampleOnError/DatePickerExampleOnError";
-import {DatePickerExampleRequired} from "../DatePickerExampleRequired/DatePickerExampleRequired";
-import {DatePickerExampleStatus} from "../DatePickerExampleStatus/DatePickerExampleStatus";
-import {
-  DatePickerExampleTypeCalendar,
-  DatePickerExampleTypeDate,
-  DatePickerExampleTypeDateRange
-} from "../DatePickerExampleType/DatePickerExampleType";
-import {DatePickerExampleValue} from "../DatePickerExampleValue/DatePickerExampleValue";
 import {cnDocsExample} from "../../../../../uiKit/components/DocsExample/DocsExample";
-import {StoryBookExample} from "../../../../../uiKit/components/StoryBookExample/StoryBookExample";
 import {cnDocsDecorator} from "../../../../../uiKit/components/DocsDecorator/DocsDecorator";
 import {DatePicker} from "../../../DatePicker";
 import * as wp from "../../../../../uiKit/whitepaper/whitepaper";

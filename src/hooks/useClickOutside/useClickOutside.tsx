@@ -1,6 +1,6 @@
 import { RefObject, useEffect } from 'react';
 
-export type ClickOutsideHandler = (event: MouseEvent | KeyboardEvent) => void;
+export type ClickOutsideHandler = (event: MouseEvent) => void;
 
 type UseClickOutsideProps = {
   isActive: boolean;
@@ -29,8 +29,9 @@ export function useClickOutside({
     };
     document.addEventListener('mousedown', handleClick);
 
-    const handleClickTab = (event: KeyboardEvent) => {
-      if (event.code == 'Tab') {
+    const handleClickTab = (event: any) => {
+      console.log(event.code)
+      if (event.code === 'Tab' || event.code === 'Enter' || event.code === 'NumpadEnter') {
         handler(event);
       }
     };
