@@ -32,6 +32,7 @@ export const DatePickerFieldTypeDate = React.forwardRef<
     value,
     inputRef: inputRefProp,
     rightSide,
+    onClose,
     ...otherProps
   } = props;
 
@@ -71,6 +72,7 @@ export const DatePickerFieldTypeDate = React.forwardRef<
             onChange({ e, value: null });
             return;
           }
+          if (onClose) onClose();
           onChange({ e, value: date });
         }
         else if (MM && yyyy && showPicker === showPickerPropType[1]) {
@@ -86,6 +88,7 @@ export const DatePickerFieldTypeDate = React.forwardRef<
             onChange({ e, value: null });
             return;
           }
+          if (onClose) onClose();
           onChange({ e, value: date });
         }
         else if (yyyy && showPicker === showPickerPropType[2]) {
@@ -100,6 +103,7 @@ export const DatePickerFieldTypeDate = React.forwardRef<
             onChange({ e, value: null });
             return;
           }
+          if (onClose) onClose();
           onChange({ e, value: date });
         }
         else {

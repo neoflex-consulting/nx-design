@@ -325,7 +325,28 @@ export const DatePickerExampleAdditionalControls = () => {
 
 <DatePickerExampleAdditionalControls />
 
-### Раположение
+### Расположение
+
+Чтобы изменить расположение календаря относительно поля ввода, используйте свойство `direction`
+
+Значение по-умолчанию: `downStartLeft`
+
+```tsx
+      <DatePicker
+        value={value}
+        onChange={({ value }) => setValue(value)}
+        direction={"upStartLeft"}
+      />
+      <DatePicker
+        value={value}
+        onChange={({ value }) => setValue(value)}
+        direction={"downStartRight"}
+      />
+```
+
+<DatePickerExampleDirection />
+
+### Расположение
 
 Чтобы изменить расположение календаря относительно поля ввода, используйте свойство `direction`
 

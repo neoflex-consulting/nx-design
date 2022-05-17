@@ -30,7 +30,6 @@ export function useClickOutside({
     document.addEventListener('mousedown', handleClick);
 
     const handleClickTab = (event: any) => {
-      console.log(event.code)
       if (event.code === 'Tab' || event.code === 'Enter' || event.code === 'NumpadEnter') {
         handler(event);
       }

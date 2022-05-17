@@ -47,6 +47,7 @@ export type DatePickerFieldTypeDateProps = PropsWithHTMLAttributes<
     caption?: string;
     labelPosition?: 'top' | 'left';
     showPicker?: ShowPickerPropType;
+    onClose?: () => void;
   },
   HTMLDivElement
 >;
