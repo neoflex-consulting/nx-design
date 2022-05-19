@@ -51,6 +51,12 @@ export const DatePickerTypeDate: DatePickerTypeComponent<'date'> = forwardRef((p
   }, [ref, fieldRef]);
 
   useEffect(() => {
+    console.log('пришли setCalendarVisible.off()','calendarVisible', calendarVisible)
+    console.log('x', fieldRef?.current?.getBoundingClientRect().x, 'y', fieldRef?.current?.getBoundingClientRect().y)
+    calendarVisible ? setCalendarVisible.off():setCalendarVisible.on();
+  }, [fieldRef?.current?.getBoundingClientRect().x, fieldRef?.current?.getBoundingClientRect().y]);
+
+  useEffect(() => {
     if (props.value && props.calendarView === 'classic' && calendarVisibleDate) {
       const newVisibleDate = startOfMonth(props.value);
       if (newVisibleDate.getTime() !== calendarVisibleDate.getTime()) {

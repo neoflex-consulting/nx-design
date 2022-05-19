@@ -104,6 +104,7 @@ export function Playground() {
   } = defaultKnobs();
 
   const [value, setValue] = useState<DatePickerPropValue<typeof type>>(null);
+  const [tu, setTu] = useState<boolean>(true);
 
   const currentDay = new Date();
 
@@ -116,6 +117,10 @@ export function Playground() {
   useEffect(() => {
     setValue(null);
   }, [type]);
+
+  const tut = () => {
+    window.setTimeout(setTu,2000)
+  }
 
   return (
     <div style={{ left: '600px', maxWidth: 150 }}>
