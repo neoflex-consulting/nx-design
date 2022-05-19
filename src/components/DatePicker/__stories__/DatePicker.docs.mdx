@@ -103,17 +103,14 @@ const DatePickerExampleTypeCalendar = () => {
 
 ## Формат даты
 
-За формат даты отвечают два свойства:
+За формат даты отвечает свойство:
 
 - `formatMask` — маска для отображения даты,
-- `separator` — разделитель, который нужно использовать.
 
 `formatMask` по умолчанию зависит от `type`:
 
 - `type=date` или `type=date-range` — `formatMask='yyyy-MM-dd'`
 - `type=date-time` — `formatMask='yyyy-MM-dd HH:mm:ss'`
-
-`separator` — точка `'.'`
 
 Разделитель между датой и временем нельзя поменять, это всегда пробел `' '`
 
@@ -328,7 +325,28 @@ export const DatePickerExampleAdditionalControls = () => {
 
 <DatePickerExampleAdditionalControls />
 
-### Раположение
+### Расположение
+
+Чтобы изменить расположение календаря относительно поля ввода, используйте свойство `direction`
+
+Значение по-умолчанию: `downStartLeft`
+
+```tsx
+      <DatePicker
+        value={value}
+        onChange={({ value }) => setValue(value)}
+        direction={"upStartLeft"}
+      />
+      <DatePicker
+        value={value}
+        onChange={({ value }) => setValue(value)}
+        direction={"downStartRight"}
+      />
+```
+
+<DatePickerExampleDirection />
+
+### Расположение
 
 Чтобы изменить расположение календаря относительно поля ввода, используйте свойство `direction`
 
@@ -512,7 +530,6 @@ type DatePickerPropOnError = (
 | `placeholder?`                                                             | `string`                                                                                                                                                            | -                     | Подсказка в поле, см. [TextField](?path=/docs/components-textfield--playground)                                        |
 | `inputRef?`                                                                | `React.Ref<HTMLInputElement>`                                                                                                                                       | -                     | Ссылка на DOM-элемент поля ввода, недоступна при выборе диапазона дат                                                  |
 | [`format?`](#формат-даты)                                                  | `string`                                                                                                                                                            | `'dd.MM.yyyy'`        | Формат даты                                                                                                            |
-| [`separator?`](#формат-даты)                                               | `string`                                                                                                                                                            | `'.'`                 | Разделитель для даты, используется вместе с форматом                                                                   |
 | `dropdownForm?`                                                            | `'default', 'brick', 'round'`                                                                                                                                       | `'default'`           | Форма календаря                                                                                                        |
 | `leftSide?`                                                                | `string`, `IconComponent`                                                                                                                                           | -                     | Иконка или текст слева, внутри поля, см. [TextField](?path=/docs/components-textfield--playground)                     |
 | `rightSide?`                                                               | `string`, `IconComponent`                                                                                                                                           | -                     | Иконка или текст справа, внутри поля, см. [TextField](?path=/docs/components-textfield--playground)                    |

@@ -29,6 +29,16 @@ export function useClickOutside({
     };
     document.addEventListener('mousedown', handleClick);
 
-    return () => document.removeEventListener('mousedown', handleClick);
+    const handleClickTab = (event: any) => {
+      if (event.code === 'Tab' || event.code === 'Enter' || event.code === 'NumpadEnter') {
+        handler(event);
+      }
+    };
+    document.addEventListener('keydown', handleClickTab);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClick);
+      document.removeEventListener('keydown', handleClickTab);
+    }
   }, [isActive, ignoreClicksInsideRefs, handler]);
 }

@@ -54,7 +54,6 @@ const defaultKnobs = () => ({
   label: text('label', 'Заголовок'),
   caption: text('caption', 'Подпись'),
   placeholder: text('placeholder', ''),
-  separator: text('separator', '-'),
   formatMask: text('formatMask', ''),
   required: boolean('required', false),
   labelPosition: select('labelPosition', ['top', 'left'], 'top'),
@@ -99,7 +98,6 @@ export function Playground() {
     maxDate,
     withAdditionalControls,
     placeholder,
-    separator,
     formatMask,
     showPicker,
     direction
@@ -149,7 +147,6 @@ export function Playground() {
         renderAdditionalControls={withAdditionalControls ? additionalControls : undefined}
         placeholder={placeholder}
         formatMask={formatMask}
-        separator={separator}
         showPicker={showPicker}
         direction={direction}
       />

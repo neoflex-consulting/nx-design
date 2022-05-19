@@ -1,5 +1,5 @@
-import { IconComponent, IconPropSize } from '../../../icons/_Icon/Icon';
-import { PropsWithHTMLAttributes } from '../../../utils/types/PropsWithHTMLAttributes';
+import {IconComponent, IconPropSize} from '../../../icons/_Icon/Icon';
+import {PropsWithHTMLAttributes} from '../../../utils/types/PropsWithHTMLAttributes';
 import {
   TextFieldPropForm,
   TextFieldPropSize,
@@ -47,6 +47,7 @@ export type DatePickerFieldTypeDateProps = PropsWithHTMLAttributes<
     caption?: string;
     labelPosition?: 'top' | 'left';
     showPicker?: ShowPickerPropType;
+    onClose?: () => void;
   },
   HTMLDivElement
 >;

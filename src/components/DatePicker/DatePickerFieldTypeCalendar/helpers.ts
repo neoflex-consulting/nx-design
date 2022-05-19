@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, {useEffect, useRef} from 'react';
 import {
   addHours,
   addMinutes,
@@ -12,10 +12,10 @@ import {
 } from 'date-fns';
 import IMask from 'imask';
 
-import { IconComponent, IconPropSize } from '../../../icons/_Icon/Icon';
-import { leapYear } from '../../../utils/date';
-import { PropsWithHTMLAttributes } from '../../../utils/types/PropsWithHTMLAttributes';
-import { getLabelHours, getLabelMinutes, getLabelSeconds } from '../../Calendar/helpers';
+import {IconComponent, IconPropSize} from '../../../icons/_Icon/Icon';
+import {leapYear} from '../../../utils/date';
+import {PropsWithHTMLAttributes} from '../../../utils/types/PropsWithHTMLAttributes';
+import {getLabelHours, getLabelMinutes, getLabelSeconds} from '../../Calendar/helpers';
 import {
   TextFieldPropForm,
   TextFieldPropSize,
@@ -26,8 +26,8 @@ import {
 import {
   datePickerErrorTypes,
   DatePickerPropOnError,
+  datePickerPropSeparatorDefault,
   getDatePickerPropFormatTypeDate,
-  getDatePickerPropSeparator,
   getTimeEnum,
   ShowPickerPropType,
 } from '../helpers';
@@ -77,8 +77,11 @@ export type DatePickerFieldTypeCalendarProps = PropsWithHTMLAttributes<
   HTMLDivElement
 >;
 
-export const getDatePickerPropFormatTypeCalendar = (separator: string | undefined, formatMask: string | undefined) => {
-    return `yyyy${getDatePickerPropSeparator(separator, formatMask)}MM${getDatePickerPropSeparator(separator, formatMask)}dd HH:mm:ss`;
+export const getDatePickerPropFormatTypeCalendar = (formatMask: string | undefined) => {
+  if (formatMask)
+    return formatMask
+  else
+    return `yyyy${datePickerPropSeparatorDefault}MM${datePickerPropSeparatorDefault}dd HH:mm:ss`;
 }
 
 const getPartDate = (formatArray: string[], stringArray: string[], marker: string) => {
@@ -198,15 +201,15 @@ export const useImask = (
       format: (date) => format(date, formatProp),
       parse: (string) => parse(string, formatProp, new Date()),
       validate: (string: string) => {
-        const [yyyy, MM, dd, HH, mm, ss] = getPartsDate(string, formatProp, getDatePickerPropSeparator(separator, formatProp));
+        const [yyyy, MM, dd, HH, mm, ss] = getPartsDate(string, formatProp, separator);
 
         if (
           dd &&
           MM &&
           !isValid(
             parse(
-              `${leapYear}${getDatePickerPropSeparator(separator, formatProp)}${MM}${getDatePickerPropSeparator(separator, formatProp)}${dd}`,
-              getDatePickerPropFormatTypeDate(separator, undefined, formatProp),
+              `${leapYear}${separator}${MM}${separator}${dd}`,
+              getDatePickerPropFormatTypeDate( undefined, formatProp),
               new Date(),
             ),
           )
@@ -231,8 +234,8 @@ export const useImask = (
           yyyy &&
           !isValid(
             parse(
-              `${yyyy}${getDatePickerPropSeparator(separator, formatProp)}${MM}${getDatePickerPropSeparator(separator, formatProp)}${dd}`,
-              getDatePickerPropFormatTypeDate(separator, undefined, formatProp),
+              `${yyyy}${separator}${MM}${separator}${dd}`,
+              getDatePickerPropFormatTypeDate(undefined, formatProp),
               new Date(),
             ),
           )
@@ -255,7 +258,7 @@ export const useImask = (
       },
       // проблема в типах IMask
     }) as unknown) as IMask.InputMask<IMask.MaskedDateOptions>;
-  }, [formatProp, getDatePickerPropSeparator(separator, formatProp), multiplicityHours, multiplicitySeconds, multiplicityMinutes]);
+  }, [formatProp, separator, multiplicityHours, multiplicitySeconds, multiplicityMinutes]);
 
   // Нужно для синхранизации value c Imask,
   // так как value мы можем задать через пропс без самого ввода,
