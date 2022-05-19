@@ -1,6 +1,6 @@
 import './DatePickerDropdown.css';
 
-import React, { forwardRef, useRef } from 'react';
+import React, {forwardRef, useRef} from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 import { useForkRef } from '../../../hooks/useForkRef/useForkRef';
