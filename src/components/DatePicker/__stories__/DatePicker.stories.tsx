@@ -104,7 +104,6 @@ export function Playground() {
   } = defaultKnobs();
 
   const [value, setValue] = useState<DatePickerPropValue<typeof type>>(null);
-  const [tu, setTu] = useState<boolean>(true);
 
   const currentDay = new Date();
 
