@@ -26,12 +26,14 @@ export const usePopoverReposition = ({
   React.useEffect(() => {
     if (isActive) {
       window.addEventListener('resize', onRequestReposition);
+      window.addEventListener('transitionstart', onRequestReposition);
 
       const allParents = scrollAnchorRef?.current ? getAllParents(scrollAnchorRef.current) : [];
       allParents.forEach((parentEl) => parentEl.addEventListener('scroll', onRequestReposition));
 
       return () => {
         window.removeEventListener('resize', onRequestReposition);
+        window.removeEventListener('transitionstart', onRequestReposition);
 
         allParents.forEach((parentEl) =>
           parentEl.removeEventListener('scroll', onRequestReposition),

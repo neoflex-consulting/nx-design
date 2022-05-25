@@ -118,44 +118,40 @@ export function Playground() {
     setValue(null);
   }, [type]);
 
-  const tut = () => {
-    window.setTimeout(setTu,2000)
-  }
-
   return (
     <div style={{ left: '600px', maxWidth: 150 }}>
-      <DatePicker
-        type={type}
-        width="full"
-        form={form}
-        label={label}
-        labelPosition={labelPosition}
-        caption={caption}
-        required={required}
-        value={value}
-        status={status || undefined}
-        view={view}
-        disabled={disabled}
-        size={size}
-        onChange={({ value }) => setValue(value)}
-        rightSide={icon}
-        events={events}
-        locale={getSizeByMap(localeMap, locale)}
-        calendarView={calendarView}
-        dropdownForm={dropdownForm}
-        minDate={new Date(minDate)}
-        maxDate={new Date(maxDate)}
-        {...(type === 'date-range' && {
-          endFieldRightSide: icon,
-          startFieldRightSide: icon,
-        })}
-        renderAdditionalControls={withAdditionalControls ? additionalControls : undefined}
-        placeholder={placeholder}
-        formatMask={formatMask}
-        showPicker={showPicker}
-        direction={direction}
-      />
-    </div>
+        <DatePicker
+          type={type}
+          width="full"
+          form={form}
+          label={label}
+          labelPosition={labelPosition}
+          caption={caption}
+          required={required}
+          value={value}
+          status={status || undefined}
+          view={view}
+          disabled={disabled}
+          size={size}
+          onChange={({ value }) => setValue(value)}
+          rightSide={icon}
+          events={events}
+          locale={getSizeByMap(localeMap, locale)}
+          calendarView={calendarView}
+          dropdownForm={dropdownForm}
+          minDate={new Date(minDate)}
+          maxDate={new Date(maxDate)}
+          {...(type === 'date-range' && {
+            endFieldRightSide: icon,
+            startFieldRightSide: icon,
+          })}
+          renderAdditionalControls={withAdditionalControls ? additionalControls : undefined}
+          placeholder={placeholder}
+          formatMask={formatMask}
+          showPicker={showPicker}
+          direction={direction}
+        />
+      </div>
   );
 }
 
