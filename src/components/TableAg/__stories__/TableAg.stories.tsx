@@ -3,15 +3,7 @@ import mdx from "./TableAg.docs.mdx";
 import React from "react";
 import {TableAg} from "../TableAg";
 
-// const defaultKnobs = () => ({
-//   hasOverlay: boolean('hasOverlay', true),
-//   width: select('width', ['auto'], 'auto'),
-//   position: select('position', ['center', 'top'], 'center'),
-// });
-
 export function Playground(): JSX.Element {
-  const [] = React.useState(false);
-  // const { hasOverlay, width, position } = defaultKnobs();
 
   return (
     <div>

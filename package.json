@@ -8,12 +8,13 @@
     "nx-design-system"
   ],
   "dependencies": {
+    "ag-grid-community": "24.1.0",
+    "ag-grid-react": "24.1.0",
     "@ag-grid-community/all-modules": "24.1.0",
     "@ag-grid-community/react": "24.1.0",
     "@bem-react/classname": "^1.5.8",
     "@bem-react/classnames": "^1.3.9",
     "@types/color-convert": "^2.0.0",
-    "ag-grid-community": "24.1.0",
     "color-convert": "^2.0.1",
     "compute-scroll-into-view": "^1.0.14",
     "date-fns": "^2.17.0",
