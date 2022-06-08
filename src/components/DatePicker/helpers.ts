@@ -4,7 +4,10 @@ import { IconComponent, IconPropSize } from '../../icons/_Icon/Icon';
 import { range } from '../../utils/array';
 import { DateRange } from '../../utils/types/Date';
 import { PropsWithHTMLAttributesAndRef } from '../../utils/types/PropsWithHTMLAttributes';
-import { CalendarAdditionalControlRenderProp, CalendarPropView } from '../Calendar/helpers';
+import {
+  CalendarAdditionalControlRenderProp, CalendarPropOnChangeRange,
+  CalendarPropView
+} from '../Calendar/helpers';
 import {
   TextFieldPropForm,
   TextFieldPropSize,
@@ -14,7 +17,7 @@ import {
 } from '../TextField/TextField';
 import {DirectionsStartEdge} from "../Popover/Popover";
 
-export const datePickerPropType = ['date', 'date-range', 'date-time'] as const;
+export const datePickerPropType = ['date', 'date-range', 'date-time', 'date-book'] as const;
 export type DatePickerPropType = typeof datePickerPropType[number];
 export const datePickerPropTypeDefault = datePickerPropType[0];
 
@@ -70,6 +73,7 @@ export type DatePickerProps<
     type?: TYPE;
     value?: DatePickerPropValue<TYPE>;
     onChange?: DatePickerPropOnChange<TYPE>;
+    onChangeRange?: CalendarPropOnChangeRange<TYPE>;
     minDate?: Date;
     maxDate?: Date;
     renderAdditionalControls?: CalendarAdditionalControlRenderProp;
