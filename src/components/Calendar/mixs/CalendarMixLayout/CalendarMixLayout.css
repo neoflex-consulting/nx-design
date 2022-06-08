@@ -20,6 +20,7 @@
   }
 
   &-Page {
+     text-align: center;
     &:not(:last-child) {
       margin-right: var(--space-m);
     }

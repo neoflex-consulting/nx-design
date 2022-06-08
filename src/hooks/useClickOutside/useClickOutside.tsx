@@ -19,7 +19,13 @@ export function useClickOutside({
     }
 
     const handleClick = (event: MouseEvent) => {
-      handler(event)
+      const target = event.target as Node;
+
+      const shouldCallHandler = ignoreClicksInsideRefs.every(
+        (ref) => !ref.current?.contains(target),
+      );
+
+      shouldCallHandler && handler(event);
     };
     document.addEventListener('mousedown', handleClick);
 
