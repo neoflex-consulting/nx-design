@@ -37,6 +37,21 @@ export const DatePickerExampleOverView = () => {
         className={cnDocsDecorator('Section', [wp.tplGrid({ 'ratio': '1-1-1', 'col-gap': 'full' })])}
       >
         <div className={cnDocsExample()}>
+          <DatePicker labelPosition={"top"} label={"Type = date-range  &&  CalendarView = book"} placeholder={'yyyy-MM-dd'} type="date-range" value={value2} onChange={({ value }) => setValue2(value)} calendarView={"book"}/>
+        </div>
+        <div className={cnDocsExample()}>
+          <DatePicker labelPosition={"top"} label={"Type = date-range  &&  CalendarView = book  &&  showPicker = month"} placeholder={'yyyy-MM-dd'} type="date-range" value={value2} onChange={({ value }) => setValue2(value)} showPicker={"month"} calendarView={"book"}/>
+        </div>
+        <div className={cnDocsExample()}>
+          <DatePicker labelPosition={"top"} label={"Type = date-range  &&  CalendarView = book  &&  showPicker = year"} placeholder={'yyyy-MM-dd'} type="date-range" value={value2} onChange={({ value }) => setValue2(value)} showPicker={"year"} calendarView={"book"}/>
+        </div>
+
+      </div>
+
+      <div
+        className={cnDocsDecorator('Section', [wp.tplGrid({ 'ratio': '1-1-1', 'col-gap': 'full' })])}
+      >
+        <div className={cnDocsExample()}>
           <DatePicker labelPosition={"top"} label={"ShowPicker = date"} placeholder={'yyyy-MM-dd'} showPicker="date" value={value4} onChange={({ value }) => setValue4(value)} />
         </div>
         <div className={cnDocsExample()}>

@@ -6,7 +6,6 @@ import {useForkRef} from "../../../hooks/useForkRef/useForkRef";
 import {IconCalendar} from "../../../icons/IconCalendar/IconCalendar";
 import IMask from "imask";
 import {format, isValid, isWithinInterval, parse} from "date-fns";
-import {DatePickerFieldTypeDateProps, getPartsDate} from "../DatePickerFieldTypeDate/helpers";
 import {leapYear, maxDateDefault, minDateDefault} from "../../../utils/date";
 import {
   datePickerErrorTypes,
@@ -16,10 +15,11 @@ import {
   showPickerPropType
 } from "../helpers";
 import {useMutableRef} from "../../../hooks/useMutableRef/useMutableRef";
+import {DatePickerFieldTypeDateRangeSingleProps, getPartsDate} from "./helpers";
 
 export const DatePickerFieldTypeDateRangeSingle = forwardRef<
   HTMLDivElement,
-  DatePickerFieldTypeDateProps
+  DatePickerFieldTypeDateRangeSingleProps
   >((props, ref) => {
   const {
     separator,
