@@ -121,6 +121,7 @@ export type DatePickerProps<
     multiplicityHours?: number;
     showPicker?: ShowPickerPropType;
     direction?: DirectionsStartEdge;
+    countTextField?: 1 | 2;
   },
   HTMLDivElement
 >;

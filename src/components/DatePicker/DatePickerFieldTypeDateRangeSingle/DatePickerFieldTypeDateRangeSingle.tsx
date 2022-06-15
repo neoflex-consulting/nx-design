@@ -1,26 +1,26 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
-import {format, isValid, isWithinInterval, parse} from 'date-fns';
-import IMask from 'imask';
+import '../DatePickerFieldTypeDateRange/DatePickerFieldTypeDateRange.css';
 
-import {useForkRef} from '../../../hooks/useForkRef/useForkRef';
-import {useMutableRef} from '../../../hooks/useMutableRef/useMutableRef';
-import {leapYear, maxDateDefault, minDateDefault} from '../../../utils/date';
-import {TextField} from '../../TextField/TextField';
+import React, {forwardRef, useCallback, useEffect, useRef, useState} from 'react';
+import {TextField} from "../../TextField/TextField";
+import {useForkRef} from "../../../hooks/useForkRef/useForkRef";
+import {IconCalendar} from "../../../icons/IconCalendar/IconCalendar";
+import IMask from "imask";
+import {format, isValid, isWithinInterval, parse} from "date-fns";
+import {DatePickerFieldTypeDateProps, getPartsDate} from "../DatePickerFieldTypeDate/helpers";
+import {leapYear, maxDateDefault, minDateDefault} from "../../../utils/date";
 import {
   datePickerErrorTypes,
   getDatePickerPropFormat,
   getDatePickerPropFormatTypeDate,
   getDatePickerPropSeparator,
   showPickerPropType
-} from '../helpers';
+} from "../helpers";
+import {useMutableRef} from "../../../hooks/useMutableRef/useMutableRef";
 
-import {DatePickerFieldTypeDateProps, getPartsDate} from './helpers';
-import {IconCalendar} from "../../../icons/IconCalendar/IconCalendar";
-
-export const DatePickerFieldTypeDate = React.forwardRef<
+export const DatePickerFieldTypeDateRangeSingle = forwardRef<
   HTMLDivElement,
   DatePickerFieldTypeDateProps
->((props, ref) => {
+  >((props, ref) => {
   const {
     separator,
     showPicker,
@@ -61,14 +61,14 @@ export const DatePickerFieldTypeDate = React.forwardRef<
         const [yyyy, MM, dd] = getPartsDate(stringValue, formatProp, separatorProp);
 
         if (dd && MM && yyyy && showPicker === showPickerPropType[0]) {
-        const date = parse(
-          `${yyyy}${separatorProp}${MM}${separatorProp}${dd}`,
-          `yyyy${separatorProp}MM${separatorProp}dd`,
-          new Date(),
-        );
+          const date = parse(
+            `${yyyy}${separatorProp}${MM}${separatorProp}${dd}`,
+            `yyyy${separatorProp}MM${separatorProp}dd`,
+            new Date(),
+          );
           if (!isWithinInterval(date, { start: minDate, end: maxDate })) {
             onError &&
-              onError({type: datePickerErrorTypes[0], stringValue, dd, MM, yyyy, date,});
+            onError({type: datePickerErrorTypes[0], stringValue, dd, MM, yyyy, date,});
 
             onChange({ e, value: null });
             return;
@@ -171,13 +171,13 @@ export const DatePickerFieldTypeDate = React.forwardRef<
             )
           ) {
             onError &&
-              onError({
-                type: datePickerErrorTypes[1],
-                stringValue: string,
-                dd,
-                MM,
-                yyyy,
-              });
+            onError({
+              type: datePickerErrorTypes[1],
+              stringValue: string,
+              dd,
+              MM,
+              yyyy,
+            });
             return false;
           }
 
@@ -194,13 +194,13 @@ export const DatePickerFieldTypeDate = React.forwardRef<
             )
           ) {
             onError &&
-              onError({
-                type: datePickerErrorTypes[1],
-                stringValue: string,
-                dd,
-                MM,
-                yyyy,
-              });
+            onError({
+              type: datePickerErrorTypes[1],
+              stringValue: string,
+              dd,
+              MM,
+              yyyy,
+            });
             return false;
           }
 
@@ -237,7 +237,7 @@ export const DatePickerFieldTypeDate = React.forwardRef<
       type="text"
       inputContainerRef={ref}
       inputRef={useForkRef([inputRef, inputRefProp])}
-      value={stringValue}
+      value={stringValue + "-" + stringValue}
     />
   );
 });

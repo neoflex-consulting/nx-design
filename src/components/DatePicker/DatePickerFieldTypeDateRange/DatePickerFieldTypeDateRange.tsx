@@ -5,13 +5,14 @@ import isBefore from 'date-fns/isBefore';
 import isEqual from 'date-fns/isEqual';
 
 import { cn } from '../../../utils/bem';
-import { getSizeByMap } from '../../../utils/getSizeByMap';
 import { FieldCaption } from '../../FieldCaption/FieldCaption';
 import { FieldLabel } from '../../FieldLabel/FieldLabel';
-import { DatePickerFieldTypeDate } from '../DatePickerFieldTypeDate/DatePickerFieldTypeDate';
 import { datePickerErrorTypes } from '../helpers';
 
-import { DatePickerFieldTypeDateRangeProps, mapFormForEnd, mapFormForStart } from './helpers';
+import {DatePickerFieldTypeDateRangeProps, mapFormForStart} from './helpers';
+import {DatePickerFieldTypeDateRangeDouble} from "../DatePickerFieldTypeDateRangeDouble/DatePickerFieldTypeDateRangeDouble";
+import {DatePickerFieldTypeDateRangeSingle} from "../DatePickerFieldTypeDateRangeSingle/DatePickerFieldTypeDateRangeSingle";
+import {getSizeByMap} from "../../../utils/getSizeByMap";
 
 const cnDatePickerFieldTypeDateRange = cn('DatePickerFieldTypeDateRange');
 
@@ -60,29 +61,9 @@ export const DatePickerFieldTypeDateRange = forwardRef<
     caption,
     width,
     showPicker,
+    countTextField,
     ...otherProps
   } = props;
-
-  const commonProps = {
-    className: cnDatePickerFieldTypeDateRange('Field'),
-    disabled,
-    name,
-    onError,
-    size,
-    view,
-    status,
-    autoFocus,
-    placeholder,
-    readOnly,
-    required,
-    tabIndex,
-    ariaLabel,
-    iconSize,
-    formatMask,
-    separator,
-    minDate,
-    maxDate,
-  };
 
   const [startDate, setStartDate] = useState<Date | undefined | null>(value?.[0]);
   const [endDate, setEndDate] = useState<Date | undefined | null>(value?.[1]);
@@ -153,6 +134,28 @@ export const DatePickerFieldTypeDateRange = forwardRef<
     setEndDate(value?.[1]);
   }, [value?.[1]?.getTime()]);
 
+  const commonProps = {
+    className: cnDatePickerFieldTypeDateRange('Field'),
+    disabled,
+    name,
+    onError,
+    size,
+    view,
+    status,
+    autoFocus,
+    placeholder,
+    readOnly,
+    required,
+    tabIndex,
+    ariaLabel,
+    iconSize,
+    formatMask,
+    separator,
+    minDate,
+    maxDate,
+    countTextField
+  };
+
   return (
     <div
       {...otherProps}
@@ -169,36 +172,45 @@ export const DatePickerFieldTypeDateRange = forwardRef<
         </FieldLabel>
       )}
       <div className={cnDatePickerFieldTypeDateRange('Body')}>
-        <div className={cnDatePickerFieldTypeDateRange('Fields')}>
-          <DatePickerFieldTypeDate
-            {...commonProps}
-            inputRef={startFieldInputRef}
-            ref={startFieldRef}
-            leftSide={startFieldLeftSide}
-            rightSide={startFieldRightSide}
-            form={getSizeByMap(mapFormForStart, form)}
-            value={startDate}
-            onChange={handleStartDateChange}
-            onFocus={startFieldOnFocus}
-            onBlur={startFieldOnBlur}
-            focused={startFocused}
+        {countTextField !== 1 &&
+          <DatePickerFieldTypeDateRangeDouble
+            startFieldInputRef={startFieldInputRef}
+            startFieldRef={startFieldRef}
+            startFieldLeftSide={startFieldLeftSide}
+            startFieldRightSide={startFieldRightSide}
+            startDate={startDate}
+            handleStartDateChange={handleStartDateChange}
+            startFieldOnFocus={startFieldOnFocus}
+            startFieldOnBlur={startFieldOnBlur}
+            startFocused={startFocused}
             showPicker={showPicker}
+            endFieldInputRef={endFieldInputRef}
+            endFieldRef={endFieldRef}
+            endFieldLeftSide={endFieldLeftSide}
+            endFieldRightSide={endFieldRightSide}
+            endDate={endDate}
+            handleEndDateChange={handleEndDateChange}
+            endFieldOnFocus={endFieldOnFocus}
+            endFieldOnBlur={endFieldOnBlur}
+            endFocused={endFocused}
           />
-          <DatePickerFieldTypeDate
-            {...commonProps}
-            inputRef={endFieldInputRef}
-            ref={endFieldRef}
-            leftSide={endFieldLeftSide}
-            rightSide={endFieldRightSide}
-            form={getSizeByMap(mapFormForEnd, form)}
-            value={endDate}
-            onChange={handleEndDateChange}
-            onFocus={endFieldOnFocus}
-            onBlur={endFieldOnBlur}
-            focused={endFocused}
-            showPicker={showPicker}
+        }
+        {countTextField === 1 &&
+        <DatePickerFieldTypeDateRangeSingle
+          {...commonProps}
+          inputRef={startFieldInputRef}
+          ref={startFieldRef}
+          leftSide={startFieldLeftSide}
+          rightSide={startFieldRightSide}
+          form={getSizeByMap(mapFormForStart, form)}
+          value={startDate}
+          onChange={handleStartDateChange}
+          onFocus={startFieldOnFocus}
+          onBlur={startFieldOnBlur}
+          focused={startFocused}
+          showPicker={showPicker}
           />
-        </div>
+        }
         {caption && (
           <FieldCaption className={cnDatePickerFieldTypeDateRange('Caption')} status={status}>
             {caption}

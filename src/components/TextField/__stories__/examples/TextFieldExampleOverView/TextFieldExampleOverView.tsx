@@ -15,9 +15,6 @@ export const TextFieldExampleOverView = () => {
     <div>
       <div className={cnDocsDecorator('Section', [wp.tplGrid({ 'ratio': '1-1-1-1', 'col-gap': 'full' }),])}>
         <div className={cnDocsExample()}>
-          <TextField label="Поле раз" onChange={handleChange} value={value} type="text" placeholder="autoFocus" autoFocus />
-        </div>
-        <div className={cnDocsExample()}>
           <TextField label="Поле два" onChange={handleChange} value={value} type="text" placeholder="default"/>
         </div>
       </div>

@@ -39,6 +39,7 @@ export const DatePickerTypeDateRange: DatePickerTypeComponent<'date-range'> = fo
       renderAdditionalControls,
       showPicker,
       direction,
+      countTextField,
       ...fieldProps
     } = props;
 
@@ -185,6 +186,7 @@ export const DatePickerTypeDateRange: DatePickerTypeComponent<'date-range'> = fo
           startFocused={startFocused}
           endFocused={endFocused}
           showPicker={showPickerDefault}
+          countTextField={countTextField}
         />
         <DatePickerDropdown
           type={showPickerDefault}
