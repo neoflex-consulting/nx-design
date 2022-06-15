@@ -31,6 +31,12 @@ export type DatePickerFieldTypeDateRangeProps = Omit<
   id?: string;
   onChangeCurrentVisibleDate?: (date: Date) => void;
   currentVisibleDate?: Date;
+  startDate?: Date | undefined | null;
+  handleStartDateChange?: (props: { e: Event; value: Date | null }) => void;
+  endDate?: Date | undefined | null;
+  handleEndDateChange?: (props: { e: Event; value: Date | null }) => void;
+  rightSide?: string | IconComponent;
+  inputRef?: React.Ref<HTMLTextAreaElement | HTMLInputElement>;
 };
 
 export const mapFormForStart: Record<TextFieldPropForm, TextFieldPropForm> = {
