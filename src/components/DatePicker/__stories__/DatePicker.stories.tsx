@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import { boolean, date, select, text } from '@storybook/addon-knobs';
-import { addDays, Locale, startOfWeek } from 'date-fns';
+import React, {useEffect, useState} from 'react';
+import {boolean, date, select, text} from '@storybook/addon-knobs';
+import {addDays, Locale, startOfWeek} from 'date-fns';
 import enUSLocale from 'date-fns/locale/en-US';
 import esLocale from 'date-fns/locale/es';
 import ruLocale from 'date-fns/locale/ru';
 import zhCNLocale from 'date-fns/locale/zh-CN';
 
-import { IconCalendar } from '../../../icons/IconCalendar/IconCalendar';
-import { maxDateDefault, minDateDefault } from '../../../utils/date';
-import { getSizeByMap } from '../../../utils/getSizeByMap';
-import { createMetadata } from '../../../utils/storybook';
-import { Button } from '../../Button/Button';
-import { CalendarPropView, CalendarPropViewDefault } from '../../Calendar/helpers';
+import {IconCalendar} from '../../../icons/IconCalendar/IconCalendar';
+import {maxDateDefault, minDateDefault} from '../../../utils/date';
+import {getSizeByMap} from '../../../utils/getSizeByMap';
+import {createMetadata} from '../../../utils/storybook';
+import {Button} from '../../Button/Button';
+import {CalendarPropView, CalendarPropViewDefault} from '../../Calendar/helpers';
 import {
   textFieldPropForm,
   textFieldPropFormDefault,
@@ -27,12 +27,12 @@ import {
   datePickerPropDropdownFormDefault,
   datePickerPropType,
   datePickerPropTypeDefault,
-  DatePickerPropValue, showPickerPropTypeDefault,
+  DatePickerPropValue,
+  showPickerPropTypeDefault,
 } from '../helpers';
 
 import mdx from './DatePicker.docs.mdx';
 import {directionsStartEdge} from "../../Popover/Popover";
-import {Calendar} from "../../Calendar/Calendar";
 
 const localeProp = ['ru', 'en-US', 'zh-CN', 'es'] as const;
 type LocaleProp = typeof localeProp[number];
@@ -105,7 +105,6 @@ export function Playground() {
   } = defaultKnobs();
 
   const [value, setValue] = useState<DatePickerPropValue<typeof type>>(null);
-  const [rangeValue, setRangeValue] = useState<[Date?, Date?]>([]);
 
   const currentDay = new Date();
 
@@ -152,43 +151,6 @@ export function Playground() {
           showPicker={showPicker}
           direction={direction}
         />
-      <DatePicker
-        type={"date-book"}
-        form={form}
-        label={label}
-        labelPosition={labelPosition}
-        caption={caption}
-        required={required}
-        status={status || undefined}
-        view={view}
-        disabled={disabled}
-        size={size}
-        // onChange={({ value }) => setValue(value)}
-        value={rangeValue}
-        // onChangeRange{({ value }) => setValue(value)}
-        rightSide={icon}
-        events={events}
-        locale={getSizeByMap(localeMap, locale)}
-        calendarView={calendarView}
-        dropdownForm={dropdownForm}
-        minDate={new Date(minDate)}
-        maxDate={new Date(maxDate)}
-        {...(type === 'date-range' && {
-          endFieldRightSide: icon,
-          startFieldRightSide: icon,
-        })}
-        renderAdditionalControls={withAdditionalControls ? additionalControls : undefined}
-        placeholder={placeholder}
-        formatMask={formatMask}
-        showPicker={showPicker}
-        direction={direction}
-      />
-      <Calendar
-        value={rangeValue}
-        onChangeRange={({ value }) => setRangeValue(value)}
-        view="book"
-        type="date"
-      />
       </div>
   );
 }

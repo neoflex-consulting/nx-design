@@ -18,14 +18,12 @@ import {DirectionsStartEdge, directionsStartEdge, Popover} from '../../Popover/P
 import {
   DatePickerPropCalendarView,
   DatePickerPropDropdownForm,
-  datePickerPropDropdownFormDefault, DatePickerPropType,
+  datePickerPropDropdownFormDefault,
 } from '../helpers';
 
 export type DatePickerDropdownPropOnChange = CalendarPropOnChange;
 
-export type DatePickerDropdownProps<
-      TYPE extends DatePickerPropType = 'date'
-      > = PropsWithHTMLAttributesAndRef<
+export type DatePickerDropdownProps = PropsWithHTMLAttributesAndRef<
   {
     anchorRef: React.RefObject<HTMLElement>;
     currentVisibleDate?: Date;
