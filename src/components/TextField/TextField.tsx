@@ -77,6 +77,7 @@ export function TextFieldRender<TYPE extends string>(
     onClick,
     ...otherProps
   } = usePropsHandler(COMPONENT_NAME, props, textFieldRef);
+
   const [focus, setFocus] = useState<boolean>(autoFocus);
   const textarea = type === 'textarea';
   const LeftIcon = leftSide;

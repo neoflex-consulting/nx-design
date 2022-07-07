@@ -1,0 +1,42 @@
+.DatasetBar {
+
+    &-Header {
+       background: #F2F2F2 !important;
+       box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.05), 2px 2px 4px rgba(0, 0, 0, 0.1);
+       border-radius: 4px;
+       height: 52px;
+
+        &_adaptiveBarColumnFlex {
+           display: flex;
+           flex-direction: column;
+           height: 104px !important;
+           min-width: 375px !important;
+         }
+
+        &_minHeight_big {
+           min-height: 104px;
+         }
+
+        &_minHeight_small {
+           min-height: 56px;
+         }
+
+        &_mainGridPanel {
+           margin: 16px 16px 16px 0 !important;
+         }
+
+        &_block {
+           height: 24px;
+         }
+
+        &_flexBarItem {
+           display: flex;
+           flex-direction: row;
+           align-items: center;
+         }
+     }
+
+
+
+
+}
