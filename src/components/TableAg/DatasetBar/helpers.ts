@@ -33,9 +33,9 @@ export type DatasetBarProps = {
 
 export const cnDatasetBar = cn('DatasetBar');
 
-export const searchTransform = (barSize: AdaptiveElementSize | undefined) => barSize !== undefined && adaptiveElementSize.indexOf(barSize) <= 3;
+export const searchTransform = (barSize: AdaptiveElementSize | undefined) => barSize !== undefined && adaptiveElementSize.indexOf(barSize) <= 2;
 export const fillSpace = (barSize: AdaptiveElementSize | undefined) => barSize !== undefined && adaptiveElementSize.indexOf(barSize) !== 0;
 
-export const minHeight = (barSize: AdaptiveElementSize | undefined) => barSize !== undefined && adaptiveElementSize.indexOf(barSize) <= 3 ? minHeightProp[0] : minHeightProp[1];
+export const minHeight = (barSize: AdaptiveElementSize | undefined) => barSize !== undefined && adaptiveElementSize.indexOf(barSize) <= 2 ? minHeightProp[0] : minHeightProp[1];
 export const adaptiveBarColumnFlex = (barSize: AdaptiveElementSize | undefined) => barSize !== undefined && adaptiveElementSize.indexOf(barSize) == 0;
 

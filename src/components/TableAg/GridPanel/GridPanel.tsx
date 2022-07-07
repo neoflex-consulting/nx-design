@@ -2,16 +2,8 @@ import * as React from "react";
 import {GridPanelProps} from "./helpers";
 import './../DatasetBar/DatasetBar.css';
 
-import {
-  adaptiveBarColumnFlex,
-  cnDatasetBar,
-  componentsProp,
-  fillSpace,
-  minHeight, searchTransform
-} from "../DatasetBar/helpers";
+import {adaptiveBarColumnFlex, cnDatasetBar, fillSpace, minHeight} from "../DatasetBar/helpers";
 import {usePropsHandler} from "../../EventInterceptor/usePropsHandler";
-import {SearchTransformer} from "../SearchTransformer/SearchTransformer";
-import {TextField} from "../../TextField/TextField";
 
 export const GridPanel = React.forwardRef<HTMLDivElement, GridPanelProps>((props, ref) => {
 
@@ -33,15 +25,16 @@ export const GridPanel = React.forwardRef<HTMLDivElement, GridPanelProps>((props
       {...otherProps}
     >
       <div
-        className={cnDatasetBar('Header',{mainGridPanel: true, block: true, flexBarItem: true, fillSpace: fillSpace(barSize)}, [className])}
+        className={cnDatasetBar('Header',{block: true, mainGridPanel: true, flexBarItem: true, fillSpace: fillSpace(barSize)})}
       >
-        {
-          ( hiddenComponents === undefined || !hiddenComponents.includes(componentsProp[0]) ) &&
-          ( searchTransform(barSize) ? <SearchTransformer/> : <TextField label="Поле два" type="text" placeholder="default"/>)
-        }
-      </div>
 
-      "GridPanel"
+        </div>
+      {/*  {*/}
+      {/*    ( hiddenComponents === undefined || !hiddenComponents.includes(componentsProp[0]) ) &&*/}
+      {/*    ( searchTransform(barSize) ? <SearchTransformer/> : <TextField type="text" placeholder="default"/>)*/}
+      {/*  }*/}
+
+
     </div>
   )
 

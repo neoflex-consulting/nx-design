@@ -21,19 +21,43 @@
            min-height: 56px;
          }
 
-        &_mainGridPanel {
-           margin: 16px 16px 16px 0 !important;
+     }
+
+
+&_block {
+   height: 24px;
+ }
+
+&_mainGridPanel {
+   margin: 16px 16px 16px 0 !important;
+ }
+
+&_flexBarItem {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+ }
+
+&_fillSpace {
+   display: flex;
+   justify-content: space-between;
+ }
+
+    &-GridPanel {
+
+     }
+
+    &-Search {
+        margin-left: 16px;
+
+        &_input {
+           height: 32px;
          }
 
-        &_block {
-           height: 24px;
+        &_button {
+           margin-top: 4px;
          }
 
-        &_flexBarItem {
-           display: flex;
-           flex-direction: row;
-           align-items: center;
-         }
      }
 
 

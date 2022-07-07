@@ -6,7 +6,7 @@ export type GridPanelProps = {
   maxWidth?: number;
   barSize?: AdaptiveElementSize;
   barMode?: BarModeProp;
-  hiddenComponents: (ComponentsProp)[];
+  hiddenComponents?: (ComponentsProp)[];
 };
 
 // export const cnGridPanel = cn('GridPanel');
