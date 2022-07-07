@@ -174,14 +174,5 @@
   "main": ".eslintrc.js",
   "directories": {
     "doc": "docs"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/truschelev-ilya/nx-design.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/truschelev-ilya/nx-design/issues"
   }
 }
