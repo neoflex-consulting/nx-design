@@ -1,4 +1,5 @@
 import {cn} from "../../../utils/bem";
+import {CSSProperties} from "react";
 
 // export enum adaptiveElementSize {
 //   extraSmall,
@@ -28,14 +29,20 @@ export type DatasetBarProps = {
   isQuickSearchExpanded?: boolean;
   isExportChecked?: boolean;
   barMode?: BarModeProp;
-  hiddenComponents: (ComponentsProp)[];
+  hiddenComponents?: (ComponentsProp)[];
+  isFullScreenOn?: boolean;
+  viewObject?: Object;
+  height?: number;
 };
 
 export const cnDatasetBar = cn('DatasetBar');
 
-export const searchTransform = (barSize: AdaptiveElementSize | undefined) => barSize !== undefined && adaptiveElementSize.indexOf(barSize) <= 2;
-export const fillSpace = (barSize: AdaptiveElementSize | undefined) => barSize !== undefined && adaptiveElementSize.indexOf(barSize) !== 0;
+export const checkBarSize = (barSize: AdaptiveElementSize | undefined, indexBarSize: number) => barSize !== undefined && adaptiveElementSize.indexOf(barSize) <= indexBarSize;
+export const checkBarSizeIsZero = (barSize: AdaptiveElementSize | undefined) => barSize !== undefined && adaptiveElementSize.indexOf(barSize) == 0;
+export const checkBarSizeIsNotZero = (barSize: AdaptiveElementSize | undefined) => barSize !== undefined && adaptiveElementSize.indexOf(barSize) !== 0;
 
 export const minHeight = (barSize: AdaptiveElementSize | undefined) => barSize !== undefined && adaptiveElementSize.indexOf(barSize) <= 2 ? minHeightProp[0] : minHeightProp[1];
-export const adaptiveBarColumnFlex = (barSize: AdaptiveElementSize | undefined) => barSize !== undefined && adaptiveElementSize.indexOf(barSize) == 0;
+
+export const getHeight = (fullScreenOn : boolean | undefined, height: number | undefined) => fullScreenOn ?  window.innerHeight - 90 : height ? height : 510;
+
 

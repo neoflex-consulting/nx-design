@@ -24,6 +24,7 @@ export function Playground(): JSX.Element {
         columnDefs={columnDefs}
         height={400}
         width={600}
+        fullScreenOn={false}
       />
     </div>
   )

@@ -167,7 +167,8 @@
     "ts-jest": "^25.4.0",
     "ts-node": "^8.8.2",
     "typescript": "3.9.9",
-    "typescript-eslint-parser": "^22.0.0"
+    "typescript-eslint-parser": "^22.0.0",
+    "react-full-screen": "0.2.4"
   },
   "homepage": "http://cloud2:6006/",
   "description": "NX Design — дизайн-система для разработки интерфейсов, написана на [React](https://reactjs.org/), сделана и поддерживается в «Неофлекс».",

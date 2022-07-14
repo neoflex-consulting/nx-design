@@ -1,7 +1,12 @@
 import * as React from "react";
 import {cnEditPanel, EditPanelProps} from "./helpers";
 import './EditPanel.css';
-import {adaptiveBarColumnFlex, adaptiveElementSize, fillSpace, minHeight} from "../DatasetBar/helpers";
+import {
+  checkBarSizeIsZero,
+  adaptiveElementSize,
+  minHeight,
+  checkBarSizeIsNotZero
+} from "../DatasetBar/helpers";
 import {Button} from "../../Button/Button";
 import {IconArrowForward} from "../../../icons/IconArrowForward/IconArrowForward";
 import {IconPlus} from "../../../icons/IconPlus/IconPlus";
@@ -26,11 +31,11 @@ export const EditPanel = React.forwardRef<HTMLDivElement, EditPanelProps>((props
     <div
       ref={editPanelRef}
       style={{maxWidth: maxWidth ? maxWidth : undefined}}
-      className={cnEditPanel('Header',{adaptiveBarColumnFlex: adaptiveBarColumnFlex(barSize), minHeight: minHeight(barSize)}, [className])}
+      className={cnEditPanel('Header',{adaptiveBarColumnFlex: checkBarSizeIsZero(barSize), minHeight: minHeight(barSize)}, [className])}
       {...otherProps}
     >
       <div
-        className={cnEditPanel('Block', {spaceBetween: true, fillSpace: fillSpace(barSize)})}
+        className={cnEditPanel('Block', {spaceBetween: true, fillSpace: checkBarSizeIsNotZero(barSize)})}
       >
         <div
           className={cnEditPanel('FlexBarItem')}

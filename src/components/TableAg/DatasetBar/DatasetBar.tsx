@@ -2,7 +2,13 @@ import './DatasetBar.css';
 
 import * as React from "react";
 
-import {adaptiveElementSizeDefault, barModeProp, barModePropDefault, DatasetBarProps} from "./helpers";
+import {
+  adaptiveElementSizeDefault,
+  barModeProp,
+  barModePropDefault,
+  DatasetBarProps,
+  getHeight
+} from "./helpers";
 import {EditPanel} from "../EditPanel/EditPanel";
 import {DiagramPanel} from "../DiagramPanel/DiagramPanel";
 import {GridPanel} from "../GridPanel/GridPanel";
@@ -17,6 +23,10 @@ export const DatasetBar = React.forwardRef<HTMLDivElement, DatasetBarProps>((pro
     isQuickSearchExpanded = false,
     isExportChecked = false,
     barMode,
+    isFullScreenOn = false,
+    viewObject,
+    height,
+    hiddenComponents,
     ...otherProps
   } = props;
 
@@ -26,6 +36,8 @@ export const DatasetBar = React.forwardRef<HTMLDivElement, DatasetBarProps>((pro
   return (
     <div
       ref={datasetBarRef}
+      style={{
+        height: getHeight(isFullScreenOn, height)}}
       {...otherProps}
     >
       {

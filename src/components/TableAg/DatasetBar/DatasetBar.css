@@ -1,4 +1,17 @@
 .DatasetBar {
+  margin: 0;
+  padding: 16px;
+  width: 100%;
+
+    &-Fullscreen {
+       padding: 24px 24px 24px 24px;
+       position: relative;
+     }
+
+    &-GridPanel {
+      display: flex;
+      align-items: center;
+     }
 
     &-Header {
        background: #F2F2F2 !important;
@@ -21,31 +34,45 @@
            min-height: 56px;
          }
 
+        &_flexBarItem {
+           flex-direction: row;
+           align-items: center;
+         }
+
+        &_fillSpace {
+           display: flex;
+           justify-content: space-between;
+         }
+
+        &_adaptiveBarHidden {
+           display: none !important;
+           margin: 0;
+           padding: 0;
+         }
+    }
+
+    &-VerticalLine {
+       border-left: 1px solid #B3B3B3;
+       height: 24px;
+       margin-left: 16px;
      }
 
+     &-AdaptiveBarHidden {
+        display: none !important;
+        margin: 0;
+        padding: 0;
+      }
 
-&_block {
-   height: 24px;
- }
+     &-AdaptiveDropdown {
+        margin-left: 16px;
+        width: 100%;
+      }
 
-&_mainGridPanel {
-   margin: 16px 16px 16px 0 !important;
- }
 
-&_flexBarItem {
-   display: flex;
-   flex-direction: row;
-   align-items: center;
- }
 
-&_fillSpace {
-   display: flex;
-   justify-content: space-between;
- }
 
-    &-GridPanel {
 
-     }
+
 
     &-Search {
         margin-left: 16px;

@@ -1,0 +1,6 @@
+.GridPanel {
+
+    &-TextField {
+        margin-left: 16px;
+    }
+}
