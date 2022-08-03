@@ -8,7 +8,12 @@ import {DatasetBar} from "./DatasetBar/DatasetBar";
 import {DatasetGrid} from "./DatasetGrid/DatasetGrid";
 import Fullscreen from "react-full-screen";
 import './TableAg.css';
-import {AdaptiveElementSize, adaptiveElementSizeDefault, IServerQueryParam} from "./DatasetBar/helpers";
+import {
+  AdaptiveElementSize,
+  adaptiveElementSizeDefault,
+  barModePropDefault,
+  IServerQueryParam
+} from "./DatasetBar/helpers";
 
 export const TableAg = React.forwardRef<HTMLDivElement, TableAgProps>((props, ref) => {
 
@@ -19,9 +24,10 @@ export const TableAg = React.forwardRef<HTMLDivElement, TableAgProps>((props, re
     height,
     width,
     fullScreenOn,
-    barMode,
+    barMode = barModePropDefault,
     viewObject,
     isTabItem,
+    datasetViewMaxWidth,
     ...otherProps
   } = props;
 
@@ -57,20 +63,20 @@ export const TableAg = React.forwardRef<HTMLDivElement, TableAgProps>((props, re
             // rowData = {rowData}
             // columnDefs = {this.state.columnDefs}
             // isTabActive={this.props.isTabActive}
-            // hiddenColumns={this.state.hiddenColumns}
+            hiddenColumns={[]}
             // serverAggregates={this.state.serverAggregates}
             // serverSorts={this.state.serverSorts}
             // serverGroupBy={this.state.serverGroupBy}
             // groupByColumn={this.state.groupByColumn}
             // serverCalculatedExpression={this.state.serverCalculatedExpression}
-            // highlights={this.state.highlights}
-            // pivotsCheck={isPivotActive}
-            // barMode={barMode}
-            // serverFiltersCheck={this.state.serverFiltersCheck}
-            // serverAggregatesCheck={this.state.serverAggregatesCheck}
-            // serverSortsCheck={this.state.serverSortsCheck}
-            // groupByColumnCheck={this.state.groupByColumnCheck}
-            // serverCalculatedExpressionCheck={this.state.serverCalculatedExpressionCheck}
+            highlights={[]}
+            pivotsCheck={true}
+            barMode={barMode}
+            serverFiltersCheck={false}
+            serverAggregatesCheck={false}
+            serverSortsCheck={false}
+            groupByColumnCheck={false}
+            serverCalculatedExpressionCheck={false}
             // currentProfile={this.state.currentProfile}
             // allDatasetComponentProfiles={this.state.allDatasetComponentProfiles.map(r=>r.eContents()[0])}
             // onFilterChange={() => this.gridRef.current.onQuickFilterChanged()}
@@ -144,8 +150,8 @@ export const TableAg = React.forwardRef<HTMLDivElement, TableAgProps>((props, re
             //     this.setState({deleteMenuVisible:true})
             //   }
             // }}
-            // isServerFunctionsHidden={this.state.isGroovyDataset}
-            // isDeleteButtonVisible={this.state.currentProfile !== "default"}
+            isServerFunctionsHidden={false}
+            isDeleteButtonVisible={true}
             // isEditButtonVisible={this.state.isUpdateAllowed || this.state.isDeleteAllowed || this.state.isInsertAllowed}
             // isComponentsLoaded={this.state.currentDatasetComponent !== undefined}
             // isFullScreenOn = {this.state.fullScreenOn}
@@ -167,7 +173,7 @@ export const TableAg = React.forwardRef<HTMLDivElement, TableAgProps>((props, re
             //   });
             // }}
             // onWithTableCheck={(isWithTable:boolean)=>this.withTable(isWithTable)}
-            // diagrams={this.state.diagrams}
+            diagrams={[]}
             // currentDiagram={this.state.currentDiagram}
             // onBackFromEditClick={() => {
             //   if (this.gridRef.current.whichEdited().length !== 0) {
@@ -247,7 +253,7 @@ export const TableAg = React.forwardRef<HTMLDivElement, TableAgProps>((props, re
             // }}
             // gridHasChanges={this.state.gridHasChanges}
             // gridHasSelected={this.state.gridHasSelected}
-            // maxWidth={this.state.datasetViewMaxWidth}
+            maxWidth={datasetViewMaxWidth}
 
 
             {...otherProps}

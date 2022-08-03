@@ -1,93 +1,69 @@
-.DatasetBar {
+.functionalBar__header {
+  display: flex;
+  justify-content: space-between;
+  background: #F2F2F2 !important;
+  /*border: 1px solid #eee;*/
+  height: 56px;
+  color: #222222;
+  /*box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.05), 2px 2px 4px rgba(0, 0, 0, 0.1);*/
+  /*border-radius: 4px;*/
+}
+
+.functionalBar__header .block {
+  height: 24px;
+  margin: auto 16px;
+  display: flex;
+}
+
+.adaptive-bar-column-flex {
+  display: flex;
+  flex-direction: column;
+  height: 104px !important;
+  min-width: 375px !important;
+}
+
+.adaptive-bar-column-flex .horizontal-line {
+  border-top: 1px solid #D9D9D9;
   margin: 0;
-  padding: 16px;
-  width: 100%;
+}
 
-    &-Fullscreen {
-       padding: 24px 24px 24px 24px;
-       position: relative;
-     }
+.main-grid-panel {
+  margin: 16px 16px 16px 0 !important;
+}
 
-    &-GridPanel {
-      display: flex;
-      align-items: center;
-     }
+.flex-bar-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
-    &-Header {
-       background: #F2F2F2 !important;
-       box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.05), 2px 2px 4px rgba(0, 0, 0, 0.1);
-       border-radius: 4px;
-       height: 52px;
+.flex-bar-item .vertical-line {
+  border-left: 1px solid #B3B3B3;
+  height: 24px;
+  margin-left: 16px;
+}
 
-        &_adaptiveBarColumnFlex {
-           display: flex;
-           flex-direction: column;
-           height: 104px !important;
-           min-width: 375px !important;
-         }
+.fill-space {
+  width: 100% !important;
+}
 
-        &_minHeight_big {
-           min-height: 104px;
-         }
+.search-input {
+  margin-left: 16px;
+  height: 32px;
+}
 
-        &_minHeight_small {
-           min-height: 56px;
-         }
+.adaptive-bar-hidden {
+  display: none !important;
+  margin: 0;
+  padding: 0;
+}
 
-        &_flexBarItem {
-           flex-direction: row;
-           align-items: center;
-         }
+.bar-button--margin-small {
+  margin-top: 4px;
+  margin-left: 8px;
+}
 
-        &_fillSpace {
-           display: flex;
-           justify-content: space-between;
-         }
-
-        &_adaptiveBarHidden {
-           display: none !important;
-           margin: 0;
-           padding: 0;
-         }
-    }
-
-    &-VerticalLine {
-       border-left: 1px solid #B3B3B3;
-       height: 24px;
-       margin-left: 16px;
-     }
-
-     &-AdaptiveBarHidden {
-        display: none !important;
-        margin: 0;
-        padding: 0;
-      }
-
-     &-AdaptiveDropdown {
-        margin-left: 16px;
-        width: 100%;
-      }
-
-
-
-
-
-
-
-    &-Search {
-        margin-left: 16px;
-
-        &_input {
-           height: 32px;
-         }
-
-        &_button {
-           margin-top: 4px;
-         }
-
-     }
-
-
-
-
+.bar-button--margin-medium {
+  margin-top: 4px;
+  margin-left: 16px;
 }

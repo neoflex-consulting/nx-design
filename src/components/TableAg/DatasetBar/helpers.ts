@@ -36,13 +36,35 @@ export type IServerQueryParam = {
   color?: string;
 }
 
+enum legendPositionEnum {
+  Hidden = "legendHidden",
+  Left = "left",
+  Right = "right",
+  Bottom = "bottom",
+}
+
+export type IDiagram = {
+  id: number;
+  keyColumn: string;
+  valueColumn: string;
+  diagramName: string;
+  diagramLegend: string;
+  legendPosition: legendPositionEnum;
+  axisXLegend: string;
+  axisYLegend: string;
+  diagramType: string;
+  colorSchema?: string;
+  isSingle: boolean;
+  outerLabel: boolean;
+}
+
 export type DatasetBarProps = {
   className?: string;
   barSize?: AdaptiveElementSize;
   isQuickSearchExpanded?: boolean;
   isExportChecked?: boolean;
   barMode?: BarModeProp;
-  hiddenComponents?: (ComponentsProp)[];
+  hiddenComponents: (ComponentsProp)[];
   isFullScreenOn?: boolean;
   viewObject?: Object;
   height?: number;
@@ -51,6 +73,20 @@ export type DatasetBarProps = {
   datasetComponentId: string;
   serverFilters: IServerQueryParam[];
   isTabItem: boolean;
+  maxWidth?: number;
+  isEditButtonVisible: boolean;
+  hiddenColumns: IServerQueryParam[];
+  highlights: IServerQueryParam[];
+  isServerFunctionsHidden: boolean;
+  onFiltersClick: () => void;
+  serverFiltersCheck: boolean;
+  serverSortsCheck: boolean;
+  serverCalculatedExpressionCheck: boolean;
+  serverAggregatesCheck: boolean;
+  diagrams: IDiagram[];
+  groupByColumnCheck: boolean;
+  isDeleteButtonVisible: boolean;
+  pivotsCheck: boolean;
 };
 
 export const cnDatasetBar = cn('DatasetBar');

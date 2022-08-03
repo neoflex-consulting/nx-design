@@ -19,9 +19,8 @@ export type TableAgProps = {
   barMode?: BarModeProp;
   viewObject: ViewObjectProps;
   isTabItem: boolean;
+  datasetViewMaxWidth?: number;
 };
-
-
 
 export const cnTableAg = cn('TableAg');
 

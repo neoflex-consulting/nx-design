@@ -6,6 +6,7 @@
   width: var(--icon-size);
   height: var(--icon-size);
   line-height: 0;
+  vertical-align: sub;
 
 &_size {
 &_xs {
