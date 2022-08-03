@@ -1,6 +1,42 @@
-.GridPanel {
+.functionalBar__header {
+  background: #F2F2F2 !important;
+  box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.05), 2px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  height: 52px;
+}
 
-    &-TextField {
-        margin-left: 16px;
-    }
+.functionalBar__header .block {
+  height: 24px;
+}
+
+.adaptive-bar-column-flex {
+  display: flex;
+  flex-direction: column;
+  height: 104px !important;
+  min-width: 375px !important;
+}
+
+.adaptive-bar-column-flex .horizontal-line {
+  border-top: 1px solid #D9D9D9;
+  margin: 0;
+}
+
+.main-grid-panel {
+  margin: 16px 16px 16px 0 !important;
+}
+
+.flex-bar-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.flex-bar-item .vertical-line {
+  border-left: 1px solid #B3B3B3;
+  height: 24px;
+  margin-left: 16px;
+}
+
+.fill-space {
+  width: 100% !important;
 }

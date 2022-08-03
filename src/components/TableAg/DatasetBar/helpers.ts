@@ -10,7 +10,7 @@ import {CSSProperties} from "react";
 // }
 export const adaptiveElementSize = ['extraSmall', 'small', 'medium', 'large', 'extraLarge'] as const;
 export type AdaptiveElementSize = typeof adaptiveElementSize[number];
-export const adaptiveElementSizeDefault: AdaptiveElementSize = adaptiveElementSize[3];
+export const adaptiveElementSizeDefault: AdaptiveElementSize = adaptiveElementSize[2];
 
 export const barModeProp = ['edit', 'diagram', 'normal', 'pivot'] as const;
 export type BarModeProp = typeof barModeProp[number];
@@ -23,6 +23,19 @@ export const minHeightPropDefault: MinHeightProp = minHeightProp[0];
 export const componentsProp = ['search', 'filter', 'highlights', 'sort', 'calculator', 'aggregations', 'diagram', 'groupBy', 'hiddenColumns', 'exportDocx', 'exportExcel', 'exportCsv', 'versions', 'edit', 'pivot'] as const;
 export type ComponentsProp = typeof componentsProp[number];
 
+export type IServerQueryParam = {
+  index: number;
+  datasetColumn?: string;
+  operation?: string;
+  value?: string;
+  enable?: boolean;
+  type?: string;
+  mask?: string;
+  highlightType?: string;
+  backgroundColor?: string;
+  color?: string;
+}
+
 export type DatasetBarProps = {
   className?: string;
   barSize?: AdaptiveElementSize;
@@ -33,6 +46,11 @@ export type DatasetBarProps = {
   isFullScreenOn?: boolean;
   viewObject?: Object;
   height?: number;
+
+  onBarSizeChange: (newSize: AdaptiveElementSize) => void;
+  datasetComponentId: string;
+  serverFilters: IServerQueryParam[];
+  isTabItem: boolean;
 };
 
 export const cnDatasetBar = cn('DatasetBar');
@@ -42,7 +60,5 @@ export const checkBarSizeIsZero = (barSize: AdaptiveElementSize | undefined) => 
 export const checkBarSizeIsNotZero = (barSize: AdaptiveElementSize | undefined) => barSize !== undefined && adaptiveElementSize.indexOf(barSize) !== 0;
 
 export const minHeight = (barSize: AdaptiveElementSize | undefined) => barSize !== undefined && adaptiveElementSize.indexOf(barSize) <= 2 ? minHeightProp[0] : minHeightProp[1];
-
-export const getHeight = (fullScreenOn : boolean | undefined, height: number | undefined) => fullScreenOn ?  window.innerHeight - 90 : height ? height : 510;
 
 

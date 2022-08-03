@@ -6,8 +6,7 @@ import {
   adaptiveElementSizeDefault,
   barModeProp,
   barModePropDefault,
-  DatasetBarProps,
-  getHeight
+  DatasetBarProps
 } from "./helpers";
 import {EditPanel} from "../EditPanel/EditPanel";
 import {DiagramPanel} from "../DiagramPanel/DiagramPanel";
@@ -23,10 +22,11 @@ export const DatasetBar = React.forwardRef<HTMLDivElement, DatasetBarProps>((pro
     isQuickSearchExpanded = false,
     isExportChecked = false,
     barMode,
-    isFullScreenOn = false,
+    isFullScreenOn,
     viewObject,
     height,
     hiddenComponents,
+    serverFilters,
     ...otherProps
   } = props;
 
@@ -34,20 +34,11 @@ export const DatasetBar = React.forwardRef<HTMLDivElement, DatasetBarProps>((pro
   const barModeCurrent = barMode !== undefined ? barMode : barModePropDefault;
 
   return (
-    <div
-      ref={datasetBarRef}
-      style={{
-        height: getHeight(isFullScreenOn, height)}}
-      {...otherProps}
-    >
-      {
         barMode === barModePropDefault
           ? <EditPanel/>
           : barMode === barModeProp[1]
             ? <DiagramPanel/>
-          : <GridPanel barSize={barSizeCurrent} barMode={barModeCurrent}/>
-      }
-    </div>
+          : <GridPanel barSize={barSizeCurrent} barMode={barModeCurrent} {...otherProps}/>
   )
 
 })

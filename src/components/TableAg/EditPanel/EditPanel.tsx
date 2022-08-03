@@ -34,6 +34,7 @@ export const EditPanel = React.forwardRef<HTMLDivElement, EditPanelProps>((props
       className={cnEditPanel('Header',{adaptiveBarColumnFlex: checkBarSizeIsZero(barSize), minHeight: minHeight(barSize)}, [className])}
       {...otherProps}
     >
+EDIT PANEL
       <div
         className={cnEditPanel('Block', {spaceBetween: true, fillSpace: checkBarSizeIsNotZero(barSize)})}
       >

@@ -2,22 +2,18 @@ import * as React from "react";
 import {cnGridPanel, GridPanelProps} from "./helpers";
 import './../DatasetBar/DatasetBar.css';
 import './GridPanel.css';
-import { TextField } from '../../TextField/TextField';
+import {TextField} from '../../TextField/TextField';
 
 import {
   checkBarSize,
-  checkBarSizeIsZero,
   checkBarSizeIsNotZero,
+  checkBarSizeIsZero,
   cnDatasetBar,
-  minHeight,
-  componentsProp
+  componentsProp,
+  minHeight
 } from "../DatasetBar/helpers";
 import {usePropsHandler} from "../../EventInterceptor/usePropsHandler";
 import {SearchTransformer} from "../SearchTransformer/SearchTransformer";
-import {ContextMenu} from "../../ContextMenu/ContextMenu";
-import {Button} from "../../Button/Button";
-import {IconPlus} from "../../../icons/IconPlus/IconPlus";
-import {useRef} from "react";
 import {ActionButtons} from "../ActionButtons/ActionButtons";
 
 export const GridPanel = React.forwardRef<HTMLDivElement, GridPanelProps>((props, ref) => {
@@ -55,11 +51,14 @@ export const GridPanel = React.forwardRef<HTMLDivElement, GridPanelProps>((props
   return (
     <div
       ref={gridPanelRef}
-      style={{maxWidth: maxWidth ? maxWidth : undefined}}
-      className={cnDatasetBar('Header',{adaptiveBarColumnFlex: checkBarSizeIsZero(barSize), minHeight: minHeight(barSize), flexBarItem: true, fillSpace: checkBarSizeIsNotZero(barSize)}, [className])}
+      style={{
+        minHeight: minHeight(barSize),
+        maxWidth: maxWidth ? maxWidth : undefined
+      }}
+      className={`${checkBarSizeIsZero(barSize) ? "functionalBar__header adaptive-bar-column-flex"  : "functionalBar__header"} `}
       {...otherProps}
     >
-      <div className={cnDatasetBar('GridPanel')} >
+      <div className={"main-grid-panel block flex-bar-item " + (checkBarSizeIsNotZero(barSize) && "fill-space")}>
           {
             ( hiddenComponents === undefined || !hiddenComponents.includes(componentsProp[0]) ) &&
             ( checkBarSize(barSize, 2)
