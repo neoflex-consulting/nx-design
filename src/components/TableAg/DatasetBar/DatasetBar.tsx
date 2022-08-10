@@ -35,6 +35,7 @@ import {IconEdit} from "../../../icons/IconEdit/IconEdit";
 import {IconTablePivotCheck} from "../../../icons/IconTablePivotCheck/IconTablePivotCheck";
 import {IconTablePivot} from "../../../icons/IconTablePivot/IconTablePivot";
 import {IconDelete} from "../../../icons/IconDelete/IconDelete";
+import {IconSearch} from "../../../icons/IconSearch/IconSearch";
 
 export const DatasetBar = React.forwardRef<HTMLDivElement, DatasetBarProps>((props, ref) => {
 
@@ -83,13 +84,16 @@ export const DatasetBar = React.forwardRef<HTMLDivElement, DatasetBarProps>((pro
         className={"search-input"}
         id="quickFilter"
         type="search"
-        placeholder="quick filter"
+        placeholder="Поиск"
+        rightSide={IconSearch}
+        view={"default"}
       />
 
   };
 
   const getActionButtons = () => {
-    const color = '#5E6785';
+    const size = "l";
+    const view = "link";
     function renderIcon(arr: IServerQueryParam[]) : boolean {
       return !!arr.find(e=>e.datasetColumn && e.enable)
     }
@@ -103,7 +107,7 @@ export const DatasetBar = React.forwardRef<HTMLDivElement, DatasetBarProps>((pro
      <FilterButtonWithTooltip
        className={"bar-button--margin-medium"}
        view={"link"}
-       iconLeft={serverFiltersCheck || renderIcon(highlights) ? <IconFilterCheck color={color}/> : <IconFilter color={color}/>}
+       iconLeft={serverFiltersCheck || renderIcon(highlights) ? <IconFilterCheck view={view} size={size}/> : <IconFilter view={view} size={size}/>}
        onlyIcon
      />;
 
@@ -114,7 +118,7 @@ export const DatasetBar = React.forwardRef<HTMLDivElement, DatasetBarProps>((pro
       <SortButtonWithTooltip
         className={"bar-button--margin-small"}
         view={"link"}
-        iconLeft={serverSortsCheck ? <IconSortCheck color={color}/> : <IconSortDown color={color}/>}
+        iconLeft={serverSortsCheck ? <IconSortCheck view={view} size={size}/> : <IconSortDown view={view} size={size}/>}
         onlyIcon
       />;
 
@@ -125,7 +129,7 @@ export const DatasetBar = React.forwardRef<HTMLDivElement, DatasetBarProps>((pro
       <CalculatorButtonWithTooltip
         className={"bar-button--margin-medium"}
         view={"link"}
-        iconLeft={serverCalculatedExpressionCheck ? <IconCalculatorCheck color={color}/> : <IconCalculator color={color}/>}
+        iconLeft={serverCalculatedExpressionCheck ? <IconCalculatorCheck view={view} size={size}/> : <IconCalculator view={view} size={size}/>}
         onlyIcon
       />;
 
@@ -136,18 +140,18 @@ export const DatasetBar = React.forwardRef<HTMLDivElement, DatasetBarProps>((pro
       <AggregationButtonWithTooltip
         className={"bar-button--margin-small"}
         view={"link"}
-        iconLeft={serverAggregatesCheck ? <IconPlusSDoubleCheck color={color}/> : <IconPlusSDouble color={color}/>}
+        iconLeft={serverAggregatesCheck ? <IconPlusSDoubleCheck view={view} size={size}/> : <IconPlusSDouble view={view} size={size}/>}
         onlyIcon
       />;
 
     const DiagramButtonWithTooltip = withTooltip({
       content: 'diagram'
     })(Button);
-    const diagramButton = !hiddenComponents.includes("aggregations") &&
+    const diagramButton = !hiddenComponents.includes("diagram") &&
       <DiagramButtonWithTooltip
         className={"bar-button--margin-small"}
         view={"link"}
-        iconLeft={diagrams.length > 0 ? <IconBarChartVCheck color={color}/> : <IconBarChartV color={color}/>}
+        iconLeft={diagrams.length > 0 ? <IconBarChartVCheck view={view} size={size}/> : <IconBarChartV view={view} size={size}/>}
         onlyIcon
       />;
 
@@ -158,7 +162,7 @@ export const DatasetBar = React.forwardRef<HTMLDivElement, DatasetBarProps>((pro
       <GroupByButtonWithTooltip
         className={"bar-button--margin-small"}
         view={"link"}
-        iconLeft={groupByColumnCheck ? <IconGroupCheck color={color}/> : <IconGroup color={color}/>}
+        iconLeft={groupByColumnCheck ? <IconGroupCheck view={view} size={size}/> : <IconGroup view={view} size={size}/>}
         onlyIcon
       />;
 
@@ -169,7 +173,7 @@ export const DatasetBar = React.forwardRef<HTMLDivElement, DatasetBarProps>((pro
       <HiddenColumnButtonWithTooltip
         className={"bar-button--margin-small"}
         view={"link"}
-        iconLeft={hiddenComponents.includes("hiddenColumns") ? <IconEyeInvCheck color={color}/> : <IconEye color={color}/>}
+        iconLeft={hiddenComponents.includes("hiddenColumns") ? <IconEyeInvCheck view={view} size={size}/> : <IconEye view={view} size={size}/>}
         onlyIcon
       />;
 
@@ -180,7 +184,7 @@ export const DatasetBar = React.forwardRef<HTMLDivElement, DatasetBarProps>((pro
       <SaveButtonWithTooltip
         className={"bar-button--margin-medium"}
         view={"link"}
-        iconLeft={<IconMark color={color}/>}
+        iconLeft={<IconMark view={view} size={size}/>}
         onlyIcon
       />;
 
@@ -191,7 +195,7 @@ export const DatasetBar = React.forwardRef<HTMLDivElement, DatasetBarProps>((pro
       <DeleteButtonWithTooltip
         className={"bar-button--margin-small"}
         view={"link"}
-        iconLeft={<IconDelete color={color}/>}
+        iconLeft={<IconDelete view={view} size={size}/>}
         onlyIcon
       />;
 
@@ -202,7 +206,7 @@ export const DatasetBar = React.forwardRef<HTMLDivElement, DatasetBarProps>((pro
       <EditButtonWithTooltip
         className={"bar-button--margin-medium"}
         view={"link"}
-        iconLeft={<IconEdit color={color}/>}
+        iconLeft={<IconEdit view={view} size={size}/>}
         onlyIcon
       />;
 
@@ -213,7 +217,7 @@ export const DatasetBar = React.forwardRef<HTMLDivElement, DatasetBarProps>((pro
       <PivotButtonWithTooltip
         className={"bar-button--margin-small"}
         view={"link"}
-        iconLeft={pivotsCheck ? <IconTablePivotCheck color={color}/> : <IconTablePivot color={color}/>}
+        iconLeft={pivotsCheck ? <IconTablePivotCheck view={view} size={size}/> : <IconTablePivot view={view} size={size}/>}
         onlyIcon
       />;
 
@@ -255,6 +259,46 @@ export const DatasetBar = React.forwardRef<HTMLDivElement, DatasetBarProps>((pro
       </div>
   };
 
+  const getExportButtons = () => {
+    return <div className={"flex-bar-item"} id={"flex-bar"}>
+      <div className='vertical-line'/>
+      {/*{!(hiddenComponents.includes("exportDocx")*/}
+      {/*  && hiddenComponents.includes("exportExcel")*/}
+      {/*  && hiddenComponents.includes("exportCsv"))*/}
+      {/*&& <Dropdown getPopupContainer={() => document.getElementById (`flex-bar`) as HTMLElement}*/}
+      {/*             overlay={this.getExportMenu()} placement="bottomRight">*/}
+      {/*  <div>*/}
+      {/*    <NeoIcon icon={"download"} size={"m"} color={NeoColor.violete_4}*/}
+      {/*             className={"export-download-icon"}/>*/}
+      {/*  </div>*/}
+      {/*</Dropdown>}*/}
+
+      {/*{isFullScreenOn && <NeoHint title={this.props.t('fullscreen')} placement="bottomRight"*/}
+      {/*                                       getPopupContainer={() => document.getElementById (`barItems`) as HTMLElement}*/}
+      {/*>*/}
+      {/*  <NeoButton htmlType={"button"}*/}
+      {/*             type={'link'} className={"full-screen-icon"}*/}
+      {/*             style={{position : "unset"}}*/}
+      {/*             onClick={() => this.props.onFullscreenClick()}>*/}
+      {/*    <NeoIcon icon={'full-screen-exit'} color={NeoColor.violete_4} size={'m'}/>*/}
+      {/*  </NeoButton>*/}
+      {/*</NeoHint>*/}
+      {/*}*/}
+
+      {/*{!isFullScreenOn && <NeoHint title={this.props.t('fullscreen')} placement="bottomRight"*/}
+      {/*                                        getPopupContainer={() => document.getElementById (`barItems`) as HTMLElement}*/}
+      {/*>*/}
+      {/*  <NeoButton htmlType={"button"}*/}
+      {/*             type={'link'} className={"full-screen-icon"}*/}
+      {/*             style={{position : "unset"}}*/}
+      {/*             onClick={() => this.props.onFullscreenClick()}>*/}
+      {/*    <NeoIcon icon={'full-screen'} color={NeoColor.violete_4} size={'m'}/>*/}
+      {/*  </NeoButton>*/}
+      {/*</NeoHint>*/}
+      {/*}*/}
+
+    </div>
+  }
 
   const getGridPanel = () => {
     const adaptiveActionMenuVisible = !(
@@ -307,17 +351,8 @@ export const DatasetBar = React.forwardRef<HTMLDivElement, DatasetBarProps>((pro
         {/*</Dropdown>}*/}
 
         {isQuickSearchExpanded && getActionButtons()}
+        {checkBarSizeIsZero(barSize) && getExportButtons()}
 
-        {/*<ActionButtons*/}
-        {/*  hiddenComponents={[]}*/}
-        {/*  barSize={"large"}*/}
-        {/*  hiddenColumns={[]}*/}
-        {/*  highlights={[]}*/}
-        {/*  isServerFunctionsHidden={false}*/}
-        {/*  serverFiltersCheck={false}*/}
-        {/*/>}*/}
-
-        GridPanel
       </div>
 
     </div>

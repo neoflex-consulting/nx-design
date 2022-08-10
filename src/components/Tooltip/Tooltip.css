@@ -1,11 +1,12 @@
 .Tooltip {
-  --tooltip-bg-color: var(--color-bg-default);
+  --tooltip-bg-color: #666;
   --tooltip-bg-opacity: 0.9;
 
   /* Задаются через js */
   --tooltip-arrow-size: 0;
   --tooltip-arrow-offset: 0;
   position: relative;
+
 
   &_status {
     &_error {
@@ -51,6 +52,7 @@
     box-sizing: border-box;
     width: 100%;
     padding: var(--space-xs);
+    color: white;
 
     &_size_s {
       max-width: 150px;

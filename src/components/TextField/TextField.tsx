@@ -185,7 +185,7 @@ export function TextFieldRender<TYPE extends string>(
 
   return (
     <div
-      className={cnTextField({ labelPosition, size, view, width }, [className])}
+      className={cnTextField({ labelPosition, size, view, width })}
       ref={useForkRef([ref, textFieldRef])}
       {...rootProps}
       {...otherProps}
@@ -210,7 +210,7 @@ export function TextFieldRender<TYPE extends string>(
             type,
             focus: focus || focused,
             withValue: !!value,
-          })}
+          }, [className])}
         >
           {LeftIcon && (
             <div

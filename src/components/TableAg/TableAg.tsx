@@ -152,7 +152,7 @@ export const TableAg = React.forwardRef<HTMLDivElement, TableAgProps>((props, re
             // }}
             isServerFunctionsHidden={false}
             isDeleteButtonVisible={true}
-            // isEditButtonVisible={this.state.isUpdateAllowed || this.state.isDeleteAllowed || this.state.isInsertAllowed}
+            isEditButtonVisible={true}
             // isComponentsLoaded={this.state.currentDatasetComponent !== undefined}
             // isFullScreenOn = {this.state.fullScreenOn}
             // zoom={this.state.zoom}

@@ -99,7 +99,7 @@ export const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>((props, re
       >
         <div className={cnTooltip('Background')} />
         <div className={cnTooltip('Arrow', { direction })} />
-        <div className={cnTooltip('Content', { size })}>{renderChildren(children)}</div>
+        <div className={cnTooltip('Content', { size }, [className])}>{renderChildren(children)}</div>
       </Popover>
     </ThemeContext.Provider>
   );

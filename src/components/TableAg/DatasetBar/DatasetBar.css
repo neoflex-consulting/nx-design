@@ -1,12 +1,12 @@
 .functionalBar__header {
   display: flex;
   justify-content: space-between;
-  background: #F2F2F2 !important;
-  /*border: 1px solid #eee;*/
+  background: #e6e6e6 !important;
+  border: 1px solid #eee;
   height: 56px;
   color: #222222;
-  /*box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.05), 2px 2px 4px rgba(0, 0, 0, 0.1);*/
-  /*border-radius: 4px;*/
+  box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.05), 2px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
 }
 
 .functionalBar__header .block {
@@ -40,7 +40,7 @@
 .flex-bar-item .vertical-line {
   border-left: 1px solid #B3B3B3;
   height: 24px;
-  margin-left: 16px;
+  margin-left: 12px;
 }
 
 .fill-space {
@@ -48,8 +48,10 @@
 }
 
 .search-input {
-  margin-left: 16px;
+  margin-left: 17px;
+  margin-right: 5px;
   height: 32px;
+  border: none;
 }
 
 .adaptive-bar-hidden {
@@ -60,10 +62,12 @@
 
 .bar-button--margin-small {
   margin-top: 4px;
-  margin-left: 8px;
+  /*margin-left: 8px;*/
+  margin-left: 0px;
 }
 
 .bar-button--margin-medium {
   margin-top: 4px;
-  margin-left: 16px;
+  /*margin-left: 16px;*/
+  margin-left: 12px;
 }
