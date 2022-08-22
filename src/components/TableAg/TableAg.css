@@ -1,0 +1,17 @@
+.dataset-view {
+  margin: 0;
+  padding: 16px;
+}
+
+.fullscreen-on .ant-drawer {
+  top: 0 !important;
+  height: 100% !important;
+}
+
+.fullscreen-on {
+  padding: 24px 24px 24px 24px;
+}
+
+.diagram .ant-drawer-header{
+  padding: 15px 40px;
+}
