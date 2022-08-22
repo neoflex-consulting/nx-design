@@ -5,6 +5,7 @@ import { BadgeExampleSize } from './examples/BadgeExampleSize/BadgeExampleSize';
 import { BadgeExampleStatus } from './examples/BadgeExampleStatus/BadgeExampleStatus';
 import { BadgeExampleView } from './examples/BadgeExampleView/BadgeExampleView';
 import { BadgeExampleForm } from './examples/BadgeExampleForm/BadgeExampleForm';
+import { BadgeExampleLink } from './examples/BadgeExampleLink/BadgeExampleLink';
 
 # Badge
 
@@ -23,6 +24,7 @@ import { BadgeExampleForm } from './examples/BadgeExampleForm/BadgeExampleForm';
   - [Форма](#форма)
   - [Бейджик с иконкой](#бейджик-с-иконкой)
 - [Тег для бейджика](#тег-для-бейджика)
+- [Children as React.ReactNode для бейджика](#children-для-бейджика)
 - [Список свойств](#свойства)
 - [Пример использования](#пример)
 
@@ -139,6 +141,20 @@ const Close = <Icon icon={'close'}/>
 <Badge as="a" href="#" label="Я ссылка, которая притворяется бейджиком" />
 ```
 
+## Children as React.ReactNode для бейджика
+
+Свойство `label` может содержать в себе React.ReactNode.
+
+<BadgeExampleLink />
+
+```ts
+import {BrowserRouter as Router, Link} from "react-router-dom";
+
+<Router>
+  <Badge label={<Link style={{color: "var(--color-typo-primary)", textDecoration: "none"}} to={"/?path=/docs/components-badge--playground"}>Я ссылка на документацию по Badge</Link>}/>
+</Router>
+```
+
 ## Свойства
 
 | Свойство                      | Тип                                                     | По умолчанию | Описание                                                         |
@@ -148,8 +164,8 @@ const Close = <Icon icon={'close'}/>
 | [`status`](#статус)           | `'success' , 'error' , 'warning' , 'normal' , 'system'` | `'normal'`   | Статус                                                           |
 | [`form`](#форма)              | `'default' , 'round'`                                   | `'default'`  | Форма                                                            |
 | [`minified`](#типы-бейджиков) | `boolean`                                               | -            | Отвечает за отрисовку бейджика без надписи, в виде точки         |
-| [`icon`](#бейджик-с-иконкой)  | `React.ReactNode;`                                      | -            | Добавляет иконку                                                 |
-| [`label`](#текст-на-бейджике) | `string`                                                | -            | Текст на бейджике                                                |
+| [`icon`](#бейджик-с-иконкой)  | `React.ReactNode`                                       | -            | Добавляет иконку                                                 |
+| [`label`](#текст-на-бейджике) | `string , React.ReactNode`                              | -            | Текст на бейджике                                                |
 | [`as`](#тег-для-бейджика)     | `keyof JSX.IntrinsicElements`                           | `'div'`      | HTML-тег, в виде которого этот компонент будет представлен в DOM |
 | `className`                   | `string`                                                | -            | Дополнительный CSS-класс (mix)                                   |
 | `ref`                         | `React.Ref<HTMLElement>`                                | -            | Ссылка на корневой DOM-элемент компонента                        |

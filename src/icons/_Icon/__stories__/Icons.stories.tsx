@@ -366,6 +366,36 @@ import {IconVideoSquare} from '../../IconVideoSquare/IconVideoSquare';
 import {IconWarning} from '../../IconWarning/IconWarning';
 import {IconWarningC} from '../../IconWarningC/IconWarningC';
 import {IconWifi} from '../../IconWifi/IconWifi';
+import {IconAirflow} from '../../DatagramIcon/IconAirflow/IconAirflow';
+import {IconArrowDirectional} from '../../DatagramIcon/IconArrowDirectional/IconArrowDirectional';
+import {IconAtlas} from '../../DatagramIcon/IconAtlas/IconAtlas';
+import {IconClockD} from '../../DatagramIcon/IconClockD/IconClockD';
+import {IconCloseMenuD} from '../../DatagramIcon/IconCloseMenuD/IconCloseMenuD';
+import {IconCojob} from '../../DatagramIcon/IconCojob/IconCojob';
+import {IconCube} from '../../DatagramIcon/IconCube/IconCube';
+import {IconDataset} from '../../DatagramIcon/IconDataset/IconDataset';
+import {IconDeployment} from '../../DatagramIcon/IconDeployment/IconDeployment';
+import {IconDeployStart} from '../../DatagramIcon/IconDeployStart/IconDeployStart';
+import {IconDocumentSettings} from '../../DatagramIcon/IconDocumentSettings/IconDocumentSettings';
+import {IconEnvironment} from '../../DatagramIcon/IconEnvironment/IconEnvironment';
+import {IconFunction} from '../../DatagramIcon/IconFunction/IconFunction';
+import {IconJdbcBase} from '../../DatagramIcon/IconJdbcBase/IconJdbcBase';
+import {IconJdbcConnect} from '../../DatagramIcon/IconJdbcConnect/IconJdbcConnect';
+import {IconLayersD} from '../../DatagramIcon/IconLayersD/IconLayersD';
+import {IconOozie} from '../../DatagramIcon/IconOozie/IconOozie';
+import {IconOpenMenu} from '../../DatagramIcon/IconOpenMenu/IconOpenMenu';
+import {IconOrganization} from '../../DatagramIcon/IconOrganization/IconOrganization';
+import {IconPen} from '../../DatagramIcon/IconPen/IconPen';
+import {IconRocket} from '../../DatagramIcon/IconRocket/IconRocket';
+import {IconScheme} from '../../DatagramIcon/IconScheme/IconScheme';
+import {IconSettingsD} from '../../DatagramIcon/IconSettingsD/IconSettingsD';
+import {IconSettingsPlay} from '../../DatagramIcon/IconSettingsPlay/IconSettingsPlay';
+import {IconSoftwareSystem} from '../../DatagramIcon/IconSoftwareSystem/IconSoftwareSystem';
+import {IconStream} from '../../DatagramIcon/IconStream/IconStream';
+import {IconTree} from '../../DatagramIcon/IconTree/IconTree';
+import {IconWorkflow} from '../../DatagramIcon/IconWorkflow/IconWorkflow';
+import {IconZeppelin} from '../../DatagramIcon/IconZeppelin/IconZeppelin';
+
 
 const defaultKnobs = () => ({
   size: select('size', ['xs', 's', 'm', 'l'], 'm'),
@@ -377,6 +407,35 @@ const defaultKnobs = () => ({
 });
 
 const neoicons = {
+  IconAirflow,
+  IconArrowDirectional,
+  IconAtlas,
+  IconClockD,
+  IconCloseMenuD,
+  IconCojob,
+  IconCube,
+  IconDataset,
+  IconDeployment,
+  IconDeployStart,
+  IconDocumentSettings,
+  IconEnvironment,
+  IconFunction,
+  IconJdbcBase,
+  IconJdbcConnect,
+  IconLayersD,
+  IconOozie,
+  IconOpenMenu,
+  IconOrganization,
+  IconPen,
+  IconRocket,
+  IconScheme,
+  IconSettingsD,
+  IconSettingsPlay,
+  IconSoftwareSystem,
+  IconStream,
+  IconTree,
+  IconWorkflow,
+  IconZeppelin,
   IconActionMenu,
   IconAggregate,
   IconAlert,

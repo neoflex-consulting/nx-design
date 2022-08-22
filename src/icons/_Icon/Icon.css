@@ -10,18 +10,18 @@
 
 &_size {
 &_xs {
-   --icon-size: var(--graphics-size-xs);
- }
-
-&_s {
    --icon-size: var(--graphics-size-s);
  }
 
-&_m {
+&_s {
    --icon-size: var(--graphics-size-m);
  }
-&_l {
+
+&_m {
    --icon-size: var(--graphics-size-l);
+ }
+&_l {
+   --icon-size: var(--graphics-size-xl);
  }
 }
 

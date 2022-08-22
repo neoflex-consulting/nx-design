@@ -30,7 +30,7 @@ type Props = {
   form?: BadgePropForm;
   minified?: boolean;
   icon?: React.ReactNode;
-  label?: string;
+  label?: string | React.ReactNode;
   children?: never;
 };
 
