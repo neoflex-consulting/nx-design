@@ -6,7 +6,7 @@ import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/D
 import * as wp from '../../../../../uiKit/whitepaper/whitepaper';
 import { cn } from '../../../../../utils/bem';
 import { Typography } from '../../../../Typography/Typography';
-import { presetGpnDark, presetGpnDefault, presetGpnDisplay, Theme } from '../../../Theme';
+import { presetGpnDark, presetGpnDefault, presetGpnDisplay, presetDatagram, Theme } from '../../../Theme';
 
 const cnExampleColors = cn('ThemeExampleColors');
 

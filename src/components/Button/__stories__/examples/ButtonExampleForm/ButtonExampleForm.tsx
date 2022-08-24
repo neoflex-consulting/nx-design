@@ -8,17 +8,17 @@ import { Button } from '../../../Button';
 
 export function ButtonExampleFormBasic() {
   return (
-    <div className={cnDocsDecorator('Section', [wp.decorator({ distribute: 'left' })])}>
-      <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
-        <Button label="Default" />
+      <div className={cnDocsDecorator('Section', [wp.decorator({ distribute: 'left' })])}>
+        <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
+          <Button label="Default" />
+        </div>
+        <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
+          <Button form="brick" label="Brick" />
+        </div>
+        <div className={cnDocsExample()}>
+          <Button form="round" label="Round" />
+        </div>
       </div>
-      <div className={cnDocsExample(null, [wp.decorator({ 'indent-r': 's' })])}>
-        <Button form="brick" label="Brick" />
-      </div>
-      <div className={cnDocsExample()}>
-        <Button form="round" label="Round" />
-      </div>
-    </div>
   );
 }
 

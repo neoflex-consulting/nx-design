@@ -8,6 +8,7 @@ import { presetGpnDefault } from './presets/presetGpnDefault';
 export { presetGpnDefault } from './presets/presetGpnDefault';
 export { presetGpnDark } from './presets/presetGpnDark';
 export { presetGpnDisplay } from './presets/presetGpnDisplay';
+export { presetDatagram } from './presets/presetDatagram';
 
 export type ThemePreset = {
   color: {

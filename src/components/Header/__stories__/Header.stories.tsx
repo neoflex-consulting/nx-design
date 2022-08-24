@@ -29,10 +29,6 @@ export function Playground() {
         Без меню
       </Typography>
       <HeaderWithoutMenuExample />
-      <Typography size="3xl">
-        С уникальным лого
-      </Typography>
-      <HeaderWithLogoExample />
     </div>
   );
 }
