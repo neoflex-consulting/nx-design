@@ -8,7 +8,7 @@
 &_before[class*='_focus']::before,
 &_before[class*='_focus']:hover::before {
    outline: none;
-   box-shadow: 0 0 0 3px var(--color-control-bg-focus);
+   box-shadow: 0 0 0 3px var(--color-bg-default);
    animation: Animation--MixFocus 0.5s ease-in;
  }
 
@@ -30,6 +30,6 @@
   }
 
   to {
-    box-shadow: 0 0 0 3px var(--color-control-bg-focus), 0 0 0 6px transparent;
+    box-shadow: 0 0 0 3px var(--color-control-bg-focus), 0 0 0 4px transparent;
   }
 }

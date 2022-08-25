@@ -70,10 +70,9 @@ $color-text-black: #090b1f;
   --color-bg-error: var(--color-base-error-magenta-5); /* Цвет фона ошибки */
   --color-bg-critical: color($color-base-critical a(100%)); /* Цвет фона системнный */
 
-  /* //////////////////////////////
-  // Цвета текста ////////////// */
-  --color-typo-primary: var(--color-base-base-grey-6); /* Цвет основного текста */
-  --color-typo-secondary: var(--color-base-base-grey-6); /* Цвет второстепенного текста */
+  /* Цвета текста */
+  --color-typo-primary: var(--color-base-base-grey-7); /* Цвет основного текста */
+  --color-typo-secondary: var(--color-base-base-grey-7); /* Цвет второстепенного текста */
   --color-typo-ghost: var(--color-base-base-grey-3); /* Цвет дополнительного текста */
   --color-typo-brand: color($color-base-project a(100%)); /* Цвет брендового текста */
   --color-typo-system: color($color-base-system h(-225) s(-22%) l(-34%)); /* Цвет текста системнный */
@@ -89,19 +88,17 @@ $color-text-black: #090b1f;
   --color-nums-shadow: 0, 32, 51; /* Значения RGB для указания теней в конструкции rgba(R,G,B, alpha) */
   --color-typo-white: color($color-base-essential); /* Цвет основного текста */
 
-  /* //////////////////////////////
-  // Цвета скроллбара ////////////// */
+  /* Цвета скроллбара */
   --color-scroll-bg: color($color-base-phantom a(6%));
   --color-scroll-thumb: color($color-base-phantom a(24%));
   --color-scroll-thumb-hover: color($color-base-phantom a(32%));
 
-  /* /////////////////////////////
-  // Цвета контролов /////////// */
+  /* Цвета контролов */
 
   /* Default */
   --color-control-bg-default: color($color-base-essential); /* Цвет фона контрола */
-  --color-control-bg-focus: var(--color-base-path-blue-5); /* Цвет тени в состонии фокуса */
-  --color-control-bg-active: var(--color-base-path-blue-4); /* Цвет тени в состонии нажатия  */
+  --color-control-bg-focus: var(--color-base-path-blue-2); /* Цвет тени в состонии фокуса */
+  --color-control-bg-active: var(--color-base-path-blue-6); /* Цвет тени в состонии нажатия  */
   --color-control-typo-default: var(--color-base-base-grey-9); /* Цвет основного текста контрола */
   --color-control-typo-placeholder: var(--color-base-base-grey-5); /* Цвет плейсхолдера контрола */
   --color-control-bg-border-default: var(--color-base-base-grey-3); /* Цвет фона бордеров котрола */
@@ -152,7 +149,7 @@ $color-text-black: #090b1f;
   --color-control-typo-disable: var(--color-base-base-grey-5); /* Цвет основного текста неактивного контрола */
 
 
-/* Цвета тени */
+  /* Цвета тени */
   --color-shadow-group-1: color($color-base-shadow a(2%));
   --color-shadow-group-2: color($color-base-shadow a(16%));
   --color-shadow-layer-1: color($color-base-shadow a(4%));

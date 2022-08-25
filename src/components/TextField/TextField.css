@@ -428,6 +428,6 @@
   }
 
   &-Icon {
-    color: var(--color-control-typo-placeholder);
+    color: var(--color-control-bg-border-focus);
   }
 }
