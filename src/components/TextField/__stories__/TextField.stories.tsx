@@ -94,29 +94,29 @@ export function Playground() {
   return (
     <EventInterceptorProvider eventHandler={action('EventInterceptor')} map={eventInterceptorMap}>
       <div>
-        <TextField
-          value={value}
-          width={width}
-          form={form}
-          status={status || undefined}
-          size={size}
-          view={view}
-          type={type}
-          required={required}
-          step={step}
-          withClearButton={withClearButton}
-          maxLength={maxLength}
-          minRows={minRows}
-          maxRows={maxRows}
-          placeholder={placeholder}
-          onChange={handleChange}
-          leftSide={leftSide}
-          rightSide={rightSide}
-          disabled={disabled}
-          label={label}
-          caption={caption}
-          labelPosition={labelPosition}
-        />
+          <TextField
+            value={value}
+            width={width}
+            form={form}
+            status={status || undefined}
+            size={size}
+            view={view}
+            type={type}
+            required={required}
+            step={step}
+            withClearButton={withClearButton}
+            maxLength={maxLength}
+            minRows={minRows}
+            maxRows={maxRows}
+            placeholder={placeholder}
+            onChange={handleChange}
+            leftSide={leftSide}
+            rightSide={rightSide}
+            disabled={disabled}
+            label={label}
+            caption={caption}
+            labelPosition={labelPosition}
+          />
       </div>
     </EventInterceptorProvider>
   );

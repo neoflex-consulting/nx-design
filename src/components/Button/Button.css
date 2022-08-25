@@ -89,7 +89,13 @@
 
       &:hover {
         background-color: var(--color-control-bg-clear-hover);
+         color: var(--color-control-typo-clear-hover);
       }
+
+      &:active {
+         background-color: var(--color-control-bg-clear-focus);
+         color: var(--color-control-typo-clear-hover);
+       }
     }
 
     &_ghost {
@@ -102,13 +108,8 @@
       }
 
       &:active {
-        background-color: var(--color-control-bg-ghost-focus);
         color: var(--color-control-typo-ghost-hover);
-      }
-
-      &.Button_disabled {
-        background-color: var(--color-control-bg-secondary);
-        color: var(--color-control-bg-border-disable);
+        background-color: var(--color-control-bg-ghost-focus);
       }
     }
 
@@ -132,7 +133,6 @@
       color: var(--color-control-typo-secondary);
       background-color: var(--color-control-bg-secondary);
       border: var(--control-border-width) solid var(--color-control-bg-border-secondary);
-      line-height: calc(var(--button-height) - var(--control-border-width) * 2);
 
       &:hover {
         border-color: var(--color-control-bg-border-secondary-hover);
@@ -145,11 +145,6 @@
         color: var(--color-control-typo-secondary-focus);
       }
 
-      &.Button_disabled {
-        background-color: var(--color-control-bg-secondary);
-        border-color: var(--color-control-bg-border-disable);
-        color: var(--color-control-bg-border-disable);
-      }
     }
 
     &_link {
@@ -161,11 +156,6 @@
          text-decoration: underline;
        }
 
-      &.Button_disabled {
-         background-color: var(--color-control-bg-secondary);
-         border-color: var(--color-control-bg-border-disable);
-         color: var(--color-control-bg-border-disable);
-       }
     }
 
   }

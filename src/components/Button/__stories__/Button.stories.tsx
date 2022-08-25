@@ -56,33 +56,19 @@ export function Playground() {
   return (
     <EventInterceptorProvider eventHandler={console.log} map={eventInterceptorMap}>
       <div className={cnButtonStories()}>
-        <Button
-          width={width}
-          size={size}
-          view={view}
-          form={form}
-          disabled={disabled}
-          loading={loading}
-          label={label}
-          onlyIcon={onlyIcon}
-          onClick={action('click')}
-          iconRight={iconRight ? IconUser : undefined}
-          // iconLeft={iconLeft ? IconCaretDown : undefined}
-          iconLeft={<IconCaretDown size={"s"}/>}
-        />
-        <Button
-          width={width}
-          size={size}
-          view={view}
-          form={form}
-          disabled={disabled}
-          loading={loading}
-          label={label}
-          onlyIcon={onlyIcon}
-          onClick={action('click')}
-          iconRight={iconRight ? IconUser : undefined}
-          iconLeft={IconCaretDown}
-        />
+          <Button
+            width={width}
+            size={size}
+            view={view}
+            form={form}
+            disabled={disabled}
+            loading={loading}
+            label={label}
+            onlyIcon={onlyIcon}
+            onClick={action('click')}
+            iconRight={iconRight ? IconUser : undefined}
+            iconLeft={iconLeft ? IconCaretDown : undefined}
+          />
       </div>
     </EventInterceptorProvider>
   );

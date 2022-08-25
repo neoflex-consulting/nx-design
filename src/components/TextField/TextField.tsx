@@ -22,6 +22,7 @@ import {
   textFieldPropViewDefault,
   textFieldPropWidthDefault,
 } from './helpers';
+import {IconCloseC} from "../../icons/IconCloseC/IconCloseC";
 
 export const COMPONENT_NAME = 'TextField' as const;
 export const cnTextField = cn(COMPONENT_NAME);
@@ -259,7 +260,7 @@ export function TextFieldRender<TYPE extends string>(
               onClick={handleClear}
               className={cnTextField('ClearButton')}
             >
-              <IconClose size="xs" className={cnTextField('ClearButtonIcon')} />
+              <IconCloseC size="xs" className={cnTextField('ClearButtonIcon')} />
             </button>
           )}
 
