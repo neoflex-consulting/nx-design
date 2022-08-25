@@ -217,7 +217,6 @@ import {IconFullScreenExit} from '../../IconFullScreenExit/IconFullScreenExit';
 import {IconFunctionField} from '../../IconFunctionField/IconFunctionField';
 import {IconGbp} from '../../IconGbp/IconGbp';
 import {IconGift} from '../../IconGift/IconGift';
-import {IconGlobe} from '../../IconGlobe/IconGlobe';
 import {IconGraduationCap} from '../../IconGraduationCap/IconGraduationCap';
 import {IconGrid} from '../../IconGrid/IconGrid';
 import {IconGroup} from '../../IconGroup/IconGroup';
@@ -395,7 +394,7 @@ import {IconStream} from '../../DatagramIcon/IconStream/IconStream';
 import {IconTree} from '../../DatagramIcon/IconTree/IconTree';
 import {IconWorkflow} from '../../DatagramIcon/IconWorkflow/IconWorkflow';
 import {IconZeppelin} from '../../DatagramIcon/IconZeppelin/IconZeppelin';
-
+import {IconGlobe} from '../../DatagramIcon/IconGlobe/IconGlobe';
 
 const defaultKnobs = () => ({
   size: select('size', ['xs', 's', 'm', 'l'], 'm'),
@@ -436,6 +435,8 @@ const neoicons = {
   IconTree,
   IconWorkflow,
   IconZeppelin,
+  IconGlobe,
+
   IconActionMenu,
   IconAggregate,
   IconAlert,
@@ -647,7 +648,6 @@ const neoicons = {
   IconFunctionField,
   IconGbp,
   IconGift,
-  IconGlobe,
   IconGraduationCap,
   IconGrid,
   IconGroup,

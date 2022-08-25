@@ -5,7 +5,6 @@ import { Typography } from '../../Typography/Typography';
 
 import { HeaderFullExample } from './examples/HeaderFullExample/HeaderFullExample';
 import { HeaderMinifyLoginExample } from './examples/HeaderMinifyLoginExample/HeaderMinifyLoginExample';
-import { HeaderWithLogoExample } from './examples/HeaderWithLogoExample/HeaderWithLogoExample';
 import { HeaderWithoutMenuExample } from './examples/HeaderWithoutMenuExample/HeaderWithoutMenuExample';
 import { HeaderWithoutSearchExample } from './examples/HeaderWithoutSearchExample/HeaderWithoutSearchExample';
 import mdx from './Header.docs.mdx';

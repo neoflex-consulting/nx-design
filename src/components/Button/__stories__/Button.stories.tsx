@@ -67,7 +67,21 @@ export function Playground() {
           onlyIcon={onlyIcon}
           onClick={action('click')}
           iconRight={iconRight ? IconUser : undefined}
-          iconLeft={iconLeft ? IconCaretDown : undefined}
+          // iconLeft={iconLeft ? IconCaretDown : undefined}
+          iconLeft={<IconCaretDown size={"s"}/>}
+        />
+        <Button
+          width={width}
+          size={size}
+          view={view}
+          form={form}
+          disabled={disabled}
+          loading={loading}
+          label={label}
+          onlyIcon={onlyIcon}
+          onClick={action('click')}
+          iconRight={iconRight ? IconUser : undefined}
+          iconLeft={IconCaretDown}
         />
       </div>
     </EventInterceptorProvider>

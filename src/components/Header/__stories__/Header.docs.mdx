@@ -1,6 +1,5 @@
 import { HeaderFullExample } from './examples/HeaderFullExample/HeaderFullExample';
 import { HeaderMinifyLoginExample } from './examples/HeaderMinifyLoginExample/HeaderMinifyLoginExample';
-import { HeaderWithLogoExample } from './examples/HeaderWithLogoExample/HeaderWithLogoExample';
 import { HeaderWithoutMenuExample } from './examples/HeaderWithoutMenuExample/HeaderWithoutMenuExample';
 import { HeaderWithoutSearchExample } from './examples/HeaderWithoutSearchExample/HeaderWithoutSearchExample';
 import {
@@ -106,34 +105,6 @@ Header состоит из левой и правой части — `leftSide` 
 ```
 
 [Посмотреть все свойства Header](#свойства-header)
-
-## Логотип
-
-Чтобы добавить в шапку логотип, используйте модуль `HeaderLogo`.
-В этом модуле можно разместить изображение, текст или что угодно.
-Например, логотип компании или текстовое название проекта.
-
-Содержимое модуля выравнивается по вертикали — всегда по центру.
-
-Лучше всего располагать `HeaderLogo` в самом левой части шапки.
-Левее него может быть только кнопка «бургера» (для меню в мобильной версии).
-
-<HeaderWithLogoExample />
-
-```ts
-<HeaderModule>
-  <HeaderLogo>
-    <Typography as="p" size="l" weight="bold">
-      Logotype
-    </Typography>
-  </HeaderLogo>
-</HeaderModule>
-```
-
-Если используете текстовое название, проверьте, что оно не слишком длинное.
-Если не влезает, можно сократить или перенести на другую строку.
-
-[Посмотреть все свойства HeaderLogo](#свойства-headerlogo)
 
 ## Поиск
 
