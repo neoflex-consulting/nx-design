@@ -164,6 +164,8 @@ const svgParse = async ({ componentName, path, pathOutdir, fileName, cleanFill, 
   await writeFile(jsPatch, jsCode);
 };
 
+const { generateReExportsFonts } = require('./generateReExportsFonts/index');
+
 const createComponent = async ({ componentName, pathOutdir, templatePath }) => {
   const template = await readFile(templatePath, 'utf8');
   const jsCode = template.replace(/#componentName#/g, componentName);
@@ -348,7 +350,7 @@ const responsesImagesTransformed = async (ignore, src) => {
 };
 
 const copyAssets = async (ignore, src, distPaths) => {
-  const assetFiles = await fg([`${src}/**/*.{svg,jpg,png,gif,md}`], { ignore });
+  const assetFiles = await fg([`${src}/**/*.{svg,jpg,png,gif,md,woff,woff2}`], { ignore });
 
   assetFiles.forEach(async (fileName) => {
     const asset = await readFile(fileName);
@@ -592,7 +594,7 @@ const generateReExports = (
     }
 
     // TODO: internal забирать из общего места.
-    const newKeys = ['__internal__', ...components.keys()];
+    const newKeys = ['__internal__', 'fonts', ...components.keys()];
     const allKeys = pack.files.concat(newKeys);
 
     const setKeys = new Set(allKeys.sort());
@@ -617,4 +619,5 @@ module.exports = {
   responsesImagesTransformed,
   copyReadme,
   copyChangelog,
+  generateReExportsFonts
 };
