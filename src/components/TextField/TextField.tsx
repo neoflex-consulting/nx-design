@@ -4,7 +4,6 @@ import React, { forwardRef, useEffect, useState } from 'react';
 import TextAreaAutoSize from 'react-textarea-autosize';
 
 import { useForkRef } from '../../hooks/useForkRef/useForkRef';
-import { IconClose } from '../../icons/IconClose/IconClose';
 import { IconCaretDown } from '../../icons/IconCaretDown/IconCaretDown';
 import { IconCaretUp } from '../../icons/IconCaretUp/IconCaretUp';
 import { cn } from '../../utils/bem';
