@@ -83,7 +83,7 @@ $color-text-white: #ffffff;
   --color-control-bg-default: color($color-base-essential); /* Цвет фона контрола */
   --color-control-typo-default: color($color-base-base); /* Цвет основного текста контрола */
   --color-control-typo-placeholder: color($color-base-base a(35%)); /* Цвет плейсхолдера контрола */
-  --color-control-bg-border-default: color($color-base-phantom a(28%)); /* Цвет фона бордеров котрола */
+  --color-control-bg-border-default: color($color-base-phantom h(-230) s(-44) l(+64)); /* Цвет фона бордеров котрола */
   --color-control-bg-border-default-hover: color($color-base-phantom a(52%)) l(+3); /* Цвет фона бордеров контрола по ховеру */
   --color-control-bg-border-focus: color($color-base-path l(+9%)); /* Цвет аутлайна контролов при фокусе */ /* TODO заменить на правило целиком */
   --color-control-bg-focus: color($color-base-path a(30%)); /* Цвет тени в состонии фокуса */

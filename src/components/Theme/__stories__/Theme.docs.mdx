@@ -71,8 +71,6 @@ _shadow/								# Тени
 Theme.css								# Стили темы
 ```
 
-[Посмотреть на GitHub](https://github.com/gazprom-neft/consta-uikit/tree/master/src/components/Theme)
-
 Значения модификатора используются при создании [пресета](#пресеты) — чтобы указать, какой CSS-файл в каких случаях подключать.
 
 Пресет — это `preset`, обязательное свойсто компонента `Theme`. В NX Design три пресета:
@@ -105,9 +103,9 @@ const App = () => {
 
 > - Модификатор: `_color`
 > - CSS:
->   - [\_color / Theme_color_gpnDark.css](https://github.com/gazprom-neft/consta-uikit/blob/master/src/components/Theme/_color/Theme_color_gpnDark.css)
->   - [\_color / Theme_color_gpnDefault.css](https://github.com/gazprom-neft/consta-uikit/blob/master/src/components/Theme/_color/Theme_color_gpnDefault.css)
->   - [\_color / Theme_color_gpnDisplay.css](https://github.com/gazprom-neft/consta-uikit/blob/master/src/components/Theme/_color/Theme_color_gpnDisplay.css)
+>   - [\_color / Theme_color_gpnDark.css]
+>   - [\_color / Theme_color_gpnDefault.css]
+>   - [\_color / Theme_color_gpnDisplay.css]
 
 #### Цветовые схемы в NX Design
 
@@ -186,8 +184,6 @@ $color-base-normal: #56b9f2; /* Цвет нейтральный */
 --color-bg-border: color($color-base-phantom a(20%) l(+10)); /* Цвет границ */
 ```
 
-[Посмотреть на GitHub](https://github.com/gazprom-neft/consta-uikit/blob/master/src/components/Theme/_color/Theme_color_gpnDefault.css)
-
 #### Новые цвета
 
 Если вы работаете с NX Design и делаете проект для Неофлекс, постарайтесь
@@ -198,9 +194,6 @@ $color-base-normal: #56b9f2; /* Цвет нейтральный */
 
 ### Шрифты
 
-> - Модификатор: `_font`
-> - CSS: [\_font / Theme_font_gpnDefault.css](https://github.com/gazprom-neft/consta-uikit/blob/master/src/components/Theme/_font/Theme_font_gpnDefault.css)
-
 В дизайн-системе используются нативные шрифты. Мы ориентируемся на самый популярный шрифт у наших пользователей — Segoe UI.
 
 ```css
@@ -209,8 +202,6 @@ $color-base-normal: #56b9f2; /* Цвет нейтральный */
 --font-mono: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 font-family: var(--font-primary);
 ```
-
-[Посмотреть на GitHub](https://github.com/gazprom-neft/consta-uikit/blob/master/src/components/Theme/_font/Theme_font_gpnDefault.css)
 
 В этом файле подключаются все начертания/насыщенности/жирности шрифта.
 
@@ -221,8 +212,6 @@ font-family: var(--font-primary);
 
 ### Размеры текста
 
-> - Модификатор: `_size`
-> - CSS: [\_size / Theme_size_gpnDefault.css](https://github.com/gazprom-neft/consta-uikit/blob/master/src/components/Theme/_size/Theme_size_gpnDefault.css)
 
 Модификатор `_size` отвечает за размер текста и межстрочное расстрояние.
 
@@ -261,12 +250,7 @@ font-family: var(--font-primary);
 --font-weight-text-black: 900;
 ```
 
-[Посмотреть на GitHub](https://github.com/gazprom-neft/consta-uikit/blob/master/src/components/Theme/_size/Theme_size_gpnDefault.css)
-
 ### Отступы
-
-> - Модификатор: `_space`
-> - CSS: [\_size / Theme_space_gpnDefault.css](https://github.com/gazprom-neft/consta-uikit/blob/master/src/components/Theme/_space/Theme_space_gpnDefault.css)
 
 Все отступы нужно описывать с помощью переменных, в коде не должно быть случайных пикселей.
 
@@ -289,12 +273,8 @@ font-family: var(--font-primary);
 --space-6xl: 96px;
 ```
 
-[Посмотреть на GitHub](https://github.com/gazprom-neft/consta-uikit/blob/master/src/components/Theme/_space/Theme_space_gpnDefault.css)
-
 ### Внешний вид контролов
 
-> - Модификатор: `_control`
-> - CSS: [\_control / Theme_control_gpnDefault.css](https://github.com/gazprom-neft/consta-uikit/blob/master/src/components/Theme/_control/Theme_control_gpnDefault.css)
 
 Отвечает за размеры контролов, внутренние отступы и размеры текста внутри контролов.
 
@@ -319,12 +299,7 @@ font-family: var(--font-primary);
 --control-text-size-xs: var(--size-text-xs);
 ```
 
-[Посмотреть на GitHub](https://github.com/gazprom-neft/consta-uikit/blob/master/src/components/Theme/_control/Theme_control_gpnDefault.css)
-
 ### Тени
-
-> - Модификатор: `_shadow`
-> - CSS: [\_shadow / Theme_shadow_gpnDefault.css](https://github.com/gazprom-neft/consta-uikit/tree/master/src/components/Theme/_shadow)
 
 Модификатор `_shadow` отвечает за тени. Посмотреть, как это выглдяит, можно в [Figma](https://www.figma.com/file/vNZFtFH6w0IjD2Twi5OXXE/Consta-Default-Colors), во вкладке **Default Shadows**.
 
@@ -333,9 +308,6 @@ font-family: var(--font-primary);
 --shadow-layer: 0 4px 4px rgba(0, 32, 51, 0.04), 0 8px 24px rgba(0, 32, 51, 0.12);
 --shadow-modal: 0 8px 8px rgba(0, 32, 51, 0.04), 0 12px 28px rgba(0, 32, 51, 0.12);
 ```
-
-[Посмотреть на GitHub](https://github.com/gazprom-neft/consta-uikit/tree/master/src/components/Theme/_shadow)
-
 ## Пресеты
 
 Пресет — это `preset`, свойство компонента `Theme`. Внутри — конструктор, в котором можно прописать, для какого модификатора какой CSS-файл нужно использовать.
@@ -347,8 +319,6 @@ font-family: var(--font-primary);
 - `presetGpnDefault` — включает светлую тему оформления,
 - `presetGpnDark` — тёмную,
 - `presetGpnDisplay` — акцентную.
-
-Эти пресеты описаны в отдельных файлах, в папке [`presets`](https://github.com/gazprom-neft/consta-uikit/tree/master/src/components/Theme/presets).
 
 Вот так формируется пресет `presetGpnDefault`: сначала импортируются все CSS-файлы, которые используются в этом пресете, затем описывается соответствие между модификатором и CSS-файлом.
 
@@ -377,9 +347,6 @@ export const presetGpnDefault: ThemePreset = {
   shadow: 'gpnDefault', // указывается значение модификатора _shadow
 };
 ```
-
-[Посмотреть на GitHub](https://github.com/gazprom-neft/consta-uikit/blob/master/src/components/Theme/presets/presetGpnDefault.ts)
-
 ### Цветовые схемы в пресете
 
 У модификатора `_color` три цветовые схемы:
