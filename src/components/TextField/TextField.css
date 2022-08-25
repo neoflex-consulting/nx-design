@@ -363,7 +363,6 @@
 
   &-ClearButtonIcon {
     position: relative;
-    top: 1px;
     color: var(--color-base-base-grey-7);
   }
 
@@ -428,6 +427,6 @@
   }
 
   &-Icon {
-    color: var(--color-control-bg-border-focus);
+    color: var(--color-typo-secondary);
   }
 }

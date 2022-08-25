@@ -23,6 +23,7 @@ import {
 import mdx from './Button.docs.mdx';
 import {IconUser} from "../../../icons/IconUser/IconUser";
 import {IconCaretDown} from "../../../icons/IconCaretDown/IconCaretDown";
+import {presetDatagram, Theme} from "../../Theme/Theme";
 
 const defaultKnobs = () => ({
   width: select('Width', buttonPropWidth, buttonPropWidthDefault),
@@ -56,6 +57,7 @@ export function Playground() {
   return (
     <EventInterceptorProvider eventHandler={console.log} map={eventInterceptorMap}>
       <div className={cnButtonStories()}>
+        <Theme preset={presetDatagram}>
           <Button
             width={width}
             size={size}
@@ -69,6 +71,8 @@ export function Playground() {
             iconRight={iconRight ? IconUser : undefined}
             iconLeft={iconLeft ? IconCaretDown : undefined}
           />
+        </Theme>
+
       </div>
     </EventInterceptorProvider>
   );
