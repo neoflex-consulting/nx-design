@@ -68,7 +68,7 @@ export type TextFieldPropsTextareaType<TYPE> = TYPE extends 'textarea'
       maxRows?: never;
     };
 
-export type TextFieldPropRightSide<TYPE> = TYPE extends 'number'
+export type TextFieldPropRightSide<TYPE> = TYPE extends 'number' | 'password'
   ? {
       rightSide?: never;
     }
@@ -133,4 +133,14 @@ export const sizeMap: Record<TextFieldPropSize, IconPropSize> = {
   s: 's',
   m: 's',
   l: 'm',
+};
+
+export const getTypeForRender = (type: string, passwordVible: boolean) => {
+  if (type !== 'password') {
+    return type;
+  }
+  if (passwordVible) {
+    return 'text';
+  }
+  return 'password';
 };

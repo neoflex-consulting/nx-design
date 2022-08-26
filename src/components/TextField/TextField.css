@@ -346,7 +346,8 @@
     transition: background-color 0.15s;
   }
 
-  &-ClearButton {
+  &-ClearButton,
+  &-EyeButton {
     height: calc(var(--input-height) - (var(--control-border-width) * 2));
     margin: 0;
     margin-left: var(--input-space);
@@ -355,15 +356,27 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+  }
+
+  &-ClearButton {
+     color: var(--clear-button-color);
 
     &:hover {
-      --clear-button-color: var(--color-control-typo-clear-hover);
+       --clear-button-color: var(--color-control-typo-clear-hover);
     }
   }
 
+  &-EyeButton {
+     color: var(--color-control-typo-placeholder);
+
+    &:hover {
+       color: var(--color-control-typo-clear-hover);
+     }
+  }
+
   &-ClearButtonIcon {
-    position: relative;
-    color: var(--color-base-base-grey-7);
+     position: relative;
+     top: 1px;
   }
 
   &-Input {

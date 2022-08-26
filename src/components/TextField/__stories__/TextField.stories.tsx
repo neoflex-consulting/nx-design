@@ -32,7 +32,7 @@ const defaultKnobs = () => ({
   disabled: boolean('disabled', false),
   required: boolean('required', false),
   step: number('step', 1),
-  type: select('type', ['text', 'number', 'textarea'], 'text'),
+  type: select('type', ['text', 'number', 'textarea', 'password'], 'text'),
   withClearButton: boolean('withClearButton', false),
   caption: text('caption', 'Подпись'),
   label: text('label', 'Заголовок'),

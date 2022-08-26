@@ -1,6 +1,6 @@
 import './TextField.css';
 
-import React, { forwardRef, useEffect, useState } from 'react';
+import React, {forwardRef, useCallback, useEffect, useState} from 'react';
 import TextAreaAutoSize from 'react-textarea-autosize';
 
 import { useForkRef } from '../../hooks/useForkRef/useForkRef';
@@ -13,6 +13,7 @@ import { FieldCaption } from '../FieldCaption/FieldCaption';
 import { FieldLabel } from '../FieldLabel/FieldLabel';
 
 import {
+  getTypeForRender,
   sizeMap,
   TextFieldComponent,
   textFieldPropFormDefault,
@@ -22,6 +23,10 @@ import {
   textFieldPropWidthDefault,
 } from './helpers';
 import {IconCloseC} from "../../icons/IconCloseC/IconCloseC";
+import {useFlag} from "../../hooks/useFlag/useFlag";
+import {IconEyeInvisible} from "../../icons/IconEyeInvisible/IconEyeInvisible";
+import {useMutableRef} from "../../hooks/useMutableRef/useMutableRef";
+import {IconEye} from "../../icons/IconEye/IconEye";
 
 export const COMPONENT_NAME = 'TextField' as const;
 export const cnTextField = cn(COMPONENT_NAME);
@@ -85,6 +90,17 @@ export function TextFieldRender<TYPE extends string>(
   const leftSideIsString = typeof leftSide === 'string';
   const rightSideIsString = typeof rightSide === 'string';
   const iconSize = getSizeByMap(sizeMap, size, iconSizeProp);
+  const [passwordVisible, setPasswordVisuble] = useFlag(false);
+
+  const valueRef = useMutableRef(value);
+
+  const Eye = passwordVisible ? IconEye : IconEyeInvisible;
+
+  const handleEyeClick = useCallback((e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.stopPropagation();
+    setPasswordVisuble.toogle();
+    inputRef.current?.focus();
+  }, []);
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> = (e) => {
     const { value } = e.target;
@@ -137,7 +153,7 @@ export function TextFieldRender<TYPE extends string>(
   };
 
   const inputProps = {
-    type,
+    type: getTypeForRender(type, passwordVisible),
     max,
     min,
     step,
@@ -182,6 +198,12 @@ export function TextFieldRender<TYPE extends string>(
       onClick?.(e);
     },
   };
+
+  useEffect(() => {
+    if (type === 'password' && inputRef.current) {
+      inputRef.current.selectionStart = valueRef.current?.length || 0;
+    }
+  }, [passwordVisible]);
 
   return (
     <div
@@ -263,7 +285,13 @@ export function TextFieldRender<TYPE extends string>(
             </button>
           )}
 
-          {RightIcon && type !== 'number' && (
+          {type === 'password' && (
+            <button className={cnTextField('ClearButton')} type="button" onClick={handleEyeClick}>
+              <Eye className={cnTextField('Icon')} size={iconSize} />
+            </button>
+          )}
+
+          {RightIcon && type !== 'number' && type !== 'password' && (
             <div
               className={cnTextField('Side', {
                 position: 'right',
