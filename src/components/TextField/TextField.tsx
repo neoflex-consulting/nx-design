@@ -287,7 +287,7 @@ export function TextFieldRender<TYPE extends string>(
 
           {type === 'password' && (
             <button className={cnTextField('ClearButton')} type="button" onClick={handleEyeClick}>
-              <Eye className={cnTextField('Icon')} size={iconSize} />
+              <Eye className={cnTextField('EyeButtonIcon')} size={iconSize} />
             </button>
           )}
 

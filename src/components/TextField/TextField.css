@@ -376,7 +376,11 @@
 
   &-ClearButtonIcon {
      position: relative;
-     top: 1px;
+  }
+
+  &-EyeButtonIcon {
+     position: relative;
+     color: var(--color-typo-secondary);
   }
 
   &-Input {
