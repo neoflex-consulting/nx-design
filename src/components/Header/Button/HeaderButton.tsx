@@ -7,18 +7,18 @@ export const cnHeaderButton = cn('HeaderButton');
 
 type ButtonProps = React.ComponentProps<typeof Button>;
 
-type HeaderButtonProps = Omit<ButtonProps, 'size' | 'view' | 'form' | 'onlyIcon'>;
+type HeaderButtonProps = ButtonProps;
 
 export const HeaderButton: React.FC<HeaderButtonProps> = (props) => {
-  const { className, ...otherProps } = props;
+  const { className, size, view, form, onlyIcon, ...otherProps } = props;
   return (
     <Button
       {...otherProps}
       className={cnHeaderButton(null, [className])}
-      size="m"
-      view="clear"
-      form="round"
-      onlyIcon
+      size={size || "m"}
+      view={view || "clear"}
+      form={form || "round"}
+      onlyIcon={onlyIcon || true}
     />
   );
 };
