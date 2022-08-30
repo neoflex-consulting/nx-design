@@ -2,9 +2,10 @@ import './TableRowsCollapse.css';
 
 import React from 'react';
 
+import { IconArrowDown } from '../../../icons/IconArrowDown/IconArrowDown';
+import { IconArrowUp } from '../../../icons/IconArrowUp/IconArrowUp';
 import { cn } from '../../../utils/bem';
 import { Button } from '../../Button/Button';
-import {Icon} from "nx-icon/lib";
 
 export type Props = {
   level: number;
@@ -41,7 +42,9 @@ export const TableRowsCollapse: React.FC<Props> = (props) => {
       {!isExpandedByDefault && withCollapseButton && (
         <div className={cnTableRowsCollapse('buttonContainer')}>
           <Button
-            iconLeft={isExpanded ? <Icon icon={"chevron-up"} size={"s"}/> : <Icon icon={"chevron-down"} size={"s"}/>}
+            aria-expanded={isExpanded}
+            iconLeft={isExpanded ? IconArrowUp : IconArrowDown}
+            iconSize="s"
             size="xs"
             onlyIcon
             view="clear"

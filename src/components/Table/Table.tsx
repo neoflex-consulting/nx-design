@@ -3,11 +3,15 @@ import './Table.css';
 import React, { useMemo } from 'react';
 
 import { useComponentSize } from '../../hooks/useComponentSize/useComponentSize';
+import { useForkRef } from '../../hooks/useForkRef/useForkRef';
 import { IconSortDown } from '../../icons/IconSortDown/IconSortDown';
 import { IconSortUp } from '../../icons/IconSortUp/IconSortUp';
+import { IconSortCheck } from '../../icons/IconSortCheck/IconSortCheck';
 import { sortBy as sortByDefault, updateAt } from '../../utils/array';
 import { cn } from '../../utils/bem';
-import { isNotNil } from '../../utils/type-guards';
+import { setRef } from '../../utils/setRef';
+import { isNotNil, isString } from '../../utils/type-guards';
+import { Button, ButtonPropSize } from '../Button/Button';
 import { Typography } from '../Typography/Typography';
 
 import { HorizontalAlign, TableCell, VerticalAlign } from './Cell/TableCell';
@@ -17,7 +21,10 @@ import {
   Props as TableRowsCollapseProps,
   TableRowsCollapse,
 } from './RowsCollapse/TableRowsCollapse';
-import { TableSelectedOptionsList } from './SelectedOptionsList/TableSelectedOptionsList';
+import {
+  GetTagLabel,
+  TableSelectedOptionsList,
+} from './SelectedOptionsList/TableSelectedOptionsList';
 import {
   fieldFiltersPresent,
   FieldSelectedValues,
@@ -30,10 +37,14 @@ import {
   useSelectedFilters,
 } from './filtering';
 import {
+  createSortingState,
   getColumnLeftOffset,
   getColumnsSize,
+  getMergedArray,
   getNewSorting,
   Header,
+  Order,
+  OrderType,
   Position,
   transformRows,
   useHeaderData,
@@ -56,8 +67,15 @@ type ZebraStriped = typeof zebraStriped[number];
 export const headerVerticalAligns = ['center', 'bottom'] as const;
 export type HeaderVerticalAlign = typeof headerVerticalAligns[number];
 
+const createButtonSizeMap: Record<Size, ButtonPropSize> = {
+  s: 'xs',
+  m: 's',
+  l: 'm',
+};
+
 type TableCSSCustomProperty = {
   '--table-width': string;
+  '--table-grid-template-columns': string;
 };
 
 export type LazyLoad =
@@ -75,6 +93,24 @@ type ActiveRow = {
 type onRowHover = ({ id, e }: { id: string | undefined; e: React.MouseEvent }) => void;
 
 type onRowClick = ({ id, e }: { id: string; e: React.MouseEvent }) => void;
+
+type onRowCreate = ({ id, index, e }: { id?: string; index: number; e: React.MouseEvent }) => void;
+
+export type CellClickType = 'click' | 'contextMenu';
+
+export type onCellClick = ({
+  e,
+  type,
+  rowId,
+  columnIdx,
+  ref,
+}: {
+  e: React.SyntheticEvent;
+  type: CellClickType;
+  columnIdx: number;
+  ref: React.RefObject<HTMLDivElement>;
+  rowId?: string;
+}) => void;
 
 export type TableRow = {
   id: string;
@@ -100,8 +136,10 @@ type ColumnBase<T extends TableRow> = ValueOf<
       accessor: K extends string ? K : never;
       sortable?: boolean;
       sortByField?: keyof T;
+      order?: OrderType;
       sortFn?(a: T[K], b: T[K]): number;
       renderCell?: (row: T) => React.ReactNode;
+      getComparisonValue?: (cell: T[K]) => number | string;
     };
   }
 >;
@@ -111,6 +149,14 @@ type GroupColumnAddition<T extends TableRow> = {
 } & {
   [K in keyof ColumnBase<T>]?: never;
 };
+export interface TableControl<T extends TableRow> {
+  column: Header<T> & ColumnMetaData;
+}
+
+export type SortByProps<T extends TableRow> = {
+  sortingBy: keyof T;
+  sortOrder: 'asc' | 'desc';
+};
 
 export type TableColumn<T extends TableRow> = {
   title: React.ReactNode;
@@ -119,17 +165,20 @@ export type TableColumn<T extends TableRow> = {
   width?: ColumnWidth;
   mergeCells?: boolean;
   position?: Position;
+  hidden?: boolean;
+  control?: ({ column }: TableControl<T>) => React.ReactNode;
 } & (GroupColumnAddition<T> | SingleColumnAddition<T>);
 
-export type Props<T extends TableRow> = {
+export type TableProps<T extends TableRow> = {
   columns: TableColumn<T>[];
   rows: T[];
+  isResizable?: boolean;
   filters?: Filters<T>;
   onSortBy?: onSortBy<T>;
   size?: Size;
   stickyHeader?: boolean;
   stickyColumns?: number;
-  isResizable?: boolean;
+  minColumnWidth?: number;
   activeRow?: ActiveRow;
   verticalAlign?: VerticalAlign;
   headerVerticalAlign?: HeaderVerticalAlign;
@@ -140,10 +189,20 @@ export type Props<T extends TableRow> = {
   className?: string;
   onRowHover?: onRowHover;
   onRowClick?: onRowClick;
+  onRowCreate?: onRowCreate;
+  onCellClick?: onCellClick;
+  getAdditionalClassName?: (props: { column: TableColumn<T>; row: T; isActive: boolean }) => string;
+  rowCreateText?: string;
   lazyLoad?: LazyLoad;
   onFiltersUpdated?: (filters: SelectedFilters) => void;
+  getTagLabel?: GetTagLabel;
   isExpandedRowsByDefault?: boolean;
+  getCellWrap?: (row: T) => 'truncate' | 'break';
 };
+
+type Table = <T extends TableRow>(
+  props: TableProps<T> & { ref?: React.Ref<HTMLDivElement> },
+) => React.ReactElement | null;
 
 export type ColumnMetaData = {
   filterable: boolean;
@@ -162,6 +221,15 @@ export type SortingState<T extends TableRow> = {
   sortFn?: (a: T[keyof T], b: T[keyof T]) => number;
 } | null;
 
+type GetTableCellProps = {
+  show: boolean;
+  rowSpan: number;
+  style: {
+    'left'?: number;
+    '--row-span'?: string;
+  };
+};
+
 const getColumnSortByField = <T extends TableRow>(column: TableColumn<T>): keyof T =>
   (column.sortable && column.sortByField) || column.accessor!;
 
@@ -177,46 +245,58 @@ const sortingData = <T extends TableRow>(
   if (!sorting) {
     return rows;
   }
-  const sorredRows = sortByDefault(rows, sorting.by, sorting.order, sorting.sortFn);
+  const sortedRows = sortByDefault(rows, sorting.by, sorting.order, sorting.sortFn);
 
-  if (sorredRows.some((row) => row.rows?.length)) {
-    return sorredRows.map((row) => {
+  if (sortedRows.some((row) => row.rows?.length)) {
+    return sortedRows.map((row) => {
       return row.rows ? { ...row, rows: sortingData(row.rows as T[], sorting, onSortBy) } : row;
     });
   }
 
-  return sorredRows;
+  return sortedRows;
 };
 
 const defaultEmptyRowsPlaceholder = (
-  <Typography as="span" view="primary" size="body">
+  <Typography as="span" view="primary" size="s">
     Нет данных
   </Typography>
 );
 
-export const Table = <T extends TableRow>({
-  columns,
-  rows,
-  size = 'l',
-  filters,
-  isResizable = false,
-  stickyHeader = false,
-  stickyColumns = 0,
-  activeRow,
-  verticalAlign = 'top',
-  headerVerticalAlign = 'center',
-  zebraStriped,
-  borderBetweenRows = false,
-  borderBetweenColumns = false,
-  emptyRowsPlaceholder = defaultEmptyRowsPlaceholder,
-  className,
-  onRowHover,
-  onRowClick,
-  lazyLoad,
-  onSortBy,
-  onFiltersUpdated,
-  isExpandedRowsByDefault = false,
-}: Props<T>): React.ReactElement => {
+const InternalTable = <T extends TableRow>(
+  props: TableProps<T>,
+  ref?: React.Ref<HTMLDivElement>,
+) => {
+  const {
+    columns,
+    rows,
+    size = 'l',
+    filters: rawFilters,
+    isResizable = false,
+    stickyHeader = false,
+    stickyColumns = 0,
+    minColumnWidth = 150,
+    activeRow,
+    verticalAlign = 'top',
+    headerVerticalAlign = 'center',
+    zebraStriped,
+    borderBetweenRows = false,
+    borderBetweenColumns = false,
+    emptyRowsPlaceholder = defaultEmptyRowsPlaceholder,
+    className,
+    onRowHover,
+    onRowClick,
+    onRowCreate,
+    onCellClick,
+    getAdditionalClassName,
+    rowCreateText = '+ Добавить строку',
+    lazyLoad,
+    onSortBy,
+    onFiltersUpdated,
+    getTagLabel,
+    getCellWrap,
+    isExpandedRowsByDefault = false,
+    ...otherProps
+  } = props;
   const {
     headers,
     flattenedHeaders,
@@ -234,6 +314,10 @@ export const Table = <T extends TableRow>({
     getColumnsWidth(),
   );
 
+  const filters = React.useMemo(() => {
+    return rawFilters && rawFilters.filter((filter) => filter.id && filter.field);
+  }, [rawFilters]);
+
   React.useEffect(() => {
     setResizedColumnWidths(getColumnsWidth());
   }, [lowHeaders.length]);
@@ -242,8 +326,10 @@ export const Table = <T extends TableRow>({
   const [sorting, setSorting] = React.useState<SortingState<T>>(null);
   const [visibleFilter, setVisibleFilter] = React.useState<string | null>(null);
   const [tableScroll, setTableScroll] = React.useState({ top: 0, left: 0 });
+
   const tableRef = React.useRef<HTMLDivElement>(null);
   const columnsRefs = React.useRef<Record<number, HTMLDivElement | null>>({});
+  const cellsRefs = React.useRef<Record<string, HTMLDivElement | null>>({});
   const {
     selectedFilters,
     updateSelectedFilters,
@@ -251,6 +337,22 @@ export const Table = <T extends TableRow>({
     removeAllSelectedFilters,
   } = useSelectedFilters(filters, onFiltersUpdated);
   const [expandedRowIds, setExpandedRowIds] = React.useState<string[]>([]);
+
+  // установка сортировки по умолчанию
+
+  React.useEffect(() => {
+    const sortingColumn = columns.find(
+      (col) => isString(col.order) && Object.prototype.hasOwnProperty.call(Order, col.order),
+    );
+    if (sortingColumn) {
+      const sortingState = createSortingState(
+        getColumnSortByField(sortingColumn),
+        sortingColumn.order,
+        sortingColumn.sortFn,
+      );
+      setSorting(sortingState);
+    }
+  }, [columns]);
 
   /*
     Подписываемся на изменения размеров таблицы, но не используем значения из
@@ -270,6 +372,13 @@ export const Table = <T extends TableRow>({
     setResizedColumnWidths(updateAt(resizedColumnWidths, idx, newWidth));
   };
 
+  const overallColumnsWidth = useMemo(() => {
+    const columnsElements = Object.values(columnsRefs.current).filter(isNotNil);
+    const columnsElementsWidths = columnsElements.map((el) => el.getBoundingClientRect().width);
+    const resultArr = getMergedArray(columnsElementsWidths, resizedColumnWidths);
+    return resultArr.reduce((a, b) => (a ?? 0) + (b ?? 0));
+  }, [resizedColumnWidths, isResizable]);
+
   React.useLayoutEffect(() => {
     const columnsElements = Object.values(columnsRefs.current).filter(isNotNil);
     if (columnsElements.length === 0) return;
@@ -280,17 +389,23 @@ export const Table = <T extends TableRow>({
     // Проверяем, что таблица отрисовалась корректно, и устанавливаем значения ширин колонок после 1го и последующих рендера
     if (
       columnsElements[0].getBoundingClientRect().left !==
-        columnsElements[columnsElements.length - 1].getBoundingClientRect().left &&
-      !resizedColumnWidths.some(isNotNil)
+      columnsElements[columnsElements.length - 1].getBoundingClientRect().left
     ) {
-      return setResizedColumnWidths(columnsElementsWidths);
+      const resultArr = getMergedArray(columnsElementsWidths, resizedColumnWidths);
+      // Выставляю в undefined так как если вычеслять значение для последней колонки так,
+      // чтобы заполнялось все свободное пространство, при изменении ширины таблицы в меньшую сторону
+      // ширина последней колонки изменяться не будет, а так она будет css'ом проставляться в auto
+      if ((overallColumnsWidth ?? tableWidth) < tableWidth) {
+        resultArr[resultArr.length - 1] = undefined;
+      }
+      return setResizedColumnWidths(resultArr);
     }
 
     // условие изменения ширины колонок при изменении ширины экрана (контейнера таблицы)
     if (tableWidth > 0 && !isResizable) {
       return setResizedColumnWidths(getColumnsWidth());
     }
-  }, [tableWidth]);
+  }, [tableWidth, overallColumnsWidth]);
 
   const isSortedByColumn = (column: TableColumn<T>): boolean =>
     getColumnSortByField(column) === sorting?.by;
@@ -298,7 +413,7 @@ export const Table = <T extends TableRow>({
   const getSortIcon = (column: TableColumn<T>) => {
     return (
       (isSortedByColumn(column) && (sorting?.order === 'desc' ? IconSortDown : IconSortUp)) ||
-      IconSortDown
+      IconSortCheck
     );
   };
 
@@ -326,7 +441,7 @@ export const Table = <T extends TableRow>({
   const handleTooltipSave = (
     field: string,
     tooltipSelectedFilters: FieldSelectedValues,
-    value?: any,
+    value?: unknown,
   ): void => {
     updateSelectedFilters(field, tooltipSelectedFilters, value);
   };
@@ -381,8 +496,14 @@ export const Table = <T extends TableRow>({
     activeRow.onChange({ id: activeRow.id === id ? undefined : id, e });
   };
 
+  const handleRowHover = (id?: string) => (e: React.MouseEvent) =>
+    onRowHover && onRowHover({ id, e });
+
+  const handleRowCreate = (index: number, id?: string) => (e: React.MouseEvent) =>
+    onRowCreate && onRowCreate({ e, id, index });
+
   const handleColumnResize = (idx: number, delta: number): void => {
-    const columnMinWidth = Math.min(150, initialColumnWidths[idx]);
+    const columnMinWidth = Math.min(minColumnWidth, initialColumnWidths[idx]);
     const prevColumnWidth = resizedColumnWidths[idx] || initialColumnWidths[idx];
     const newColumnWidth = Math.max(columnMinWidth, prevColumnWidth + delta);
 
@@ -437,7 +558,7 @@ export const Table = <T extends TableRow>({
     flattenedHeaders,
   );
 
-  const hasNestedRows = useMemo(() => rows.some((row) => Boolean(row.rows?.length)), [rows]);
+  const hasNestedRows = React.useMemo(() => rows.some((row) => Boolean(row.rows?.length)), [rows]);
 
   const sortedTableData = sortingData(rows, sorting, onSortBy);
 
@@ -462,7 +583,7 @@ export const Table = <T extends TableRow>({
   const rowsData = getSlicedRows(flatRowsData);
 
   const tableStyle: React.CSSProperties & TableCSSCustomProperty = {
-    'gridTemplateColumns': getColumnsSize(resizedColumnWidths),
+    '--table-grid-template-columns': getColumnsSize(resizedColumnWidths),
     '--table-width': `${tableWidth}px`,
   };
 
@@ -519,57 +640,96 @@ export const Table = <T extends TableRow>({
   };
 
   const renderEmptyRowsPlaceholder = (placeholder: React.ReactNode): React.ReactNode => {
-    return typeof placeholder === 'string' ? <Typography size="body">{placeholder}</Typography> : placeholder;
+    return typeof placeholder === 'string' ? <Typography size="s">{placeholder}</Typography> : placeholder;
   };
+
+  const bottomCreateRowButton = useMemo(() => {
+    const rowsLength = rowsData.length;
+    /* Можно и rowsData[rowsLength - 1], но в таком случае TS не подскажет,
+    что мы будем искать id в undefined это может привести к ошибке */
+    const { id: lastRowId } = rowsData.slice(-1).pop() ?? {};
+
+    if (!onRowCreate) {
+      return null;
+    }
+
+    return (
+      <div className={cnTable(rowsLength ? 'CreatRowCell' : 'RowWithoutCells')}>
+        <Button
+          size={createButtonSizeMap[size]}
+          form="brick"
+          label={rowCreateText}
+          view="clear"
+          className={cnTable('CreateRowButton')}
+          onClick={handleRowCreate(rowsLength, lastRowId)}
+          width="full"
+        />
+      </div>
+    );
+  }, [rowCreateText, rowsData.length, onRowCreate]);
 
   const getTableCellProps = (
     row: TableTreeRow<T>,
     rowIdx: number,
     column: TableColumn<T>,
     columnIdx: number,
-  ) => {
-    let rowSpan = 1;
-    if (
-      (rowsData[rowIdx - 1] && rowsData[rowIdx - 1][column.accessor!] !== row[column.accessor!]) ||
-      rowIdx === 0 ||
-      !column.mergeCells
-    ) {
+  ): GetTableCellProps => {
+    const { mergeCells, accessor, position, getComparisonValue = (e) => e } = column;
+
+    const previousCell =
+      rowsData[rowIdx - 1] && getComparisonValue(rowsData[rowIdx - 1][accessor!]);
+    const currentCell = getComparisonValue(row[accessor!]);
+
+    const result: GetTableCellProps = {
+      rowSpan: 1,
+      show: false,
+      style: {
+        left: getStickyLeftOffset(columnIdx, position!.topHeaderGridIndex),
+      },
+    };
+
+    if (mergeCells && ((rowsData[rowIdx - 1] && previousCell !== currentCell) || rowIdx === 0)) {
       for (let i = rowIdx; i < rowsData.length; i++) {
-        if (rowsData[i + 1] && rowsData[i + 1][column.accessor!] === row[column.accessor!]) {
-          rowSpan++;
+        if (rowsData[i + 1]) {
+          const nextCell = getComparisonValue(rowsData[i + 1][accessor!]);
+
+          if (currentCell === nextCell) {
+            result.rowSpan++;
+          } else {
+            break;
+          }
         } else {
           break;
         }
       }
 
-      const style: {
-        'left': number | undefined;
-        '--row-span': string | null;
-      } = {
-        'left': getStickyLeftOffset(columnIdx, column.position!.topHeaderGridIndex),
-        '--row-span': column.mergeCells ? `span ${rowSpan}` : null,
-      };
+      if (result.rowSpan > 1) {
+        result.style['--row-span'] = `span ${result.rowSpan}`;
+      }
 
-      return {
-        show: true,
-        style,
-        rowSpan,
-      };
+      result.show = true;
     }
-    return {
-      show: false,
-      rowSpan,
-    };
+
+    if (!mergeCells) {
+      result.show = true;
+    }
+
+    return result;
+  };
+
+  const handleCellClick: onCellClick = (params) => {
+    onCellClick?.(params);
   };
 
   return (
     <div
-      ref={tableRef}
+      {...otherProps}
+      ref={useForkRef([tableRef, ref])}
       className={cnTable(
         {
           size,
           isResizable,
-          zebraStriped: !hasMergedCells && zebraStriped,
+          zebraStriped,
           withBorderBottom: !filteredData.length,
         },
         [className],
@@ -599,6 +759,22 @@ export const Table = <T extends TableRow>({
             style={{
               left: getStickyLeftOffset(columnIdx, columnIdx),
             }}
+            onContextMenu={(e: React.SyntheticEvent) =>
+              handleCellClick({
+                e,
+                type: 'contextMenu',
+                columnIdx,
+                ref: { current: columnsRefs.current[columnIdx] },
+              })
+            }
+            onClick={(e: React.SyntheticEvent) =>
+              handleCellClick({
+                e,
+                type: 'click',
+                columnIdx,
+                ref: { current: columnsRefs.current[columnIdx] },
+              })
+            }
             column={column}
             showVerticalShadow={showVerticalCellShadow}
           >
@@ -628,6 +804,7 @@ export const Table = <T extends TableRow>({
         getSortIcon={getSortIcon}
         handleSortClick={handleSortClick}
         handleFilterTogglerClick={handleFilterTogglerClick}
+        handleCellClick={handleCellClick}
         handleTooltipSave={handleTooltipSave}
         filters={filters}
         visibleFilter={visibleFilter}
@@ -639,6 +816,7 @@ export const Table = <T extends TableRow>({
         <div className={cnTable('RowWithoutCells')}>
           <TableSelectedOptionsList
             values={getSelectedFiltersList({ filters, selectedFilters, columns: lowHeaders })}
+            getTagLabel={getTagLabel}
             onRemove={removeSelectedFilter(filters)}
             onReset={resetSelectedFilters}
           />
@@ -655,24 +833,21 @@ export const Table = <T extends TableRow>({
                 nth,
                 withMergedCells: hasMergedCells,
               })}
-              onMouseEnter={(e) => onRowHover && onRowHover({ id: row.id, e })}
-              onMouseLeave={(e) => onRowHover && onRowHover({ id: undefined, e })}
+              onMouseEnter={handleRowHover(row.id)}
+              onMouseLeave={handleRowHover(undefined)}
               onClick={(e) => onRowClick && onRowClick({ id: row.id, e })}
             >
               {columnsWithMetaData(lowHeaders).map((column: TableColumn<T>, columnIdx: number) => {
-                const { show, style, rowSpan } = getTableCellProps(
-                  row as TableTreeRow<T>,
-                  rowIdx,
-                  column,
-                  columnIdx,
-                );
-
+                const { show, style, rowSpan } = getTableCellProps(row, rowIdx, column, columnIdx);
                 if (show) {
                   return (
                     <TableCell
                       type="content"
                       key={column.accessor}
-                      ref={setBoundaryRef(columnIdx, rowIdx)}
+                      ref={(ref: HTMLDivElement | null) => {
+                        cellsRefs.current[`${columnIdx}-${row.id}`] = ref;
+                        setRef(setBoundaryRef(columnIdx, rowIdx), ref);
+                      }}
                       style={style}
                       wrapperClassName={cnTable('ContentCell', {
                         isActive: activeRow ? activeRow.id === row.id : false,
@@ -681,9 +856,32 @@ export const Table = <T extends TableRow>({
                           : false,
                         isMerged: column.mergeCells && rowSpan > 1,
                       })}
-                      onClick={(e: React.SyntheticEvent): void =>
-                        handleSelectRow({ id: row.id, e })
+                      className={getAdditionalClassName?.({
+                        column,
+                        row,
+                        isActive: activeRow ? activeRow.id === row.id : false,
+                      })}
+                      wrap={getCellWrap?.(row)}
+                      onContextMenu={(e: React.SyntheticEvent) =>
+                        handleCellClick({
+                          e,
+                          type: 'contextMenu',
+                          columnIdx,
+                          rowId: row.id,
+                          ref: { current: cellsRefs.current[`${columnIdx}-${row.id}`] },
+                        })
                       }
+                      onClick={(e: React.SyntheticEvent): void => {
+                        handleSelectRow({ id: row.id, e });
+
+                        handleCellClick({
+                          e,
+                          type: 'click',
+                          columnIdx,
+                          rowId: row.id,
+                          ref: { current: cellsRefs.current[`${columnIdx}-${row.id}`] },
+                        });
+                      }}
                       column={column}
                       verticalAlign={verticalAlign}
                       isClickable={!!isRowsClickable}
@@ -711,6 +909,9 @@ export const Table = <T extends TableRow>({
           </div>
         </div>
       )}
+      {bottomCreateRowButton}
     </div>
   );
 };
+
+export const Table = React.forwardRef(InternalTable) as Table;

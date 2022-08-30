@@ -2,12 +2,12 @@ import React from 'react';
 
 import { isDefined } from '../../utils/type-guards';
 
-import { TableColumn, TableRow, ValueOf } from './Table';
+import { SortByProps, TableColumn, TableRow, ValueOf } from './Table';
 
 export type FilterComponentProps = {
-  onConfirm: (value: any) => void;
+  onConfirm: (value: unknown) => void;
   onCancel: () => void;
-  filterValue?: any;
+  filterValue?: unknown;
 } & Record<string, unknown>;
 
 export type Filters<T extends TableRow> = ValueOf<
@@ -16,7 +16,7 @@ export type Filters<T extends TableRow> = ValueOf<
       id: string;
       name: string;
       field: K extends string ? K : never;
-      filterer(value: any, filterValue?: any): boolean;
+      filterer(value: any, filterValue?: unknown): boolean;
     } & (
       | { component?: never }
       | {
@@ -28,11 +28,6 @@ export type Filters<T extends TableRow> = ValueOf<
     );
   }
 >[];
-
-export type SortByProps<T extends TableRow> = {
-  sortingBy: keyof T;
-  sortOrder: 'asc' | 'desc';
-};
 
 export type onSortBy<T extends TableRow> = (props: SortByProps<T> | null) => void;
 
@@ -202,7 +197,7 @@ export const useSelectedFilters = <T extends TableRow>(
   updateSelectedFilters: (
     field: string,
     tooltipSelectedFilters: FieldSelectedValues,
-    value?: any,
+    value?: unknown,
   ) => void;
   removeOneSelectedFilter: (availableFilters: Filters<T>, filter: string) => void;
   removeAllSelectedFilters: (availableFilters: Filters<T>) => void;
@@ -214,7 +209,7 @@ export const useSelectedFilters = <T extends TableRow>(
   const updateSelectedFilters = (
     field: string,
     tooltipSelectedFilters: FieldSelectedValues,
-    value?: any,
+    value?: unknown,
   ): void => {
     const newSelectedFilters = {
       ...selectedFilters,

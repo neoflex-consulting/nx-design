@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { boolean, select } from '@storybook/addon-knobs';
 
-import { IconProps } from '../../../icons/_Icon/Icon';
+import { IconComponent } from '../../../icons/_Icon/Icon';
 import { IconCamera } from '../../../icons/IconCamera/IconCamera';
 import { IconCopy } from '../../../icons/IconCopy/IconCopy';
-import { IconStarFill } from '../../../icons/IconStarFill/IconStarFill';
+import { IconEdit } from '../../../icons/IconEdit/IconEdit';
 import { cn } from '../../../utils/bem';
 import { createMetadata } from '../../../utils/storybook';
 import {
@@ -23,7 +23,8 @@ import mdx from './ChoiceGroup.docs.mdx';
 
 declare type Item = {
   name: string;
-  icon: React.FC<IconProps>;
+  icon: IconComponent;
+  disabled?: boolean;
 };
 
 const items = [
@@ -34,10 +35,20 @@ const items = [
   {
     name: 'два',
     icon: IconCopy,
+    disabled: true,
   },
   {
     name: 'три',
-    icon: IconStarFill,
+    icon: IconEdit,
+    disabled: true,
+  },
+  {
+    name: 'четыре',
+    icon: IconCamera,
+  },
+  {
+    name: 'пять',
+    icon: IconCamera,
   },
 ];
 
@@ -49,6 +60,8 @@ const defaultKnobs = () => ({
   form: select('form', choiceGroupForms, choiceGroupDefaultForm),
   withIcon: boolean('withIcon', false),
   onlyIcon: boolean('onlyIcon', false),
+  disabled: boolean('disabled', false),
+  disabledItem: boolean('disabledItem', false),
 });
 
 const cnChoiceGroupStories = cn('ChoiceGroupStories');
@@ -56,7 +69,17 @@ const cnChoiceGroupStories = cn('ChoiceGroupStories');
 export function Playground() {
   const [valueMultiple, setValueMultiple] = useState<Item[] | null>(null);
   const [value, setValue] = useState<Item | null>(null);
-  const { multiple, size, view, width, form, withIcon, onlyIcon } = defaultKnobs();
+  const {
+    multiple,
+    size,
+    view,
+    width,
+    form,
+    withIcon,
+    onlyIcon,
+    disabled,
+    disabledItem,
+  } = defaultKnobs();
 
   const getIcon = withIcon ? (item: Item) => item.icon : undefined;
   const getLabel = (item: Item) => item.name;
@@ -78,6 +101,8 @@ export function Playground() {
             form={form}
             onlyIcon={onlyIcon}
             getIcon={getIcon}
+            disabled={disabled}
+            getDisabled={disabledItem ? (item) => item.disabled : undefined}
           />
         ) : (
           <ChoiceGroup
@@ -93,6 +118,8 @@ export function Playground() {
             form={form}
             onlyIcon={onlyIcon}
             getIcon={getIcon}
+            disabled={disabled}
+            getDisabled={disabledItem ? (item) => item.disabled : undefined}
           />
         )}
       </form>

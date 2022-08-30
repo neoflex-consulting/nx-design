@@ -1,10 +1,14 @@
 import React from 'react';
 
+import { IconPlus } from '../../../icons/IconPlus/IconPlus';
+import { IconMinus } from '../../../icons/IconMinus/IconMinus';
+import { cn } from '../../../utils/bem';
 import { isNotNil } from '../../../utils/type-guards';
 import { Badge } from '../../Badge/Badge';
+import { Button } from '../../Button/Button';
 import { TableChoiceGroupFilter } from '../ChoiceGroupFilter/TableChoiceGroupFilter';
 import { TableNumberFilter } from '../NumberFilter/TableNumberFilter';
-import { Props as TableProps, TableFilters as Filters } from '../Table';
+import { TableFilters as Filters, TableProps } from '../Table';
 import { TableTextFilter } from '../TextFilter/TableTextFilter';
 
 export const rangeFilterer = (
@@ -461,7 +465,7 @@ const rowsForMultiLevelHeadersData = [
   },
 ];
 
-const expandableRowsData = [
+export const expandableRowsData = [
   {
     id: 'row1',
     field: 'Северное',
@@ -1154,4 +1158,185 @@ export const tableDataWithRenderFn: TableProps<typeof rowsWithObjectFields[numbe
       field: 'remainingReserves',
     },
   ],
+};
+
+const cnCustomCell = cn('CustomCell');
+
+export const tableDataWithAdditionalClassName: TableProps<typeof rowsWithObjectFields[number]> = {
+  columns: [
+    {
+      title: 'Месторождение',
+      accessor: 'field',
+      align: 'left',
+    },
+    {
+      title: 'Тип',
+      accessor: 'type',
+      align: 'center',
+    },
+    {
+      title: 'Предполагаемые полные \nзапасы, млн.т.',
+      accessor: 'estimatedReserves',
+      align: 'right',
+    },
+    {
+      title: 'Остаточные извлекаемые \nзапасы, млн.т.',
+      accessor: 'remainingReserves',
+      align: 'right',
+    },
+    {
+      title: 'Добыча тыс.т/сут.',
+      accessor: 'production',
+      align: 'right',
+      mergeCells: true,
+    },
+  ],
+  rows: rowsWithObjectFields,
+  getAdditionalClassName: ({ column, row, isActive }) =>
+    cnCustomCell({ darked: !isActive && row.type === 'Нефтяное' && !column.mergeCells }),
+};
+
+enum CustomIDs {
+  fullName = 'fullName',
+  yearOfRegistration = 'yearOfRegistration',
+}
+
+export { CustomIDs };
+
+export const rowsForCustomTagLabelFunction = [
+  {
+    id: 'row1',
+    [CustomIDs.fullName]: 'Воронин Ян Фёдорович',
+    [CustomIDs.yearOfRegistration]: 2000,
+    phone: 79002332120,
+  },
+  {
+    id: 'row2',
+    [CustomIDs.fullName]: 'Иванов Иван Иванович',
+    [CustomIDs.yearOfRegistration]: 2018,
+    phone: 79002332120,
+  },
+  {
+    id: 'row3',
+    [CustomIDs.fullName]: 'Новиков Никита Максимович',
+    [CustomIDs.yearOfRegistration]: 2021,
+    phone: 79002332120,
+  },
+  {
+    id: 'row4',
+    [CustomIDs.fullName]: 'Крабов Виктор Дмитриевич',
+    [CustomIDs.yearOfRegistration]: 2009,
+    phone: 79002332120,
+  },
+];
+
+export const partOfTableDataForCustomTagLabelFunction = {
+  columns: [
+    {
+      title: 'Имя',
+      accessor: CustomIDs.fullName,
+      sortable: true,
+    },
+    {
+      title: 'Год регистрации',
+      accessor: CustomIDs.yearOfRegistration,
+      sortable: true,
+    },
+  ],
+  rows: rowsForCustomTagLabelFunction,
+  filters: [
+    {
+      id: CustomIDs.fullName,
+      name: 'Выбранные инициалы: ',
+      field: CustomIDs.fullName,
+      filterer: customFilters[0].filterer,
+      component: {
+        name: TableTextFilter,
+        props: {
+          withSearch: true,
+          items: [
+            {
+              name: rowsForCustomTagLabelFunction[0].fullName,
+              value: rowsForCustomTagLabelFunction[0].fullName,
+            },
+            {
+              name: rowsForCustomTagLabelFunction[1].fullName,
+              value: rowsForCustomTagLabelFunction[1].fullName,
+            },
+            {
+              name: rowsForCustomTagLabelFunction[2].fullName,
+              value: rowsForCustomTagLabelFunction[2].fullName,
+            },
+            {
+              name: rowsForCustomTagLabelFunction[3].fullName,
+              value: rowsForCustomTagLabelFunction[3].fullName,
+            },
+          ],
+        },
+      },
+    },
+    {
+      id: CustomIDs.yearOfRegistration,
+      name: 'Год регистрации: ',
+      field: CustomIDs.yearOfRegistration,
+      filterer: rangeFilterer,
+      component: {
+        name: TableNumberFilter,
+      },
+    },
+  ],
+};
+
+export const withControlTableMock: TableProps<typeof rowsForCustomTagLabelFunction[number]> = {
+  columns: [
+    {
+      title: 'Имя',
+      accessor: CustomIDs.fullName,
+      sortable: true,
+      align: 'right',
+      control: () => <Button size="xs" iconSize="s" view="clear" onlyIcon iconLeft={IconPlus} />,
+    },
+    {
+      title: 'Год регистрации',
+      accessor: CustomIDs.yearOfRegistration,
+      sortable: true,
+      align: 'right',
+      control: () => <Button size="xs" iconSize="s" view="clear" onlyIcon iconLeft={IconMinus} />,
+    },
+    {
+      title: 'Телефон',
+      align: 'right',
+      accessor: 'phone',
+      control: () => <Button size="xs" iconSize="s" view="clear" onlyIcon iconLeft={IconPlus} />,
+    },
+  ],
+  rows: rowsForCustomTagLabelFunction,
+  filters: [
+    {
+      id: CustomIDs.yearOfRegistration,
+      name: 'Год регистрации: ',
+      field: CustomIDs.yearOfRegistration,
+      filterer: rangeFilterer,
+      component: {
+        name: TableNumberFilter,
+      },
+    },
+  ],
+};
+
+export const withHiddenColumnTableMock: TableProps<typeof rowsForCustomTagLabelFunction[number]> = {
+  columns: [
+    {
+      title: 'Имя',
+      accessor: CustomIDs.fullName,
+      sortable: true,
+    },
+    {
+      title: 'Год регистрации',
+      accessor: CustomIDs.yearOfRegistration,
+      sortable: true,
+      hidden: true,
+    },
+  ],
+  rows: rowsForCustomTagLabelFunction,
 };

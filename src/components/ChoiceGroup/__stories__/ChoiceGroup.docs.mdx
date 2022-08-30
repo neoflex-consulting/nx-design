@@ -19,8 +19,18 @@ import {
   ChoiceGroupExampleSwitchMode,
   ChoiceGroupExampleSwitchLetters,
 } from './examples/ChoiceGroupExampleSwitch/ChoiceGroupExampleSwitch';
+import { ChoiceGroupExampleDisabled } from './examples/ChoiceGroupExampleDisabled/ChoiceGroupExampleDisabled';
+import { ChoiceGroupExampleSomeDisabled } from './examples/ChoiceGroupExampleSomeDisabled/ChoiseGroupExampleSomeDisabled';
+import {
+  ChoiceGroupExampleAdaptiveScroll,
+  ChoiceGroupExampleAdaptiveUseBreakpoints,
+} from './examples/ChoiceGroupExampleAdaptive/ChoiceGroupExampleAdaptive';
 
 # ChoiceGroup
+
+```tsx
+import { ChoiceGroup } from '@consta/uikit/ChoiceGroup';
+```
 
 Группа кнопок нужна, чтобы выбрать из списка один или несколько вариантов.
 Совмещает возможности [Radio](?path=/docs/components-radio--playground) и
@@ -44,6 +54,11 @@ import {
 - [Внешний вид](#внешний-вид)
 - [Форма кнопок](#форма-кнопок)
 - [Размер](#размер)
+- [Неактивные кнопки](#неактивные-кнопки)
+  - [Неактивная кнопка](#неактивная-кнопка)
+  - [Неактивная группа кнопок](#неактивная-группа-кнопок)
+- [Адаптивность](#адаптивность)
+- [Импорт](#импорт)
 - [Список свойств](#свойства)
 - [Пример использования](#пример)
 
@@ -81,7 +96,8 @@ export const ChoiceGroupExample = () => {
 
 ### Слишком длинный текст
 
-Если группа кнопок слишком большая или текст на кнопке слишком длинный и не помещается в выделенную область, текст на кнопке сокращается, в конце появляется многоточие.
+Если группа кнопок слишком большая или текст на кнопке слишком длинный и не помещается в выделенную область,
+текст на кнопке сокращается, в конце появляется многоточие, если включить модификатор `truncate`
 
 ```tsx
 type Item = string;
@@ -104,6 +120,7 @@ export const ChoiceGroupExampleTextOverflow = () => {
       getLabel={(item) => item}
       multiple={false}
       name="ChoiceGroupExampleTextOverflow"
+      truncate
     />
   );
 };
@@ -120,21 +137,21 @@ export const ChoiceGroupExampleTextOverflow = () => {
 ```tsx
 type Item = {
   name: string;
-  icon?: React.FC<IconProps>;
+  icon?: IconComponent;
 };
 
 const items = [
   {
     name: 'Первый',
-    icon: Image,
+    icon: IconPhoto,
   },
   {
     name: 'Второй',
-    icon: Bell,
+    icon: IconRing,
   },
   {
     name: 'Третий вариант',
-    icon: Camera,
+    icon: IconCamera,
   },
 ];
 
@@ -339,6 +356,171 @@ export const ChoiceGroupExampleWidth = () => {
 
 <ChoiceGroupExampleWidth />
 
+## Неактивные кнопки
+
+### Неактивная кнопка
+
+Одну или несколько кнопок можно сделать неактивными — если вы не хотите, чтобы их выбирали.
+За неактивность отвечает функция `getDisabled`.
+
+```tsx
+type Item = { name: string; disabled?: boolean };
+
+const items: Item[] = [
+  { name: 'один' },
+  { name: 'два' },
+  { name: 'три', disabled: true },
+  { name: 'четыре', disabled: true },
+];
+
+export const ChoiceGroupExampleWidth = () => {
+  const [value, setValue] = useState<Item | null>(items[0]);
+  return (
+    <ChoiceGroup
+      value={value}
+      onChange={({ value }) => setValue(value)}
+      items={items}
+      getLabel={(item) => item.name}
+      multiple={false}
+      name="ChoiceGroupExampleSomeDisabled"
+      getDisabled={(item: Item) => item.disabled}
+    />
+  );
+};
+```
+
+<ChoiceGroupExampleSomeDisabled />
+
+### Неактивная группа кнопок
+
+Используйте свойство `disabled` на компоненте `<ChoiceGroup {...props} disabled/>`, что бы сделать группу кнопок неактивной
+
+```tsx
+type Item = string;
+
+const items: Item[] = ['один', 'два', 'три'];
+
+export const ChoiceGroupExampleWidth = () => {
+  const [value, setValue] = useState<Item | null>(items[0]);
+  return (
+    <ChoiceGroup
+      value={value}
+      onChange={({ value }) => setValue(value)}
+      items={items}
+      getLabel={(item) => item}
+      multiple={false}
+      name="ChoiceGroupExampleDisabled"
+      disabled
+    />
+  );
+};
+```
+
+<ChoiceGroupExampleDisabled />
+
+## Адаптивность
+
+Если компонент не помещается на мобильный экран или в родительский контейнер
+по ширине, он сжимается, текст обрезается, в конце добавляется многоточие. [Посмотреть пример](#слишком-длинный-текст)
+
+Если кнопки не помещаются на мобильный экран, можно добавить горизонтальную прокрутку или преобразовать в [RadioGroup](?path=/docs/components-radiogroup--playground).
+
+##### Пример компонента с прокруткой
+
+```css
+.ChoiceGroupExampleAdaptiveScroll {
+  overflow: auto;
+  width: 100%;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}
+```
+
+```tsx
+const items: string[] = [
+  'один',
+  'два',
+  'три',
+  'четыре',
+  'пять',
+  'шесть',
+  'семь',
+  'восемь',
+  'девять',
+];
+
+const cnChoiceGroupExampleAdaptiveScroll = cn('ChoiceGroupExampleAdaptiveScroll');
+
+const getLabel = (item: string) => item;
+
+export const ChoiceGroupExampleAdaptiveScroll = () => {
+  return (
+    <div className={cnChoiceGroupExampleAdaptiveScroll()}>
+      <ChoiceGroup
+        name="ChoiceGroupExampleAdaptiveScroll"
+        items={items}
+        getLabel={getLabel}
+        form="round"
+      />
+    </div>
+  );
+};
+```
+
+<ChoiceGroupExampleAdaptiveScroll />
+
+##### Пример с преобразованием в RadioGroup
+
+Если экран меньше 800 px по ширине, отображаем `ChoiceGroup`, если больше — `RadioGroup`.
+
+> Чтобы посмотреть, как это работает, уменьшите ширину окна в браузере
+
+```tsx
+const items: string[] = ['один', 'два', 'три', 'четыре', 'пять'];
+
+const getLabel = (item: string) => item;
+
+export const ChoiceGroupExampleAdaptiveUseBreakpoints = () => {
+  const { desktop } = useBreakpoints({ desktop: 800 });
+  const [value, setValue] = useState(items2[0]);
+  const onChandge = useCallback(({ value }: { value: string }) => setValue(value), []);
+
+  if (desktop) {
+    return (
+      <ChoiceGroup
+        name="ChoiceGroupExampleAdaptiveUseBreakpoints"
+        items={items}
+        getLabel={getLabel}
+        form="round"
+        value={value}
+        onChange={onChandge}
+      />
+    );
+  }
+
+  return (
+    <RadioGroup
+      name="ChoiceGroupExampleAdaptiveUseBreakpoints"
+      items={items}
+      getLabel={getLabel}
+      value={value}
+      onChange={onChandge}
+    />
+  );
+};
+```
+
+<ChoiceGroupExampleAdaptiveUseBreakpoints />
+
+## Импорт
+
+```tsx
+import { ChoiceGroup } from '@consta/uikit/ChoiceGroup';
+```
+
 ## Свойства
 
 ```
@@ -350,29 +532,31 @@ type OnChangeMultiple = (props: { e: React.ChangeEvent<HTMLInputElement>; value:
 
 ```
 
-| Свойство                                  | Тип                                              | По умолчанию | Описание                                                                                                                                               |
-| ----------------------------------------- | ------------------------------------------------ | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `items`                                   | `Item[]`                                         | -            | Элементы                                                                                                                                               |
-| [`multiple`](#один-или-несколько)         | `boolean`                                        | -            | Выбрать несколько вариантов                                                                                                                            |
-| `value`                                   | multiple ? `Item[]` : `Item` or `null`           | -            | Значение                                                                                                                                               |
-| `onChange`                                | multiple ? `onChangeMultiple` : `OnChange`       | -            | Действие при выборе элемента                                                                                                                           |
-| `name`                                    | `string`                                         | -            | Имя `<input>`, указывается для доступности                                                                                                             |
-| [`getLabel`](#текст-на-кнопках)           | `(item: Item) => string, number`                 | -            | Функция для формирования текста для кнопки или всплывающей подсказки (при `onlyIcon = true`). Также используется в качестве уникального ключа элемента |
-| [`getIcon`](#иконки)                      | `(item: Item) => React.FC<IconProps>, undefined` | -            | Функция для формирования иконки                                                                                                                        |
-| [`onlyIcon?`](#иконки)                    | `boolean`                                        | -            | Показывать только иконку                                                                                                                               |
-| [`size?`](#размер)                        | `'xs', 's', 'm', 'l'`                            | `'m'`        | Размер                                                                                                                                                 |
-| [`form?`](#форма-кнопок)                  | `'default', 'brick', 'round'`                    | `'default'`  | Форма                                                                                                                                                  |
-| [`view?`](#внешний-вид)                   | `'primary', 'ghost', 'secondary'`                | `'primary'`  | Внешний вид                                                                                                                                            |
-| [`width?`](#группа-кнопок-в-ширину-блока) | `'default', 'full'`                              | `'default'`  | Ширина компонента                                                                                                                                      |
-| `className?`                              | `string`                                         | -            | Дополнительный CSS-класс                                                                                                                               |
-| `ref?`                                    | `React.Ref<HTMLDivElement>`                      | -            | Ссылка на корневой DOM-элемент этого компонента                                                                                                        |
+| Свойство                                  | Тип                                        | По умолчанию | Описание                                                                                                                                               |
+| ----------------------------------------- | ------------------------------------------ | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `items`                                   | `Item[]`                                   | -            | Элементы                                                                                                                                               |
+| [`multiple`](#один-или-несколько)         | `boolean`                                  | -            | Выбрать несколько вариантов                                                                                                                            |
+| `value`                                   | multiple ? `Item[]` : `Item` or `null`     | -            | Значение                                                                                                                                               |
+| `onChange`                                | multiple ? `onChangeMultiple` : `OnChange` | -            | Действие при выборе элемента                                                                                                                           |
+| `name`                                    | `string`                                   | -            | Имя `<input>`, указывается для доступности                                                                                                             |
+| [`getLabel`](#текст-на-кнопках)           | `(item: Item) => string, number`           | -            | Функция для формирования текста для кнопки или всплывающей подсказки (при `onlyIcon = true`). Также используется в качестве уникального ключа элемента |
+| [`getIcon`](#иконки)                      | `(item: Item) => IconComponent, undefined` | -            | Функция для формирования иконки                                                                                                                        |
+| [`onlyIcon?`](#иконки)                    | `boolean`                                  | -            | Показывать только иконку                                                                                                                               |
+| [`size?`](#размер)                        | `'xs', 's', 'm', 'l'`                      | `'m'`        | Размер                                                                                                                                                 |
+| [`form?`](#форма-кнопок)                  | `'default', 'brick', 'round'`              | `'default'`  | Форма                                                                                                                                                  |
+| [`view?`](#внешний-вид)                   | `'primary', 'ghost', 'secondary'`          | `'primary'`  | Внешний вид                                                                                                                                            |
+| [`width?`](#группа-кнопок-в-ширину-блока) | `'default', 'full'`                        | `'default'`  | Ширина компонента                                                                                                                                      |
+| [`disabled?`](#неактивная-группа-кнопок)  | `boolean`                                  | `false`      | Делает группу кнопок неактивной                                                                                                                        |
+| [`getDisabled?`](#неактивная-кнопка)      | `(item: Item) => boolean`                  | -            | Функция для определения неактивного состояния кнопки                                                                                                   |
+| `className?`                              | `string`                                   | -            | Дополнительный CSS-класс                                                                                                                               |
+| `ref?`                                    | `React.Ref<HTMLDivElement>`                | -            | Ссылка на корневой DOM-элемент этого компонента                                                                                                        |
 
 ## Пример
 
 ```ts
 // src/App.ts
 import React, { useState } from 'react';
-import { ChoiceGroup } from 'nx-design/ChoiceGroup';
+import { ChoiceGroup } from '@consta/uikit/ChoiceGroup';
 
 type Item = string;
 

@@ -1,6 +1,6 @@
 import './TableNumberFilter.css';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import { cn } from '../../../utils/bem';
 import { TextField } from '../../TextField/TextField';
@@ -8,6 +8,11 @@ import { TableFilterContainer } from '../FilterContainer/TableFilterContainer';
 import { FilterComponentProps } from '../filtering';
 
 const cnNumberFilter = cn('TableNumberFilter');
+
+type Item = {
+  min?: string;
+  max?: string;
+};
 
 type TableNumberFilterProps = FilterComponentProps & {
   title?: string;
@@ -19,19 +24,10 @@ export const TableNumberFilter: React.FC<TableNumberFilterProps> = ({
   title,
   onCancel,
 }) => {
-  const [minValue, setMinValue] = useState<string | undefined | null>(filterValue?.min);
-  const [maxValue, setMaxValue] = useState<string | undefined | null>(filterValue?.max);
+  const [minValue, setMinValue] = useState<string | undefined | null>((filterValue as Item)?.min);
+  const [maxValue, setMaxValue] = useState<string | undefined | null>((filterValue as Item)?.max);
 
   const textFieldRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    // setTimeout нужен для корректного выставления автофокуса
-    setTimeout(() => {
-      if (textFieldRef.current) {
-        textFieldRef.current.focus();
-      }
-    });
-  }, []);
 
   const confirmHandler = () => {
     onConfirm({
@@ -50,6 +46,7 @@ export const TableNumberFilter: React.FC<TableNumberFilterProps> = ({
           onChange={(e) => setMinValue(e.value)}
           form="defaultBrick"
           size="m"
+          autoFocus
           inputRef={textFieldRef}
         />
         <TextField

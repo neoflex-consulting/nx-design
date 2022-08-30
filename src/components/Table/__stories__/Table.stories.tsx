@@ -6,36 +6,46 @@ import { boolean, number, object, select, text } from '@storybook/addon-knobs';
 
 import {
   customFilters,
+  CustomIDs,
   generateData,
+  partOfTableDataForCustomTagLabelFunction,
+  rowsForCustomTagLabelFunction,
   tableData,
+  tableDataWithAdditionalClassName,
   tableDataWithRenderFn,
   tableWithBagdeData,
   tableWithExpandableRowsData,
   tableWithMergedCellsData,
   tableWithMultiLevelHeadersData,
+  withControlTableMock,
+  withHiddenColumnTableMock,
 } from '../__mock__/data.mock';
 import { IconCopy } from '../../../icons/IconCopy/IconCopy';
 import { updateAt } from '../../../utils/array';
-import { cn } from '../../../utils/bem';
-import { createMetadata, createStory } from '../../../utils/storybook';
+import { callbackWithSelector, createMetadata, createStory } from '../../../utils/storybook';
+import { isNotNil } from '../../../utils/type-guards';
 import { Button } from '../../Button/Button';
 import { Checkbox } from '../../Checkbox/Checkbox';
 import { Typography } from '../../Typography/Typography';
 import { verticalAligns } from '../Cell/TableCell';
-import { Filters, SortByProps } from '../filtering';
+import { Filters } from '../filtering';
 import {
   headerVerticalAligns,
-  Props,
   sizes,
+  SortByProps,
   Table,
   TableColumn,
+  TableProps as Props,
+  TableProps,
   TableRow,
   zebraStriped,
 } from '../Table';
 
+import WithAdditionalClassName from './examples/WithAdditionalClassName/WithAdditionalClassName';
+import WithHandleCellClick from './examples/WithHandleCellClick';
+import WithRowCreationAndDeletion from './examples/WithRowCreationAndDeletion';
+import { cnTableStories } from './helpers';
 import mdx from './Table.docs.mdx';
-
-const cnTableStories = cn('TableStories');
 
 const defaultProps: Props<typeof tableData.rows[number]> = {
   columns: tableData.columns,
@@ -49,6 +59,7 @@ const defaultProps: Props<typeof tableData.rows[number]> = {
   verticalAlign: 'top',
   zebraStriped: undefined,
   headerVerticalAlign: 'center',
+  getAdditionalClassName: undefined,
 };
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
@@ -63,6 +74,13 @@ const getKnobs = <T extends TableRow>(replacedProps?: Partial<Props<T>>): Props<
   const props = { ...defaultProps, ...replacedProps } as Props<T>;
 
   const zebraStripedProp = select('zebraStriped', ['', ...zebraStriped], props.zebraStriped);
+
+  const handleRowClick = callbackWithSelector({ name: 'onRowClick', isActive: false });
+  const handleRowHover = callbackWithSelector({ name: 'onRowHover', isActive: false });
+  const handleAdditionalClass = callbackWithSelector(
+    { name: 'getAdditionalClassName', isActive: true },
+    props.getAdditionalClassName,
+  ) as ((props: { column: TableColumn<T>; row: T; isActive: boolean }) => string) | undefined;
 
   return {
     columns: object('columns', props.columns),
@@ -83,17 +101,39 @@ const getKnobs = <T extends TableRow>(replacedProps?: Partial<Props<T>>): Props<
       headerVerticalAligns,
       props.headerVerticalAlign,
     ),
-    onRowClick: ({ id, e }) => action(`onRowClick[${id}]`)(e),
+    onRowClick: handleRowClick,
+    onRowHover: handleRowHover,
+    onRowCreate: undefined,
+    rowCreateText: undefined,
+    getTagLabel: props.getTagLabel,
+    getAdditionalClassName: handleAdditionalClass,
   };
 };
 
-export const Interactive = createStory(() => <Table {...getKnobs()} />, {
+export const Playground = createStory(() => <Table {...getKnobs()} />, {
   name: 'обычная',
 });
 
-export const CustomRows = createStory(() => <Table {...getKnobs(tableDataWithRenderFn)} />, {
-  name: 'рендер ячеек',
-});
+export const CustomRows = createStory(
+  () => {
+    const { columns, ...props } = getKnobs(tableDataWithRenderFn);
+
+    const copyColumns = [...columns].map((column) => {
+      const copy = { ...column };
+      if (copy.accessor === 'year') {
+        copy.renderCell = (row: typeof props.rows[number]): React.ReactNode => {
+          return <h2>{row.year.value}</h2>;
+        };
+      }
+      return copy;
+    });
+
+    return <Table columns={copyColumns} {...props} />;
+  },
+  {
+    name: 'рендер ячеек',
+  },
+);
 
 export const WithCollapcingRows = createStory(
   () => <Table {...getKnobs(tableWithExpandableRowsData)} />,
@@ -158,6 +198,15 @@ export const WithBagde = createStory(
   },
 );
 
+export const WithGetAdditionalClassName = createStory(
+  () => {
+    return <WithAdditionalClassName {...getKnobs(tableDataWithAdditionalClassName)} />;
+  },
+  {
+    name: 'с дополнительным классом',
+  },
+);
+
 const WithCheckboxHeaderContent = (): JSX.Element => {
   const ROWS_COUNT = 3;
   const [values, setValues] = React.useState<boolean[]>(new Array(ROWS_COUNT).fill(false));
@@ -214,14 +263,14 @@ const WithOnRowHoverContent = <T extends TableRow>(): JSX.Element => {
     ),
   }));
 
-  const columns: Array<TableColumn<typeof rows[number]>> = [
+  const columns: TableColumn<typeof rows[number]>[] = [
     {
       title: 'Появится кнопка при наведении',
       accessor: 'button',
       align: 'center',
       width: 120,
     },
-    ...tableData.columns,
+    ...(tableData.columns as TableColumn<typeof rows[number]>[]),
   ];
 
   return (
@@ -235,7 +284,7 @@ const WithOnRowHoverContent = <T extends TableRow>(): JSX.Element => {
 };
 
 export const WithCheckboxHeader = createStory(() => <WithCheckboxHeaderContent />, {
-  name: 'с Checkbox в шапке',
+  name: 'с чекбоксом в шапке',
 });
 
 export const WithCustomRowsPlaceholder = createStory(
@@ -247,7 +296,7 @@ export const WithCustomRowsPlaceholder = createStory(
     />
   ),
   {
-    name: 'со своим текстом если данных нет',
+    name: 'со своим текстом, если данных нет',
   },
 );
 
@@ -342,6 +391,66 @@ export const WithMergedCells = createStory(
   },
 );
 
+export const WithMergedByCustomCallbackCells = createStory(
+  () => {
+    const ADMIN_INDEXES = [3, 4, 7];
+    const USERS_COUNT = 12;
+
+    const checkedRow: { [key: string]: boolean } = new Array(USERS_COUNT)
+      .fill(false)
+      .reduce((previous, _, index) => {
+        return {
+          ...previous,
+          [`${index + 1}`]: !Math.round(Math.random()),
+        };
+      }, {});
+
+    const generateRowBase = (id: string, owner: string, viewed: boolean) => ({
+      id,
+      owner,
+      operationConfirmed: {
+        owner,
+        viewed,
+      },
+    });
+
+    return (
+      <Table
+        borderBetweenColumns
+        borderBetweenRows
+        columns={[
+          {
+            title: 'ID',
+            accessor: 'id',
+            align: 'left',
+          },
+          {
+            title: 'Инициатор операции',
+            accessor: 'owner',
+            mergeCells: true,
+          },
+          {
+            title: 'Операция подтверждена',
+            accessor: 'operationConfirmed',
+            mergeCells: true,
+            getComparisonValue: ({ owner, viewed }) => `${owner}-${viewed}`,
+            renderCell: ({ operationConfirmed: { viewed } }) => <Checkbox checked={viewed} />,
+          },
+        ]}
+        rows={Object.keys(checkedRow).map((id, index) => {
+          const isAuto = ADMIN_INDEXES.includes(index);
+          return {
+            ...generateRowBase(id, `${isAuto ? 'admin' : 'user'}`, isAuto ? true : checkedRow[id]),
+          };
+        })}
+      />
+    );
+  },
+  {
+    name: 'с ячейками, объединёнными кастомной функцией',
+  },
+);
+
 export const withCustomFilters = createStory(
   () => {
     return (
@@ -352,6 +461,109 @@ export const withCustomFilters = createStory(
   },
   {
     name: 'с кастомными фильтрами',
+  },
+);
+
+export const withCustomTagLabelFunction = createStory(
+  () => {
+    type GetTagLabel = (filterValue: any) => string;
+
+    const tagLabelById: Record<CustomIDs, GetTagLabel> = {
+      [CustomIDs.fullName]: (filterValue: Array<{ value: string; name: string }>) => {
+        if (!Array.isArray(filterValue)) {
+          return '';
+        }
+
+        return filterValue.reduce((fullText, { value }) => {
+          // Выводим только первые буквы в отдельных словах, таким образом получим инициалы
+          return `${fullText}${fullText.length ? ', ' : ''}${value
+            .split(' ')
+            .map((str) => str.slice(0, 1))
+            .join('')}`;
+        }, '');
+      },
+      [CustomIDs.yearOfRegistration]: (filterValue) => {
+        let restName = '';
+        if (filterValue.min && filterValue.max) {
+          restName = `начиная с ${filterValue.min} и заканчивая ${filterValue.max}`;
+        } else if (filterValue.min) {
+          restName = `начиная с ${filterValue.min}`;
+        } else if (filterValue.max) {
+          restName = `заканчивая ${filterValue.max}`;
+        }
+
+        return restName;
+      },
+    };
+
+    return (
+      <div className={cnTableStories()}>
+        <Table
+          {...getKnobs(partOfTableDataForCustomTagLabelFunction)}
+          getTagLabel={(id, name, filterValue: any) => {
+            if (!isNotNil(filterValue)) {
+              return name;
+            }
+
+            const getTagLabel = tagLabelById[id as CustomIDs];
+
+            return name + getTagLabel(filterValue);
+          }}
+        />
+      </div>
+    );
+  },
+  {
+    name: 'со своей функцией переименования тега в фильтре',
+  },
+);
+
+export const WithRowActions = createStory(() => <WithRowCreationAndDeletion />, {
+  name: 'с добавлением/удалением строк',
+});
+
+export const WithIcon = createStory(() => <Table {...getKnobs(withControlTableMock)} />, {
+  name: 'с дополнительным элементом в заголовке',
+});
+
+export const WithHandleCellClickExample = createStory(() => <WithHandleCellClick />, {
+  name: 'с обработкой клика по ячейке',
+});
+
+export const WithHiddenColumn = createStory(
+  () => {
+    const [mock, setMock] = useState<TableProps<typeof rowsForCustomTagLabelFunction[number]>>(
+      withHiddenColumnTableMock,
+    );
+    const [isHidden, setIsHidden] = useState<boolean>(true);
+
+    const handleClick = () => {
+      setIsHidden(!isHidden);
+
+      const overrideMock = { ...mock };
+
+      overrideMock.columns = overrideMock.columns.map((column) => {
+        const newColumn = { ...column };
+
+        if (newColumn.hidden !== undefined) {
+          newColumn.hidden = !column.hidden;
+        }
+
+        return newColumn;
+      });
+
+      setMock(overrideMock);
+    };
+
+    return (
+      <div>
+        <Button label={isHidden ? 'Показать колонку' : 'Скрыть колонку'} onClick={handleClick} />
+        <Table {...getKnobs(mock)} columns={mock.columns} />
+      </div>
+    );
+  },
+  {
+    name: 'со скрытыми колонками',
   },
 );
 

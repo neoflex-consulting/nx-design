@@ -3,7 +3,6 @@ import './TabsTab.css';
 import React, { forwardRef } from 'react';
 
 import { IconProps, IconPropSize } from '../../../icons/_Icon/Icon';
-import { cnMixFocus } from '../../../mixs/MixFocus/MixFocus';
 import { cn } from '../../../utils/bem';
 import { getSizeByMap } from '../../../utils/getSizeByMap';
 import { TabsPropSize } from '../Tabs';
@@ -41,7 +40,7 @@ export const TabsTab = forwardRef<HTMLButtonElement, Props>((props, ref) => {
 
   return (
     <button
-      className={cnTabsTab({ size, checked, onlyIcon }, [cnMixFocus({ before: true }), className])}
+      className={cnTabsTab({ size, checked, onlyIcon }, [className])}
       onClick={checked ? undefined : onChange}
       ref={ref}
       role="tab"

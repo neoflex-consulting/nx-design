@@ -2,7 +2,6 @@ import './Button.css';
 
 import React from 'react';
 
-import { cnMixFocus } from '../../mixs/MixFocus/MixFocus';
 import {IconProps, IconPropSize} from '../../icons/_Icon/Icon';
 import { cn } from '../../utils/bem';
 import {getSizeByMap} from '../../utils/getSizeByMap';
@@ -120,7 +119,7 @@ export const Button = forwardRefWithAs<Props, 'button'>((props, ref) => {
           withIcon,
           onlyIcon: !!IconOnly,
         },
-        view != buttonPropView[4] ? [cnMixFocus(), className] : [className],
+        view != buttonPropView[4] ? [className] : [className],
       )}
       tabIndex={tabIndex}
       title={title}

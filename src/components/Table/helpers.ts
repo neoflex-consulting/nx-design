@@ -1,8 +1,17 @@
 import React from 'react';
 
-import { isNotNil } from '../../utils/type-guards';
+import { isNotNil, isNumber, isString } from '../../utils/type-guards';
 
 import { ColumnWidth, SortingState, TableColumn, TableRow, TableTreeRow } from './Table';
+
+export const Order = {
+  ASC: 'ASC',
+  asc: 'asc',
+  DESC: 'DESC',
+  desc: 'desc',
+} as const;
+
+export type OrderType = typeof Order[keyof typeof Order];
 
 export type Position = {
   colSpan?: number;
@@ -27,7 +36,7 @@ export type HeaderData<T extends TableRow> = {
 };
 
 export const getColumnsSize = (sizes: ColumnWidth[]): string => {
-  return sizes.map((s) => (s ? `${s}px` : `minmax(min-content, ${100 / sizes.length}%)`)).join(' ');
+  return sizes.map((s) => (isNumber(s) ? `${s}px` : `auto`)).join(' ');
 };
 
 export const getColumnLeftOffset = ({
@@ -44,6 +53,18 @@ export const getColumnLeftOffset = ({
     .map((size, index) => resizedColumnWidths[index] || size);
 
   return selectedColumns.reduce((acc, column) => acc + column, 0);
+};
+
+export const createSortingState = <T extends TableRow>(
+  by: keyof T,
+  order?: OrderType,
+  sortFn?: (a: T[keyof T], b: T[keyof T]) => number,
+): SortingState<T> => {
+  if (!isString(order)) {
+    return null;
+  }
+
+  return { by, order: order.toLowerCase(), sortFn } as SortingState<T>;
 };
 
 export const getNewSorting = <T extends TableRow>(
@@ -175,14 +196,17 @@ export const useHeaderData = <T extends TableRow>(
   const headerColumnsHeights: Array<number> = Object.values(headerRowsRefs.current)
     .filter(isNotNil)
     .map((ref) => ref.getBoundingClientRect().height);
-  const flattenedHeaders = headers.flat().map((column, index) => ({
-    ...column,
-    position: {
-      ...column.position,
-      smallTextSize: headers.length > 1 && column.position.level === headers.length - 1,
-      height: headerColumnsHeights[index] || 0,
-    },
-  }));
+  const flattenedHeaders = headers
+    .flat()
+    .filter((column: TableColumn<T>) => !column.hidden)
+    .map((column, index) => ({
+      ...column,
+      position: {
+        ...column.position,
+        smallTextSize: headers.length > 1 && column.position.level === headers.length - 1,
+        height: headerColumnsHeights[index] || 0,
+      },
+    }));
   const headerRowsHeights = headers.map((arr, index) => {
     return Math.min.apply(
       null,
@@ -329,3 +353,12 @@ export const transformRows = <T extends TableRow>(
   }
   return rowsArr;
 };
+
+export function getMergedArray<TYPE>(mainArr: TYPE[], mergeArr: TYPE[]) {
+  const length = Math.max(mainArr.length, mergeArr.length);
+  const resultArr: TYPE[] = [];
+  for (let i = 0; i < length; i++) {
+    resultArr.push(mergeArr[i] ?? mainArr[i]);
+  }
+  return resultArr;
+}

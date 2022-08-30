@@ -19,10 +19,12 @@ type Props<T extends TableRow> = {
     filterable?: boolean;
   };
   onClick?: (e: React.SyntheticEvent) => void;
+  onContextMenu?: (e: React.SyntheticEvent) => void;
   style?: React.CSSProperties;
   className?: string;
   wrapperClassName?: string;
   children: React.ReactNode;
+  wrap?: 'truncate' | 'break';
   showVerticalShadow?: boolean;
   verticalAlign?: VerticalAlign;
 } & (
@@ -59,6 +61,7 @@ const getCellClasses = <T extends TableRow>(props: Props<T>): string => {
       stickyOnTop: (props.type === 'header' && props.isSticky) || props.type === 'resizer',
       stickyOnLeft: column.isSticky,
       isFilterable: column.filterable,
+      isControl: Boolean(column.control),
       withoutBorder: props.type === 'resizer',
       isClickable: 'isClickable' in props && props.isClickable,
       isBorderTop: 'isBorderTop' in props && props.isBorderTop,
@@ -77,13 +80,15 @@ const getWrapperClasses = <T extends TableRow>(props: Props<T>): string => {
       withoutPadding: column.withoutPadding || props.type === 'resizer',
       verticalAlign: props.verticalAlign,
       horizontalAlign: column.align,
+      isHeader: props.type === 'header',
+      wrap: props.wrap,
     },
     [wrapperClassName],
   );
 };
 
 export const TableCell: TableCell = React.forwardRef((props, ref) => {
-  const { style, onClick, children } = props;
+  const { style, onClick, onContextMenu, children } = props;
 
   const propsWithRole = onClick
     ? {
@@ -95,7 +100,13 @@ export const TableCell: TableCell = React.forwardRef((props, ref) => {
       };
 
   return (
-    <div {...propsWithRole} ref={ref} className={getCellClasses(props)} style={style}>
+    <div
+      {...propsWithRole}
+      onContextMenu={onContextMenu}
+      ref={ref}
+      className={getCellClasses(props)}
+      style={style}
+    >
       <div className={getWrapperClasses(props)}>{children}</div>
     </div>
   );

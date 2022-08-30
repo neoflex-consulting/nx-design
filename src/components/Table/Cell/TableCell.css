@@ -34,12 +34,19 @@
   }
 
   &_isSortable,
-  &_isFilterable {
+  &_isFilterable,
+  &_isControl {
     --buttons-wrapper-size: var(--space-xl);
   }
 
-  &_isSortable&_isFilterable {
+  &_isSortable&_isFilterable,
+  &_isSortable&_isControl,
+  &_isFilterable&_isControl {
     --buttons-wrapper-size: var(--space-4xl);
+  }
+
+  &_isSortable&_isFilterable&_isControl {
+    --buttons-wrapper-size: var(--space-5xl);
   }
 
   &_stickyOnTop,
@@ -83,6 +90,22 @@
     padding-right: calc(
       var(--cell-padding-horizontal) + var(--resizer-width) + var(--buttons-wrapper-size)
     );
+
+    &_wrap {
+      &_truncate {
+        display: block;
+        overflow: hidden;
+        max-width: 100%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      &_break {
+        max-width: 100%;
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
+    }
 
     &_withoutPadding {
       padding: 0;

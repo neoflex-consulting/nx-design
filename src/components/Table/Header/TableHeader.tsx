@@ -8,7 +8,7 @@ import { TableCell } from '../Cell/TableCell';
 import { FieldSelectedValues, Filters, getOptionsForFilters, SelectedFilters } from '../filtering';
 import { TableFilterTooltip } from '../FilterTooltip/TableFilterTooltip';
 import { Header } from '../helpers';
-import { ColumnMetaData, HeaderVerticalAlign, TableColumn, TableRow } from '../Table';
+import { ColumnMetaData, HeaderVerticalAlign, onCellClick, TableColumn, TableRow } from '../Table';
 
 const cnTableHeader = cn('TableHeader');
 
@@ -31,10 +31,11 @@ type Props<T extends TableRow> = {
   getSortIcon: (column: Header<T>) => React.FC;
   handleSortClick: (column: TableColumn<T>) => void;
   handleFilterTogglerClick: (id: string) => () => void;
+  handleCellClick: onCellClick;
   handleTooltipSave: (
     field: string,
     tooltipSelectedFilters: FieldSelectedValues,
-    value?: any,
+    value?: unknown,
   ) => void;
   filters: Filters<T> | undefined;
   visibleFilter: string | null;
@@ -55,6 +56,7 @@ export const TableHeader = <T extends TableRow>({
   getSortIcon,
   handleSortClick,
   handleFilterTogglerClick,
+  handleCellClick,
   handleTooltipSave,
   filters,
   visibleFilter,
@@ -98,7 +100,7 @@ export const TableHeader = <T extends TableRow>({
     const filterComponentProps = curFilter?.component?.props ?? {};
     const onToggle = handleFilterTogglerClick(column.accessor);
     const filterId = curFilter?.id;
-    const handleFilterSave = (filterValue: any) => {
+    const handleFilterSave = (filterValue?: unknown) => {
       if (filterId) {
         handleTooltipSave(column.accessor!, [filterId], filterValue);
       }
@@ -125,6 +127,14 @@ export const TableHeader = <T extends TableRow>({
         )}
       </TableFilterTooltip>
     ) : null;
+  };
+
+  const control = (column: Header<T> & ColumnMetaData): React.ReactNode => {
+    if (column.control) {
+      return <div className={cnTableHeader('Сontrol')}>{column.control({ column })}</div>;
+    }
+
+    return null;
   };
 
   return (
@@ -162,6 +172,22 @@ export const TableHeader = <T extends TableRow>({
               isResized={isColumnResized(column)}
               column={column}
               verticalAlign={headerVerticalAlign}
+              onContextMenu={(e: React.SyntheticEvent) =>
+                handleCellClick({
+                  e,
+                  type: 'contextMenu',
+                  columnIdx,
+                  ref: { current: headerRowsRefs.current[columnIdx] },
+                })
+              }
+              onClick={(e: React.SyntheticEvent) =>
+                handleCellClick({
+                  e,
+                  type: 'click',
+                  columnIdx,
+                  ref: { current: headerRowsRefs.current[columnIdx] },
+                })
+              }
               className={cnTableHeader('Cell', {
                 isFirstColumn: column.position!.gridIndex === 0,
                 isFirstRow: column.position!.level === 0,
@@ -177,6 +203,7 @@ export const TableHeader = <T extends TableRow>({
               }
             >
               {column.title}
+
               <div
                 className={cnTableHeader('Buttons', {
                   isSortingActive: column.isSortingActive,
@@ -187,6 +214,7 @@ export const TableHeader = <T extends TableRow>({
                 {column.sortable && (
                   <Button
                     size="xs"
+                    iconSize="s"
                     view="clear"
                     onlyIcon
                     onClick={(): void => handleSortClick(column)}
@@ -194,7 +222,10 @@ export const TableHeader = <T extends TableRow>({
                     className={cnTableHeader('Icon', { type: 'sort' })}
                   />
                 )}
+
                 {getFilterPopover(column)}
+
+                {control(column)}
               </div>
             </TableCell>
           );
