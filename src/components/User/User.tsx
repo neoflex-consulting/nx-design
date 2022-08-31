@@ -7,7 +7,7 @@ import { IconCaretDown } from '../../icons/IconCaretDown/IconCaretDown';
 import { cn } from '../../utils/bem';
 import { getSizeByMap } from '../../utils/getSizeByMap';
 import { forwardRefWithAs } from '../../utils/types/PropsWithAsAttributes';
-import { Avatar } from '../Avatar/Avatar';
+import {Avatar, AvatarPropForm} from '../Avatar/Avatar';
 import { Button, ButtonPropSize } from '../Button/Button';
 import { Typography } from '../Typography/Typography';
 
@@ -36,6 +36,7 @@ type Props = {
   onlyAvatar?: boolean;
   info?: string;
   children?: never;
+  form?: AvatarPropForm;
 } & (
   | {
       withArrow?: boolean;
@@ -90,6 +91,7 @@ export const User = forwardRefWithAs<Props>((props, ref) => {
     onIconRightClick,
     info,
     status,
+    form,
     ...otherProps
   } = props;
   const Tag = as as string;
@@ -103,7 +105,7 @@ export const User = forwardRefWithAs<Props>((props, ref) => {
       ref={ref}
     >
       <div className={cnUser('AvatarWrapper', { status })}>
-        <Avatar size={getSizeByMap(avatarSizeMap, size)} url={avatarUrl} name={name} />
+        <Avatar size={getSizeByMap(avatarSizeMap, size)} url={avatarUrl} name={name} form={form}/>
       </div>
       {!onlyAvatar && (name || info) && (
         <div className={cnUser('Block')}>

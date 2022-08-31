@@ -10,7 +10,7 @@ type ButtonProps = React.ComponentProps<typeof Button>;
 type HeaderButtonProps = ButtonProps;
 
 export const HeaderButton: React.FC<HeaderButtonProps> = (props) => {
-  const { className, size, view, form, onlyIcon, ...otherProps } = props;
+  const { className, size, view, form, ...otherProps } = props;
   return (
     <Button
       {...otherProps}
@@ -18,7 +18,6 @@ export const HeaderButton: React.FC<HeaderButtonProps> = (props) => {
       size={size || "m"}
       view={view || "clear"}
       form={form || "round"}
-      onlyIcon={onlyIcon || true}
     />
   );
 };
