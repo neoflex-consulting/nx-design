@@ -210,10 +210,6 @@
         margin-left: var(--icon-indent);
       }
     }
-
-    &_span {
-      display: flex;
-    }
 }
 
   &-Label {
