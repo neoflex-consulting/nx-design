@@ -197,9 +197,9 @@
   }
 
   &-Icon {
-    display: block;
-    flex-shrink: 0;
-    fill: currentColor;
+     flex-shrink: 0;
+     fill: currentColor;
+     display: block;
 
     &_position {
       &_left {
@@ -210,7 +210,11 @@
         margin-left: var(--icon-indent);
       }
     }
-  }
+
+    &_span {
+      display: flex;
+    }
+}
 
   &-Label {
     overflow: hidden;

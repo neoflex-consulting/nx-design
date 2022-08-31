@@ -128,18 +128,18 @@ export const Button = forwardRefWithAs<Props, 'button'>((props, ref) => {
     >
       {IconOnly &&
       (
-        (React.isValidElement(iconLeft) && <span className={cnButton('Icon')}> {iconLeft} </span> ) ||
-        (React.isValidElement(iconRight) && <span className={cnButton('Icon')}> {iconRight} </span> )
+        (React.isValidElement(iconLeft) && <span className={cnButton('Icon', {span: true})}> {iconLeft} </span> ) ||
+        (React.isValidElement(iconRight) && <span className={cnButton('Icon', {span: true})}> {iconRight} </span> )
       )
       }
       {IconOnly && !React.isValidElement(iconLeft) && !React.isValidElement(iconRight) && <IconOnly className={cnButton('Icon')} size={iconSize}/> }
       {!IconOnly &&
       ((IconLeft || IconRight) && label ? (
         <>
-          {IconLeft && React.isValidElement(iconLeft) && <span className={cnButton('Icon', { position: 'left'})}> {iconLeft} </span>}
+          {IconLeft && React.isValidElement(iconLeft) && <span className={cnButton('Icon', { position: 'left', span: true})}> {iconLeft} </span>}
           {IconLeft && !React.isValidElement(iconLeft) && <IconLeft className={cnButton('Icon', { position: 'left' })} size={iconSize} />}
           <span className={cnButton('Label')}>{label}</span>
-          {IconRight && React.isValidElement(iconRight) && <span className={cnButton('Icon', { position: 'right' })}> {iconRight} </span>}
+          {IconRight && React.isValidElement(iconRight) && <span className={cnButton('Icon', { position: 'right', span: true })}> {iconRight} </span>}
           {IconRight && !React.isValidElement(iconRight) && <IconRight className={cnButton('Icon', { position: 'right' })} size={iconSize} />}
         </>
       ) : (
