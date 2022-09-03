@@ -68,6 +68,10 @@ export type TextPropTransform = typeof textPropTransform[number];
 export const textPropWidth = ['default'] as const;
 export type TextPropWidth = typeof textPropWidth[number];
 
+export const textPropLineHeight = ['2xs', 'xs', 's', 'm', 'l'] as const;
+export type TextPropLineHeight = typeof textPropLineHeight[number];
+export const textPropLineHeightDefault: TextPropLineHeight = 'm';
+
 type Props = {
   align?: TextPropAlign;
   cursor?: TextPropCursor;
@@ -78,6 +82,7 @@ type Props = {
   view?: TextPropView;
   weight?: TextPropWeight;
   width?: TextPropWidth;
+  lineHeight?: TextPropLineHeight;
 };
 
 export const cnText = cn('Typography');
@@ -96,6 +101,7 @@ export const Typography = forwardRefWithAs<Props>((props, ref) => {
     width,
     className,
     children,
+    lineHeight = textPropLineHeightDefault,
     ...otherProps
   } = props;
 
@@ -112,6 +118,7 @@ export const Typography = forwardRefWithAs<Props>((props, ref) => {
           size,
           spacing,
           transform,
+          lineHeight,
           view,
           weight,
           width,

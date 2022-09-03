@@ -1,18 +1,14 @@
 import '../SelectComponentsDeprecated/Select.css';
 
-import React, { useRef, useState } from 'react';
+import React, {useRef, useState} from 'react';
 
-import { useSelect } from '../../hooks/useSelectDeprecated/useSelect';
-import { scrollIntoView } from '../../utils/scrollIntoView';
-import { usePropsHandler } from '../EventInterceptor/usePropsHandler';
-import { cnSelect } from '../SelectComponentsDeprecated/cnSelect';
-import { getSelectDropdownForm } from '../SelectComponentsDeprecated/helpers';
-import { SelectContainer } from '../SelectComponentsDeprecated/SelectContainer/SelectContainer';
-import {
-  RenderItemProps,
-  SelectDropdown,
-} from '../SelectComponentsDeprecated/SelectDropdown/SelectDropdown';
-import { SelectItem } from '../SelectComponentsDeprecated/SelectItem/SelectItem';
+import {useSelect} from '../../hooks/useSelectDeprecated/useSelect';
+import {scrollIntoView} from '../../utils/scrollIntoView';
+import {usePropsHandler} from '../EventInterceptor/usePropsHandler';
+import {getSelectDropdownForm} from '../SelectComponentsDeprecated/helpers';
+import {SelectContainer} from '../SelectComponentsDeprecated/SelectContainer/SelectContainer';
+import {RenderItemProps, SelectDropdown,} from '../SelectComponentsDeprecated/SelectDropdown/SelectDropdown';
+import {SelectItem} from '../SelectComponentsDeprecated/SelectItem/SelectItem';
 import {
   CommonSelectProps,
   DefaultPropForm,
@@ -20,6 +16,7 @@ import {
   DefaultPropView,
 } from '../SelectComponentsDeprecated/types';
 import {Icon} from "nx-icon/lib";
+import {cn} from "../../utils/bem";
 
 type SelectContainerProps = React.ComponentProps<typeof SelectContainer>;
 
@@ -28,6 +25,9 @@ export type SimpleSelectProps<ITEM> = CommonSelectProps<ITEM> &
     value?: ITEM | null;
     onChange?: (v: ITEM | null) => void;
   };
+
+export const COMPONENT_NAME = 'Select' as const;
+export const cnSelect = cn(COMPONENT_NAME);
 
 type Select = <ITEM>(props: SimpleSelectProps<ITEM>) => React.ReactElement | null;
 
@@ -54,7 +54,7 @@ export const BasicSelect: Select = (props) => {
     dropdownClassName,
     name,
     ...restProps
-  } = usePropsHandler(cnSelect(), props, controlRef);
+  } = usePropsHandler(COMPONENT_NAME, props, controlRef);
   const toggleRef = useRef<HTMLInputElement>(null);
   const [isFocused, setIsFocused] = useState(false);
 

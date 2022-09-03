@@ -9,6 +9,7 @@ import { useTheme } from '../Theme/Theme';
 
 import { getComputedPositionAndDirection } from './helpers';
 import { usePopoverReposition } from './usePopoverReposition';
+import {isNumber, isString} from "../../utils/type-guards";
 
 export { usePopoverReposition };
 
@@ -48,6 +49,22 @@ export const directionsStartEdge = [
   'rightStartDown',
 ] as const;
 
+export const popoverPropOffset = [
+  '3xs',
+  '2xs',
+  'xs',
+  's',
+  'm',
+  'l',
+  'xl',
+  '2xl',
+  '3xl',
+  '4xl',
+  '5xl',
+  '6xl',
+] as const;
+export type PopoverPropOffset = typeof popoverPropOffset[number] | number;
+
 export const directions = [...directionsStartCenter, ...directionsStartEdge];
 
 export type Direction = typeof directions[number];
@@ -74,7 +91,7 @@ export type Props = PropsWithJsxAttributes<
   {
     direction?: Direction;
     spareDirection?: Direction;
-    offset?: number;
+    offset?: PopoverPropOffset;
     arrowOffset?: number;
     possibleDirections?: readonly Direction[];
     isInteractive?: boolean;
@@ -83,6 +100,38 @@ export type Props = PropsWithJsxAttributes<
     onSetDirection?: (direction: Direction) => void;
   } & PositioningProps
 >;
+
+const getOffset = (ref: React.RefObject<HTMLDivElement>, propOffset: PopoverPropOffset) => {
+  if (isNumber(propOffset)) {
+    return propOffset;
+  }
+
+  if (isString(propOffset) && ref.current) {
+    const cssVar = getComputedStyle(ref.current).getPropertyValue(`--space-${propOffset}`);
+
+    if (cssVar && /px$/.test(cssVar)) {
+      return Number(cssVar.slice(0, cssVar.length - 2));
+    }
+
+    if (cssVar && /rem$/.test(cssVar)) {
+      const fontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+      const rem = Number(cssVar.slice(0, cssVar.length - 3));
+
+      return fontSize * rem;
+    }
+
+    if (cssVar && /em$/.test(cssVar)) {
+      const fontSize = parseFloat(getComputedStyle(ref.current).fontSize);
+      const em = Number(cssVar.slice(0, cssVar.length - 2));
+
+      return fontSize * em;
+    }
+
+    return 0;
+  }
+
+  return 0;
+};
 
 const isRenderProp = (
   children: React.ReactNode | ChildrenRenderProp,
@@ -112,7 +161,7 @@ export const Popover = React.forwardRef<HTMLDivElement, Props>((props, component
   const {
     children,
     direction: passedDirection = 'upCenter',
-    offset = 0,
+    offset: propOffset = 0,
     arrowOffset,
     possibleDirections = directions,
     isInteractive = true,
@@ -155,6 +204,8 @@ export const Popover = React.forwardRef<HTMLDivElement, Props>((props, component
 
   const updateAnchorClientRect = () =>
     setAnchorClientRect(anchorRef?.current?.getBoundingClientRect());
+
+  const offset = useMemo(() => getOffset(ref, propOffset), [propOffset, Boolean(ref.current)]);
 
   React.useLayoutEffect(updateAnchorClientRect, [anchorSize]);
 

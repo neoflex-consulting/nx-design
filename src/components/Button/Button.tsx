@@ -1,6 +1,6 @@
 import './Button.css';
 
-import React from 'react';
+import React, {useRef} from 'react';
 
 import {IconProps, IconPropSize} from '../../icons/_Icon/Icon';
 import { cn } from '../../utils/bem';
@@ -49,11 +49,16 @@ export type Props = {
   title?: string;
   children?: never;
   iconSize?: IconPropSize;
+  name?: string;
 };
 
-export const cnButton = cn('Button');
+export const COMPONENT_NAME = 'Button' as const;
+export const cnButton = cn(COMPONENT_NAME);
 
 export const Button = forwardRefWithAs<Props, 'button'>((props, ref) => {
+
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
+
   const {
     size = buttonPropSizeDefault,
     view = buttonPropViewDefault,
@@ -70,8 +75,10 @@ export const Button = forwardRefWithAs<Props, 'button'>((props, ref) => {
     as = 'button',
     onlyIcon,
     iconSize: iconSizeProp,
+    key,
+    name,
     ...otherProps
-  } = usePropsHandler(cnButton(), props);
+  } = usePropsHandler(COMPONENT_NAME, props, buttonRef);
 
   const sizeMap: Record<ButtonPropSize, IconPropSize> = {
     xs: 'xs',
@@ -124,6 +131,8 @@ export const Button = forwardRefWithAs<Props, 'button'>((props, ref) => {
       tabIndex={tabIndex}
       title={title}
       ref={ref}
+      key={key}
+      name={name}
       {...(Tag === 'button' ? { disabled: disabled || loading } : {})}
     >
       {IconOnly &&

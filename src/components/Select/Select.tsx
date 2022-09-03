@@ -1,16 +1,16 @@
 import '../SelectComponents/Select.css';
 
-import React, { forwardRef, useRef } from 'react';
+import React, {forwardRef, useRef} from 'react';
 
-import { useForkRef } from '../../hooks/useForkRef/useForkRef';
-import { useSelect } from '../../hooks/useSelect/useSelect';
-import { usePropsHandler } from '../EventInterceptor/usePropsHandler';
-import { cnSelect } from '../SelectComponents/cnSelect';
-import { getSelectDropdownForm } from '../SelectComponents/helpers';
-import { SelectContainer } from '../SelectComponents/SelectContainer/SelectContainer';
-import { SelectDropdown } from '../SelectComponents/SelectDropdown/SelectDropdown';
-import { SelectItem } from '../SelectComponents/SelectItem/SelectItem';
-import { defaultPropForm, defaultPropSize, defaultPropView } from '../SelectComponents/types';
+import {useForkRef} from '../../hooks/useForkRef/useForkRef';
+import {useSelect} from '../../hooks/useSelect/useSelect';
+import {usePropsHandler} from '../EventInterceptor/usePropsHandler';
+import {cnSelect} from '../SelectComponents/cnSelect';
+import {getSelectDropdownForm} from '../SelectComponents/helpers';
+import {SelectContainer} from '../SelectComponents/SelectContainer/SelectContainer';
+import {SelectDropdown} from '../SelectComponents/SelectDropdown/SelectDropdown';
+import {SelectItem} from '../SelectComponents/SelectItem/SelectItem';
+import {defaultPropForm, defaultPropSize, defaultPropView} from '../SelectComponents/types';
 import {IconChevronDown} from "../../icons/IconChevronDown/IconChevronDown";
 
 import {

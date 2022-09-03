@@ -39,13 +39,15 @@ type Props = {
 
 export type NotificationProps = PropsWithHTMLAttributes<Props, HTMLDivElement>;
 
-export const cnNotification = cn('Notification');
+export const COMPONENT_NAME = 'Notification' as const;
+export const cnNotification = cn(COMPONENT_NAME);
+
 export const cnNotificationItem = cn('Notification', 'Item');
 
 const cssTransitionClassNames = cnForCssTransition(cnNotificationItem);
 
 export const Notification: React.FC<NotificationProps> = (props) => {
-  const { items, className, ...otherProps } = usePropsHandler(cnNotification(), props);
+  const { items, className, ...otherProps } = usePropsHandler(COMPONENT_NAME, props);
 
   return (
     <TransitionGroup {...otherProps} className={cnNotification(null, [className])} appear enter exit>

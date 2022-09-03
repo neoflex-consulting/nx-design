@@ -116,6 +116,29 @@
      }
   }
 
+
+  &_lineHeight {
+    &_xs {
+       line-height: var(--line-height-text-xs);
+     }
+
+    &_2xs {
+       line-height: var(--line-height-text-2xs);
+     }
+
+    &_s {
+       line-height: var(--line-height-text-s);
+     }
+
+    &_m {
+       line-height: var(--line-height-text-m);
+     }
+
+    &_l {
+       line-height: var(--line-height-text-l);
+     }
+  }
+
   &_spacing {
     &_xs {
       letter-spacing: 0.06em;

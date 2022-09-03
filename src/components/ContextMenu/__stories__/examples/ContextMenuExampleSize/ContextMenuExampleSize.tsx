@@ -1,6 +1,4 @@
-import './ContextMenuExampleSize.css';
-
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
 import { IconPlus } from '../../../../../icons/IconPlus/IconPlus';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
@@ -13,47 +11,71 @@ const items: string[] = ['Пункт 1', 'Пункт 2', 'Пункт 3'];
 
 const cnContextMenuExampleSize = cn('ContextMenuExampleSize');
 
-export const ContextMenuExampleSizeS = () => {
-  const ref = useRef(null);
+export const ContextMenuExampleSize = () => {
+  const refXS = useRef(null);
+  const refS = useRef(null);
+  const refM = useRef(null);
+  const refL = useRef(null);
+  const [isOpenXS, setIsOpenXS] = useState<boolean>(false);
+  const [isOpenS, setIsOpenS] = useState<boolean>(false);
+  const [isOpenM, setIsOpenM] = useState<boolean>(false);
+  const [isOpenL, setIsOpenL] = useState<boolean>(false);
+
   return (
     <StoryBookExample className={cnDocsDecorator('Section', [cnContextMenuExampleSize()])}>
-      <Button iconLeft={IconPlus} ref={ref} label="Меню размера S" />
+      <Button
+        iconLeft={IconPlus}
+        ref={refXS}
+        label="Меню размера XS"
+        onClick={() => setIsOpenXS(!isOpenXS)}
+      />
       <ContextMenu
         items={items}
-        getLabel={(item) => item}
-        anchorRef={ref}
+        isOpen={isOpenXS}
+        getItemLabel={(item) => item}
+        anchorRef={refXS}
+        direction="downStartLeft"
+        size="xs"
+      />
+      <Button
+        iconLeft={IconPlus}
+        ref={refS}
+        label="Меню размера S"
+        onClick={() => setIsOpenS(!isOpenS)}
+      />
+      <ContextMenu
+        items={items}
+        isOpen={isOpenS}
+        getItemLabel={(item) => item}
+        anchorRef={refS}
         direction="downStartLeft"
         size="s"
       />
-    </StoryBookExample>
-  );
-};
-
-export const ContextMenuExampleSizeM = () => {
-  const ref = useRef(null);
-  return (
-    <StoryBookExample className={cnDocsDecorator('Section', [cnContextMenuExampleSize()])}>
-      <Button iconLeft={IconPlus} ref={ref} label="Меню размера M" />
+      <Button
+        iconLeft={IconPlus}
+        ref={refM}
+        label="Меню размера M"
+        onClick={() => setIsOpenM(!isOpenM)}
+      />
       <ContextMenu
         items={items}
-        getLabel={(item) => item}
-        anchorRef={ref}
+        isOpen={isOpenM}
+        getItemLabel={(item) => item}
+        anchorRef={refM}
         direction="downStartLeft"
         size="m"
       />
-    </StoryBookExample>
-  );
-};
-
-export const ContextMenuExampleSizeL = () => {
-  const ref = useRef(null);
-  return (
-    <StoryBookExample className={cnDocsDecorator('Section', [cnContextMenuExampleSize()])}>
-      <Button iconLeft={IconPlus} ref={ref} label="Меню размера L" />
+      <Button
+        iconLeft={IconPlus}
+        ref={refL}
+        label="Меню размера L"
+        onClick={() => setIsOpenL(!isOpenL)}
+      />
       <ContextMenu
         items={items}
-        getLabel={(item) => item}
-        anchorRef={ref}
+        isOpen={isOpenL}
+        getItemLabel={(item) => item}
+        anchorRef={refL}
         direction="downStartLeft"
         size="l"
       />

@@ -1,14 +1,15 @@
 import { useButtonEventHandler } from './propsHandlers/useButtonEventHandler';
 import { useCheckboxEventsHandler } from './propsHandlers/useCheckboxEventsHandler';
 import { useSelectEventsHandler } from './propsHandlers/useSelectEventsHandler';
-import { useNotificationEventsHandler } from './propsHandlers/useNotificationEventsHandler';
 import { useTextFieldEventsHandler } from './propsHandlers/useTextFieldEventsHandler';
-import { EventHandler, EventInterceptorPropMap } from './EventInterceptor';
+import { EventInterceptorComponentName } from './types';
 
-export const eventInterceptorMap: EventInterceptorPropMap = {
-  Button: useButtonEventHandler as EventHandler,
-  TextField: useTextFieldEventsHandler as EventHandler,
-  Checkbox: useCheckboxEventsHandler as EventHandler,
-  Notification: useNotificationEventsHandler as EventHandler,
-  Select: useSelectEventsHandler as EventHandler,
+export const eventInterceptorMap: Partial<Record<
+  EventInterceptorComponentName,
+  ((...args: any[]) => any) | undefined
+  >> = {
+  Button: useButtonEventHandler,
+  Checkbox: useCheckboxEventsHandler,
+  Select: useSelectEventsHandler,
+  TextField: useTextFieldEventsHandler,
 };

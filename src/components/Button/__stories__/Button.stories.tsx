@@ -1,13 +1,10 @@
 import * as React from 'react';
-import { action } from '@storybook/addon-actions';
-import { boolean, select, text } from '@storybook/addon-knobs';
+import {action} from '@storybook/addon-actions';
+import {boolean, select, text} from '@storybook/addon-knobs';
 
-import { cn } from '../../../utils/bem';
-import { createMetadata } from '../../../utils/storybook';
-import {
-  eventInterceptorMap,
-  EventInterceptorProvider,
-} from '../../EventInterceptor/EventInterceptor';
+import {cn} from '../../../utils/bem';
+import {createMetadata} from '../../../utils/storybook';
+import {eventInterceptorMap, EventInterceptorProvider,} from '../../EventInterceptor/EventInterceptor';
 import {
   Button,
   buttonPropForm,

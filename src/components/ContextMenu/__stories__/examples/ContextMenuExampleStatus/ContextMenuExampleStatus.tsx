@@ -5,67 +5,38 @@ import { StoryBookExample } from '../../../../../uiKit/components/StoryBookExamp
 import { Button } from '../../../../Button/Button';
 import { ContextMenu } from '../../../ContextMenu';
 
-type Group = {
-  name: string;
-  key: number;
-};
-
-const groups: Group[] = [
-  {
-    name: 'Первая группа',
-    key: 1,
-  },
-  {
-    name: 'Вторая группа',
-    key: 2,
-  },
-];
-
 type Item = {
   label: string;
-  group: number;
+  accent: 'error' | 'warning' | 'success';
 };
 
 const items: Item[] = [
   {
     label: 'Пункт 1',
-    group: 1,
+    accent: 'error',
   },
   {
     label: 'Пункт 2',
-    group: 2,
+    accent: 'warning',
   },
   {
     label: 'Пункт 3',
-    group: 2,
+    accent: 'success',
   },
 ];
 
-const sortGroup = (a: number | string, b: number | string) => {
-  if (a > b) {
-    return 1;
-  }
-  if (a < b) {
-    return -1;
-  }
-  return 0;
-};
-
-export const ContextMenuExampleGroups = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+export const ContextMenuExampleStatus = () => {
   const ref = useRef(null);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
     <StoryBookExample className={cnDocsDecorator('Section')}>
       <Button ref={ref} label="Открыть" onClick={() => setIsOpen(!isOpen)} />
       <ContextMenu
-        items={items}
         isOpen={isOpen}
-        groups={groups}
-        getItemGroupId={(item) => item.group}
-        getGroupLabel={(group) => group.name}
-        getGroupId={(group) => group.key}
+        items={items}
+        getItemStatus={(item) => item.accent}
         anchorRef={ref}
-        sortGroup={sortGroup}
+        direction="downStartLeft"
       />
     </StoryBookExample>
   );

@@ -1,46 +1,40 @@
-import './ContextMenuExampleSide.css';
-
 import React, { useRef, useState } from 'react';
 
-import { IconProps } from '../../../../../icons/_Icon/Icon';
-import { IconPlus } from '../../../../../icons/IconPlus/IconPlus';
+import { IconComponent } from '../../../../../icons/_Icon/Icon';
 import { IconInfo } from '../../../../../icons/IconInfo/IconInfo';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { StoryBookExample } from '../../../../../uiKit/components/StoryBookExample/StoryBookExample';
-import { cn } from '../../../../../utils/bem';
 import { Badge } from '../../../../Badge/Badge';
 import { Button } from '../../../../Button/Button';
 import { Switch } from '../../../../Switch/Switch';
 import { ContextMenu } from '../../../ContextMenu';
 
 type Item = {
-  name: string;
-  icon: React.FC<IconProps>;
+  label: string;
+  icon: IconComponent;
   switch?: boolean;
   status: 'warning' | 'success';
 };
 
 const menuItems: Item[] = [
   {
-    name: 'Пункт 1',
+    label: 'Пункт 1',
     icon: IconInfo,
     status: 'success',
   },
   {
-    name: 'Пункт 2',
+    label: 'Пункт 2',
     icon: IconInfo,
     status: 'warning',
     switch: false,
   },
   {
-    name: 'Пункт 3',
+    label: 'Пункт 3',
     icon: IconInfo,
     status: 'success',
     switch: true,
   },
 ];
-
-const cnContextMenuExampleSide = cn('ContextMenuExampleSide');
 
 function renderLeftSide(item: Item): React.ReactNode {
   const Icon = item.icon;
@@ -62,13 +56,13 @@ function renderRightSide(item: Item, onChange: (item: Item) => void): React.Reac
 
 export const ContextMenuExampleSide = () => {
   const [items, setItems] = useState(menuItems);
-  const ref = useRef(null);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const getLabel = (item: Item) => item.name;
+  const ref = useRef(null);
 
   const onChange = (switchItem: Item) => {
     const newItems = items.map((item, index) => {
-      if (getLabel(switchItem) === getLabel(item)) {
+      if (switchItem.label === item.label) {
         return { ...items[index], switch: !items[index].switch };
       }
       return item;
@@ -78,16 +72,14 @@ export const ContextMenuExampleSide = () => {
   };
 
   return (
-    <StoryBookExample className={cnDocsDecorator('Section', [cnContextMenuExampleSide()])}>
-      <Button iconLeft={IconPlus} ref={ref} />
+    <StoryBookExample className={cnDocsDecorator('Section')}>
+      <Button ref={ref} label="Открыть" onClick={() => setIsOpen(!isOpen)} />
       <ContextMenu
+        isOpen={isOpen}
         items={items}
-        getLabel={getLabel}
         anchorRef={ref}
-        direction="downStartLeft"
-        getLeftSideBar={renderLeftSide}
-        getRightSideBar={(item) => renderRightSide(item, onChange)}
-        possibleDirections={['upStartLeft', 'downStartLeft']}
+        getItemLeftSide={renderLeftSide}
+        getItemRightSide={(item) => renderRightSide(item, onChange)}
       />
     </StoryBookExample>
   );

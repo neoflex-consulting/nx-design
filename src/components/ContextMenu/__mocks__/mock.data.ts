@@ -1,109 +1,108 @@
-import { IconProps } from '../../../icons/_Icon/Icon';
-import { IconCheckDouble } from '../../../icons/IconCheckDouble/IconCheckDouble';
-import { IconLayers } from '../../../icons/IconLayers/IconLayers';
-import { IconBank } from '../../../icons/IconBank/IconBank';
+import { IconInfo } from '../../../icons/IconInfo/IconInfo';
+import { IconAlert } from '../../../icons/IconAlert/IconAlert';
+import { IconDelete } from '../../../icons/IconDelete/IconDelete';
 import { IconEye } from '../../../icons/IconEye/IconEye';
-import { IconWifi } from '../../../icons/IconWifi/IconWifi';
-import { BadgePropStatus } from '../../Badge/Badge';
-import { ContextMenuAccent } from '../helpers';
+import { IconApps } from '../../../icons/IconApps/IconApps';
+import { ContextMenuGroupDefault, ContextMenuItemDefault } from '../types';
 
-export const groups = [
+export const groups: ContextMenuGroupDefault[] = [
   {
-    name: 'Первая группа',
+    label: 'Первая группа',
     id: 1,
   },
   {
-    name: 'Вторая группа',
+    label: 'Вторая группа',
     id: 2,
   },
-] as const;
+];
 
-export declare type Item = {
-  name: string;
-  group?: typeof groups[number]['id'];
-  subMenu?: Item[];
+export type Item = ContextMenuItemDefault & {
   switch?: boolean;
-  status?: BadgePropStatus;
-  icon?: React.FC<IconProps> | null;
-  accent?: ContextMenuAccent;
-  disabled?: boolean;
 };
 
 export const exampleItems: Item[] = [
   {
-    name: 'Скрепка',
-    icon: IconLayers,
-    accent: 'success',
-    group: 1,
+    label: 'Скрепка',
+    leftIcon: IconAlert,
+    rightIcon: IconAlert,
+    status: 'success',
+    groupId: 1,
     subMenu: [
       {
-        name: 'Пункт - 1',
+        label: 'Пункт - 1',
         status: 'success',
-        accent: 'success',
       },
       {
-        name: 'Пункт - 2',
-        accent: 'success',
+        label: 'Пункт - 2',
+        status: 'success',
         subMenu: [
           {
-            name: 'Пункт - 3',
-            icon: IconWifi,
+            label: 'Пункт - 3',
+            leftIcon: IconApps,
+            rightIcon: IconApps,
             subMenu: [
               {
-                name: 'Пункт - 5',
+                label: 'Пункт - 5',
               },
               {
-                name: 'Пункт - 6',
+                label: 'Пункт - 6',
               },
             ],
           },
           {
-            name: 'Пункт - 4',
-            icon: IconWifi,
+            label: 'Пункт - 4',
+            leftIcon: IconApps,
+            rightIcon: IconApps,
             subMenu: [
               {
-                name: 'Пункт - 7',
+                label: 'Пункт - 7',
               },
               {
-                name: 'Пункт - 8',
+                label: 'Пункт - 8',
               },
             ],
           },
           {
-            name: 'Пункт - 9',
-            icon: IconWifi,
+            label: 'Пункт - 9',
+            leftIcon: IconApps,
+            rightIcon: IconApps,
           },
         ],
       },
     ],
   },
   {
-    name: 'Глаз',
-    status: 'normal',
-    icon: IconEye,
-    accent: 'success',
-    group: 1,
+    label: 'Глаз',
+    leftIcon: IconEye,
+    rightIcon: IconEye,
+    groupId: 1,
   },
   {
-    name: 'Две галочки',
-    group: 2,
-    icon: IconCheckDouble,
-    switch: false,
-    accent: 'error',
+    label: 'Две галочки',
+    groupId: 2,
+    leftIcon: IconInfo,
+    rightIcon: IconInfo,
+    rightSide: '!',
+    switch: true,
+    status: 'error',
   },
   {
-    name: 'Чемодан',
-    group: 2,
-    icon: IconBank,
-    switch: false,
-    accent: 'error',
+    label: 'Чемодан',
+    groupId: 2,
+    leftIcon: IconDelete,
+    rightIcon: IconDelete,
+    rightSide: '!',
+    switch: true,
+    status: 'error',
   },
   {
-    name: 'Солнце',
-    group: 2,
-    icon: IconWifi,
-    switch: false,
-    accent: 'error',
+    label: 'Солнце',
+    groupId: 2,
+    leftIcon: IconApps,
+    rightIcon: IconApps,
+    status: 'error',
+    rightSide: '!',
+    switch: true,
     disabled: true,
   },
 ];

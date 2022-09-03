@@ -8,7 +8,6 @@ import { setRef } from '../../utils/setRef';
 import { PropsWithHTMLAttributesAndRef } from '../../utils/types/PropsWithHTMLAttributes';
 import { Button } from '../Button/Button';
 import { ContextMenu } from '../ContextMenu/ContextMenu';
-import { ContextMenuPropSize } from '../ContextMenu/helpers';
 import { Direction } from '../Popover/Popover';
 
 export const themeTogglerPropSize = ['m', 'l', 's', 'xs'] as const;
@@ -19,6 +18,10 @@ export type ThemePropSetValue<ITEM> = (props: { e: React.MouseEvent; value: ITEM
 export type ThemePropGetKey<ITEM> = (item: ITEM) => string | number;
 export type ThemePropGetLabel<ITEM> = (item: ITEM) => string;
 export type ThemePropGetIcon<ITEM> = (item: ITEM) => React.FC<IconProps>;
+
+export const contextMenuSizes = ['m', 's', 'l'] as const;
+export type ContextMenuPropSize = typeof contextMenuSizes[number];
+export const contextMenuDefaultSize: ContextMenuPropSize = contextMenuSizes[0];
 
 export type Props<ITEM> = PropsWithHTMLAttributesAndRef<
   {
