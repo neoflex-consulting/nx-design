@@ -1,16 +1,16 @@
 import './Tooltip.stories.css';
 
-import React, { useRef, useState } from 'react';
-import { action } from '@storybook/addon-actions';
-import { boolean, object, optionsKnob, select, text } from '@storybook/addon-knobs';
+import React, {useRef, useState} from 'react';
+import {action} from '@storybook/addon-actions';
+import {boolean, object, optionsKnob, select, text} from '@storybook/addon-knobs';
 
-import { cn } from '../../../utils/bem';
-import { createMetadata, createStory } from '../../../utils/storybook';
-import { Badge } from '../../Badge/Badge';
-import { Button } from '../../Button/Button';
-import { directions, Position } from '../../Popover/Popover';
-import { Typography } from '../../Typography/Typography';
-import { Tooltip, tooltipPropSizes, tooltipPropSizesDefault, tooltipPropStatus } from '../Tooltip';
+import {cn} from '../../../utils/bem';
+import {createMetadata, createStory} from '../../../utils/storybook';
+import {Badge} from '../../Badge/Badge';
+import {Button} from '../../Button/Button';
+import {directions, Position} from '../../Popover/Popover';
+import {Typography} from '../../Typography/Typography';
+import {Tooltip, tooltipPropSizes, tooltipPropSizesDefault, tooltipPropStatus} from '../Tooltip';
 
 import mdx from './Tooltip.docs.mdx';
 
@@ -114,10 +114,6 @@ export default createMetadata({
   parameters: {
     docs: {
       page: mdx,
-    },
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/v9Jkm2GrymD277dIGpRBSH/Consta-UI-Kit?node-id=58%3A17463',
     },
   },
 });

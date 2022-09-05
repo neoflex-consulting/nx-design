@@ -1,153 +1,67 @@
 .Tooltip {
-  --tooltip-bg-color: #666;
+  --tooltip-bg-color: var(--color-bg-default);
+  --popover-arrow-bg-color: var(--tooltip-bg-color);
   --tooltip-bg-opacity: 0.9;
 
-  /* Задаются через js */
-  --tooltip-arrow-size: 0;
-  --tooltip-arrow-offset: 0;
-  position: relative;
+&_status {
+&_error {
+   --tooltip-bg-color: var(--color-bg-error);
+ }
 
+&_warning {
+   --tooltip-bg-color: var(--color-bg-warning);
+ }
 
-  &_status {
-    &_error {
-      --tooltip-bg-color: var(--color-bg-error);
-    }
+&_success {
+   --tooltip-bg-color: var(--color-bg-success);
+ }
 
-    &_warning {
-      --tooltip-bg-color: var(--color-bg-warning);
-    }
+&_normal {
+   --tooltip-bg-color: var(--color-bg-normal);
+ }
+}
 
-    &_success {
-      --tooltip-bg-color: var(--color-bg-success);
-    }
+&[class*='status'] {
+   --tooltip-bg-opacity: 1;
 
-    &_normal {
-      --tooltip-bg-color: var(--color-bg-normal);
-    }
+& .Tooltip-Content {
+    text-shadow: var(--shadow-group);
   }
+}
 
-  &[class*='status'] {
-    --tooltip-bg-opacity: 1;
+/* Фон отдельным элементом, чтобы можно было добавить ему opacity */
+&-Background {
+   position: absolute;
+   top: 0;
+   right: 0;
+   left: 0;
+   bottom: 0;
+   background: var(--tooltip-bg-color);
+   border-radius: var(--control-radius);
+   opacity: var(--tooltip-bg-opacity);
+   box-shadow: var(--shadow-layer);
+ }
 
-    & .Tooltip-Content {
-      text-shadow: 0 0 2px rgba(var(--color-nums-shadow), 0.16);
-    }
-  }
+&-Content {
+   position: relative; /* чтобы отображаться над фоном */
+   box-sizing: border-box;
+   width: 100%;
+   padding: var(--space-xs);
 
-  /* Фон отдельным элементом, чтобы можно было добавить ему opacity */
-  &-Background {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: var(--tooltip-bg-color);
-    border-radius: var(--control-radius);
-    opacity: var(--tooltip-bg-opacity);
-    box-shadow: var(--shadow-layer);
-  }
+&_size_s {
+   max-width: 150px;
+ }
 
-  &-Content {
-    position: relative; /* чтобы отображаться над фоном */
-    box-sizing: border-box;
-    width: 100%;
-    padding: var(--space-xs);
-    color: white;
+&_size_m {
+   max-width: 260px;
+ }
 
-    &_size_s {
-      max-width: 150px;
-    }
+&_size_l {
+   max-width: 400px;
+ }
+}
 
-    &_size_m {
-      max-width: 260px;
-    }
-
-    &_size_l {
-      max-width: 400px;
-    }
-  }
-
-  &-Arrow {
-    position: absolute;
-    border: var(--tooltip-arrow-size) solid transparent;
-    opacity: var(--tooltip-bg-opacity);
-
-    &_direction_upLeft,
-    &_direction_upCenter,
-    &_direction_upRight,
-    &_direction_upStartLeft,
-    &_direction_upStartRight {
-      bottom: 0;
-      border-top-color: var(--tooltip-bg-color);
-      transform: translateY(100%);
-    }
-
-    &_direction_upLeft,
-    &_direction_downLeft,
-    &_direction_downStartRight,
-    &_direction_upStartRight {
-      right: var(--tooltip-arrow-offset);
-    }
-
-    &_direction_upCenter,
-    &_direction_downCenter {
-      left: calc(50% - var(--tooltip-arrow-size));
-    }
-
-    &_direction_upRight,
-    &_direction_downRight,
-    &_direction_downStartLeft,
-    &_direction_upStartLeft {
-      left: var(--tooltip-arrow-offset);
-    }
-
-    &_direction_downLeft,
-    &_direction_downCenter,
-    &_direction_downRight,
-    &_direction_downStartLeft,
-    &_direction_downStartRight {
-      top: 0;
-      border-bottom-color: var(--tooltip-bg-color);
-      transform: translateY(-100%);
-    }
-
-    &_direction_rightUp,
-    &_direction_rightCenter,
-    &_direction_rightDown,
-    &_direction_rightStartUp,
-    &_direction_rightStartDown {
-      left: 0;
-      border-right-color: var(--tooltip-bg-color);
-      transform: translateX(-100%);
-    }
-
-    &_direction_rightUp,
-    &_direction_leftUp,
-    &_direction_leftStartDown,
-    &_direction_rightStartDown {
-      bottom: var(--tooltip-arrow-offset);
-    }
-
-    &_direction_rightCenter,
-    &_direction_leftCenter {
-      top: calc(50% - var(--tooltip-arrow-size));
-    }
-
-    &_direction_rightDown,
-    &_direction_leftDown,
-    &_direction_leftStartUp,
-    &_direction_rightStartUp {
-      top: var(--tooltip-arrow-offset);
-    }
-
-    &_direction_leftUp,
-    &_direction_leftCenter,
-    &_direction_leftDown,
-    &_direction_leftStartUp,
-    &_direction_leftStartDown {
-      right: 0;
-      border-left-color: var(--tooltip-bg-color);
-      transform: translateX(100%);
-    }
-  }
+&-Arrow {
+   opacity: var(--tooltip-bg-opacity);
+ }
 }

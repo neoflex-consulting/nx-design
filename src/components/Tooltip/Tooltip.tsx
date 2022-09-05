@@ -3,10 +3,11 @@ import './Tooltip.css';
 import React, { useState } from 'react';
 
 import { ClickOutsideHandler } from '../../hooks/useClickOutside/useClickOutside';
+import { cnMixPopoverArrow } from '../../mixs/MixPopoverArrow/MixPopoverArrow';
 import { cn } from '../../utils/bem';
 import { PropsWithJsxAttributes } from '../../utils/types/PropsWithJsxAttributes';
 import { Direction, Popover, PositioningProps } from '../Popover/Popover';
-import { Typography } from '../Typography/Typography';
+import {TextPropSize, Typography} from '../Typography/Typography';
 import { generateThemeClassNames, ThemeContext, useTheme } from '../Theme/Theme';
 
 const ARROW_SIZE = 6;
@@ -59,21 +60,21 @@ export const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>((props, re
 
   const tooltipTheme = status
     ? {
-        ...theme,
-        color: {
-          primary: theme.color.accent,
-          accent: theme.color.accent,
-          invert: theme.color.primary,
-        },
-      }
+      ...theme,
+      color: {
+        primary: theme.color.accent,
+        accent: theme.color.accent,
+        invert: theme.color.primary,
+      },
+    }
     : {
-        ...theme,
-        color: {
-          primary: theme.color.invert,
-          accent: theme.color.accent,
-          invert: theme.color.primary,
-        },
-      };
+      ...theme,
+      color: {
+        primary: theme.color.invert,
+        accent: theme.color.accent,
+        invert: theme.color.primary,
+      },
+    };
 
   const tooltipThemeClassNames = generateThemeClassNames(tooltipTheme);
 
@@ -92,14 +93,14 @@ export const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>((props, re
         ref={ref}
         className={cnTooltip({ status }, [className])}
         style={{
-          ['--tooltip-arrow-size' as string]: `${ARROW_SIZE}px`,
-          ['--tooltip-arrow-offset' as string]: `${ARROW_OFFSET}px`,
+          ['--popover-arrow-size' as string]: `${ARROW_SIZE}px`,
+          ['--popover-arrow-offset' as string]: `${ARROW_OFFSET}px`,
           ...style,
         }}
       >
         <div className={cnTooltip('Background')} />
-        <div className={cnTooltip('Arrow', { direction })} />
-        <div className={cnTooltip('Content', { size }, [className])}>{renderChildren(children)}</div>
+        <div className={cnTooltip('Arrow', [cnMixPopoverArrow({ direction })])} />
+        <div className={cnTooltip('Content', { size })}>{renderChildren(children)}</div>
       </Popover>
     </ThemeContext.Provider>
   );
