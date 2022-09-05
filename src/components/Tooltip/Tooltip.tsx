@@ -33,13 +33,14 @@ export type TooltipProps = PropsWithJsxAttributes<
     children: React.ReactNode;
     onClickOutside?: ClickOutsideHandler;
     className?: string;
+    textSize?: TextPropSize;
     onSetDirection?: (direction: Direction) => void;
   } & PositioningProps
 >;
 
-function renderChildren(children: React.ReactNode): React.ReactNode {
+function renderChildren(children: React.ReactNode, textSize: TextPropSize | undefined): React.ReactNode {
   return typeof children === 'string' || typeof children === 'number' ? (
-    <Typography size="body">{children}</Typography>
+    <Typography size={textSize || "body"}>{children}</Typography>
   ) : (
     children
   );
@@ -52,6 +53,7 @@ export const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>((props, re
     className,
     status,
     onSetDirection: onSetDirectionProp,
+    textSize,
     style,
     ...rest
   } = props;
@@ -100,7 +102,7 @@ export const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>((props, re
       >
         <div className={cnTooltip('Background')} />
         <div className={cnTooltip('Arrow', [cnMixPopoverArrow({ direction })])} />
-        <div className={cnTooltip('Content', { size })}>{renderChildren(children)}</div>
+        <div className={cnTooltip('Content', { size })}>{renderChildren(children, textSize)}</div>
       </Popover>
     </ThemeContext.Provider>
   );
