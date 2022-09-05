@@ -33,8 +33,8 @@ export type ContextMenuGroupDefault = {
 };
 
 export type ContextMenuItemDefault = {
-  label: string | number;
-  key?: string | number;
+  label: string | number | React.ReactNode;
+  key: string | number | undefined;
   rightSide?: React.ReactNode;
   rightIcon?: IconComponent;
   leftSide?: React.ReactNode;
@@ -50,7 +50,7 @@ export type ContextMenuItemDefault = {
 
 export type ContextMenuPropSortGroup = (a: string | number, b: string | number) => number;
 
-export type ContextMenuPropGetItemLabel<ITEM> = (item: ITEM) => string | number;
+export type ContextMenuPropGetItemLabel<ITEM> = (item: ITEM) => string | number | React.ReactNode;
 export type ContextMenuPropGetItemRightSide<ITEM> = (item: ITEM) => React.ReactNode | undefined;
 export type ContextMenuPropGetItemLeftSide<ITEM> = (item: ITEM) => React.ReactNode | undefined;
 export type ContextMenuPropGetItemSubMenu<ITEM> = (item: ITEM) => ITEM[] | undefined;

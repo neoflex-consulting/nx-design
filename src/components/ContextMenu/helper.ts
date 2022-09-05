@@ -90,7 +90,7 @@ const findItem = <ITEM>(
 ): ITEM | undefined => {
   const { items, getItemKey, getItemSubMenu, key, getItemLabel } = params;
   for (const item of items) {
-    if (getItemKey(item) ?? getItemLabel(item) === key) {
+    if (getItemKey(item) === key) {
       return item;
     }
     const subItems = typeof getItemSubMenu === 'function' && getItemSubMenu(item);
@@ -121,7 +121,7 @@ export const getLevels = <ITEM>(params: GetLevelsParams<ITEM>): Level<ITEM>[] =>
           getItemSubMenu,
           getItemKey,
           getItemLabel,
-          key: getItemKey(item) ?? getItemLabel(item),
+          key: getItemKey(item),
         }),
       )
       .filter(isNotNil),
