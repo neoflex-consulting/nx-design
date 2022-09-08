@@ -18,6 +18,37 @@ $color-text-white: #ffffff;
 
 /* stylelint-disable */
 .Theme_color_gpnDisplay {
+
+  /* Основные цвета */
+  --color-base-path-blue-8: color($color-base-path a(100%));
+  --color-base-path-blue-7: color($color-base-path h(-2) s(-8%) l(+10%));
+  --color-base-path-blue-6: color($color-base-path h(-4) s(-15%) l(+21%));
+  --color-base-path-blue-5: color($color-base-path h(-6) s(-18%) l(+30%));
+  --color-base-path-blue-4: color($color-base-path h(-8) s(-14%) l(+41%));
+  --color-base-path-blue-3: color($color-base-path h(-10) s(-9%) l(+52%));
+  --color-base-path-blue-2: color($color-base-path h(-13) s(+6%) l(+65%));
+  --color-base-path-blue-1: color($color-base-path h(-15) s(+20%) l(+70%));
+
+  --color-base-base-grey-9: color($color-base-base a(100%));
+  --color-base-base-grey-8: color($color-base-base l(+5%));
+  --color-base-base-grey-7: color($color-base-base l(+20%));
+  --color-base-base-grey-6: color($color-base-base l(+35%));
+  --color-base-base-grey-5: color($color-base-base l(+50%));
+  --color-base-base-grey-4: color($color-base-base l(+65%));
+  --color-base-base-grey-3: color($color-base-base l(+70%));
+  --color-base-base-grey-2: color($color-base-base l(+75%));
+  --color-base-base-grey-1: color($color-base-base l(+78%));
+
+  --color-base-error-magenta-8: color($color-base-error a(100%));
+  --color-base-error-magenta-7: color($color-base-error h(+2) s(-8%) l(+9%));
+  --color-base-error-magenta-6: color($color-base-error h(+4) s(-17%) l(+19%));
+  --color-base-error-magenta-5: color($color-base-error h(+6) s(-40%) l(+28%));
+  --color-base-error-magenta-4: color($color-base-error h(+8) s(-46%) l(+37%));
+  --color-base-error-magenta-3: color($color-base-error h(+10) s(-46%) l(+47%));
+  --color-base-error-magenta-2: color($color-base-error h(+12) s(-50%) l(+58%));
+  --color-base-error-magenta-1: color($color-base-error h(+14) s(-61%) l(+70%));
+
+
   /* //////////////////////////////
   // Цвета фонов /////////////// */
   --color-bg-default: color($color-base-essential a(100%)); /* Цвет дефолта */

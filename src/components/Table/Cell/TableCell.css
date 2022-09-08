@@ -12,7 +12,7 @@
 
   &_isHeader {
     position: relative;
-    border-bottom: 1px solid var(--color-bg-border);
+    border-top: var(--table-border);
     font-size: var(--size-text-xs);
     font-weight: var(--font-weight-text-bold);
     line-height: var(--line-height-text-s);
@@ -21,8 +21,8 @@
   }
 
   &:not(&_isHeader) {
-    font-size: var(--size-text-s);
-    line-height: var(--line-height-text-s);
+    font-size: var(--size-text-m);
+    line-height: var(--line-height-text-m);
   }
 
   &_isResized {
@@ -81,6 +81,35 @@
     border-left: var(--table-border);
   }
 
+  &_isSeparateRows {
+    margin-bottom: var(--space-2xs);
+
+    &:not(&_isHeader) {
+      box-shadow: var(--shadow-table);
+       z-index: 0;
+    }
+  }
+
+  &_isSeparateFirstColumn {
+    margin-left: var(--space-xs);
+    border-top-left-radius: var(--table-border-radius);
+    border-bottom-left-radius: var(--table-border-radius);
+  }
+
+  &_isSeparateEndColumn {
+    margin-right: var(--space-xs);
+    border-top-right-radius: var(--table-border-radius);
+    border-bottom-right-radius: var(--table-border-radius);
+  }
+
+  &_isSeparateFirstRow {
+    margin-top: var(--space-xs);
+  }
+
+  &_isSeparateEndRow {
+     margin-bottom: var(--space-xs);
+  }
+
   &-Wrapper {
     position: relative;
     display: flex;
@@ -137,26 +166,21 @@
       text-align: right;
     }
 
-    .TableCell_stickyOnLeft &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: var(--space-s);
-      background: linear-gradient(90deg, var(--shadow-color), transparent);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity var(--fast-transition);
-      transform: translateX(100%);
+    &_isSeparateRows {
+
+      &:not(.Table-ContentCell_isFirstColumn)::after {
+         content: '';
+         position: absolute;
+         top: 8px;
+         left: 0;
+         bottom: 8px;
+         width: 1px;
+         background: var(--color-bg-border);
+         opacity: 1;
+         transition: opacity var(--fast-transition);
+      }
+
     }
 
-    .TableCell_stickyOnLeft.TableCell_showVerticalShadow &::after {
-      opacity: 1;
-    }
-
-    .TableCell_isHeader:hover & {
-      background: var(--color-bg-stripe);
-    }
   }
 }

@@ -1,0 +1,19 @@
+.HeaderMenu {
+  height: var(--space-xl);
+  padding: var(--space-xs);
+  border-top: var(--control-border-width) solid var(--color-control-bg-border-default);
+  border-left: var(--control-border-width) solid var(--color-control-bg-border-default);
+  border-right: var(--control-border-width) solid var(--color-control-bg-border-default);
+
+  &-LeftSide,
+  &-RightSide {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+  }
+
+  &-RightSide {
+    justify-content: flex-end;
+  }
+
+}

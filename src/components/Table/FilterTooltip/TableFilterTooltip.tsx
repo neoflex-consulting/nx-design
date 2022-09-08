@@ -50,7 +50,7 @@ export const TableFilterTooltip: React.FC<Props> = ({
       <Button
         ref={buttonRef}
         size="xs"
-        iconSize="s"
+        iconSize="xs"
         view="clear"
         onlyIcon
         onClick={onToggle}

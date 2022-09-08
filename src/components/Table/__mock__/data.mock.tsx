@@ -36,7 +36,7 @@ export const rangeFilterer = (
 export const rows = [
   {
     id: 'row1',
-    field: 'Северное',
+    field: 'blueprint',
     year: 1982,
     type: 'Нефть',
     estimatedReserves: 5000,
@@ -269,6 +269,12 @@ export const customFilters: Filters<typeof rows[number]> = [
       name: TableTextFilter,
       props: {
         withSearch: true,
+        nameSearch: "Поиск",
+        nameSelectAll: "Выбрать все",
+        nameReset: "Сбросить",
+        nameApply: "Применить",
+        nameCancel: "Отменить",
+        nameNotFound: "Ничего не найдено",
         items: [
           { name: 'Северное', value: 'Северное' },
           { name: 'Южное', value: 'Южное' },

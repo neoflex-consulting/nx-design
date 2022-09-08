@@ -45,10 +45,6 @@ export default createMetadata({
   parameters: {
     docs: {
       page: mdx,
-    },
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/sLeSNZqQulfU8RixZUGH4Q/UI-KIT-NeoDesign?node-id=5048%3A3946',
-    },
+    }
   },
 });

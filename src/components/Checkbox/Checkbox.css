@@ -12,7 +12,7 @@
     margin: 0;
     background-color: transparent;
     border: var(--control-border-width) solid var(--color-control-bg-border-default);
-    border-radius: var(--control-radius);
+    border-radius: var(--control-radius-small);
     cursor: pointer;
     transition: border-color 0.15s, background-color 0.15s;
     flex-shrink: 0;
@@ -42,6 +42,21 @@
   }
 
   &_size {
+    &_s {
+      --checkbox-font-size: var(--control-text-size-m);
+      --box-size: var(--control-box-size-s);
+      --offset: var(--space-l);
+
+      .Checkbox-Input {
+        position: absolute;
+
+        &::before {
+          top: 5.4px;
+          left: 1.8px;
+        }
+      }
+    }
+
     &_m {
       --checkbox-font-size: var(--control-text-size-m);
       --box-size: var(--control-box-size-m);

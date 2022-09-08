@@ -38,6 +38,11 @@ type Props<T extends TableRow> = {
       isClickable?: boolean;
       isBorderTop?: boolean;
       isBorderLeft?: boolean;
+      isSeparateRows?: boolean;
+      isSeparateFirstColumn?: boolean;
+      isSeparateEndColumn?: boolean;
+      isSeparateFirstRow?: boolean;
+      isSeparateEndRow?: boolean;
     }
   | {
       type: 'resizer';
@@ -66,6 +71,12 @@ const getCellClasses = <T extends TableRow>(props: Props<T>): string => {
       isClickable: 'isClickable' in props && props.isClickable,
       isBorderTop: 'isBorderTop' in props && props.isBorderTop,
       isBorderLeft: 'isBorderLeft' in props && props.isBorderLeft,
+      isSeparateRows: 'isSeparateRows' in props && props.isSeparateRows,
+      isSeparateFirstColumn: 'isSeparateFirstColumn' in props && props.isSeparateFirstColumn,
+      isSeparateEndColumn: 'isSeparateEndColumn' in props && props.isSeparateEndColumn,
+      isSeparateFirstRow: 'isSeparateFirstRow' in props && props.isSeparateFirstRow,
+      isSeparateEndRow: 'isSeparateEndRow' in props && props.isSeparateEndRow,
+
     },
     [className],
   );
@@ -82,6 +93,7 @@ const getWrapperClasses = <T extends TableRow>(props: Props<T>): string => {
       horizontalAlign: column.align,
       isHeader: props.type === 'header',
       wrap: props.wrap,
+      isSeparateRows: 'isSeparateRows' in props && props.isSeparateRows,
     },
     [wrapperClassName],
   );

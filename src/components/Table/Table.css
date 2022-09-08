@@ -1,4 +1,5 @@
 .Table {
+  background-color: var(--color-base-base-grey-2);
   --table-z: 0;
   --sticky-left-z: calc(var(--table-z) + 1);
   --sticky-top-z: calc(var(--sticky-left-z) + 1);
@@ -7,6 +8,7 @@
   --fast-transition: 0.15s ease-out;
   --shadow-color: var(--color-bg-ghost);
   --table-border: 1px solid var(--color-bg-border);
+  --table-border-radius: 4px;
   --resizer-width: calc(0 * 1px);
   position: relative;
   z-index: var(--table-z);
@@ -49,7 +51,6 @@
     display: block;
     max-width: var(--table-width);
     background-color: var(--color-bg-default);
-
     grid-column: 1 / -1;
   }
 
@@ -64,7 +65,7 @@
 
     &_isActive,
     .Table-CellsRow:hover & {
-      background-color: var(--color-bg-ghost);
+      background-color: var(--color-bg-stripe);
     }
 
     .Table-CellsRow_withMergedCells:hover & {
@@ -78,6 +79,17 @@
     &_isMerged {
       align-items: center;
     }
+
+    &_isFirstColumn {
+       border-top-left-radius: var(--table-border-radius);
+       border-bottom-left-radius: var(--table-border-radius);
+    }
+
+    &_isEndColumn {
+       border-top-right-radius: var(--table-border-radius);
+       border-bottom-right-radius: var(--table-border-radius);
+    }
+
   }
 
   &-EmptyCell {

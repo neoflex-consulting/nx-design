@@ -12,7 +12,7 @@ import {
   cnMixPopoverAnimate,
   cnMixPopoverAnimateForCssTransition,
   animateTimeout,
-} from '@consta/uikit/MixPopoverAnimate';
+} from 'nx-design/MixPopoverAnimate';
 ```
 
 Миксин `MixPopoverAnimate` добавляет анимацию к выпадающим элементам. Вы можете его использовать, если создаёте новый компонент, в котором есть выпадающий элемент.
@@ -34,11 +34,11 @@ import {
 import React, { useRef, useState } from 'react';
 import { Transition } from 'react-transition-group';
 
-import { Button } from '@consta/uikit/Button';
-import { Direction, Popover } from '@consta/uikit/Popover';
-import { useFlag } from '@consta/uikit/useFlag';
+import { Button } from 'nx-design/Button';
+import { Direction, Popover } from 'nx-design/Popover';
+import { useFlag } from 'nx-design/useFlag';
 
-import { cnMixPopoverAnimate, animateTimeout } from '@consta/uikit/MixPopoverAnimate';
+import { cnMixPopoverAnimate, animateTimeout } from 'nx-design/MixPopoverAnimate';
 
 export const MixPopoverAnimateExample = () => {
   const [open, setOpen] = useFlag();
@@ -78,14 +78,14 @@ export const MixPopoverAnimateExample = () => {
 import React, { useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
-import { Button } from '@consta/uikit/Button';
-import { Popover } from '@consta/uikit/Popover';
-import { useFlag } from '@consta/uikit/useFlag';
+import { Button } from 'nx-design/Button';
+import { Popover } from 'nx-design/Popover';
+import { useFlag } from 'nx-design/useFlag';
 
 import {
   cnMixPopoverAnimate,
   cnMixPopoverAnimateForCssTransition,
-} from '@consta/uikit/MixPopoverAnimate';
+} from 'nx-design/MixPopoverAnimate';
 
 export const MixPopoverAnimateExampleForCssTransition = () => {
   const [open, setOpen] = useFlag();

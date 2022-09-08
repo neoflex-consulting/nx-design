@@ -33,7 +33,7 @@
 
     &_filled {
       --tag-base-border-color: transparent;
-      --tag-base-bg-color: var(--color-control-bg-ghost);
+      --tag-base-bg-color: var(--color-bg-border);
     }
   }
 

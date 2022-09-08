@@ -54,9 +54,9 @@ $color-text-black: #090b1f;
 
   --color-bg-brand: color($color-base-project a(100%)); /* Цвет фона брендированый */
   --color-bg-link: var(--color-base-path-blue-6); /* Цвет фона ссылки */
-  --color-bg-border: color($color-base-phantom a(20%) l(+10)); /* Цвет границ */
+  --color-bg-border: var(--color-base-base-grey-3); /* Цвет границ */
 
-  --color-bg-stripe: color($color-base-phantom a(6%)); /* Цвет зебры (например, при окрашивании фона строк таблицы через одну) */
+  --color-bg-stripe: var(--color-base-base-grey-2); /* Цвет зебры (например, при окрашивании фона строк таблицы через одну) */
 
   --color-bg-ghost: color($color-base-phantom a(10%)); /* Цвет затенения */
   --color-bg-tone: color($color-base-phantom l(-92%) a(85%)); /* Цвет паранджи */
@@ -72,7 +72,7 @@ $color-text-black: #090b1f;
 
   /* Цвета текста */
   --color-typo-primary: var(--color-base-base-grey-7); /* Цвет основного текста */
-  --color-typo-secondary: var(--color-base-base-grey-7); /* Цвет второстепенного текста */
+  --color-typo-secondary: var(--color-base-base-grey-6); /* Цвет второстепенного текста */
   --color-typo-ghost: var(--color-base-base-grey-3); /* Цвет дополнительного текста */
   --color-typo-brand: color($color-base-project a(100%)); /* Цвет брендового текста */
   --color-typo-system: color($color-base-system h(-225) s(-22%) l(-34%)); /* Цвет текста системнный */
@@ -84,7 +84,7 @@ $color-text-black: #090b1f;
   --color-typo-critical: color($color-base-critical a(100%)); /* Цвет фона системнный */
   --color-typo-link: var(--color-base-path-blue-6); /* Цвет основной ссылки */
   --color-typo-link-minor: var(--color-base-path-blue-4); /* Цвет второстепенной ссылки */
-  --color-typo-link-hover: var(--color-base-path-blue-5) l(+8%)); /* Цвет ховера ссылки */
+  --color-typo-link-hover: var(--color-base-path-blue-5); /* Цвет ховера ссылки */
   --color-nums-shadow: 0, 32, 51; /* Значения RGB для указания теней в конструкции rgba(R,G,B, alpha) */
   --color-typo-white: color($color-base-essential); /* Цвет основного текста */
 

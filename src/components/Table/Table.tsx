@@ -1,30 +1,21 @@
 import './Table.css';
 
-import React, { useMemo } from 'react';
+import React, {useMemo} from 'react';
 
-import { useComponentSize } from '../../hooks/useComponentSize/useComponentSize';
-import { useForkRef } from '../../hooks/useForkRef/useForkRef';
-import { IconSortDown } from '../../icons/IconSortDown/IconSortDown';
-import { IconSortUp } from '../../icons/IconSortUp/IconSortUp';
-import { IconSortCheck } from '../../icons/IconSortCheck/IconSortCheck';
-import { sortBy as sortByDefault, updateAt } from '../../utils/array';
-import { cn } from '../../utils/bem';
-import { setRef } from '../../utils/setRef';
-import { isNotNil, isString } from '../../utils/type-guards';
-import { Button, ButtonPropSize } from '../Button/Button';
-import { Typography } from '../Typography/Typography';
+import {useComponentSize} from '../../hooks/useComponentSize/useComponentSize';
+import {useForkRef} from '../../hooks/useForkRef/useForkRef';
+import {sortBy as sortByDefault, updateAt} from '../../utils/array';
+import {cn} from '../../utils/bem';
+import {setRef} from '../../utils/setRef';
+import {isNotNil, isString} from '../../utils/type-guards';
+import {Button, ButtonPropSize} from '../Button/Button';
+import {Typography} from '../Typography/Typography';
 
-import { HorizontalAlign, TableCell, VerticalAlign } from './Cell/TableCell';
-import { TableHeader } from './Header/TableHeader';
-import { TableResizer } from './Resizer/TableResizer';
-import {
-  Props as TableRowsCollapseProps,
-  TableRowsCollapse,
-} from './RowsCollapse/TableRowsCollapse';
-import {
-  GetTagLabel,
-  TableSelectedOptionsList,
-} from './SelectedOptionsList/TableSelectedOptionsList';
+import {HorizontalAlign, TableCell, VerticalAlign} from './Cell/TableCell';
+import {TableHeader} from './Header/TableHeader';
+import {TableResizer} from './Resizer/TableResizer';
+import {Props as TableRowsCollapseProps, TableRowsCollapse,} from './RowsCollapse/TableRowsCollapse';
+import {GetTagLabel, TableSelectedOptionsList,} from './SelectedOptionsList/TableSelectedOptionsList';
 import {
   fieldFiltersPresent,
   FieldSelectedValues,
@@ -50,6 +41,10 @@ import {
   useHeaderData,
   useLazyLoadData,
 } from './helpers';
+import {IconArrowUp} from "../../icons/IconArrowUp/IconArrowUp";
+import {IconArrowDown} from "../../icons/IconArrowDown/IconArrowDown";
+import {IconArrowDirectional} from "../../icons/DatagramIcon/IconArrowDirectional/IconArrowDirectional";
+import {HeaderMenu} from "./HeaderMenu/HeaderMenu";
 
 export { TableTextFilter } from './TextFilter/TableTextFilter';
 export { TableFilterContainer } from './FilterContainer/TableFilterContainer';
@@ -170,6 +165,7 @@ export type TableColumn<T extends TableRow> = {
 } & (GroupColumnAddition<T> | SingleColumnAddition<T>);
 
 export type TableProps<T extends TableRow> = {
+  nameResetAllFilters?: string;
   columns: TableColumn<T>[];
   rows: T[];
   isResizable?: boolean;
@@ -185,6 +181,7 @@ export type TableProps<T extends TableRow> = {
   zebraStriped?: ZebraStriped;
   borderBetweenRows?: boolean;
   borderBetweenColumns?: boolean;
+  separateRows?: boolean;
   emptyRowsPlaceholder?: React.ReactNode;
   className?: string;
   onRowHover?: onRowHover;
@@ -198,6 +195,7 @@ export type TableProps<T extends TableRow> = {
   getTagLabel?: GetTagLabel;
   isExpandedRowsByDefault?: boolean;
   getCellWrap?: (row: T) => 'truncate' | 'break';
+  withHeaderMenu?: boolean
 };
 
 type Table = <T extends TableRow>(
@@ -281,6 +279,7 @@ const InternalTable = <T extends TableRow>(
     zebraStriped,
     borderBetweenRows = false,
     borderBetweenColumns = false,
+    separateRows = false,
     emptyRowsPlaceholder = defaultEmptyRowsPlaceholder,
     className,
     onRowHover,
@@ -295,6 +294,8 @@ const InternalTable = <T extends TableRow>(
     getTagLabel,
     getCellWrap,
     isExpandedRowsByDefault = false,
+    nameResetAllFilters,
+    withHeaderMenu,
     ...otherProps
   } = props;
   const {
@@ -412,8 +413,8 @@ const InternalTable = <T extends TableRow>(
 
   const getSortIcon = (column: TableColumn<T>) => {
     return (
-      (isSortedByColumn(column) && (sorting?.order === 'desc' ? IconSortDown : IconSortUp)) ||
-      IconSortCheck
+      (isSortedByColumn(column) && (sorting?.order === 'desc' ? IconArrowUp : IconArrowDown)) ||
+      IconArrowDirectional
     );
   };
 
@@ -737,6 +738,14 @@ const InternalTable = <T extends TableRow>(
       style={tableStyle}
       onScroll={handleScroll}
     >
+      {
+        withHeaderMenu &&
+        <div className={cnTable('RowWithoutCells')}>
+          <HeaderMenu
+            columns={columns}
+          />
+        </div>
+      }
       {/*
         Элементы Resizer рендерятся в отдельных ячейках нулевой высоты с шириной
         равной ширине колонки сетки, при этом у ячейки самый большой z-index в
@@ -793,6 +802,7 @@ const InternalTable = <T extends TableRow>(
         ),
       )}
       <TableHeader
+        columns={columns}
         isStickyHeader={stickyHeader}
         headersWithMetaData={headersWithMetaData}
         headerRowsHeights={headerRowsHeights}
@@ -815,6 +825,7 @@ const InternalTable = <T extends TableRow>(
       {filters && isSelectedFiltersPresent(selectedFilters) && (
         <div className={cnTable('RowWithoutCells')}>
           <TableSelectedOptionsList
+            nameResetAllFilters={nameResetAllFilters}
             values={getSelectedFiltersList({ filters, selectedFilters, columns: lowHeaders })}
             getTagLabel={getTagLabel}
             onRemove={removeSelectedFilter(filters)}
@@ -855,6 +866,8 @@ const InternalTable = <T extends TableRow>(
                           ? activeRow.id !== undefined && activeRow.id !== row.id
                           : false,
                         isMerged: column.mergeCells && rowSpan > 1,
+                        isFirstColumn: columnIdx === 0,
+                        isEndColumn: columnIdx === columns.length - 1,
                       })}
                       className={getAdditionalClassName?.({
                         column,
@@ -890,8 +903,13 @@ const InternalTable = <T extends TableRow>(
                         column?.position!.gridIndex! + (column?.position!.colSpan || 1) ===
                           stickyColumnsGrid
                       }
-                      isBorderTop={rowIdx > 0 && borderBetweenRows}
-                      isBorderLeft={columnIdx > 0 && borderBetweenColumns}
+                      isBorderTop={rowIdx > 0 && borderBetweenRows && !separateRows}
+                      isBorderLeft={columnIdx > 0 && borderBetweenColumns && !separateRows}
+                      isSeparateRows={separateRows}
+                      isSeparateFirstColumn={columnIdx === 0 && separateRows}
+                      isSeparateEndColumn={columnIdx === columns.length - 1  && separateRows}
+                      isSeparateFirstRow={rowIdx === 0 && separateRows}
+                      isSeparateEndRow={rowIdx === rowsData.length - 1 && separateRows}
                     >
                       {renderCell(column, row, columnIdx)}
                     </TableCell>

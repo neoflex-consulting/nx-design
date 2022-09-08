@@ -10,6 +10,7 @@ import { Typography } from '../../Typography/Typography';
 import { TextField } from '../../TextField/TextField';
 import { TableFilterContainer } from '../FilterContainer/TableFilterContainer';
 import { FilterComponentProps } from '../filtering';
+import {IconInbox} from "../../../icons/IconInbox/IconInbox";
 
 const cnTextFilter = cn('TableTextFilter');
 
@@ -21,18 +22,28 @@ type Item = {
 type TableTextFilterProps = FilterComponentProps & {
   items?: Item[];
   withSearch?: boolean;
+  nameSearch?: string;
+  nameSelectAll?: string;
+  nameReset?: string;
+  nameApply?: string;
+  nameCancel?: string;
+  nameNotFound?: string;
   title?: string;
-  emptySearchText?: string;
 };
 
 export const TableTextFilter: React.FC<TableTextFilterProps> = ({
   items = [],
+  nameSearch,
+  nameSelectAll,
+  nameReset,
+  nameApply,
+  nameCancel,
+  nameNotFound,
   withSearch = false,
   onConfirm,
   onCancel,
   filterValue,
-  title,
-  emptySearchText = 'Ничего не найдено :(',
+  title
 }) => {
   const [searchValue, setSearchValue] = useState<string | null>(null);
   const [checkboxGroupValue, setCheckboxGroupValue] = useState<Item[] | null>(
@@ -70,15 +81,23 @@ export const TableTextFilter: React.FC<TableTextFilterProps> = ({
   const isSelected = useMemo(() => checkboxGroupValue?.length, [checkboxGroupValue]);
 
   return (
-    <TableFilterContainer title={title} onCancel={onCancel} onConfirm={confirmHandler}>
+    <TableFilterContainer
+      title={title}
+      onCancel={onCancel}
+      onConfirm={confirmHandler}
+      confirmButtonLabel={nameApply}
+      cancelButtonLabel={nameCancel}
+    >
       {withSearch && (
         <TextField
           value={searchValue}
           onChange={({ value }) => setSearchValue(value)}
           leftSide={IconSearch}
-          size="s"
-          placeholder="Найти в списке"
+          iconSize={"xs"}
+          size="m"
+          placeholder={nameSearch || "Найти в списке"}
           width="full"
+          withClearButton={true}
           className={cnTextFilter('Searchbar')}
         />
       )}
@@ -86,7 +105,7 @@ export const TableTextFilter: React.FC<TableTextFilterProps> = ({
         <Button
           size="m"
           form="brick"
-          label="Выбрать все"
+          label={nameSelectAll || "Выбрать все"}
           view="clear"
           onClick={setAll}
           disabled={!filteredItems.length || isAllSelected}
@@ -94,7 +113,7 @@ export const TableTextFilter: React.FC<TableTextFilterProps> = ({
         <Button
           size="m"
           form="brick"
-          label="Сбросить"
+          label={nameReset || "Сбросить"}
           view="clear"
           onClick={resetHandler}
           disabled={!filteredItems.length || !isSelected}
@@ -104,6 +123,7 @@ export const TableTextFilter: React.FC<TableTextFilterProps> = ({
         {filteredItems.length ? (
           <CheckboxGroup
             items={filteredItems}
+            size={"s"}
             value={checkboxGroupValue}
             getLabel={(item) => item.name}
             onChange={({ value }) => {
@@ -112,7 +132,10 @@ export const TableTextFilter: React.FC<TableTextFilterProps> = ({
             name="checkboxGroup"
           />
         ) : (
-          <Typography>{emptySearchText}</Typography>
+          <div className={cnTextFilter('TypoNotFound')}>
+            <IconInbox size={"l"} view={"secondary"}/>
+            <Typography >{nameNotFound || "Ничего не найдено"}</Typography>
+          </div>
         )}
       </div>
     </TableFilterContainer>

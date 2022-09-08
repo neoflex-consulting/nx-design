@@ -14,6 +14,7 @@
   --size-text-7xl: 96px;
 
   /* Межстрочный интервал */
+  --line-height-text-3xs: 1.1em;
   --line-height-text-2xs: 1.2em;
   --line-height-text-xs: 1.3em;
   --line-height-text-s: 1.4em;

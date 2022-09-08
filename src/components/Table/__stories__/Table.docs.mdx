@@ -35,15 +35,10 @@ description: Таблица. Выводит данные с фильтрами �
 # Таблица
 
 ```tsx
-import { Table } from '@consta/uikit/Table';
+import { Table } from 'nx-design/Table';
 ```
 
 Таблица — компонент для отображения данных, с возможностью сортировки и фильтрации.
-
-> **Другие варианты для создания таблиц**
->
-> - [agGridAdapter](https://ag-grid-adapter.consta.design/) — библиотека ag-grid-react, стилизованная для Consta.
-> - [rcTableAdapter](https://rc-table-adapter.consta.design/) — библиотека rc-table, стилизованная для Consta.
 
 - [Как формируется таблица](#как-формируется-таблица)
   - [Колонки](#колонки)
@@ -159,7 +154,7 @@ const columns: TableColumn<typeof rows[number]>[] = [
 
 ```tsx
 import React from 'react';
-import { Table } from '@consta/uikit/Table';
+import { Table } from 'nx-design/Table';
 
 const rows = [
   {
@@ -279,8 +274,8 @@ const columns: TableColumn<typeof rows[number]>[] = [
 
 ```tsx
 import React from 'react';
-import { Table } from '@consta/uikit/Table';
-import { Checkbox } from '@consta/uikit/Checkbox';
+import { Table } from 'nx-design/Table';
+import { Checkbox } from 'nx-design/Checkbox';
 
 const rows = [
   {
@@ -316,15 +311,13 @@ const App = () => <Table columns={colums} rows={rows} />;
 
 [Посмотреть этот пример в работе](/?path=/story/components-table--with-merged-by-custom-callback-cells)
 
-[Посмотреть расширенный пример на GitHub](https://github.com/consta-design-system/uikit/blob/master/src/components/Table/__stories__/Table.stories.tsx) (в переменной `WithMergedByCustomCallbackCells`)
-
 ### Рендер ячеек
 
 Чтобы создать кастомные ячейки в колонке, добавьте в объект с описанием этой колокни функцию `renderCell`.
 
 ```tsx
 import React from 'react';
-import { Table } from '@consta/uikit/Table';
+import { Table } from 'nx-design/Table';
 
 const rows = [
   {
@@ -366,7 +359,7 @@ const App = () => {
 
 ```
 const rows = [
-  { id: 'Ссылка', name: 'https://uikit.consta.design/?path=/story/common-about--page' },
+  { id: 'Ссылка', name: '' },
   { id: 'Описание', name: 'Это просто длинный текст. Он нужен, чтобы посмотреть, как работают переносы разного типа. Вот на всякий случай — ещё одно предложение. И ещё одно, чтобы тексты отличались по длине.' },
   { id: 'Длинная строка', name: 'аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа' },
 ];
@@ -459,8 +452,6 @@ const columns: TableColumn<typeof rows[number]>[] = [
 
 Поменять текст на кнопке можно с помощью свойства `rowCreateText`.
 
-Если нужно удалять строки или добавлять их не только в конец таблицы, можно написать свой код на основе нашего примера. [Посмотреть пример на GitHub](https://github.com/consta-design-system/uikit/tree/dev/src/components/Table/__stories__/examples/WithRowCreationAndDeletion.tsx)
-
 [Пример в работе](/?path=/story/components-table--with-row-actions)
 
 ### Заглушка для пустой таблицы
@@ -474,8 +465,8 @@ const columns: TableColumn<typeof rows[number]>[] = [
 
 ```tsx
 import React from 'react';
-import { Table, TableColumn } from '@consta/uikit/Table';
-import { Text } from '@consta/uikit/Text';
+import { Table, TableColumn } from 'nx-design/Table';
+import { Text } from 'nx-design/Text';
 
 const rows = [];
 
@@ -546,7 +537,7 @@ const App = () => {
 
 ```tsx
 import React from 'react';
-import { Table, TableColumn } from '@consta/uikit/Table';
+import { Table, TableColumn } from 'nx-design/Table';
 
 const rows = [
   {
@@ -634,7 +625,7 @@ export function TableExampleSort() {
 
 ```tsx
 import React, { useState } from 'react';
-import { Table, SortByProps, TableColumn } from '@consta/uikit/Table';
+import { Table, SortByProps, TableColumn } from 'nx-design/Table';
 
 type Row = {
   id: string;
@@ -754,7 +745,7 @@ export function TableExampleFilter() {
 Нестандартные компоненты для фильтрации можно добавить в объекте `component`. Например, так:
 
 ```tsx
-import { TableTextFilter, TableNumberFilter, TableChoiceGroupFilter } from '@consta/uikit/Table';
+import { TableTextFilter, TableNumberFilter, TableChoiceGroupFilter } from 'nx-design/Table';
 
 const filters = [
   {
@@ -820,16 +811,16 @@ const filters = [
 
 #### Предустановленные компоненты
 
-| Компонент                | Дополнительные свойства                                               | Описание                           |
-| ------------------------ | --------------------------------------------------------------------- | ---------------------------------- |
-| `TableNumberFilter`      | -                                                                     | Фильтрация по значениям «от-до»    |
-| `TableChoiceGroupFilter` | `{ items: {name: string, value: any} }`                               | Фильтрация по одному из значенений |
-| `TableTextFilter`        | `{ items: Array<{ name: string, value: any }>; withSearch: boolean }` | Фильтрация по нескольким значениям |
+| Компонент                | Дополнительные свойства                                                                                                                                                                          | Описание                           |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------- |
+| `TableNumberFilter`      | -                                                                                                                                                                                                | Фильтрация по значениям «от-до»    |
+| `TableChoiceGroupFilter` | `{ items: {name: string, value: any} }`                                                                                                                                                          | Фильтрация по одному из значенений |
+| `TableTextFilter`        | `{ items: Array<{ name: string, value: any }>; withSearch: boolean; nameSearch: string; nameSelectAll: string; nameReset: string; nameApply: string; nameCancel: string; nameNotFound: string }` | Фильтрация по нескольким значениям |
 
 В качестве основы для кастомного компонента рекомендуем использовать компонент `TableFilterContainer`, представляющий собой блок с кнопками подтверждения и сброса фильтра.
 
 ```tsx
-import { TableFilterContainer } from '@consta/uikit/Table';
+import { TableFilterContainer } from 'nx-design/Table';
 ```
 
 #### Свойства компонента `TableFilterContainer`
@@ -899,6 +890,14 @@ import { TableFilterContainer } from '@consta/uikit/Table';
 ```
 
 <TableExampleBorderBetweenColumns />
+
+### Разделение строк с границами между столбцами
+
+`separateRows` добавит границы между строками расширенные.
+
+```tsx
+<Table columns={columns} rows={rows} separateRows />
+```
 
 ### Выравнивание по горизонтали
 
@@ -1012,8 +1011,8 @@ type ActiveRow = {
 
 ```tsx
 import React from 'react';
-import { Table, TableColumn } from '@consta/uikit/Table';
-import { Text } from '@consta/uikit/Text';
+import { Table, TableColumn } from 'nx-design/Table';
+import { Text } from 'nx-design/Text';
 
 const rows = [
   {
@@ -1109,7 +1108,7 @@ const App = () => {
 ##### Пример таблицы в контейнере шириной 500 px
 
 ```tsx
-import { Table, TableColumn } from '@consta/uikit/Table';
+import { Table, TableColumn } from 'nx-design/Table';
 
 const rowsProf = [
   { id: '1', name: 'Антон', profession: 'Cтроитель, который построил дом', status: 'недоступен' },
@@ -1174,11 +1173,11 @@ export function TableExampleAdaptiveScroll() {
 import React from 'react';
 
 import { useBreakpoints } from '../../../../../hooks/useBreakpoints/useBreakpoints';
-import { Card } from '@consta/uikit/Card';
-import { Text } from '@consta/uikit/Text/Text';
-import { Badge } from '@consta/uikit/Badge';
-import { cnMixSpace } from '@consta/uikit/MixSpace';
-import { Table, TableColumn } from '@consta/uikit/Table';
+import { Card } from 'nx-design/Card';
+import { Text } from 'nx-design/Text/Text';
+import { Badge } from 'nx-design/Badge';
+import { cnMixSpace } from 'nx-design/MixSpace';
+import { Table, TableColumn } from 'nx-design/Table';
 
 const rowsProf = [
   { id: '1', name: 'Антон', profession: 'Cтроитель, который построил дом', status: 'недоступен' },
@@ -1255,7 +1254,7 @@ export const TableExampleAdaptiveScrollUseBreakpoints = () => {
 ## Импорт
 
 ```tsx
-import { Table } from '@consta/uikit/Table';
+import { Table } from 'nx-design/Table';
 ```
 
 ## Свойства
@@ -1350,6 +1349,8 @@ type LazyLoad = {
 | [`zebraStriped?`](#выделение-строк)                              | `'odd', 'even'`                                                                                                              | `false`                                           | Окрашивание строк через одну                                                                                          |
 | [`borderBetweenRows?`](#границы-между-колонками)                 | `boolean`                                                                                                                    | `false`                                           | Отображение границ между строками                                                                                     |
 | [`borderBetweenColumns?`](#границы-между-строками)               | `boolean`                                                                                                                    | `false`                                           | Отображение границ между колонками                                                                                    |
+| [`separateRows?`](#границы-между-строками-расширенные)           | `boolean`                                                                                                                    | `false`                                           | Отображение границ между строками расширенные                                                                         |
+| [`nameResetAllFilters?`](#плейсхолдер-кнопка-сброить-все-фильтры)| `string`                                                                                                                     | `Сбросить все`                                    | Плейсхолдер на кнопке Сброить все фильтры                                                                             |
 | [`emptyRowsPlaceholder?`](#возможность-добавить-строку)          | `React.ReactNode`                                                                                                            | -                                                 | Заглушка, показывается, когда в таблице нет данных                                                                    |
 | [`onRowCreate?`](#возможность-добавить-строку)                   | `(arg: { id?: string; index: number; e: React.MouseEvent }) => void`                                                         | -                                                 | Функция, которая сработает при нажатии на кнопку создания строки                                                      |
 | [`rowCreateText?`](#возможность-добавить-строку)                 | `string`                                                                                                                     | `'+ Добавить строку'`                             | Текст на кнопке для создания новой строки                                                                             |

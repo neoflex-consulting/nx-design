@@ -5,7 +5,7 @@ import { StoryBookExample } from '../../../../../uiKit/components/StoryBookExamp
 import { Table, TableColumn } from '../../../Table';
 
 const rows = [
-  { id: 'Ссылка', name: 'https://uikit.consta.design/?path=/story/common-about--page' },
+  { id: 'Ссылка', name: '' },
   {
     id: 'Описание',
     name:

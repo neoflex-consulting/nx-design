@@ -46,6 +46,7 @@ import WithHandleCellClick from './examples/WithHandleCellClick';
 import WithRowCreationAndDeletion from './examples/WithRowCreationAndDeletion';
 import { cnTableStories } from './helpers';
 import mdx from './Table.docs.mdx';
+import {presetDatagram, Theme} from "../../Theme/Theme";
 
 const defaultProps: Props<typeof tableData.rows[number]> = {
   columns: tableData.columns,
@@ -455,7 +456,18 @@ export const withCustomFilters = createStory(
   () => {
     return (
       <div className={cnTableStories()}>
-        <Table {...getKnobs({ filters: customFilters })} />
+        <Theme preset={presetDatagram}>
+          <Table
+            {...getKnobs({ filters: customFilters })}
+            // borderBetweenColumns={true}
+            // borderBetweenRows={true}
+            withHeaderMenu={true}
+            nameResetAllFilters={"Сброить все фильтры"}
+            separateRows={true}
+            size={"m"}
+          />
+        </Theme>
+
       </div>
     );
   },
@@ -573,10 +585,6 @@ export default createMetadata({
   parameters: {
     docs: {
       page: mdx,
-    },
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/v9Jkm2GrymD277dIGpRBSH/Consta-UI-Kit?node-id=1871%3A36244',
     },
   },
 });

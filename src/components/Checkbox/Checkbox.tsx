@@ -3,14 +3,13 @@ import './Checkbox.css';
 import React, { ChangeEventHandler } from 'react';
 
 import { useForkRef } from '../../hooks/useForkRef/useForkRef';
-import { cnMixFocus } from '../../mixs/MixFocus/MixFocus';
 import { cn } from '../../utils/bem';
 import { PropsWithHTMLAttributes } from '../../utils/types/PropsWithHTMLAttributes';
 import { usePropsHandler } from '../EventInterceptor/usePropsHandler';
 
-export const checkboxPropSize = ['m', 'l'] as const;
+export const checkboxPropSize = ['s', 'm', 'l'] as const;
 export type CheckboxPropSize = typeof checkboxPropSize[number];
-export const checkboxPropSizeDefault: CheckboxPropSize = checkboxPropSize[0];
+export const checkboxPropSizeDefault: CheckboxPropSize = checkboxPropSize[1];
 
 export const checkboxPropView = ['primary', 'ghost'] as const;
 export type CheckboxPropView = typeof checkboxPropView[number];
@@ -90,7 +89,7 @@ export const Checkbox = React.forwardRef<HTMLLabelElement, CheckboxProps>((props
       <input
         type="checkbox"
         name={name}
-        className={cnCheckbox('Input', [cnMixFocus()])}
+        className={cnCheckbox('Input')}
         checked={checked}
         disabled={disabled}
         onChange={handleChange}

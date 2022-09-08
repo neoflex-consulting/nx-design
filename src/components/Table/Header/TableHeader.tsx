@@ -20,6 +20,7 @@ export const levelTypes = ['high', 'low', 'default'] as const;
 export type LevelType = typeof levelTypes[number];
 
 type Props<T extends TableRow> = {
+  columns: TableColumn<T>[];
   isStickyHeader: boolean;
   headersWithMetaData: Array<Header<T> & ColumnMetaData>;
   headerRowsHeights: Array<number>;
@@ -45,6 +46,7 @@ type Props<T extends TableRow> = {
 };
 
 export const TableHeader = <T extends TableRow>({
+  columns,
   isStickyHeader,
   headersWithMetaData,
   headerRowsHeights,
@@ -190,6 +192,7 @@ export const TableHeader = <T extends TableRow>({
               }
               className={cnTableHeader('Cell', {
                 isFirstColumn: column.position!.gridIndex === 0,
+                isEndColumn: column.position!.gridIndex === columns.length - 1,
                 isFirstRow: column.position!.level === 0,
                 isLastInColumn:
                   column.position?.topHeaderGridIndex !==
@@ -214,7 +217,7 @@ export const TableHeader = <T extends TableRow>({
                 {column.sortable && (
                   <Button
                     size="xs"
-                    iconSize="s"
+                    iconSize="xs"
                     view="clear"
                     onlyIcon
                     onClick={(): void => handleSortClick(column)}

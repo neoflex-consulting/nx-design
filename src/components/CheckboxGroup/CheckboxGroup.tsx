@@ -13,9 +13,9 @@ export const checkboxGroupDirections = ['column', 'row'] as const;
 export type CheckboxGroupDirection = typeof checkboxGroupDirections[number];
 export const checkboxGroupDefaultDirection: CheckboxGroupDirection = checkboxGroupDirections[0];
 
-export const checkboxGroupSizes = ['m', 'l'] as const;
+export const checkboxGroupSizes = ['s', 'm', 'l'] as const;
 export type CheckboxGroupPropSize = typeof checkboxGroupSizes[number];
-export const checkboxGroupDefaultSize: CheckboxGroupPropSize = checkboxGroupSizes[0];
+export const checkboxGroupDefaultSize: CheckboxGroupPropSize = checkboxGroupSizes[1];
 
 export const checkboxGroupViews = ['primary', 'ghost'] as const;
 export type CheckboxGroupPropView = typeof checkboxGroupViews[number];

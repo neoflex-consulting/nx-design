@@ -1,6 +1,6 @@
 .TableTextFilter {
   &-Searchbar {
-    margin-bottom: var(--space-l);
+    margin-bottom: var(--space-m);
   }
 
   &-AllCheckbox {
@@ -13,8 +13,18 @@
     max-height: 240px;
     padding: var(--space-s);
     background-color: var(--color-control-bg-default);
-    border: var(--control-border-width) solid var(--color-control-bg-border-default);
-    border-radius: var(--control-radius);
+    border-top: var(--control-border-width) solid var(--color-control-bg-border-default);
+    border-bottom: var(--control-border-width) solid var(--color-control-bg-border-default);
+    text-align: center;
+  }
+
+  &-TypoNotFound {
+    padding: var(--space-s);
+
+    .Typography {
+      margin-top: 12px;
+      color: var(--color-typo-secondary)
+    }
   }
 
   &-Controls {
@@ -27,10 +37,11 @@
       padding: 0;
       color: var(--color-typo-link);
       background-color: transparent;
-      line-height: var(--line-height-text-xs);
+      line-height: var(--line-height-text-3xs);
 
       &:last-child {
-        margin-right: 0;
+         position: absolute;
+         right: 0;
       }
 
       &_disabled {

@@ -395,6 +395,12 @@ import {IconTree} from '../../DatagramIcon/IconTree/IconTree';
 import {IconWorkflow} from '../../DatagramIcon/IconWorkflow/IconWorkflow';
 import {IconZeppelin} from '../../DatagramIcon/IconZeppelin/IconZeppelin';
 import {IconGlobe} from '../../DatagramIcon/IconGlobe/IconGlobe';
+import {IconExpand} from "../../DatagramIcon/IconExpand/IconExpand";
+import {IconArrowCollapse} from "../../DatagramIcon/IconArrowCollapse/IconArrowCollapse";
+import {IconArrowExpand} from "../../DatagramIcon/IconArrowExpand/IconArrowExpand";
+import {IconTableSettings} from "../../DatagramIcon/IconTableSettings/IconTableSettings";
+import {IconTransformTest} from "../../DatagramIcon/IconTransformTest/IconTransformTest";
+import {IconCollapseD} from "../../DatagramIcon/IconCollapseD/IconCollapseD";
 
 const defaultKnobs = () => ({
   size: select('size', ['xs', 's', 'm', 'l'], 'm'),
@@ -436,6 +442,13 @@ const neoicons = {
   IconWorkflow,
   IconZeppelin,
   IconGlobe,
+  IconExpand,
+  IconArrowCollapse,
+  IconArrowExpand,
+  IconCollapseD,
+  IconTableSettings,
+  IconTransformTest,
+
 
   IconActionMenu,
   IconAggregate,
@@ -822,10 +835,6 @@ export default createMetadata({
   parameters: {
     docs: {
       page: mdx,
-    },
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/SLc0YGhuDotve6MTCBHlGxDU/Consta-Graphics?node-id=0%3A1',
-    },
+    }
   },
 });

@@ -33,21 +33,22 @@
       }
     }
 
+    &_isFirstColumn {
+      border-left: var(--table-border);
+    }
+
+    &_isEndColumn {
+      border-right: var(--table-border);
+    }
+
     &:not(.TableHeader-Cell_isFirstColumn)::after {
       content: '';
       position: absolute;
-      top: 0;
+      top: 8px;
       left: 0;
-      bottom: 0;
+      bottom: 8px;
       width: 1px;
       background: var(--color-bg-border);
-      opacity: 0;
-      transition: opacity var(--fast-transition);
-
-      .TableHeader-Row:hover &,
-      .TableHeader-Row_withVerticalBorder & {
-        opacity: 1;
-      }
     }
   }
 

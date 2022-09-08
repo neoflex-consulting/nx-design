@@ -2,11 +2,11 @@ import './TableSelectedOptionsList.css';
 
 import React from 'react';
 
-import { IconClose } from '../../../icons/IconClose/IconClose';
-import { cn } from '../../../utils/bem';
-import { isNotNil, isNumber } from '../../../utils/type-guards';
-import { Button } from '../../Button/Button';
-import { Tag } from '../../Tag/Tag';
+import {cn} from '../../../utils/bem';
+import {isNotNil, isNumber} from '../../../utils/type-guards';
+import {Button} from '../../Button/Button';
+import {Tag} from '../../Tag/Tag';
+import {IconClose} from "../../../icons/IconClose/IconClose";
 
 const cnTableSelectedOptionsList = cn('TableSelectedOptionsList');
 
@@ -28,6 +28,7 @@ type Props = {
   getTagLabel?: GetTagLabel;
   onRemove: (id: string) => void;
   onReset: () => void;
+  nameResetAllFilters?: string;
 };
 
 const getTagLabelDefault: GetTagLabel = (id, name, filterValue?: unknown): string => {
@@ -62,6 +63,7 @@ export const TableSelectedOptionsList: React.FC<Props> = ({
   values,
   onRemove,
   onReset,
+  nameResetAllFilters,
   getTagLabel = getTagLabelDefault,
 }) => {
   return (
@@ -73,6 +75,7 @@ export const TableSelectedOptionsList: React.FC<Props> = ({
             key={option.id}
             label={getTagLabel(option.id, option.name, option.value)}
             size="xs"
+            iconSize="xs"
             mode="cancel"
             onCancel={(): void => onRemove(option.id)}
           />
@@ -81,11 +84,12 @@ export const TableSelectedOptionsList: React.FC<Props> = ({
       <Button
         type="button"
         onClick={onReset}
-        title="Сбросить все фильтры"
+        title={nameResetAllFilters || "Сбросить все фильтры"}
         size="xs"
         view="clear"
         onlyIcon
         iconLeft={IconClose}
+        iconSize={"xs"}
         className={cnTableSelectedOptionsList('Button')}
       />
     </div>

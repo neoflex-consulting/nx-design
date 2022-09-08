@@ -1,15 +1,14 @@
 .TableFilterContainer {
-  width: 400px;
+  min-width: 255px;
   max-width: 400px;
   max-height: 440px;
   padding: var(--space-m);
   background-color: var(--color-bg-default);
-  border: var(--control-border-width) solid var(--color-bg-border);
+  border: var(--table-border);
   border-radius: var(--control-radius);
-  box-shadow: var(--shadow-layer);
+  box-shadow: var(--shadow-container);
 
   &-Buttons {
-    display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: var(--space-m);

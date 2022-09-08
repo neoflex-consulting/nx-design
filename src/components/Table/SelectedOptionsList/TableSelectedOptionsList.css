@@ -3,7 +3,9 @@
   align-items: center;
   box-sizing: border-box;
   padding-right: var(--space-s);
-  border-bottom: var(--table-border);
+  border-top: var(--control-border-width) solid var(--color-control-bg-border-default);
+  border-left: var(--control-border-width) solid var(--color-control-bg-border-default);
+  border-right: var(--control-border-width) solid var(--color-control-bg-border-default);
 
   &-Options {
     display: flex;
@@ -12,6 +14,7 @@
     max-width: 100%;
     padding: 0 var(--cell-padding-horizontal);
     flex-wrap: wrap;
+    font-size: var(--size-text-s);
   }
 
   &-Option {
@@ -24,6 +27,7 @@
       max-width: 100%;
       white-space: nowrap;
       text-overflow: ellipsis;
+      color: var(--color-control-typo-default);
     }
   }
 
