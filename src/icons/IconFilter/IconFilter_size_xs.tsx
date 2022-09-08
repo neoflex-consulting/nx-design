@@ -1,0 +1,11 @@
+import * as React from 'react';
+
+function IconAirflowSizeXs(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 16 16" {...props}>
+      <path  fillRule="evenodd" clipRule="evenodd" d="M2.27961 3.1221C1.9939 2.62211 2.35493 2 2.9308 2H13.0692C13.6451 2 14.0061 2.62211 13.7204 3.1221L10 9.63278V11.8198C10 12.1426 9.79343 12.4292 9.48717 12.5313L6.98717 13.3647C6.50152 13.5265 6 13.1651 6 12.6531V9.63278L2.27961 3.1221ZM7 10V12.3063L9 11.6396V10H7ZM9.20984 9L11.4956 5H4.50445L6.79016 9H9.20984ZM3.93302 4H12.067L12.6384 3H3.36159L3.93302 4Z"  />
+    </svg>
+  );
+}
+
+export default IconAirflowSizeXs;

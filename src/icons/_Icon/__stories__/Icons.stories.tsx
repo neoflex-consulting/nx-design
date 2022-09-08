@@ -316,6 +316,7 @@ import {IconSlider} from '../../IconSlider/IconSlider';
 import {IconSortCheck} from '../../IconSortCheck/IconSortCheck';
 import {IconSortDown} from '../../IconSortDown/IconSortDown';
 import {IconSortUp} from '../../IconSortUp/IconSortUp';
+import {IconSort} from '../../IconSort/IconSort';
 import {IconSpeed} from '../../IconSpeed/IconSpeed';
 import {IconSpinner} from '../../IconSpinner/IconSpinner';
 import {IconStar} from '../../IconStar/IconStar';
@@ -757,6 +758,7 @@ const neoicons = {
   IconSignOut,
   IconSignUp,
   IconSlider,
+  IconSort,
   IconSortCheck,
   IconSortDown,
   IconSortUp,

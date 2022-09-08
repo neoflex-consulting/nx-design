@@ -1,11 +1,14 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import IconBellOffSizeAll from './IconBellOff_size_all';
+import IconBellSizeL from './IconBell_size_l';
+import IconBellSizeM from './IconBell_size_m';
+import IconBellSizeS from './IconBell_size_s';
+import IconBellSizeXs from './IconBell_size_xs';
 
 export const IconBellOff = createIcon({
-  l: IconBellOffSizeAll,
-  m: IconBellOffSizeAll,
-  s: IconBellOffSizeAll,
-  xs: IconBellOffSizeAll,
+  l: IconBellSizeL,
+  m: IconBellSizeM,
+  s: IconBellSizeS,
+  xs: IconBellSizeXs,
   name: 'IconBellOff',
 });
