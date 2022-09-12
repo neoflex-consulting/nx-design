@@ -12,12 +12,20 @@
 
   &_isHeader {
     position: relative;
-    border-top: var(--table-border);
     font-size: var(--size-text-xs);
     font-weight: var(--font-weight-text-bold);
     line-height: var(--line-height-text-s);
     letter-spacing: 0.05em;
     text-transform: uppercase;
+
+    &:not(&_isSeparateRows) {
+      border-top: var(--table-border);
+      border-bottom: var(--table-border);
+    }
+
+    &_isSeparateRows {
+      border-top: var(--table-border);
+    }
   }
 
   &:not(&_isHeader) {

@@ -43,6 +43,7 @@ type Props<T extends TableRow> = {
   selectedFilters: SelectedFilters;
   showHorizontalCellShadow: boolean;
   borderBetweenColumns: boolean;
+  isSeparateRows: boolean;
 };
 
 export const TableHeader = <T extends TableRow>({
@@ -65,6 +66,7 @@ export const TableHeader = <T extends TableRow>({
   selectedFilters,
   showHorizontalCellShadow,
   borderBetweenColumns,
+  isSeparateRows,
 }: Props<T>): React.ReactElement => {
   const tableHeaderHeight = headerRowsHeights.reduce((a: number, b: number) => a + b, 0);
   const tableHeaderStyle: React.CSSProperties & TableCSSCustomProperty = {
@@ -198,6 +200,7 @@ export const TableHeader = <T extends TableRow>({
                   column.position?.topHeaderGridIndex !==
                   headersWithMetaData[columnIdx + 1]?.position?.topHeaderGridIndex,
                 level: getLevelType(column),
+                isSeparateRows: isSeparateRows
               })}
               showVerticalShadow={
                 showVerticalCellShadow &&

@@ -832,6 +832,7 @@ const InternalTable = <T extends TableRow>(
         selectedFilters={selectedFilters}
         showHorizontalCellShadow={showHorizontalCellShadow}
         borderBetweenColumns={borderBetweenColumns}
+        isSeparateRows={separateRows}
       />
       {filters && isSelectedFiltersPresent(selectedFilters) && (
         <div className={cnTable('RowWithoutCells')}>
