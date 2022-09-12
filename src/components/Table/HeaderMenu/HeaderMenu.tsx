@@ -4,10 +4,6 @@ import React from 'react';
 
 import {cn} from '../../../utils/bem';
 import {TableRow} from '../Table';
-import {Button} from "../../Button/Button";
-import {IconDelete} from "../../../icons/IconDelete/IconDelete";
-import {IconRefresh} from "../../../icons/IconRefresh/IconRefresh";
-import {IconPlus} from "../../../icons/IconPlus/IconPlus";
 import {HeaderSide} from "../headerMenu";
 import {Header} from "../helpers";
 
@@ -15,14 +11,16 @@ const cnHeaderMenu = cn('HeaderMenu');
 
 type Props<T extends TableRow> = {
   columns: Array<Header<TableRow>>;
-  leftSide?: HeaderSide;
-  rightSide?: HeaderSide;
+  leftSide: HeaderSide;
+  rightSide: HeaderSide;
+  progressLineVisible?: (value: boolean) => void;
 };
 
 export const HeaderMenu = <T extends TableRow>({
     columns,
     leftSide,
-    rightSide
+    rightSide,
+    progressLineVisible,
   }: Props<T>): React.ReactElement => {
 
   const RightSideComponent = rightSide?.name;
@@ -38,6 +36,7 @@ export const HeaderMenu = <T extends TableRow>({
           {LeftSideComponent && (
             <LeftSideComponent
               columns={columns}
+              progressLineVisible={progressLineVisible}
               {...leftSideComponentProps}
             />
           )}
@@ -50,6 +49,7 @@ export const HeaderMenu = <T extends TableRow>({
             />
           )}
         </div>}
+
       </div>
     </>
   );

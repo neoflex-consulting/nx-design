@@ -124,6 +124,11 @@ const data: ComponentsGridProps['data'] = [
     description: 'Поповер. Позиционирование элементов по координатам или якорю.',
   },
   {
+    href: '/?path=/docs/components-progressline--playground',
+    name: 'ProgressLine',
+    description: 'Индикатор загрузки в виде линии. Показывает течение процесса.',
+  },
+  {
     href: '/?path=/story/components-progressspin--playground',
     name: 'ProgressSpin',
     description: 'Показывает течение процесса: загрузку, отправку или что-то похожее.',

@@ -14,6 +14,7 @@ type TableHeaderMenuProps = HeaderSide & {
   nameButtonRefresh?: string;
   onClickButtonAddColumn?: (event: any) => void;
   onClickButtonRefresh?: (event: any) => void;
+  progressLineVisible?: (value: boolean) => void;
 };
 
 export const LeftSide: React.FC<TableHeaderMenuProps> = ({
@@ -21,11 +22,14 @@ export const LeftSide: React.FC<TableHeaderMenuProps> = ({
                                                            nameButtonAddColumn,
                                                            nameButtonRefresh,
                                                            onClickButtonAddColumn,
-                                                           onClickButtonRefresh
+                                                           onClickButtonRefresh,
+                                                           progressLineVisible
                                                           }) => {
 
   const ButtonAddColumn = withTooltip({ content: `${nameButtonAddColumn || "Добавить строку"}`})(Button);
   const ButtonRefresh = withTooltip({ content: `${nameButtonRefresh || "Обновить таблицу"}`})(Button);
+
+  const [isProgressLineVisible, setIsProgressLineVisible] = React.useState<boolean>(false);
 
   return (
     <div>
@@ -43,7 +47,12 @@ export const LeftSide: React.FC<TableHeaderMenuProps> = ({
           iconLeft={IconRefresh}
           iconSize={"xs"}
           size={"s"}
-          onClick={event => onClickButtonRefresh && onClickButtonRefresh(event)}
+          onClick={event => {
+            onClickButtonRefresh && onClickButtonRefresh(event);
+            setIsProgressLineVisible(!isProgressLineVisible);
+            progressLineVisible !== undefined && progressLineVisible(!isProgressLineVisible);
+          }
+        }
         />
       </div>
     </div>

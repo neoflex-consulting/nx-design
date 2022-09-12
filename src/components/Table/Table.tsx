@@ -1,6 +1,6 @@
 import './Table.css';
 
-import React, {useMemo} from 'react';
+import React, {useEffect, useMemo} from 'react';
 
 import {useComponentSize} from '../../hooks/useComponentSize/useComponentSize';
 import {useForkRef} from '../../hooks/useForkRef/useForkRef';
@@ -46,6 +46,7 @@ import {HeaderSideProps} from "./headerMenu";
 import {IconSortUp} from "../../icons/IconSortUp/IconSortUp";
 import {IconSortDown} from "../../icons/IconSortDown/IconSortDown";
 import {IconSort} from "../../icons/IconSort/IconSort";
+import {ProgressLine} from "../ProgressLine/ProgressLine";
 
 export { TableTextFilter } from './TextFilter/TableTextFilter';
 export { TableFilterContainer } from './FilterContainer/TableFilterContainer';
@@ -201,6 +202,7 @@ export type TableProps<T extends TableRow> = {
   withHeaderMenu?: boolean;
   leftSide?: HeaderSideProps;
   rightSide?: HeaderSideProps;
+  stopIsProgressLineVisible?: boolean;
 };
 
 type Table = <T extends TableRow>(
@@ -303,6 +305,7 @@ const InternalTable = <T extends TableRow>(
     withHeaderMenu,
     leftSide,
     rightSide,
+    stopIsProgressLineVisible,
     ...otherProps
   } = props;
 
@@ -332,10 +335,15 @@ const InternalTable = <T extends TableRow>(
     setResizedColumnWidths(getColumnsWidth());
   }, [lowHeaders.length]);
 
+  useEffect(() => {
+    setIsProgressLineVisible(stopIsProgressLineVisible)
+  }, [stopIsProgressLineVisible]);
+
   const [initialColumnWidths, setInitialColumnWidths] = React.useState<number[]>([]);
   const [sorting, setSorting] = React.useState<SortingState<T>>(null);
   const [visibleFilter, setVisibleFilter] = React.useState<string | null>(null);
   const [tableScroll, setTableScroll] = React.useState({ top: 0, left: 0 });
+  const [isProgressLineVisible, setIsProgressLineVisible] = React.useState<boolean>(stopIsProgressLineVisible || false);
 
   const tableRef = React.useRef<HTMLDivElement>(null);
   const columnsRefs = React.useRef<Record<number, HTMLDivElement | null>>({});
@@ -754,7 +762,11 @@ const InternalTable = <T extends TableRow>(
             leftSide={leftSide}
             rightSide={rightSide}
             columns={columns}
+            progressLineVisible={(value:boolean) => setIsProgressLineVisible(value)}
           />
+          <div className={cnTable('RowWithoutCells')}>
+            {isProgressLineVisible && <ProgressLine size={"s"}/>}
+          </div>
         </div>
       }
       {/*

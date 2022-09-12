@@ -1,6 +1,6 @@
 import './Table.stories.css';
 
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {action} from '@storybook/addon-actions';
 import {boolean, number, object, select, text} from '@storybook/addon-knobs';
 
@@ -14,7 +14,7 @@ import {
   tableDataWithAdditionalClassName,
   tableDataWithRenderFn,
   tableWithBagdeData,
-  tableWithExpandableRowsData,
+  tableWithExpandableRowsData, tableWithHeaderMenu,
   tableWithMergedCellsData,
   tableWithMultiLevelHeadersData,
   withControlTableMock,
@@ -596,8 +596,9 @@ export const WithSeparateRows = createStory(
 
 export const WithHeaderMenu = createStory(
   () => {
-    const { columns, ...props } = getKnobs(tableDataWithRenderFn);
+    const { columns, ...props } = getKnobs(tableWithHeaderMenu);
     const [copyColumns, setCopyColumns] = useState<TableColumn<any>[]>(columns);
+    const [lineVisible, setLineVisible] = useState<boolean>(false);
 
     const rightSide: HeaderSideProps =
       {
@@ -633,7 +634,7 @@ export const WithHeaderMenu = createStory(
           nameButtonAddColumn: "Добавить новую строку",
           nameButtonRefresh: "Обновить эту таблицу",
           onClickButtonAddColumn: (event: any) => {onClickButtonAddColumn(event)},
-          onClickButtonRefresh: (event: any) => {onClickButtonRefresh(event)}
+          onClickButtonRefresh: (event: any) => {onClickButtonRefresh(event)},
         }
       };
 
@@ -641,7 +642,17 @@ export const WithHeaderMenu = createStory(
       console.log("onClickButtonAddColumn: " + event);
     }
 
+    useEffect(() => {
+      const timeout = setTimeout(() => {
+        setLineVisible(!lineVisible)
+        console.log('This will be called after 2 seconds');
+      }, 4000);
+
+      return () => clearTimeout(timeout);
+    }, [lineVisible]);
+
     const onClickButtonRefresh = (event: any) => {
+      setLineVisible(!lineVisible)
       console.log("onClickButtonRefresh: " + event);
     }
 
@@ -656,6 +667,7 @@ export const WithHeaderMenu = createStory(
             size={"m"}
             rightSide={rightSide}
             leftSide={leftSide}
+            stopIsProgressLineVisible={lineVisible}
             {...props}
           />
         </Theme>
