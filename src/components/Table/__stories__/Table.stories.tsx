@@ -1,8 +1,8 @@
 import './Table.stories.css';
 
-import React, { useState } from 'react';
-import { action } from '@storybook/addon-actions';
-import { boolean, number, object, select, text } from '@storybook/addon-knobs';
+import React, {useState} from 'react';
+import {action} from '@storybook/addon-actions';
+import {boolean, number, object, select, text} from '@storybook/addon-knobs';
 
 import {
   customFilters,
@@ -20,15 +20,15 @@ import {
   withControlTableMock,
   withHiddenColumnTableMock,
 } from '../__mock__/data.mock';
-import { IconCopy } from '../../../icons/IconCopy/IconCopy';
-import { updateAt } from '../../../utils/array';
-import { callbackWithSelector, createMetadata, createStory } from '../../../utils/storybook';
-import { isNotNil } from '../../../utils/type-guards';
-import { Button } from '../../Button/Button';
-import { Checkbox } from '../../Checkbox/Checkbox';
-import { Typography } from '../../Typography/Typography';
-import { verticalAligns } from '../Cell/TableCell';
-import { Filters } from '../filtering';
+import {IconCopy} from '../../../icons/IconCopy/IconCopy';
+import {updateAt} from '../../../utils/array';
+import {callbackWithSelector, createMetadata, createStory} from '../../../utils/storybook';
+import {isNotNil} from '../../../utils/type-guards';
+import {Button} from '../../Button/Button';
+import {Checkbox} from '../../Checkbox/Checkbox';
+import {Typography} from '../../Typography/Typography';
+import {verticalAligns} from '../Cell/TableCell';
+import {Filters} from '../filtering';
 import {
   headerVerticalAligns,
   sizes,
@@ -44,9 +44,12 @@ import {
 import WithAdditionalClassName from './examples/WithAdditionalClassName/WithAdditionalClassName';
 import WithHandleCellClick from './examples/WithHandleCellClick';
 import WithRowCreationAndDeletion from './examples/WithRowCreationAndDeletion';
-import { cnTableStories } from './helpers';
+import {cnTableStories} from './helpers';
 import mdx from './Table.docs.mdx';
 import {presetDatagram, Theme} from "../../Theme/Theme";
+import {HeaderSideProps} from "../headerMenu";
+import {ItemRightSide, RightSide} from "../RightSide/RightSide";
+import {LeftSide} from "../LeftSide/LeftSide";
 
 const defaultProps: Props<typeof tableData.rows[number]> = {
   columns: tableData.columns,
@@ -456,18 +459,13 @@ export const withCustomFilters = createStory(
   () => {
     return (
       <div className={cnTableStories()}>
-        <Theme preset={presetDatagram}>
-          <Table
-            {...getKnobs({ filters: customFilters })}
-            // borderBetweenColumns={true}
-            // borderBetweenRows={true}
-            withHeaderMenu={true}
-            nameResetAllFilters={"Сброить все фильтры"}
-            separateRows={true}
-            size={"m"}
-          />
-        </Theme>
-
+        <Table
+          {...getKnobs({ filters: customFilters })}
+          borderBetweenColumns={true}
+          borderBetweenRows={true}
+          nameResetAllFilters={"Сброить все фильтры"}
+          size={"m"}
+        />
       </div>
     );
   },
@@ -563,7 +561,6 @@ export const WithHiddenColumn = createStory(
 
         return newColumn;
       });
-
       setMock(overrideMock);
     };
 
@@ -576,6 +573,97 @@ export const WithHiddenColumn = createStory(
   },
   {
     name: 'со скрытыми колонками',
+  },
+);
+
+export const WithSeparateRows = createStory(
+  () => {
+    return (
+      <div>
+          <Table
+            {...getKnobs({ filters: customFilters })}
+            nameResetAllFilters={"Сброить все фильтры"}
+            separateRows={true}
+            size={"m"}
+          />
+      </div>
+    );
+  },
+  {
+    name: 'с разделенными строками',
+  },
+);
+
+export const WithHeaderMenu = createStory(
+  () => {
+    const { columns, ...props } = getKnobs(tableDataWithRenderFn);
+    const [copyColumns, setCopyColumns] = useState<TableColumn<any>[]>(columns);
+
+    const rightSide: HeaderSideProps =
+      {
+        name: RightSide,
+        props: {
+          nameApplyHiddenColumn: "Закрыть",
+          nameButtonColumnSettings: "Скрыть/показать столбцы",
+          overrideHiddenColumns: (newCheckboxGroupValue: ItemRightSide[] | null) => {overrideHiddenColumns(newCheckboxGroupValue)}
+        }
+      };
+
+    const overrideHiddenColumns = (newCheckboxGroupValue: ItemRightSide[] | null) => {
+      const copyColumns = columns.map((column) => {
+        const newColumn = { ...column };
+
+        const update: ItemRightSide | undefined = newCheckboxGroupValue === null ? undefined :
+          newCheckboxGroupValue.find( (v:ItemRightSide) => newColumn.title === v.title)
+
+        if (update === undefined) {
+          if (newColumn.hidden !== undefined) {newColumn.hidden = !column.hidden}
+          else if (newColumn.hidden === undefined) {newColumn.hidden = true}
+        }
+
+        return newColumn
+      });
+      setCopyColumns(copyColumns);
+    }
+
+    const leftSide: HeaderSideProps =
+      {
+        name: LeftSide,
+        props: {
+          nameButtonAddColumn: "Добавить новую строку",
+          nameButtonRefresh: "Обновить эту таблицу",
+          onClickButtonAddColumn: (event: any) => {onClickButtonAddColumn(event)},
+          onClickButtonRefresh: (event: any) => {onClickButtonRefresh(event)}
+        }
+      };
+
+    const onClickButtonAddColumn = (event: any) => {
+      console.log("onClickButtonAddColumn: " + event);
+    }
+
+    const onClickButtonRefresh = (event: any) => {
+      console.log("onClickButtonRefresh: " + event);
+    }
+
+    return (
+      <div>
+        <Theme preset={presetDatagram}>
+          <Table
+            columns={copyColumns}
+            withHeaderMenu={true}
+            nameResetAllFilters={"Сброить все фильтры"}
+            separateRows={true}
+            size={"m"}
+            rightSide={rightSide}
+            leftSide={leftSide}
+            {...props}
+          />
+        </Theme>
+      </div>
+    );
+  },
+  {
+    name: 'с верхним меню',
   },
 );
 

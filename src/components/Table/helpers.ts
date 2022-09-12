@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { isNotNil, isNumber, isString } from '../../utils/type-guards';
+import {isNotNil, isNumber, isString} from '../../utils/type-guards';
 
-import { ColumnWidth, SortingState, TableColumn, TableRow, TableTreeRow } from './Table';
+import {ColumnWidth, SortingState, TableColumn, TableRow, TableTreeRow} from './Table';
 
 export const Order = {
   ASC: 'ASC',

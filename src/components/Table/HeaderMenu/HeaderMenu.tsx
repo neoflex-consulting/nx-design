@@ -3,67 +3,53 @@ import './HeaderMenu.css';
 import React from 'react';
 
 import {cn} from '../../../utils/bem';
-import {TableColumn, TableRow} from '../Table';
+import {TableRow} from '../Table';
 import {Button} from "../../Button/Button";
-import {IconTableSettings} from "../../../icons/DatagramIcon/IconTableSettings/IconTableSettings";
 import {IconDelete} from "../../../icons/IconDelete/IconDelete";
 import {IconRefresh} from "../../../icons/IconRefresh/IconRefresh";
 import {IconPlus} from "../../../icons/IconPlus/IconPlus";
+import {HeaderSide} from "../headerMenu";
+import {Header} from "../helpers";
+
 const cnHeaderMenu = cn('HeaderMenu');
 
 type Props<T extends TableRow> = {
-  columns: TableColumn<T>[];
-  leftSide?: React.ReactNode;
-  rightSide?: React.ReactNode;
+  columns: Array<Header<TableRow>>;
+  leftSide?: HeaderSide;
+  rightSide?: HeaderSide;
 };
 
 export const HeaderMenu = <T extends TableRow>({
     columns,
     leftSide,
-    rightSide,
+    rightSide
   }: Props<T>): React.ReactElement => {
 
-  const leftSideDefault =
-    <div>
-      <Button
-        onlyIcon={true}
-        iconLeft={IconPlus}
-        iconSize={"xs"}
-        size={"s"}
-      />
-      <Button
-        view={"clear"}
-        onlyIcon={true}
-        iconLeft={IconRefresh}
-        iconSize={"xs"}
-        size={"s"}
-      />
-      <div className={cnHeaderMenu('LeftSideLine')}/>
-      <Button
-        view={"clear"}
-        onlyIcon={true}
-        iconLeft={IconDelete}
-        iconSize={"xs"}
-        size={"s"}
-      />
-    </div>;
+  const RightSideComponent = rightSide?.name;
+  const rightSideComponentProps = rightSide?.props ?? {};
 
-  const rightSideDefault =
-    <div>
-      <Button
-        view={"clear"}
-        onlyIcon={true}
-        iconLeft={IconTableSettings}
-        iconSize={"xs"}
-        size={"s"}
-      />
-    </div>;
+  const LeftSideComponent = leftSide?.name;
+  const leftSideComponentProps = leftSide?.props ?? {};
 
   return (
     <>
       <div className={cnHeaderMenu()}>
-        {<div className={cnHeaderMenu('LeftSide')}>{leftSide || leftSideDefault}</div>}
-        {<div className={cnHeaderMenu('RightSide')}>{rightSide || rightSideDefault}</div>}
+        {<div className={cnHeaderMenu('LeftSide')}>
+          {LeftSideComponent && (
+            <LeftSideComponent
+              columns={columns}
+              {...leftSideComponentProps}
+            />
+          )}
+        </div>}
+        {<div className={cnHeaderMenu('RightSide')}>
+          {RightSideComponent && (
+            <RightSideComponent
+              columns={columns}
+              {...rightSideComponentProps}
+            />
+          )}
+        </div>}
       </div>
     </>
   );

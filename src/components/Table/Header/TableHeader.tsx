@@ -2,13 +2,13 @@ import './TableHeader.css';
 
 import React from 'react';
 
-import { cn } from '../../../utils/bem';
-import { Button } from '../../Button/Button';
-import { TableCell } from '../Cell/TableCell';
-import { FieldSelectedValues, Filters, getOptionsForFilters, SelectedFilters } from '../filtering';
-import { TableFilterTooltip } from '../FilterTooltip/TableFilterTooltip';
-import { Header } from '../helpers';
-import { ColumnMetaData, HeaderVerticalAlign, onCellClick, TableColumn, TableRow } from '../Table';
+import {cn} from '../../../utils/bem';
+import {Button} from '../../Button/Button';
+import {TableCell} from '../Cell/TableCell';
+import {FieldSelectedValues, Filters, getOptionsForFilters, SelectedFilters} from '../filtering';
+import {TableFilterTooltip} from '../FilterTooltip/TableFilterTooltip';
+import {Header} from '../helpers';
+import {ColumnMetaData, HeaderVerticalAlign, onCellClick, TableColumn, TableRow} from '../Table';
 
 const cnTableHeader = cn('TableHeader');
 

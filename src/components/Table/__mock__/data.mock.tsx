@@ -1,15 +1,15 @@
 import React from 'react';
 
-import { IconPlus } from '../../../icons/IconPlus/IconPlus';
-import { IconMinus } from '../../../icons/IconMinus/IconMinus';
-import { cn } from '../../../utils/bem';
-import { isNotNil } from '../../../utils/type-guards';
-import { Badge } from '../../Badge/Badge';
-import { Button } from '../../Button/Button';
-import { TableChoiceGroupFilter } from '../ChoiceGroupFilter/TableChoiceGroupFilter';
-import { TableNumberFilter } from '../NumberFilter/TableNumberFilter';
-import { TableFilters as Filters, TableProps } from '../Table';
-import { TableTextFilter } from '../TextFilter/TableTextFilter';
+import {IconPlus} from '../../../icons/IconPlus/IconPlus';
+import {IconMinus} from '../../../icons/IconMinus/IconMinus';
+import {cn} from '../../../utils/bem';
+import {isNotNil} from '../../../utils/type-guards';
+import {Badge} from '../../Badge/Badge';
+import {Button} from '../../Button/Button';
+import {TableChoiceGroupFilter} from '../ChoiceGroupFilter/TableChoiceGroupFilter';
+import {TableNumberFilter} from '../NumberFilter/TableNumberFilter';
+import {TableFilters as Filters, TableProps} from '../Table';
+import {TableTextFilter} from '../TextFilter/TableTextFilter';
 
 export const rangeFilterer = (
   value: number | string,
@@ -1071,7 +1071,7 @@ export const tableDataWithRenderFn: TableProps<typeof rowsWithObjectFields[numbe
       title: 'Месторождение',
       accessor: 'field',
       align: 'left',
-      sortable: true,
+      sortable: true
     },
     {
       title: 'Год открытия',

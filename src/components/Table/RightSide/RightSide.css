@@ -1,0 +1,18 @@
+.RightSide {
+  display: block;
+  padding: var(--space-l);
+  background-color: var(--color-bg-default);
+  border-radius: var(--control-radius);
+  box-shadow: var(--shadow-container);
+
+  &-Checkboxes {
+    overflow: auto;
+    max-width: 300px;
+    max-height: 235px;
+    border-bottom: var(--control-border-width) solid var(--color-control-bg-border-default);
+  }
+
+  .Button {
+    margin-top: var(--space-m);
+  }
+}

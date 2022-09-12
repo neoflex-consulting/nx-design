@@ -39,6 +39,7 @@
     margin-left: var(--offset);
     color: var(--color-control-typo-default);
     font-size: var(--checkbox-font-size);
+    white-space: nowrap;
   }
 
   &_size {
@@ -51,8 +52,8 @@
         position: absolute;
 
         &::before {
-          top: 5.4px;
-          left: 1.8px;
+          top: 0.45em;
+          left: 0.1em;
         }
       }
     }

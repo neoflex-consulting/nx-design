@@ -90,7 +90,7 @@ export const TagBase = forwardRefWithAs<Props>((props, ref) => {
           <span className={cnTagBase('Label')}>{label}</span>
           {withCancel && (
             <button className={cnTagBase('CancelButton')} type="button" onClick={onCancel}>
-              <IconClose className={cnTagBase('CancelIcon')} size={CloseSize} />
+              <IconClose className={cnTagBase('CancelIcon')} size={IconSize} />
             </button>
           )}
         </>

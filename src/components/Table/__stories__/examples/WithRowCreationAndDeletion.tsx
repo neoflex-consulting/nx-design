@@ -308,10 +308,10 @@ export default () => {
                   size="s"
                   offset={4}
                   items={filteredItems}
-                  getLabel={(item) => item.name}
-                  getGroupId={(item) => item.group}
-                  getLeftSideBar={({ icon: Icon }) => <Icon view="secondary" size="xs" />}
-                  getOnClick={handleContextMenuClick(setMenuState(false), row.id, row.level)}
+                  getItemLabel={(item) => item.name}
+                  getItemGroupId={(item) => item.group}
+                  getItemLeftSide={({ icon: Icon }) => <Icon view="secondary" size="xs" />}
+                  // onClick={event => handleContextMenuClick(setMenuState(false), row.id, row.level)}
                   direction="downLeft"
                   possibleDirections={['upLeft', 'downLeft']}
                   onClickOutside={setMenuState(false)}

@@ -41,15 +41,18 @@ import {
   useHeaderData,
   useLazyLoadData,
 } from './helpers';
-import {IconArrowUp} from "../../icons/IconArrowUp/IconArrowUp";
-import {IconArrowDown} from "../../icons/IconArrowDown/IconArrowDown";
-import {IconArrowDirectional} from "../../icons/DatagramIcon/IconArrowDirectional/IconArrowDirectional";
 import {HeaderMenu} from "./HeaderMenu/HeaderMenu";
+import {HeaderSideProps} from "./headerMenu";
+import {IconSortUp} from "../../icons/IconSortUp/IconSortUp";
+import {IconSortDown} from "../../icons/IconSortDown/IconSortDown";
+import {IconSort} from "../../icons/IconSort/IconSort";
 
 export { TableTextFilter } from './TextFilter/TableTextFilter';
 export { TableFilterContainer } from './FilterContainer/TableFilterContainer';
 export { TableNumberFilter } from './NumberFilter/TableNumberFilter';
 export { TableChoiceGroupFilter } from './ChoiceGroupFilter/TableChoiceGroupFilter';
+
+export { RightSide } from './RightSide/RightSide';
 
 const cnTable = cn('Table');
 
@@ -195,7 +198,9 @@ export type TableProps<T extends TableRow> = {
   getTagLabel?: GetTagLabel;
   isExpandedRowsByDefault?: boolean;
   getCellWrap?: (row: T) => 'truncate' | 'break';
-  withHeaderMenu?: boolean
+  withHeaderMenu?: boolean;
+  leftSide?: HeaderSideProps;
+  rightSide?: HeaderSideProps;
 };
 
 type Table = <T extends TableRow>(
@@ -296,8 +301,11 @@ const InternalTable = <T extends TableRow>(
     isExpandedRowsByDefault = false,
     nameResetAllFilters,
     withHeaderMenu,
+    leftSide,
+    rightSide,
     ...otherProps
   } = props;
+
   const {
     headers,
     flattenedHeaders,
@@ -306,6 +314,7 @@ const InternalTable = <T extends TableRow>(
     headerRowsHeights,
     resizerTopOffsets,
   } = useHeaderData(columns);
+
   const stickyColumnsGrid =
     headers[0][stickyColumns - 1]?.position.gridIndex! +
     (headers[0][stickyColumns - 1]?.position.colSpan || 1);
@@ -377,7 +386,7 @@ const InternalTable = <T extends TableRow>(
     const columnsElements = Object.values(columnsRefs.current).filter(isNotNil);
     const columnsElementsWidths = columnsElements.map((el) => el.getBoundingClientRect().width);
     const resultArr = getMergedArray(columnsElementsWidths, resizedColumnWidths);
-    return resultArr.reduce((a, b) => (a ?? 0) + (b ?? 0));
+    return resultArr.length !== 0 && resultArr.reduce((a, b) => (a ?? 0) + (b ?? 0));
   }, [resizedColumnWidths, isResizable]);
 
   React.useLayoutEffect(() => {
@@ -413,8 +422,8 @@ const InternalTable = <T extends TableRow>(
 
   const getSortIcon = (column: TableColumn<T>) => {
     return (
-      (isSortedByColumn(column) && (sorting?.order === 'desc' ? IconArrowUp : IconArrowDown)) ||
-      IconArrowDirectional
+      (isSortedByColumn(column) && (sorting?.order === 'desc' ? IconSortUp : IconSortDown)) ||
+      IconSort
     );
   };
 
@@ -742,6 +751,8 @@ const InternalTable = <T extends TableRow>(
         withHeaderMenu &&
         <div className={cnTable('RowWithoutCells')}>
           <HeaderMenu
+            leftSide={leftSide}
+            rightSide={rightSide}
             columns={columns}
           />
         </div>
