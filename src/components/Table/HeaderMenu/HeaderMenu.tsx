@@ -3,14 +3,13 @@ import './HeaderMenu.css';
 import React from 'react';
 
 import {cn} from '../../../utils/bem';
-import {TableRow} from '../Table';
+import {TableColumn, TableRow} from '../Table';
 import {HeaderSide} from "../headerMenu";
-import {Header} from "../helpers";
 
 const cnHeaderMenu = cn('HeaderMenu');
 
 type Props<T extends TableRow> = {
-  columns: Array<Header<TableRow>>;
+  columns: TableColumn<T>[];
   leftSide: HeaderSide;
   rightSide: HeaderSide;
   progressLineVisible?: (value: boolean) => void;

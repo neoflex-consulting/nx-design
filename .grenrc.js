@@ -4,7 +4,6 @@ module.exports = {
   includeMessages: 'commits',
   ignoreCommitsWith: ['merge', 'Merge', 'release', 'changelog', 'not-changelog'],
   ignoreTagsWith: [],
-  changelogFilename: 'CHANGELOG.md',
   template: {
     commit: ({ message, url, author, name }) =>
       `- [${message}](${url}) - ${author ? `[@${author}](https://github.com/${author})` : name}`,

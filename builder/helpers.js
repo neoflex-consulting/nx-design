@@ -48,10 +48,6 @@ const copyReadme = async (distPaths) => {
   await copyFile('README.md', `${distPaths}/README.md`);
 };
 
-const copyChangelog = async (distPaths) => {
-  await copyFile('CHANGELOG.md', `${distPaths}/CHANGELOG.md`);
-};
-
 const transformCSS = async (ignore, src, distPaths, options) => {
   const { postcss: postcssUserPlugins = [] } = options;
   const cssFiles = await fg([`${src}/**/*.{css,scss}`], { ignore });
@@ -618,6 +614,5 @@ module.exports = {
   iconsFileTransformed,
   responsesImagesTransformed,
   copyReadme,
-  copyChangelog,
   generateReExportsFonts
 };

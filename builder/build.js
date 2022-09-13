@@ -97,7 +97,6 @@ class GenerateCommand extends Command {
     try {
       await copyPackageJson(distPath);
       await copyReadme(distPath);
-      await copyChangelog(distPath);
       await Promise.all([
         transformCSS(ignore, srcPath, [distSrc, distEsSrc], {
           namespace,

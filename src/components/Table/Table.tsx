@@ -42,7 +42,7 @@ import {
   useLazyLoadData,
 } from './helpers';
 import {HeaderMenu} from "./HeaderMenu/HeaderMenu";
-import {HeaderSideProps} from "./headerMenu";
+import {HeaderSide} from "./headerMenu";
 import {IconSortUp} from "../../icons/IconSortUp/IconSortUp";
 import {IconSortDown} from "../../icons/IconSortDown/IconSortDown";
 import {IconSort} from "../../icons/IconSort/IconSort";
@@ -200,8 +200,8 @@ export type TableProps<T extends TableRow> = {
   isExpandedRowsByDefault?: boolean;
   getCellWrap?: (row: T) => 'truncate' | 'break';
   withHeaderMenu?: boolean;
-  leftSide?: HeaderSideProps;
-  rightSide?: HeaderSideProps;
+  leftSide: HeaderSide;
+  rightSide: HeaderSide;
   stopIsProgressLineVisible?: boolean;
 };
 
@@ -336,7 +336,7 @@ const InternalTable = <T extends TableRow>(
   }, [lowHeaders.length]);
 
   useEffect(() => {
-    setIsProgressLineVisible(stopIsProgressLineVisible)
+    setIsProgressLineVisible(stopIsProgressLineVisible || false)
   }, [stopIsProgressLineVisible]);
 
   const [initialColumnWidths, setInitialColumnWidths] = React.useState<number[]>([]);
