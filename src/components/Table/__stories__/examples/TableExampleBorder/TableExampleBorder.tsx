@@ -38,3 +38,11 @@ export function TableExampleBorderBetweenColumns() {
     </StoryBookExample>
   );
 }
+
+export function TableExampleSeparateRows() {
+  return (
+    <StoryBookExample className={cnDocsDecorator('Section')}>
+      <Table columns={columns} rows={rows} separateRows/>
+    </StoryBookExample>
+  );
+}
