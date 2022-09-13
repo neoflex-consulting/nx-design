@@ -74,7 +74,7 @@ export const TableSelectedOptionsList: React.FC<Props> = ({
             className={cnTableSelectedOptionsList('Option')}
             key={option.id}
             label={getTagLabel(option.id, option.name, option.value)}
-            size="xs"
+            size="s"
             iconSize="xs"
             mode="cancel"
             onCancel={(): void => onRemove(option.id)}

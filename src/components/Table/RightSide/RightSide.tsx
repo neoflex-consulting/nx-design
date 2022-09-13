@@ -5,8 +5,6 @@ import {Button} from '../../Button/Button';
 
 import {HeaderSide} from "../headerMenu";
 import {IconTableSettings} from "../../../icons/DatagramIcon/IconTableSettings/IconTableSettings";
-import {TableRow} from "../Table";
-import {Header} from "../helpers";
 import {CheckboxGroup} from "../../CheckboxGroup/CheckboxGroup";
 import {Popover} from "../../Popover/Popover";
 import {cn} from "../../../utils/bem";
@@ -15,7 +13,7 @@ import {withTooltip} from "../../../hocs/withTooltip/withTooltip";
 const cnRightSide = cn('RightSide');
 
 type TableHeaderMenuProps = HeaderSide & {
-  columns: Array<Header<TableRow>>;
+  columns: any;
   nameApplyHiddenColumn?: string;
   nameButtonColumnSettings?: string;
   overrideHiddenColumns?: (newCheckboxGroupValue: ItemRightSide[] | null) => void;

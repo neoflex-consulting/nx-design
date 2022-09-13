@@ -2,14 +2,11 @@ import React from 'react';
 import {Button} from '../../Button/Button';
 
 import {HeaderSide} from "../headerMenu";
-import {TableRow} from "../Table";
-import {Header} from "../helpers";
 import {IconPlus} from "../../../icons/IconPlus/IconPlus";
 import {IconRefresh} from "../../../icons/IconRefresh/IconRefresh";
 import {withTooltip} from "../../../hocs/withTooltip/withTooltip";
 
 type TableHeaderMenuProps = HeaderSide & {
-  columns: Array<Header<TableRow>>;
   nameButtonAddColumn?: string;
   nameButtonRefresh?: string;
   onClickButtonAddColumn?: (event: any) => void;
@@ -18,7 +15,6 @@ type TableHeaderMenuProps = HeaderSide & {
 };
 
 export const LeftSide: React.FC<TableHeaderMenuProps> = ({
-                                                            columns,
                                                            nameButtonAddColumn,
                                                            nameButtonRefresh,
                                                            onClickButtonAddColumn,

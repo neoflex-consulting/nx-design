@@ -655,7 +655,6 @@ export const WithHeaderMenu = createStory(
       setLineVisible(!lineVisible)
       console.log("onClickButtonRefresh: " + event);
     }
-
     return (
       <div>
         <Theme preset={presetDatagram}>

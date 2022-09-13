@@ -200,8 +200,8 @@ export type TableProps<T extends TableRow> = {
   isExpandedRowsByDefault?: boolean;
   getCellWrap?: (row: T) => 'truncate' | 'break';
   withHeaderMenu?: boolean;
-  leftSide: HeaderSide;
-  rightSide: HeaderSide;
+  leftSide?: HeaderSide;
+  rightSide?: HeaderSide;
   stopIsProgressLineVisible?: boolean;
 };
 

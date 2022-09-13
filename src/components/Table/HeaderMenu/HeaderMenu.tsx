@@ -3,15 +3,16 @@ import './HeaderMenu.css';
 import React from 'react';
 
 import {cn} from '../../../utils/bem';
-import {TableColumn, TableRow} from '../Table';
+import {RightSide, TableColumn, TableRow} from '../Table';
 import {HeaderSide} from "../headerMenu";
+import {LeftSide} from "../LeftSide/LeftSide";
 
 const cnHeaderMenu = cn('HeaderMenu');
 
 type Props<T extends TableRow> = {
   columns: TableColumn<T>[];
-  leftSide: HeaderSide;
-  rightSide: HeaderSide;
+  leftSide?: HeaderSide;
+  rightSide?: HeaderSide;
   progressLineVisible?: (value: boolean) => void;
 };
 
@@ -22,11 +23,15 @@ export const HeaderMenu = <T extends TableRow>({
     progressLineVisible,
   }: Props<T>): React.ReactElement => {
 
-  const RightSideComponent = rightSide?.name;
+
+
+  const RightSideComponent = rightSide ? rightSide?.name : RightSide;
   const rightSideComponentProps = rightSide?.props ?? {};
 
-  const LeftSideComponent = leftSide?.name;
+  const LeftSideComponent = leftSide ? leftSide?.name : LeftSide;
   const leftSideComponentProps = leftSide?.props ?? {};
+
+
 
   return (
     <>
@@ -34,7 +39,6 @@ export const HeaderMenu = <T extends TableRow>({
         {<div className={cnHeaderMenu('LeftSide')}>
           {LeftSideComponent && (
             <LeftSideComponent
-              columns={columns}
               progressLineVisible={progressLineVisible}
               {...leftSideComponentProps}
             />

@@ -66,13 +66,13 @@
     &_s {
       --tag-base-height: var(--space-xl);
       --tag-base-spaсe: var(--space-xs);
-      --tag-base-font-size: var(--size-text-xs);
+      --tag-base-font-size: var(--size-text-s);
     }
 
     &_m {
       --tag-base-height: calc(var(--space-2xl) - var(--space-2xs));
       --tag-base-spaсe: var(--space-xs);
-      --tag-base-font-size: var(--size-text-s);
+      --tag-base-font-size: var(--size-text-m);
     }
 
     &_l {
