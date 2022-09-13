@@ -302,8 +302,8 @@ export default () => {
                 onlyIcon
                 onClick={setMenuState(true)}
               />
-              {menuProps.isOpen && (
                 <ContextMenu
+                  isOpen={menuProps.isOpen}
                   anchorRef={menuProps.ref}
                   size="s"
                   offset={4}
@@ -311,12 +311,11 @@ export default () => {
                   getItemLabel={(item) => item.name}
                   getItemGroupId={(item) => item.group}
                   getItemLeftSide={({ icon: Icon }) => <Icon view="secondary" size="xs" />}
-                  // onClick={event => handleContextMenuClick(setMenuState(false), row.id, row.level)}
+                  onClick={event => handleContextMenuClick(setMenuState(false), row.id, row.level)}
                   direction="downLeft"
                   possibleDirections={['upLeft', 'downLeft']}
                   onClickOutside={setMenuState(false)}
                 />
-              )}
             </>
           );
         },

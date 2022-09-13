@@ -94,7 +94,6 @@
 
     &:not(&_isHeader) {
       box-shadow: var(--shadow-table);
-       z-index: 0;
     }
   }
 
