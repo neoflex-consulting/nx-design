@@ -1,11 +1,13 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import IconBookFormulaSizeAll from './IconBookFormula_size_all';
+import IconBookFormulaSizeM from './IconBookFormula_size_m';
+import IconBookFormulaSizeS from './IconBookFormula_size_s';
+import IconBookFormulaSizeXs from './IconBookFormula_size_xs';
 
 export const IconBookFormula = createIcon({
-  l: IconBookFormulaSizeAll,
-  m: IconBookFormulaSizeAll,
-  s: IconBookFormulaSizeAll,
-  xs: IconBookFormulaSizeAll,
-  name: 'IconBookFormula',
+  l: IconBookFormulaSizeM,
+  m: IconBookFormulaSizeM,
+  s: IconBookFormulaSizeS,
+  xs: IconBookFormulaSizeXs,
+  name: 'IconBookFormula'
 });

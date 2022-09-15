@@ -1,11 +1,13 @@
 import { createIcon } from '../_createIcon/createIcon';
 
-import IconCopySizeAll from './IconCopy_size_all';
+import IconCopySizeM from './IconCopy_size_m';
+import IconCopySizeS from './IconCopy_size_s';
+import IconCopySizeXs from './IconCopy_size_xs';
 
 export const IconCopy = createIcon({
-  l: IconCopySizeAll,
-  m: IconCopySizeAll,
-  s: IconCopySizeAll,
-  xs: IconCopySizeAll,
-  name: 'IconCopy',
+  l: IconCopySizeM,
+  m: IconCopySizeM,
+  s: IconCopySizeS,
+  xs: IconCopySizeXs,
+  name: 'IconCopy'
 });

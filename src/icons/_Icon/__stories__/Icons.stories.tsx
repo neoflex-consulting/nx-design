@@ -366,42 +366,41 @@ import {IconVideoSquare} from '../../IconVideoSquare/IconVideoSquare';
 import {IconWarning} from '../../IconWarning/IconWarning';
 import {IconWarningC} from '../../IconWarningC/IconWarningC';
 import {IconWifi} from '../../IconWifi/IconWifi';
-import {IconAirflow} from '../../DatagramIcon/IconAirflow/IconAirflow';
-import {IconArrowDirectional} from '../../DatagramIcon/IconArrowDirectional/IconArrowDirectional';
-import {IconAtlas} from '../../DatagramIcon/IconAtlas/IconAtlas';
-import {IconClockD} from '../../DatagramIcon/IconClockD/IconClockD';
-import {IconCloseMenuD} from '../../DatagramIcon/IconCloseMenuD/IconCloseMenuD';
-import {IconCojob} from '../../DatagramIcon/IconCojob/IconCojob';
-import {IconCube} from '../../DatagramIcon/IconCube/IconCube';
-import {IconDataset} from '../../DatagramIcon/IconDataset/IconDataset';
-import {IconDeployment} from '../../DatagramIcon/IconDeployment/IconDeployment';
-import {IconDeployStart} from '../../DatagramIcon/IconDeployStart/IconDeployStart';
-import {IconDocumentSettings} from '../../DatagramIcon/IconDocumentSettings/IconDocumentSettings';
-import {IconEnvironment} from '../../DatagramIcon/IconEnvironment/IconEnvironment';
-import {IconFunction} from '../../DatagramIcon/IconFunction/IconFunction';
-import {IconJdbcBase} from '../../DatagramIcon/IconJdbcBase/IconJdbcBase';
-import {IconJdbcConnect} from '../../DatagramIcon/IconJdbcConnect/IconJdbcConnect';
-import {IconLayersD} from '../../DatagramIcon/IconLayersD/IconLayersD';
-import {IconOozie} from '../../DatagramIcon/IconOozie/IconOozie';
-import {IconOpenMenu} from '../../DatagramIcon/IconOpenMenu/IconOpenMenu';
-import {IconOrganization} from '../../DatagramIcon/IconOrganization/IconOrganization';
-import {IconPen} from '../../DatagramIcon/IconPen/IconPen';
-import {IconRocket} from '../../DatagramIcon/IconRocket/IconRocket';
-import {IconScheme} from '../../DatagramIcon/IconScheme/IconScheme';
-import {IconSettingsD} from '../../DatagramIcon/IconSettingsD/IconSettingsD';
-import {IconSettingsPlay} from '../../DatagramIcon/IconSettingsPlay/IconSettingsPlay';
-import {IconSoftwareSystem} from '../../DatagramIcon/IconSoftwareSystem/IconSoftwareSystem';
-import {IconStream} from '../../DatagramIcon/IconStream/IconStream';
-import {IconTree} from '../../DatagramIcon/IconTree/IconTree';
-import {IconWorkflow} from '../../DatagramIcon/IconWorkflow/IconWorkflow';
-import {IconZeppelin} from '../../DatagramIcon/IconZeppelin/IconZeppelin';
-import {IconGlobe} from '../../DatagramIcon/IconGlobe/IconGlobe';
-import {IconExpand} from "../../DatagramIcon/IconExpand/IconExpand";
-import {IconArrowCollapse} from "../../DatagramIcon/IconArrowCollapse/IconArrowCollapse";
-import {IconArrowExpand} from "../../DatagramIcon/IconArrowExpand/IconArrowExpand";
-import {IconTableSettings} from "../../DatagramIcon/IconTableSettings/IconTableSettings";
-import {IconTransformTest} from "../../DatagramIcon/IconTransformTest/IconTransformTest";
-import {IconCollapseD} from "../../DatagramIcon/IconCollapseD/IconCollapseD";
+import {IconAirflow} from '../../IconAirflow/IconAirflow';
+import {IconArrowDirectional} from '../../IconArrowDirectional/IconArrowDirectional';
+import {IconAtlas} from '../../IconAtlas/IconAtlas';
+import {IconClockD} from '../../IconClockD/IconClockD';
+import {IconCloseMenuD} from '../../IconCloseMenuD/IconCloseMenuD';
+import {IconCojob} from '../../IconCojob/IconCojob';
+import {IconCube} from '../../IconCube/IconCube';
+import {IconDataset} from '../../IconDataset/IconDataset';
+import {IconDeployment} from '../../IconDeployment/IconDeployment';
+import {IconDeployStart} from '../../IconDeployStart/IconDeployStart';
+import {IconDocumentSettings} from '../../IconDocumentSettings/IconDocumentSettings';
+import {IconEnvironment} from '../../IconEnvironment/IconEnvironment';
+import {IconFunction} from '../../IconFunction/IconFunction';
+import {IconJdbcBase} from '../../IconJdbcBase/IconJdbcBase';
+import {IconJdbcConnect} from '../../IconJdbcConnect/IconJdbcConnect';
+import {IconLayersD} from '../../IconLayersD/IconLayersD';
+import {IconOozie} from '../../IconOozie/IconOozie';
+import {IconOpenMenu} from '../../IconOpenMenu/IconOpenMenu';
+import {IconOrganization} from '../../IconOrganization/IconOrganization';
+import {IconPen} from '../../IconPen/IconPen';
+import {IconRocket} from '../../IconRocket/IconRocket';
+import {IconScheme} from '../../IconScheme/IconScheme';
+import {IconSettingsPlay} from '../../IconSettingsPlay/IconSettingsPlay';
+import {IconSoftwareSystem} from '../../IconSoftwareSystem/IconSoftwareSystem';
+import {IconStream} from '../../IconStream/IconStream';
+import {IconTree} from '../../IconTree/IconTree';
+import {IconWorkflow} from '../../IconWorkflow/IconWorkflow';
+import {IconZeppelin} from '../../IconZeppelin/IconZeppelin';
+import {IconGlobe} from '../../IconGlobe/IconGlobe';
+import {IconExpand} from "../../IconExpand/IconExpand";
+import {IconArrowCollapse} from "../../IconArrowCollapse/IconArrowCollapse";
+import {IconArrowExpand} from "../../IconArrowExpand/IconArrowExpand";
+import {IconTableSettings} from "../../IconTableSettings/IconTableSettings";
+import {IconTransformTest} from "../../IconTransformTest/IconTransformTest";
+import {IconCollapseD} from "../../IconCollapseD/IconCollapseD";
 
 const defaultKnobs = () => ({
   size: select('size', ['xs', 's', 'm', 'l'], 'm'),
@@ -435,7 +434,7 @@ const neoicons = {
   IconPen,
   IconRocket,
   IconScheme,
-  IconSettingsD,
+  IconSettings,
   IconSettingsPlay,
   IconSoftwareSystem,
   IconStream,
@@ -449,6 +448,16 @@ const neoicons = {
   IconCollapseD,
   IconTableSettings,
   IconTransformTest,
+  IconFilter,
+  IconSearch,
+  IconSort,
+  IconSortDown,
+  IconSortUp,
+  IconClose,
+  IconInbox,
+  IconBell,
+  IconBellOff,
+
 
 
   IconActionMenu,
@@ -481,15 +490,13 @@ const neoicons = {
   IconBarChartVCheck,
   IconBase,
   IconBaseServer,
-  IconBell,
-  IconBellOff,
   IconBigGrid,
   IconBinokulars,
   IconBlock,
   IconBook,
   IconBookDownload,
-  IconBookFinance,
-  IconBookFormula,
+    IconBookFinance,
+    IconBookFormula,
   IconBookUpload,
   IconBookWarning,
   IconBranch,
@@ -545,7 +552,6 @@ const neoicons = {
   IconClip,
   IconClipboard,
   IconClock,
-  IconClose,
   IconCloseC,
   IconCloseMenu,
   IconCloud,
@@ -564,7 +570,7 @@ const neoicons = {
   IconContact,
   IconControl,
   IconCookies,
-  IconCopy,
+    IconCopy,
   IconCub,
   IconCut,
   IconDarkTheme,
@@ -587,7 +593,7 @@ const neoicons = {
   IconDocRightClose,
   IconDocTop,
   IconDocument,
-  IconDocuments,
+    IconDocuments,
   IconDotted,
   IconDoubleDown,
   IconDoubleLeft,
@@ -619,7 +625,7 @@ const neoicons = {
   IconFastBackward,
   IconFastForward,
   IconFax,
-  IconFile,
+    IconFile,
   IconFileAi,
   IconFileCsv,
   IconFileDelete,
@@ -640,7 +646,6 @@ const neoicons = {
   IconFileXml,
   IconFileZip,
   IconFill,
-  IconFilter,
   IconFilterCheck,
   IconFlag,
   IconFlash,
@@ -675,7 +680,6 @@ const neoicons = {
   IconImage,
   IconImport,
   IconImportant,
-  IconInbox,
   IconInfo,
   IconKey,
   IconKeyboard,
@@ -708,7 +712,7 @@ const neoicons = {
   IconNote,
   IconNotebook,
   IconNotEdit,
-  IconNotepad,
+    IconNotepad,
   IconNumberField,
   IconNumberList,
   IconOpenFolder,
@@ -743,7 +747,6 @@ const neoicons = {
   IconRub,
   IconSave,
   IconScalefit,
-  IconSearch,
   IconSearchCheck,
   IconSearchIn,
   IconSearchOut,
@@ -752,16 +755,12 @@ const neoicons = {
   IconSeparator,
   IconSertificat,
   IconServer,
-  IconSettings,
   IconSettingsDev,
   IconShare,
   IconSignOut,
   IconSignUp,
   IconSlider,
-  IconSort,
   IconSortCheck,
-  IconSortDown,
-  IconSortUp,
   IconSpeed,
   IconSpinner,
   IconStar,

@@ -4,7 +4,7 @@ import React, {useRef, useState} from 'react';
 import {Button} from '../../Button/Button';
 
 import {HeaderSide} from "../headerMenu";
-import {IconTableSettings} from "../../../icons/DatagramIcon/IconTableSettings/IconTableSettings";
+import {IconTableSettings} from "../../../icons/IconTableSettings/IconTableSettings";
 import {CheckboxGroup} from "../../CheckboxGroup/CheckboxGroup";
 import {Popover} from "../../Popover/Popover";
 import {cn} from "../../../utils/bem";

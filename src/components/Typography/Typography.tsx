@@ -83,6 +83,7 @@ type Props = {
   weight?: TextPropWeight;
   width?: TextPropWidth;
   lineHeight?: TextPropLineHeight;
+  truncate?: boolean;
 };
 
 export const cnText = cn('Typography');
@@ -102,6 +103,7 @@ export const Typography = forwardRefWithAs<Props>((props, ref) => {
     className,
     children,
     lineHeight = textPropLineHeightDefault,
+    truncate = false,
     ...otherProps
   } = props;
 
@@ -122,6 +124,7 @@ export const Typography = forwardRefWithAs<Props>((props, ref) => {
           view,
           weight,
           width,
+          truncate,
         },
         [className],
       )}
