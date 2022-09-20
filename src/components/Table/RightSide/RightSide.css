@@ -7,6 +7,8 @@
 
   &-Checkboxes {
     overflow: auto;
+    min-width: 160px;
+    min-height: 120px;
     max-width: 300px;
     max-height: 235px;
     border-bottom: var(--control-border-width) solid var(--color-control-bg-border-default);

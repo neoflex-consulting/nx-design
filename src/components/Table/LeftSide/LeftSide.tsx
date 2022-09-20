@@ -5,6 +5,7 @@ import {HeaderSide} from "../headerMenu";
 import {IconPlus} from "../../../icons/IconPlus/IconPlus";
 import {IconRefresh} from "../../../icons/IconRefresh/IconRefresh";
 import {withTooltip} from "../../../hocs/withTooltip/withTooltip";
+import {cn} from "../../../utils/bem";
 
 type TableHeaderMenuProps = HeaderSide & {
   nameButtonAddColumn?: string;
@@ -13,6 +14,8 @@ type TableHeaderMenuProps = HeaderSide & {
   onClickButtonRefresh?: (event: any) => void;
   progressLineVisible?: (value: boolean) => void;
 };
+
+const cnLeftSide = cn('LeftSide');
 
 export const LeftSide: React.FC<TableHeaderMenuProps> = ({
                                                            nameButtonAddColumn,
@@ -28,8 +31,7 @@ export const LeftSide: React.FC<TableHeaderMenuProps> = ({
   const [isProgressLineVisible, setIsProgressLineVisible] = React.useState<boolean>(false);
 
   return (
-    <div>
-      <div>
+    <div className={cnLeftSide()}>
         <ButtonAddColumn
           onlyIcon={true}
           iconLeft={IconPlus}
@@ -50,7 +52,6 @@ export const LeftSide: React.FC<TableHeaderMenuProps> = ({
           }
         }
         />
-      </div>
     </div>
   );
 };

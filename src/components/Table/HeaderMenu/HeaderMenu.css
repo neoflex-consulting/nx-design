@@ -1,7 +1,7 @@
 .HeaderMenu {
   display: flex;
-  height: var(--space-xl);
-  padding: var(--space-xs);
+  padding-right: var(--space-xs);
+  padding-left: var(--space-xs);
   border-top: var(--control-border-width) solid var(--color-control-bg-border-default);
   border-left: var(--control-border-width) solid var(--color-control-bg-border-default);
   border-right: var(--control-border-width) solid var(--color-control-bg-border-default);

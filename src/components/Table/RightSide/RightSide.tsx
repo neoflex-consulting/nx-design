@@ -88,7 +88,7 @@ export const RightSide: React.FC<TableHeaderMenuProps> = ({
         </div>
         <Button
           form={"default"}
-          label={nameApplyHiddenColumn}
+          label={nameApplyHiddenColumn || "Закрыть"}
           size={"s"}
           onClick={() => setIsOpenColumns(!isOpenColumns)}
         />

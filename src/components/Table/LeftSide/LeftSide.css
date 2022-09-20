@@ -1,0 +1,7 @@
+.LeftSide {
+  display: block;
+  padding: var(--space-l);
+  background-color: var(--color-bg-default);
+  border-radius: var(--control-radius);
+  box-shadow: var(--shadow-container);
+}
