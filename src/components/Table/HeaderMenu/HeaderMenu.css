@@ -13,33 +13,7 @@
     align-items: center;
   }
 
-  &-LeftSide {
-    .Button {
-      margin: var(--space-xs);
-    }
-  }
-
   &-RightSide {
     justify-content: flex-end;
   }
-
-  &-LeftSideLine {
-     display: inline;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 10px;
-      left: 89px;
-      bottom: 10px;
-      width: 1px;
-      background: var(--color-bg-border);
-      opacity: 1;
-      transition: opacity var(--fast-transition);
-    }
-  }
-
-
-
-
 }

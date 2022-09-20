@@ -12,7 +12,7 @@ import {withTooltip} from "../../../hocs/withTooltip/withTooltip";
 
 const cnRightSide = cn('RightSide');
 
-type TableHeaderMenuProps = HeaderSide & {
+type RightSideProps = HeaderSide & {
   columns: any;
   nameApplyHiddenColumn?: string;
   nameButtonColumnSettings?: string;
@@ -25,7 +25,7 @@ export type ItemRightSide = {
   hidden: boolean
 };
 
-export const RightSide: React.FC<TableHeaderMenuProps> = ({
+export const RightSide: React.FC<RightSideProps> = ({
   columns,
   nameApplyHiddenColumn,
   nameButtonColumnSettings,

@@ -1,7 +1,24 @@
 .LeftSide {
   display: block;
-  padding: var(--space-l);
-  background-color: var(--color-bg-default);
-  border-radius: var(--control-radius);
-  box-shadow: var(--shadow-container);
+
+  &-Buttons {
+    margin: var(--space-xs);
+  }
+
+/*&-LeftSideLine {*/
+/*   display: inline;*/
+
+/*  &::before {*/
+/*    content: '';*/
+/*    position: absolute;*/
+/*    top: 10px;*/
+/*    left: 89px;*/
+/*    bottom: 10px;*/
+/*    width: 1px;*/
+/*    background: var(--color-bg-border);*/
+/*    opacity: 1;*/
+/*    transition: opacity var(--fast-transition);*/
+/*  }*/
+/*}*/
+
 }

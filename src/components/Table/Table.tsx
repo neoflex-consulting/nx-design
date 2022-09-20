@@ -54,6 +54,7 @@ export { TableNumberFilter } from './NumberFilter/TableNumberFilter';
 export { TableChoiceGroupFilter } from './ChoiceGroupFilter/TableChoiceGroupFilter';
 
 export { RightSide } from './RightSide/RightSide';
+export { LeftSide } from './LeftSide/LeftSide';
 
 const cnTable = cn('Table');
 

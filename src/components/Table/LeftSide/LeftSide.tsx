@@ -1,3 +1,5 @@
+import './LeftSide.css';
+
 import React from 'react';
 import {Button} from '../../Button/Button';
 
@@ -7,7 +9,7 @@ import {IconRefresh} from "../../../icons/IconRefresh/IconRefresh";
 import {withTooltip} from "../../../hocs/withTooltip/withTooltip";
 import {cn} from "../../../utils/bem";
 
-type TableHeaderMenuProps = HeaderSide & {
+type LeftSideProps = HeaderSide & {
   nameButtonAddColumn?: string;
   nameButtonRefresh?: string;
   onClickButtonAddColumn?: (event: any) => void;
@@ -17,7 +19,7 @@ type TableHeaderMenuProps = HeaderSide & {
 
 const cnLeftSide = cn('LeftSide');
 
-export const LeftSide: React.FC<TableHeaderMenuProps> = ({
+export const LeftSide: React.FC<LeftSideProps> = ({
                                                            nameButtonAddColumn,
                                                            nameButtonRefresh,
                                                            onClickButtonAddColumn,
@@ -33,6 +35,7 @@ export const LeftSide: React.FC<TableHeaderMenuProps> = ({
   return (
     <div className={cnLeftSide()}>
         <ButtonAddColumn
+          className={cnLeftSide('Buttons')}
           onlyIcon={true}
           iconLeft={IconPlus}
           iconSize={"xs"}
@@ -40,6 +43,7 @@ export const LeftSide: React.FC<TableHeaderMenuProps> = ({
           onClick={event => onClickButtonAddColumn && onClickButtonAddColumn(event)}
         />
         <ButtonRefresh
+          className={cnLeftSide('Buttons')}
           view={"clear"}
           onlyIcon={true}
           iconLeft={IconRefresh}
