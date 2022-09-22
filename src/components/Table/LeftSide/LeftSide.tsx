@@ -1,6 +1,6 @@
 import './LeftSide.css';
 
-import React from 'react';
+import React, {useRef, useState} from 'react';
 import {Button} from '../../Button/Button';
 
 import {HeaderSide} from "../headerMenu";
@@ -8,13 +8,15 @@ import {IconPlus} from "../../../icons/IconPlus/IconPlus";
 import {IconRefresh} from "../../../icons/IconRefresh/IconRefresh";
 import {withTooltip} from "../../../hocs/withTooltip/withTooltip";
 import {cn} from "../../../utils/bem";
+import {ContextMenu} from "../../ContextMenu/ContextMenu";
+import {ContextMenuItemDefault} from "../../ContextMenu/types";
 
 type LeftSideProps = HeaderSide & {
   nameButtonAddColumn?: string;
   nameButtonRefresh?: string;
-  onClickButtonAddColumn?: (event: any) => void;
   onClickButtonRefresh?: (event: any) => void;
   progressLineVisible?: (value: boolean) => void;
+  buttonAddItems?: ContextMenuItemDefault[];
 };
 
 const cnLeftSide = cn('LeftSide');
@@ -22,15 +24,18 @@ const cnLeftSide = cn('LeftSide');
 export const LeftSide: React.FC<LeftSideProps> = ({
                                                            nameButtonAddColumn,
                                                            nameButtonRefresh,
-                                                           onClickButtonAddColumn,
                                                            onClickButtonRefresh,
-                                                           progressLineVisible
+                                                           progressLineVisible,
+                                                           buttonAddItems
                                                           }) => {
 
   const ButtonAddColumn = withTooltip({ content: `${nameButtonAddColumn || "Добавить строку"}`})(Button);
   const ButtonRefresh = withTooltip({ content: `${nameButtonRefresh || "Обновить таблицу"}`})(Button);
 
   const [isProgressLineVisible, setIsProgressLineVisible] = React.useState<boolean>(false);
+
+  const refButtonAdd = useRef(null);
+  const [isOpenButtonAdd, setIsOpenButtonAdd] = useState(false);
 
   return (
     <div className={cnLeftSide()}>
@@ -40,8 +45,18 @@ export const LeftSide: React.FC<LeftSideProps> = ({
           iconLeft={IconPlus}
           iconSize={"xs"}
           size={"s"}
-          onClick={event => onClickButtonAddColumn && onClickButtonAddColumn(event)}
+          onClick={() => setIsOpenButtonAdd(!isOpenButtonAdd)}
+          ref={refButtonAdd}
         />
+        <ContextMenu
+          isOpen={isOpenButtonAdd}
+          items={buttonAddItems || []}
+          anchorRef={refButtonAdd}
+          direction="downStartLeft"
+          onClickOutside={() => setIsOpenButtonAdd(false)}
+          size={"s"}
+          offset={10}
+      />
         <ButtonRefresh
           className={cnLeftSide('Buttons')}
           view={"clear"}

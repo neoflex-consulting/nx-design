@@ -555,8 +555,26 @@ const App = () => {
 - `props` — Свойства, которые передаются в пресет
 - `nameButtonAddColumn` — Всплывающая подсказка на кнопке добавить строку в `LeftSide`
 - `nameButtonRefresh` — Всплывающая подсказка на кнопке обновить таблицу в `LeftSide`
-- `onClickButtonAddColumn` — Обработчик при клике на кнопку добавить строку в `LeftSide`
+- `buttonAddItems: ContextMenuItemDefault[]` - элементы выпадающего меню при клике на кнопку добавить строку в `LeftSide`
 - `onClickButtonRefresh` — Обработчик при клике на кнопку обновить таблицу в `LeftSide`
+
+```tsx
+export type ContextMenuItemDefault = {
+  label: string | number | React.ReactNode;
+  key: string | number | undefined;
+  rightSide?: React.ReactNode;
+  rightIcon?: IconComponent;
+  leftSide?: React.ReactNode;
+  leftIcon?: IconComponent;
+  subMenu?: ContextMenuItemDefault[];
+  status?: ContextMenuStatus;
+  disabled?: boolean;
+  groupId?: number;
+  onClick?: ContextMenuPropOnClick<ContextMenuItemDefault>;
+  as?: keyof JSX.IntrinsicElements;
+  attributes?: JSX.IntrinsicElements[keyof JSX.IntrinsicElements];
+}
+```
 
 При нажатии на кнопку обновить таблицу, под Верхним меню появляется ProgressLine. Выключить его можно, передав в таблицу состояние через `stopIsProgressLineVisible` или нажав на кнопку обновить таблицу повторно.
 В примере ProgressLine включается и выключается на timeout = 4 секунды.

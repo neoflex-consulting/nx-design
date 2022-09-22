@@ -23,15 +23,11 @@ export const HeaderMenu = <T extends TableRow>({
     progressLineVisible,
   }: Props<T>): React.ReactElement => {
 
-
-
   const RightSideComponent = rightSide ? rightSide?.name : RightSide;
   const rightSideComponentProps = rightSide?.props ?? {};
 
   const LeftSideComponent = leftSide ? leftSide?.name : LeftSide;
   const leftSideComponentProps = leftSide?.props ?? {};
-
-
 
   return (
     <>

@@ -50,6 +50,9 @@ import {presetDatagram, Theme} from "../../Theme/Theme";
 import {HeaderSideProps} from "../headerMenu";
 import {ItemRightSide, RightSide} from "../RightSide/RightSide";
 import {LeftSide} from "../LeftSide/LeftSide";
+import {IconInfo} from "../../../icons/IconInfo/IconInfo";
+import {IconDictionary} from "../../../icons/IconDictionary/IconDictionary";
+import {ContextMenuItemDefault} from "../../ContextMenu/types";
 
 const defaultProps: Props<typeof tableData.rows[number]> = {
   columns: tableData.columns,
@@ -627,20 +630,44 @@ export const WithHeaderMenu = createStory(
       setCopyColumns(copyColumns);
     }
 
+    const items: ContextMenuItemDefault[] = [
+      {
+        label: 'manual',
+        leftIcon: IconDictionary,
+        key: 'manual',
+        subMenu: [
+          {
+            label: 'rus',
+            leftIcon: IconDictionary,
+            key: 'manual-rus',
+            onClick: (() => {})
+          },
+          {
+            label: 'eng',
+            leftIcon: IconDictionary,
+            key: 'manual-eng',
+            onClick: (() => {})
+          }
+        ]
+      },
+      {
+        label: 'applicationInfo',
+        leftIcon: IconInfo,
+        key: 'applicationInfo',
+        onClick: (() => {})
+      },
+    ];
+
     const leftSide: HeaderSideProps =
       {
         name: LeftSide,
         props: {
           nameButtonAddColumn: "Добавить новую строку",
           nameButtonRefresh: "Обновить эту таблицу",
-          onClickButtonAddColumn: (event: any) => {onClickButtonAddColumn(event)},
           onClickButtonRefresh: (event: any) => {onClickButtonRefresh(event)},
+          buttonAddItems: items
         }
       };
-
-    const onClickButtonAddColumn = (event: any) => {
-      console.log("onClickButtonAddColumn: " + event);
-    }
 
     useEffect(() => {
       const timeout = setTimeout(() => {

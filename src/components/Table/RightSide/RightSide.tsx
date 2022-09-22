@@ -54,6 +54,21 @@ export const RightSide: React.FC<RightSideProps> = ({
 
   const ButtonColumnSettings = withTooltip({ content: `${nameButtonColumnSettings || "Отображение столбцов"}`})(Button);
 
+  React.useEffect(() => {
+
+    const newValue: ItemRightSide[] =
+      columns.map((column: any) => {
+        const item: ItemRightSide = {
+          title: column.title,
+          accessor: column.accessor,
+          hidden: column.hidden
+        }
+        return item;
+      }).filter((f:any) => !f.hidden);
+
+    setCheckboxGroupValue(newValue);
+  }, [columns]);
+
   return (
     <div>
       <ButtonColumnSettings
@@ -68,7 +83,6 @@ export const RightSide: React.FC<RightSideProps> = ({
       />
       {isOpenColumns && <Popover
         direction="downLeft"
-        spareDirection="downLeft"
         onClickOutside={(event) => setIsOpenColumns(!isOpenColumns)}
         isInteractive={true}
         anchorRef={refColumns}
