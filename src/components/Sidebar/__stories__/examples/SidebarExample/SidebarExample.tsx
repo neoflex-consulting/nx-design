@@ -294,53 +294,108 @@ export const SidebarExampleBottom = () => {
 
 export const SidebarExampleNoOverlay = () => {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
+  const [isSidebarOpen_, setIsSidebarOpen_] = React.useState(false);
+
   return (
-    <div className={cnDocsDecorator('Section')}>
-      <Button
-        size="m"
-        view="primary"
-        label="Без подложки"
-        width="default"
-        onClick={() => setIsSidebarOpen(true)}
-      />
-      <Sidebar
-        className={cnSidebarExample('Sidebar')}
-        isOpen={isSidebarOpen}
-        onOverlayClick={() => setIsSidebarOpen(false)}
-        position="right"
-        hasOverlay={false}
-      >
-        <Sidebar.Content className={cnSidebarExample('Content')}>
-          <Typography
-            as="p"
-            size="l"
+    <div>
+      <div className={cnDocsDecorator('Section')}>
+        <Button
+          size="m"
+          view="primary"
+          label="Без подложки"
+          width="default"
+          onClick={() => setIsSidebarOpen(true)}
+        />
+        <Sidebar
+          className={cnSidebarExample('Sidebar')}
+          isOpen={isSidebarOpen}
+          onOverlayClick={() => setIsSidebarOpen(false)}
+          position="right"
+          hasOverlay={false}
+        >
+          <Sidebar.Content className={cnSidebarExample('Content')}>
+            <Typography
+              as="p"
+              size="l"
+              view="primary"
+              weight="semibold"
+              className={cnSidebarExample('Title')}
+            >
+              Заголовок
+            </Typography>
+            <Typography as="p" size="m" view="secondary" className={cnSidebarExample('Body')}>
+              Ой! У меня чего-то не хватает. Нажмите на кнопочку, пожалуйста :)
+            </Typography>
+          </Sidebar.Content>
+          <Sidebar.Actions className={cnSidebarExample('Actions')}>
+            <Button
+              size="m"
+              view="clear"
+              label="Ладно"
+              width="default"
+              onClick={() => setIsSidebarOpen(false)}
+            />
+            <Button
+              size="m"
+              view="ghost"
+              label="Закрыть"
+              width="default"
+              onClick={() => setIsSidebarOpen(false)}
+            />
+          </Sidebar.Actions>
+        </Sidebar>
+
+        <div className={cnDocsDecorator('Section')}>
+          <Button
+            size="m"
             view="primary"
-            weight="semibold"
-            className={cnSidebarExample('Title')}
+            label="Без подложки с активацией пространства"
+            width="default"
+            onClick={() => setIsSidebarOpen_(true)}
+          />
+          <Sidebar
+            className={cnSidebarExample('Sidebar')}
+            isOpen={isSidebarOpen_}
+            onOverlayClick={() => setIsSidebarOpen_(false)}
+            position="right"
+            hasOverlay={false}
+            includeSpace={true}
           >
-            Заголовок
-          </Typography>
-          <Typography as="p" size="m" view="secondary" className={cnSidebarExample('Body')}>
-            Ой! У меня чего-то не хватает. Нажмите на кнопочку, пожалуйста :)
-          </Typography>
-        </Sidebar.Content>
-        <Sidebar.Actions className={cnSidebarExample('Actions')}>
-          <Button
-            size="m"
-            view="clear"
-            label="Ладно"
-            width="default"
-            onClick={() => setIsSidebarOpen(false)}
-          />
-          <Button
-            size="m"
-            view="ghost"
-            label="Закрыть"
-            width="default"
-            onClick={() => setIsSidebarOpen(false)}
-          />
-        </Sidebar.Actions>
-      </Sidebar>
+            <Sidebar.Content className={cnSidebarExample('Content')}>
+              <Typography
+                as="p"
+                size="l"
+                view="primary"
+                weight="semibold"
+                className={cnSidebarExample('Title')}
+              >
+                Заголовок
+              </Typography>
+              <Typography as="p" size="m" view="secondary" className={cnSidebarExample('Body')}>
+                Ой! У меня чего-то не хватает. Нажмите на кнопочку, пожалуйста :)
+              </Typography>
+            </Sidebar.Content>
+            <Sidebar.Actions className={cnSidebarExample('Actions')}>
+              <Button
+                size="m"
+                view="clear"
+                label="Ладно"
+                width="default"
+                onClick={() => setIsSidebarOpen_(false)}
+              />
+              <Button
+                size="m"
+                view="ghost"
+                label="Закрыть"
+                width="default"
+                onClick={() => setIsSidebarOpen_(false)}
+              />
+            </Sidebar.Actions>
+          </Sidebar>
+        </div>
+      </div>
+
     </div>
+
   );
 };
