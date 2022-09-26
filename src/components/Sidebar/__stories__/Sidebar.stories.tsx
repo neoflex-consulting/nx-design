@@ -24,7 +24,7 @@ const defaultKnobs = () => ({
 export function Playground() {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
 
-  const { hasOverlay, width, height, position } = defaultKnobs();
+  const { hasOverlay, includeSpace, width, height, position } = defaultKnobs();
 
   return (
     <div className={cnSidebarStories()}>
@@ -40,12 +40,12 @@ export function Playground() {
         isOpen={isSidebarOpen}
         onClose={() => console.log('Коллбэк на закрытие')}
         onOpen={() => console.log('Коллбэк на открытие')}
-        hasOverlay={false}
+        hasOverlay={hasOverlay}
         onOverlayClick={() => setIsSidebarOpen(false)}
         width={width}
         height={height}
         position={position}
-        includeSpace={true}
+        includeSpace={includeSpace}
       >
         <Sidebar.Content className={cnSidebarStories('Content')}>
           <Typography
