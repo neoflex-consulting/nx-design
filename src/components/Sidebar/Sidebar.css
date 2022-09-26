@@ -4,27 +4,58 @@
   --height-min-vertical: 200px;
   --height-max-vertical: 380px;
   position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
   display: flex;
-  overflow: hidden;
 
   &_position {
     &_top {
       flex-direction: column;
+      left: 0;
+      right: 0;
+      top: 0;
+
+      &:not(.Sidebar_includeSpace) {
+        bottom: 0;
+        overflow: hidden;
+      }
     }
 
     &_bottom {
       flex-direction: column;
       justify-content: flex-end;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      &:not(.Sidebar_includeSpace) {
+        top: 0;
+        overflow: hidden;
+      }
     }
 
     &_right {
-      justify-content: flex-end;
+       justify-content: flex-end;
+       top: 0;
+       right: 0;
+       bottom: 0;
+
+      &:not(.Sidebar_includeSpace) {
+        left: 0;
+        overflow: hidden;
+      }
+    }
+
+    &_left {
+      top: 0;
+      left: 0;
+      bottom: 0;
+
+      &:not(.Sidebar_includeSpace) {
+        right: 0;
+        overflow: hidden;
+      }
     }
   }
+
 
   &-Overlay {
     position: fixed;

@@ -15,6 +15,7 @@ const cnSidebarStories = cn('SidebarStories');
 
 const defaultKnobs = () => ({
   hasOverlay: boolean('hasOverlay', true),
+  includeSpace: boolean('includeSpace', false),
   width: select('width', ['auto'], 'auto'),
   height: select('height', ['auto'], 'auto'),
   position: select('position', ['right', 'bottom', 'left', 'top'], 'right'),
@@ -39,11 +40,12 @@ export function Playground() {
         isOpen={isSidebarOpen}
         onClose={() => console.log('Коллбэк на закрытие')}
         onOpen={() => console.log('Коллбэк на открытие')}
-        hasOverlay={hasOverlay}
+        hasOverlay={false}
         onOverlayClick={() => setIsSidebarOpen(false)}
         width={width}
         height={height}
         position={position}
+        includeSpace={true}
       >
         <Sidebar.Content className={cnSidebarStories('Content')}>
           <Typography

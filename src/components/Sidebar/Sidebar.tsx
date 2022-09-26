@@ -28,6 +28,7 @@ type SidebarProps = {
   onClose?: () => void;
   onOpen?: () => void;
   hasOverlay?: boolean;
+  includeSpace?: boolean;
   onOverlayClick?: (event: MouseEvent) => void;
   onClickOutside?: (event: MouseEvent) => void;
   position?: SidebarPropPosition;
@@ -88,6 +89,7 @@ export const Sidebar: SidebarComponent = (props) => {
     onClose,
     onOpen,
     hasOverlay = true,
+    includeSpace,
     onOverlayClick,
     onClickOutside,
     position = sidebarPropPositionDefault,
@@ -114,7 +116,7 @@ export const Sidebar: SidebarComponent = (props) => {
     <CSSTransition
       in={isOpen}
       unmountOnExit
-      className={cnSidebar({ position })}
+      className={cnSidebar({ position, includeSpace })}
       classNames={cnForCssTransition(cnSidebar)}
       timeout={200}
     >

@@ -686,6 +686,7 @@ export const WithHeaderMenu = createStory(
       <div>
         <Theme preset={presetDatagram}>
           <Table
+            {...props}
             columns={copyColumns}
             withHeaderMenu={true}
             nameResetAllFilters={"Сброить все фильтры"}
@@ -694,7 +695,8 @@ export const WithHeaderMenu = createStory(
             rightSide={rightSide}
             leftSide={leftSide}
             stopIsProgressLineVisible={lineVisible}
-            {...props}
+            stickyColumns={1}
+
           />
         </Theme>
       </div>

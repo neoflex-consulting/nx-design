@@ -91,10 +91,15 @@
 
   &_isSeparateRows {
     margin-bottom: var(--space-2xs);
+    box-shadow: var(--shadow-table);
 
-    &:not(&_isHeader) {
-      box-shadow: var(--shadow-table);
-    }
+      &_isHeader {
+        box-shadow: none;
+      }
+
+      &.TableCell_stickyOnLeft {
+        box-shadow: var(--shadow-sticky);
+      }
   }
 
   &_isSeparateFirstColumn {
