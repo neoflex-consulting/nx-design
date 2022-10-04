@@ -17,7 +17,7 @@ import {
   ContextMenuPropSize,
 } from '../types';
 
-export const cnContextMenuLevel = cn('ContextMenuLevelCanary');
+export const cnContextMenuLevel = cn('ContextMenuLevel');
 
 const renderHeader = (
   groupLabel: string | number | undefined,

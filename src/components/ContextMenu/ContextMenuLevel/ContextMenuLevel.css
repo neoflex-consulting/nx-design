@@ -1,6 +1,6 @@
-.ContextMenuLevelCanary {
+.ContextMenuLevel {
   box-sizing: border-box;
-  width: 240px;
+  width: 172px;
   padding: var(--space-xs) 0;
   background: var(--color-bg-default);
   border: var(--control-border-width) solid var(--color-control-bg-border-default);

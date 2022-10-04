@@ -1,6 +1,6 @@
 .Sidebar {
   --width-min-horizontal: 300px;
-  --width-max-horizontal: 480px;
+  --width-max-horizontal: 720px;
   --height-min-vertical: 200px;
   --height-max-vertical: 380px;
   position: fixed;
