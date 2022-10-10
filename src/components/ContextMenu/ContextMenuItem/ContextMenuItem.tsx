@@ -2,20 +2,21 @@ import './ContextMenuItem.css';
 
 import React from 'react';
 
-import { IconComponent } from '../../../icons/_Icon/Icon';
-import { IconArrowRight } from '../../../icons/IconArrowRight/IconArrowRight';
-import { cn } from '../../../utils/bem';
-import { getSizeByMap } from '../../../utils/getSizeByMap';
-import { Typography } from '../../Typography/Typography';
-import { sizeMapIcon } from '../helper';
+import {IconComponent} from '../../../icons/_Icon/Icon';
+import {cn} from '../../../utils/bem';
+import {getSizeByMap} from '../../../utils/getSizeByMap';
+import {Typography} from '../../Typography/Typography';
+import {sizeMapIcon} from '../helper';
 import {
   contextMenuDefaultSize,
+  contextMenuDefaultTheme,
   ContextMenuItemComponent,
   ContextMenuItemProps,
   ContextMenuPropSize,
 } from '../types';
+import {IconChevronRight} from "../../../icons/IconChevronRight/IconChevronRight";
 
-const cnContextMenuItem = cn('ContextMenuItemCanary');
+const cnContextMenuItem = cn('ContextMenuItem');
 
 function renderSide(
   side: React.ReactNode,
@@ -38,13 +39,13 @@ function renderSide(
   }
 
   if (withArrow) {
-    sides.push(<IconArrowRight size="xs" view="secondary" />);
+    sides.push(<IconChevronRight size="xs" view="secondary" />);
   }
 
   const sidesRender: React.ReactNode[] = sides.map((item, index) => (
     <div
       className={cnContextMenuItem('Slot', {
-        position,
+        position
       })}
       key={cnContextMenuItem('Slot', {
         position,
@@ -72,13 +73,14 @@ function ContextMenuItemRender(props: ContextMenuItemProps, ref: React.Ref<HTMLD
     active,
     leftIcon,
     rightIcon,
+    theme = contextMenuDefaultTheme,
     ...otherProps
   } = props;
   const view = (disabled ? undefined : status) || 'primary';
 
   return (
     <Typography
-      className={cnContextMenuItem({ size, active, disabled }, [className])}
+      className={cnContextMenuItem({ size, active, disabled, theme }, [className])}
       as={as}
       size={size}
       view={view}

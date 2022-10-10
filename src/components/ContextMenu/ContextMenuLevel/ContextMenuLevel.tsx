@@ -11,7 +11,7 @@ import { Typography } from '../../Typography/Typography';
 import { ContextMenuItem } from '../ContextMenuItem/ContextMenuItem';
 import { getItemIndex, sizeMapHeader } from '../helper';
 import {
-  contextMenuDefaultSize,
+  contextMenuDefaultSize, contextMenuDefaultTheme,
   ContextMenuLevelComponent,
   ContextMenuLevelProps,
   ContextMenuPropSize,
@@ -93,6 +93,7 @@ function ContextMenuLevelRender<ITEM, GROUP>(
     // Геттеры для GROUP
     getGroupLabel,
     getGroupId,
+    theme = contextMenuDefaultTheme,
     ...otherProps
   } = props;
 
@@ -192,6 +193,7 @@ function ContextMenuLevelRender<ITEM, GROUP>(
                   active={activeItem === itemIndex}
                   size={size}
                   withSubMenu={!!getItemSubMenu(item)}
+                  theme={theme}
                 />
               );
             })}

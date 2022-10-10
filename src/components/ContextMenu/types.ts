@@ -12,6 +12,10 @@ export const contextMenuStatus = ['error', 'success', 'warning'] as const;
 export type ContextMenuStatus = typeof contextMenuStatus[number];
 export const contextMenuDefaultStatus: ContextMenuStatus = contextMenuStatus[0];
 
+export const contextMenuTheme = ['primary', 'secondary'] as const;
+export type ContextMenuPropTheme = typeof contextMenuTheme[number];
+export const contextMenuDefaultTheme: ContextMenuPropTheme = contextMenuTheme[0];
+
 export const contextMenuPropSubMenuDirections = [
   'rightStartUp',
   'rightStartDown',
@@ -137,6 +141,7 @@ export type ContextMenuProps<
     onSetDirection?: (direction: Direction) => void;
     onClickOutside?: ClickOutsideHandler;
     isOpen?: boolean;
+    theme?: ContextMenuPropTheme;
   } & MappersItem<ITEM> &
     MappersGroup<GROUP> &
     PositioningProps,
@@ -179,6 +184,7 @@ export type ContextMenuItemProps<
     size?: ContextMenuPropSize;
     active: boolean;
     withSubMenu: boolean;
+    theme?: ContextMenuPropTheme;
   },
   AS
 > &

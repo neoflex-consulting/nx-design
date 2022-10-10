@@ -7,7 +7,7 @@ import { PropsWithHTMLAttributesAndRef } from '../../utils/types/PropsWithHTMLAt
 
 export type IconPropSize = 'xs' | 's' | 'm' | 'l';
 export type IconPropView =
-  | 'alert'
+  | 'error'
   | 'brand'
   | 'ghost'
   | 'link'
@@ -15,6 +15,7 @@ export type IconPropView =
   | 'secondary'
   | 'success'
   | 'warning'
+  | 'white'
   | 'disabled';
 
 export type Props = {

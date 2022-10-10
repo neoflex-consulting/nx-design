@@ -8,7 +8,6 @@ import { IconPlus } from '../../../icons/IconPlus/IconPlus';
 import { IconWarningC } from '../../../icons/IconWarningC/IconWarningC';
 import { IconSettingsDev } from '../../../icons/IconSettingsDev/IconSettingsDev';
 import { IconBell } from '../../../icons/IconBell/IconBell';
-import { IconCheckDouble } from '../../../icons/IconCheckDouble/IconCheckDouble';
 import { cn } from '../../../utils/bem';
 import { createMetadata } from '../../../utils/storybook';
 import { Button } from '../../Button/Button';
@@ -19,6 +18,7 @@ import {
 import { Item, Notification, NotificationItemStatus } from '../Notification';
 
 import mdx from './Notification.docs.mdx';
+import {IconCheckC} from "../../../icons/IconCheckC/IconCheckC";
 
 type State = Item[];
 type Action = { type: 'add'; item: Item } | { type: 'remove'; key: number | string };
@@ -34,7 +34,7 @@ const defaultKnobs = () => ({
 
 const getItemIconByStatus = (status: NotificationItemStatus): React.FC<IconProps> | undefined => {
   const mapIconByStatus: Record<NotificationItemStatus, React.FC<IconProps>> = {
-    success: IconCheckDouble,
+    success: IconCheckC,
     warning: IconWarningC,
     error: IconWarningC,
     system: IconSettingsDev,

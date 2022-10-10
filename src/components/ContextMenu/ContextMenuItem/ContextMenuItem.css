@@ -1,7 +1,9 @@
-.ContextMenuItemCanary {
+.ContextMenuItem {
   --vertical-space: 0;
   display: flex;
+  margin: 4px;
   align-items: center;
+  border: 1px solid var(--color-typo-white);
   padding: var(--vertical-space) var(--space-s);
   text-decoration: none;
   word-break: break-word;
@@ -9,10 +11,33 @@
   transition: background-color 0.2s;
   gap: var(--space-xs);
 
-  &:hover,
-  &_active {
-    background: var(--color-control-bg-clear-hover);
+  &_theme {
+    &_primary {
+      &:hover {
+      background-color: var(--color-control-bg-ghost);
+      border: 1px solid var(--color-control-bg-ghost);
+      }
+
+      &:focus {
+      background-color: var(--color-control-bg-ghost-focus);
+      border: 1px solid var(--color-control-bg-ghost-focus);
+      }
+    }
+
+    &_secondary {
+      &:hover {
+        background-color: var(--color-bg-stripe);
+        border: 1px solid var(--color-control-bg-focus);
+      }
+
+      &:focus {
+        background-color: var(--color-control-bg-focus);
+        border: 1px solid var(--color-control-bg-focus);
+      }
+    }
   }
+
+
 
   &_size {
     &_xs {

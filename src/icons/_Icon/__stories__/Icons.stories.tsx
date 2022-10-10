@@ -406,7 +406,7 @@ const defaultKnobs = () => ({
   size: select('size', ['xs', 's', 'm', 'l'], 'm'),
   view: select(
     'view',
-    ['alert', 'brand', 'ghost', 'link', 'primary', 'secondary', 'success', 'warning'],
+    ['error', 'brand', 'ghost', 'link', 'primary', 'secondary', 'success', 'warning', 'white'],
     'primary',
   ),
 });

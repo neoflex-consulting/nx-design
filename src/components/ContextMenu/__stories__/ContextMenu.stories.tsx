@@ -10,7 +10,7 @@ import { createMetadata } from '../../../utils/storybook';
 import { Badge } from '../../Badge/Badge';
 import { Button } from '../../Button/Button';
 import { Switch } from '../../Switch/Switch';
-import { ContextMenu } from '../ContextMenu';
+import {ContextMenu, contextMenuDefaultTheme, contextMenuTheme} from '../ContextMenu';
 import {
   contextMenuDefaultSize,
   ContextMenuPropGetItemDisabled,
@@ -22,6 +22,7 @@ import mdx from './ContextMenu.docs.mdx';
 
 const defaultKnobs = () => ({
   size: select('size', contextMenuSizes, contextMenuDefaultSize),
+  theme: select('theme', contextMenuTheme, contextMenuDefaultTheme),
   disabled: boolean('disabledLastItem', false),
   withGroup: boolean('withGroup', false),
   withGroupLabel: boolean('withGroupLabel', false),
@@ -78,6 +79,7 @@ export function Playground() {
     withLeftSide,
     withRightSide,
     withRightIcon,
+    theme,
   } = defaultKnobs();
 
   const [items, setItems] = useState<Item[]>(exampleItems);
@@ -197,7 +199,8 @@ export function Playground() {
         sortGroup={sortGroup}
         onClickOutside={setIsOpen.off}
         offset="xs"
-        style={{ zIndex: 100 }}
+        style={{ zIndex: 100, width: '200px' }}
+        theme={theme}
       />
     </div>
   );

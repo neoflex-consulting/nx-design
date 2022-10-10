@@ -108,7 +108,7 @@ export const NotificationItem: React.FC<NotificationItemProps> = (props) => {
       {onClose && (
         <Button
           className={cnNotification('CloseButton')}
-          view="ghost"
+          view="clear"
           iconLeft={IconClose}
           form="round"
           size="l"

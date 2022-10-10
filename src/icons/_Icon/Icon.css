@@ -26,7 +26,7 @@
 }
 
 &_view {
-&_alert {
+&_error {
    color: var(--color-typo-error);
  }
 
@@ -60,6 +60,10 @@
 
 &_disabled {
    color: var(--color-control-typo-disable);
+ }
+
+&_white {
+   color: var(--color-typo-white);
  }
 }
 
