@@ -5,9 +5,19 @@
     margin-bottom: var(--space-s);
     padding: var(--space-m) var(--space-2xl) var(--space-m) var(--space-m);
     background-color: var(--color-typo-white);
-    border: 1px solid;
     border-radius: var(--space-2xs);
     box-shadow: var(--shadow-group);
+
+  &_view {
+    &_filled {
+      border: unset;
+      background-color: var(--icon-color);
+    }
+
+    &_outlined {
+       border: 1px solid;
+    }
+  }
 
 
     &_status {

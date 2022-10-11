@@ -20,11 +20,16 @@ export const notificationItemStatus = ['basic', 'info', 'system', 'success', 'wa
 export type NotificationItemStatus = typeof notificationItemStatus[number];
 export const notificationItemStatusDefault: NotificationItemStatus = notificationItemStatus[0];
 
+export const notificationItemView = ['outlined', 'filled'] as const;
+export type NotificationItemView = typeof notificationItemView[number];
+export const notificationItemViewDefault: NotificationItemView = notificationItemView[0];
+
 export type Item = {
   key: string | number;
   message?: string | number;
   title?: string | number;
-  status?: NotificationItemStatus;
+  status?: NotificationItemStatus
+  view?: NotificationItemView;
   autoClose?: boolean | number;
   icon?: React.ReactNode | React.FC<IconProps>;
   actions?: NotificationPropItemAction[];

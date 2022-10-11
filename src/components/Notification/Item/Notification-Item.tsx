@@ -8,7 +8,13 @@ import {Button} from '../../Button/Button';
 import { Typography } from '../../Typography/Typography';
 import { cnTheme } from '../../Theme/Theme';
 import { NotificationActionButton } from '../ActionButton/Notification-ActionButton';
-import {cnNotification, cnNotificationItem, Item, notificationItemStatusDefault} from '../Notification';
+import {
+  cnNotification,
+  cnNotificationItem,
+  Item,
+  notificationItemStatusDefault,
+  notificationItemViewDefault
+} from '../Notification';
 import { NotificationTimer, NotificationTimerPropOnMount } from '../Timer/Notification-Timer';
 
 export type NotificationItemProps = {
@@ -37,6 +43,7 @@ export const NotificationItem: React.FC<NotificationItemProps> = (props) => {
     title,
     actions,
     status = notificationItemStatusDefault,
+    view = notificationItemViewDefault,
     onAutoClose: onAutoCloseProp,
   } = item;
   const [timerFunctions, setTimerFunctions] = useState<{
@@ -79,7 +86,7 @@ export const NotificationItem: React.FC<NotificationItemProps> = (props) => {
 
   return (
     <div
-      className={cnNotificationItem({ status }, [cnTheme({ color: 'gpnDefault' })])}
+      className={cnNotificationItem({ status, view }, [cnTheme({ color: 'gpnDefault' })])}
       onMouseEnter={autoCloseTime ? handleMouseEnter : undefined}
       onMouseLeave={autoCloseTime ? handleMouseLeave : undefined}
     >

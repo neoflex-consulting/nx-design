@@ -1,30 +1,35 @@
 import './Notification.stories.css';
 
 import * as React from 'react';
-import {boolean, text} from '@storybook/addon-knobs';
+import {boolean, select, text} from '@storybook/addon-knobs';
 
-import { IconProps } from '../../../icons/_Icon/Icon';
-import { IconPlus } from '../../../icons/IconPlus/IconPlus';
-import { IconWarningC } from '../../../icons/IconWarningC/IconWarningC';
-import { IconSettingsDev } from '../../../icons/IconSettingsDev/IconSettingsDev';
-import { IconBell } from '../../../icons/IconBell/IconBell';
-import { cn } from '../../../utils/bem';
-import { createMetadata } from '../../../utils/storybook';
-import { Button } from '../../Button/Button';
+import {IconProps} from '../../../icons/_Icon/Icon';
+import {IconPlus} from '../../../icons/IconPlus/IconPlus';
+import {IconWarningC} from '../../../icons/IconWarningC/IconWarningC';
+import {IconSettingsDev} from '../../../icons/IconSettingsDev/IconSettingsDev';
+import {IconBell} from '../../../icons/IconBell/IconBell';
+import {cn} from '../../../utils/bem';
+import {createMetadata} from '../../../utils/storybook';
+import {Button} from '../../Button/Button';
+import {eventInterceptorMap, EventInterceptorProvider,} from '../../EventInterceptor/EventInterceptor';
 import {
-  eventInterceptorMap,
-  EventInterceptorProvider,
-} from '../../EventInterceptor/EventInterceptor';
-import { Item, Notification, NotificationItemStatus } from '../Notification';
+  Item,
+  Notification,
+  NotificationItemStatus,
+  notificationItemView,
+  notificationItemViewDefault
+} from '../Notification';
 
 import mdx from './Notification.docs.mdx';
 import {IconCheckC} from "../../../icons/IconCheckC/IconCheckC";
+import {presetDatagram, Theme} from "../../Theme/Theme";
 
 type State = Item[];
 type Action = { type: 'add'; item: Item } | { type: 'remove'; key: number | string };
 
 const defaultKnobs = () => ({
   title: text('title', 'Some title'),
+  view: select('view', notificationItemView, notificationItemViewDefault),
   message: text('message', 'Hey there! I am Alert. Be ready to be informed :)'),
   withIcon: boolean('withIcon', false),
   withActionButtons: boolean('withActionButtons', false),
@@ -56,7 +61,7 @@ function reducer(state: State, action: Action) {
 }
 
 export function Playground() {
-  const { withIcon, withActionButtons, withAutoClose, withCloseButton, message, title } = defaultKnobs();
+  const { withIcon, withActionButtons, withAutoClose, withCloseButton, message, title, view } = defaultKnobs();
   const [items, dispatchItems] = React.useReducer(reducer, []);
   const generateHandleAdd = (status: NotificationItemStatus) => () => {
     const key = items.length + 1;
@@ -65,6 +70,7 @@ export function Playground() {
       message: message,
       title: title,
       status,
+      view,
       ...(withAutoClose && { autoClose: 5 }),
       ...(withIcon && { icon: getItemIconByStatus(status) }),
       ...(withActionButtons && {
