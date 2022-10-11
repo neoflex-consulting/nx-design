@@ -4,7 +4,7 @@
   margin: 4px;
   align-items: center;
   border: 1px solid var(--color-typo-white);
-  padding: var(--vertical-space) var(--space-s);
+  padding: var(--vertical-space);
   text-decoration: none;
   word-break: break-word;
   cursor: pointer;
