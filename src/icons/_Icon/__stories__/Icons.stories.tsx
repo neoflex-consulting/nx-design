@@ -414,6 +414,7 @@ import {IconSettingEdit} from "../../IconSettingEdit/IconSettingEdit";
 import {IconString} from "../../IconString/IconString";
 import {IconUploadRun} from "../../IconUploadRun/IconUploadRun";
 import {IconVariables} from "../../IconVariables/IconVariables";
+import {IconGit} from "../../IconGit/IconGit";
 
 const defaultKnobs = () => ({
   size: select('size', ['xs', 's', 'm', 'l'], 'm'),
@@ -659,6 +660,7 @@ const neoicons = {
   IconFunctionField,
   IconGbp,
   IconGift,
+  IconGit,
   IconGlobe,
   IconGraduationCap,
   IconGrid,

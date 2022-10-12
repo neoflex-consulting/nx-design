@@ -1,27 +1,19 @@
 import './BreadcrumbsItem.css';
 
-import React, { forwardRef, useRef } from 'react';
+import React, {forwardRef, useRef} from 'react';
 
-import { useFlag } from '../../../hooks/useFlag/useFlag';
-import { IconArrowRight } from '../../../icons/IconArrowRight/IconArrowRight';
-import { IconSelect } from '../../../icons/IconSelect/IconSelect';
-import { cnMixSpace } from '../../../mixs/MixSpace/MixSpace';
-import { cn } from '../../../utils/bem';
-import { getSizeByMap } from '../../../utils/getSizeByMap';
-import { Button } from '../../Button/Button';
-import { ContextMenu } from '../../ContextMenu/ContextMenu';
-import { Typography } from '../../Typography/Typography';
-import {
-  contextMenuSizeMap,
-  getItemAs,
-  getItemAttributes,
-} from '../BreadcrumbsMore/BreadcrumbsMore';
-import { iconSizeMap } from '../helpers';
-import {
-  BreadcrumbsItemComponent,
-  BreadcrumbsItemProps,
-  BreadcrumbsPropOnItemClick,
-} from '../types';
+import {useFlag} from '../../../hooks/useFlag/useFlag';
+import {IconSelect} from '../../../icons/IconSelect/IconSelect';
+import {cnMixSpace} from '../../../mixs/MixSpace/MixSpace';
+import {cn} from '../../../utils/bem';
+import {getSizeByMap} from '../../../utils/getSizeByMap';
+import {Button} from '../../Button/Button';
+import {ContextMenu} from '../../ContextMenu/ContextMenu';
+import {Typography} from '../../Typography/Typography';
+import {contextMenuSizeMap, getItemAs, getItemAttributes,} from '../BreadcrumbsMore/BreadcrumbsMore';
+import {iconSizeMap} from '../helpers';
+import {BreadcrumbsItemComponent, BreadcrumbsItemProps, BreadcrumbsPropOnItemClick,} from '../types';
+import {IconChevronRight} from "../../../icons/IconChevronRight/IconChevronRight";
 
 export const cnBreadcrumbsItem = cn('BreadcrumbsItem');
 
@@ -77,7 +69,7 @@ function BreadcrumbsItemRender<ITEM>(
   return (
     <li className={cnBreadcrumbsItem(null, [className])} ref={ref} {...otherProps}>
       {delimiter && (
-        <IconArrowRight
+        <IconChevronRight
           className={cnBreadcrumbsItem('Delimiter', [cnMixSpace({ mH: size })])}
           view="ghost"
           size={iconSize}
