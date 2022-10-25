@@ -11,12 +11,18 @@ import {cn} from "../../../utils/bem";
 import {ContextMenu} from "../../ContextMenu/ContextMenu";
 import {ContextMenuItemDefault} from "../../ContextMenu/types";
 
+export const buttonAddPropType = ['button', 'menu'] as const;
+export type ButtonAddPropType = typeof buttonAddPropType[number];
+export const buttonAddPropTypeDefault: ButtonAddPropType = buttonAddPropType[0];
+
 type LeftSideProps = HeaderSide & {
   nameButtonAddColumn?: string;
   nameButtonRefresh?: string;
   onClickButtonRefresh?: (event: any) => void;
   progressLineVisible?: (value: boolean) => void;
+  onClickButtonAdd?: (event: any) => void;
   buttonAddItems?: ContextMenuItemDefault[];
+  buttonAddType?: ButtonAddPropType;
 };
 
 const cnLeftSide = cn('LeftSide');
@@ -26,7 +32,9 @@ export const LeftSide: React.FC<LeftSideProps> = ({
                                                            nameButtonRefresh,
                                                            onClickButtonRefresh,
                                                            progressLineVisible,
-                                                           buttonAddItems
+                                                           buttonAddItems,
+                                                           buttonAddType,
+                                                           onClickButtonAdd
                                                           }) => {
 
   const ButtonAddColumn = withTooltip({ content: `${nameButtonAddColumn || "Добавить строку"}`})(Button);
@@ -45,7 +53,11 @@ export const LeftSide: React.FC<LeftSideProps> = ({
           iconLeft={IconPlus}
           iconSize={"xs"}
           size={"s"}
-          onClick={() => setIsOpenButtonAdd(!isOpenButtonAdd)}
+          onClick={(event) => {
+            buttonAddType === buttonAddPropTypeDefault || buttonAddType === undefined ?
+            onClickButtonAdd && onClickButtonAdd(event) :
+            setIsOpenButtonAdd(!isOpenButtonAdd)
+          }}
           ref={refButtonAdd}
         />
         <ContextMenu

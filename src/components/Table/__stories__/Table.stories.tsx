@@ -49,7 +49,7 @@ import mdx from './Table.docs.mdx';
 import {presetDatagram, Theme} from "../../Theme/Theme";
 import {HeaderSideProps} from "../headerMenu";
 import {ItemRightSide, RightSide} from "../RightSide/RightSide";
-import {LeftSide} from "../LeftSide/LeftSide";
+import {buttonAddPropType, LeftSide} from "../LeftSide/LeftSide";
 import {IconInfo} from "../../../icons/IconInfo/IconInfo";
 import {IconDictionary} from "../../../icons/IconDictionary/IconDictionary";
 import {ContextMenuItemDefault} from "../../ContextMenu/types";
@@ -665,7 +665,9 @@ export const WithHeaderMenu = createStory(
           nameButtonAddColumn: "Добавить новую строку",
           nameButtonRefresh: "Обновить эту таблицу",
           onClickButtonRefresh: (event: any) => {onClickButtonRefresh(event)},
-          buttonAddItems: items
+          buttonAddItems: items,
+          buttonAddType: buttonAddPropType[1],
+          onClickButtonAdd: (event: any) => {onClickButtonAdd(event)}
         }
       };
 
@@ -677,6 +679,10 @@ export const WithHeaderMenu = createStory(
 
       return () => clearTimeout(timeout);
     }, [lineVisible]);
+
+    const onClickButtonAdd = (event: any) => {
+      console.log("onClickButtonAdd: " + event);
+    }
 
     const onClickButtonRefresh = (event: any) => {
       setLineVisible(!lineVisible)

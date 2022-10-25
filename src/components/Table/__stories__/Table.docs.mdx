@@ -551,12 +551,16 @@ const App = () => {
 - `nameButtonColumnSettings` — Всплывающая подсказка на кнопке скрыть/показать колонки в `RightSide`
 - `overrideHiddenColumns` — функция принимает колонки, которые сейчас должны быть отображены в таблице в `RightSide`
 
+
 - `LeftSide` — Содержит кнопки добавить строку и обновить таблицу.
 - `props` — Свойства, которые передаются в пресет
 - `nameButtonAddColumn` — Всплывающая подсказка на кнопке добавить строку в `LeftSide`
 - `nameButtonRefresh` — Всплывающая подсказка на кнопке обновить таблицу в `LeftSide`
-- `buttonAddItems: ContextMenuItemDefault[]` - элементы выпадающего меню при клике на кнопку добавить строку в `LeftSide`
 - `onClickButtonRefresh` — Обработчик при клике на кнопку обновить таблицу в `LeftSide`
+- `buttonAddType` — Тип кнопки добавления. Поле типа ButtonAddPropType. Возможные значения: 'button', 'menu'
+
+- `buttonAddItems: ContextMenuItemDefault[]` - элементы выпадающего меню при клике на кнопку добавить строку в `LeftSide` для `buttonAddType == menu`
+- `onClickButtonAdd` — Обработчик при клике на кнопку добавить строку в `LeftSide` для `buttonAddType == button`
 
 ```tsx
 export type ContextMenuItemDefault = {
@@ -617,14 +621,12 @@ export type ContextMenuItemDefault = {
         props: {
           nameButtonAddColumn: "Добавить новую строку",
           nameButtonRefresh: "Обновить эту таблицу",
-          onClickButtonAddColumn: (event: any) => {onClickButtonAddColumn(event)},
           onClickButtonRefresh: (event: any) => {onClickButtonRefresh(event)},
+          buttonAddItems: items,
+          buttonAddType: buttonAddPropType[1],
+          onClickButtonAdd: (event: any) => {onClickButtonAdd(event)}
         }
       };
-
-    const onClickButtonAddColumn = (event: any) => {
-      console.log("onClickButtonAddColumn: " + event);
-    }
 
     useEffect(() => {
       const timeout = setTimeout(() => {
@@ -634,6 +636,11 @@ export type ContextMenuItemDefault = {
 
       return () => clearTimeout(timeout);
     }, [lineVisible]);
+
+
+    const onClickButtonAdd = (event: any) => {
+      console.log("onClickButtonAdd: " + event);
+    }
 
     const onClickButtonRefresh = (event: any) => {
       setLineVisible(!lineVisible)

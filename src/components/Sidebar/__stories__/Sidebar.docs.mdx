@@ -52,6 +52,44 @@ import {
 
 <SidebarExampleNoOverlay />
 
+## Контейнер
+
+По-умолчанию родительским контейнером является `window.document.body`
+
+Для изменения контейнера необходимо использовать `document`
+
+### Пример:
+
+```tsx
+let container = document.getElementById("layout");
+let sidebar = document.getElementsByClassName("sidebar")[0];
+container !== null && sidebar !== null && container.appendChild(sidebar);
+
+return (
+  <div>
+    <div id={'bar'}> ... </div>
+    <div id={'layout'}>
+      <div> ... </div>
+    </div>
+
+    <Sidebar
+      isOpen={true}
+      position={"bottom"}
+      hasOverlay={false}
+      includeSpace={true}
+      className={'sidebar-bottom'}
+      width={'auto'}
+    >
+      <Sidebar.Content>
+        <BottomPanel/>
+      </Sidebar.Content>
+    </Sidebar>
+
+  </div>
+
+);
+```
+
 ## Свойства
 
 | Свойство                     | Тип или варианты значения          | По умолчанию           |                                                          |
@@ -64,7 +102,6 @@ import {
 | `onClickOutside?`            | `(e: MouseEvent) => void`          | -                      | Действие по нажатию за пределами окна                    |
 | `className?`                 | `string`                           | -                      | Дополнительный CSS-класс для компонента                  |
 | `children?`                  | `React.ReactNode`                  | -                      | Дочерние элементы                                        |
-| `container?`                 | `HTMLDivElement, undefined`        | `window.document.body` | Родительский контейнер                                   |
 
 ## Пример
 
