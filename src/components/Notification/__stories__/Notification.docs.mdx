@@ -4,6 +4,7 @@ import { NotificationExampleIcon } from './examples/NotificationExampleIcon/Noti
 import { NotificationExampleWithButtons } from './examples/NotificationExampleWithButtons/NotificationExampleWithButtons';
 import { NotificationExampleTimer } from './examples/NotificationExampleTimer/NotificationExampleTimer';
 import { NotificationExampleButtons } from './examples/NotificationExampleButtons/NotificationExampleButtons';
+import { NotificationExampleView } from './examples/NotificationExampleView/NotificationExampleView';
 
 # Notification
 
@@ -31,9 +32,159 @@ Notification (в отличие от [alert](?path=/docs/components-alert--playg
 
 ## Статус
 
-От статуса зависит цвет обводки и иконка на уведомлении (задается в свойстве `status`).
+От статуса зависит иконка на уведомлении (задается в свойстве `status`).
 
 <NotificationExampleStatus />
+
+```tsx
+const items: Item[] = [
+  {
+    key: 1,
+    message: 'This is dialog',
+    status: 'info',
+    title: 'Label Header',
+    withCloseButton: true,
+    icon: <IconInfo size={"m"}/>,
+  },
+  {
+    key: 2,
+    message: 'Ошибка — error',
+    status: 'error',
+    title: 'Error',
+    withCloseButton: true,
+    icon: <IconWarning size={"m"}/>,
+  },
+  {
+    key: 3,
+    message: 'Предупреждение — warning',
+    status: 'warning',
+    title: 'Warning',
+    withCloseButton: true,
+    icon: <IconInfo size={"m"}/>,
+  },
+  {
+    key: 4,
+    message: 'Успех — success',
+    status: 'success',
+    title: 'Success',
+    withCloseButton: true,
+    icon: <IconCheck size={"m"}/>,
+  },
+  {
+    key: 5,
+    message: 'Системное — system',
+    status: 'system',
+    title: 'System',
+    withCloseButton: true,
+    icon: <IconInfo size={"m"}/>,
+  },
+];
+
+<Notification items={items} />
+```
+
+## Внешний вид
+
+Внешний вид задачется свойством `view` . Возможные значения: 'outlined', 'filled'
+
+<NotificationExampleView />
+
+```tsx
+const itemsFilled: Item[] = [
+  {
+    key: 1,
+    message: 'Сообщение — info',
+    status: 'info',
+    view: "filled",
+    withCloseButton: true,
+    icon: <IconInfo size={"xs"}/>
+  },
+  {
+    key: 2,
+    message: 'Ошибка — error',
+    status: 'error',
+    view: "filled",
+    withCloseButton: true,
+    icon: <IconWarning size={"xs"}/>
+  },
+  {
+    key: 3,
+    message: 'Предупреждение — warning',
+    status: 'warning',
+    view: "filled",
+    withCloseButton: true,
+    icon: <IconInfo size={"xs"}/>
+  },
+  {
+    key: 4,
+    message: 'Успех — success',
+    status: 'success',
+    view: "filled",
+    withCloseButton: true,
+    icon: <IconCheck size={"xs"}/>
+  },
+  {
+    key: 5,
+    message: 'Системное — system',
+    status: 'system',
+    view: "filled",
+    withCloseButton: true,
+    icon: <IconInfo size={"xs"}/>
+  },
+];
+
+const itemsOutlined: Item[] = [
+  {
+    key: 1,
+    message: 'Сообщение — info',
+    status: 'info',
+    view: "outlined",
+    withCloseButton: true,
+    icon: <IconInfo size={"m"}/>,
+    onlyMessage: true
+  },
+  {
+    key: 2,
+    message: 'Ошибка — error',
+    status: 'error',
+    view: "outlined",
+    withCloseButton: true,
+    icon: <IconWarning size={"m"}/>,
+    onlyMessage: true
+  },
+  {
+    key: 3,
+    message: 'Предупреждение — warning',
+    status: 'warning',
+    view: "outlined",
+    withCloseButton: true,
+    icon: <IconInfo size={"m"}/>,
+    onlyMessage: true
+  },
+  {
+    key: 4,
+    message: 'Успех — success',
+    status: 'success',
+    view: "outlined",
+    withCloseButton: true,
+    icon: <IconCheck size={"m"}/>,
+    onlyMessage: true
+  },
+  {
+    key: 5,
+    message: 'Системное — system',
+    status: 'system',
+    view: "outlined",
+    withCloseButton: true,
+    icon: <IconInfo size={"m"}/>,
+    onlyMessage: true
+  },
+];
+
+<Notification items={itemsOutlined}  />
+<Notification items={itemsFilled}  />
+```
+
 
 ## Иконка
 
@@ -41,12 +192,88 @@ Notification (в отличие от [alert](?path=/docs/components-alert--playg
 
 <NotificationExampleIcon />
 
+```tsx
+const items: Item[] = [
+  {
+    key: 1,
+    title: 'Info',
+    status: "info",
+    message: 'Интернет внезапно кончился',
+    icon: <IconInfo size={"m"}/>
+  },
+  {
+    key: 2,
+    title: 'Error',
+    status: "error",
+    message: 'Интернет внезапно кончился',
+    icon: <IconWarning size={"m"}/>
+  },
+  {
+    key: 3,
+    title: 'Warning',
+    status: "warning",
+    message: 'Интернет внезапно кончился',
+    icon: <IconInfo size={"m"}/>
+  },
+  {
+    key: 4,
+    title: 'Success',
+    status: "success",
+    message: 'Интернет внезапно кончился',
+    icon: <IconCheckC size={"m"}/>
+  },
+  {
+    key: 5,
+    title: 'System',
+    status: "system",
+    message: 'Интернет внезапно кончился',
+    icon: <IconSettings size={"m"}/>
+  }
+];
+
+<Notification items={items} />
+```
+
 ## Кнопки
 
 Добавьте кнопки, если хотите, чтобы пользователь мог отреагировать на событие.
 Например, отменить его или куда-то перейти.
 
+Добавить кнопку Закрытие можно добавив свойство `withCloseButton = true` в items
+
 <NotificationExampleButtons />
+
+```tsx
+const items: Item[] = [
+  {
+    key: 1,
+    icon: <IconInfo size={"m"}/>,
+    title: 'Это предлежение для вас',
+    message: 'С ним нельзя не согласиться',
+    status: 'info',
+    actions: [
+      {
+        label: 'Да',
+        onClick: () => {
+          console.log('Да');
+        },
+        iconLeft: IconCheck,
+      },
+      {
+        label: 'Нет',
+        onClick: () => {
+          console.log('Нет');
+        },
+        iconLeft: IconBlock,
+        view: "secondary"
+      }
+    ],
+    withCloseButton: true
+  },
+];
+
+<Notification items={items} />
+```
 
 ## Таймер
 
@@ -68,30 +295,45 @@ Notification (в отличие от [alert](?path=/docs/components-alert--playg
 type Item = {
   key: string | number;
   message?: string | number;
-  status?: 'basic' | 'success' | 'warning' | 'error' | 'info';
+  title?: string | number;
+  status?: 'success' | 'warning' | 'error' | 'info';
+  view?: NotificationItemView;
   autoClose?: boolean | number;
   icon?: React.FC<IconProps> | React.ReactNode;
-  actions?: {
-    label: string | number;
-    onClick: React.EventHandler<React.MouseEvent>;
-  }[];
+  actions?: NotificationPropItemAction[];
   onClose?: (item: Item) => void;
+  withCloseButton?: boolean;
+  onlyMessage?: boolean;
   onAutoClose?: (item: Item) => void; // Если не передавать `onAutoClose` то по истечению таймера будет срабатывать `onClose`
 };
+
+type NotificationPropItemAction = {
+  label: string | number;
+  onClick: React.EventHandler<React.MouseEvent>;
+  iconLeft?: IconComponent;
+  iconSize?: IconPropSize;
+  view?: ButtonPropView;
+};
+
+const notificationItemView = ['outlined', 'filled'] as const;
+type NotificationItemView = typeof notificationItemView[number];
 ```
 
-| Свойство    | Тип                                                                    | По умолчанию | Описание                               |
-| ----------- | ---------------------------------------------------------------------- | ------------ | -------------------------------------- |
-| items       | `Item[]`                                                               | -            | Массив элементов                       |
-| title       | `string`                                                               | -            | Заголовок сообщения                    |
-| message     | `string`                                                               | -            | Текст сообщения                        |
-| autoClose   | `boolean`, `number`                                                    | `false`      | Автоматическое закрытие через 5 секунд |
-| actions     | `NotificationPropItemAction[]`                                         | -            | Массив кнопок с действиями             |
-| onClose     | (item: Item) => void                                                   | -            |                                        |
-| onAutoClose | (item: Item) => void                                                   | -            |                                        |
-| status?     | `'basic'`, `'info'`, `'system'`, `'success'`, `'warning'`, `'error'`   | `'basic'`    | Статус уведомления                     |
-| icon?       | `React.FC<IconProps>`, `React.ReactNode`                               | -            | Иконка с левой стороны уведомления     |
-| className?  | `string`                                                               | -            | Дополнительный класс                   |
+| Свойство item    | Тип                                                                    | По умолчанию | Описание                                                         |
+| ---------------- | ---------------------------------------------------------------------- | ------------ | ---------------------------------------------------------------- |
+| items            | `Item[]`                                                               | -            | Массив элементов                                                 |
+| title            | `string`                                                               | -            | Заголовок сообщения                                              |
+| message          | `string`                                                               | -            | Текст сообщения                                                  |
+| autoClose        | `boolean`, `number`                                                    | `false`      | Автоматическое закрытие через 5 секунд                           |
+| actions          | `NotificationPropItemAction[]`                                         | -            | Массив кнопок с действиями                                       |
+| onClose          | (item: Item) => void                                                   | -            |                                                                  |
+| onAutoClose      | (item: Item) => void                                                   | -            |                                                                  |
+| status?          | `'info'`, `'system'`, `'success'`, `'warning'`, `'error'`              | -            | Статус уведомления                                               |
+| view?            | `'outlined'`, `'filled'`                                               | `'outlined'` | Внешний вид уведомления                                          |
+| icon?            | `React.FC<IconProps>`, `React.ReactNode`                               | -            | Иконка с левой стороны уведомления                               |
+| className?       | `string`                                                               | -            | Дополнительный класс                                             |
+| withCloseButton? | `boolean`                                                              | `false`      | Отображает кнопку закрытия                                       |
+| onlyMessage?     | `boolean`                                                              | `false`      | Применяются специальные стили, если только текст, без заголовка  |
 
 ## Пример
 
@@ -115,23 +357,38 @@ function NotificationExample() {
 ## Пример с кнопками
 
 ```tsx
-import './NotificationStories.css';
+import './NotificationExampleWithButtons.css';
 
-import * as React from 'react';
-import { cn } from '@bem-react/classname';
-import { Button } from 'nx-design/Button';
-import { IconProps } from 'nx-design/Icon';
-import { Plus } from 'nx-design/Plus';
-import { CheckDouble } from 'nx-design/CheckDouble';
-import { WarningC } from 'nx-design/WarningC';
-import { Bell } from 'nx-design/Bell';
-import { SettingsDev } from 'nx-design/SettingsDev';
-import { Notification, NotificationItemStatus, Item } from 'nx-design/Notification';
+import React, {useReducer} from 'react';
 
-function reducer(
-  state: Item[],
-  action: { type: 'add' | 'remove'; item?: Item; key?: number | string },
-) {
+import {IconProps} from '../../../../../icons/_Icon/Icon';
+import {IconPlus} from '../../../../../icons/IconPlus/IconPlus';
+import {cn} from '../../../../../utils/bem';
+import {Button} from '../../../../Button/Button';
+import {Item, Notification, NotificationItemStatus} from '../../../Notification';
+import {IconSettings} from "../../../../../icons/IconSettings/IconSettings";
+import {IconCheckC} from "../../../../../icons/IconCheckC/IconCheckC";
+import {IconInfo} from "../../../../../icons/IconInfo/IconInfo";
+import {IconWarning} from "../../../../../icons/IconWarning/IconWarning";
+import {cnDocsDecorator} from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
+
+type State = Item[];
+type Action = { type: 'add'; item: Item } | { type: 'remove'; key: number | string };
+
+const cnNotificationExampleWithButtons = cn('NotificationExampleWithButtons');
+
+const getItemIconByStatus = (status: NotificationItemStatus): React.FC<IconProps> | undefined => {
+  const mapIconByStatus: Record<NotificationItemStatus, React.FC<IconProps>> = {
+    success: IconCheckC,
+    warning: IconInfo,
+    error: IconWarning,
+    system: IconSettings,
+    info: IconInfo
+  };
+  return mapIconByStatus[status];
+};
+
+function reducer(state: State, action: Action) {
   switch (action.type) {
     case 'add':
       return [...state, action.item];
@@ -140,22 +397,8 @@ function reducer(
   }
 }
 
-const getItemIconByStatus = (status: NotificationItemStatus): React.FC<IconProps> | undefined => {
-  const mapIconByStatus: Record<NotificationItemStatus, React.FC<IconProps>> = {
-    success: CheckDouble,
-    warning: WarningC,
-    error: WarningC,
-    system: SettingsDev,
-    info: Bell,
-    basic: WarningC
-  };
-  return mapIconByStatus[status];
-};
-
-const cnNotificationStories = cn('NotificationStories');
-
-function NotificationExample() {
-  const [items, dispatchItems] = React.useReducer(reducer, []);
+export function NotificationExampleWithButtons() {
+  const [items, dispatchItems] = useReducer(reducer, []);
   const generateHandleAdd = (status: NotificationItemStatus) => () => {
     const key = items.length + 1;
     const item: Item = {
@@ -164,6 +407,7 @@ function NotificationExample() {
       status,
       icon: getItemIconByStatus(status),
       onClose: () => dispatchItems({ type: 'remove', key }),
+      withCloseButton: true
     };
     dispatchItems({ type: 'add', item });
   };
@@ -173,69 +417,63 @@ function NotificationExample() {
   const handleAlertAdd = generateHandleAdd('error');
   const handleSystemAdd = generateHandleAdd('system');
   const handleNormalAdd = generateHandleAdd('info');
-  const handleBasicAdd = generateHandleAdd('basic');
 
   React.useEffect(() => handleNormalAdd(), []);
 
   return (
-    <div className={cnNotificationStories()}>
-      <div className={cnNotificationStories('Buttons')}>
+    <div className={cnNotificationExampleWithButtons('', [cnDocsDecorator('Section')])}>
+      <div className={cnNotificationExampleWithButtons('Buttons')}>
         <Button
-          className={cnNotificationStories('ButtonAdd')}
-          iconLeft={Plus}
+          className={cnNotificationExampleWithButtons('ButtonAdd')}
+          iconLeft={IconPlus}
           label="Выполненно"
           onClick={handleSuccessAdd}
         />
         <Button
-          className={cnNotificationStories('ButtonAdd')}
-          iconLeft={Plus}
+          className={cnNotificationExampleWithButtons('ButtonAdd')}
+          iconLeft={IconPlus}
           label="Ошибка"
           onClick={handleAlertAdd}
         />
         <Button
-          className={cnNotificationStories('ButtonAdd')}
-          iconLeft={Plus}
+          className={cnNotificationExampleWithButtons('ButtonAdd')}
+          iconLeft={IconPlus}
           label="Предупреждение"
           onClick={handleWarningAdd}
         />
         <Button
-          className={cnNotificationStories('ButtonAdd')}
-          iconLeft={Plus}
+          className={cnNotificationExampleWithButtons('ButtonAdd')}
+          iconLeft={IconPlus}
           label="Системное"
           onClick={handleSystemAdd}
         />
         <Button
-          className={cnNotificationStories('ButtonAdd')}
-          iconLeft={Plus}
+          className={cnNotificationExampleWithButtons('ButtonAdd')}
+          iconLeft={IconPlus}
           label="Нормальное"
           onClick={handleNormalAdd}
         />
-        <Button
-          className={cnNotificationStories('ButtonAdd')}
-          iconLeft={Plus}
-          label="Базовое"
-          onClick={handleBasicAdd}
-        />
       </div>
-      <Notification className={cnNotificationStories('Notification')} items={items} />
+      <Notification className={cnNotificationExampleWithButtons('Notification')} items={items} />
     </div>
   );
 }
 ```
 
 ```css
-.NotificationStories {
+.NotificationExampleWithButtons {
   display: flex;
   flex-direction: row;
   height: 400px;
 
   &-Notification {
+    position: unset;
     overflow: auto;
     flex: none;
     width: 400px;
     padding-right: var(--space-xs);
     padding-left: var(--space-xs);
-  }
+   }
 
   &-Buttons {
     display: flex;

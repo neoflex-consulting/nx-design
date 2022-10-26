@@ -10,10 +10,7 @@ import {withTooltip} from "../../../hocs/withTooltip/withTooltip";
 import {cn} from "../../../utils/bem";
 import {ContextMenu} from "../../ContextMenu/ContextMenu";
 import {ContextMenuItemDefault} from "../../ContextMenu/types";
-
-export const buttonAddPropType = ['button', 'menu'] as const;
-export type ButtonAddPropType = typeof buttonAddPropType[number];
-export const buttonAddPropTypeDefault: ButtonAddPropType = buttonAddPropType[0];
+import {ButtonAddPropType, buttonAddPropTypeDefault} from "../Table";
 
 type LeftSideProps = HeaderSide & {
   nameButtonAddColumn?: string;

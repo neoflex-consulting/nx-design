@@ -5,28 +5,37 @@ import React from 'react';
 import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
 import { cn } from '../../../../../utils/bem';
 import { Item, Notification } from '../../../Notification';
+import {IconCheck} from "../../../../../icons/IconCheck/IconCheck";
+import {IconBlock} from "../../../../../icons/IconBlock/IconBlock";
+import {IconInfo} from "../../../../../icons/IconInfo/IconInfo";
 
 const cnNotificationExampleButtons = cn('NotificationExampleButtons');
 
 const items: Item[] = [
   {
     key: 1,
-    message: 'С этим сообщением нельзя не согласиться',
+    icon: <IconInfo size={"m"}/>,
+    title: 'Это предлежение для вас',
+    message: 'С ним нельзя не согласиться',
     status: 'info',
     actions: [
       {
-        label: 'Согласен',
+        label: 'Да',
         onClick: () => {
-          console.log('Согласен');
+          console.log('Да');
         },
+        iconLeft: IconCheck,
       },
       {
-        label: 'Не согласен',
+        label: 'Нет',
         onClick: () => {
-          console.log('Не согласен');
+          console.log('Нет');
         },
+        iconLeft: IconBlock,
+        view: "secondary"
       }
     ],
+    withCloseButton: true
   },
 ];
 

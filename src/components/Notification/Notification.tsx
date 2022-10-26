@@ -3,20 +3,24 @@ import './Notification.css';
 import React from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-import { IconProps } from '../../icons/_Icon/Icon';
+import {IconComponent, IconProps, IconPropSize} from '../../icons/_Icon/Icon';
 import { cn } from '../../utils/bem';
 import { cnForCssTransition } from '../../utils/cnForCssTransition';
 import { PropsWithHTMLAttributes } from '../../utils/types/PropsWithHTMLAttributes';
 import { usePropsHandler } from '../EventInterceptor/usePropsHandler';
 
 import { NotificationItem } from './Item/Notification-Item';
+import {ButtonPropView} from "../Button/Button";
 
 export type NotificationPropItemAction = {
   label: string | number;
   onClick: React.EventHandler<React.MouseEvent>;
+  iconLeft?: IconComponent;
+  iconSize?: IconPropSize;
+  view?: ButtonPropView;
 };
 
-export const notificationItemStatus = ['basic', 'info', 'system', 'success', 'warning', 'error'] as const;
+export const notificationItemStatus = ['info', 'system', 'success', 'warning', 'error'] as const;
 export type NotificationItemStatus = typeof notificationItemStatus[number];
 export const notificationItemStatusDefault: NotificationItemStatus = notificationItemStatus[0];
 
@@ -34,7 +38,9 @@ export type Item = {
   icon?: React.ReactNode | React.FC<IconProps>;
   actions?: NotificationPropItemAction[];
   onClose?: (item: Item) => void;
+  withCloseButton?: boolean;
   onAutoClose?: (item: Item) => void;
+  onlyMessage?: boolean;
 };
 
 type Props = {

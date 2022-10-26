@@ -56,6 +56,10 @@ export { TableChoiceGroupFilter } from './ChoiceGroupFilter/TableChoiceGroupFilt
 export { RightSide } from './RightSide/RightSide';
 export { LeftSide } from './LeftSide/LeftSide';
 
+export const buttonAddPropType = ['button', 'menu'] as const;
+export type ButtonAddPropType = typeof buttonAddPropType[number];
+export const buttonAddPropTypeDefault: ButtonAddPropType = buttonAddPropType[0];
+
 const cnTable = cn('Table');
 
 export const sizes = ['s', 'm', 'l'] as const;

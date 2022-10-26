@@ -18,8 +18,7 @@ const mapIconByStatus: Record<NotificationItemStatus, React.FC<IconProps> | unde
   info: IconBell,
   system: undefined,
   success: undefined,
-  warning: undefined,
-  basic: undefined
+  warning: undefined
 };
 
 const getItemIconByStatus = (status: NotificationItemStatus): React.FC<IconProps> | undefined =>

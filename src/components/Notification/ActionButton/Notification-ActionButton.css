@@ -1,11 +1,11 @@
 .Notification {
   &-ActionButtonsWrapper {
-    padding-top: var(--space-2xs);
+    padding-top: var(--space-xs);
   }
 
   &-ActionButton {
     margin-top: var(--space-xs);
-    margin-right: var(--space-xs);
+    margin-right: var(--space-m);
     filter: drop-shadow(0 0 0 var(--color-bg-soft));
   }
 }

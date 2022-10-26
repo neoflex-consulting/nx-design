@@ -23,8 +23,10 @@ export const NotificationActionButton: React.FC<NotificationActionButtonProps> =
           className={cnNotification('ActionButton')}
           key={i}
           size="s"
-          view="ghost"
+          view={item.view || "primary"}
           label={item.label}
+          iconLeft={item.iconLeft}
+          iconSize={item.iconSize}
           onClick={item.onClick}
         />
       ))}

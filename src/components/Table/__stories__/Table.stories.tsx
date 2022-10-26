@@ -702,7 +702,6 @@ export const WithHeaderMenu = createStory(
             leftSide={leftSide}
             stopIsProgressLineVisible={lineVisible}
             stickyColumns={1}
-
           />
         </Theme>
       </div>

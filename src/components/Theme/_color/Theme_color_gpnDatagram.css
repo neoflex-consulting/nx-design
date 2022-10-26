@@ -5,11 +5,12 @@ $color-base-phantom: #252F5F; /* Тонирующий цвет, от котор�
 $color-base-path: #0E5A7D; /* Цвет ссылок и контролов, кнопок от которого выстраиваются все их состояния */
 $color-base-system: #F4F5F8; /* Цвет системнный */
 $color-base-secondary: #FFCC66; /* Дополнительная переменная, от которой зависят цвета контролов */
+$color-base-additional: #026133; /* Цвет дополнительных действий */
 
 $color-base-normal: #13A1C9; /* Цвет нейтральный */
 $color-base-success: #22c38e; /* Цвет успеха */
 $color-base-error: #610231; /* Цвет ошибки */
-$color-base-warning: #ECB709; /* Цвет предупреждения */
+$color-base-warning: #B38136; /* Цвет предупреждения */
 $color-base-caution: #D9A54C; /* Цвет осторожности */
 $color-base-critical: #45321A;
 $color-base-shadow: #002033; /* Цвет тени */
@@ -48,7 +49,24 @@ $color-text-black: #090b1f;
   --color-base-error-magenta-2: color($color-base-error h(+12) s(-50%) l(+58%));
   --color-base-error-magenta-1: color($color-base-error h(+14) s(-61%) l(+70%));
 
-   /* Цвета фонов */
+  --color-base-additional-green-8: color($color-base-additional a(100%));
+  --color-base-additional-green-7: color($color-base-additional s(-8%) l(+9%));
+  --color-base-additional-green-6: color($color-base-additional h(-3) s(-10%) l(+17%));
+  --color-base-additional-green-5: color($color-base-additional h(-3) s(-40%) l(+28%));
+  --color-base-additional-green-4: color($color-base-additional h(-14) s(-46%) l(+47%));
+  --color-base-additional-green-3: color($color-base-additional h(-14) s(-50%) l(+58%));
+  --color-base-additional-green-2: color($color-base-additional h(-24) s(-49%) l(+70%));
+  --color-base-additional-green-1: color($color-base-additional h(-31) s(+4%) l(+78%));
+
+  --color-base-warning-yellow-7: color($color-base-warning a(100%));
+  --color-base-warning-yellow-6: color($color-base-warning h(+2) s(+11%) l(+11%));
+  --color-base-warning-yellow-5: color($color-base-warning h(+4) s(+46%) l(+24%));
+  --color-base-warning-yellow-4: color($color-base-warning h(+6) s(+46%) l(+32%));
+  --color-base-warning-yellow-3: color($color-base-warning h(+8) s(+46%) l(+40%));
+  --color-base-warning-yellow-2: color($color-base-warning h(+10) s(+46%) l(+48%));
+  --color-base-warning-yellow-1: color($color-base-warning h(+9) s(+46%) l(+52%));
+
+  /* Цвета фонов */
   --color-bg-default: color($color-base-essential); /* Цвет дефолта */
   --color-bg-secondary: color($color-base-essential l(-5)); /* Дополнительный цвет фона */
 
@@ -64,7 +82,7 @@ $color-text-black: #090b1f;
 
   --color-bg-system: color($color-base-system a(100%)); /* Цвет фона системнный */
   --color-bg-normal: color($color-base-normal h(-18) l(+45%)); /* Цвет фона нейтральный */
-  --color-bg-success: color($color-base-success h(-40) s(-32%) l(+50%)); /* Цвет фона успеха */
+  --color-bg-success: var(--color-base-additional-green-5); /* Цвет фона успеха */
   --color-bg-caution: color($color-base-caution a(100%)); /* Цвет фона осторожности */
   --color-bg-warning: color($color-base-warning h(+11) l(+50)); /* Цвет фона предупреждения */
   --color-bg-error: var(--color-base-error-magenta-5); /* Цвет фона ошибки */
@@ -75,11 +93,11 @@ $color-text-black: #090b1f;
   --color-typo-secondary: var(--color-base-base-grey-6); /* Цвет второстепенного текста */
   --color-typo-ghost: var(--color-base-base-grey-3); /* Цвет дополнительного текста */
   --color-typo-brand: color($color-base-project a(100%)); /* Цвет брендового текста */
-  --color-typo-system: color($color-base-system h(-225) s(-22%) l(-34%)); /* Цвет текста системнный */
-  --color-typo-normal: color($color-base-normal h(-3) s(-20%) l(-25%)); /* Цвет текста нейтральный */
-  --color-typo-success: color($color-base-success h(+21) s(-25) l(-22)); /* Цвет текста успеха */
+  --color-typo-system: var(--color-base-base-grey-6); /* Цвет текста системнный */
+  --color-typo-normal: var(--color-base-path-blue-6); /* Цвет текста нейтральный */
+  --color-typo-success: var(--color-base-additional-green-5); /* Цвет текста успеха */
   --color-typo-caution: color($color-base-caution s(+15) h(-8) l(-10)); /* Цвет текста осторожности */
-  --color-typo-warning: color($color-base-warning h(+2) s(-46) l(-2)); /* Цвет текста предупреждения */
+  --color-typo-warning: var(--color-base-warning-yellow-6); /* Цвет текста предупреждения */
   --color-typo-error: var(--color-base-error-magenta-5); /* Цвет текста ошибки */
   --color-typo-critical: color($color-base-critical a(100%)); /* Цвет фона системнный */
   --color-typo-link: var(--color-base-path-blue-6); /* Цвет основной ссылки */

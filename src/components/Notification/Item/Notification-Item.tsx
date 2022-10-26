@@ -1,13 +1,12 @@
-import '../../Theme/_color/Theme_color_gpnDefault.css';
+import '../../Theme/_color/Theme_color_gpnDatagram.css';
 import './Notification-Item.css';
 
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 
-import { IconClose } from '../../../icons/IconClose/IconClose';
+import {IconClose} from '../../../icons/IconClose/IconClose';
 import {Button} from '../../Button/Button';
-import { Typography } from '../../Typography/Typography';
-import { cnTheme } from '../../Theme/Theme';
-import { NotificationActionButton } from '../ActionButton/Notification-ActionButton';
+import {Typography} from '../../Typography/Typography';
+import {NotificationActionButton} from '../ActionButton/Notification-ActionButton';
 import {
   cnNotification,
   cnNotificationItem,
@@ -15,7 +14,8 @@ import {
   notificationItemStatusDefault,
   notificationItemViewDefault
 } from '../Notification';
-import { NotificationTimer, NotificationTimerPropOnMount } from '../Timer/Notification-Timer';
+import {NotificationTimer, NotificationTimerPropOnMount} from '../Timer/Notification-Timer';
+import {cnTheme} from "../../Theme/Theme";
 
 export type NotificationItemProps = {
   item: Item;
@@ -37,7 +37,9 @@ export const NotificationItem: React.FC<NotificationItemProps> = (props) => {
   const { item } = props;
   const {
     onClose,
+    withCloseButton,
     autoClose,
+    onlyMessage,
     icon,
     message,
     title,
@@ -86,7 +88,7 @@ export const NotificationItem: React.FC<NotificationItemProps> = (props) => {
 
   return (
     <div
-      className={cnNotificationItem({ status, view }, [cnTheme({ color: 'gpnDefault' })])}
+      className={cnNotificationItem({ status, view }, [cnTheme({ color: 'gpnDatagram' })])}
       onMouseEnter={autoCloseTime ? handleMouseEnter : undefined}
       onMouseLeave={autoCloseTime ? handleMouseLeave : undefined}
     >
@@ -97,31 +99,32 @@ export const NotificationItem: React.FC<NotificationItemProps> = (props) => {
           startTime={autoCloseTime}
         />
       )}
-      {!autoCloseTime && Icon && !React.isValidElement(icon) && <Icon className={cnNotification('Icon')} size="l" />}
-      {!autoCloseTime && Icon && React.isValidElement(icon) && <span className={cnNotification('Icon')}> {icon} </span>}
+      {!autoCloseTime && Icon && !React.isValidElement(icon) && <Icon className={cnNotification('Icon', { view, status, onlyMessage })} size="s" />}
+      {!autoCloseTime && Icon && React.isValidElement(icon) && <span className={cnNotification('Icon', { view, status, onlyMessage })}> {icon} </span>}
       <div className={cnNotification('Content')}>
         {title && (
-          <Typography className={cnNotification('Title')} weight="bold">
+          <Typography className={cnNotification('Title', { view, status })} weight="bold">
             {title}
           </Typography>
         )}
         {message && (
-          <Typography className={cnNotification('Message')}>
+          <Typography className={cnNotification('Message', { view, status, onlyMessage })}>
             {message}
           </Typography>
         )}
         {actions && <NotificationActionButton actions={actions} />}
+        {withCloseButton && (
+          <Button
+            className={cnNotification('CloseButton', { view, status })}
+            view="clear"
+            iconLeft={<IconClose size={"xs"}/>}
+            form="round"
+            size="s"
+            onClick={handleClose}
+          />
+        )}
       </div>
-      {onClose && (
-        <Button
-          className={cnNotification('CloseButton')}
-          view="clear"
-          iconLeft={IconClose}
-          form="round"
-          size="l"
-          onClick={handleClose}
-        />
-      )}
+
     </div>
   );
 };
