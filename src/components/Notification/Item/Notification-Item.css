@@ -6,6 +6,7 @@
     background-color: var(--color-typo-white);
     border-radius: var(--space-2xs);
     box-shadow: var(--shadow-group);
+    --is-webkit-line-clamp: transparent;
 
     &_view {
       &_filled {
@@ -15,7 +16,6 @@
 
       &_outlined {
         padding: calc(var(--space-m) - 2px)  var(--space-4xl) calc(var(--space-m) - 2px)  calc(var(--space-m) - 2px) ;
-        min-height: var(--space-xl);
       }
     }
 
@@ -81,6 +81,13 @@
     color: var(--color-control-typo-default);
     line-height: var(--line-height-text-l);
 
+    &_hiddenMessage {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: var(--is-webkit-line-clamp);
+      -webkit-box-orient: vertical;
+    }
+
     &_view {
       &_filled {
         margin-top: unset;
@@ -120,4 +127,8 @@
      background-color: unset;
   }
 
+  &-HiddenMessageButton {
+    margin-left: -10px;
+    margin-top: 8px;
+  }
 }

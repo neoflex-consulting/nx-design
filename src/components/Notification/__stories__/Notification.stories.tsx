@@ -22,6 +22,8 @@ import {
 import mdx from './Notification.docs.mdx';
 import {IconCheckC} from "../../../icons/IconCheckC/IconCheckC";
 import {IconInfo} from "../../../icons/IconInfo/IconInfo";
+import {IconBlock} from "../../../icons/IconBlock/IconBlock";
+import {IconCheck} from "../../../icons/IconCheck/IconCheck";
 
 type State = Item[];
 type Action = { type: 'add'; item: Item } | { type: 'remove'; key: number | string };
@@ -30,10 +32,14 @@ const defaultKnobs = () => ({
   title: text('title', 'Some title'),
   view: select('view', notificationItemView, notificationItemViewDefault),
   message: text('message', 'Hey there! I am Alert. Be ready to be informed :)'),
-  withIcon: boolean('withIcon', false),
+  withIcon: boolean('withIcon', true),
   withActionButtons: boolean('withActionButtons', false),
   withAutoClose: boolean('withAutoClose', false),
   withCloseButton: boolean('withCloseButton', true),
+  withAutoCloseTimer: boolean('withAutoCloseTimer', false),
+  hiddenMessage: boolean('hiddenMessage', false),
+  titleButtonMoreOn: text('titleButtonMoreOn', 'Подробнее...'),
+  titleButtonMoreOff: text('titleButtonMoreOff', 'Скрыть...'),
 });
 
 const getItemIconByStatus = (status: NotificationItemStatus): React.FC<IconProps> | undefined => {
@@ -59,7 +65,7 @@ function reducer(state: State, action: Action) {
 }
 
 export function Playground() {
-  const { withIcon, withActionButtons, withAutoClose, withCloseButton, message, title, view } = defaultKnobs();
+  const { withIcon, withActionButtons, withAutoClose, withCloseButton, message, title, view, withAutoCloseTimer, hiddenMessage, titleButtonMoreOn, titleButtonMoreOff } = defaultKnobs();
   const [items, dispatchItems] = React.useReducer(reducer, []);
   const generateHandleAdd = (status: NotificationItemStatus) => () => {
     const key = items.length + 1;
@@ -70,6 +76,10 @@ export function Playground() {
       status,
       view,
       withCloseButton,
+      withAutoCloseTimer,
+      hiddenMessage,
+      titleButtonMoreOn,
+      titleButtonMoreOff,
       ...(withAutoClose && { autoClose: 5 }),
       ...(withIcon && { icon: getItemIconByStatus(status) }),
       ...(withActionButtons && {
@@ -79,12 +89,15 @@ export function Playground() {
             onClick: () => {
               console.log('Согласен');
             },
+            iconLeft: IconCheck,
           },
           {
             label: 'Не согласен',
             onClick: () => {
               console.log('Не согласен');
             },
+            iconLeft: IconBlock,
+            view: "secondary"
           },
         ],
       }),

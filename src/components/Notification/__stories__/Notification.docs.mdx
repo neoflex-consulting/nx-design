@@ -5,6 +5,7 @@ import { NotificationExampleWithButtons } from './examples/NotificationExampleWi
 import { NotificationExampleTimer } from './examples/NotificationExampleTimer/NotificationExampleTimer';
 import { NotificationExampleButtons } from './examples/NotificationExampleButtons/NotificationExampleButtons';
 import { NotificationExampleView } from './examples/NotificationExampleView/NotificationExampleView';
+import { NotificationExampleHiddenMessage } from './examples/NotificationExampleHiddenMessage/NotificationExampleHiddenMessage';
 
 # Notification
 
@@ -18,8 +19,11 @@ Notification (в отличие от [alert](?path=/docs/components-alert--playg
 
 - [Текст сообщения](#текст-сообщения)
 - [Статус](#статус)
+- [Внешний вид](#внешний-вид)
 - [Иконка](#иконка)
 - [Кнопки](#кнопки)
+- [Работа со списком уведомлений](#список-уведомлений)
+- [Скрытие строк в сообщении](скрытие-строк)
 - [Таймер](#таймер)
 - [Список свойств](#свойства)
 - [Пример использования](#пример)
@@ -185,7 +189,6 @@ const itemsOutlined: Item[] = [
 <Notification items={itemsFilled}  />
 ```
 
-
 ## Иконка
 
 Добавьте любую из [библиотеки иконок](?path=/story/components-icons--playground) с помощью свойства `icon`.
@@ -301,6 +304,16 @@ export function MyComponent() {
 }
 ```
 
+## Скрытие строк в сообщении
+
+Используйте встроенную функцию `hiddenMessage` для управления списком уведомлений.
+
+Оно сокращает сообщения до двух строк. В конце сообщения ставит три точки и появляется кнопка Подробнее.
+
+Чтобы изменить надпись на кнопку Подробнее используйте свойства: `titleButtonMoreOn` и `titleButtonMoreOff`
+
+<NotificationExampleHiddenMessage/>
+
 ## Таймер
 
 Используйте таймер, если сообщений о событиях слишком много и они не очень важные.
@@ -312,25 +325,73 @@ export function MyComponent() {
 по таймеру.
 
 Таймер можно добавить с помощью `autoClose`.
+Свойство `autoClose` принимает числовое значение. Если оно будет равно нулю, то автоматическое выключение не сработает.
+
+При вклдючении работы таймера вы можете использовать иконку, которую сами выберите или иконку с таймером.
+Для этого использйте свойство `withAutoCloseTimer`.
 
 <NotificationExampleTimer />
+
+```tsx
+const [items, dispatchItems] = useReducer(reducer, []);
+
+const generateNotification = (withAutoCloseTimer: boolean) => () => {
+
+    const key = items.length + 1;
+
+    const item: Item = {
+      title: 'Работа таймера',
+      key,
+      message: `Через 5 секунд закроется уведомление № ${key}`,
+      icon: <IconInfo/>,
+      onClose: () => dispatchItems({ type: 'remove', item, key }),
+      autoClose: 5,
+      withAutoCloseTimer: withAutoCloseTimer
+    };
+
+    dispatchItems({ type: 'add', item });
+};
+
+const handleAlertAdd = generateNotification(true);
+const handleNormalAdd = generateNotification(false);
+
+return (
+      <>
+        <Button
+          iconLeft={IconPlus}
+          label="Со свойством withAutoCloseTimer"
+          onClick={handleNormalAdd}
+        />
+        <Button
+          iconLeft={IconPlus}
+          label="Со своей иконкой"
+          onClick={handleAlertAdd}
+        />
+        <Notification items={items} />
+      </>
+);
+```
 
 ## Свойства
 
 ```tsx
-type Item = {
+export type Item = {
   key: string | number;
   message?: string | number;
   title?: string | number;
-  status?: 'success' | 'warning' | 'error' | 'info';
+  status?: NotificationItemStatus
   view?: NotificationItemView;
   autoClose?: boolean | number;
-  icon?: React.FC<IconProps> | React.ReactNode;
+  icon?: React.ReactNode | React.FC<IconProps>;
   actions?: NotificationPropItemAction[];
   onClose?: (item: Item) => void;
   withCloseButton?: boolean;
+  onAutoClose?: (item: Item) => void;
   onlyMessage?: boolean;
-  onAutoClose?: (item: Item) => void; // Если не передавать `onAutoClose` то по истечению таймера будет срабатывать `onClose`
+  withAutoCloseTimer?: boolean;
+  hiddenMessage?: boolean;
+  titleButtonMoreOn?: string;
+  titleButtonMoreOff?: string;
 };
 
 type NotificationPropItemAction = {
@@ -345,21 +406,24 @@ const notificationItemView = ['outlined', 'filled'] as const;
 type NotificationItemView = typeof notificationItemView[number];
 ```
 
-| Свойство item    | Тип                                                                    | По умолчанию | Описание                                                         |
-| ---------------- | ---------------------------------------------------------------------- | ------------ | ---------------------------------------------------------------- |
-| items            | `Item[]`                                                               | -            | Массив элементов                                                 |
-| title            | `string`                                                               | -            | Заголовок сообщения                                              |
-| message          | `string`                                                               | -            | Текст сообщения                                                  |
-| autoClose        | `boolean`, `number`                                                    | `false`      | Автоматическое закрытие через 5 секунд                           |
-| actions          | `NotificationPropItemAction[]`                                         | -            | Массив кнопок с действиями                                       |
-| onClose          | (item: Item) => void                                                   | -            |                                                                  |
-| onAutoClose      | (item: Item) => void                                                   | -            |                                                                  |
-| status?          | `'info'`, `'system'`, `'success'`, `'warning'`, `'error'`              | -            | Статус уведомления                                               |
-| view?            | `'outlined'`, `'filled'`                                               | `'outlined'` | Внешний вид уведомления                                          |
-| icon?            | `React.FC<IconProps>`, `React.ReactNode`                               | -            | Иконка с левой стороны уведомления                               |
-| className?       | `string`                                                               | -            | Дополнительный класс                                             |
-| withCloseButton? | `boolean`                                                              | `false`      | Отображает кнопку закрытия                                       |
-| onlyMessage?     | `boolean`                                                              | `false`      | Применяются специальные стили, если только текст, без заголовка  |
+| Свойство item      | Тип                                                                    | По умолчанию | Описание                                                         |
+| ------------------ | ---------------------------------------------------------------------- | ------------ | ---------------------------------------------------------------- |
+| items              | `Item[]`                                                               | -            | Массив элементов                                                 |
+| title              | `string`                                                               | -            | Заголовок сообщения                                              |
+| message            | `string`                                                               | -            | Текст сообщения                                                  |
+| autoClose          | `boolean`, `number`                                                    | `false`      | Автоматическое закрытие через 5 секунд                           |
+| actions            | `NotificationPropItemAction[]`                                         | -            | Массив кнопок с действиями                                       |
+| onClose            | (item: Item) => void                                                   | -            |                                                                  |
+| onAutoClose        | (item: Item) => void                                                   | -            |                                                                  |
+| status?            | `'info'`, `'system'`, `'success'`, `'warning'`, `'error'`              | -            | Статус уведомления                                               |
+| view?              | `'outlined'`, `'filled'`                                               | `'outlined'` | Внешний вид уведомления                                          |
+| icon?              | `React.FC<IconProps>`, `React.ReactNode`                               | -            | Иконка с левой стороны уведомления                               |
+| className?         | `string`                                                               | -            | Дополнительный класс                                             |
+| withCloseButton?   | `boolean`                                                              | `false`      | Отображает кнопку закрытия                                       |
+| onlyMessage?       | `boolean`                                                              | `false`      | Применяются специальные стили, если только текст, без заголовка  |
+| hiddenMessage?     | `boolean`                                                              | `false`      | Сокращает сообщение до двух строк                                |
+| titleButtonMoreOn? | `string`                                                               | `Подробнее`  | Текст кнопки от hiddenMessage                                    |
+| titleButtonMoreOff?| `string`                                                               | `Скрыть`     | Текст кнопки от hiddenMessage                                    |
 
 ## Пример
 

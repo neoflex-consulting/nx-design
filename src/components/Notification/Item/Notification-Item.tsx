@@ -24,7 +24,7 @@ export type NotificationItemProps = {
 const defaultInitialTimerTime = 3;
 
 const getAutoCloseTime = (autoClose: boolean | number | undefined): number | false => {
-  if (autoClose) {
+  if (autoClose && autoClose !== 0) {
     if (typeof autoClose === 'number') {
       return autoClose;
     }
@@ -39,11 +39,15 @@ export const NotificationItem: React.FC<NotificationItemProps> = (props) => {
     onClose,
     withCloseButton,
     autoClose,
+    withAutoCloseTimer,
     onlyMessage,
+    hiddenMessage,
     icon,
     message,
     title,
     actions,
+    titleButtonMoreOn = "Подробее",
+    titleButtonMoreOff = "Скрыть",
     status = notificationItemStatusDefault,
     view = notificationItemViewDefault,
     onAutoClose: onAutoCloseProp,
@@ -54,11 +58,11 @@ export const NotificationItem: React.FC<NotificationItemProps> = (props) => {
   } | null>(null);
   const [hover, setHover] = useState<boolean>(false);
   const [timeIsOver, setTimeIsOver] = useState<boolean>(false);
-  const handleMountTimer: NotificationTimerPropOnMount = (timerFunctions) =>
-    setTimerFunctions(timerFunctions);
+  const handleMountTimer: NotificationTimerPropOnMount = (timerFunctions) => setTimerFunctions(timerFunctions);
   const handleMouseEnter = () => setHover(true);
   const handleMouseLeave = () => setHover(false);
   const autoCloseTime = getAutoCloseTime(autoClose);
+  const [isHiddenMessage, setHiddenMessage] = useState<boolean>(hiddenMessage || false);
   const onAutoClose = (item: Item) => {
     if (onAutoCloseProp) {
       onAutoCloseProp(item);
@@ -86,6 +90,9 @@ export const NotificationItem: React.FC<NotificationItemProps> = (props) => {
 
   const Icon: any = item.icon;
 
+  // @ts-ignore
+  // @ts-ignore
+  // @ts-ignore
   return (
     <div
       className={cnNotificationItem({ status, view }, [cnTheme({ color: 'gpnDatagram' })])}
@@ -97,10 +104,11 @@ export const NotificationItem: React.FC<NotificationItemProps> = (props) => {
           onMount={handleMountTimer}
           onTimeIsOver={handleTimeIsOver}
           startTime={autoCloseTime}
+          withAutoCloseTimer={withAutoCloseTimer || false}
         />
       )}
-      {!autoCloseTime && Icon && !React.isValidElement(icon) && <Icon className={cnNotification('Icon', { view, status, onlyMessage })} size="s" />}
-      {!autoCloseTime && Icon && React.isValidElement(icon) && <span className={cnNotification('Icon', { view, status, onlyMessage })}> {icon} </span>}
+      {!withAutoCloseTimer && Icon && !React.isValidElement(icon) && <Icon className={cnNotification('Icon', { view, status, onlyMessage })} size="s" />}
+      {!withAutoCloseTimer && Icon && React.isValidElement(icon) && <span className={cnNotification('Icon', { view, status, onlyMessage })}> {icon} </span>}
       <div className={cnNotification('Content')}>
         {title && (
           <Typography className={cnNotification('Title', { view, status })} weight="bold">
@@ -108,10 +116,23 @@ export const NotificationItem: React.FC<NotificationItemProps> = (props) => {
           </Typography>
         )}
         {message && (
-          <Typography className={cnNotification('Message', { view, status, onlyMessage })}>
+          <Typography
+            className={cnNotification('Message', { view, status, onlyMessage, hiddenMessage })}
+            // @ts-ignore
+            style={isHiddenMessage ? {'--is-webkit-line-clamp': 2} : {'--is-webkit-line-clamp': 0}}
+          >
             {message}
           </Typography>
         )}
+        {hiddenMessage && message && message.toString().length > 91 &&
+          <Button
+            className={cnNotification('HiddenMessageButton')}
+            view="link"
+            size="s"
+            label={isHiddenMessage ? titleButtonMoreOn : titleButtonMoreOff}
+            onClick={()=> setHiddenMessage(!isHiddenMessage)}
+          />
+        }
         {actions && <NotificationActionButton actions={actions} />}
         {withCloseButton && (
           <Button

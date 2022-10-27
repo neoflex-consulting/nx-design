@@ -1,28 +1,14 @@
 import './NotificationExampleTimer.css';
 
-import React, { useReducer } from 'react';
-
-import { IconProps } from '../../../../../icons/_Icon/Icon';
-import { IconPlus } from '../../../../../icons/IconPlus/IconPlus';
-import { IconWarningC } from '../../../../../icons/IconWarningC/IconWarningC';
-import { IconBell } from '../../../../../icons/IconBell/IconBell';
-import { cnDocsDecorator } from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
-import { cn } from '../../../../../utils/bem';
-import { Button } from '../../../../Button/Button';
-import { Item, Notification, NotificationItemStatus } from '../../../Notification';
+import React, {useReducer} from 'react';
+import {IconPlus} from '../../../../../icons/IconPlus/IconPlus';
+import {cnDocsDecorator} from '../../../../../uiKit/components/DocsDecorator/DocsDecorator';
+import {cn} from '../../../../../utils/bem';
+import {Button} from '../../../../Button/Button';
+import {Item, Notification} from '../../../Notification';
+import {IconInfo} from "../../../../../icons/IconInfo/IconInfo";
 
 const cnNotificationExampleTimer = cn('NotificationExampleTimer');
-
-const mapIconByStatus: Record<NotificationItemStatus, React.FC<IconProps> | undefined> = {
-  error: IconWarningC,
-  info: IconBell,
-  system: undefined,
-  success: undefined,
-  warning: undefined
-};
-
-const getItemIconByStatus = (status: NotificationItemStatus): React.FC<IconProps> | undefined =>
-  mapIconByStatus[status];
 
 function reducer(
   state: Item[],
@@ -37,24 +23,23 @@ function reducer(
 }
 
 export const NotificationExampleTimer: React.FC = () => {
-  const [items, dispatchItems] = useReducer<
-    React.Reducer<Item[], { type: 'add' | 'remove'; item: Item; key?: number | string }>
-  >(reducer, []);
-  const generateHandleAdd = (status: NotificationItemStatus) => () => {
+  const [items, dispatchItems] = useReducer<React.Reducer<Item[], { type: 'add' | 'remove'; item: Item; key?: number | string }>>(reducer, []);
+  const generateHandleAdd = (withAutoCloseTimer: boolean) => () => {
     const key = items.length + 1;
     const item: Item = {
+      title: 'Работа таймера',
       key,
-      message: `Сейчас эта штука закроется ${key}`,
-      status,
-      icon: getItemIconByStatus(status),
+      message: `Через 5 секунд закроется уведомление № ${key}`,
+      icon: <IconInfo/>,
       onClose: () => dispatchItems({ type: 'remove', item, key }),
       autoClose: 5,
+      withAutoCloseTimer: withAutoCloseTimer
     };
     dispatchItems({ type: 'add', item });
   };
 
-  const handleAlertAdd = generateHandleAdd('error');
-  const handleNormalAdd = generateHandleAdd('info');
+  const handleAlertAdd = generateHandleAdd( true);
+  const handleNormalAdd = generateHandleAdd(false);
 
   React.useEffect(() => handleNormalAdd(), []);
 
@@ -64,13 +49,13 @@ export const NotificationExampleTimer: React.FC = () => {
         <Button
           className={cnNotificationExampleTimer('ButtonAdd')}
           iconLeft={IconPlus}
-          label="Обычный таймер"
+          label="Со свойством withAutoCloseTimer"
           onClick={handleNormalAdd}
         />
         <Button
           className={cnNotificationExampleTimer('ButtonAdd')}
           iconLeft={IconPlus}
-          label="Тревожный таймер"
+          label="Со своей иконкой"
           onClick={handleAlertAdd}
         />
       </div>

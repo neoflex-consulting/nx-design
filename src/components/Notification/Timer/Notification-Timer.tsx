@@ -12,13 +12,14 @@ export type NotificationTimerProps = {
   onMount: NotificationTimerPropOnMount;
   onTimeIsOver: () => void;
   startTime: number;
+  withAutoCloseTimer: boolean;
 };
 
 const interval = 1000;
 
 export const NotificationTimer: React.FC<NotificationTimerProps> = (props) => {
   const [running, setRunning] = useState<boolean>(false);
-  const { onMount, onTimeIsOver, startTime: startTimeprop } = props;
+  const { onMount, onTimeIsOver, startTime: startTimeprop, withAutoCloseTimer } = props;
   const startTime = startTimeprop * interval;
   const { time, start, pause, isRunning } = useTimer({
     endTime: 0,
@@ -39,13 +40,18 @@ export const NotificationTimer: React.FC<NotificationTimerProps> = (props) => {
   const progress = running ? ((time - interval) / startTime) * 100 : (time / startTime) * 100;
   const seconds = time ? time / interval : 0;
 
-  return (
-    <Timer
-      className={cnNotification('Timer')}
-      seconds={seconds}
-      progress={progress}
-      size="m"
-      animation
-    />
-  );
+  return (<>
+    {
+      withAutoCloseTimer ?
+        <Timer
+          className={cnNotification('Timer')}
+          seconds={seconds}
+          progress={progress}
+          size="m"
+          animation
+        />
+        :
+        <></>
+    }
+  </>);
 };

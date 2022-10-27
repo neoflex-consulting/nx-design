@@ -53,6 +53,10 @@ export type Item = {
   withCloseButton?: boolean;
   onAutoClose?: (item: Item) => void;
   onlyMessage?: boolean;
+  withAutoCloseTimer?: boolean;
+  hiddenMessage?: boolean;
+  titleButtonMoreOn?: string;
+  titleButtonMoreOff?: string;
 };
 
 type Props = {
