@@ -7,7 +7,6 @@ import {IconProps} from '../../../icons/_Icon/Icon';
 import {IconPlus} from '../../../icons/IconPlus/IconPlus';
 import {IconWarningC} from '../../../icons/IconWarningC/IconWarningC';
 import {IconSettingsDev} from '../../../icons/IconSettingsDev/IconSettingsDev';
-import {IconBell} from '../../../icons/IconBell/IconBell';
 import {cn} from '../../../utils/bem';
 import {createMetadata} from '../../../utils/storybook';
 import {Button} from '../../Button/Button';
@@ -22,7 +21,7 @@ import {
 
 import mdx from './Notification.docs.mdx';
 import {IconCheckC} from "../../../icons/IconCheckC/IconCheckC";
-import {presetDatagram, Theme} from "../../Theme/Theme";
+import {IconInfo} from "../../../icons/IconInfo/IconInfo";
 
 type State = Item[];
 type Action = { type: 'add'; item: Item } | { type: 'remove'; key: number | string };
@@ -43,8 +42,7 @@ const getItemIconByStatus = (status: NotificationItemStatus): React.FC<IconProps
     warning: IconWarningC,
     error: IconWarningC,
     system: IconSettingsDev,
-    info: IconBell,
-    basic: IconWarningC
+    info: IconInfo
   };
   return mapIconByStatus[status];
 };
@@ -71,6 +69,7 @@ export function Playground() {
       title: title,
       status,
       view,
+      withCloseButton,
       ...(withAutoClose && { autoClose: 5 }),
       ...(withIcon && { icon: getItemIconByStatus(status) }),
       ...(withActionButtons && {
@@ -99,7 +98,6 @@ export function Playground() {
   const handleAlertAdd = generateHandleAdd('error');
   const handleSystemAdd = generateHandleAdd('system');
   const handleNormalAdd = generateHandleAdd('info');
-  const handleBasicAdd = generateHandleAdd('basic');
 
   React.useEffect(() => handleNormalAdd(), []);
 
@@ -149,17 +147,8 @@ export function Playground() {
             view="ghost"
             size="s"
             width="full"
-            label="Нормальное"
+            label="Информационное"
             onClick={handleNormalAdd}
-          />
-          <Button
-            className={cnNotificationStories('ButtonAdd')}
-            iconLeft={IconPlus}
-            view="ghost"
-            size="s"
-            width="full"
-            label="Базовое"
-            onClick={handleBasicAdd}
           />
         </div>
         <Notification className={cnNotificationStories('Notification')} items={items} />

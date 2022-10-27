@@ -275,6 +275,32 @@ const items: Item[] = [
 <Notification items={items} />
 ```
 
+## Работа со списком уведомлений
+
+Используйте встроенную функцию `reducer` для управления списком уведомлений.
+
+Для этого необходимо все уведомления добавлять в список ` dispatchItems({ type: 'add', item })`
+И также удалять на onClose `dispatchItems({ type: 'remove', item, key })`
+
+```tsx
+import {reducer} from "nx-design/Notification";
+
+export function MyComponent() {
+  const [items, dispatchItems] = useReducer(reducer, []);
+
+  const generateNotification = () => () => {
+    const key = items.length + 1;
+    const item: Item = {
+      key,
+      message: 'Любое сообщение',
+      icon: IconInfo,
+      onClose: () => dispatchItems({ type: 'remove', item, key }),
+    };
+    dispatchItems({ type: 'add', item });
+  };
+}
+```
+
 ## Таймер
 
 Используйте таймер, если сообщений о событиях слишком много и они не очень важные.

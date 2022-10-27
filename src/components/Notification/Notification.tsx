@@ -10,7 +10,19 @@ import { PropsWithHTMLAttributes } from '../../utils/types/PropsWithHTMLAttribut
 import { usePropsHandler } from '../EventInterceptor/usePropsHandler';
 
 import { NotificationItem } from './Item/Notification-Item';
-import {ButtonPropView} from "../Button/Button";
+import {ButtonPropView} from "../Button/Button"
+
+type State = Item[];
+type Action = { type: 'add'; item: Item } | { type: 'remove'; key: number | string };
+
+export function reducer(state: State, action: Action) {
+  switch (action.type) {
+    case 'add':
+      return [...state, action.item];
+    case 'remove':
+      return state.filter((item) => item.key !== action.key);
+  }
+}
 
 export type NotificationPropItemAction = {
   label: string | number;
