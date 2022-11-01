@@ -4,7 +4,7 @@
   position: absolute;
   z-index: var(--resizer-z);
   top: 0;
-  right: -3px;
+  right: 0;
   width: var(--resizer-width);
   background-color: var(--color-bg-ghost);
   opacity: 0;
