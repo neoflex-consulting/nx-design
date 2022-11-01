@@ -936,7 +936,7 @@ const InternalTable = <T extends TableRow>(
                       isBorderLeft={columnIdx > 0 && borderBetweenColumns && !separateRows}
                       isSeparateRows={separateRows}
                       isSeparateFirstColumn={columnIdx === 0 && separateRows}
-                      isSeparateEndColumn={columnIdx === columns.length - 1  && separateRows}
+                      isSeparateEndColumn={columnIdx === columns.filter(value => value.hidden !== true).length - 1  && separateRows}
                       isSeparateFirstRow={rowIdx === 0 && separateRows}
                       isSeparateEndRow={rowIdx === rowsData.length - 1 && separateRows}
                     >

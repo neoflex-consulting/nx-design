@@ -78,6 +78,7 @@
 
     &.TableCell_isHeader {
       z-index: var(--sticky-top-and-left-z);
+      margin-right: 2px;
     }
   }
 
@@ -98,6 +99,7 @@
       }
 
       &.TableCell_stickyOnLeft {
+        margin-right: 2px;
         box-shadow: var(--shadow-sticky);
       }
   }
@@ -184,7 +186,7 @@
          content: '';
          position: absolute;
          top: 8px;
-         left: 0;
+         left: -3px;
          bottom: 8px;
          width: 1px;
          background: var(--color-bg-border);

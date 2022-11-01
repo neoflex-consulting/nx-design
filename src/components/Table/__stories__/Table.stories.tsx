@@ -30,6 +30,7 @@ import {Typography} from '../../Typography/Typography';
 import {verticalAligns} from '../Cell/TableCell';
 import {Filters} from '../filtering';
 import {
+  buttonAddPropType,
   headerVerticalAligns,
   sizes,
   SortByProps,
@@ -49,7 +50,7 @@ import mdx from './Table.docs.mdx';
 import {presetDatagram, Theme} from "../../Theme/Theme";
 import {HeaderSideProps} from "../headerMenu";
 import {ItemRightSide, RightSide} from "../RightSide/RightSide";
-import {buttonAddPropType, LeftSide} from "../LeftSide/LeftSide";
+import {LeftSide} from "../LeftSide/LeftSide";
 import {IconInfo} from "../../../icons/IconInfo/IconInfo";
 import {IconDictionary} from "../../../icons/IconDictionary/IconDictionary";
 import {ContextMenuItemDefault} from "../../ContextMenu/types";
@@ -702,6 +703,8 @@ export const WithHeaderMenu = createStory(
             leftSide={leftSide}
             stopIsProgressLineVisible={lineVisible}
             stickyColumns={1}
+            isResizable={true}
+            // getCellWrap={(row: any) => 'truncate'}
           />
         </Theme>
       </div>
