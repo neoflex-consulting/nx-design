@@ -23,7 +23,9 @@ import {
 
 ## Размер
 
-За размер тултипа отвечает свойство `size`. Варианты: `s`, `m`, `l`. В зависимости от выбранного размера изменятеся максимальная ширина тултипа.
+За размер тултипа отвечает свойство `size`. Варианты: `s`, `m`, `l`, `window`. В зависимости от выбранного размера изменятеся максимальная ширина тултипа.
+
+Значение `window` применяется для больших текстов с переносом строк. Например: описание ошибки кода
 
 ## Статус
 
@@ -64,7 +66,7 @@ import {
 | --------------------- | --------------------------------------------- | ----------------------- | --------------------------------------------------------------------------------- |
 | `anchorRef?`          | `React.RefObject<HTMLElement>`                | —                       | см. [Popover](?path=/docs/components-popover--popover-positioned-by-coords-story) |
 | `position?`           | `{ x: number; y: number }` &#124; `undefined` | —                       | см. [Popover](?path=/docs/components-popover--popover-positioned-by-coords-story) |
-| `size`                | `'s', 'm', 'l'`                               | '`m`'                   | Размер, влияющий на максимальную ширину тултипа                                   |
+| `size`                | `'s', 'm', 'l', 'window'`                     | '`m`'                   | Размер, влияющий на максимальную ширину тултипа                                   |
 | `children`            | `React.ReactNode`                             | —                       | Контент тултипа                                                                   |
 | `direction?`          | `Direction`                                   | `'upCenter'`            | см. [Popover](?path=/docs/components-popover--popover-positioned-by-coords-story) |
 | `possibleDirections?` | `Direction[]`                                 | все возможные Direction | см. [Popover](?path=/docs/components-popover--popover-positioned-by-coords-story) |

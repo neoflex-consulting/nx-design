@@ -15,7 +15,7 @@ const ARROW_OFFSET = 8;
 
 const cnTooltip = cn('Tooltip');
 
-export const tooltipPropSizes = ['m', 's', 'l'] as const;
+export const tooltipPropSizes = ['m', 's', 'l', 'window'] as const;
 export const tooltipPropSizesDefault = tooltipPropSizes[0];
 export type TooltipPropSize = typeof tooltipPropSizes[number];
 
