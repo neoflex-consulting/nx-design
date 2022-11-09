@@ -166,7 +166,8 @@ export const TabsExampleSize = () => {
 За внешний вид табов отвечает свойство `view`. Есть два варианта:
 
 - `bordered` — с рамкой (используется по умолчанию),
-- `clear` — без рамки.
+- `clear` — без рамки,
+- `stroke` — с верхней рамкой.
 
 <TabsExampleView />
 
@@ -195,6 +196,69 @@ export const TabsExampleView = () => {
         items={items}
         getLabel={(item) => item}
         view="clear"
+      />
+      <Tabs
+        value={value}
+        onChange={({ value }) => setValue(value)}
+        items={items}
+        getLabel={(item) => item}
+        view="stroke"
+      />
+    </>
+  );
+};
+```
+
+## Закрытие табов
+
+Свойство `onClose` отвечает за действия при закрытии табов (нажатие на кнопку закрытия)
+
+Для включения на табе кнопки закрытия, необходимо указать свойство `closeIcon === true`.
+Это сделано для того, чтобы главные табы всегда открытыми, без права на закрытие.
+А у второстепенных табов была возможность скрыться от пользователя.
+
+```tsx
+import React, { useState } from 'react';
+import { Tabs } from 'nx-design/Tabs';
+
+type Item = string;
+
+const items: Item[] = [
+    {
+      name: 'Первый',
+    },
+    {
+      name: 'Очень длинный второй вариант',
+    },
+    {
+      name: 'Третий вариант',
+      closeIcon: true,
+    },
+    {
+      name: 'Четвёртый вариант',
+      closeIcon: true,
+    },
+  ];
+
+const [items, setItems] = useState<Item[]>(items);
+const [value, setValue] = useState<Item | null>(items[0]);
+
+const onCloseTab = (value: any) => {
+  const newItem = items.filter(value1 => value.name !== value1.name)
+  setItems(newItem)
+}
+
+export const TabsExampleSize = () => {
+  const [value, setValue] = useState<Item | null>(items[0]);
+  return (
+    <>
+      <Tabs
+        value={value}
+        onChange={({ value }) => setValue(value)}
+        onClose={({ value }) => onCloseTab(value)}
+        items={items}
+        getLabel={(item) => item}
+        size="m"
       />
     </>
   );
@@ -355,10 +419,11 @@ type RenderItem<ITEM, ELEMENT> = (props: {
 | [`getIcon?`](#иконки)                          | `(item: Item) => React.FC<IconProps>, undefined` | -            | Функция для формирования иконки                                                                                                                                                      |
 | [`onlyIcon?`](#иконки)                         | `boolean`                                        | -            | Показывать только иконку                                                                                                                                                             |
 | [`size?`](#размер-табов)                       | `'s', 'm'`                                       | `'m'`        | Размер компонента                                                                                                                                                                    |
-| [`view?`](#рамка)                              | `'bordered', 'clear'`                            | `'bordered'` | Внешний вид компонента (с рамкой или без)                                                                                                                                            |
+| [`view?`](#рамка)                              | `'bordered', 'clear', 'stroke'`                  | `'bordered'` | Внешний вид компонента (с рамкой или без)                                                                                                                                            |
 | [`linePosition?`](#расположение-табов-и-линии) | `'bottom', 'top', 'left', 'right'`               | `'bottom'`   | Расположение табов (вертикальные или горизонатльные) и линии, которая отмечает активный таб                                                                                          |
 | [`fitMode?`](#адаптивность)                    | `'dropdown', 'scroll'`                           | `'dropdown'` | Способ сворачивания табов при нехватке места: выпадающий список или прокрутка. Доступен только для горизонтального направления табов (когда `linePosition` = `'bottom'` или `'top'`) |
 | `onChange`                                     | `OnChange`                                       | -            | Действие при выборе элемента                                                                                                                                                         |
+| `onClose`                                      | `OnClose`                                        | -            | Действие при закрытии элемента                                                                                                                                                       |
 | `className?`                                   | `string`                                         | -            | Дополнительный CSS-класс                                                                                                                                                             |
 | [`renderItem?`](#кастомизация)                 | `RenderItem`                                     | -            | Функция рендера элемента                                                                                                                                                             |
 | `ref?`                                         | `React.Ref<HTMLDivElement>`                      | -            | Ссылка на корневой DOM-элемент этого компонента                                                                                                                                      |

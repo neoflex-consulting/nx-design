@@ -26,6 +26,13 @@ export const TabsExampleView = () => {
         getLabel={(item) => item}
         view="clear"
       />
+      <Tabs
+        value={value}
+        onChange={({ value }) => setValue(value)}
+        items={items}
+        getLabel={(item) => item}
+        view="stroke"
+      />
     </StoryBookExample>
   );
 };

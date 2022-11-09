@@ -28,7 +28,7 @@
 
   &_checked,
   &:hover {
-    color: var(--color-typo-primary);
+    color: var(--color-typo-normal);
   }
 
   /* Увеличиваем область клика и фокуса */
@@ -53,6 +53,12 @@
 
   &:not(&_onlyIcon) &-Icon {
     margin-right: calc(var(--tab-indent) * 0.5);
+  }
+
+  &_closeIcon {
+     padding: 0px;
+     margin-left: calc(var(--tab-indent) * 0.5);
+     vertical-align: revert;
   }
 
   &_onlyIcon {

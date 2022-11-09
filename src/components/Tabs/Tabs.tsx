@@ -1,6 +1,6 @@
 import './Tabs.css';
 
-import React, { createRef, useMemo } from 'react';
+import React, {createRef, useMemo} from 'react';
 
 import { useChoiceGroup } from '../../hooks/useChoiceGroup/useChoiceGroup';
 import { useResizeObserved } from '../../hooks/useResizeObserved/useResizeObserved';
@@ -10,7 +10,7 @@ import { PropsWithHTMLAttributesAndRef } from '../../utils/types/PropsWithHTMLAt
 
 import { TabsFitModeDropdownWrapper } from './FitModeDropdownWrapper/TabsFitModeDropdownWrapper';
 import { TabsFitModeScrollWrapper } from './FitModeScrollWrapper/TabsFitModeScrollWrapper';
-import { TabsBorderLine, TabsRunningLine } from './Line/TabsLine';
+import { TabsBorderLine, TabsRunningLine } from './Line/Border/TabsLine';
 import { cnTabsTab, TabsTab } from './Tab/TabsTab';
 import {
   getTabsDirection,
@@ -19,12 +19,13 @@ import {
   TabsDirection,
   TabsFitModeWrapperProps,
 } from './helpers';
+import {TabsRunningStrokeLine, TabsStrokeLine} from "./Line/Stroke/TabsStrokeLine";
 
 export const tabsSizes = ['m', 's'] as const;
 export type TabsPropSize = typeof tabsSizes[number];
 export const tabsDefaultSize: TabsPropSize = tabsSizes[0];
 
-export const tabsViews = ['bordered', 'clear'] as const;
+export const tabsViews = ['bordered', 'clear', 'stroke'] as const;
 export type TabsPropView = typeof tabsViews[number];
 export const tabsDefaultView: TabsPropView = tabsViews[0];
 
@@ -42,16 +43,22 @@ export type TabsPropOnChange<ITEM, ITEM_ELEMENT> = (props: {
   e: React.MouseEvent<ITEM_ELEMENT>;
   value: ITEM;
 }) => void;
+// export type TabsPropOnClose<ITEM, ITEM_ELEMENT> = (props: {
+//   e: React.MouseEvent<ITEM_ELEMENT>;
+//   value: ITEM;
+// }) => void;
 
 type RenderItemProps<ITEM, ELEMENT extends HTMLElement> = {
   item: ITEM;
   onChange: React.MouseEventHandler<ELEMENT>;
+  onClose: React.MouseEventHandler<ELEMENT>;
   checked: boolean;
   label: string;
   icon?: React.FC<IconProps>;
   size: TabsPropSize;
   iconSize?: IconPropSize;
   onlyIcon?: boolean;
+  closeIcon?: boolean;
 };
 
 type RenderItem<ITEM, ELEMENT extends HTMLElement> = (
@@ -65,6 +72,7 @@ export type TabsProps<
   {
     size?: TabsPropSize;
     onlyIcon?: boolean;
+    closeIcon?: boolean;
     view?: TabsPropView;
     iconSize?: IconPropSize;
     items: ITEM[];
@@ -73,6 +81,7 @@ export type TabsProps<
     getLabel: TabsPropGetLabel<ITEM>;
     children?: never;
     onChange: TabsPropOnChange<ITEM, ITEM_ELEMENT>;
+    onClose: TabsPropOnChange<ITEM, ITEM_ELEMENT>;
     renderItem?: RenderItem<ITEM, ITEM_ELEMENT>;
   } & (
     | {
@@ -97,11 +106,12 @@ export const cnTabs = cn('Tabs');
 function renderItemDefault<ITEM, ITEMELEMENT extends HTMLElement>(
   props: RenderItemProps<ITEM, ITEMELEMENT>,
 ): React.ReactElement {
-  const { onChange, ...otherProps } = props;
+  const { onChange, onClose, ...otherProps } = props;
   return (
     <TabsTab
       {...otherProps}
       onChange={(onChange as unknown) as React.MouseEventHandler<HTMLButtonElement>}
+      onClose={(onClose as unknown) as React.MouseEventHandler<HTMLButtonElement>}
     />
   );
 }
@@ -116,9 +126,11 @@ export const Tabs: Tabs = React.forwardRef((props, ref) => {
     linePosition = tabsDefaultLinePosition,
     fitMode = tabsDefaultFitMode,
     onlyIcon,
+    closeIcon,
     getIcon,
     getLabel,
     onChange,
+    onClose,
     iconSize,
     renderItem: renderItemProp = renderItemDefault,
     ...otherProps
@@ -128,6 +140,13 @@ export const Tabs: Tabs = React.forwardRef((props, ref) => {
     value: value || null,
     getKey: getLabel,
     callBack: onChange,
+    multiple: false,
+  });
+
+  const { getOnClose } = useChoiceGroup({
+    value: value || null,
+    getKey: getLabel,
+    callBack: onClose,
     multiple: false,
   });
 
@@ -147,34 +166,54 @@ export const Tabs: Tabs = React.forwardRef((props, ref) => {
 
   const activeTabIdx = items.findIndex(getChecked);
 
+  const getCloseIcon = (item: any) => {
+    return item.closeIcon || false
+  }
+
+  // const [closeFlag, setCloseFlag] = useState<boolean>(false);
+
+
   const renderItem = (item: typeof items[number], onClick?: () => void) =>
     renderItemProp({
       item,
       onChange: (...args) => {
         onClick?.();
-        getOnChange(item)(...args);
+        getOnChange(item)(...args)
       },
       checked: getChecked(item),
       label: getLabel(item).toString(),
       icon: getIcon && getIcon(item),
       onlyIcon,
+      closeIcon: getCloseIcon(item),
+      onClose: (...args) => {
+        // setCloseFlag(true);
+        onClick?.();
+        getOnClose(item)(...args);
+      },
       size,
-      iconSize,
+      iconSize
     });
 
   const renderItemsList: RenderItemsListProp = ({ withRunningLine = true, getTabClassName }) => (
-    <div className={cnTabs('List', { direction: tabsDirection, linePosition })}>
+    <div className={cnTabs('List', { direction: tabsDirection, linePosition, view })}>
       {items.map((item, idx) => (
         <div
           ref={tabRefs[idx]}
           key={getLabel(item)}
-          className={cnTabs('Tab', { direction: tabsDirection }, [getTabClassName?.(idx)])}
+          className={cnTabs('Tab', { direction: tabsDirection, view, activeTabIdx: activeTabIdx === idx }, [getTabClassName?.(idx)])}
         >
           {renderItem(item)}
         </div>
       ))}
-      {withRunningLine && (
+      {withRunningLine && view !== 'stroke' && (
         <TabsRunningLine
+          linePosition={linePosition}
+          tabsDimensions={tabsDimensions}
+          activeTabIdx={activeTabIdx}
+        />
+      )}
+      {withRunningLine && view === 'stroke' && (
+        <TabsRunningStrokeLine
           linePosition={linePosition}
           tabsDimensions={tabsDimensions}
           activeTabIdx={activeTabIdx}
@@ -201,6 +240,7 @@ export const Tabs: Tabs = React.forwardRef((props, ref) => {
         items={items}
       />
       {view === 'bordered' && <TabsBorderLine linePosition={linePosition} />}
+      {view === 'stroke' && <TabsStrokeLine linePosition={linePosition} />}
     </div>
   );
 });

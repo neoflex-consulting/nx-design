@@ -20,18 +20,30 @@ import {
 } from '../Tabs';
 
 import mdx from './Tabs.docs.mdx';
+import {presetDatagram, Theme} from "../../Theme/Theme";
+
+// const defaultKnobs = () => ({
+//   size: select('size', tabsSizes, tabsDefaultSize),
+//   view: select('view', tabsViews, tabsDefaultView),
+//   linePosition: select('linePosition', tabsLinePositions, tabsDefaultLinePosition),
+//   withIcon: boolean('withIcon', false),
+//   onlyIcon: boolean('onlyIcon', false),
+// closeIcon: boolean('onlyIcon', true),
+// });
 
 const defaultKnobs = () => ({
-  size: select('size', tabsSizes, tabsDefaultSize),
-  view: select('view', tabsViews, tabsDefaultView),
+  size: select('size', tabsSizes, "s"),
+  view: select('view', tabsViews, "stroke"),
   linePosition: select('linePosition', tabsLinePositions, tabsDefaultLinePosition),
-  withIcon: boolean('withIcon', false),
+  withIcon: boolean('withIcon', true),
   onlyIcon: boolean('onlyIcon', false),
+  // closeIcon: boolean('closeIcon', true),
 });
 
 type Item = {
   name: string;
   icon?: React.FC<IconProps>;
+  closeIcon?: boolean;
 };
 
 const itemIcons = [IconImage, IconBell, IconCamera, IconPhone];
@@ -46,9 +58,11 @@ const getItems = (): Item[] => {
     },
     {
       name: 'Третий вариант',
+      closeIcon: true,
     },
     {
       name: 'Четвёртый вариант',
+      closeIcon: true,
     },
   ]);
 
@@ -60,28 +74,38 @@ const getItems = (): Item[] => {
 
 export function Playground() {
   const { size, view, linePosition, withIcon, onlyIcon } = defaultKnobs();
-  const items = getItems();
+  // const items = getItems();
+
+  const [items, setItems] = useState<Item[]>(getItems());
   const [value, setValue] = useState<Item | null>(items[0]);
 
+  const onCloseTab = (value: any) => {
+    const newItem = items.filter(value1 => value.name !== value1.name)
+    setItems(newItem)
+  }
+
   return (
-    <Tabs
-      items={items}
-      value={value}
-      getLabel={(item) => item.name}
-      getIcon={withIcon ? (item) => item.icon : undefined}
-      onChange={({ value }) => setValue(value)}
-      size={size}
-      view={view}
-      {...(linePosition === 'bottom' || linePosition === 'top'
-        ? {
+    <Theme preset={presetDatagram}>
+      <Tabs
+        items={items}
+        value={value}
+        getLabel={(item) => item.name}
+        getIcon={withIcon ? (item) => item.icon : undefined}
+        onChange={({ value }) => setValue(value)}
+        onClose={({ value }) => onCloseTab(value)}
+        size={size}
+        view={view}
+        {...(linePosition === 'bottom' || linePosition === 'top'
+          ? {
             linePosition,
             fitMode: select('fitMode', tabsFitModes, tabsDefaultFitMode),
           }
-        : {
+          : {
             linePosition,
           })}
-      onlyIcon={onlyIcon}
-    />
+        onlyIcon={onlyIcon}
+      />
+    </Theme>
   );
 }
 

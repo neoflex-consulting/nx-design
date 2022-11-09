@@ -7,6 +7,7 @@ type GetChecked<ITEM> = (item: ITEM) => boolean;
 type UseChoiceGroupValues<ITEM, EVENT> = {
   getOnChange: GetOnChange<ITEM, EVENT>;
   getChecked: GetChecked<ITEM>;
+  getOnClose: GetOnChange<ITEM, EVENT>;
 };
 
 type CallbackWithMultiple<ITEM, EVENT> = (props: { e: EVENT; value: ITEM[] | null }) => void;
@@ -94,8 +95,14 @@ export function useChoiceGroup<ITEM, EVENT>(
     }
   };
 
+  const getOnClose: GetOnChange<ITEM, EVENT> = (selectedItem) => (e) => {
+    // @ts-ignore
+    props.callBack({ value: selectedItem });
+  };
+
   return {
     getOnChange,
     getChecked,
+    getOnClose,
   };
 }

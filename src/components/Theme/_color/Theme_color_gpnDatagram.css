@@ -70,7 +70,7 @@ $color-text-black: #090b1f;
   --color-bg-default: color($color-base-essential); /* Цвет дефолта */
   --color-bg-secondary: color($color-base-essential l(-5)); /* Дополнительный цвет фона */
 
-  --color-bg-brand: color($color-base-project a(100%)); /* Цвет фона брендированый */
+  --color-bg-brand: var(--color-base-path-blue-6); /* Цвет фона брендированый */
   --color-bg-link: var(--color-base-path-blue-6); /* Цвет фона ссылки */
   --color-bg-border: var(--color-base-base-grey-3); /* Цвет границ */
 

@@ -13,6 +13,12 @@
     position: relative;
     display: flex;
 
+    &_view {
+        &_stroke {
+          padding: 0 16px;
+        }
+    }
+
     &_direction_horizontal {
       align-items: center;
       white-space: nowrap;
@@ -34,7 +40,28 @@
   &-Tab {
     flex-shrink: 0;
 
-    &_direction_horizontal {
+    &_view {
+      &_stroke {
+        margin-right: var(--space-2xs);
+        padding: 0 8px 0 12px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        border-top: 1px solid var(--color-bg-border);
+        border-left: 1px solid var(--color-bg-border);
+        border-right: 1px solid var(--color-bg-border);
+      }
+    }
+
+    &_activeTabIdx {
+    }
+
+    &:not(.Tabs-Tab_activeTabIdx)&_view {
+      &_stroke {
+      background-color: var(--color-control-bg-ghost);
+      }
+    }
+
+    &:not(.Tabs-Tab_view_stroke)&_direction_horizontal {
       margin-right: var(--space-m);
     }
 
