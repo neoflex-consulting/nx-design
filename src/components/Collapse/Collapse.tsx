@@ -73,10 +73,12 @@ type CollapseProps = PropsWithHTMLAttributesAndRef<
       | {
           iconPosition?: 'left';
           rightSide?: React.ReactNode;
+          leftSide?: never;
         }
       | {
           iconPosition?: 'right';
           rightSide?: never;
+          leftSide?: React.ReactNode;
         }
     ),
   HTMLDivElement
@@ -94,11 +96,11 @@ export const sizeIconMap: Record<CollapsePropSize, IconPropSize> = {
   'l': 's',
 };
 
-function renderSide(side: React.ReactNode): React.ReactNode {
+function renderSide(side: React.ReactNode, rightSide: boolean, leftSide: boolean): React.ReactNode {
   const sides = side ? [...(Array.isArray(side) ? side : [side])] : [];
 
   return sides.map((item, index) => (
-    <div className={cnCollapse('Side')} key={index}>
+    <div className={cnCollapse('Side', {rightSide, leftSide})} key={index}>
       {item}
     </div>
   ));
@@ -117,6 +119,7 @@ export const Collapse: Collapse = React.forwardRef<HTMLDivElement, CollapseProps
     icon = IconChevronDown,
     closeIcon,
     rightSide,
+    leftSide,
     horizontalSpace,
     iconPosition = collapsePropIconPositionDefault,
     directionIcon = collapsePropDirectionIconDefault,
@@ -148,10 +151,11 @@ export const Collapse: Collapse = React.forwardRef<HTMLDivElement, CollapseProps
           direction={directionIcon}
           closeDirection={closeDirectionIcon}
         />
-        <Typography className={cnCollapse('LabelText')} view={view} size={'body'}>
+        <Typography className={cnCollapse('LabelText')} view={view} size={'m'}>
           {label}
         </Typography>
-        {iconPosition === 'left' && renderSide(rightSide)}
+        {iconPosition === 'left' && renderSide(rightSide, true, false)}
+        {iconPosition === 'right' && renderSide(leftSide, false, true)}
       </div>
       <div className={cnCollapse('Body', { isOpen })}>
         <div className={cnCollapse('Content')}>{children}</div>

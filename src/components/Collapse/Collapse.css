@@ -131,9 +131,17 @@
   }
 
   &-Side {
-    margin-left: var(--elements-offset);
-    line-height: 0;
+    &_rightSide {
+      margin-left: var(--elements-offset);
+      line-height: 0;
+    }
+
+    &_leftSide {
+      margin-right: var(--elements-offset);
+       line-height: 0;
+    }
   }
+
 
   &-Content {
     padding: var(--body-offset-up) var(--horizontal-space) var(--body-offset-bottom)
@@ -156,5 +164,6 @@
 
   &-LabelText {
     flex: 1;
+    font-weight: 600;
   }
 }

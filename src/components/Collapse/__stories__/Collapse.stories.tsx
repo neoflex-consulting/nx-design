@@ -21,6 +21,8 @@ import {
 } from '../Collapse';
 
 import mdx from './Collapse.docs.mdx';
+import {IconDocLeft} from "../../../icons/IconDocLeft/IconDocLeft";
+import {IconDocRight} from "../../../icons/IconDocRight/IconDocRight";
 
 const defaultKnobs = () => ({
   size: select('size', collapsePropSize, collapsePropSizeDefault),
@@ -39,6 +41,7 @@ const defaultKnobs = () => ({
     collapsePropHorizontalSpace[0],
   ),
   rightSide: boolean('rightSide', false),
+  leftSide: boolean('leftSide', false),
   directionIcon: select(
     'directionIcon',
     collapsePropDirectionIcon,
@@ -63,6 +66,7 @@ export function Playground() {
     divider,
     horizontalSpace,
     rightSide,
+    leftSide,
     directionIcon,
     closeDirectionIcon,
     children,
@@ -71,7 +75,11 @@ export function Playground() {
 
   const defaultRightSide: React.ReactNode = [
     <Badge label="Статус" size="s" />,
-    <IconWifi size={getSizeByMap(sizeIconMap, size)} />,
+    <IconDocLeft size={getSizeByMap(sizeIconMap, size)} />,
+  ];
+
+  const defaultLeftSide: React.ReactNode = [
+    <IconDocRight size={getSizeByMap(sizeIconMap, size)} />,
   ];
 
   return (
@@ -85,12 +93,18 @@ export function Playground() {
       divider={divider}
       horizontalSpace={horizontalSpace}
       style={{ maxWidth: 300 }}
-      {...(iconPosition === 'left'
-        ? {
+      {...(
+        iconPosition === 'left' ?
+          {
             iconPosition,
             rightSide: rightSide ? defaultRightSide : undefined,
-          }
-        : { iconPosition })}
+          } :
+          iconPosition === 'right' ?
+            {
+              iconPosition,
+              leftSide: leftSide ? defaultLeftSide : undefined,
+            } : { iconPosition }
+      )}
       {...(withCustomIcon
         ? {
             icon: IconPlus,

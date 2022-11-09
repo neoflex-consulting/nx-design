@@ -11,7 +11,9 @@ import {
 import {
   CollapseExampleIconCustomIconDirection,
   CollapseExampleIconCustomIcon,
-} from './examples/CollapseExampleIconCustomIcon/CollapseExampleIconCustomIcon';
+} from './examples/CollapseExampleIconCustomIcon/CollapseExampleIconCustomIcon'; import {
+  CollapseExampleIconLeftSideBadge, CollapseExampleIconLeftSideButton
+} from "./examples/CollapseExampleIconLeftSideBadge/CollapseExampleIconLeftSideBadge";
 
 # Collapse
 
@@ -73,10 +75,17 @@ import {
 
 Справа от заголовка можно добавить иконку, бейджик, кнопку, текст или что-то ещё. Это поможет выделить коллапсы или разбить на группы.
 
-За дополнительный элемент отвечает свойство `rightSide`. Его можно использовать, только если иконка у коллапса расположена слева.
+За дополнительный элемент отвечает свойства `rightSide` и `leftSide`.
+
+`rightSide` можно использовать, только если иконка у коллапса расположена слева `iconPosition={"left"}`.
+
+`leftSide` можно использовать, только если иконка у коллапса расположена справа `iconPosition={"right"}`.
 
 <CollapseExampleIconRightSideBadge />
 <CollapseExampleIconRightSideButton />
+
+<CollapseExampleIconLeftSideBadge />
+<CollapseExampleIconLeftSideButton />
 
 ## Иконка
 
@@ -168,6 +177,7 @@ import {
 | [`directionIcon?`](#направление-иконки)      | `'up'`, `'right'`, `'down'`, `'left'`, `'upRight'`, `'downRight'`, `'upLeft'`, `'downLeft'`        | `'up'`                | Направление иконки в закрытом состоянии                                     |
 | [`closeDirectionIcon?`](#направление-иконки) | `'up'`, `'right'`, `'down'`, `'left'`, `'upRight'`, `'downRight'`, `'upLeft'`, `'downLeft'`        | `'down'`              | Направление иконки в открытом состоянии                                     |
 | [`rightSide?`](#дополнительный-элемент)      | `React.ReactNode`                                                                                  | -                     | Дополнительный контент, который можно поместить рядом с заголовком коллапса |
+| [`leftSide?`](#дополнительный-элемент)      | `React.ReactNode`                                                                                  | -                     | Дополнительный контент, который можно поместить рядом с заголовком коллапса |
 | `isOpen?`                                    | `boolean`                                                                                          | -                     | Состояние коллапса (открыт/закрыт)                                          |
 | `onClick?`                                   | `React.EventHandler<React.MouseEvent>`                                                             | -                     | Действие при клике на коллапс                                               |
 | `className?`                                 | `string`                                                                                           | -                     | Дополнительный CSS-класс                                                    |
