@@ -85,27 +85,25 @@ export function Playground() {
   }
 
   return (
-    <Theme preset={presetDatagram}>
-      <Tabs
-        items={items}
-        value={value}
-        getLabel={(item) => item.name}
-        getIcon={withIcon ? (item) => item.icon : undefined}
-        onChange={({ value }) => setValue(value)}
-        onClose={({ value }) => onCloseTab(value)}
-        size={size}
-        view={view}
-        {...(linePosition === 'bottom' || linePosition === 'top'
-          ? {
-            linePosition,
-            fitMode: select('fitMode', tabsFitModes, tabsDefaultFitMode),
-          }
-          : {
-            linePosition,
-          })}
-        onlyIcon={onlyIcon}
-      />
-    </Theme>
+    <Tabs
+      items={items}
+      value={value}
+      getLabel={(item) => item.name}
+      getIcon={withIcon ? (item) => item.icon : undefined}
+      onChange={({ value }) => setValue(value)}
+      onClose={({ value }) => onCloseTab(value)}
+      size={size}
+      view={view}
+      {...(linePosition === 'bottom' || linePosition === 'top'
+        ? {
+          linePosition,
+          fitMode: select('fitMode', tabsFitModes, tabsDefaultFitMode),
+        }
+        : {
+          linePosition,
+        })}
+      onlyIcon={onlyIcon}
+    />
   );
 }
 
