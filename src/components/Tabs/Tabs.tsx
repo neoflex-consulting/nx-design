@@ -238,6 +238,7 @@ export const Tabs: Tabs = React.forwardRef((props, ref) => {
         getLabel={getLabel}
         getChecked={getChecked}
         items={items}
+        strokeView={view === 'stroke'}
       />
       {view === 'bordered' && <TabsBorderLine linePosition={linePosition} />}
       {view === 'stroke' && <TabsStrokeLine linePosition={linePosition} />}

@@ -15,6 +15,7 @@ export type TabsFitModeWrapperProps<ITEM> = {
   renderItem: (item: ITEM) => React.ReactNode;
   renderItemsList: RenderItemsListProp;
   tabRefs: Array<React.RefObject<HTMLElement>>;
+  strokeView: boolean;
 };
 
 export type RenderItemsListProp = (props: {

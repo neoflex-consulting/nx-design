@@ -56,7 +56,6 @@
   }
 
   &_closeIcon {
-     padding: 0px;
      margin-left: calc(var(--tab-indent) * 0.5);
      vertical-align: revert;
   }

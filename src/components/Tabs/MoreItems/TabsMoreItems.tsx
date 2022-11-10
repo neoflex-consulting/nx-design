@@ -19,12 +19,13 @@ type TabsMoreItems = <ITEM>(
     getLabel: TabsPropGetLabel<ITEM>;
     getChecked: (item: ITEM) => boolean;
     height: number;
+    strokeView: boolean;
   } & React.RefAttributes<HTMLDivElement>,
   ref: React.Ref<HTMLDivElement>,
 ) => React.ReactElement | null;
 
 export const TabsMoreItems: TabsMoreItems = React.forwardRef(
-  ({ items, renderItem, getLabel, getChecked, height }, ref) => {
+  ({ items, renderItem, getLabel, getChecked, height, strokeView }, ref) => {
     const [isMoreItemsVisible, setIsMoreItemsVisible] = React.useState(false);
     const buttonRef = React.useRef<HTMLDivElement>(null);
 
@@ -38,7 +39,7 @@ export const TabsMoreItems: TabsMoreItems = React.forwardRef(
       <>
         <div
           ref={useForkRef([ref, buttonRef])}
-          className={cnTabsMoreItems('Button')}
+          className={cnTabsMoreItems('Button', {strokeView: strokeView})}
           style={{ height }}
         >
           <Button

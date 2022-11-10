@@ -1,7 +1,12 @@
 .TabsMoreItems {
+
   &-Button {
     display: flex;
     align-items: center;
+
+    &_strokeView {
+      margin-left: 16px;
+    }
   }
 
   &-Popover {
@@ -20,6 +25,7 @@
 
   &-Item {
     padding: 0 var(--space-s);
+    display: flex;
 
     &_active {
       position: relative;

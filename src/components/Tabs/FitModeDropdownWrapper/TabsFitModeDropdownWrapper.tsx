@@ -18,6 +18,7 @@ export const TabsFitModeDropdownWrapper = <ITEM,>({
   getChecked,
   renderItem,
   renderItemsList,
+  strokeView
 }: TabsFitModeWrapperProps<ITEM>): React.ReactElement | null => {
   const ref = React.useRef<HTMLDivElement>(null);
   const moreItemsRef = React.useRef<HTMLDivElement>(null);
@@ -58,6 +59,7 @@ export const TabsFitModeDropdownWrapper = <ITEM,>({
             getLabel={getLabel}
             getChecked={getChecked}
             height={maxTabHeight}
+            strokeView={strokeView}
           />
         </div>
       )}
