@@ -51,7 +51,7 @@ export type TabsPropOnChange<ITEM, ITEM_ELEMENT> = (props: {
 type RenderItemProps<ITEM, ELEMENT extends HTMLElement> = {
   item: ITEM;
   onChange: React.MouseEventHandler<ELEMENT>;
-  onClose: React.MouseEventHandler<ELEMENT>;
+  onClose?: React.MouseEventHandler<ELEMENT>;
   checked: boolean;
   label: string;
   icon?: React.FC<IconProps>;
@@ -81,7 +81,7 @@ export type TabsProps<
     getLabel: TabsPropGetLabel<ITEM>;
     children?: never;
     onChange: TabsPropOnChange<ITEM, ITEM_ELEMENT>;
-    onClose: TabsPropOnChange<ITEM, ITEM_ELEMENT>;
+    onClose?: TabsPropOnChange<ITEM, ITEM_ELEMENT>;
     renderItem?: RenderItem<ITEM, ITEM_ELEMENT>;
   } & (
     | {
@@ -146,7 +146,7 @@ export const Tabs: Tabs = React.forwardRef((props, ref) => {
   const { getOnClose } = useChoiceGroup({
     value: value || null,
     getKey: getLabel,
-    callBack: onClose,
+    callBack: onClose || onChange,
     multiple: false,
   });
 
