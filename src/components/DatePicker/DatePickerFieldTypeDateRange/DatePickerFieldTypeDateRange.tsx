@@ -1,17 +1,21 @@
 import './DatePickerFieldTypeDateRange.css';
 
-import React, { forwardRef, useEffect, useRef, useState } from 'react';
+import React, {forwardRef, useEffect, useRef, useState} from 'react';
 import isBefore from 'date-fns/isBefore';
 import isEqual from 'date-fns/isEqual';
 
-import { cn } from '../../../utils/bem';
-import { FieldCaption } from '../../FieldCaption/FieldCaption';
-import { FieldLabel } from '../../FieldLabel/FieldLabel';
-import { datePickerErrorTypes } from '../helpers';
+import {cn} from '../../../utils/bem';
+import {FieldCaption} from '../../FieldCaption/FieldCaption';
+import {FieldLabel} from '../../FieldLabel/FieldLabel';
+import {datePickerErrorTypes} from '../helpers';
 
 import {DatePickerFieldTypeDateRangeProps, mapFormForStart} from './helpers';
-import {DatePickerFieldTypeDateRangeDouble} from "../DatePickerFieldTypeDateRangeDouble/DatePickerFieldTypeDateRangeDouble";
-import {DatePickerFieldTypeDateRangeSingle} from "../DatePickerFieldTypeDateRangeSingle/DatePickerFieldTypeDateRangeSingle";
+import {
+  DatePickerFieldTypeDateRangeDouble
+} from "../DatePickerFieldTypeDateRangeDouble/DatePickerFieldTypeDateRangeDouble";
+import {
+  DatePickerFieldTypeDateRangeSingle
+} from "../DatePickerFieldTypeDateRangeSingle/DatePickerFieldTypeDateRangeSingle";
 import {getSizeByMap} from "../../../utils/getSizeByMap";
 
 const cnDatePickerFieldTypeDateRange = cn('DatePickerFieldTypeDateRange');
@@ -78,6 +82,71 @@ export const DatePickerFieldTypeDateRange = forwardRef<
     const end = ownEndDate || endDate;
 
     if (!onChange) {
+      return;
+    }
+
+    if (start && minDate) {
+      let newEnd = end || undefined;
+      let newStart = start;
+
+      if (maxDate) {
+        if (isBefore(start, minDate)) {
+          newStart = minDate;
+        }
+
+        if (isBefore(maxDate, start)) {
+          newStart = maxDate;
+        }
+
+        if (end) {
+            if ( ( isBefore(end, maxDate) && isBefore(minDate, end) ) || isEqual(end, maxDate)) {
+              newEnd = end;
+            }
+
+            if (isBefore(maxDate, end)) {
+              newEnd = maxDate;
+            }
+
+            if (isBefore(end, minDate)) {
+              newEnd = minDate;
+            }
+
+            if (isBefore(end, start)) {
+              newStart = newEnd || end;
+            }
+        }
+      }
+
+      onChange({ e, value: [newStart, newEnd] });
+      return;
+    }
+
+    if (end && maxDate) {
+      const newStart = start || undefined;
+
+      if (minDate) {
+        if ( ( isBefore(end, maxDate) && isBefore(minDate, end) ) || isEqual(end, maxDate)) {
+          onChange({ e, value: [newStart, end] });
+          return;
+        }
+
+        if (isBefore(maxDate, end)) {
+          onChange({ e, value: [newStart, maxDate] });
+          return;
+        }
+
+        if (isBefore(end, minDate)) {
+          onChange({ e, value: [newStart, minDate] });
+          return;
+        }
+
+      }
+
+      if (isBefore(end, maxDate) || isEqual(end, maxDate)) {
+        onChange({ e, value: [newStart, end] });
+        return;
+      }
+      onChange({ e, value: [newStart, maxDate] });
       return;
     }
 
