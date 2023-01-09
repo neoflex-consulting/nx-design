@@ -20,6 +20,7 @@ type LeftSideProps = HeaderSide & {
   onClickButtonAdd?: (event: any) => void;
   buttonAddItems?: ContextMenuItemDefault[];
   buttonAddType?: ButtonAddPropType;
+  buttonAddColumnVisible?: boolean;
 };
 
 const cnLeftSide = cn('LeftSide');
@@ -31,7 +32,8 @@ export const LeftSide: React.FC<LeftSideProps> = ({
                                                            progressLineVisible,
                                                            buttonAddItems,
                                                            buttonAddType,
-                                                           onClickButtonAdd
+                                                           onClickButtonAdd,
+                                                           buttonAddColumnVisible
                                                           }) => {
 
   const ButtonAddColumn = withTooltip({ content: `${nameButtonAddColumn || "Добавить строку"}`})(Button);
@@ -44,6 +46,7 @@ export const LeftSide: React.FC<LeftSideProps> = ({
 
   return (
     <div className={cnLeftSide()}>
+      {buttonAddColumnVisible &&
         <ButtonAddColumn
           className={cnLeftSide('Buttons')}
           onlyIcon={true}
@@ -52,11 +55,11 @@ export const LeftSide: React.FC<LeftSideProps> = ({
           size={"s"}
           onClick={(event) => {
             buttonAddType === buttonAddPropTypeDefault || buttonAddType === undefined ?
-            onClickButtonAdd && onClickButtonAdd(event) :
-            setIsOpenButtonAdd(!isOpenButtonAdd)
+              onClickButtonAdd && onClickButtonAdd(event) :
+              setIsOpenButtonAdd(!isOpenButtonAdd)
           }}
           ref={refButtonAdd}
-        />
+        />}
         <ContextMenu
           isOpen={isOpenButtonAdd}
           items={buttonAddItems || []}
