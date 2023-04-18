@@ -31,7 +31,7 @@ export type PropGetItemDisabled<ITEM> = (item: ITEM) => boolean | undefined;
 export type PropGetGroupKey<GROUP> = (group: GROUP) => string | number;
 export type PropGetGroupLabel<GROUP> = (group: GROUP) => string;
 
-export type PropsearchFunction<ITEM> = (item: ITEM, searchValue: string) => boolean;
+export type PropSearchFunction<ITEM> = (item: ITEM, searchValue: string) => boolean;
 type PropOnChange<ITEM, MULTIPLE extends boolean> = (props: {
   value: (MULTIPLE extends true ? ITEM[] : ITEM) | null;
   e: React.SyntheticEvent;
