@@ -13,7 +13,7 @@ export const avatarPropForm = ['round', 'brick', 'default'] as const;
 export type AvatarPropForm = typeof avatarPropForm[number];
 export const avatarPropFormDefault: AvatarPropForm = avatarPropForm[0];
 
-type Props = {
+export type Props = {
   url?: string;
   name?: string;
   size?: AvatarPropSize;

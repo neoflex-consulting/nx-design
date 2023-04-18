@@ -59,7 +59,7 @@ export type Item = {
   titleButtonMoreOff?: string;
 };
 
-type Props = {
+export type Props = {
   items: Item[];
   children?: never;
 };

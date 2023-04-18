@@ -5,7 +5,7 @@ import React from 'react';
 import { cn } from '../../../utils/bem';
 import { AdditionalControlRenderType, CalendarAdditionalControlRenderProp } from '../helpers';
 
-type Props = {
+export type Props = {
   renderAdditionalControls?: CalendarAdditionalControlRenderProp;
   currentVisibleDate?: Date;
 };

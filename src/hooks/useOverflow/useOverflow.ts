@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import { useComponentSize } from '../useComponentSize/useComponentSize';
 
-type Props = {
+export type Props = {
   currentRef: React.RefObject<HTMLElement>;
   containerRef?: React.RefObject<HTMLElement> | Document | Window;
 };

@@ -72,7 +72,7 @@ export const textPropLineHeight = ['2xs', 'xs', 's', 'm', 'l'] as const;
 export type TextPropLineHeight = typeof textPropLineHeight[number];
 export const textPropLineHeightDefault: TextPropLineHeight = 'm';
 
-type Props = {
+export type Props = {
   align?: TextPropAlign;
   cursor?: TextPropCursor;
   display?: TextPropDisplay;

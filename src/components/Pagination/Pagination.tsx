@@ -42,7 +42,7 @@ export type HotKeys = {
   prevPage: HotKey;
 };
 
-type Props = {
+export type Props = {
   currentPage: number;
   totalPages: number;
   onChange: (pageNumber: number) => void;

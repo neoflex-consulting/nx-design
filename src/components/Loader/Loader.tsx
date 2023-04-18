@@ -9,7 +9,7 @@ export const loaderPropSize = ['m', 's'] as const;
 export type LoaderPropSize = typeof loaderPropSize[number];
 export const loaderPropSizeDefault: LoaderPropSize = loaderPropSize[0];
 
-type Props = {
+export type Props = {
   size?: LoaderPropSize;
   children?: never;
 };

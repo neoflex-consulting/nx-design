@@ -18,7 +18,7 @@ type CommonProps = {
   children?: never;
 };
 
-type PropsWithModeButton = CommonProps & {
+export type PropsWithModeButton = CommonProps & {
   mode?: 'button';
   onClick: React.MouseEventHandler<HTMLButtonElement>;
   checked?: never;
@@ -26,14 +26,14 @@ type PropsWithModeButton = CommonProps & {
   onCancel?: never;
 };
 
-type PropsWithModeLink = CommonProps & {
+export type PropsWithModeLink = CommonProps & {
   mode: 'link';
   checked?: never;
   onChange?: never;
   onCancel?: never;
 };
 
-type PropsWithModeCheck = CommonProps & {
+export type PropsWithModeCheck = CommonProps & {
   mode: 'check';
   onChange: ({ e, checked }: { e?: React.MouseEvent; checked: boolean }) => void;
   checked: boolean;
@@ -41,7 +41,7 @@ type PropsWithModeCheck = CommonProps & {
   onCancel?: never;
 };
 
-type PropsWithModeCancel = CommonProps & {
+export type PropsWithModeCancel = CommonProps & {
   mode: 'cancel';
   onCancel: React.MouseEventHandler<HTMLButtonElement>;
   onClick?: never;
@@ -49,7 +49,7 @@ type PropsWithModeCancel = CommonProps & {
   checked?: never;
 };
 
-type PropsWithModeInfo = CommonProps & {
+export type PropsWithModeInfo = CommonProps & {
   mode: 'info';
   onCancel?: never;
   onClick?: never;
@@ -57,7 +57,7 @@ type PropsWithModeInfo = CommonProps & {
   checked?: never;
 };
 
-type Props<ROLE extends TagPropMode = 'button'> = ROLE extends 'button'
+export type Props<ROLE extends TagPropMode = 'button'> = ROLE extends 'button'
   ? PropsWithModeButton & Omit<JSX.IntrinsicElements['button'], keyof PropsWithModeButton>
   : {} & ROLE extends 'check'
   ? PropsWithModeCheck & Omit<JSX.IntrinsicElements['button'], keyof PropsWithModeCheck>

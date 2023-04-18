@@ -7,7 +7,7 @@ import { User, UserPropStatus } from '../../User/User';
 
 export const cnHeaderLogin = cn('HeaderLogin');
 
-type Props = Omit<
+export type Props = Omit<
   PropsWithJsxAttributes<
     {
       isLogged?: boolean;

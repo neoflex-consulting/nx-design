@@ -10,7 +10,7 @@ import {IconClose} from "../../../icons/IconClose/IconClose";
 
 export const cnTabsTab = cn('TabsTab');
 
-type Props = {
+export type Props = {
   size: TabsPropSize;
   onlyIcon?: boolean;
   icon?: React.FC<IconProps>;

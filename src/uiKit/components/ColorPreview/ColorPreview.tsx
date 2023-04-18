@@ -11,7 +11,7 @@ import * as wp from '../../whitepaper/whitepaper';
 
 const cnColorPreview = cn('ColorPreview');
 
-type Props = {
+export type Props = {
   color: string;
   value: string;
   clickHandler: () => void;

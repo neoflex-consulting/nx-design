@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { IconComponent, IconPropSize } from '../../../icons/_Icon/Icon';
 import { cnChoiceGroup } from '../ChoiceGroup';
 
-type Props = {
+export type Props = {
   icon?: IconComponent;
   onlyIcon?: boolean;
   iconSize?: IconPropSize;

@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-type Props = {
+export type Props = {
   step?: string | number | number[];
   min?: number;
   max?: number;

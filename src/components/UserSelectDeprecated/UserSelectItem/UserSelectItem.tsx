@@ -10,7 +10,7 @@ import { PropsWithHTMLAttributes } from '../../../utils/types/PropsWithHTMLAttri
 import { Avatar } from '../../Avatar/Avatar';
 
 const sizes = ['xs', 's', 'm', 'l'] as const;
-type PropSize = typeof sizes[number];
+export type Propsize = typeof sizes[number];
 
 type UserSelectItemProps = PropsWithHTMLAttributes<
   {

@@ -24,7 +24,7 @@ export type CheckboxPropOnChange = (object: {
   checked: boolean;
 }) => void;
 
-type Props = {
+export type Props = {
   checked: boolean | undefined;
   size?: CheckboxPropSize;
   view?: CheckboxPropView;

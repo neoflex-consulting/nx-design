@@ -11,7 +11,7 @@ export const progressSpinPropSize = ['m', 's'] as const;
 export type ProgressSpinPropSize = typeof progressSpinPropSize[number];
 export const progressSpinPropSizeDefault: ProgressSpinPropSize = progressSpinPropSize[0];
 
-type Props = {
+export type Props = {
   size?: ProgressSpinPropSize;
   className?: string;
   progress?: number;

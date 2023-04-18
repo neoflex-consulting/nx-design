@@ -17,7 +17,7 @@ const cnTableFilterTooltip = cn('TableFilterTooltip');
 
 type Values = string[];
 
-type Props = {
+export type Props = {
   options: Array<{
     value: Values[number];
     label: string;

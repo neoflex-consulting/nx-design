@@ -2,7 +2,7 @@ import './MixSpace.css';
 
 import { cn } from '../../utils/bem';
 
-type PropSpace =
+export type Propspace =
   | 0
   | 'auto'
   | 'm'
@@ -18,7 +18,7 @@ type PropSpace =
   | '5xl'
   | '6xl';
 
-type Props = {
+export type Props = {
   p?: PropSpace;
   m?: PropSpace;
   pV?: PropSpace;

@@ -11,7 +11,7 @@ import {
 
 export { usePortalContext };
 
-type Props = {
+export type Props = {
   container?: Element;
 } & ThemeProps;
 

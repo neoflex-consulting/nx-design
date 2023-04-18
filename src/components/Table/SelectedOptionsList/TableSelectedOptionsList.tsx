@@ -23,7 +23,7 @@ type OptionValue = {
 
 export type GetTagLabel = (id: string, name: string, filterValue?: unknown) => string;
 
-type Props = {
+export type Props = {
   values: Array<{ id: string; name: string; value?: unknown }>;
   getTagLabel?: GetTagLabel;
   onRemove: (id: string) => void;

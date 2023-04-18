@@ -32,7 +32,7 @@ export type RenderItemProps<ITEM> = PropsWithHTMLAttributes<
   HTMLDivElement
 >;
 
-type Props<ITEM> = PropsWithJsxAttributes<{
+export type Props<ITEM> = PropsWithJsxAttributes<{
   size: PropSize;
   id: string;
   controlRef: React.MutableRefObject<HTMLDivElement | null>;

@@ -29,7 +29,7 @@ import { FileIconZip } from '../../fileIcons/FileIconZip/FileIconZip';
 import { cn } from '../../utils/bem';
 import { ProgressSpin } from '../ProgressSpin/ProgressSpin';
 
-type Props = {
+export type Props = {
   extension?: string;
   loading?: boolean;
   loadingWithProgressSpin?: boolean;

@@ -9,7 +9,7 @@ import {LeftSide} from "../LeftSide/LeftSide";
 
 const cnHeaderMenu = cn('HeaderMenu');
 
-type Props<T extends TableRow> = {
+export type Props<T extends TableRow> = {
   columns: TableColumn<T>[];
   leftSide?: HeaderSide;
   rightSide?: HeaderSide;

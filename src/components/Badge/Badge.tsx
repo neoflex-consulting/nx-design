@@ -23,7 +23,7 @@ export const badgePropForm = ['default', 'round'] as const;
 export type BadgePropForm = typeof badgePropForm[number];
 export const badgePropFormDefault: BadgePropForm = badgePropForm[0];
 
-type Props = {
+export type Props = {
   size?: BadgePropSize;
   view?: BadgePropView;
   status?: BadgePropStatus;

@@ -21,7 +21,7 @@ export const alertPropSize = ['s', 'm', 'l'] as const;
 export type AlertPropSize = typeof alertPropSize[number];
 export const alertPropSiseDefault: AlertPropSize = alertPropSize[0];
 
-type Props = {
+export type Props = {
   view?: AlertPropView;
   status?: AlertPropStatus;
   icon?: React.FC<IconProps>;

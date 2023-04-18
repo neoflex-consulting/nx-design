@@ -16,7 +16,7 @@ export type StepsPropGetLabel<ITEM> = (item: ITEM) => string;
 export type StepsPropGetCommon<ITEM> = (item: ITEM) => boolean;
 export type StepsPropOnChange<ITEM> = (props: { e: React.MouseEvent; value: ITEM }) => void;
 
-type Props<ITEM> = {
+export type Props<ITEM> = {
   size?: StepsPropSize;
   items: ITEM[];
   value: ITEM;
