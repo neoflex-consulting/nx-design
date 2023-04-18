@@ -115,6 +115,7 @@ import {IconColorpicker} from '../../IconColorpicker/IconColorpicker';
 import {IconComment} from '../../IconComment/IconComment';
 import {IconCommentChat} from '../../IconCommentChat/IconCommentChat';
 import {IconCompose} from '../../IconCompose/IconCompose';
+import {IconCompare} from '../../IconCompare/IconCompare';
 import {IconConnect} from '../../IconConnect/IconConnect';
 import {IconContact} from '../../IconContact/IconContact';
 import {IconControl} from '../../IconControl/IconControl';
@@ -168,6 +169,7 @@ import {IconEur} from '../../IconEur/IconEur';
 import {IconExport} from '../../IconExport/IconExport';
 import {IconExternalLink} from '../../IconExternalLink/IconExternalLink';
 import {IconExternalLinkS} from '../../IconExternalLinkS/IconExternalLinkS';
+import {IconExit} from '../../IconExit/IconExit';
 import {IconEye} from '../../IconEye/IconEye';
 import {IconEyeInvCheck} from '../../IconEyeInvCheck/IconEyeInvCheck';
 import {IconEyeInvisible} from '../../IconEyeInvisible/IconEyeInvisible';
@@ -547,6 +549,7 @@ const neoicons = {
   IconColorpicker,
   IconComment,
   IconCommentChat,
+  IconCompare,
   IconCompose,
   IconConnect,
   IconContact,
@@ -608,6 +611,7 @@ const neoicons = {
   IconExport,
   IconExternalLink,
   IconExternalLinkS,
+  IconExit,
   IconEye,
   IconEyeInvCheck,
   IconEyeInvisible,
