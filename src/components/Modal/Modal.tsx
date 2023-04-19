@@ -17,7 +17,7 @@ const modalPropPosition = ['center', 'top'] as const;
 type ModalPropPosition = typeof modalPropPosition[number];
 const modalPropPositionDefault: ModalPropPosition = modalPropPosition[0];
 
-type ModalProps = {
+export type ModalProps = {
   isOpen?: boolean;
   onClose?: () => void;
   onOpen?: () => void;
