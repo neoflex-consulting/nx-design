@@ -100,6 +100,7 @@ export const Checkbox = React.forwardRef<HTMLLabelElement, CheckboxProps>((props
         step={step}
         tabIndex={tabIndex}
         ref={inputRef}
+        style={{outline: "none"}}
       />
       {label && <span className={cnCheckbox('Label')}>{label}</span>}
     </label>
