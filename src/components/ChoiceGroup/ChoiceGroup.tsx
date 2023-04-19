@@ -38,7 +38,7 @@ export type ChoiceGroupPropOnChange<ITEM, MULTIPLE extends boolean> = (props: {
   value: MULTIPLE extends true ? ITEM[] | null : ITEM;
 }) => void;
 
-type Props<ITEM, MULTIPLE extends boolean = false> = PropsWithHTMLAttributesAndRef<
+export type Props<ITEM, MULTIPLE extends boolean = false> = PropsWithHTMLAttributesAndRef<
   {
     size?: ChoiceGroupPropSize;
     form?: ChoiceGroupPropForm;

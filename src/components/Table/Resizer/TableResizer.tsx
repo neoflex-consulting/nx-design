@@ -6,7 +6,7 @@ import { cn } from '../../../utils/bem';
 
 const cnTableResizer = cn('TableResizer');
 
-type Props = {
+export type Props = {
   height: number;
   top: number;
   isVisible?: boolean;

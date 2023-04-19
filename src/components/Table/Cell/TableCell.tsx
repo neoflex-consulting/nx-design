@@ -12,7 +12,7 @@ export type VerticalAlign = typeof verticalAligns[number];
 export const horizontalAligns = ['left', 'center', 'right'] as const;
 export type HorizontalAlign = typeof horizontalAligns[number];
 
-type Props<T extends TableRow> = {
+export type Props<T extends TableRow> = {
   column: TableColumn<T> & {
     isSticky?: boolean;
     isResized?: boolean;

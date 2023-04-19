@@ -26,7 +26,7 @@ export const userPropWidthDefault: UserPropWidth = userPropWidth[0];
 export const userPropStatus = ['available', 'remote', 'out'] as const;
 export type UserPropStatus = typeof userPropStatus[number];
 
-type Props = {
+export type Props = {
   avatarUrl?: string;
   name?: string;
   size?: UserPropSize;

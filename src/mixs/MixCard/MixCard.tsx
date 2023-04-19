@@ -10,7 +10,7 @@ type FormMap = typeof formMap[number];
 const cardStatus = ['alert', 'success', 'warning'] as const;
 type CardStatus = typeof cardStatus[number] | string;
 
-type Props = {
+export type Props = {
   shadow?: boolean;
   verticalSpace?: Size;
   horizontalSpace?: Size;

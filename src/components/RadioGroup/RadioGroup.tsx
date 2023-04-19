@@ -25,7 +25,7 @@ export const radioGroupPropAlign = ['center', 'top'] as const;
 export type RadioGroupPropAlign = typeof radioGroupPropAlign[number];
 export const radioGroupPropAlignDefault: RadioGroupPropAlign = radioGroupPropAlign[0];
 
-type CommonProps<ITEM> = {
+export type CommonProps<ITEM> = {
   align?: RadioGroupPropAlign;
   value?: ITEM | null;
   items: ITEM[];
@@ -40,7 +40,7 @@ type CommonProps<ITEM> = {
   className?: string;
 };
 
-type Props<ITEM> = PropsWithHTMLAttributesAndRef<CommonProps<ITEM>, HTMLDivElement>;
+export type Props<ITEM> = PropsWithHTMLAttributesAndRef<CommonProps<ITEM>, HTMLDivElement>;
 
 type RadioGroup = <ITEM>(props: Props<ITEM>) => React.ReactElement | null;
 

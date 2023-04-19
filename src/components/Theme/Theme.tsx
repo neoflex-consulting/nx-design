@@ -23,7 +23,7 @@ export type ThemePreset = {
   shadow: string;
 };
 
-type Props = {
+export type Props = {
   preset: ThemePreset;
 };
 

@@ -10,7 +10,7 @@ import { StepsPropSize } from '../Steps';
 
 export const cnStepsStep = cn('StepsStep');
 
-type Props = {
+export type Props = {
   size: StepsPropSize;
   label: string;
   active?: boolean;

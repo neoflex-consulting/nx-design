@@ -3,7 +3,7 @@ import './MixPopoverArrow.css';
 import { Direction } from '../../components/Popover/Popover';
 import { cn } from '../../utils/bem';
 
-type Props = {
+export type Props = {
   direction?: Direction;
 };
 

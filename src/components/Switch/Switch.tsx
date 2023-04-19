@@ -23,7 +23,7 @@ export type SwitchPropOnChange = (object: {
   checked: boolean;
 }) => void;
 
-type Props = {
+export type Props = {
   checked: boolean | undefined;
   size?: SwitchPropSize;
   view?: SwitchPropView;

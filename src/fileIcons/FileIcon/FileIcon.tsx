@@ -9,7 +9,7 @@ export const fileIconPropSize = ['m', 's'] as const;
 export type FileIconPropSize = typeof fileIconPropSize[number];
 export const fileIconPropSizeDefault = fileIconPropSize[0];
 
-type Props = {
+export type Props = {
   size?: FileIconPropSize;
 };
 

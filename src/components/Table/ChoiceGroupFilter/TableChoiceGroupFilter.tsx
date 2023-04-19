@@ -14,7 +14,7 @@ type Item = {
 
 const defaultValue: Item = { name: 'Все', value: undefined };
 
-type Props = FilterComponentProps & {
+export type Props = FilterComponentProps & {
   items?: Item[];
   title?: string;
 };

@@ -8,7 +8,7 @@ import { Button } from '../Button/Button';
 import { File } from '../File/File';
 import { Typography } from '../Typography/Typography';
 
-type Props = {
+export type Props = {
   fileExtension?: string;
   loading?: boolean;
   fileName?: string;

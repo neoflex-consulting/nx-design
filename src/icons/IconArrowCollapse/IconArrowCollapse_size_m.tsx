@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function IconAirflowSizeM(props: React.SVGProps<SVGSVGElement>) {
+function IconArrowCollapseSizeM(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path fillRule="evenodd" clipRule="evenodd" d="M12 2C12.4142 2 12.75 2.33579 12.75 2.75V7.55041L14.4922 5.94799C14.7971 5.66758 15.2716 5.68741 15.552 5.99228C15.8324 6.29715 15.8125 6.77161 15.5077 7.05201L12.5077 9.81124C12.2207 10.0752 11.7793 10.0752 11.4923 9.81125L8.49224 7.05202C8.18737 6.77162 8.16753 6.29716 8.44793 5.99229C8.72833 5.68742 9.20279 5.66758 9.50766 5.94798L11.25 7.55046V2.75C11.25 2.33579 11.5858 2 12 2Z" />
@@ -10,4 +10,4 @@ function IconAirflowSizeM(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default IconAirflowSizeM;
+export default IconArrowCollapseSizeM;

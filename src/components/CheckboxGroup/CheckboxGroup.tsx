@@ -35,7 +35,7 @@ type CommonProps<ITEM> = {
   className?: string;
 };
 
-type Props<ITEM> = PropsWithHTMLAttributesAndRef<CommonProps<ITEM>, HTMLDivElement>;
+export type Props<ITEM> = PropsWithHTMLAttributesAndRef<CommonProps<ITEM>, HTMLDivElement>;
 
 type CheckboxGroup = <ITEM>(props: Props<ITEM>) => React.ReactElement | null;
 

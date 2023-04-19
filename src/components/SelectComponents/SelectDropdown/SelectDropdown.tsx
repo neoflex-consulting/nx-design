@@ -23,7 +23,7 @@ export const selectDropdownform = ['default', 'brick', 'round'] as const;
 export type SelectDropdownPropForm = typeof selectDropdownform[number];
 export const defaultSelectDropdownPropForm = selectDropdownform[0];
 
-type Props<ITEM, GROUP> = PropsWithJsxAttributes<{
+export type Props<ITEM, GROUP> = PropsWithJsxAttributes<{
   size: PropSize;
   controlRef: React.MutableRefObject<HTMLDivElement | null>;
   dropdownRef: React.MutableRefObject<HTMLDivElement | null>;
