@@ -1,24 +1,24 @@
 import '../SelectComponents/Select.css';
 
-import React, { forwardRef, useRef } from 'react';
+import React, {forwardRef, useRef} from 'react';
 
-import { useForkRef } from '../../hooks/useForkRef/useForkRef';
-import { useSelect } from '../../hooks/useSelect/useSelect';
-import { IconClose } from '../../icons/IconClose/IconClose';
-import { IconCaretDown } from '../../icons/IconCaretDown/IconCaretDown';
-import { cnMixFocus } from '../../mixs/MixFocus/MixFocus';
-import { cnSelect } from '../SelectComponents/cnSelect';
+import {useForkRef} from '../../hooks/useForkRef/useForkRef';
+import {useSelect} from '../../hooks/useSelect/useSelect';
+import {IconClose} from '../../icons/IconClose/IconClose';
+import {IconCaretDown} from '../../icons/IconCaretDown/IconCaretDown';
+import {cnMixFocus} from '../../mixs/MixFocus/MixFocus';
+import {cnSelect} from '../SelectComponents/cnSelect';
 import {
   defaultlabelForCreate,
   defaultlabelForNotFound,
   getInputWidth,
   getSelectDropdownForm,
 } from '../SelectComponents/helpers';
-import { SelectContainer } from '../SelectComponents/SelectContainer/SelectContainer';
-import { SelectDropdown } from '../SelectComponents/SelectDropdown/SelectDropdown';
-import { SelectItem } from '../SelectComponents/SelectItem/SelectItem';
-import { SelectValueTag } from '../SelectComponents/SelectValueTag/SelectValueTag';
-import { defaultPropForm, defaultPropSize, defaultPropView } from '../SelectComponents/types';
+import {SelectContainer} from '../SelectComponents/SelectContainer/SelectContainer';
+import {SelectDropdown} from '../SelectComponents/SelectDropdown/SelectDropdown';
+import {SelectItem} from '../SelectComponents/SelectItem/SelectItem';
+import {SelectValueTag} from '../SelectComponents/SelectValueTag/SelectValueTag';
+import {defaultPropForm, defaultPropSize, defaultPropView} from '../SelectComponents/types';
 
 import {
   ComboboxComponent,
@@ -72,6 +72,8 @@ function ComboboxRender<ITEM = DefaultItem, GROUP = DefaultGroup, MULTIPLE exten
     labelForCreate = defaultlabelForCreate,
     searchFunction,
     multiple = false,
+    iconRight = <IconCaretDown size="xs"/>,
+    iconUp = true,
     ...restProps
   } = withDefaultGetters(props);
 
@@ -202,7 +204,7 @@ function ComboboxRender<ITEM = DefaultItem, GROUP = DefaultGroup, MULTIPLE exten
       <div
         className={cnSelect('Control', { hasInput: true })}
         ref={controlRef}
-        aria-expanded={isOpen}
+        aria-expanded={iconUp ? isOpen : false}
         aria-haspopup="listbox"
         id={id}
       >
@@ -238,7 +240,10 @@ function ComboboxRender<ITEM = DefaultItem, GROUP = DefaultGroup, MULTIPLE exten
             tabIndex={-1}
             onClick={handleToggleDropdown}
           >
-            <IconCaretDown size="xs" className={cnSelect('DropdownIndicatorIcon')} />
+            {
+              React.isValidElement(iconRight) && <span className={cnSelect('DropdownIndicatorIcon')}> {iconRight} </span>
+            }
+            {/*<IconCaretDown size="xs" className={cnSelect('DropdownIndicatorIcon')} />*/}
           </button>
         </span>
       </div>

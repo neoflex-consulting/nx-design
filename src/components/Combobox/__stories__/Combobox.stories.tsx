@@ -1,7 +1,7 @@
 import './ComboboxStories.css';
 
 import React, { useState } from 'react';
-import { boolean, select, text } from '@storybook/addon-knobs';
+import {boolean, object, select, text} from '@storybook/addon-knobs';
 
 import { groups, Item, items, myData, myGroup, MyItem } from '../__mocks__/data.mock';
 import { cn } from '../../../utils/bem';
@@ -13,9 +13,12 @@ import {
   propForm,
   propView,
 } from '../../SelectComponents/types';
-import { Combobox } from '../Combobox';
+import {Combobox, defaultPropIconView, propIconView} from '../Combobox';
 
 import mdx from './Combobox.docs.mdx';
+import {IconSearch} from "../../../icons/IconSearch/IconSearch";
+import {IconCaretDown} from "../../../icons/IconCaretDown/IconCaretDown";
+import {IconDoubleDown} from "../../../icons/IconDoubleDown/IconDoubleDown";
 
 const cnComboboxStories = cn('ComboboxStories');
 
@@ -26,13 +29,16 @@ const getKnobs = () => ({
   form: select('form', propForm, defaultPropForm),
   placeholder: text('placeholder', 'Placeholder'),
   withGroups: boolean('withGroups', false),
+  changeIcon: select('changeIcon', propIconView, defaultPropIconView),
+  iconUp: boolean('iconUp', true),
 });
 
 export function Playground(): JSX.Element {
-  const { size, disabled, view, form, placeholder, withGroups } = getKnobs();
+  const { size, disabled, view, form, placeholder, withGroups, iconUp, changeIcon } = getKnobs();
   const [value, setValue] = useState<Item | null>(null);
   const [valueMultiple, setValueMultiple] = useState<Item[] | null>(null);
   const multiple = boolean('multiple', false);
+  const Icon = changeIcon === propIconView[1] ? <IconSearch size="xs"/> : changeIcon === propIconView[2] ? <IconDoubleDown size="xs"/> : <IconCaretDown size="xs"/>;
 
   if (multiple) {
     return (
@@ -48,6 +54,8 @@ export function Playground(): JSX.Element {
         onChange={({ value }) => setValueMultiple(value)}
         groups={withGroups ? groups : []}
         multiple
+        iconUp={iconUp}
+        iconRight={Icon}
       />
     );
   }
@@ -63,6 +71,8 @@ export function Playground(): JSX.Element {
       value={value}
       onChange={({ value }) => setValue(value)}
       groups={withGroups ? groups : []}
+      iconUp={iconUp}
+      iconRight={Icon}
     />
   );
 }

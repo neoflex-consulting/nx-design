@@ -6,6 +6,7 @@ import { ComboboxExampleDisabled } from './examples/ComboboxExampleDisabled/Comb
 import { ComboboxExampleDisabledItem } from './examples/ComboboxExampleDisabledItem/ComboboxExampleDisabledItem';
 import { ComboboxExampleGroups } from './examples/ComboboxExampleGroups/ComboboxExampleGroups';
 import { ComboboxExampleRenderItem } from './examples/ComboboxExampleRenderItem/ComboboxExampleRenderItem';
+import { ComboboxExampleChangeIcon } from './examples/ComboboxExampleChangeIcon/ComboboxExampleChangeIcon';
 import { ComboboxExampleRenderValue } from './examples/ComboboxExampleRenderValue/ComboboxExampleRenderValue';
 import { ComboboxExampleView } from './examples/ComboboxExampleView/ComboboxExampleView';
 import { ComboboxExampleCreate } from './examples/ComboboxExampleCreate/ComboboxExampleCreate';
@@ -46,6 +47,7 @@ import {
 - [Неактивный выпадающий список](#неактивный-выпадающий-список)
 - [Создание новых вариантов](#создание-новых-вариантов)
 - [Кастомизация](#кастомизация)
+  - [Кастомная иконка](#выбор-иконки)
   - [Кастомный элемент списка](#кастомный-элемент-списка)
   - [Кастомное выбранное значение](#кастомное-выбранное-значение)
   - [Кастомные типы данных для групп и вариантов](#кастомные-типы-данных-для-групп-и-вариантов)
@@ -529,6 +531,45 @@ export function ComboboxExampleCreate() {
 
 ## Кастомизация
 
+### Кастомная иконка
+
+Для изменения иконки необходимо воспользоваться свойством `iconRight`
+> По-умолчанию `iconRight = <IconCaretDown size="xs"/>`
+
+Если вы используете иконку, поворот которой не предусмотрен при нажатии, то, необходимо воспользоваться свойством `iconUp`
+> По-умолчанию `iconUp = true`
+
+<ComboboxExampleChangeIcon/>
+
+```tsx
+<Combobox
+        placeholder="Выберите вариант"
+        items={list}
+        value={value}
+        onChange={({ value }) => setValue(value)}
+        onCreate={({ label }) => setList([{ label, id: `${label}_${list.length + 1}` }, ...list])}
+        iconRight={<IconSearch size={"xs"}/>}
+        iconUp={false}
+      />
+      <Combobox
+        placeholder="Выберите вариант"
+        items={list}
+        value={value}
+        onChange={({ value }) => setValue(value)}
+        onCreate={({ label }) => setList([{ label, id: `${label}_${list.length + 1}` }, ...list])}
+        iconRight={<IconEur size={"xs"}/>}
+      />
+      <Combobox
+        placeholder="Выберите вариант"
+        items={list}
+        value={value}
+        onChange={({ value }) => setValue(value)}
+        onCreate={({ label }) => setList([{ label, id: `${label}_${list.length + 1}` }, ...list])}
+        iconRight={<IconGlobe size={"xs"}/>}
+        iconUp={false}
+      />
+```
+
 ### Кастомный элемент списка
 
 Для того чтобы сделать свое представление элементов списка, воспользуйтесь свойством `renderItem`.
@@ -832,6 +873,8 @@ type PropGetGroupLabel<GROUP> = (group: GROUP) => string;
 | [`getItemDisabled?`](#свои-тип-данных-items-и-groups)     | `PropGetItemDisabled<ITEM>`                            | `(item) => item.disabled`                                     | Функция для определения состояния `disabled`                           |
 | [`getGroupLabel?`](#свои-тип-данных-items-и-groups)       | `PropGetGroupKey<GROUP>`                               | `(group) => group.id`                                         | Функция для определения названия группы                                |
 | [`getGroupKey?`](#свои-тип-данных-items-и-groups)         | `PropGetGroupLabel<GROUP>`                             | `(group) => group.label`                                      | Функция для определения уникального ключа группы                       |
+| [`iconRight?`](#выбор-иконки)                             | `React.ReactNode, React.FC<IconProps>`                 | `<IconCaretDown size="xs"/>`                                  | Иконка справа                                                          |
+| [`iconUp?`](#поворот-иконки)                              | `boolean`                                              | `true`                                                        | Включение/выключение поворота иконки при нажатии                       |
 | `onBlur?`                                                 | `(event?: React.FocusEvent<HTMLInputElement>) => void` | -                                                             | Обработчик события `blur`                                              |
 | `onFocus?`                                                | `(event?: React.FocusEvent<HTMLInputElement>) => void` | -                                                             | Обработчик события `focus`                                             |
 | `ariaLabel?`                                              | `string`                                               | -                                                             | `aria` атрибут для поля ввода                                          |

@@ -2,6 +2,7 @@ import React from 'react';
 
 import { PropsWithHTMLAttributesAndRef } from '../../utils/types/PropsWithHTMLAttributes';
 import { PropForm, PropSize, PropView, RenderItemProps } from '../SelectComponents/types';
+import {IconProps} from "../../icons/_Icon/Icon";
 
 export type DefaultItem = {
   label: string;
@@ -19,6 +20,10 @@ type RenderValueProps<ITEM> = {
   item: ITEM;
   handleRemove?: (e: React.SyntheticEvent) => void;
 };
+
+export const propIconView = ['default', 'search', 'double'] as const;
+export type PropIconView = typeof propIconView[number];
+export const defaultPropIconView = propIconView[0];
 
 export type PropGetItemLabel<ITEM> = (item: ITEM) => string;
 export type PropGetItemKey<ITEM> = (item: ITEM) => string | number;
@@ -74,6 +79,8 @@ export type ComboboxProps<
     getItemDisabled?: PropGetItemDisabled<ITEM>;
     getGroupLabel?: PropGetGroupLabel<GROUP>;
     getGroupKey?: PropGetGroupKey<GROUP>;
+    iconRight?: React.ReactNode | React.FC<IconProps>;
+    iconUp?: boolean;
   },
   HTMLDivElement
 > &
