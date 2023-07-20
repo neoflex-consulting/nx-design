@@ -116,6 +116,7 @@ function ContextMenuLevelsRender(propsComponent: ContextMenuProps, ref: React.Re
               zIndex: typeof style?.zIndex === 'number' ? style.zIndex + 1 : undefined,
             },
           }}
+          items={items}
           levelDepth={index}
           getItemLabel={getItemLabel}
           addLevel={addLevel}
