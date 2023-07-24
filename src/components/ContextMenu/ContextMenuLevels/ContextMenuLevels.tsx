@@ -5,7 +5,7 @@ import { useForkRef } from '../../../hooks/useForkRef/useForkRef';
 import { useRefs } from '../../../hooks/useRefs/useRefs';
 import { Direction, directions } from '../../Popover/Popover';
 import { clearTimers, ContextMenuLevel } from '../ContextMenuLevel/ContextMenuLevel';
-import { getLevels, withDefaultGetters } from '../helper';
+import { withDefaultGetters } from '../helper';
 import {
   AddLevel,
   ContextMenuComponent,
@@ -89,15 +89,15 @@ function ContextMenuLevelsRender(propsComponent: ContextMenuProps, ref: React.Re
 
   useEffect(() => {
     clearTimers();
-    setLevels(
-      getLevels({
-        levels,
-        items,
-        getItemLabel,
-        getItemKey,
-        getItemSubMenu,
-      }),
-    );
+    // setLevels(
+    //   getLevels({
+    //     levels,
+    //     items,
+    //     getItemLabel,
+    //     getItemKey,
+    //     getItemSubMenu,
+    //   }),
+    // );
     return () => clearTimers();
   }, [items]);
 
@@ -116,7 +116,7 @@ function ContextMenuLevelsRender(propsComponent: ContextMenuProps, ref: React.Re
               zIndex: typeof style?.zIndex === 'number' ? style.zIndex + 1 : undefined,
             },
           }}
-          items={items}
+          // items={items}
           levelDepth={index}
           getItemLabel={getItemLabel}
           addLevel={addLevel}
