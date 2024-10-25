@@ -6,6 +6,12 @@
   box-shadow: var(--shadow-layer);
   transform: translateY(var(--transition-spase));
 
+  &__relative{
+    width: fit-content;
+    box-shadow: none;
+    padding: var(--space-l) 0;
+  }
+
   &_form {
     &_default {
       border-radius: var(--control-radius);

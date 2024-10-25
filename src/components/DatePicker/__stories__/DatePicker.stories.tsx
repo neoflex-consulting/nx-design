@@ -72,6 +72,8 @@ const defaultKnobs = () => ({
     datePickerPropDropdownForm,
     datePickerPropDropdownFormDefault,
   ),
+  alwaysVisible: boolean('alwaysVisible', false),
+  relative: boolean('relative', false),
 });
 
 const additionalControls = () => {
@@ -101,7 +103,9 @@ export function Playground() {
     placeholder,
     formatMask,
     showPicker,
-    direction
+    direction,
+    alwaysVisible,
+    relative,
   } = defaultKnobs();
 
   const [value, setValue] = useState<DatePickerPropValue<typeof type>>(null);
@@ -150,6 +154,8 @@ export function Playground() {
           formatMask={formatMask}
           showPicker={showPicker}
           direction={direction}
+          alwaysVisible={alwaysVisible}
+          relative={relative}
         />
       </div>
   );

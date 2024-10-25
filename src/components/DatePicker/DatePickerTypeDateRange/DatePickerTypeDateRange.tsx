@@ -40,6 +40,8 @@ export const DatePickerTypeDateRange: DatePickerTypeComponent<'date-range'> = fo
       showPicker,
       direction,
       countTextField,
+      relative,
+      alwaysVisible,
       ...fieldProps
     } = props;
 
@@ -206,6 +208,8 @@ export const DatePickerTypeDateRange: DatePickerTypeComponent<'date-range'> = fo
           renderAdditionalControls={renderAdditionalControls}
           zIndex={typeof style?.zIndex === 'number' ? style.zIndex + 1 : undefined}
           direction={direction}
+          relative={relative}
+          alwaysVisible={alwaysVisible}  
         />
       </>
     );

@@ -49,6 +49,8 @@ export type DatePickerFieldTypeDateProps = PropsWithHTMLAttributes<
     showPicker?: ShowPickerPropType;
     onClose?: () => void;
     countTextField?: 1 | 2;
+    relative?: boolean;
+    alwaysVisible?: boolean;  
   },
   HTMLDivElement
 >;

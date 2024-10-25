@@ -122,6 +122,8 @@ export type DatePickerProps<
     showPicker?: ShowPickerPropType;
     direction?: DirectionsStartEdge;
     countTextField?: 1 | 2;
+    relative?: boolean;
+    alwaysVisible?: boolean;  
   },
   HTMLDivElement
 >;

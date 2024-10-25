@@ -29,6 +29,8 @@ export const DatePickerTypeCalendar: DatePickerTypeComponent<'date-time'> = forw
       multiplicitySeconds: multiplicitySecondsProp,
       renderAdditionalControls,
       direction,
+      alwaysVisible,
+      relative,
       ...otherProps
     } = props;
 
@@ -122,6 +124,8 @@ export const DatePickerTypeCalendar: DatePickerTypeComponent<'date-time'> = forw
           multiplicitySeconds={multiplicitySeconds}
           multiplicityMinutes={multiplicityMinutes}
           direction={direction}
+          alwaysVisible={alwaysVisible}
+          relative={relative}
         />
       </>
     );

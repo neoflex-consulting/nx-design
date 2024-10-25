@@ -1,6 +1,6 @@
 import './DatePickerDropdown.css';
 
-import React, {forwardRef, useRef} from 'react';
+import React, { forwardRef, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 import { useForkRef } from '../../../hooks/useForkRef/useForkRef';
@@ -12,9 +12,9 @@ import {
   Calendar,
   CalendarAdditionalControlRenderProp,
   CalendarPropOnChange,
-  CalendarPropType
+  CalendarPropType,
 } from '../../Calendar/Calendar';
-import {DirectionsStartEdge, directionsStartEdge, Popover} from '../../Popover/Popover';
+import { DirectionsStartEdge, directionsStartEdge, Popover } from '../../Popover/Popover';
 import {
   DatePickerPropCalendarView,
   DatePickerPropDropdownForm,
@@ -45,14 +45,13 @@ export type DatePickerDropdownProps = PropsWithHTMLAttributesAndRef<
     multiplicityMinutes?: number;
     multiplicityHours?: number;
     direction?: DirectionsStartEdge;
+    relative?: boolean;
+    alwaysVisible?: boolean;
   },
   HTMLDivElement
 >;
 
 type DatePickerDropdownComponent = (props: DatePickerDropdownProps) => React.ReactElement | null;
-
-const cnDatePickerDropdown = cn('DatePickerDropdown');
-const cnDatePickerDropdownCssTransition = cnForCssTransition(cnDatePickerDropdown);
 
 export const DatePickerDropdown: DatePickerDropdownComponent = forwardRef((props, ref) => {
   const {
@@ -62,31 +61,47 @@ export const DatePickerDropdown: DatePickerDropdownComponent = forwardRef((props
     className,
     zIndex,
     direction,
+    alwaysVisible,
+    relative,
     ...otherProps
   } = props;
 
+  const cnDatePickerDropdown = cn('DatePickerDropdown');
+  const cnDatePickerDropdownCssTransition = cnForCssTransition(
+    cnDatePickerDropdown,
+    undefined,
+    relative ? 'relative' : undefined,
+  );
   const directionDefault = direction || directionsStartEdge[0];
   const rootRef = useRef<HTMLDivElement>(null);
+  const refValue = useForkRef([ref, rootRef]);
   return (
     <CSSTransition
-      in={isOpen}
+      in={isOpen || alwaysVisible}
       unmountOnExit
       appear
       classNames={cnDatePickerDropdownCssTransition}
       timeout={200}
       nodeRef={rootRef}
+      key={`dropdown-${relative && 'relative'}-${alwaysVisible && 'alwaysVisible'}`}
     >
-      <Popover
-        ref={useForkRef([ref, rootRef])}
-        anchorRef={anchorRef}
-        className={cnDatePickerDropdown({ form }, [className])}
-        direction={directionDefault}
-        spareDirection={directionDefault}
-        possibleDirections={['downStartLeft', 'upStartLeft', 'downStartRight', 'upStartRight']}
-        style={{ zIndex }}
-      >
-        <Calendar {...otherProps} />
-      </Popover>
+      {!relative ? (
+        <Popover
+          ref={refValue}
+          anchorRef={anchorRef}
+          className={cnDatePickerDropdown({ form }, [className])}
+          direction={directionDefault}
+          spareDirection={directionDefault}
+          possibleDirections={['downStartLeft', 'upStartLeft', 'downStartRight', 'upStartRight']}
+          style={{ zIndex }}
+        >
+          <Calendar {...otherProps} />
+        </Popover>
+      ) : (
+        <div ref={refValue}>
+          <Calendar {...otherProps} />
+        </div>
+      )}
     </CSSTransition>
   );
 });
