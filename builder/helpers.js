@@ -520,13 +520,13 @@ const generateReExports = (
             filePath: relative(
               join(platformDir, 'index'),
               join(blockDir, distEsSrc, filePath.replace(/\.tsx?$/, '')),
-            ).replaceAll('\\','/'),
+            ).replace(/\\/g,'/'),
           });
           const exportCJSTemplate = getCJSExportTemplate({
             filePath: relative(
               join(platformDir, 'index'),
               join(blockDir, distSrc, filePath.replace(/\.tsx?$/, '')),
-            ).replaceAll('\\','/'),
+            ).replace(/\\/g,'/'),
           });
 
           reExportsES.push(exportESMTemplate);
@@ -550,11 +550,11 @@ const generateReExports = (
           const cjsFilePath = relative(
             join(bundleDir, 'index'),
             join(blockDir, distSrc, platformPath),
-          ).replaceAll('\\','/');
+          ).replace(/\\/g,'/');
           const esmFilePath = relative(
             join(bundleDir, 'index'),
             join(blockDir, distEsSrc, platformPath),
-          ).replaceAll('\\','/');
+          ).replace(/\\/g,'/');
 
           const bundleCJS = [];
           const bundleESM = [];
